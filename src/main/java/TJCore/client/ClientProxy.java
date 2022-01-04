@@ -1,6 +1,8 @@
 package TJCore.client;
 
-public class ClientProxy {
+import TJCore.common.CommonProxy;
+
+public class ClientProxy extends CommonProxy {
 
 
 
