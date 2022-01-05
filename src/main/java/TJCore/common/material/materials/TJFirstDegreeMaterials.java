@@ -7,9 +7,8 @@ import static TJCore.common.material.TJMaterials.*;
 
 
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.material.info.MaterialFlags.*;
 
-public class TJSecondDegreeMaterials {
+public class TJFirstDegreeMaterials {
     public static void register(){
         BT6 = new Material.Builder(25000, "bt6")
                 .ingot().fluid(Material.FluidType.FLUID)
