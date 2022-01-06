@@ -23,13 +23,13 @@ public class TJCore {
     public void preInit(FMLPreInitializationEvent event) {
         TJMetaTileEntities.init();
 
-
+        proxy.preInit();
 
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         //proxy.init(event);
-        proxy.preInit();
+
     }
 }

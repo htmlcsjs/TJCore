@@ -25,7 +25,7 @@ public class TJMetaTileEntities {
     public static final SimpleMachineMetaTileEntity[] COMPONENT_ASSEMBLER = new SimpleMachineMetaTileEntity[GTValues.V.length - 1];
 
     public static void init() {
-        registerSimpleMetaTileEntity(COMPONENT_ASSEMBLER, 12001, "Component Assembler", TJRecipeMaps.COMPONENT_ASSEMBLER_RECIPE_MAP, Textures.ARC_FURNACE_OVERLAY, false);
+        registerSimpleMetaTileEntity(COMPONENT_ASSEMBLER, 12001, "Component Assembler", TJRecipeMaps.COMPONENT_ASSEMBLER_RECIPES, Textures.ARC_FURNACE_OVERLAY, false);
     }
 
     private static void registerSimpleMetaTileEntity(SimpleMachineMetaTileEntity[] machines, int startID, String name, RecipeMap<?> map, ICubeRenderer texture, boolean frontfacing, Function<Integer, Integer> tankScalingFunction) {
