@@ -2,6 +2,7 @@ package TJCore.common.metatileentities;
 
 import TJCore.TJValues;
 import gregtech.api.GTValues;
+import gregtech.api.GregTechAPI;
 import gregtech.api.gui.ModularUI;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.MetaTileEntityHolder;
@@ -34,6 +35,13 @@ public class TJMetaTileEntities {
 
     private static void registerSimpleMetaTileEntity(SimpleMachineMetaTileEntity[] machines, int startID, String name, RecipeMap<?> map, ICubeRenderer texture, boolean frontfacing) {
         registerSimpleMetaTileEntity(machines, startID, name, map, texture, frontfacing, GTUtility.defaultTankSizeFunction);
+    }
+
+    private static <T extends MetaTileEntity> T register(int id, T t) {
+        GregTechAPI.MTE_REGISTRY.register(id, t.metaTileEntityId, t);
+
+        return t;
+
     }
 
     private static ResourceLocation tjcoreID(String name) {
