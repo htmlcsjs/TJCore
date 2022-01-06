@@ -1,4 +1,4 @@
-package TJCore.common.eventhandlers;
+package TJCore.common.EventHandlers;
 
 
 import TJCore.TJValues;

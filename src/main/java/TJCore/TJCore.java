@@ -6,6 +6,7 @@ import gregtech.api.GTValues;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.*;
 import TJCore.common.CommonProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = TJValues.MODID, name = "TJCore", version = TJValues.VERSION,
@@ -15,7 +16,7 @@ public class TJCore {
     @Mod.Instance("TJCore")
     public static TJCore instance;
 
-    @SidedProxy(modId = "tjcore", clientSide = "TJCore.client.ClientProxy", serverSide = "TJCore.common.ServerProxy")
+    @SidedProxy(modId = "tjcore", clientSide = "TJCore.client.ClientProxy", serverSide = "TJCore.common.CommonProxy")
     public static CommonProxy proxy;
 
     @Mod.EventHandler
@@ -23,5 +24,12 @@ public class TJCore {
         TJMetaTileEntities.init();
 
 
+
+    }
+
+    @Mod.EventHandler
+    public void init(FMLInitializationEvent event) {
+        //proxy.init(event);
+        proxy.preInit();
     }
 }

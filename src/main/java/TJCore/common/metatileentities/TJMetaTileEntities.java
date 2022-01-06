@@ -9,16 +9,31 @@ import gregtech.api.metatileentity.SimpleMachineMetaTileEntity;
 import gregtech.api.recipes.RecipeMap;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.util.GTUtility;
+import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.common.metatileentities.MetaTileEntities;
 import net.minecraft.util.ResourceLocation;
 
+import TJCore.common.recipes.recipemaps.TJRecipeMaps;
+
+import java.util.function.Function;
+
 public class TJMetaTileEntities {
 
-    public static final SimpleMachineMetaTileEntity[] MICROWAVE = new SimpleMachineMetaTileEntity[GTValues.V.length - 1];
+    // MACHINE ID 12000-12599
+
+    public static final SimpleMachineMetaTileEntity[] COMPONENT_ASSEMBLER = new SimpleMachineMetaTileEntity[GTValues.V.length - 1];
 
     public static void init() {
-        MetaTileEntities.registerSimpleMetaTileEntity(MICROWAVE, -1, "Microwave", RecipeMaps.CENTRIFUGE_RECIPES, Textures.ARC_FURNACE_OVERLAY, false, s -> tjcoreID(s), GTUtility.defaultTankSizeFunction);
+        registerSimpleMetaTileEntity(COMPONENT_ASSEMBLER, 12001, "Component Assembler", TJRecipeMaps.COMPONENT_ASSEMBLER_RECIPE_MAP, Textures.ARC_FURNACE_OVERLAY, false);
+    }
+
+    private static void registerSimpleMetaTileEntity(SimpleMachineMetaTileEntity[] machines, int startID, String name, RecipeMap<?> map, ICubeRenderer texture, boolean frontfacing, Function<Integer, Integer> tankScalingFunction) {
+        MetaTileEntities.registerSimpleMetaTileEntity(machines, startID, name, map, texture, frontfacing, s -> tjcoreID(s), tankScalingFunction);
+    }
+
+    private static void registerSimpleMetaTileEntity(SimpleMachineMetaTileEntity[] machines, int startID, String name, RecipeMap<?> map, ICubeRenderer texture, boolean frontfacing) {
+        registerSimpleMetaTileEntity(machines, startID, name, map, texture, frontfacing, GTUtility.defaultTankSizeFunction);
     }
 
     private static ResourceLocation tjcoreID(String name) {
