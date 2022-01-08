@@ -15,6 +15,7 @@ import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.common.metatileentities.MetaTileEntities;
 import net.minecraft.util.ResourceLocation;
+
 import TJCore.common.recipes.recipemaps.TJRecipeMaps;
 
 import java.util.function.Function;
@@ -27,7 +28,7 @@ public class TJMetaTileEntities {
     public static final SteamAssembler STEAM_ASSEMBLER = new SteamAssembler(tjcoreID("steam_assembler"));
 
     public static void init() {
-        registerSimpleMetaTileEntity(COMPONENT_ASSEMBLER, 12001, "Component Assembler", TJRecipeMaps.COMPONENT_ASSEMBLER_RECIPES, Textures.ARC_FURNACE_OVERLAY, false);
+        registerSimpleMetaTileEntity(COMPONENT_ASSEMBLER, 12001, "component_assembler", TJRecipeMaps.COMPONENT_ASSEMBLER_RECIPES, Textures.ASSEMBLER_OVERLAY, false);
         register(12010, STEAM_ASSEMBLER);
     }
 
