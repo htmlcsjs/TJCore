@@ -22,7 +22,7 @@ public class TJCore {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         TJMetaTileEntities.init();
-
+        TJSounds.registerSounds();
         proxy.preInit();
 
     }

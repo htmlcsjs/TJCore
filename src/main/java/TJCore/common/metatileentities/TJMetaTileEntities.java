@@ -1,6 +1,7 @@
 package TJCore.common.metatileentities;
 
 import TJCore.TJValues;
+import TJCore.common.metatileentities.multi.SteamAssembler;
 import gregtech.api.GTValues;
 import gregtech.api.GregTechAPI;
 import gregtech.api.gui.ModularUI;
@@ -14,7 +15,6 @@ import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.common.metatileentities.MetaTileEntities;
 import net.minecraft.util.ResourceLocation;
-
 import TJCore.common.recipes.recipemaps.TJRecipeMaps;
 
 import java.util.function.Function;
@@ -24,9 +24,11 @@ public class TJMetaTileEntities {
     // MACHINE ID 12000-12599
 
     public static final SimpleMachineMetaTileEntity[] COMPONENT_ASSEMBLER = new SimpleMachineMetaTileEntity[GTValues.V.length - 1];
+    public static final SteamAssembler STEAM_ASSEMBLER = new SteamAssembler(tjcoreID("steam_assembler"));
 
     public static void init() {
         registerSimpleMetaTileEntity(COMPONENT_ASSEMBLER, 12001, "Component Assembler", TJRecipeMaps.COMPONENT_ASSEMBLER_RECIPES, Textures.ARC_FURNACE_OVERLAY, false);
+        register(12010, STEAM_ASSEMBLER);
     }
 
     private static void registerSimpleMetaTileEntity(SimpleMachineMetaTileEntity[] machines, int startID, String name, RecipeMap<?> map, ICubeRenderer texture, boolean frontfacing, Function<Integer, Integer> tankScalingFunction) {

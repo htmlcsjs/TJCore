@@ -1,0 +1,9 @@
+{
+  "sussy_wussy": {
+    "category": "block",
+    "sounds": [{
+      "name": "tjcore:sussy",
+      "stream": false
+      }]
+  }
+}
