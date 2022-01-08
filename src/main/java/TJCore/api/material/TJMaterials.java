@@ -1,11 +1,12 @@
-package TJCore.common.material;
+package TJCore.api.material;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialFlag;
+import gregtech.common.MetaFluids;
+
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 
 public class TJMaterials {
@@ -22,6 +23,7 @@ public class TJMaterials {
     public static ArrayList<MaterialFlag> STANDARDCASING = new ArrayList<MaterialFlag>(Arrays.asList(GENERATE_FRAME));
     public static ArrayList<MaterialFlag> STANDARDGEM = new ArrayList<MaterialFlag>(Arrays.asList(GENERATE_LENS, HIGH_SIFTER_OUTPUT));
 
+    @SafeVarargs
     public static ArrayList<MaterialFlag> SetMaterialFlags(ArrayList<MaterialFlag>... materials) {
         ArrayList<MaterialFlag> result = new ArrayList<MaterialFlag>();
         for(ArrayList<MaterialFlag> x : materials) {
@@ -30,7 +32,14 @@ public class TJMaterials {
         return result;
     }
 
-    //Secondary
+    //Primary
     public static Material BT6;
     public static Material Birmabright;
+
+    //Chemicals
+    public static Material  TriphenylPhosphine;// PhosphorusTrichloride + PhenylmagnesiumBromide → TriphenylPhosphine + 3(Mg,Br,Cl)
+    public static Material  PhosphorusTrichloride; // P4 + 6 Cl2 → 4 PCl3
+    public static Material  PhenylmagnesiumBromide; // Bromobenzene + mg
+    public static Material  Bromobenzene; // Benzene + Bromine
+
 }

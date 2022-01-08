@@ -3,7 +3,10 @@
 //materials
 material.bt6=BT6
 material.birmabright=Birmabright
-
+material.triphenylphosphine=Triphenyl Phosphine
+material.phosphorustrichloride=Phosphorus Trichloride
+material.phenylmagnesiumbromide=Phenylmagnesium Bromide
+material.bromobenzene=Bromobenzene
 
 
 //machines

@@ -2,7 +2,8 @@ package TJCore.common.EventHandlers;
 
 
 import TJCore.TJValues;
-import TJCore.common.material.materials.TJFirstDegreeMaterials;
+import TJCore.api.TJLog;
+import TJCore.api.material.materials.TJFirstDegreeMaterials;
 import gregtech.api.GregTechAPI;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -12,8 +13,8 @@ public class MaterialEvent {
 
     @SubscribeEvent
     public static void onMaterialsInit(GregTechAPI.MaterialEvent event) {
-
-        TJFirstDegreeMaterials.register();
+        TJFirstDegreeMaterials.registerMaterials();
+        TJFirstDegreeMaterials.registerProperties();
     }
 
 

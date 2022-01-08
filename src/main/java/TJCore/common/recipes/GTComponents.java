@@ -1,25 +1,17 @@
 package TJCore.common.recipes;
 
-import crafttweaker.api.item.IItemStack;
-import gregtech.api.GTValues;
-
-import java.util.ArrayList;
-
-import static TJCore.common.material.TJMaterials.*;
+import static TJCore.api.material.TJMaterials.*;
 import static TJCore.common.recipes.recipemaps.TJRecipeMaps.*;
 
 import gregtech.api.items.metaitem.MetaItem;
-import gregtech.api.recipes.CountableIngredient;
 
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.unification.OreDictUnifier;
-import gregtech.api.unification.material.MarkerMaterial.*;
+
 import static gregtech.api.unification.material.MarkerMaterials.*;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.util.GTLog;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidStack;
 import org.apache.logging.log4j.Level;
 
 import static gregtech.api.unification.material.Materials.*;
@@ -27,9 +19,6 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.common.items.MetaItems.*;
-import static gregtech.loaders.recipe.CraftingComponent.*;
-
-import gregtech.api.recipes.crafttweaker.*;
 
 public class GTComponents {
 
