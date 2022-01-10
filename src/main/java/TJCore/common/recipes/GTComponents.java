@@ -63,7 +63,7 @@ public class GTComponents {
         Material[] sensorMaterial2 = {Steel, Electrum, RedSteel, BlueAlloy, BT6};
 
 
-        Material[] fluid = {Steam, Lubricant, Lubricant, Lubricant, Lubricant};
+        Material[] fluid = {Lubricant, Lubricant, Lubricant, Lubricant, Lubricant};
         int[] fluidAmount = {1000, 250, 500, 750, 1000};
         int[] fluidAmount2 = {500, 500, 500, 500, 500};
 
@@ -160,6 +160,79 @@ public class GTComponents {
                     .duration(300)
                     .buildAndRegister();
         }
+
+        //steam stuff
+        STEAM_COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(stick, Materials[0], 2)
+                .input(stick, Materials[0])
+                .input(wireThickness[0], wireMaterial[0], 4)
+                .input(cableThickness[0], cableMaterial[0], 2)
+                .output(motor[0])
+                .EUt(30)
+                .duration(300)
+                .buildAndRegister();
+
+        STEAM_COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(motor[0])
+                .input(stick, Materials[0], 2)
+                .input(plate, Materials[0], 3)
+                .input(cableThickness[0], cableMaterial[0], 2)
+                .output(piston[0])
+                .EUt(30)
+                .duration(300)
+                .buildAndRegister();
+
+        STEAM_COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(motor[0], 2)
+                .input(piston[0])
+                .input(stick, Materials[0], 2)
+                .input(OrePrefix.circuit, circuits[0])
+                .input(cableThickness[0], cableMaterial[0], 2)
+                .output(robot_arm[0])
+                .EUt(30)
+                .duration(300)
+                .buildAndRegister();
+
+        STEAM_COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(motor[0], 2)
+                .input(wireThickness[0], wireMaterial[0])
+                .input(plate, materialRubber[0], 6)
+                .output(conveyor[0])
+                .EUt(30)
+                .duration(300)
+                .buildAndRegister();
+
+        STEAM_COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(motor[0])
+                .input(rotor, Materials[0])
+                .input(screw, Materials[0])
+                .input(cableThickness[0], cableMaterial[0], 2)
+                .input(pipeNormalFluid, pipeMaterial[0])
+                .input(ring,Rubber,4)
+                .output(pump[0])
+                .EUt(30)
+                .duration(300)
+                .buildAndRegister();
+
+        COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, sensorMaterial2[0], 4)
+                .input(stick, sensorMaterial[0])
+                .input(gemShape[0], gemMaterial[0])
+                .input(OrePrefix.circuit, circuits[0])
+                .output(sensor[0])
+                .EUt(30)
+                .duration(300)
+                .buildAndRegister();
+
+        COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(stick, sensorMaterial[0], 4)
+                .input(cableThickness[0], cableMaterial[0], 2)
+                .input(gemShape[0], gemMaterial[0])
+                .input(OrePrefix.circuit, circuits[0], 2)
+                .output(emitter[0])
+                .EUt(30)
+                .duration(300)
+                .buildAndRegister();
     }
 
 

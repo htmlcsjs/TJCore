@@ -17,6 +17,7 @@ import gregtech.common.metatileentities.MetaTileEntities;
 import net.minecraft.util.ResourceLocation;
 
 import TJCore.common.recipes.recipemaps.TJRecipeMaps;
+import static gregtech.common.metatileentities.MetaTileEntities.*;
 
 import java.util.function.Function;
 
@@ -24,12 +25,12 @@ public class TJMetaTileEntities {
 
     // MACHINE ID 12000-12599
 
-    public static final SimpleMachineMetaTileEntity[] COMPONENT_ASSEMBLER = new SimpleMachineMetaTileEntity[GTValues.V.length - 1];
-    public static final SteamAssembler STEAM_ASSEMBLER = new SteamAssembler(tjcoreID("steam_assembler"));
+    public static  SimpleMachineMetaTileEntity[] COMPONENT_ASSEMBLER = new SimpleMachineMetaTileEntity[GTValues.V.length - 1];
+    public static  SteamAssembler STEAM_ASSEMBLER = new SteamAssembler(tjcoreID("steam_assembler"));
 
     public static void init() {
         registerSimpleMetaTileEntity(COMPONENT_ASSEMBLER, 12001, "component_assembler", TJRecipeMaps.COMPONENT_ASSEMBLER_RECIPES, Textures.ASSEMBLER_OVERLAY, false);
-        register(12010, STEAM_ASSEMBLER);
+       registerMetaTileEntity(12010, STEAM_ASSEMBLER);
     }
 
     private static void registerSimpleMetaTileEntity(SimpleMachineMetaTileEntity[] machines, int startID, String name, RecipeMap<?> map, ICubeRenderer texture, boolean frontfacing, Function<Integer, Integer> tankScalingFunction) {
@@ -40,15 +41,9 @@ public class TJMetaTileEntities {
         registerSimpleMetaTileEntity(machines, startID, name, map, texture, frontfacing, GTUtility.defaultTankSizeFunction);
     }
 
-    private static <T extends MetaTileEntity> T register(int id, T t) {
-        GregTechAPI.MTE_REGISTRY.register(id, t.metaTileEntityId, t);
-
-        return t;
-
-    }
-
     private static ResourceLocation tjcoreID(String name) {
         return new ResourceLocation(TJValues.MODID, name);
+
     }
 
 }

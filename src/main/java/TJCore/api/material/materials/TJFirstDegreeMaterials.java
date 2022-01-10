@@ -84,6 +84,7 @@ public class TJFirstDegreeMaterials {
         FluidPipeProperties bluesteelFluidPipeProps = new FluidPipeProperties(1500, 30, false);
         BlueSteel.setProperty(PropertyKey.FLUID_PIPE, bluesteelFluidPipeProps);
 
+
     }
 
 
