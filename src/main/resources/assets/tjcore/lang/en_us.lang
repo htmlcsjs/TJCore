@@ -8,13 +8,16 @@ material.bromobenzene=Bromobenzene
 
 
 //machines
-tjcore.machine.component_assembler.lv.name=Component Assembler
-tjcore.machine.component_assembler.mv.name=Advanced Component Assembler
-tjcore.machine.component_assembler.hv.name=Advanced Component Assembler II
-tjcore.machine.component_assembler.ev.name=Advanced Component Assembler III
-tjcore.machine.component_assembler.iv.name=Advanced Component Assembler IV
-tjcore.machine.component_assembler.luv.name=Elite Component Assembler
-tjcore.machine.component_assembler.zpm.name=Elite Component Assembler II
-tjcore.machine.component_assembler.uv.name=Elite Component Assembler III
+tjcore.machine.component_assembler.lv.name=Basic Component Assembler
+tjcore.machine.component_assembler.mv.name=Good Component Assembler
+tjcore.machine.component_assembler.hv.name=Advanced Component Assembler
+tjcore.machine.component_assembler.ev.name=Extreme Component Assembler
+tjcore.machine.component_assembler.iv.name=Elite Component Assembler
+tjcore.machine.steam_assembler.name=Steam Component Assembler
+
 recipemap.component_assembler.name=Component Assembler
+recipemap.steam_assembler.name=Steam Component Assembler
+
+
+
 gregtech.machine.component_assembler.tooltip=Steady there

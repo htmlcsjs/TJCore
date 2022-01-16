@@ -6,6 +6,7 @@ import static TJCore.common.recipes.recipemaps.TJRecipeMaps.*;
 import gregtech.api.items.metaitem.MetaItem;
 
 import gregtech.api.recipes.GTRecipeHandler;
+import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.OreDictUnifier;
 
 import static gregtech.api.unification.material.MarkerMaterials.*;
@@ -28,10 +29,77 @@ public class GTComponents {
         GTLog.logger.log(Level.ERROR, "motor man, make the recipe. FATAL");
 
         // remove motors
+        ModHandler.removeRecipeByName("gregtech:electric_motor_lv_steel");
+        ModHandler.removeRecipeByName("gregtech:electric_motor_lv_iron");
+        ModHandler.removeRecipeByName("gregtech:electric_motor_mv");
+        ModHandler.removeRecipeByName("gregtech:electric_motor_hv");
+        ModHandler.removeRecipeByName("gregtech:electric_motor_ev");
+        ModHandler.removeRecipeByName("gregtech:electric_motor_iv");
+        ModHandler.removeRecipeByName("gregtech:electric_piston_lv");
+        ModHandler.removeRecipeByName("gregtech:electric_piston_mv");
+        ModHandler.removeRecipeByName("gregtech:electric_piston_hv");
+        ModHandler.removeRecipeByName("gregtech:electric_piston_ev");
+        ModHandler.removeRecipeByName("gregtech:electric_piston_iv");
+        ModHandler.removeRecipeByName("gregtech:robot_arm_lv");
+        ModHandler.removeRecipeByName("gregtech:robot_arm_mv");
+        ModHandler.removeRecipeByName("gregtech:robot_arm_hv");
+        ModHandler.removeRecipeByName("gregtech:robot_arm_ev");
+        ModHandler.removeRecipeByName("gregtech:robot_arm_iv");
+        ModHandler.removeRecipeByName("gregtech:electric_pump_lv_rubber");
+        ModHandler.removeRecipeByName("gregtech:electric_pump_lv_silicone_rubber");
+        ModHandler.removeRecipeByName("gregtech:electric_pump_lv_styrene_butadiene_rubber");
+        ModHandler.removeRecipeByName("gregtech:electric_pump_mv_rubber");
+        ModHandler.removeRecipeByName("gregtech:electric_pump_mv_silicone_rubber");
+        ModHandler.removeRecipeByName("gregtech:electric_pump_mv_styrene_butadiene_rubber");
+        ModHandler.removeRecipeByName("gregtech:electric_pump_hv_rubber");
+        ModHandler.removeRecipeByName("gregtech:electric_pump_hv_silicone_rubber");
+        ModHandler.removeRecipeByName("gregtech:electric_pump_hv_styrene_butadiene_rubber");
+        ModHandler.removeRecipeByName("gregtech:electric_pump_ev_rubber");
+        ModHandler.removeRecipeByName("gregtech:electric_pump_ev_silicone_rubber");
+        ModHandler.removeRecipeByName("gregtech:electric_pump_ev_styrene_butadiene_rubber");
+        ModHandler.removeRecipeByName("gregtech:electric_pump_iv_rubber");
+        ModHandler.removeRecipeByName("gregtech:electric_pump_iv_silicone_rubber");
+        ModHandler.removeRecipeByName("gregtech:electric_pump_iv_styrene_butadiene_rubber");
+        ModHandler.removeRecipeByName("gregtech:conveyor_module_lv_rubber");
+        ModHandler.removeRecipeByName("gregtech:conveyor_module_lv_silicone_rubber");
+        ModHandler.removeRecipeByName("gregtech:conveyor_module_lv_styrene_butadiene_rubber");
+        ModHandler.removeRecipeByName("gregtech:conveyor_module_mv_rubber");
+        ModHandler.removeRecipeByName("gregtech:conveyor_module_mv_silicone_rubber");
+        ModHandler.removeRecipeByName("gregtech:conveyor_module_mv_styrene_butadiene_rubber");
+        ModHandler.removeRecipeByName("gregtech:conveyor_module_hv_rubber");
+        ModHandler.removeRecipeByName("gregtech:conveyor_module_hv_silicone_rubber");
+        ModHandler.removeRecipeByName("gregtech:conveyor_module_hv_styrene_butadiene_rubber");
+        ModHandler.removeRecipeByName("gregtech:conveyor_module_ev_rubber");
+        ModHandler.removeRecipeByName("gregtech:conveyor_module_ev_silicone_rubber");
+        ModHandler.removeRecipeByName("gregtech:conveyor_module_ev_styrene_butadiene_rubber");
+        ModHandler.removeRecipeByName("gregtech:conveyor_module_iv_rubber");
+        ModHandler.removeRecipeByName("gregtech:conveyor_module_iv_silicone_rubber");
+        ModHandler.removeRecipeByName("gregtech:conveyor_module_iv_styrene_butadiene_rubber");
+        ModHandler.removeRecipeByName("gregtech:emitter_lv");
+        ModHandler.removeRecipeByName("gregtech:emitter_mv");
+        ModHandler.removeRecipeByName("gregtech:emitter_hv");
+        ModHandler.removeRecipeByName("gregtech:emitter_ev");
+        ModHandler.removeRecipeByName("gregtech:emitter_iv");
+        ModHandler.removeRecipeByName("gregtech:sensor_lv");
+        ModHandler.removeRecipeByName("gregtech:sensor_mv");
+        ModHandler.removeRecipeByName("gregtech:sensor_hv");
+        ModHandler.removeRecipeByName("gregtech:sensor_ev");
+        ModHandler.removeRecipeByName("gregtech:sensor_iv");
+
+
         GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, OreDictUnifier.get(cableGtSingle, Tin, 2),
                 OreDictUnifier.get(stick, Iron, 2), OreDictUnifier.get(stick, IronMagnetic), OreDictUnifier.get(wireGtSingle, Copper, 4));
         GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, OreDictUnifier.get(cableGtSingle, Tin, 2),
                 OreDictUnifier.get(stick, Steel, 2), OreDictUnifier.get(stick, SteelMagnetic), OreDictUnifier.get(wireGtSingle, Copper, 4));
+        GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, OreDictUnifier.get(cableGtSingle, Copper, 2),
+                OreDictUnifier.get(stick, Aluminium, 2), OreDictUnifier.get(stick, SteelMagnetic), OreDictUnifier.get(wireGtDouble, Cupronickel, 4));
+        GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, OreDictUnifier.get(cableGtDouble, Silver, 2),
+                OreDictUnifier.get(stick, StainlessSteel, 2), OreDictUnifier.get(stick, SteelMagnetic), OreDictUnifier.get(wireGtDouble, Electrum, 4));
+        GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, OreDictUnifier.get(cableGtDouble, Aluminium, 2),
+                OreDictUnifier.get(stick, Titanium, 2), OreDictUnifier.get(stick, NeodymiumMagnetic), OreDictUnifier.get(wireGtDouble, Kanthal, 4));
+        //GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, OreDictUnifier.get(cableGtSingle, Tin, 2),
+        //        OreDictUnifier.get(stick, Steel, 2), OreDictUnifier.get(stick, SteelMagnetic), OreDictUnifier.get(wireGtSingle, Copper, 4));
+
         /*
         GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, OreDictUnifier.get(cableGtSingle, Tin, 2),
                 OreDictUnifier.get(stick, Steel, 2), OreDictUnifier.get(stick, SteelMagnetic), OreDictUnifier.get(wireGtSingle, Copper, 4));
@@ -63,7 +131,7 @@ public class GTComponents {
         Material[] sensorMaterial2 = {Steel, Electrum, RedSteel, BlueAlloy, BT6};
 
 
-        Material[] fluid = {Lubricant, Lubricant, Lubricant, Lubricant, Lubricant};
+        Material[] fluid = {Lubricant, Lubricant, Lubricant, TriphenylPhosphine, TriphenylPhosphine};
         int[] fluidAmount = {1000, 250, 500, 750, 1000};
         int[] fluidAmount2 = {500, 500, 500, 500, 500};
 

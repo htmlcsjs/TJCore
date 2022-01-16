@@ -25,7 +25,7 @@ public class TJMetaTileEntities {
 
     // MACHINE ID 12000-12599
 
-    public static  SimpleMachineMetaTileEntity[] COMPONENT_ASSEMBLER = new SimpleMachineMetaTileEntity[GTValues.V.length - 1];
+    public static  SimpleMachineMetaTileEntity[] COMPONENT_ASSEMBLER = new SimpleMachineMetaTileEntity[GTValues.LuV];
     public static  SteamAssembler STEAM_ASSEMBLER = new SteamAssembler(tjcoreID("steam_assembler"));
 
     public static void init() {

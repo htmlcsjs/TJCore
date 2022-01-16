@@ -62,7 +62,7 @@ public class SteamAssembler extends RecipeMapSteamMultiblockController implement
 
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart iMultiblockPart) {
-        return Textures.FROST_PROOF_CASING;
+        return Textures.PRIMITIVE_BRICKS;
     }
 
 
