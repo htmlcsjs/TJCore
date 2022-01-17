@@ -9,8 +9,6 @@ import gregtech.api.capability.impl.SteamMultiblockRecipeLogic;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.MetaTileEntityHolder;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
-import gregtech.api.metatileentity.multiblock.MultiblockAbility;
-import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.metatileentity.multiblock.RecipeMapSteamMultiblockController;
 import gregtech.api.metatileentity.sound.ISoundCreator;
 import gregtech.api.pattern.BlockPattern;
@@ -20,9 +18,17 @@ import gregtech.api.sound.GTSounds;
 import gregtech.api.util.GTLog;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
+
+
+import gregtech.client.renderer.texture.cube.SimpleCubeRenderer;
+import gregtech.client.renderer.texture.cube.SimpleSidedCubeRenderer;
+import net.minecraft.client.resources.DefaultPlayerSkin;
+
 import gregtech.common.blocks.BlockMetalCasing;
+import gregtech.common.blocks.BlockSteamCasing;
 import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.Level;
@@ -49,20 +55,23 @@ public class SteamAssembler extends RecipeMapSteamMultiblockController implement
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
-                .aisle("BBB", "BBB", "BBB") // used to have controller here (pointed towards 'A' in aisle below it)
-                .aisle("BBB", "BAB", "BBB") // further away from the controller
-                .aisle("BBB", "BAB", "BBB") // center slice of structure
-                .aisle("BBB", "BAB", "BBB") // closer to the controller
-                .aisle("BBB", "BCB", "BBB") // now controller is here (pointed towards nothing in aisle below it)
-                .where('C', selfPredicate())
-                .where('B', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.PRIMITIVE_BRICKS)).or((autoAbilities()).setMaxGlobalLimited(4)))
+                .aisle("BBB", "BBB", "EEE", "ADA") // used to have controller here (pointed towards 'A' in aisle below it)
+                .aisle("BBB", "BBB", "EEE", "DDD") // further away from the controller
+                .aisle("BBB", "BCB", "EEE", "ADA") // now controller is here (pointed towards nothing in aisle below it)
                 .where('A', any())
+                .where('B', states(Blocks.BRICK_BLOCK.getDefaultState()).or((autoAbilities()).setMaxGlobalLimited(4)))
+                .where('C', selfPredicate())
+                .where('D', states(MetaBlocks.STEAM_CASING.getState(BlockSteamCasing.SteamCasingType.BRONZE_HULL)))
+                .where('E', states(MetaBlocks.STEAM_CASING.getState(BlockSteamCasing.SteamCasingType.BRONZE_BRICKS_HULL)))
                 .build();
     }
 
+    private static SimpleCubeRenderer Brick = new SimpleCubeRenderer("minecraft:blocks/brick");
+
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart iMultiblockPart) {
-        return Textures.PRIMITIVE_BRICKS;
+       //return Textures.STEAM_BRICKED_CASING_BRONZE;
+        return Brick;
     }
 
 
