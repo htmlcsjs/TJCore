@@ -31,7 +31,7 @@ public class LubricantChains {
                 .duration(600)
                 .buildAndRegister();
 
-        // TODO: fixed this fucking recipe
+        // TODO: fixed this fucking recipe when we get gcy:sci
         CHEMICAL_RECIPES.recipeBuilder()
                 .fluidInputs(Water.getFluid(1000))
                 //.fluidInputs(CalciumCarbide.getFluid(1000))

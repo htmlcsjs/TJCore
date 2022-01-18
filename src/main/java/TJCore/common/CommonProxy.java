@@ -1,6 +1,7 @@
 package TJCore.common;
 
 import TJCore.TJValues;
+import TJCore.common.recipes.MultiblockHatches;
 import TJCore.common.recipes.recipemaps.TJRecipeMaps;
 import gregtech.api.util.GTLog;
 import net.minecraft.item.crafting.IRecipe;
@@ -27,5 +28,6 @@ public class CommonProxy {
         TJRecipeMaps.initRecipeMaps();
 
         GTComponents.registerComponents();
+        MultiblockHatches.registerIOHatches();
     }
 }

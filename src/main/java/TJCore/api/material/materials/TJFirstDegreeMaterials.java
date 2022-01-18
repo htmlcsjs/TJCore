@@ -63,14 +63,14 @@ public class TJFirstDegreeMaterials {
 
        Bromine.setProperty(PropertyKey.FLUID, new FluidProperty());
 
-        PhenylmagnesiumBromide = new Material.Builder(25004,"phenylmagnesiumbromide")
+        PhenylmagnesiumBromide = new Material.Builder(25005,"phenylmagnesiumbromide")
                 .fluid()
                 .colorAverage()
                 .components(Carbon, 6, Hydrogen, 5, Magnesium, 1, Bromine, 1)
                 .build()
                 .setFormula("C6H5MgBr");
 
-        Bromobenzene = new Material.Builder(25005,"bromobenzene")
+        Bromobenzene = new Material.Builder(25006,"bromobenzene")
                 .fluid()
                 .colorAverage()
                 .components(Carbon, 6, Hydrogen, 4, Bromine, 1)

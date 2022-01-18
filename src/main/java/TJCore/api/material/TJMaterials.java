@@ -37,14 +37,24 @@ public class TJMaterials {
     public static Material Birmabright;
 
     //Chemicals
-    public static Material  TriphenylPhosphine;// PhosphorusTrichloride + PhenylmagnesiumBromide → TriphenylPhosphine + 3(Mg,Br,Cl)
-    public static Material  PhosphorusTrichloride; // P4 + 6 Cl2 → 4 PCl3
-    public static Material  PhenylmagnesiumBromide; // Bromobenzene + mg
-    public static Material  Bromobenzene; // Benzene + Bromine
+    public static Material TriphenylPhosphine;// PhosphorusTrichloride + PhenylmagnesiumBromide → TriphenylPhosphine + 3(Mg,Br,Cl)
+    public static Material PhosphorusTrichloride; // P4 + 6 Cl2 → 4 PCl3
+    public static Material PhenylmagnesiumBromide; // Bromobenzene + mg
+    public static Material Bromobenzene; // Benzene + Bromine
 
 
-    public static Material  MolybdenumSulfide;
+    public static Material MolybdenumSulfide;
     public static Material Acetylene; // C2H2
     public static Material Difluoroethane; //C2H4F2
+
+    // Magic materials, unknown composition
+    public static Material Manasteel; // Fe50C + Salis
+    public static Material Terrasteel;
+    public static Material Thaumium; // TungstenSteel + Manasteel + salis?
+    public static Material Void;
+    public static Material ColdIron; // frozen molten iron?
+    public static Material Starmetal; // Ax*Sx* (salis + space shit?)
+    public static Material Starlight; // Ax*
+    public static Material Salis; // ?
 
 }
