@@ -95,8 +95,27 @@ public class GTComponents {
                 OreDictUnifier.get(stick, Aluminium, 2), OreDictUnifier.get(stick, SteelMagnetic), OreDictUnifier.get(wireGtDouble, Cupronickel, 4));
         GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, OreDictUnifier.get(cableGtDouble, Silver, 2),
                 OreDictUnifier.get(stick, StainlessSteel, 2), OreDictUnifier.get(stick, SteelMagnetic), OreDictUnifier.get(wireGtDouble, Electrum, 4));
-        GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, OreDictUnifier.get(cableGtDouble, Aluminium, 2),
-                OreDictUnifier.get(stick, Titanium, 2), OreDictUnifier.get(stick, NeodymiumMagnetic), OreDictUnifier.get(wireGtDouble, Kanthal, 4));
+        //GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, OreDictUnifier.get(cableGtDouble, Aluminium, 2),
+        //        OreDictUnifier.get(stick, Titanium, 2), OreDictUnifier.get(stick, NeodymiumMagnetic), OreDictUnifier.get(wireGtDouble, Graphene, 4));
+
+        MetaItem.MetaValueItem[] motor = {ELECTRIC_MOTOR_LV, ELECTRIC_MOTOR_MV, ELECTRIC_MOTOR_HV, ELECTRIC_MOTOR_EV, ELECTRIC_MOTOR_IV};
+        MetaItem.MetaValueItem[] piston = {ELECTRIC_PISTON_LV, ELECTRIC_PISTON_MV, ELECTRIC_PISTON_HV, ELECTRIC_PISTON_EV, ELECTRIC_PISTON_IV};
+        MetaItem.MetaValueItem[] robot_arm = {ROBOT_ARM_LV, ROBOT_ARM_MV, ROBOT_ARM_HV, ROBOT_ARM_EV, ROBOT_ARM_IV};
+        MetaItem.MetaValueItem[] pump = {ELECTRIC_PUMP_LV, ELECTRIC_PUMP_MV, ELECTRIC_PUMP_HV, ELECTRIC_PUMP_EV, ELECTRIC_PUMP_IV};
+        MetaItem.MetaValueItem[] emitter = {EMITTER_LV, EMITTER_MV, EMITTER_HV, EMITTER_EV, EMITTER_IV};
+        MetaItem.MetaValueItem[] sensor = {SENSOR_LV, SENSOR_MV, SENSOR_HV, SENSOR_EV, SENSOR_IV};
+        MetaItem.MetaValueItem[] conveyor = {CONVEYOR_MODULE_LV, CONVEYOR_MODULE_MV, CONVEYOR_MODULE_HV, CONVEYOR_MODULE_EV, CONVEYOR_MODULE_IV};
+
+        GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, OreDictUnifier.get(cableGtSingle, Tin, 2),
+                OreDictUnifier.get(stick, Steel, 2), OreDictUnifier.get(plate, Steel, 3), OreDictUnifier.get(gearSmall, Steel), motor[0].getStackForm());
+        GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, OreDictUnifier.get(cableGtSingle, Copper, 2),
+                OreDictUnifier.get(stick, Aluminium, 2), OreDictUnifier.get(plate, Aluminium, 3), OreDictUnifier.get(gearSmall, Aluminium), motor[1].getStackForm());
+        GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, OreDictUnifier.get(cableGtSingle, Gold, 2),
+                OreDictUnifier.get(stick, StainlessSteel, 2), OreDictUnifier.get(plate, StainlessSteel, 3), OreDictUnifier.get(gearSmall, StainlessSteel), motor[2].getStackForm());
+        GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, OreDictUnifier.get(cableGtSingle, Aluminium, 2),
+                OreDictUnifier.get(stick, Titanium, 2), OreDictUnifier.get(plate, Titanium, 3), OreDictUnifier.get(gearSmall, Titanium), motor[3].getStackForm());
+        //GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, OreDictUnifier.get(cableGtSingle, Platinum, 2),
+        //        OreDictUnifier.get(stick, TungstenSteel, 2), OreDictUnifier.get(plate, TungstenSteel, 3), OreDictUnifier.get(gearSmall, TungstenSteel), motor[4].getStackForm());
         //GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, OreDictUnifier.get(cableGtSingle, Tin, 2),
         //        OreDictUnifier.get(stick, Steel, 2), OreDictUnifier.get(stick, SteelMagnetic), OreDictUnifier.get(wireGtSingle, Copper, 4));
 
@@ -117,13 +136,13 @@ public class GTComponents {
                 OreDictUnifier.get(stick, Steel, 2), OreDictUnifier.get(stick, SteelMagnetic), OreDictUnifier.get(wireGtSingle, Copper, 4));
         */
 
-        Material[] Materials = {Iron, Birmabright, BlueSteel, BT6, TungstenSteel};
+        Material[] Materials = {Steel, Birmabright, BlueSteel, BT6, TungstenSteel};
         Material[] materialRubber = {Rubber, Rubber, SiliconeRubber, StyreneButadieneRubber, StyreneButadieneRubber};
-        Material[] MagMaterials = {IronMagnetic, SteelMagnetic, SteelMagnetic, NeodymiumMagnetic, NeodymiumMagnetic};
+        Material[] MagMaterials = {SteelMagnetic, SteelMagnetic, SteelMagnetic, NeodymiumMagnetic, NeodymiumMagnetic};
         OrePrefix[] cableThickness = {cableGtSingle, cableGtSingle, cableGtSingle, cableGtDouble, cableGtDouble};
         Material[] cableMaterial = {Tin, Copper, Silver, Aluminium, Platinum};
         OrePrefix[] wireThickness = {wireGtSingle, wireGtSingle, wireGtDouble, wireGtDouble, wireGtQuadruple};
-        Material[] wireMaterial = {Copper, AnnealedCopper, Gold, BlueSteel, Tungsten};
+        Material[] wireMaterial = {Copper, AnnealedCopper, Gold, BlueSteel, Graphene};
         Material[] pipeMaterial = {Bronze, Birmabright, BlueSteel, BT6, TungstenSteel};
         Material[] gemMaterial = {NetherQuartz, Ruby, Diamond, EnderEye, NetherStar};
         OrePrefix[] gemShape = {gem, gemExquisite, gemFlawless, gem, gem};
@@ -137,13 +156,7 @@ public class GTComponents {
 
         Material[] circuits = {Tier.Basic, Tier.Good, Tier.Advanced, Tier.Extreme, Tier.Elite};
 
-        MetaItem.MetaValueItem[] motor = {ELECTRIC_MOTOR_LV, ELECTRIC_MOTOR_MV, ELECTRIC_MOTOR_HV, ELECTRIC_MOTOR_EV, ELECTRIC_MOTOR_IV};
-        MetaItem.MetaValueItem[] piston = {ELECTRIC_PISTON_LV, ELECTRIC_PISTON_MV, ELECTRIC_PISTON_HV, ELECTRIC_PISTON_EV, ELECTRIC_PISTON_IV};
-        MetaItem.MetaValueItem[] robot_arm = {ROBOT_ARM_LV, ROBOT_ARM_MV, ROBOT_ARM_HV, ROBOT_ARM_EV, ROBOT_ARM_IV};
-        MetaItem.MetaValueItem[] pump = {ELECTRIC_PUMP_LV, ELECTRIC_PUMP_MV, ELECTRIC_PUMP_HV, ELECTRIC_PUMP_EV, ELECTRIC_PUMP_IV};
-        MetaItem.MetaValueItem[] emitter = {EMITTER_LV, EMITTER_MV, EMITTER_HV, EMITTER_EV, EMITTER_IV};
-        MetaItem.MetaValueItem[] sensor = {SENSOR_LV, SENSOR_MV, SENSOR_HV, SENSOR_EV, SENSOR_IV};
-        MetaItem.MetaValueItem[] conveyor = {CONVEYOR_MODULE_LV, CONVEYOR_MODULE_MV, CONVEYOR_MODULE_HV, CONVEYOR_MODULE_EV, CONVEYOR_MODULE_IV};
+
 
 
         for(int i = 0; i < 5; i++) {
@@ -161,6 +174,7 @@ public class GTComponents {
             COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
                     .input(motor[i])
                     .input(stick, Materials[i], 2)
+                    .input(gearSmall, Materials[i])
                     .input(plate, Materials[i], 3)
                     .input(cableThickness[i], cableMaterial[i], 2)
                     .fluidInputs(fluid[i].getFluid(fluidAmount[i]))
@@ -243,6 +257,7 @@ public class GTComponents {
         STEAM_COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
                 .input(motor[0])
                 .input(stick, Materials[0], 2)
+                .input(gearSmall, Materials[0])
                 .input(plate, Materials[0], 3)
                 .input(cableThickness[0], cableMaterial[0], 2)
                 .output(piston[0])

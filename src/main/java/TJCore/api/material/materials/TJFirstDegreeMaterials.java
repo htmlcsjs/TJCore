@@ -1,5 +1,6 @@
 package TJCore.api.material.materials;
 
+import gregtech.api.unification.crafttweaker.CTMaterialBuilder;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialFlag;
 import gregtech.api.unification.material.info.MaterialIconSet;
@@ -35,6 +36,8 @@ public class TJFirstDegreeMaterials {
                 .blastTemp(3400)
                 .build();
 
+
+
         TriphenylPhosphine  = new Material.Builder(25002,"triphenylphosphine")
                 .fluid()
                 .colorAverage()
@@ -48,6 +51,14 @@ public class TJFirstDegreeMaterials {
                 .components(Phosphorus, 1, Chlorine, 3)
                 .build()
                 .setFormula("PCl3", true);
+
+        MolybdenumSulfide = new Material.Builder(25004, "molybdenumsulfide")
+                .fluid()
+                .colorAverage()
+                .components(Molybdenum, 1, Sulfur, 2)
+                .build()
+                .setFormula("MoS2");
+
 
 
        Bromine.setProperty(PropertyKey.FLUID, new FluidProperty());

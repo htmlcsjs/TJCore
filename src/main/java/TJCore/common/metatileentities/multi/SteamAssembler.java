@@ -1,11 +1,9 @@
 package TJCore.common.metatileentities.multi;
 
-import TJCore.TJSounds;
-import TJCore.TJValues;
+
 import TJCore.common.recipes.recipemaps.TJRecipeMaps;
-import codechicken.lib.raytracer.CuboidRayTraceResult;
+
 import gregtech.api.capability.impl.SteamMultiWorkable;
-import gregtech.api.capability.impl.SteamMultiblockRecipeLogic;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.MetaTileEntityHolder;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
@@ -14,24 +12,13 @@ import gregtech.api.metatileentity.sound.ISoundCreator;
 import gregtech.api.pattern.BlockPattern;
 import gregtech.api.pattern.FactoryBlockPattern;
 import gregtech.api.pattern.TraceabilityPredicate;
-import gregtech.api.sound.GTSounds;
-import gregtech.api.util.GTLog;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
-
-
-import gregtech.client.renderer.texture.cube.SimpleCubeRenderer;
-import gregtech.client.renderer.texture.cube.SimpleSidedCubeRenderer;
-import net.minecraft.client.resources.DefaultPlayerSkin;
-
-import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.BlockSteamCasing;
 import gregtech.common.blocks.MetaBlocks;
-import net.minecraft.entity.player.EntityPlayer;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.util.*;
-import net.minecraft.util.math.BlockPos;
-import org.apache.logging.log4j.Level;
 
 import javax.annotation.Nonnull;
 
@@ -56,7 +43,7 @@ public class SteamAssembler extends RecipeMapSteamMultiblockController implement
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
                 .aisle("BBB", "BBB", "EEE", "ADA") // used to have controller here (pointed towards 'A' in aisle below it)
-                .aisle("BBB", "BBB", "EEE", "DDD") // further away from the controller
+                .aisle("BBB", "BAB", "EEE", "DDD") // further away from the controller
                 .aisle("BBB", "BCB", "EEE", "ADA") // now controller is here (pointed towards nothing in aisle below it)
                 .where('A', any())
                 .where('B', states(Blocks.BRICK_BLOCK.getDefaultState()).or((autoAbilities()).setMaxGlobalLimited(4)))
@@ -66,12 +53,11 @@ public class SteamAssembler extends RecipeMapSteamMultiblockController implement
                 .build();
     }
 
-    private static SimpleCubeRenderer Brick = new SimpleCubeRenderer("minecraft:blocks/brick");
+
 
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart iMultiblockPart) {
-       //return Textures.STEAM_BRICKED_CASING_BRONZE;
-        return Brick;
+        return TJCore.common.Textures.Brick;
     }
 
 

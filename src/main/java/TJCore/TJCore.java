@@ -23,7 +23,7 @@ public class TJCore {
 
     @Mod.EventHandler
     public void onConstruction(FMLConstructionEvent event) {
-        GTValues.HT = true;
+
     }
 
     @Mod.EventHandler

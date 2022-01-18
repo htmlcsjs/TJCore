@@ -30,6 +30,24 @@ public class LubricantChains {
                 .EUt(120)
                 .duration(600)
                 .buildAndRegister();
+
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(Water.getFluid(1000))
+                //.fluidInputs(CalciumCarbide.getFluid(1000))
+                .fluidOutputs(Acetylene.getFluid(1000))
+                //.fluidOutputs(CalciumHydroxide.getFluid(1000))
+                .EUt(120)
+                .duration(600)
+                .buildAndRegister();
+
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(Acetylene.getFluid(1000))
+                .fluidInputs(HydrofluoricAcid.getFluid(2000))
+                .fluidOutputs(Difluoroethane.getFluid(1000))
+                .EUt(480)
+                .duration(900)
+                .buildAndRegister();
+
     }
 
 }

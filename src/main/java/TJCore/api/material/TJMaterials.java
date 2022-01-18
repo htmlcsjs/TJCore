@@ -42,4 +42,9 @@ public class TJMaterials {
     public static Material  PhenylmagnesiumBromide; // Bromobenzene + mg
     public static Material  Bromobenzene; // Benzene + Bromine
 
+
+    public static Material  MolybdenumSulfide;
+    public static Material Acetylene; // C2H2
+    public static Material Difluoroethane; //C2H4F2
+
 }
