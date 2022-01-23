@@ -22,7 +22,7 @@ public class CommonProxy {
 
     @SubscribeEvent
     public static void init(RegistryEvent.Register<IRecipe> event) {
-        GTLog.logger.log(Level.ERROR, "motor man, make the recipe23. FATAL");
+
 
 
         TJRecipeMaps.initRecipeMaps();
