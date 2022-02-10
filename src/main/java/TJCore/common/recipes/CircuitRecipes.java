@@ -1,7 +1,14 @@
 package TJCore.common.recipes;
 
+import TJCore.api.TJLog;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.OreDictUnifier;
+import gregtech.api.unification.ore.OrePrefix;
+import gregtech.api.unification.stack.UnificationEntry;
+
+import static TJCore.common.metaitem.TJMetaItems.*;
+import static gregtech.api.unification.material.Materials.*;
+import static gregtech.common.items.MetaItems.*;
 
 public class CircuitRecipes {
 
@@ -41,6 +48,11 @@ public class CircuitRecipes {
 
     }
 
+    public static void registerCircuits() {
+
+        PrimitiveElectronicIntegratedLines();
+    }
+
     public static void PrimitiveElectronicIntegratedLines() {
         // board, wires, vacuum tubes, resistor(non smd)
 
@@ -48,7 +60,12 @@ public class CircuitRecipes {
         //  WBW
         //  #V#
 
-        ModHandler.addShapedRecipe("primitive_assembly", );
+        ModHandler.addShapedRecipe("primitive_assembly", PRIMITIVE_ASSEMBLY_ULV.getStackForm(),
+                "RVR", "WBW", " V ",
+                'R', RESISTOR.getStackForm(),
+                'V', VACUUM_TUBE.getStackForm(),
+                'B', COATED_BOARD.getStackForm(),
+                'W', new UnificationEntry(OrePrefix.wireGtSingle, Tin));
     }
 
     public static void MicroLine() {

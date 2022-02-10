@@ -1,6 +1,7 @@
 package TJCore.common.metatileentities.multi;
 
 
+import TJCore.common.TJTextures;
 import TJCore.common.recipes.recipemaps.TJRecipeMaps;
 
 import gregtech.api.capability.impl.SteamMultiWorkable;
@@ -57,7 +58,7 @@ public class SteamAssembler extends RecipeMapSteamMultiblockController implement
 
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart iMultiblockPart) {
-        return TJCore.common.Textures.Brick;
+        return TJTextures.Brick;
     }
 
 

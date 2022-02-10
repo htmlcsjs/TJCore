@@ -1,14 +1,13 @@
 package TJCore.common;
 
 import TJCore.TJValues;
-import gregtech.api.util.GTLog;
+import gregtech.client.renderer.texture.Textures;
 import gregtech.client.renderer.texture.cube.OrientedOverlayRenderer;
 import gregtech.client.renderer.texture.cube.SimpleCubeRenderer;
 import gregtech.client.renderer.texture.cube.SimpleOverlayRenderer;
-import static gregtech.client.renderer.texture;
+import static gregtech.client.renderer.texture.Textures.*;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.relauncher.Side;
-import org.apache.logging.log4j.Level;
 
 @Mod.EventBusSubscriber(modid = TJValues.MODID, value = Side.CLIENT)
 public class TJTextures {
@@ -18,7 +17,7 @@ public class TJTextures {
 
     public static void preInit() {
         Brick = new SimpleCubeRenderer("minecraft:blocks/brick");
-        TreeFarmerController = ;
+        TreeFarmerController = Textures.FROST_PROOF_CASING;
         STEAM_ASSEMBLER_OVERLAY = new OrientedOverlayRenderer("machines/steam_assembler", OrientedOverlayRenderer.OverlayFace.FRONT);
     }
 }

@@ -27,12 +27,13 @@ public class Ores {
 
     public static void RegisterOres() {
 
-        removeTinyAndReplaceWithChance(Magnetite);
+        //removeTinyAndReplaceWithChance(Magnetite);
 
     }
 
 
     private static void removeTinyAndReplaceWithChance(OrePrefix orePrefix, Material material, OreProperty property) {
+        /*
         Material byproductMaterial = GTUtility.selectItemInList(0, material, property.getOreByProducts(), Material.class);
         ItemStack byproductStack = OreDictUnifier.get(OrePrefix.gem, byproductMaterial);
         if (byproductStack.isEmpty()) byproductStack = OreDictUnifier.get(OrePrefix.dust, byproductMaterial);
@@ -81,6 +82,8 @@ public class Ores {
         if (!ingotStack.isEmpty() && doesMaterialUseNormalFurnace(smeltingMaterial)) {
             ModHandler.addSmeltingRecipe(new UnificationEntry(orePrefix, material), ingotStack);
         }
+
+         */
             /*
         mainDust.getProperty(OreByProductCategory)
         Recipe result = MACERATOR_RECIPES.findRecipe(2, Arrays.asList(OreDictUnifier.get(crushed, mainDust)), null, 0, IGNORE_FLUIDS);

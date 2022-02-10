@@ -9,7 +9,12 @@ public class TJMetaItems {
 
     public static final List<MetaItem<?>> ITEMS = MetaItem.getMetaItems();
 
-    public static MetaItem<?>.MetaValueItem PRIMITIVE_ASSEMBLER_ULV;
+    public static void init() {
+        TJMetaItem items = new TJMetaItem();
+        items.setRegistryName("TJMetaItem");
+    }
+
+    public static MetaItem<?>.MetaValueItem PRIMITIVE_ASSEMBLY_ULV;
     public static MetaItem<?>.MetaValueItem PRIMITIVE_COMPUTER_LV;
     public static MetaItem<?>.MetaValueItem PRIMITIVE_MAINFRAME_MV;
 

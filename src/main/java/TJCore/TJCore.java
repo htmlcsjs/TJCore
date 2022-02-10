@@ -1,5 +1,6 @@
 package TJCore;
 
+import TJCore.common.metaitem.TJMetaItems;
 import TJCore.common.metatileentities.TJMetaTileEntities;
 import codechicken.lib.CodeChickenLib;
 import gregtech.api.GTValues;
@@ -28,6 +29,7 @@ public class TJCore {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+        TJMetaItems.init();
         TJMetaTileEntities.init();
         TJSounds.registerSounds();
         proxy.preInit();

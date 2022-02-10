@@ -1,6 +1,7 @@
 package TJCore.common;
 
 import TJCore.TJValues;
+import TJCore.common.recipes.CircuitRecipes;
 import TJCore.common.recipes.MultiblockHatches;
 import TJCore.common.recipes.Ores;
 import TJCore.common.recipes.recipemaps.TJRecipeMaps;
@@ -26,7 +27,7 @@ public class CommonProxy {
 
 
         TJRecipeMaps.initRecipeMaps();
-
+        CircuitRecipes.registerCircuits();
         GTComponents.registerComponents();
         MultiblockHatches.registerIOHatches();
         Ores.RegisterOres();
