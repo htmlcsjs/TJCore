@@ -21,3 +21,7 @@ recipemap.steam_assembler.name=Steam Component Assembler
 
 
 gregtech.machine.component_assembler.tooltip=Steady there
+
+metaitem.circuit.primitive_assembly.name=Primitive Assembly
+metaitem.circuit.primitive_computer.name=Primitive Computer
+metaitem.circuit.primitive_mainframe.name=Primitive Mainframe
