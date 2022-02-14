@@ -13,10 +13,15 @@ tjcore.machine.component_assembler.mv.name=Good Component Assembler
 tjcore.machine.component_assembler.hv.name=Advanced Component Assembler
 tjcore.machine.component_assembler.ev.name=Extreme Component Assembler
 tjcore.machine.component_assembler.iv.name=Elite Component Assembler
-tjcore.machine.steam_assembler.name=Steam Component Assembler
 
+
+tjcore.machine.steam_assembler.name=Steam Component Assembler
+tjcore.machine.tree_farmer.name=Tree Farmer
+
+// Recipe Maps
 recipemap.component_assembler.name=Component Assembler
 recipemap.steam_assembler.name=Steam Component Assembler
+recipemap.tree_farmer.name=Tree Farmer
 
 
 

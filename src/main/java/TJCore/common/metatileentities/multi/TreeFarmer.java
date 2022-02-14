@@ -5,6 +5,7 @@ import TJCore.common.recipes.recipemaps.TJRecipeMaps;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.MetaTileEntityHolder;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
+import gregtech.api.metatileentity.multiblock.MultiblockAbility;
 import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.pattern.BlockPattern;
 import gregtech.api.pattern.FactoryBlockPattern;
@@ -12,6 +13,7 @@ import gregtech.api.pattern.TraceabilityPredicate;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.common.blocks.BlockMetalCasing;
+import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.electric.MetaTileEntityHull;
 import net.minecraft.util.ResourceLocation;
 
@@ -32,7 +34,15 @@ public class TreeFarmer extends RecipeMapMultiblockController {
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
-                .aisle()
+                .aisle("FFFF", "FFFF", "FFFF", "AFFA")
+                .aisle("FFFF", "FAAF", "FAAF", "FMMF")
+                .aisle("FFFF", "FAAF", "FAAF", "FMMF")
+                .aisle("CBBF", "FBBF", "FFFF", "AFFA")
+                .where('A', air())
+                .where('F', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.ALUMINIUM_FROSTPROOF)))
+                .where('B', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.ALUMINIUM_FROSTPROOF)).or((autoAbilities()).setMaxGlobalLimited(7)))
+                .where('C', selfPredicate())
+                .where('M', abilities(MultiblockAbility.MUFFLER_HATCH).or(states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.ALUMINIUM_FROSTPROOF))))
                 .build();
     }
 

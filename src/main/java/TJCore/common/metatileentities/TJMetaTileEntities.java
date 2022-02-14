@@ -2,6 +2,8 @@ package TJCore.common.metatileentities;
 
 import TJCore.TJValues;
 import TJCore.common.metatileentities.multi.SteamAssembler;
+import TJCore.common.metatileentities.multi.TreeFarmer;
+import TJCore.common.metatileentities.multi.fusion.MegaFusion;
 import gregtech.api.GTValues;
 import gregtech.api.GregTechAPI;
 import gregtech.api.gui.ModularUI;
@@ -28,9 +30,15 @@ public class TJMetaTileEntities {
     public static  SimpleMachineMetaTileEntity[] COMPONENT_ASSEMBLER = new SimpleMachineMetaTileEntity[GTValues.LuV];
     public static  SteamAssembler STEAM_ASSEMBLER = new SteamAssembler(tjcoreID("steam_assembler"));
 
+    public static TreeFarmer TREE_FARMER = new TreeFarmer(tjcoreID("tree_farmer"));
+    public static MegaFusion MEGA_FUSION = new MegaFusion(tjcoreID("mega_fusion"));
+
     public static void init() {
         registerSimpleMetaTileEntity(COMPONENT_ASSEMBLER, 12001, "component_assembler", TJRecipeMaps.COMPONENT_ASSEMBLER_RECIPES, Textures.ASSEMBLER_OVERLAY, false);
        registerMetaTileEntity(12010, STEAM_ASSEMBLER);
+
+       registerMetaTileEntity(12020, TREE_FARMER);
+       registerMetaTileEntity(12050, MEGA_FUSION);
     }
 
     private static void registerSimpleMetaTileEntity(SimpleMachineMetaTileEntity[] machines, int startID, String name, RecipeMap<?> map, ICubeRenderer texture, boolean frontfacing, Function<Integer, Integer> tankScalingFunction) {

@@ -12,6 +12,12 @@ public class TJMetaItem extends StandardMetaItem {
 
     @Override
     public void registerSubItems() {
+        SMD_RESISTOR_1 = addItem(1, "component.smd_resistor_1").setUnificationData(OrePrefix.component, Component.Resistor);
+        SMD_TRANSISTOR_1 = addItem(2, "component.smd_transistor_1").setUnificationData(OrePrefix.component, Component.Transistor);
+        SMD_DIODE_1 = addItem(3, "component.smd_diode_1").setUnificationData(OrePrefix.component, Component.Diode);
+        SMD_CAPACITOR_1 = addItem(4, "component.smd_capacitor_1").setUnificationData(OrePrefix.component, Component.Capacitor);
+        SMD_INDUCTOR_1 = addItem(5, "component.smd_inductor_1").setUnificationData(OrePrefix.component, Component.Inductor);
+
         PRIMITIVE_ASSEMBLY_ULV = addItem(100, "circuit.primitive_assembly").setUnificationData(OrePrefix.circuit, Tier.Primitive);
         PRIMITIVE_COMPUTER_LV = addItem(101, "circuit.primitive_computer").setUnificationData(OrePrefix.circuit, Tier.Basic);
         PRIMITIVE_MAINFRAME_MV = addItem(102, "circuit.primitive_mainframe").setUnificationData(OrePrefix.circuit, Tier.Good);

@@ -14,6 +14,42 @@ public class TJMetaItems {
         items.setRegistryName("TJMetaItem");
     }
 
+    //public static MetaItem<?>.MetaValueItem RESISTOR;
+    //public static MetaItem<?>.MetaValueItem TRANSISTOR;
+    //public static MetaItem<?>.MetaValueItem DIODE;
+    //public static MetaItem<?>.MetaValueItem CAPACITOR;
+    //public static MetaItem<?>.MetaValueItem INDUCTOR;
+
+    public static MetaItem<?>.MetaValueItem SMD_RESISTOR_1;
+    public static MetaItem<?>.MetaValueItem SMD_RESISTOR_2;
+    public static MetaItem<?>.MetaValueItem SMD_RESISTOR_3;
+    public static MetaItem<?>.MetaValueItem SMD_RESISTOR_4;
+    public static MetaItem<?>.MetaValueItem SMD_RESISTOR_5;
+
+    public static MetaItem<?>.MetaValueItem SMD_TRANSISTOR_1;
+    public static MetaItem<?>.MetaValueItem SMD_TRANSISTOR_2;
+    public static MetaItem<?>.MetaValueItem SMD_TRANSISTOR_3;
+    public static MetaItem<?>.MetaValueItem SMD_TRANSISTOR_4;
+    public static MetaItem<?>.MetaValueItem SMD_TRANSISTOR_5;
+
+    public static MetaItem<?>.MetaValueItem SMD_DIODE_1;
+    public static MetaItem<?>.MetaValueItem SMD_DIODE_2;
+    public static MetaItem<?>.MetaValueItem SMD_DIODE_3;
+    public static MetaItem<?>.MetaValueItem SMD_DIODE_4;
+    public static MetaItem<?>.MetaValueItem SMD_DIODE_5;
+
+    public static MetaItem<?>.MetaValueItem SMD_CAPACITOR_1;
+    public static MetaItem<?>.MetaValueItem SMD_CAPACITOR_2;
+    public static MetaItem<?>.MetaValueItem SMD_CAPACITOR_3;
+    public static MetaItem<?>.MetaValueItem SMD_CAPACITOR_4;
+    public static MetaItem<?>.MetaValueItem SMD_CAPACITOR_5;
+
+    public static MetaItem<?>.MetaValueItem SMD_INDUCTOR_1;
+    public static MetaItem<?>.MetaValueItem SMD_INDUCTOR_2;
+    public static MetaItem<?>.MetaValueItem SMD_INDUCTOR_3;
+    public static MetaItem<?>.MetaValueItem SMD_INDUCTOR_4;
+    public static MetaItem<?>.MetaValueItem SMD_INDUCTOR_5;
+
     public static MetaItem<?>.MetaValueItem PRIMITIVE_ASSEMBLY_ULV;
     public static MetaItem<?>.MetaValueItem PRIMITIVE_COMPUTER_LV;
     public static MetaItem<?>.MetaValueItem PRIMITIVE_MAINFRAME_MV;
