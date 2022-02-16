@@ -34,15 +34,16 @@ public class TreeFarmer extends RecipeMapMultiblockController {
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
-                .aisle("FFFF", "FFFF", "FFFF", "AFFA")
-                .aisle("FFFF", "FAAF", "FAAF", "FMMF")
-                .aisle("FFFF", "FAAF", "FAAF", "FMMF")
-                .aisle("CBBF", "FBBF", "FFFF", "AFFA")
+                .aisle("BBBBB", "FFFFF", "FFFFF", "FFFFF", "AFFFA")
+                .aisle("BBBBB", "FAAAF", "FAAAF", "FAAAF", "FFFFF")
+                .aisle("BBBBB", "FAAAF", "FAAAF", "FAAAF", "FFMFF")
+                .aisle("BBBBB", "FAAAF", "FAAAF", "FAAAF", "FFFFF")
+                .aisle("BBBBB", "FFCFF", "FFFFF", "FFFFF", "AFFFA")
                 .where('A', air())
                 .where('F', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.ALUMINIUM_FROSTPROOF)))
                 .where('B', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.ALUMINIUM_FROSTPROOF)).or((autoAbilities()).setMaxGlobalLimited(7)))
                 .where('C', selfPredicate())
-                .where('M', abilities(MultiblockAbility.MUFFLER_HATCH).or(states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.ALUMINIUM_FROSTPROOF))))
+                .where('M', abilities(MultiblockAbility.MUFFLER_HATCH))
                 .build();
     }
 
