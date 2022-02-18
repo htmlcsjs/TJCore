@@ -11,9 +11,8 @@ import gregtech.api.unification.OreDictUnifier;
 
 import static gregtech.api.unification.material.MarkerMaterials.*;
 import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.properties.PropertyKey;
 import gregtech.api.unification.ore.OrePrefix;
-import gregtech.api.util.GTLog;
-import org.apache.logging.log4j.Level;
 
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
@@ -25,8 +24,6 @@ public class GTComponents {
 
     public static void registerComponents() {
 
-        //ArrayList<IItemStack> rods = new ArrayList<IItemStack>(5);
-        GTLog.logger.log(Level.ERROR, "motor man, make the recipe. FATAL");
 
         // remove motors
         ModHandler.removeRecipeByName("gregtech:electric_motor_lv_steel");
@@ -316,6 +313,11 @@ public class GTComponents {
                 .EUt(30)
                 .duration(300)
                 .buildAndRegister();
+    }
+
+    public static void registerHullsCasings() {
+
+
     }
 
 
