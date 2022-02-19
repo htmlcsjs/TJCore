@@ -3,6 +3,7 @@ package TJCore.api.material.materials;
 import gregtech.api.unification.crafttweaker.CTMaterialBuilder;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialFlag;
+import gregtech.api.unification.material.info.MaterialFlags;
 import gregtech.api.unification.material.info.MaterialIconSet;
 import gregtech.api.unification.material.properties.*;
 import net.minecraftforge.fluids.Fluid;
@@ -28,11 +29,11 @@ public class TJFirstDegreeMaterials {
                 .components(Aluminium, 5, Magnesium, 1, Manganese, 1)
                 .build();
 
-        BT6 = new Material.Builder(25001, "bt6")
+        BT6 = new Material.Builder(25001, "bt_6")
                 .ingot().fluid()
                 .colorAverage().iconSet(MaterialIconSet.SHINY)
                 .flags(SetMaterialFlags(STANDARDPLATE, STANDARDROD, STANDARDROTOR, STANDARDGEAR, STANDARDSPRING))
-                .components(Iron,3, Carbon,1, Vanadium, 5, Titanium, 40, Aluminium, 6)
+                .components(Iron, 3, Carbon, 1, Vanadium, 5, Titanium, 40, Aluminium, 6)
                 .blastTemp(3400)
                 .build();
 
@@ -95,7 +96,11 @@ public class TJFirstDegreeMaterials {
         FluidPipeProperties bluesteelFluidPipeProps = new FluidPipeProperties(1500, 30, false);
         BlueSteel.setProperty(PropertyKey.FLUID_PIPE, bluesteelFluidPipeProps);
 
+        Polyethylene.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
+        TinAlloy.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
 
+        // becuase of techs foolishness and thinking graphenes are a foil
+        Graphene.addFlags(MaterialFlags.GENERATE_FOIL);
     }
 
 

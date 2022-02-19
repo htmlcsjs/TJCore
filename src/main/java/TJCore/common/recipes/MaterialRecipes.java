@@ -46,7 +46,6 @@ public class MaterialRecipes {
 
             RecipeMaps.ASSEMBLER_RECIPES.recipeBuilder()
                     .input(OrePrefix.stick, mat, 5)
-                    .input(plate, mat)
                     .circuitMeta(4)
                     .outputs(OreDictUnifier.get(prefix, mat, 1))
                     .EUt(VA[LV])

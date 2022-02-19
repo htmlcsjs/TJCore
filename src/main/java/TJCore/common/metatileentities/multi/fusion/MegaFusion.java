@@ -1,7 +1,7 @@
 package TJCore.common.metatileentities.multi.fusion;
 
 import TJCore.common.TJTextures;
-//import TJCore.common.metatileentities.multi.TreeFarmer;
+//import TJCore.common.metatileentities.multi.electric.TreeFarmer;
 import TJCore.common.metatileentities.TJMetaTileEntities;
 import TJCore.common.recipes.recipemaps.TJRecipeMaps;
 import gregtech.api.metatileentity.MetaTileEntity;
@@ -101,6 +101,11 @@ public class MegaFusion extends RecipeMapMultiblockController {
 
     @Override
     public void update() {
+    }
+
+    @Override
+    public boolean shouldShowInJei() {
+        return false;
     }
 
     @Override

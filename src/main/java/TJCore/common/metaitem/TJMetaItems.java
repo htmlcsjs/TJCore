@@ -1,7 +1,9 @@
 package TJCore.common.metaitem;
 
 
+import TJCore.common.tools.TJToolMetaItem;
 import gregtech.api.items.metaitem.MetaItem;
+import gregtech.api.items.toolitem.ToolMetaItem;
 
 import java.util.*;
 
@@ -12,6 +14,9 @@ public class TJMetaItems {
     public static void init() {
         TJMetaItem items = new TJMetaItem();
         items.setRegistryName("TJMetaItem");
+
+        TJToolMetaItem tools = new TJToolMetaItem();
+        tools.setRegistryName("TJMetaTool");
     }
 
     //public static MetaItem<?>.MetaValueItem RESISTOR;
@@ -103,5 +108,5 @@ public class TJMetaItems {
     // have like 4 or 5 tiers of each smd max (giving us a chance to make them more complex on later tiers than just wire, plate, fluid)
 
     //
-
+    public static ToolMetaItem<?>.MetaToolValueItem LITHOGRAPHY_MASK;
 }

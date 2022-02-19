@@ -1,7 +1,13 @@
 package TJCore.common.metaitem;
 
+import TJCore.common.tools.ToolLithographyMask;
 import gregtech.api.items.metaitem.*;
 import static gregtech.api.unification.material.MarkerMaterials.*;
+
+
+import gregtech.api.items.toolitem.ToolMetaItem;
+import gregtech.api.unification.material.Material;
+import static gregtech.api.unification.material.Materials.*;
 import gregtech.api.unification.ore.OrePrefix;
 
 import static TJCore.common.metaitem.TJMetaItems.*;
@@ -12,11 +18,23 @@ public class TJMetaItem extends StandardMetaItem {
 
     @Override
     public void registerSubItems() {
-        SMD_RESISTOR_1 = addItem(1, "component.smd_resistor_1").setUnificationData(OrePrefix.component, Component.Resistor);
-        SMD_TRANSISTOR_1 = addItem(2, "component.smd_transistor_1").setUnificationData(OrePrefix.component, Component.Transistor);
-        SMD_DIODE_1 = addItem(3, "component.smd_diode_1").setUnificationData(OrePrefix.component, Component.Diode);
-        SMD_CAPACITOR_1 = addItem(4, "component.smd_capacitor_1").setUnificationData(OrePrefix.component, Component.Capacitor);
-        SMD_INDUCTOR_1 = addItem(5, "component.smd_inductor_1").setUnificationData(OrePrefix.component, Component.Inductor);
+        SMD_RESISTOR_1      = addItem(1, "component.smd_resistor_1").setUnificationData(OrePrefix.component, Component.Resistor);
+        SMD_TRANSISTOR_1    = addItem(2, "component.smd_transistor_1").setUnificationData(OrePrefix.component, Component.Transistor);
+        SMD_DIODE_1         = addItem(3, "component.smd_diode_1").setUnificationData(OrePrefix.component, Component.Diode);
+        SMD_CAPACITOR_1     = addItem(4, "component.smd_capacitor_1").setUnificationData(OrePrefix.component, Component.Capacitor);
+        SMD_INDUCTOR_1      = addItem(5, "component.smd_inductor_1").setUnificationData(OrePrefix.component, Component.Inductor);
+
+        SMD_RESISTOR_2      = addItem(6, "component.smd_resistor_2").setUnificationData(OrePrefix.component, Component.Resistor);
+        SMD_TRANSISTOR_2    = addItem(7, "component.smd_transistor_2").setUnificationData(OrePrefix.component, Component.Transistor);
+        SMD_DIODE_2         = addItem(8, "component.smd_diode_2").setUnificationData(OrePrefix.component, Component.Diode);
+        SMD_CAPACITOR_2     = addItem(9, "component.smd_capacitor_2").setUnificationData(OrePrefix.component, Component.Capacitor);
+        SMD_INDUCTOR_2      = addItem(10, "component.smd_inductor_2").setUnificationData(OrePrefix.component, Component.Inductor);
+
+        SMD_RESISTOR_3      = addItem(11, "component.smd_resistor_3").setUnificationData(OrePrefix.component, Component.Resistor);
+        SMD_TRANSISTOR_3    = addItem(12, "component.smd_transistor_3").setUnificationData(OrePrefix.component, Component.Transistor);
+        SMD_DIODE_3         = addItem(13, "component.smd_diode_3").setUnificationData(OrePrefix.component, Component.Diode);
+        SMD_CAPACITOR_3     = addItem(14, "component.smd_capacitor_3").setUnificationData(OrePrefix.component, Component.Capacitor);
+        SMD_INDUCTOR_3      = addItem(15, "component.smd_inductor_3").setUnificationData(OrePrefix.component, Component.Inductor);
 
         PRIMITIVE_ASSEMBLY_ULV = addItem(100, "circuit.primitive_assembly").setUnificationData(OrePrefix.circuit, Tier.Primitive);
         PRIMITIVE_COMPUTER_LV = addItem(101, "circuit.primitive_computer").setUnificationData(OrePrefix.circuit, Tier.Basic);

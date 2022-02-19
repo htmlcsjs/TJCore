@@ -3,7 +3,8 @@ package TJCore.common.recipes;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
-import gregtech.common.blocks.HermeticCasings;
+import gregtech.common.blocks.BlockHermeticCasing;
+
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.common.metatileentities.storage.MetaTileEntityCrate;
@@ -13,7 +14,7 @@ import gregtech.loaders.recipe.CraftingComponent;
 import net.minecraft.init.Blocks;
 
 import static TJCore.common.recipes.recipemaps.TJRecipeMaps.*;
-import static gregtech.common.blocks.HermeticCasings.HermeticCasingsType.*;
+import static gregtech.common.blocks.BlockHermeticCasing.HermeticCasingsType.*;
 import static gregtech.common.items.MetaItems.*;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
 
@@ -24,7 +25,7 @@ public class MultiblockHatches {
 
     // TODO(Onion): figure out what do do for ulv hatches/buses
     public static MetaItem.MetaValueItem[] pump = {ELECTRIC_PUMP_LV, ELECTRIC_PUMP_LV, ELECTRIC_PUMP_MV, ELECTRIC_PUMP_HV, ELECTRIC_PUMP_EV, ELECTRIC_PUMP_IV, ELECTRIC_PUMP_LUV, ELECTRIC_PUMP_ZPM, ELECTRIC_PUMP_UV};
-    public static HermeticCasings.HermeticCasingsType[] hermeticCasings = {HERMETIC_LV, HERMETIC_LV, HERMETIC_MV, HERMETIC_HV, HERMETIC_EV, HERMETIC_IV, HERMETIC_LUV, HERMETIC_ZPM, HERMETIC_UV};
+    public static BlockHermeticCasing.HermeticCasingsType[] hermeticCasings = {HERMETIC_LV, HERMETIC_LV, HERMETIC_MV, HERMETIC_HV, HERMETIC_EV, HERMETIC_IV, HERMETIC_LUV, HERMETIC_ZPM, HERMETIC_UV};
     public static MetaTileEntityCrate[] crates = {BRONZE_CRATE, STEEL_CRATE, ALUMINIUM_CRATE, STAINLESS_STEEL_CRATE, TITANIUM_CRATE, TUNGSTENSTEEL_CRATE};
 
 
