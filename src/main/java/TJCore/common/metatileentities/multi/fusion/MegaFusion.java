@@ -105,7 +105,7 @@ public class MegaFusion extends RecipeMapMultiblockController {
 
     @Override
     public boolean shouldShowInJei() {
-        return false;
+        return true;
     }
 
     @Override

@@ -101,6 +101,7 @@ public class TJFirstDegreeMaterials {
 
         // becuase of techs foolishness and thinking graphenes are a foil
         Graphene.addFlags(MaterialFlags.GENERATE_FOIL);
+
     }
 
 

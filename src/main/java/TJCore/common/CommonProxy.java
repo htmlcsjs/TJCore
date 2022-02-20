@@ -26,6 +26,8 @@ public class CommonProxy {
         TJRecipeMaps.initRecipeMaps();
         CircuitRecipes.registerCircuits();
         GTComponents.registerComponents();
+        GTComponents.registerHullsCasings();
+
         MultiblockHatches.registerIOHatches();
         Ores.RegisterOres();
 

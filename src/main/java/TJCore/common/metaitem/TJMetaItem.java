@@ -84,6 +84,11 @@ public class TJMetaItem extends StandardMetaItem {
         WETWARE_ASSEMBLY_UHV    = addItem(136, "circuit.wetware_assembly").setUnificationData(OrePrefix.circuit, Tier.Infinite);
         WETWARE_COMPUTER_UEV    = addItem(137, "circuit.wetware_computer").setUnificationData(OrePrefix.circuit, Tier.Ultra);
         WETWARE_MAINFRAME_UIV   = addItem(138, "circuit.wetware_mainframe").setUnificationData(OrePrefix.circuit, Tier.Insane);
+
+        TREATED_CPU_WAFER           = addItem(200, "wafer.cpu_treated");
+        TREATED_RAM_WAFER           = addItem(201, "wafer.ram_treated");
+        TREATED_ULPIC_WAFER         = addItem(202, "wafer.ulpic_treated");
+        TREATED_NANO_CPU_WAFER           = addItem(203, "wafer.nano_cpu_treated");
     }
 
 }

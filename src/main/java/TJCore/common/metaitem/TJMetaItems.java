@@ -109,4 +109,11 @@ public class TJMetaItems {
 
     //
     public static ToolMetaItem<?>.MetaToolValueItem LITHOGRAPHY_MASK;
+
+    public static MetaItem<?>.MetaValueItem TREATED_CPU_WAFER;
+    public static MetaItem<?>.MetaValueItem TREATED_RAM_WAFER;
+    public static MetaItem<?>.MetaValueItem TREATED_NANO_CPU_WAFER;
+    public static MetaItem<?>.MetaValueItem TREATED_ULPIC_WAFER;
+    //public static MetaItem<?>.MetaValueItem TREATED_CPU_WAFER;
+
 }

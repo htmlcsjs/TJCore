@@ -3,16 +3,28 @@ package TJCore.common.recipes;
 import static TJCore.api.material.TJMaterials.*;
 import static TJCore.common.recipes.recipemaps.TJRecipeMaps.*;
 
+import gregtech.api.GTValues;
 import gregtech.api.items.metaitem.MetaItem;
 
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
+import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.OreDictUnifier;
 
 import static gregtech.api.unification.material.MarkerMaterials.*;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.PropertyKey;
 import gregtech.api.unification.ore.OrePrefix;
+import gregtech.api.unification.stack.UnificationEntry;
+import gregtech.common.blocks.BlockMachineCasing;
+import gregtech.common.metatileentities.MetaTileEntities;
+import gregtech.loaders.recipe.CraftingComponent;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidStack;
+
+import java.util.Locale;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
@@ -316,7 +328,20 @@ public class GTComponents {
     }
 
     public static void registerHullsCasings() {
+        Material[] material = {WroughtIron, Steel, Aluminium, StainlessSteel, Titanium, TungstenSteel, RhodiumPlatedPalladium, NaquadahAlloy, Darmstadtium, Neutronium };
+        Material[] wireMaterial = {Lead, Tin, Copper, Gold, Aluminium, Tungsten, NiobiumTitanium, VanadiumGallium, YttriumBariumCuprate, Europium};
+        Material[] fluidMaterials = {};
 
+
+        for(int i=0; i < GTValues.VA.length; i++) {
+            String voltage = GTValues.VN[i].toLowerCase();
+            ModHandler.removeRecipeByName("gregtech:gregtech.machine.hull." + voltage);
+            ModHandler.removeRecipeByName("gregtech:casing_" + voltage);
+
+            BlockMachineCasing.MachineCasingType machinecasingtype = BlockMachineCasing.MachineCasingType.values()[i];
+            GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{OreDictUnifier.get(plate, material[i], 8), INTEGRATED_CIRCUIT.getStackForm()});
+            //GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{MetaTileEntities.HULL[i].getStackForm(), OreDictUnifier.get(cableGtSingle, wireMaterial[i], 2)}, new FluidStack[]{});
+        }
 
     }
 

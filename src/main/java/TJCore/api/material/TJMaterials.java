@@ -47,6 +47,9 @@ public class TJMaterials {
     public static Material Acetylene; // C2H2
     public static Material Difluoroethane; //C2H4F2
 
+    public static Material AllylAcetate;
+
+
     // Magic materials, unknown composition
     public static Material Manasteel; // Fe50C + Salis
     public static Material Terrasteel;

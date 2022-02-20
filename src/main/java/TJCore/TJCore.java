@@ -33,7 +33,6 @@ public class TJCore {
         TJMetaTileEntities.init();
         TJSounds.registerSounds();
         proxy.preInit();
-
     }
 
     @Mod.EventHandler
