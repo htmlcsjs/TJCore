@@ -179,6 +179,9 @@ public class CircuitRecipes {
 
 
 
+       //LASER_ENGRAVER_RECIPES.recipeBuilder()
+       //        .input(LITHOGRAPHY_MASK.getStackForm(Polyethylene))
+
 
 
         // TODO(Onion): add to cleanroom logic recipes

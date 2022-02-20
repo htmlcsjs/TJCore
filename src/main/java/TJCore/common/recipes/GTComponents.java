@@ -3,6 +3,7 @@ package TJCore.common.recipes;
 import static TJCore.api.material.TJMaterials.*;
 import static TJCore.common.recipes.recipemaps.TJRecipeMaps.*;
 
+import TJCore.common.TJConfig;
 import gregtech.api.GTValues;
 import gregtech.api.items.metaitem.MetaItem;
 
@@ -11,12 +12,14 @@ import gregtech.api.recipes.ModHandler;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.OreDictUnifier;
 
+import static gregtech.api.GTValues.VA;
 import static gregtech.api.unification.material.MarkerMaterials.*;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.PropertyKey;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.blocks.BlockMachineCasing;
+import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.loaders.recipe.CraftingComponent;
 import net.minecraft.item.ItemStack;
@@ -328,19 +331,53 @@ public class GTComponents {
     }
 
     public static void registerHullsCasings() {
+        //TODO (Onion): change to new materials when we find iv+ mats
         Material[] material = {WroughtIron, Steel, Aluminium, StainlessSteel, Titanium, TungstenSteel, RhodiumPlatedPalladium, NaquadahAlloy, Darmstadtium, Neutronium };
+        Material[] newMaterials = {WroughtIron, Steel, Birmabright, BlueSteel, BT6, TungstenSteel, RhodiumPlatedPalladium, NaquadahAlloy, Darmstadtium, Neutronium };
         Material[] wireMaterial = {Lead, Tin, Copper, Gold, Aluminium, Tungsten, NiobiumTitanium, VanadiumGallium, YttriumBariumCuprate, Europium};
-        Material[] fluidMaterials = {};
+        Material[] newWireMaterial = {Lead, Tin, Copper, Gold, Aluminium, Tungsten, NiobiumTitanium, VanadiumGallium, YttriumBariumCuprate, Europium};
+        Material[] fluidMaterials = {Polyethylene, Polyethylene, Polyethylene, Polyethylene, Polyethylene, Polytetrafluoroethylene, Polytetrafluoroethylene, Polybenzimidazole, Polybenzimidazole, Polybenzimidazole};
 
 
-        for(int i=0; i < GTValues.VA.length; i++) {
+        for(int i=0; i < 10; i++) {
             String voltage = GTValues.VN[i].toLowerCase();
+
             ModHandler.removeRecipeByName("gregtech:gregtech.machine.hull." + voltage);
             ModHandler.removeRecipeByName("gregtech:casing_" + voltage);
 
             BlockMachineCasing.MachineCasingType machinecasingtype = BlockMachineCasing.MachineCasingType.values()[i];
-            GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{OreDictUnifier.get(plate, material[i], 8), INTEGRATED_CIRCUIT.getStackForm()});
-            //GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{MetaTileEntities.HULL[i].getStackForm(), OreDictUnifier.get(cableGtSingle, wireMaterial[i], 2)}, new FluidStack[]{});
+            GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{OreDictUnifier.get(plate, material[i], 8), IntCircuitIngredient.getIntegratedCircuit(8)});
+            GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.values()[i]), OreDictUnifier.get(cableGtSingle, wireMaterial[i], 2)}, new FluidStack[]{fluidMaterials[i].getFluid(288)});
+            //if(i==2)
+                //GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{MetaTileEntities.HULL[i].getStackForm(), OreDictUnifier.get(cableGtSingle, AnnealedCopper, 2)}, new FluidStack[]{Polyethylene.getFluid(288)});
+            if(!TJConfig.recipes.harderMetalCasings) {
+                ASSEMBLER_RECIPES.recipeBuilder()
+                        .input(plate, newMaterials[i], 8)
+                        .circuitMeta(8)
+                        .outputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.values()[i]))
+                        .EUt(VA[i > 0 ? i - 1 : i])
+                        .duration(24)
+                        .buildAndRegister();
+
+                ASSEMBLER_RECIPES.recipeBuilder()
+                        .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.values()[i]))
+                        .input(cableGtSingle, newWireMaterial[i], 2)
+                        .fluidInputs(PolyvinylAcetate.getFluid(GTValues.L))
+                        .outputs(MetaTileEntities.HULL[i].getStackForm())
+                        .EUt(VA[i > 0 ? i - 1 : i])
+                        .duration(32)
+                        .buildAndRegister();
+            }
+            else {
+                ASSEMBLER_RECIPES.recipeBuilder()
+                        .input(plate, newMaterials[i], 8)
+                        .input(screw, newMaterials[i], 24)
+                        .circuitMeta(8)
+                        .outputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.values()[i]))
+                        .EUt(VA[i > 0 ? i - 1 : i])
+                        .duration(24)
+                        .buildAndRegister();
+            }
         }
 
     }

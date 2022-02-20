@@ -18,7 +18,7 @@ public class CommonProxy {
 
     }
 
-    @SubscribeEvent
+    @SubscribeEvent()
     public static void init(RegistryEvent.Register<IRecipe> event) {
 
 
