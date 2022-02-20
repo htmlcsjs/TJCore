@@ -377,6 +377,15 @@ public class GTComponents {
                         .EUt(VA[i > 0 ? i - 1 : i])
                         .duration(24)
                         .buildAndRegister();
+
+                ASSEMBLER_RECIPES.recipeBuilder()
+                        .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.values()[i]))
+                        .input(cableGtSingle, newWireMaterial[i], 2)
+                        .fluidInputs(PolyvinylAcetate.getFluid(GTValues.L))
+                        .outputs(MetaTileEntities.HULL[i].getStackForm())
+                        .EUt(VA[i > 0 ? i - 1 : i])
+                        .duration(32)
+                        .buildAndRegister();
             }
         }
 
