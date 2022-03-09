@@ -73,6 +73,9 @@ dependencies {
     "deobfCompile"("mcjty.theoneprobe:TheOneProbe-1.12:1.12-1.4.23-16")
     "deobfCompile"("team.chisel.ctm:CTM:MC1.12.2-1.0.2.31")
     "deobfCompile"("CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.655")
+    "provided"(files("libs/BrandonsCore-1.12.2-2.4.20.162-universal.jar"))
+    "provided"(files("libs/Draconic-Evolution-1.12.2-2.3.28.354-universal.jar"))
+    "provided"(files("libs/RedstoneFlux-1.12-2.1.1.1-universal.jar"))
 }
 
 configure<JavaPluginConvention> {
