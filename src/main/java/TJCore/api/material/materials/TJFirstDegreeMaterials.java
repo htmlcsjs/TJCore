@@ -58,7 +58,7 @@ public class TJFirstDegreeMaterials {
                 .colorAverage()
                 .components(Molybdenum, 1, Sulfur, 2)
                 .build()
-                .setFormula("MoS2");
+                .setFormula("MoS2", true);
 
 
 
@@ -69,7 +69,7 @@ public class TJFirstDegreeMaterials {
                 .colorAverage()
                 .components(Carbon, 6, Hydrogen, 5, Magnesium, 1, Bromine, 1)
                 .build()
-                .setFormula("C6H5MgBr");
+                .setFormula("C6H5MgBr", true);
 
         Bromobenzene = new Material.Builder(25006,"bromobenzene")
                 .fluid()
@@ -78,7 +78,11 @@ public class TJFirstDegreeMaterials {
                 .build()
                 .setFormula("C6H5Br",true);
 
-
+        Draconium = new Material.Builder(25007, "draconium")
+                .ingot().fluid()
+                .color(0x573d85).iconSet(MaterialIconSet.DULL)
+                .flags(SetMaterialFlags(STANDARDPLATE, STANDARDCASING))
+                .build();
 
 
     }

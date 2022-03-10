@@ -1,10 +1,10 @@
 package TJCore;
 
+import TJCore.common.blocks.TJMetaBlocks;
 import TJCore.common.metaitem.TJMetaItems;
 import TJCore.common.metatileentities.TJMetaTileEntities;
 import codechicken.lib.CodeChickenLib;
 import gregtech.api.GTValues;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.*;
 import TJCore.common.CommonProxy;
 import net.minecraftforge.fml.common.event.FMLConstructionEvent;
@@ -32,6 +32,7 @@ public class TJCore {
         TJMetaItems.init();
         TJMetaTileEntities.init();
         TJSounds.registerSounds();
+        TJMetaBlocks.init();
         proxy.preInit();
     }
 

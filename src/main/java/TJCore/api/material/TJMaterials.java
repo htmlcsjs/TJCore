@@ -41,7 +41,7 @@ public class TJMaterials {
     public static Material PhosphorusTrichloride; // P4 + 6 Cl2 → 4 PCl3
     public static Material PhenylmagnesiumBromide; // Bromobenzene + mg
     public static Material Bromobenzene; // Benzene + Bromine
-
+    public static Material Draconium;
 
     public static Material MolybdenumSulfide;
     public static Material Acetylene; // C2H2

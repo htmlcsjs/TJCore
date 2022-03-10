@@ -13,7 +13,7 @@ public class TJRecipeMaps {
 
 
     public static final RecipeMap<SimpleRecipeBuilder> MEGA_FUSION_RECIPES = new RecipeMap<>("mega_fusion", 0, 1, 0, 3, 0, 4, 0, 3, new SimpleRecipeBuilder(), false);;
-
+    public static final RecipeMap<SimpleRecipeBuilder> ARMOR_INFUSER_RECIPES = new RecipeMap<>("armor_infuser", 1, 10, 1, 1, 1, 1, 0, 0, new SimpleRecipeBuilder(), false);
     public static void initRecipeMaps() {
 
     }
