@@ -5,7 +5,7 @@ material.triphenylphosphine=Triphenyl Phosphine
 material.phosphorustrichloride=Phosphorus Trichloride
 material.phenylmagnesiumbromide=Phenylmagnesium Bromide
 material.bromobenzene=Bromobenzene
-
+material.draconium=Draconium
 
 //machines
 tjcore.machine.component_assembler.lv.name=Basic Component Assembler
@@ -14,7 +14,7 @@ tjcore.machine.component_assembler.hv.name=Advanced Component Assembler
 tjcore.machine.component_assembler.ev.name=Extreme Component Assembler
 tjcore.machine.component_assembler.iv.name=Elite Component Assembler
 
-
+tjcore.machine.armor_infuser.name=Armor Infuser
 tjcore.machine.steam_assembler.name=Steam Component Assembler
 tjcore.machine.tree_farmer.name=Tree Farmer
 
@@ -23,7 +23,7 @@ recipemap.component_assembler.name=Component Assembler
 recipemap.steam_assembler.name=Steam Component Assembler
 recipemap.tree_farmer.name=Tree Farmer
 
-
+tile.draconic_casing.draconic_casing_normal.name=Draconic Casing
 
 gregtech.machine.component_assembler.tooltip=Steady there
 

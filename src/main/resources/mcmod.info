@@ -9,7 +9,7 @@
   "updateUrl": "",
   "authorList": ["BraggestSage833", "YoungOnion", "MadMan310"],
   "credits": "GregoriusT for making GregTech. Tech22, dandannoodlesman, KilaBash, Arch and many more for making CEu.",
-  "logoFile": "",
+  "logoFile": "assets/tjcore/logo.png",
   "screenshots": [],
   "dependencies": ["gregtech"]
 }
