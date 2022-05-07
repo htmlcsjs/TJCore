@@ -28,39 +28,40 @@ public class ArmorInfuserRecipeMap extends RecipeMap<SimpleRecipeBuilder> {
     @Nullable
     @Override
     public Recipe findRecipe(long voltage, List<ItemStack> inputs, List<FluidStack> fluidInputs, int outputFluidTankCapacity, MatchingMode matchingMode, boolean exactVoltage) {
+        
+        // Use original recipe checker to find fake recipe with only non-armor/upgrade key inputs
         Recipe recipe = super.findRecipe(voltage, inputs, fluidInputs, outputFluidTankCapacity, matchingMode, exactVoltage);
+        // Start handling armor and upgrade key
         if (recipe != null && recipe.isHidden()) {
+            ItemStack idkupgrade = ItemStack.EMPTY;
             ItemStack piece = ItemStack.EMPTY;
             for (ItemStack itemStack : inputs) {
                 if (itemStack.getItem() instanceof IUpgradableItem) {
                     piece = itemStack;
+                } else if (itemStack.getItem() instanceof ToolUpgrade) {
+                    idkupgrade = itemStack;
                 }
             }
             if (!piece.isEmpty()) {
-                String upgradeName;
                 IUpgradableItem asUp = (IUpgradableItem) piece.getItem();
                 ItemStack upgrade = ItemStack.EMPTY;
-                for (ItemStack stack : inputs) {
-                    if (stack.getItem() instanceof ToolUpgrade) {
-                        for (String upr : asUp.getValidUpgrades(piece)) {
-                            if (ToolUpgrade.ID_TO_NAME.get(upgrade.getMetadata()).equals(upr)) {
-                                upgrade = stack;
-                                break;
-                            }
-                        }
-                    }
-                    if (!upgrade.isEmpty()) {
+                // Check if found key is valid for found IUpgradableItem ItemStack
+                for (String upr : asUp.getValidUpgrades(piece)) {
+                    if (ToolUpgrade.ID_TO_NAME.get(idkupgrade.getMetadata()).equals(upr)) {
+                        upgrade = idkupgrade;
                         break;
                     }
                 }
-                upgradeName = ToolUpgrade.ID_TO_NAME.get(upgrade.getMetadata());
+                String upgradeName = ToolUpgrade.ID_TO_NAME.get(upgrade.getMetadata());
                 int currLvl = UpgradeHelper.getUpgradeLevel(piece, upgradeName);
                 if (currLvl == asUp.getMaxUpgradeLevel(piece, upgradeName)) {
                     return null;
                 }
                 if (!upgrade.isEmpty()) {
+                    // Creating the output ItemStack
                     ItemStack armor = piece.copy();
                     UpgradeHelper.setUpgradeLevel(armor, upgradeName, currLvl + 1);
+                    // This is the new recipe that the multiblock will use
                     return new SimpleRecipeBuilder()
                             .append(ArmorInfuserRecipes.recipes[currLvl], 1, false, false)
                             .inputs(new CountableIngredient(new NBTIngredient(piece), 1))

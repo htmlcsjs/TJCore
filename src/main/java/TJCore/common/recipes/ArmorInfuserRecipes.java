@@ -10,7 +10,7 @@ import net.minecraft.item.ItemStack;
 
 public class ArmorInfuserRecipes {
     
-    
+    // Recipes for each tier. Ranges, in order, from Basic to Awakened
     public static final Recipe[] recipes = {
             TJRecipeMaps.ARMOR_INFUSER_RECIPES.recipeBuilder()
                     .input(DEFeatures.draconicCore, 4)
@@ -35,12 +35,13 @@ public class ArmorInfuserRecipes {
     public static void register() {
         
         for (int i=0; i<recipes.length; i++) {
+            // Recipe containing only input items (no armor/key) and dummy output for recipe searching. Will always be hidden
             TJRecipeMaps.ARMOR_INFUSER_RECIPES.recipeBuilder()
                     .append(recipes[i], 1, false, false)
                     .output(Items.BONE)
                     .hidden()
                     .buildAndRegister();
-            // JEI
+            // Dummy recipe for JEI
             TJRecipeMaps.ARMOR_INFUSER_RECIPES.recipeBuilder()
                     .append(recipes[i], 1, false, false)
                     .inputs(new ItemStack(DEFeatures.draconicChest).setStackDisplayName(String.format("Item to Upgrade (Tier %s)", getTierName(i))))
