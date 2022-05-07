@@ -1,7 +1,6 @@
 package TJCore.common;
 
 import TJCore.TJValues;
-import TJCore.common.blocks.TJMetaBlocks;
 import TJCore.common.recipes.*;
 import TJCore.common.recipes.recipemaps.TJRecipeMaps;
 import gregtech.common.blocks.VariantItemBlock;
@@ -49,9 +48,11 @@ public class CommonProxy {
         CircuitRecipes.registerCircuits();
         GTComponents.registerComponents();
         GTComponents.registerHullsCasings();
-
+        ArmorInfuserRecipes.register();
         MultiblockHatches.registerIOHatches();
         Ores.RegisterOres();
         MaterialRecipes.register();
+    
+       
     }
 }

@@ -1,5 +1,6 @@
 package TJCore;
 
+import TJCore.api.TJOreDictionaryLoader;
 import TJCore.common.blocks.TJMetaBlocks;
 import TJCore.common.metaitem.TJMetaItems;
 import TJCore.common.metatileentities.TJMetaTileEntities;
@@ -33,6 +34,7 @@ public class TJCore {
         TJMetaTileEntities.init();
         TJSounds.registerSounds();
         TJMetaBlocks.init();
+        TJOreDictionaryLoader.init();
         proxy.preInit();
     }
 
