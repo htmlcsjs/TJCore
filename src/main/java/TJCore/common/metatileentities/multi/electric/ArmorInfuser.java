@@ -12,7 +12,6 @@ import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.pattern.BlockPattern;
 import gregtech.api.pattern.FactoryBlockPattern;
 import gregtech.api.pattern.TraceabilityPredicate;
-import gregtech.api.recipes.Recipe;
 import gregtech.api.util.RelativeDirection;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
@@ -111,6 +110,11 @@ public class ArmorInfuser extends RecipeMapMultiblockController {
     @Override
     public MetaTileEntity createMetaTileEntity(MetaTileEntityHolder metaTileEntityHolder) {
         return new ArmorInfuser(metaTileEntityId);
+    }
+    
+    @Override
+    public boolean canBeDistinct() {
+        return true;
     }
     
     @Nonnull
