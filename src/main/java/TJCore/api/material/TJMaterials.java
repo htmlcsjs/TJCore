@@ -12,6 +12,7 @@ import java.util.Arrays;
 public class TJMaterials {
 
     public static ArrayList<MaterialFlag> STANDARDPLATE = new ArrayList<MaterialFlag>(Arrays.asList(GENERATE_PLATE, GENERATE_DENSE, EXCLUDE_BLOCK_CRAFTING_BY_HAND_RECIPES));
+    public static ArrayList<MaterialFlag> STANDARDWIREFINE = new ArrayList<MaterialFlag>(Arrays.asList(GENERATE_FINE_WIRE));
     public static ArrayList<MaterialFlag> STANDARDFOIL = new ArrayList<MaterialFlag>(Arrays.asList(GENERATE_FOIL));
     public static ArrayList<MaterialFlag> STANDARDROD = new ArrayList<MaterialFlag>(Arrays.asList(GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_BOLT_SCREW));
     public static ArrayList<MaterialFlag> STANDARDROTOR = new ArrayList<MaterialFlag>(Arrays.asList(GENERATE_ROTOR, GENERATE_RING));
@@ -36,6 +37,12 @@ public class TJMaterials {
     public static Material BT6;
     public static Material Birmabright;
 
+    public static Material Ladder_Poly_P_Phenylene;
+
+    public static Material HydrogenSilsesquioxane;
+
+    public static Material SU8_Photoresist;
+
     //Chemicals
     public static Material TriphenylPhosphine;// PhosphorusTrichloride + PhenylmagnesiumBromide → TriphenylPhosphine + 3(Mg,Br,Cl)
     public static Material PhosphorusTrichloride; // P4 + 6 Cl2 → 4 PCl3
@@ -43,6 +50,10 @@ public class TJMaterials {
     public static Material Bromobenzene; // Benzene + Bromine
     public static Material Draconium;
 
+    public static Material ZBLAN;
+
+    public static Material SilicaCeramic;
+    public static Material NickelPlatedTin;
     public static Material MolybdenumSulfide;
     public static Material Acetylene; // C2H2
     public static Material Difluoroethane; //C2H4F2

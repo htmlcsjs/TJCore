@@ -1,15 +1,17 @@
 package TJCore.common.recipes;
 
 import TJCore.api.TJLog;
+import TJCore.api.material.TJMaterials;
 import TJCore.common.metaitem.TJMetaItems;
 import TJCore.common.recipes.recipemaps.TJRecipeMaps;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.recipes.ModHandler;
 
-import static TJCore.common.recipes.recipemaps.TJRecipeMaps.PRINTER_RECIPES;
+import static TJCore.common.recipes.recipemaps.TJRecipeMaps.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import gregtech.api.unification.OreDictUnifier;
+import gregtech.api.unification.material.Material;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.UnificationEntry;
 
@@ -57,9 +59,95 @@ public class CircuitRecipes {
     }
 
     public static void registerCircuits() {
-
+        Wafers.registerLithography();
+        primitiveBoard();
+        electonicBoard();
+        integratedBoard();
         PrimitiveElectronicIntegratedLines();
     }
+
+    public static void registerWafers() {
+
+    }
+
+    public static void primitiveBoard() {
+
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, Wood, 4)
+                .fluidInputs(Creosote.getFluid(500))
+                .output(WETPHENOLICPULP)
+                .EUt(8)
+                .duration(20)
+                .buildAndRegister();
+
+        COMPRESSOR_RECIPES.recipeBuilder()
+                .input(WETPHENOLICPULP)
+                .output(WETPRESSEDPHENOLICSUBSTRATE)
+                .EUt(8)
+                .duration(20)
+                .buildAndRegister();
+
+        DEHYDRATOR_RECIPES.recipeBuilder()
+                .input(WETPRESSEDPHENOLICSUBSTRATE)
+                .output(PRIMITIVE_PREBOARD)
+                .EUt(8)
+                .duration(20)
+                .buildAndRegister();
+
+        ModHandler.addShapelessRecipe("primitive_board", PRIMITIVE_BOARD.getStackForm(1),
+                new UnificationEntry(wireFine, Copper),
+                PRIMITIVE_PREBOARD.getStackForm());
+
+    }
+
+    public static void electonicBoard() {
+
+        BLAST_RECIPES.recipeBuilder()
+                .input(dust,SiliconDioxide,6)
+                .input(dustTiny, Nickel)
+                .output(ingot, TJMaterials.SilicaCeramic, 6)
+                .EUt(30)
+                .duration(420)
+                .buildAndRegister();
+
+        LAMINATOR_RECIPES.recipeBuilder()
+                .input(plate, TJMaterials.SilicaCeramic)
+                .input(foil, Copper, 2)
+                .output(ELECTRONIC_PREBOARD)
+                .EUt(30)
+                .duration(20)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(ELECTRONIC_PREBOARD)
+                .input(foil,Copper)
+                .output(ELECTRONIC_BOARD)
+                .EUt(30)
+                .duration(20)
+                .buildAndRegister();
+    }
+    static Material[] laminatorFluids = {Polyethylene,PolyvinylChloride,Polytetrafluoroethylene,Polybenzimidazole};
+    public static void integratedBoard() {
+        for (int i = 0; i < laminatorFluids.length; i++) {
+            LAMINATOR_RECIPES.recipeBuilder()
+                    .input(plate, Polyethylene)
+                    .input(foil,Copper,2)
+                    .fluidInputs(laminatorFluids[i].getFluid(144/(i+1)))
+                    .output(INTEGRATED_PREBOARD, i+1)
+                    .EUt(30)
+                    .duration(20)
+                    .buildAndRegister();
+        }
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(INTEGRATED_PREBOARD)
+                .input(foil, Copper)
+                .output(INTEGRATED_BOARD)
+                .EUt(120)
+                .duration(40)
+                .buildAndRegister();
+    }
+
 
     public static void PrimitiveElectronicIntegratedLines() {
 
@@ -112,6 +200,7 @@ public class CircuitRecipes {
         MetaItem<?>.MetaValueItem[] diode = {DIODE, SMD_DIODE_1};
         MetaItem<?>.MetaValueItem[] capacitor = {CAPACITOR, SMD_CAPACITOR_1};
         MetaItem<?>.MetaValueItem[] inductor = {INDUCTOR, SMD_INDUCTOR_1};
+
         for(int i = 0; i < 2; i++) {
             for(int j = 0; j < 2; j++) {
                 CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
@@ -169,16 +258,6 @@ public class CircuitRecipes {
                 .duration(400)
                 .buildAndRegister();
 
-
-       PRINTER_RECIPES.recipeBuilder()
-               .input(wireFine, Polyethylene, 32)
-               .outputs(LITHOGRAPHY_MASK.getStackForm(Polyethylene))
-               .EUt(4)
-               .duration(4)
-               .buildAndRegister();
-
-
-
        //LASER_ENGRAVER_RECIPES.recipeBuilder()
        //        .input(LITHOGRAPHY_MASK.getStackForm(Polyethylene))
 
@@ -234,40 +313,4 @@ public class CircuitRecipes {
                 .duration(270)
                 .buildAndRegister();
     }
-
-    public static void MicroLine() {
-
-
-
-
-    }
-
-    public static void NanoLine() {
-
-    }
-
-    public static void IMCLine() {
-
-    }
-
-    public static void OpticalLine() {
-
-    }
-
-    public static void CrystalLine() {
-
-    }
-
-    public static void BiowareLine() {
-
-    }
-
-    public static void WetwareLine() {
-
-    }
-
-
-
-
-
 }

@@ -6,17 +6,24 @@ material.phosphorustrichloride=Phosphorus Trichloride
 material.phenylmagnesiumbromide=Phenylmagnesium Bromide
 material.bromobenzene=Bromobenzene
 material.draconium=Draconium
+material.silicaceramic=Ceramic
+material.nickelplatedtin=Nickel Plated Tin
 
 //machines
-tjcore.machine.component_assembler.lv.name=Basic Component Assembler
-tjcore.machine.component_assembler.mv.name=Good Component Assembler
-tjcore.machine.component_assembler.hv.name=Advanced Component Assembler
-tjcore.machine.component_assembler.ev.name=Extreme Component Assembler
-tjcore.machine.component_assembler.iv.name=Elite Component Assembler
+tjcore.machine.component_assembler.lv.name=LV Component Assembler
+tjcore.machine.component_assembler.mv.name=MV Component Assembler
+tjcore.machine.component_assembler.hv.name=HV Component Assembler
+tjcore.machine.component_assembler.ev.name=EV Component Assembler
+tjcore.machine.component_assembler.iv.name=IV Component Assembler
+tjcore.machine.laminator.lv.name=LV Laminator
+tjcore.machine.laminator.mv.name=MV Laminator
+tjcore.machine.laminator.hv.name=HV Laminator
+tjcore.machine.laminator.ev.name=EV Laminator
 
 tjcore.machine.armor_infuser.name=Armor Infuser
 tjcore.machine.steam_assembler.name=Steam Component Assembler
 tjcore.machine.tree_farmer.name=Tree Farmer
+tjcore.machine.surfacerockdrill.name=SurfaceRockDrill
 
 tjcore.machine.armor_infuser.description=The armor infuser is an advanced machine capable of upgrading Draconic Evolution tools and armor.
 
@@ -29,6 +36,36 @@ recipemap.armor_infuser.name=Armor Infusion
 tile.draconic_casing.draconic_casing_normal.name=Draconic Casing
 
 gregtech.machine.component_assembler.tooltip=Steady there
+
+metaitem.primitive_board.name=Primitive Point to Point PCB
+metaitem.electronic_board.name=Silicate Stenciled PCB
+metaitem.integrated_board.name=Machine Stenciled PCB
+metaitem.micro_board.name=Simple Etched PCB
+metaitem.nano_board.name=Reinforced Etched PCB
+metaitem.imc_board.name=Multi-Layered Etched PCB
+metaitem.optical_board.name=Optical Integrated PCB
+metaitem.crystal_board.name=Energy Modulus PCB
+metaitem.bioware_board.name=Bio-frothᵗᵐ Support Unit
+metaitem.wetware_board.name=Organic Neural Network Support Unit
+metaitem.quantum_board.name=Q-Bit Computational Framework
+metaitem.exotic_board.name=Exotic Particle Manipulation Support Framework
+metaitem.cosmic_board.name=Cosmic-Soupᵗᵐ Physical Calculation Support Framework
+metaitem.supra_board.name=Temporally Isolated Calculation Framework
+
+metaitem.primitive_preboard.name=Phenolic Substate
+metaitem.electronic_preboard.name=Silicate-Ceramic Substrate
+metaitem.integrated_preboard.name=Plastic Substrate
+metaitem.micro_preboard.name=Simple Epoxy PCB Preparation
+metaitem.nano_preboard.name=Reinforced Epoxy PCB Preparation
+metaitem.imc_preboard.name=Multi-Layer Epoxy PCB Preparation
+metaitem.optical_preboard.name=Pre-Etch Optical PCB
+metaitem.crystal_preboard.name=
+metaitem.bioware_preboard.name=
+metaitem.wetware_preboard.name=
+metaitem.quantum_preboard.name=
+metaitem.exotic_preboard.name=
+metaitem.cosmic_preboard.name=
+metaitem.supra_preboard.name=
 
 metaitem.circuit.primitive_assembly.name=Primitive Assembly
 metaitem.circuit.primitive_computer.name=Primitive Computer

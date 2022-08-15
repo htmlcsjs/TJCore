@@ -49,6 +49,7 @@ public class CommonProxy {
         GTComponents.registerComponents();
         GTComponents.registerHullsCasings();
         ArmorInfuserRecipes.register();
+        SurfaceRockDrillRecipes.register();
         MultiblockHatches.registerIOHatches();
         Ores.RegisterOres();
         MaterialRecipes.register();

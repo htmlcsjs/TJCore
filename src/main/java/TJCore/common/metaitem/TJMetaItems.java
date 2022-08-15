@@ -25,6 +25,18 @@ public class TJMetaItems {
     //public static MetaItem<?>.MetaValueItem CAPACITOR;
     //public static MetaItem<?>.MetaValueItem INDUCTOR;
 
+    //CIRCUITFRAMEWORK
+
+    public static MetaItem<?>.MetaValueItem WETPHENOLICPULP;
+    public static MetaItem<?>.MetaValueItem WETPRESSEDPHENOLICSUBSTRATE;
+
+    public static MetaItem<?>.MetaValueItem UVEMITTER_A;
+    public static MetaItem<?>.MetaValueItem UVEMITTER_B;
+    public static MetaItem<?>.MetaValueItem UVEMITTER_C;
+    public static MetaItem<?>.MetaValueItem UVEMITTER_D;
+    public static MetaItem<?>.MetaValueItem UVEMITTER_E;
+    //SMDs
+
     public static MetaItem<?>.MetaValueItem SMD_RESISTOR_1;
     public static MetaItem<?>.MetaValueItem SMD_RESISTOR_2;
     public static MetaItem<?>.MetaValueItem SMD_RESISTOR_3;
@@ -55,6 +67,118 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem SMD_INDUCTOR_4;
     public static MetaItem<?>.MetaValueItem SMD_INDUCTOR_5;
 
+    //Boules + Wafers
+
+    public static MetaItem<?>.MetaValueItem SILICON_BOULE;
+    public static MetaItem<?>.MetaValueItem ANTIMONY_DOPED_SILICON_BOULE;
+    public static MetaItem<?>.MetaValueItem BORON_DOPED_SILICON_BOULE;
+    public static MetaItem<?>.MetaValueItem GALLIUM_ARSENIDE_BOULE;
+    public static MetaItem<?>.MetaValueItem SILVER_GALLIUM_SELENIDE_BOULE;
+
+    public static MetaItem<?>.MetaValueItem SILICON_WAFER;
+    public static MetaItem<?>.MetaValueItem ANTIMONY_DOPED_SILICON_WAFER;
+    public static MetaItem<?>.MetaValueItem BORON_DOPED_SILICON_WAFER;
+    public static MetaItem<?>.MetaValueItem GALLIUM_ARSENIDE_WAFER;
+    public static MetaItem<?>.MetaValueItem SILVER_GALLIUM_SELENIDE_WAFER;
+
+    public static MetaItem<?>.MetaValueItem LAYERED_SILICON_WAFER;
+    public static MetaItem<?>.MetaValueItem LAYERED_ANTIMONY_DOPED_SILICON_WAFER;
+    public static MetaItem<?>.MetaValueItem LAYERED_BORON_DOPED_SILICON_WAFER;
+    public static MetaItem<?>.MetaValueItem LAYERED_GALLIUM_ARSENIDE_WAFER;
+    public static MetaItem<?>.MetaValueItem LAYERED_SILVER_GALLIUM_SELENIDE_WAFER;
+
+    public static MetaItem<?>.MetaValueItem PREPARED_SILICON_WAFER;
+    public static MetaItem<?>.MetaValueItem PREPARED_ANTIMONY_DOPED_SILICON_WAFER;
+    public static MetaItem<?>.MetaValueItem PREPARED_BORON_DOPED_SILICON_WAFER;
+    public static MetaItem<?>.MetaValueItem PREPARED_GALLIUM_ARSENIDE_WAFER;
+    public static MetaItem<?>.MetaValueItem PREPARED_SILVER_GALLIUM_SELENIDE_WAFER;
+
+    public static MetaItem<?>.MetaValueItem INTEGRATED_WAFER_LITHOGRAPHY_PREP;
+    public static MetaItem<?>.MetaValueItem MICRO_WAFER_LITHOGRAPHY_PREP;
+    public static MetaItem<?>.MetaValueItem NANO_WAFER_LITHOGRAPHY_PREP;
+    public static MetaItem<?>.MetaValueItem IMC_WAFER_LITHOGRAPHY_PREP;
+    public static MetaItem<?>.MetaValueItem OPTICAL_WAFER_LITHOGRAPHY_PREP;
+
+    public static MetaItem<?>.MetaValueItem PREBAKED_INTEGRATED_WAFER;
+    public static MetaItem<?>.MetaValueItem PREBAKED_MICRO_WAFER;
+    public static MetaItem<?>.MetaValueItem PREBAKED_NANO_WAFER;
+    public static MetaItem<?>.MetaValueItem PREBAKED_IMC_WAFER;
+    public static MetaItem<?>.MetaValueItem PREBAKED_OPTICAL_WAFER;
+
+    public static MetaItem<?>.MetaValueItem TREATED_INTEGRATED_WAFER;
+    public static MetaItem<?>.MetaValueItem TREATED_MICRO_WAFER;
+    public static MetaItem<?>.MetaValueItem TREATED_NANO_WAFER;
+    public static MetaItem<?>.MetaValueItem TREATED_IMC_WAFER;
+    public static MetaItem<?>.MetaValueItem TREATED_OPTICAL_WAFER;
+
+    public static MetaItem<?>.MetaValueItem RAW_INTEGRATED_WAFER;
+    public static MetaItem<?>.MetaValueItem RAW_MICRO_WAFER;
+    public static MetaItem<?>.MetaValueItem RAW_NANO_WAFER;
+    public static MetaItem<?>.MetaValueItem RAW_IMC_WAFER;
+    public static MetaItem<?>.MetaValueItem RAW_OPTICAL_WAFER;
+
+    public static MetaItem<?>.MetaValueItem BAKED_INTEGRATED_WAFER;
+    public static MetaItem<?>.MetaValueItem BAKED_MICRO_WAFER;
+    public static MetaItem<?>.MetaValueItem BAKED_NANO_WAFER;
+    public static MetaItem<?>.MetaValueItem BAKED_IMC_WAFER;
+    public static MetaItem<?>.MetaValueItem BAKED_OPTICAL_WAFER;
+
+    public static MetaItem<?>.MetaValueItem INTEGRATED_WAFER;
+    public static MetaItem<?>.MetaValueItem MICRO_WAFER;
+    public static MetaItem<?>.MetaValueItem NANO_WAFER;
+    public static MetaItem<?>.MetaValueItem IMC_WAFER;
+    public static MetaItem<?>.MetaValueItem OPTICAL_WAFER;
+
+    public static MetaItem<?>.MetaValueItem ETCHED_INTEGRATED_WAFER;
+    public static MetaItem<?>.MetaValueItem ETCHED_MICRO_WAFER;
+    public static MetaItem<?>.MetaValueItem ETCHED_NANO_WAFER;
+    public static MetaItem<?>.MetaValueItem ETCHED_IMC_WAFER;
+    public static MetaItem<?>.MetaValueItem ETCHED_OPTICAL_WAFER;
+
+    public static MetaItem<?>.MetaValueItem INTEGRATED_CHIP;
+    public static MetaItem<?>.MetaValueItem MICRO_CHIP;
+    public static MetaItem<?>.MetaValueItem NANO_CHIP;
+    public static MetaItem<?>.MetaValueItem IMC_CHIP;
+    public static MetaItem<?>.MetaValueItem OPTICAL_CHIP;
+
+    public static MetaItem<?>.MetaValueItem INTEGRATED_HARD_MASK;
+    public static MetaItem<?>.MetaValueItem MICRO_HARD_MASK;
+    public static MetaItem<?>.MetaValueItem NANO_HARD_MASK;
+    public static MetaItem<?>.MetaValueItem IMC_HARD_MASK;
+    public static MetaItem<?>.MetaValueItem OPTICAL_HARD_MASK;
+
+    //Circuit Boards
+    public static MetaItem<?>.MetaValueItem PRIMITIVE_PREBOARD;
+    public static MetaItem<?>.MetaValueItem ELECTRONIC_PREBOARD;
+    public static MetaItem<?>.MetaValueItem INTEGRATED_PREBOARD;
+    public static MetaItem<?>.MetaValueItem MICRO_PREBOARD;
+    public static MetaItem<?>.MetaValueItem NANO_PREBOARD;
+    public static MetaItem<?>.MetaValueItem IMC_PREBOARD;
+    public static MetaItem<?>.MetaValueItem OPTICAL_PREBOARD;
+    public static MetaItem<?>.MetaValueItem CRYSTAL_PREBOARD;
+    public static MetaItem<?>.MetaValueItem BIOWARE_PREBOARD;
+    public static MetaItem<?>.MetaValueItem WETWARE_PREBOARD;
+    public static MetaItem<?>.MetaValueItem QUANTUM_PREBOARD;
+    public static MetaItem<?>.MetaValueItem EXOTIC_PREBOARD;
+    public static MetaItem<?>.MetaValueItem COSMIC_PREBOARD;
+    public static MetaItem<?>.MetaValueItem SUPRA_PREBOARD;
+
+    public static MetaItem<?>.MetaValueItem PRIMITIVE_BOARD;
+    public static MetaItem<?>.MetaValueItem ELECTRONIC_BOARD;
+    public static MetaItem<?>.MetaValueItem INTEGRATED_BOARD;
+    public static MetaItem<?>.MetaValueItem MICRO_BOARD;
+    public static MetaItem<?>.MetaValueItem NANO_BOARD;
+    public static MetaItem<?>.MetaValueItem IMC_BOARD;
+    public static MetaItem<?>.MetaValueItem OPTICAL_BOARD;
+    public static MetaItem<?>.MetaValueItem CRYSTAL_BOARD;
+    public static MetaItem<?>.MetaValueItem BIOWARE_BOARD;
+    public static MetaItem<?>.MetaValueItem WETWARE_BOARD;
+    public static MetaItem<?>.MetaValueItem QUANTUM_BOARD;
+    public static MetaItem<?>.MetaValueItem EXOTIC_BOARD;
+    public static MetaItem<?>.MetaValueItem COSMIC_BOARD;
+    public static MetaItem<?>.MetaValueItem SUPRA_BOARD;
+
+    //Circuits
     public static MetaItem<?>.MetaValueItem PRIMITIVE_ASSEMBLY_ULV;
     public static MetaItem<?>.MetaValueItem PRIMITIVE_COMPUTER_LV;
     public static MetaItem<?>.MetaValueItem PRIMITIVE_MAINFRAME_MV;
@@ -109,6 +233,8 @@ public class TJMetaItems {
 
     //
     public static ToolMetaItem<?>.MetaToolValueItem LITHOGRAPHY_MASK;
+
+    //Biochem Processes
 
     public static MetaItem<?>.MetaValueItem TREATED_CPU_WAFER;
     public static MetaItem<?>.MetaValueItem TREATED_RAM_WAFER;

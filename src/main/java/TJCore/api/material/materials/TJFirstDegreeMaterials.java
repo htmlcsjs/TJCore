@@ -61,8 +61,7 @@ public class TJFirstDegreeMaterials {
                 .setFormula("MoS2", true);
 
 
-
-       Bromine.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Bromine.setProperty(PropertyKey.FLUID, new FluidProperty());
 
         PhenylmagnesiumBromide = new Material.Builder(25005,"phenylmagnesiumbromide")
                 .fluid()
@@ -84,13 +83,54 @@ public class TJFirstDegreeMaterials {
                 .flags(SetMaterialFlags(STANDARDPLATE, STANDARDCASING))
                 .build();
 
+        SilicaCeramic = new Material.Builder(25008,"silicaceramic")
+                .ingot()
+                .blastTemp(1000)
+                .color(0x8c7a50).iconSet(MaterialIconSet.SHINY)
+                .flags(SetMaterialFlags(STANDARDPLATE,STANDARDROD,STANDARDFOIL,STANDARDROUND))
+                .build();
 
+        NickelPlatedTin = new Material.Builder(25009, "nickelplatedtin")
+                .ingot()
+                .color(0x8fb7c4).iconSet(MaterialIconSet.DULL)
+                .flags(SetMaterialFlags(STANDARDFOIL))
+                .build();
+
+        ZBLAN = new Material.Builder(25010, "zblan")
+                .ingot()
+                .blastTemp(3600)
+                .color(0x0e0e0).iconSet(MaterialIconSet.SHINY)
+                .flags(SetMaterialFlags(STANDARDLENS,STANDARDFOIL,STANDARDWIREFINE))
+                .build();
+
+        //TODO: CARBON make the formula for ladder poly-p-phenylene
+        Ladder_Poly_P_Phenylene = new Material.Builder(25011, "polypphenylene")
+                .fluid()
+                .ingot()
+                .color(0xbfb393)
+                .flags(SetMaterialFlags(STANDARDWIREFINE,STANDARDFOIL))
+                .build();
+
+        HydrogenSilsesquioxane = new Material.Builder(25012, "hydrogensilsesquioxane")
+                .fluid()
+                .color(0x471525)
+                .build()
+                .setFormula(" [HSiO3/2]", true);
+
+        //TODO: CARBON make the formula for SU-8 Photoresist
+        SU8_Photoresist = new Material.Builder(25013, "su_photoresist")
+                .fluid()
+                .color(0x0e242b)
+                .build();
     }
 
     public static void registerProperties() {
 
         FluidPipeProperties birmabrightFluidPipeProps = new FluidPipeProperties(1500, 24, false);
         Birmabright.setProperty(PropertyKey.FLUID_PIPE, birmabrightFluidPipeProps);
+
+        FluidPipeProperties silicaCeramicFluidPipeProps = new FluidPipeProperties(1000,18,false);
+        SilicaCeramic.setProperty(PropertyKey.FLUID_PIPE, silicaCeramicFluidPipeProps);
 
         FluidPipeProperties bt6FluidPipeProps = new FluidPipeProperties(1500, 36, false);
         BT6.setProperty(PropertyKey.FLUID_PIPE, bt6FluidPipeProps);
@@ -100,16 +140,17 @@ public class TJFirstDegreeMaterials {
         FluidPipeProperties bluesteelFluidPipeProps = new FluidPipeProperties(1500, 30, false);
         BlueSteel.setProperty(PropertyKey.FLUID_PIPE, bluesteelFluidPipeProps);
 
+        Polybenzimidazole.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
+        PolyphenyleneSulfide.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
+        Polytetrafluoroethylene.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
+        PolyvinylChloride.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
         Polyethylene.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
+
         TinAlloy.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
 
         // becuase of techs foolishness and thinking graphenes are a foil
         Graphene.addFlags(MaterialFlags.GENERATE_FOIL);
 
     }
-
-
-
-
 
 }
