@@ -69,7 +69,7 @@ public class Wafers {
                     .input(rawWafer[i])
                     .input(foil, conductor[i])
                     .fluidInputs(polymer[i].getFluid(16))
-                    .output(layered[i])
+                    .output(layered[i]) 
                     .EUt(tierPower)
                     .duration(400)
                     .buildAndRegister();
