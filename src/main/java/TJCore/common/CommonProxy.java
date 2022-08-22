@@ -3,7 +3,7 @@ package TJCore.common;
 import TJCore.TJValues;
 import TJCore.common.recipes.*;
 import TJCore.common.recipes.recipemaps.TJRecipeMaps;
-import gregtech.common.blocks.VariantItemBlock;
+import gregtech.api.block.VariantItemBlock;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;

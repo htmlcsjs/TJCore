@@ -4,12 +4,12 @@ import TJCore.common.recipes.ArmorInfuserRecipes;
 import com.brandon3055.draconicevolution.api.itemupgrade.IUpgradableItem;
 import com.brandon3055.draconicevolution.api.itemupgrade.UpgradeHelper;
 import com.brandon3055.draconicevolution.items.ToolUpgrade;
-import gregtech.api.recipes.CountableIngredient;
-import gregtech.api.recipes.MatchingMode;
+//import gregtech.api.recipes.CountableIngredient;
+//import gregtech.api.recipes.MatchingMode;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeMap;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
-import gregtech.api.recipes.ingredients.NBTIngredient;
+//import gregtech.api.recipes.ingredients.NBTIngredient;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
@@ -25,6 +25,7 @@ public class ArmorInfuserRecipeMap extends RecipeMap<SimpleRecipeBuilder> {
     /**
      * This is the REAL recipe checker.
      */
+    /*
     @Nullable
     @Override
     public Recipe findRecipe(long voltage, List<ItemStack> inputs, List<FluidStack> fluidInputs, int outputFluidTankCapacity, MatchingMode matchingMode, boolean exactVoltage) {
@@ -72,4 +73,6 @@ public class ArmorInfuserRecipeMap extends RecipeMap<SimpleRecipeBuilder> {
         }
         return null;
     }
+    */
+
 }

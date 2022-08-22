@@ -1,4 +1,5 @@
 import net.minecraftforge.gradle.user.UserBaseExtension
+import java.util.*
 
 buildscript {
     repositories {
@@ -10,8 +11,8 @@ buildscript {
     }
     dependencies {
         classpath("net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT")
-        classpath("org.eclipse.jgit:org.eclipse.jgit:5.8.0.202006091008-r")
-        classpath("org.apache.commons:commons-lang3:3.12.0")
+        //classpath("org.eclipse.jgit:org.eclipse.jgit:5.8.0.202006091008-r")
+        //classpath("org.apache.commons:commons-lang3:3.12.0")
     }
 }
 
@@ -24,58 +25,92 @@ apply {
     plugin("net.minecraftforge.gradle.forge")
 }
 
-val mcVersion = "1.12.2"
-val forgeVersion = "14.23.5.2847"
-val mcFullVersion = "$mcVersion-$forgeVersion"
-val modVersion = "0.0.1"
+val Project.minecraft: UserBaseExtension
+    get() = extensions.getByName<UserBaseExtension>("minecraft")
+
+val config: Properties = file("build.properties").inputStream().let {
+    val prop = Properties()
+    prop.load(it)
+    return@let prop
+}
+
+val modVersion = config["TJcore.version"] as String
+val mcVersion = config["mc.version"] as String
+val forgeVersion = "$mcVersion-${config["forge.version"]}"
+val shortVersion = mcVersion.substring(0, mcVersion.lastIndexOf("."))
+val strippedVersion = shortVersion.replace(".", "") + "0";
+
 version = "$mcVersion-$modVersion"
 group = "TJCore"
+
+configure<JavaPluginConvention> {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
 
 configure<BasePluginConvention> {
     archivesBaseName = "TJCore"
 }
 
-fun minecraft(configure: UserBaseExtension.() -> Unit) = project.configure(configure)
-
-minecraft {
-    version = mcFullVersion
-    mappings = "stable_39"
+configure<UserBaseExtension> {
+    version = forgeVersion
+    mappings = config["mcp.version"] as String
     runDir = "run"
     replace("@VERSION@", modVersion)
     replaceIn("TJValues.java")
 }
+
 repositories {
     maven {
+        name = "JEI"
+        setUrl("http://dvs1.progwml6.com/files/maven/")
+    }
+    maven {
+        name = "CraftTweaker"
+        setUrl("https://maven.blamejared.com/")
+    }
+    maven {
+        name = "CurseForge"
         setUrl("https://minecraft.curseforge.com/api/maven")
     }
     maven {
+        name = "tterrag maven"
+        setUrl("http://maven.tterrag.com/")
+    }
+    maven {
+        name = "CCL, CASM"
         setUrl("http://chickenbones.net/maven/")
     }
     maven {
-        setUrl("http://dvs1.progwml6.com/files/maven/")
-    }
-    maven { // TOP
-        name = "tterrag maven"
+        name = "CTM"
         setUrl("https://maven.tterrag.com/")
     }
     maven {
-        name = "CraftTweaker Maven"
-        setUrl("https://maven.blamejared.com/")
+        setUrl("https://cursemaven.com")
+
     }
+
 }
 
 dependencies {
-    "deobfCompile"("mezz.jei:jei_1.12.2:+")
-    "provided"(files("libs/gregtech-1.12.2-2.1.1-beta.jar"))
+
     //"provided"(files("libs/GregicalityMultiblocks-1.12.2-1.1.0.jar"))
-    "deobfCompile"("codechicken-lib-1-8:CodeChickenLib-1.12.2:3.2.3.358:universal")
-    "deobfCompile"("codechicken:ChickenASM:1.12-1.0.2.9")
-    "deobfCompile"("mcjty.theoneprobe:TheOneProbe-1.12:1.12-1.4.23-16")
-    "deobfCompile"("team.chisel.ctm:CTM:MC1.12.2-1.0.2.31")
-    "deobfCompile"("CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.655")
-    "provided"(files("libs/BrandonsCore-1.12.2-2.4.20.162-universal.jar"))
-    "provided"(files("libs/Draconic-Evolution-1.12.2-2.3.28.354-universal.jar"))
-    "provided"(files("libs/RedstoneFlux-1.12-2.1.1.1-universal.jar"))
+    "deobfCompile"("codechicken-lib-1-8:CodeChickenLib-$mcVersion:${config["ccl.version"]}:universal")
+    "deobfCompile"("codechicken:ChickenASM:$shortVersion-${config["chickenasm.version"]}")
+    "deobfCompile"("mezz.jei:jei_$mcVersion:${config["jei.version"]}")
+    "deobfCompile"("mcjty.theoneprobe:TheOneProbe-$shortVersion:$shortVersion-${config["top.version"]}")
+    "deobfCompile"("CraftTweaker2:CraftTweaker2-MC$strippedVersion-Main:${config["crafttweaker.version"]}")
+    "deobfCompile"("team.chisel.ctm:CTM:MC$mcVersion-${config["ctm.version"]}")
+
+    "provided"(files("libs/gregtech-1.12.2-${config["gregtech.version"]}.jar"))
+
+    "provided"("curse.maven:gregicality_multiblocks-564858:3941516")
+    "provided"("curse.maven:draconic_evolution-223565:3431261")
+    "provided"("curse.maven:brandons_core-231382:3408276")
+    "provided"("curse.maven:redstone_flux-270789:2920436")
+    //"provided"(files("libs/BrandonsCore-1.12.2-2.4.20.162-universal.jar"))
+    //provided"(files("libs/Draconic-Evolution-1.12.2-2.3.28.354-universal.jar"))
+    //"provided"(files("libs/RedstoneFlux-1.12-2.1.1.1-universal.jar"))
 }
 
 configure<JavaPluginConvention> {
@@ -88,16 +123,18 @@ val sourceSets: SourceSetContainer = the<JavaPluginConvention>().sourceSets
 
 processResources.apply {
     inputs.property("version", modVersion)
-    inputs.property("mcversion", mcFullVersion)
+    inputs.property("mcversion", forgeVersion)
 
     from(sourceSets["main"].resources.srcDirs) {
         include("mcmod.info")
-        expand(mapOf("version" to modVersion,
-            "mcversion" to mcFullVersion))
+        expand(mapOf("version" to modVersion, "mcversion" to forgeVersion))
     }
 
     // copy everything else, thats not the mcmod.info
     from(sourceSets["main"].resources.srcDirs) {
         exclude("mcmod.info")
     }
+
+    // Access Transformer jar manifest info
+    rename("(.+_at.cfg)", "META-INF/$1")
 }

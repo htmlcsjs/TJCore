@@ -126,18 +126,18 @@ public class TJFirstDegreeMaterials {
 
     public static void registerProperties() {
 
-        FluidPipeProperties birmabrightFluidPipeProps = new FluidPipeProperties(1500, 24, false);
+        FluidPipeProperties birmabrightFluidPipeProps = new FluidPipeProperties(1500, 24, false, true, false, false);
         Birmabright.setProperty(PropertyKey.FLUID_PIPE, birmabrightFluidPipeProps);
 
-        FluidPipeProperties silicaCeramicFluidPipeProps = new FluidPipeProperties(1000,18,false);
+        FluidPipeProperties silicaCeramicFluidPipeProps = new FluidPipeProperties(1000, 18, false, false, false, false);
         SilicaCeramic.setProperty(PropertyKey.FLUID_PIPE, silicaCeramicFluidPipeProps);
 
-        FluidPipeProperties bt6FluidPipeProps = new FluidPipeProperties(1500, 36, false);
+        FluidPipeProperties bt6FluidPipeProps = new FluidPipeProperties(1500, 36, false, true, false, false);
         BT6.setProperty(PropertyKey.FLUID_PIPE, bt6FluidPipeProps);
 
         WireProperties BlueSteelWireProps = new WireProperties(512, 2, 6);
         BlueSteel.setProperty(PropertyKey.WIRE, BlueSteelWireProps);
-        FluidPipeProperties bluesteelFluidPipeProps = new FluidPipeProperties(1500, 30, false);
+        FluidPipeProperties bluesteelFluidPipeProps = new FluidPipeProperties(1500, 30, false, true, false, false);
         BlueSteel.setProperty(PropertyKey.FLUID_PIPE, bluesteelFluidPipeProps);
 
         Polybenzimidazole.addFlags(MaterialFlags.GENERATE_FINE_WIRE);

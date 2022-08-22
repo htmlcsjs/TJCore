@@ -9,6 +9,7 @@ import gregicality.multiblocks.common.block.GCYMMetaBlocks;
 import gregicality.multiblocks.common.block.blocks.BlockLargeMultiblockCasing;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.MetaTileEntityHolder;
+import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
 import gregtech.api.metatileentity.multiblock.MultiblockAbility;
 import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
@@ -77,8 +78,8 @@ public class SurfaceRockDrill extends RecipeMapMultiblockController {
     }
 
     @Override
-    public MetaTileEntity createMetaTileEntity(MetaTileEntityHolder metaTileEntityHolder) {
-        return new SurfaceRockDrill(metaTileEntityId);
+    public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntityID) {
+        return new SurfaceRockDrill(this.metaTileEntityId);
     }
 
     @Override

@@ -7,6 +7,7 @@ import TJCore.common.recipes.recipemaps.TJRecipeMaps;
 import gregtech.api.capability.impl.SteamMultiWorkable;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.MetaTileEntityHolder;
+import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
 import gregtech.api.metatileentity.multiblock.RecipeMapSteamMultiblockController;
 import gregtech.api.pattern.BlockPattern;
@@ -62,8 +63,8 @@ public class SteamAssembler extends RecipeMapSteamMultiblockController {
 
 
     @Override
-    public MetaTileEntity createMetaTileEntity(MetaTileEntityHolder metaTileEntityHolder) {
-        return new SteamAssembler(metaTileEntityId);
+    public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntityID) {
+        return new SteamAssembler(this.metaTileEntityId);
     }
 
     @Nonnull

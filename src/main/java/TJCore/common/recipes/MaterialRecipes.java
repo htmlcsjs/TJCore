@@ -23,8 +23,8 @@ import static gregtech.api.unification.material.info.MaterialFlags.*;
 public class MaterialRecipes {
 
     public static void register() {
-        if(TJConfig.recipes.harderFrames)
-            frameGt.addProcessingHandler(PropertyKey.DUST, MaterialRecipes::createFrames);
+        //if(TJConfig.recipes.harderFrames)
+          //  frameGt.addProcessingHandler(PropertyKey.DUST, MaterialRecipes::createFrames);
 
         registerMetalCasings();
     }
@@ -37,8 +37,8 @@ public class MaterialRecipes {
             ModHandler.addShapedRecipe(String.format("frame1_%s", mat),
                     OreDictUnifier.get(prefix, mat, 1),
                     "PLP", "LwL", "LLL",
-                    'P', new UnificationEntry(OrePrefix.plateDouble, mat),
-                    'L', new UnificationEntry(OrePrefix.stickLong, mat));
+                    'P', new UnificationEntry(OrePrefix.plate, mat),
+                    'L', new UnificationEntry(OrePrefix.stick, mat));
 
 
 

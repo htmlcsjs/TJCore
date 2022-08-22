@@ -6,6 +6,7 @@ import TJCore.common.blocks.TJMetaBlocks;
 import TJCore.common.recipes.recipemaps.TJRecipeMaps;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.MetaTileEntityHolder;
+import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
 import gregtech.api.metatileentity.multiblock.MultiblockAbility;
 import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
@@ -106,9 +107,13 @@ public class ArmorInfuser extends RecipeMapMultiblockController {
     public ICubeRenderer getBaseTexture(IMultiblockPart iMultiblockPart) {
         return TJTextures.DRACONIC_CASING;
     }
-    
+
     @Override
-    public MetaTileEntity createMetaTileEntity(MetaTileEntityHolder metaTileEntityHolder) {
+    public MetaTileEntity createMetaTileEntity(IGregTechTileEntity iGregTechTileEntity) {
+        return null;
+    }
+
+    public MetaTileEntity createMeta(MetaTileEntityHolder metaTileEntityHolder) {
         return new ArmorInfuser(metaTileEntityId);
     }
     

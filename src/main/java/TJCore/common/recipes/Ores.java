@@ -17,7 +17,7 @@ import net.minecraft.item.ItemStack;
 
 import java.util.Arrays;
 
-import static gregtech.api.recipes.MatchingMode.IGNORE_FLUIDS;
+//import static gregtech.api.recipes.MatchingMode.IGNORE_FLUIDS;
 import static gregtech.api.unification.material.Materials.*;
 
 import static gregtech.api.recipes.RecipeMaps.*;

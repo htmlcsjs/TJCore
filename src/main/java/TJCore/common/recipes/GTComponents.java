@@ -166,7 +166,7 @@ public class GTComponents {
         int[] fluidAmount = {1000, 250, 500, 750, 1000};
         int[] fluidAmount2 = {500, 500, 500, 500, 500};
 
-        Material[] circuits = {Tier.Basic, Tier.Good, Tier.Advanced, Tier.Extreme, Tier.Elite};
+        Material[] circuits = {Tier.LV, Tier.MV, Tier.HV, Tier.EV, Tier.IV};
 
 
 
@@ -347,7 +347,7 @@ public class GTComponents {
 
             BlockMachineCasing.MachineCasingType machinecasingtype = BlockMachineCasing.MachineCasingType.values()[i];
             GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{OreDictUnifier.get(plate, material[i], 8), IntCircuitIngredient.getIntegratedCircuit(8)});
-            GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.values()[i]), OreDictUnifier.get(cableGtSingle, wireMaterial[i], 2)}, new FluidStack[]{fluidMaterials[i].getFluid(288)});
+            //GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.values()[i]), OreDictUnifier.get(cableGtSingle, wireMaterial[i], 2)}, new FluidStack[]{fluidMaterials[i].getFluid(288)});
             //if(i==2)
                 //GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{MetaTileEntities.HULL[i].getStackForm(), OreDictUnifier.get(cableGtSingle, AnnealedCopper, 2)}, new FluidStack[]{Polyethylene.getFluid(288)});
             if(!TJConfig.recipes.harderMetalCasings) {

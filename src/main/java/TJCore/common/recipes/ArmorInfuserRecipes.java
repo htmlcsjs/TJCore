@@ -2,7 +2,6 @@ package TJCore.common.recipes;
 
 import TJCore.common.recipes.recipemaps.TJRecipeMaps;
 import com.brandon3055.draconicevolution.DEFeatures;
-import gregtech.api.recipes.CountableIngredient;
 import gregtech.api.recipes.Recipe;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -38,14 +37,14 @@ public class ArmorInfuserRecipes {
         for (int i=0; i<recipes.length; i++) {
             // Recipe containing only input items (no armor/key) and dummy output for recipe searching. Will always be hidden
             TJRecipeMaps.ARMOR_INFUSER_RECIPES.recipeBuilder()
-                    .append(recipes[i], 1, false, false)
+                    .append(recipes[i], 1, false)
                     .output(Items.BONE)
                     .hidden()
                     .buildAndRegister();
             // Dummy recipe for JEI
             TJRecipeMaps.ARMOR_INFUSER_RECIPES.recipeBuilder()
-                    .append(recipes[i], 1, false, false)
-                    .inputs(CountableIngredient.from("itemUpgradeKey",0))
+                    .append(recipes[i], 1, false)
+                    //.inputs(CountableIngredient.from("itemUpgradeKey",0))
                     .inputs(new ItemStack(DEFeatures.draconicChest).setStackDisplayName(String.format("Item to Upgrade (Tier %s)", getTierName(i))))
                     .outputs(new ItemStack(DEFeatures.draconicChest).setStackDisplayName("Item with Upgrade Applied"))
                     .buildAndRegister();

@@ -6,6 +6,7 @@ import TJCore.common.metatileentities.TJMetaTileEntities;
 import TJCore.common.recipes.recipemaps.TJRecipeMaps;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.MetaTileEntityHolder;
+import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
 import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.pattern.BlockPattern;
@@ -203,8 +204,8 @@ public class MegaFusion extends RecipeMapMultiblockController {
     }
 
     @Override
-    public MetaTileEntity createMetaTileEntity(MetaTileEntityHolder metaTileEntityHolder) {
-        return new MegaFusion(metaTileEntityId);
+    public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntityID) {
+        return new MegaFusion(this.metaTileEntityId);
     }
 
     @Nonnull

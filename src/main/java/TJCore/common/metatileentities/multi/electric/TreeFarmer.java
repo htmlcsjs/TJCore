@@ -4,6 +4,7 @@ import TJCore.common.TJTextures;
 import TJCore.common.recipes.recipemaps.TJRecipeMaps;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.MetaTileEntityHolder;
+import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
 import gregtech.api.metatileentity.multiblock.MultiblockAbility;
 import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
@@ -49,8 +50,8 @@ public class TreeFarmer extends RecipeMapMultiblockController {
     public ICubeRenderer getBaseTexture(IMultiblockPart iMultiblockPart) { return TJTextures.TreeFarmerController; }
 
     @Override
-    public MetaTileEntity createMetaTileEntity(MetaTileEntityHolder metaTileEntityHolder) {
-        return new TreeFarmer(metaTileEntityId);
+    public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntityID) {
+        return new TreeFarmer(this.metaTileEntityId);
     }
 
     @Nonnull
