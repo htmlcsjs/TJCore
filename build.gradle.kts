@@ -94,7 +94,6 @@ repositories {
 
 dependencies {
 
-    //"provided"(files("libs/GregicalityMultiblocks-1.12.2-1.1.0.jar"))
     "deobfCompile"("codechicken-lib-1-8:CodeChickenLib-$mcVersion:${config["ccl.version"]}:universal")
     "deobfCompile"("codechicken:ChickenASM:$shortVersion-${config["chickenasm.version"]}")
     "deobfCompile"("mezz.jei:jei_$mcVersion:${config["jei.version"]}")
@@ -102,15 +101,12 @@ dependencies {
     "deobfCompile"("CraftTweaker2:CraftTweaker2-MC$strippedVersion-Main:${config["crafttweaker.version"]}")
     "deobfCompile"("team.chisel.ctm:CTM:MC$mcVersion-${config["ctm.version"]}")
 
-    "provided"(files("libs/gregtech-1.12.2-${config["gregtech.version"]}.jar"))
+    "deobfCompile"("curse.maven:gregtech-ce-unofficial-557242:3949406")
+    "deobfCompile"("curse.maven:gregicality-multiblocks-564858:3941516")
 
-    "provided"("curse.maven:gregicality_multiblocks-564858:3941516")
-    "provided"("curse.maven:draconic_evolution-223565:3431261")
-    "provided"("curse.maven:brandons_core-231382:3408276")
-    "provided"("curse.maven:redstone_flux-270789:2920436")
-    //"provided"(files("libs/BrandonsCore-1.12.2-2.4.20.162-universal.jar"))
-    //provided"(files("libs/Draconic-Evolution-1.12.2-2.3.28.354-universal.jar"))
-    //"provided"(files("libs/RedstoneFlux-1.12-2.1.1.1-universal.jar"))
+    "deobfCompile"("curse.maven:draconic_evolution-223565:3431261")
+    "deobfCompile"("curse.maven:brandons_core-231382:3408276")
+    "deobfCompile"("curse.maven:redstone_flux-270789:2920436")
 }
 
 configure<JavaPluginConvention> {

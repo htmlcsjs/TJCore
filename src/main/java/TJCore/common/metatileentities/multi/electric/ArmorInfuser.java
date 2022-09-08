@@ -5,7 +5,6 @@ import TJCore.common.blocks.DraconicCasings;
 import TJCore.common.blocks.TJMetaBlocks;
 import TJCore.common.recipes.recipemaps.TJRecipeMaps;
 import gregtech.api.metatileentity.MetaTileEntity;
-import gregtech.api.metatileentity.MetaTileEntityHolder;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
 import gregtech.api.metatileentity.multiblock.MultiblockAbility;
@@ -100,9 +99,7 @@ public class ArmorInfuser extends RecipeMapMultiblockController {
                 .where('A', states(MetaBlocks.FUSION_CASING.getState(BlockFusionCasing.CasingType.SUPERCONDUCTOR_COIL)))
                 .build();
     }
-    
-    
-    
+
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart iMultiblockPart) {
         return TJTextures.DRACONIC_CASING;
@@ -110,10 +107,6 @@ public class ArmorInfuser extends RecipeMapMultiblockController {
 
     @Override
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity iGregTechTileEntity) {
-        return null;
-    }
-
-    public MetaTileEntity createMeta(MetaTileEntityHolder metaTileEntityHolder) {
         return new ArmorInfuser(metaTileEntityId);
     }
     

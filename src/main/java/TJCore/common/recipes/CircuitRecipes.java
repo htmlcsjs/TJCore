@@ -1,21 +1,16 @@
 package TJCore.common.recipes;
 
-import TJCore.api.TJLog;
 import TJCore.api.material.TJMaterials;
-import TJCore.common.metaitem.TJMetaItems;
-import TJCore.common.recipes.recipemaps.TJRecipeMaps;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.recipes.ModHandler;
-
-import static TJCore.common.recipes.recipemaps.TJRecipeMaps.*;
-import static gregtech.api.GTValues.*;
-import static gregtech.api.recipes.RecipeMaps.*;
-import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Material;
-import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.UnificationEntry;
 
 import static TJCore.common.metaitem.TJMetaItems.*;
+import static TJCore.common.recipes.recipemaps.TJRecipeMaps.DEHYDRATOR_RECIPES;
+import static TJCore.common.recipes.recipemaps.TJRecipeMaps.LAMINATOR_RECIPES;
+import static gregtech.api.GTValues.*;
+import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
@@ -165,7 +160,7 @@ public class CircuitRecipes {
                 'B', COATED_BOARD.getStackForm(),
                 'W', new UnificationEntry(wireGtSingle, Tin));
 
-        ModHandler.addShapedRecipe("primitive_assembly", PRIMITIVE_ASSEMBLY_ULV.getStackForm(),
+        ModHandler.addShapedRecipe("primitive_assembly_phenolic", PRIMITIVE_ASSEMBLY_ULV.getStackForm(),
                 "RVR", "WBW", " V ",
                 'R', RESISTOR.getStackForm(),
                 'V', VACUUM_TUBE.getStackForm(),
