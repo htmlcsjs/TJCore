@@ -33,42 +33,45 @@ public class TJMaterials {
         return result;
     }
 
-    //Primary
+    //Alloys
     public static Material BT6;
     public static Material Birmabright;
-
-    public static Material Ladder_Poly_P_Phenylene;
-
-    public static Material HydrogenSilsesquioxane;
-
-    public static Material SU8_Photoresist;
+    public static Material NickelPlatedTin;
 
     //Chemicals
     public static Material TriphenylPhosphine;// PhosphorusTrichloride + PhenylmagnesiumBromide → TriphenylPhosphine + 3(Mg,Br,Cl)
     public static Material PhosphorusTrichloride; // P4 + 6 Cl2 → 4 PCl3
     public static Material PhenylmagnesiumBromide; // Bromobenzene + mg
     public static Material Bromobenzene; // Benzene + Bromine
-    public static Material Draconium;
-
-    public static Material ZBLAN;
-
-    public static Material SilicaCeramic;
-    public static Material NickelPlatedTin;
+    public static Material HydrogenSilsesquioxane;
+    public static Material SU8_Photoresist;
     public static Material MolybdenumSulfide;
     public static Material Acetylene; // C2H2
     public static Material Difluoroethane; //C2H4F2
-
     public static Material AllylAcetate;
+
+    // Cermaics + Glass
+    public static Material SilicaCeramic;
+    public static Material ZBLAN;
+    public static Material Fiberglass;
+
+    // Metals
+
+    // Polymers
+
+    public static Material Ladder_Poly_P_Phenylene;
+
 
 
     // Magic materials, unknown composition
-    public static Material Manasteel; // Fe50C + Salis
+    public static Material Draconium;
+    public static Material Manasteel;
     public static Material Terrasteel;
-    public static Material Thaumium; // TungstenSteel + Manasteel + salis?
+    public static Material Thaumium;
     public static Material Void;
-    public static Material ColdIron; // frozen molten iron?
-    public static Material Starmetal; // Ax*Sx* (salis + space shit?)
-    public static Material Starlight; // Ax*
-    public static Material Salis; // ?
+    public static Material ColdIron;
+    public static Material Starmetal;
+    public static Material Starlight;
+    public static Material Salis;
 
 }

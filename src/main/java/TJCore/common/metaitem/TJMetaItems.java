@@ -242,4 +242,9 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem TREATED_ULPIC_WAFER;
     //public static MetaItem<?>.MetaValueItem TREATED_CPU_WAFER;
 
+    //Micro-Nano PCB ITEMS
+    public static MetaItem<?>.MetaValueItem COPPER_LAMINATED_EPOXID;
+    public static MetaItem<?>.MetaValueItem ELECTRUM_LAMINATED_EPOXID;
+    public static MetaItem<?>.MetaValueItem GERMANIUM_LAMINATED_EPOXID;
+    public static MetaItem<?>.MetaValueItem FIBERGLASS_MESH;
 }

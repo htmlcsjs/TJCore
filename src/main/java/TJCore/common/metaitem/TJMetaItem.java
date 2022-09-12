@@ -55,7 +55,7 @@ public class    TJMetaItem extends StandardMetaItem {
         PRIMITIVE_BOARD = addItem(64, "primitive_board");
         ELECTRONIC_BOARD = addItem(65, "electronic_board");
         INTEGRATED_BOARD = addItem(66, "integrated_board");
-        MICRO_BOARD = addItem(67, "micro");
+        MICRO_BOARD = addItem(67, "micro_board");
         NANO_BOARD = addItem(68, "nano_board");
         IMC_BOARD = addItem(69, "imc_board");
         OPTICAL_BOARD = addItem(70, "optical_board");
@@ -209,6 +209,11 @@ public class    TJMetaItem extends StandardMetaItem {
         UVEMITTER_C = addItem(567, "uvemitter_c");
         UVEMITTER_D = addItem(568, "uvemitter_d");
         UVEMITTER_E = addItem(569, "uvemitter_e");
-    }
 
+        //Micro-Nano PCB ITEMS
+        COPPER_LAMINATED_EPOXID = addItem(570, "copperlaminatedepoxid");
+        ELECTRUM_LAMINATED_EPOXID = addItem(571, "electrumlaminatedepoxid");
+        GERMANIUM_LAMINATED_EPOXID = addItem(572,"germaniumlaminatedepoxid");
+        FIBERGLASS_MESH = addItem(573,"fiberglassmesh");
+    }
 }

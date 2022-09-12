@@ -1,10 +1,19 @@
 package TJCore.common.recipes;
 
 import TJCore.api.material.TJMaterials;
+import gregtech.api.GTValues;
 import gregtech.api.items.metaitem.MetaItem;
+import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
+import gregtech.api.recipes.RecipeMap;
+import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.stack.UnificationEntry;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidStack;
+
+import java.util.*;
 
 import static TJCore.common.metaitem.TJMetaItems.*;
 import static TJCore.common.recipes.recipemaps.TJRecipeMaps.DEHYDRATOR_RECIPES;
@@ -51,22 +60,35 @@ public class CircuitRecipes {
 
     public static void removePreexistingCircuits() {
         ELECTRONIC_CIRCUIT_LV.setInvisible();
+        GTRecipeHandler.removeRecipesByInputs(CHEMICAL_BATH_RECIPES, new ItemStack[]{CARBON_FIBERS.getStackForm(1)}, new FluidStack[]{Epoxy.getFluid(144)});
+        GTRecipeHandler.removeRecipesByInputs(CHEMICAL_BATH_RECIPES, new ItemStack[]{OreDictUnifier.get(wireFine, BorosilicateGlass)}, new FluidStack[]{Epoxy.getFluid(144)});
     }
 
     public static void registerCircuits() {
+        removePreexistingCircuits();
         Wafers.registerLithography();
+        registerBoards();
+    }
+
+    public static void registerBoards() {
         primitiveBoard();
-        electonicBoard();
+        electronicBoard();
         integratedBoard();
-        PrimitiveElectronicIntegratedLines();
+        microBoard();
+        nanoBoard();
+        imcBoard();
+        opticalBoard();
+        crystalBoard();
+        wetwareBoard();
+        biowareBoard();
+        quantumBoard();
+        exoticBoard();
+        cosmicBoard();
+        supraBoard();
     }
 
-    public static void registerWafers() {
-
-    }
-
-    public static void primitiveBoard() {
-
+    private static void primitiveBoard() {
+        //Primitive Point to Point PCB
         MIXER_RECIPES.recipeBuilder()
                 .input(dust, Wood, 4)
                 .fluidInputs(Creosote.getFluid(500))
@@ -95,8 +117,8 @@ public class CircuitRecipes {
 
     }
 
-    public static void electonicBoard() {
-
+    private static void electronicBoard() {
+        ///Silicate Stenciled PCB
         BLAST_RECIPES.recipeBuilder()
                 .input(dust,SiliconDioxide,6)
                 .input(dustTiny, Nickel)
@@ -121,8 +143,9 @@ public class CircuitRecipes {
                 .duration(20)
                 .buildAndRegister();
     }
-    static Material[] laminatorFluids = {Polyethylene,PolyvinylChloride,Polytetrafluoroethylene,Polybenzimidazole};
-    public static void integratedBoard() {
+    public static Material[] laminatorFluids = {Polyethylene,PolyvinylChloride,Polytetrafluoroethylene,Polybenzimidazole};
+    private static void integratedBoard() {
+        //Machine Stenciled PCB
         for (int i = 0; i < laminatorFluids.length; i++) {
             LAMINATOR_RECIPES.recipeBuilder()
                     .input(plate, Polyethylene)
@@ -133,7 +156,6 @@ public class CircuitRecipes {
                     .duration(20)
                     .buildAndRegister();
         }
-
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(INTEGRATED_PREBOARD)
                 .input(foil, Copper)
@@ -142,9 +164,129 @@ public class CircuitRecipes {
                 .duration(40)
                 .buildAndRegister();
     }
+    private static void microBoard() {
+        //Simple Etched PCB
+        LAMINATOR_RECIPES.recipeBuilder()
+                .EUt(500)
+                .duration(50)
+                .input(foil,Epoxy,4)
+                .input(foil,AnnealedCopper,2)
+                .output(COPPER_LAMINATED_EPOXID)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .EUt(120)
+                .duration(20)
+                .input(COPPER_LAMINATED_EPOXID)
+                .input(foil,Polyethylene)
+                .output(MICRO_PREBOARD)
+                .buildAndRegister();
+
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .EUt(VA[LV])
+                .duration(35)
+                .input(MICRO_PREBOARD)
+                .fluidInputs(NitricAcid.getFluid(50))
+                .output(MICRO_BOARD)
+                .buildAndRegister();
+    }
+    private static void nanoBoard(){
+        //Reinforced Etched PCB
+        LAMINATOR_RECIPES.recipeBuilder()
+                .EUt(2000)
+                .duration(20)
+                .input(foil, Epoxy, 4)
+                .input(foil, Electrum)
+                .input(foil, TJMaterials.Fiberglass)
+                .output(ELECTRUM_LAMINATED_EPOXID,2)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .EUt(500)
+                .duration(35)
+                .input(ELECTRUM_LAMINATED_EPOXID)
+                .input(foil,Epoxy)
+                .output(MICRO_PREBOARD)
+                .buildAndRegister();
+
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .EUt(VA[LV])
+                .duration(20)
+                .input(MICRO_PREBOARD)
+                .fluidInputs(NitricAcid.getFluid(50))
+                .output(MICRO_BOARD)
+                .buildAndRegister();
+    }
+    private static void imcBoard(){
+        //Multi-Layer Etched PCB
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .EUt(500)
+                .duration(20)
+                .input(wireFine,TJMaterials.Fiberglass)
+                .output(FIBERGLASS_MESH,2)
+                .buildAndRegister();
+
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .EUt(VA[EV])
+                .duration(40)
+                .input(FIBERGLASS_MESH)
+                .fluidInputs(Epoxy.getFluid(72))
+                .output(plate,ReinforcedEpoxyResin)
+                .buildAndRegister();
+
+        LAMINATOR_RECIPES.recipeBuilder()
+                .EUt(VA[IV])
+                .duration(20)
+                .input(foil,ReinforcedEpoxyResin,2)
+                .input(foil,Germanium)
+                .input(foil,TJMaterials.Fiberglass)
+                .output(GERMANIUM_LAMINATED_EPOXID,2)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .EUt(VA[EV])
+                .duration(15)
+                .input(GERMANIUM_LAMINATED_EPOXID)
+                .input(foil,Epoxy)
+                .output(IMC_PREBOARD)
+                .buildAndRegister();
+
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .EUt(VA[LV])
+                .duration(20)
+                .input(IMC_PREBOARD)
+                .fluidInputs(NitricAcid.getFluid(50))
+                .output(IMC_BOARD)
+                .buildAndRegister();
+
+    }
+    private static void opticalBoard(){
+        //Optical Integrated PCB
+    }
+    private static void crystalBoard(){
+        //Energy Modulus PCB
+    }
+    private static void wetwareBoard(){
+        //Organic Neural Network Support Unit
+    }
+    private static void biowareBoard(){
+        //Bio-Froth Support Unit
+    }
+    private static void quantumBoard(){
+        //Q-Bit Computational Framework
+    }
+    private static void exoticBoard(){
+        //Exotic Particle Manipulation Framework
+    }
+    private static void cosmicBoard(){
+        //Cosmic Soup Physical Calculation Framework
+    }
+    private static void supraBoard(){
+        //Temporally Isolated Calculation Framework
+    }
 
 
-    public static void PrimitiveElectronicIntegratedLines() {
+    /*public static void PrimitiveElectronicIntegratedLines() {
 
         ModHandler.addShapelessRecipe("capacitor", CAPACITOR.getStackForm(3),
                 new UnificationEntry(plate, Nickel),
@@ -307,5 +449,5 @@ public class CircuitRecipes {
                 .EUt(VA[MV])
                 .duration(270)
                 .buildAndRegister();
-    }
+    }*/
 }

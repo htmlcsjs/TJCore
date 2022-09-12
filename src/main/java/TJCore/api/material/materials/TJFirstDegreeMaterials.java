@@ -122,6 +122,10 @@ public class TJFirstDegreeMaterials {
                 .fluid()
                 .color(0x0e242b)
                 .build();
+        Fiberglass = new Material.Builder(25014, "fiberglass")
+                .ingot()
+                .color(0x99c0cf)
+                .build();
     }
 
     public static void registerProperties() {
@@ -140,12 +144,18 @@ public class TJFirstDegreeMaterials {
         FluidPipeProperties bluesteelFluidPipeProps = new FluidPipeProperties(1500, 30, false, true, false, false);
         BlueSteel.setProperty(PropertyKey.FLUID_PIPE, bluesteelFluidPipeProps);
 
+        // Glass + Ceramics
+        Fiberglass.addFlags(MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_FOIL);
+
+        // Polymers
         Polybenzimidazole.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
         PolyphenyleneSulfide.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
         Polytetrafluoroethylene.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
         PolyvinylChloride.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
         Polyethylene.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
+        ReinforcedEpoxyResin.addFlags(MaterialFlags.GENERATE_FOIL);
 
+        // Metals
         TinAlloy.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
 
         // becuase of techs foolishness and thinking graphenes are a foil
