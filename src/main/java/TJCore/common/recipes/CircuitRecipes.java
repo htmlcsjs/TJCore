@@ -1,28 +1,27 @@
 package TJCore.common.recipes;
 
-import TJCore.api.material.TJMaterials;
-import gregtech.api.GTValues;
-import gregtech.api.items.metaitem.MetaItem;
+import gregicality.multiblocks.GregicalityMultiblocks;
+import gregicality.multiblocks.api.recipes.GCYMRecipeMaps;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
-import gregtech.api.recipes.RecipeMap;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.stack.UnificationEntry;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
+import org.lwjgl.opencl.CL;
 
-import java.util.*;
 
 import static TJCore.common.metaitem.TJMetaItems.*;
 import static TJCore.common.recipes.recipemaps.TJRecipeMaps.DEHYDRATOR_RECIPES;
 import static TJCore.common.recipes.recipemaps.TJRecipeMaps.LAMINATOR_RECIPES;
+import static TJCore.api.material.TJMaterials.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
+import static gregicality.multiblocks.api.recipes.GCYMRecipeMaps.*;
 
 public class CircuitRecipes {
 
@@ -66,7 +65,7 @@ public class CircuitRecipes {
 
     public static void registerCircuits() {
         removePreexistingCircuits();
-        Wafers.registerLithography();
+        Chips.registerLithography();
         registerBoards();
     }
 
@@ -122,13 +121,13 @@ public class CircuitRecipes {
         BLAST_RECIPES.recipeBuilder()
                 .input(dust,SiliconDioxide,6)
                 .input(dustTiny, Nickel)
-                .output(ingot, TJMaterials.SilicaCeramic, 6)
+                .output(ingot, SilicaCeramic, 6)
                 .EUt(30)
                 .duration(420)
                 .buildAndRegister();
 
         LAMINATOR_RECIPES.recipeBuilder()
-                .input(plate, TJMaterials.SilicaCeramic)
+                .input(plate, SilicaCeramic)
                 .input(foil, Copper, 2)
                 .output(ELECTRONIC_PREBOARD)
                 .EUt(30)
@@ -197,7 +196,7 @@ public class CircuitRecipes {
                 .duration(20)
                 .input(foil, Epoxy, 4)
                 .input(foil, Electrum)
-                .input(foil, TJMaterials.Fiberglass)
+                .input(foil, Fiberglass)
                 .output(ELECTRUM_LAMINATED_EPOXID,2)
                 .buildAndRegister();
 
@@ -222,7 +221,7 @@ public class CircuitRecipes {
         ASSEMBLER_RECIPES.recipeBuilder()
                 .EUt(500)
                 .duration(20)
-                .input(wireFine,TJMaterials.Fiberglass)
+                .input(wireFine,Fiberglass)
                 .output(FIBERGLASS_MESH,2)
                 .buildAndRegister();
 
@@ -239,7 +238,7 @@ public class CircuitRecipes {
                 .duration(20)
                 .input(foil,ReinforcedEpoxyResin,2)
                 .input(foil,Germanium)
-                .input(foil,TJMaterials.Fiberglass)
+                .input(foil,Fiberglass)
                 .output(GERMANIUM_LAMINATED_EPOXID,2)
                 .buildAndRegister();
 
@@ -262,9 +261,175 @@ public class CircuitRecipes {
     }
     private static void opticalBoard(){
         //Optical Integrated PCB
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .EUt(VA[IV])
+                .duration(20)
+                .input(wireFine,ZBLAN)
+                .fluidInputs(Europium.getFluid(25))
+                .output(ZBLANMATRIX)
+                .buildAndRegister();
+
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .EUt(VA[EV])
+                .duration(20)
+                .input(ZBLANMATRIX)
+                .fluidInputs(Ladder_Poly_P_Phenylene.getFluid(144))
+                .output(OPTICAL_BASE)
+                .buildAndRegister();
+
+        LAMINATOR_RECIPES.recipeBuilder()
+                .EUt(VA[IV])
+                .duration(40)
+                .input(OPTICAL_BASE)
+                .input(dustSmall,IndiumPhosphide)
+                .input(foil,ZBLAN)
+                .output(LAMINATED_OPTICAL_BASE)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .EUt(VA[LuV])
+                .duration(60)
+                .input(dustSmall,LuminescentSiliconNanocrystals)
+                .input(LAMINATED_OPTICAL_BASE)
+                .fluidInputs(SeleniumMonobromide.getFluid(50))
+                .output(OPTICAL_PREBOARD)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .EUt(VA[EV])
+                .duration(20)
+                .input(wireFine,ZBLAN)
+                .input(OPTICAL_PREBOARD)
+                .fluidInputs(Ladder_Poly_P_Phenylene.getFluid(50))
+                .output(OPTICAL_BOARD)
+                .buildAndRegister();
     }
+
     private static void crystalBoard(){
         //Energy Modulus PCB
+        MIXER_RECIPES.recipeBuilder()
+                .EUt(VA[EV])
+                .duration(50)
+                .input(dust,Diamond)
+                .fluidInputs(DistilledWater.getFluid(1000))
+                .fluidOutputs(DiamondCVDSolution.getFluid(1000))
+                .buildAndRegister();
+
+        //TODO: CARBON - Make this CVD recipe
+        LAMINATOR_RECIPES.recipeBuilder()
+                .EUt(VA[LuV])
+                .duration(100)
+                .input(SAPPHIRE_WAFER)
+                .fluidInputs(DiamondCVDSolution.getFluid(50))
+                .output(COATED_SAPPHIRE_WAFER)
+                .buildAndRegister();
+
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .EUt(VA[IV])
+                .duration(100)
+                .input(COATED_SAPPHIRE_WAFER)
+                .fluidInputs(Starlight.getFluid(250))
+                .output(DIRTY_COATED_SAPPHIRE_WAFER)
+                .buildAndRegister();
+
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .EUt(VA[LuV])
+                .duration(60)
+                .input(DIRTY_COATED_SAPPHIRE_WAFER)
+                .fluidInputs(Dysprosium.getFluid(144))
+                .output(CLEANED_COATED_SAPPHIRE_WAFER)
+                .output(ingot,Dysprosium)
+                .buildAndRegister();
+
+        AUTOCLAVE_RECIPES.recipeBuilder()
+                .EUt(VA[ZPM])
+                .duration(5)
+                .input(CLEANED_COATED_SAPPHIRE_WAFER)
+                .fluidInputs(Helium.getPlasma(150))
+                .output(SAPPHIRE_SUBSTRATE_PREP)
+                .buildAndRegister();
+
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .EUt(VA[IV])
+                .duration(130)
+                .input(SAPPHIRE_SUBSTRATE_PREP)
+                .fluidInputs(AquaRegia.getFluid(250))
+                .output(ETCHED_SAPPHIRE_WAFER)
+                .buildAndRegister();
+
+        BLAST_RECIPES.recipeBuilder()
+                .EUt(VA[ZPM])
+                .duration(340)
+                .blastFurnaceTemp(8600)
+                .input(ETCHED_SAPPHIRE_WAFER)
+                .notConsumable(Argon.getFluid(1))
+                .output(SUPERHEATED_SAPPHIRE_WAFER)
+                .buildAndRegister();
+
+        //TODO: ANYONE - Find a way to either/or viable/nonviable here
+        LAMINATOR_RECIPES.recipeBuilder()
+                .EUt(VA[LuV])
+                .duration(40)
+                .input(SUPERHEATED_SAPPHIRE_WAFER)
+                .input(foil,Palladium)
+                .output(VIABLE_SAPPHIRE_WAFER)
+                //.chancedOutput(NONVIABLE_SAPPHIRE_WAFER, 50,1)
+                .buildAndRegister();
+
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .EUt(VA[IV])
+                .duration(1000)
+                .input(NONVIABLE_SAPPHIRE_WAFER)
+                .fluidInputs(Starlight.getFluid(500))
+                .output(RECYCLED_SAPPHIRE_WAFER)
+                .buildAndRegister();
+
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .EUt(VA[IV])
+                .duration(10)
+                .input(RECYCLED_SAPPHIRE_WAFER)
+                .fluidInputs(Dysprosium.getFluid(288))
+                .output(CLEANED_COATED_SAPPHIRE_WAFER)
+                .output(ingot ,Dysprosium,2);
+
+        LAMINATOR_RECIPES.recipeBuilder()
+                .EUt(VA[ZPM])
+                .duration(140)
+                .input(VIABLE_SAPPHIRE_WAFER)
+                .input(foil,Rutherfordium)
+                .output(SINTERED_SAPPHIRE_WAFER)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .EUt(VA[ZPM])
+                .duration(30)
+                .input(wireFine,Palladium,2)
+                .input(SINTERED_SAPPHIRE_WAFER)
+                .output(WIRED_SAPPHIRE_WAFER)
+                .buildAndRegister();
+
+        CUTTER_RECIPES.recipeBuilder()
+                .EUt(VA[ZPM])
+                .duration(30)
+                .input(WIRED_SAPPHIRE_WAFER)
+                .output(SAPPHIRE_CHIP,32)
+                .buildAndRegister();
+
+        LAMINATOR_RECIPES.recipeBuilder()
+                .EUt(VA[IV])
+                .duration(20)
+                .input(SAPPHIRE_CHIP)
+                .input(foil,Kapton_K)
+                .output(CRYSTAL_PREBOARD)
+                .buildAndRegister();
+
+        CANNER_RECIPES.recipeBuilder()
+                .EUt(VA[LuV])
+                .duration(65)
+                .input(CRYSTAL_PREBOARD)
+                .fluidInputs(Neon.getFluid(10))
+                .output(CRYSTAL_BOARD)
+                .buildAndRegister();
     }
     private static void wetwareBoard(){
         //Organic Neural Network Support Unit

@@ -126,9 +126,40 @@ public class TJFirstDegreeMaterials {
                 .ingot()
                 .color(0x99c0cf)
                 .build();
+
+        LuminescentSiliconNanocrystals = new Material.Builder(25015,"luminescentsiliconnanocrystals")
+                .dust()
+                .color(0x363636)
+                .build();
+
+        SeleniumMonobromide = new Material.Builder(25016, "seleniummonobromide")
+                .fluid()
+                .color(0x472a1a)
+                .build();
+
+        DiamondCVDSolution = new Material.Builder(25017, "diamondcvdsolution")
+                .fluid()
+                .color(0x65b1fc)
+                .build();
+
+        Kapton_K = new Material.Builder(25018,"kaptonk")
+                .fluid()
+                .ingot()
+                .iconSet(MaterialIconSet.DULL)
+                .color(0xb7c474)
+                .build();
+
+        Starlight = new Material.Builder(25019, "starlight")
+                .fluid()
+                .color(0xebfafc)
+                .iconSet(MaterialIconSet.SHINY)
+                .build();
+
     }
 
     public static void registerProperties() {
+
+        Dysprosium.setProperty(PropertyKey.FLUID, new FluidProperty());
 
         FluidPipeProperties birmabrightFluidPipeProps = new FluidPipeProperties(1500, 24, false, true, false, false);
         Birmabright.setProperty(PropertyKey.FLUID_PIPE, birmabrightFluidPipeProps);
@@ -154,6 +185,7 @@ public class TJFirstDegreeMaterials {
         PolyvinylChloride.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
         Polyethylene.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
         ReinforcedEpoxyResin.addFlags(MaterialFlags.GENERATE_FOIL);
+        Kapton_K.addFlags(MaterialFlags.GENERATE_FOIL);
 
         // Metals
         TinAlloy.addFlags(MaterialFlags.GENERATE_FINE_WIRE);

@@ -48,7 +48,12 @@ public class TJMaterials {
     public static Material MolybdenumSulfide;
     public static Material Acetylene; // C2H2
     public static Material Difluoroethane; //C2H4F2
+
     public static Material AllylAcetate;
+
+    public static Material LuminescentSiliconNanocrystals;
+
+    public static Material SeleniumMonobromide;
 
     // Cermaics + Glass
     public static Material SilicaCeramic;
@@ -58,10 +63,11 @@ public class TJMaterials {
     // Metals
 
     // Polymers
-
     public static Material Ladder_Poly_P_Phenylene;
+    public static Material Kapton_K;
 
-
+    // Mixtures
+    public static Material DiamondCVDSolution;
 
     // Magic materials, unknown composition
     public static Material Draconium;

@@ -210,10 +210,30 @@ public class    TJMetaItem extends StandardMetaItem {
         UVEMITTER_D = addItem(568, "uvemitter_d");
         UVEMITTER_E = addItem(569, "uvemitter_e");
 
-        //Micro-Nano PCB ITEMS
+        // Micro-Nano PCB ITEMS
         COPPER_LAMINATED_EPOXID = addItem(570, "copperlaminatedepoxid");
         ELECTRUM_LAMINATED_EPOXID = addItem(571, "electrumlaminatedepoxid");
         GERMANIUM_LAMINATED_EPOXID = addItem(572,"germaniumlaminatedepoxid");
         FIBERGLASS_MESH = addItem(573,"fiberglassmesh");
+
+        // Optical PCB ITEMS
+        ZBLANMATRIX = addItem(574,"zblanmatrix");
+        OPTICAL_BASE = addItem(575,"opticalbase");
+        LAMINATED_OPTICAL_BASE = addItem(576,"laminatedopticalbase");
+
+        // Crystal PCB ITEMS
+        COATED_SAPPHIRE_WAFER = addItem(577,"coatedsapphirewafer");
+        DIRTY_COATED_SAPPHIRE_WAFER = addItem(578,"dirtycoatedsapphirewafer");
+        CLEANED_COATED_SAPPHIRE_WAFER = addItem(579,"cleanedcoatedsapphirewafer");
+        SAPPHIRE_SUBSTRATE_PREP = addItem(580,"sapphiresubstrateprep");
+        ETCHED_SAPPHIRE_WAFER = addItem(581,"etchedsapphirewafer");
+        SUPERHEATED_SAPPHIRE_WAFER = addItem(582,"superheatedsapphirewafer");
+        VIABLE_SAPPHIRE_WAFER = addItem(583,"viablesapphirewafer");
+        NONVIABLE_SAPPHIRE_WAFER = addItem(584,"nonviablesapphirewafer");
+        RECYCLED_SAPPHIRE_WAFER = addItem(585,"recycledsapphirewafer");
+        SINTERED_SAPPHIRE_WAFER = addItem(586,"sinteredsapphirewafer");
+        WIRED_SAPPHIRE_WAFER = addItem(587,"wiredsapphirewafer");
+        SAPPHIRE_WAFER = addItem(588,"sapphirewafer");
+        SAPPHIRE_CHIP = addItem(589,"sapphirechip");
     }
 }

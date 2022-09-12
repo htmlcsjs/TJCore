@@ -247,4 +247,24 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem ELECTRUM_LAMINATED_EPOXID;
     public static MetaItem<?>.MetaValueItem GERMANIUM_LAMINATED_EPOXID;
     public static MetaItem<?>.MetaValueItem FIBERGLASS_MESH;
+
+    //Optical PCB ITEMS
+    public static MetaItem<?>.MetaValueItem ZBLANMATRIX;
+    public static MetaItem<?>.MetaValueItem OPTICAL_BASE;
+    public static MetaItem<?>.MetaValueItem LAMINATED_OPTICAL_BASE;
+
+    //Cystal PCB ITEMS
+    public static MetaItem<?>.MetaValueItem COATED_SAPPHIRE_WAFER;
+    public static MetaItem<?>.MetaValueItem DIRTY_COATED_SAPPHIRE_WAFER;
+    public static MetaItem<?>.MetaValueItem CLEANED_COATED_SAPPHIRE_WAFER;
+    public static MetaItem<?>.MetaValueItem SAPPHIRE_SUBSTRATE_PREP;
+    public static MetaItem<?>.MetaValueItem ETCHED_SAPPHIRE_WAFER;
+    public static MetaItem<?>.MetaValueItem SUPERHEATED_SAPPHIRE_WAFER;
+    public static MetaItem<?>.MetaValueItem VIABLE_SAPPHIRE_WAFER;
+    public static MetaItem<?>.MetaValueItem NONVIABLE_SAPPHIRE_WAFER;
+    public static MetaItem<?>.MetaValueItem RECYCLED_SAPPHIRE_WAFER;
+    public static MetaItem<?>.MetaValueItem SINTERED_SAPPHIRE_WAFER;
+    public static MetaItem<?>.MetaValueItem WIRED_SAPPHIRE_WAFER;
+    public static MetaItem<?>.MetaValueItem SAPPHIRE_WAFER;
+    public static MetaItem<?>.MetaValueItem SAPPHIRE_CHIP;
 }
