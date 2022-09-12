@@ -1,0 +1,101 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            name = 'forge'
+            setUrl 'https://maven.minecraftforge.net/'
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3.4'
+        classpath 'org.eclipse.jgit:org.eclipse.jgit:5.8.0.202006091008-r'
+        classpath 'org.apache.commons:commons-lang3:3.12.0'
+    }
+}
+
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+version = project.mod_version
+group = project.maven_group
+archivesBaseName = project.archives_base_name
+
+sourceCompatibility = targetCompatibility = '1.8'
+
+compileJava {
+    sourceCompatibility = targetCompatibility = '1.8'
+}
+
+minecraft {
+    version = '1.12.2-14.23.5.2847'
+    runDir = 'run'
+    mappings = 'stable_39'
+}
+
+repositories {
+    maven {
+        name = 'JEI'
+        url = 'https://dvs1.progwml6.com/files/maven/'
+    }
+    maven {
+        name = 'tterrag maven'
+        url = 'http://maven.tterrag.com/'
+    }
+    maven {
+        name = 'CraftTweaker'
+        url = 'https://maven.blamejared.com/'
+    }
+    maven {
+        name = 'CodeChickenLib'
+        url = 'http://chickenbones.net/maven/'
+    }
+    maven {
+        name = 'CTM'
+        url = 'https://maven.tterrag.com/'
+    }
+    maven {
+        name = 'CurseMaven'
+        url = "https://cursemaven.com"
+    }
+}
+
+dependencies {
+    // Jetbrains Annotations
+    compileOnly 'org.jetbrains:annotations:23.0.0'
+
+
+    // deobfCompile means you can use the mod's code and launch it in game
+    // compileOnly means you can use the mod's code, but do not launch with it in game
+    // runtime means you cannot use the mod's code, and only launch the mod in game
+
+    deobfCompile 'curse.maven:codechicken-lib-1-8-242818:2779848'
+
+    compile 'mezz.jei:jei_1.12.2:4.16.1.302'
+    runtime 'mcjty.theoneprobe:TheOneProbe-1.12:1.12-1.4.28-17'
+    deobfCompile 'CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.680'
+    deobfCompile "team.chisel.ctm:CTM:MC1.12.2-1.0.2.31"
+
+    deobfCompile 'curse.maven:gregtech-ce-unofficial-557242:3949406'
+    deobfCompile 'curse.maven:gregicality-multiblocks-564858:3941516'
+
+    // DE requires Brandon's Core and Redstone Flux. Change them all to deobfCompile to use them in-game
+    compileOnly 'curse.maven:draconic_evolution-223565:3431261'
+    compileOnly 'curse.maven:brandons_core-231382:3408276'
+    compileOnly 'curse.maven:redstone_flux-270789:2920436'
+}
+
+processResources {
+    // this will ensure that this task is redone when the versions change.
+    inputs.property 'version', project.version
+    inputs.property 'mcversion', project.minecraft.version
+    // replace stuff in mcmod.info, nothing else
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        // replace version and mcversion
+        expand 'version': project.version, 'mcversion': project.minecraft.version
+    }
+    // copy everything else except the mcmod.info
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+    rename '(.+_at.cfg)', 'META-INF/$1' // Access Transformers
+}
