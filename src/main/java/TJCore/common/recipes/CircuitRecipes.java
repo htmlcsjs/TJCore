@@ -22,6 +22,9 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static gregicality.multiblocks.api.recipes.GCYMRecipeMaps.*;
+import static gregtech.common.items.MetaItems.NANO_COMPUTER_IV;
+import static gregtech.common.items.MetaItems.NANO_MAINFRAME_LUV;
+import static gregtech.common.items.MetaItems.NANO_PROCESSOR_HV;
 
 public class CircuitRecipes {
 
@@ -59,16 +62,59 @@ public class CircuitRecipes {
 
     public static void removePreexistingCircuits() {
         ELECTRONIC_CIRCUIT_LV.setInvisible();
+        RESISTOR.setInvisible();
+        DIODE.setInvisible();
+        CAPACITOR.setInvisible();
+        TRANSISTOR.setInvisible();
+        INDUCTOR.setInvisible();
+        SMD_CAPACITOR.setInvisible();
+        SMD_DIODE.setInvisible();
+        SMD_RESISTOR.setInvisible();
+        SMD_TRANSISTOR.setInvisible();
+        SMD_INDUCTOR.setInvisible();
+        ADVANCED_SMD_CAPACITOR.setInvisible();
+        ADVANCED_SMD_DIODE.setInvisible();
+        ADVANCED_SMD_RESISTOR.setInvisible();
+        ADVANCED_SMD_TRANSISTOR.setInvisible();
+        ADVANCED_SMD_INDUCTOR.setInvisible();
+        ELECTRONIC_CIRCUIT_LV.setInvisible();
+        ELECTRONIC_CIRCUIT_MV.setInvisible();
+        INTEGRATED_CIRCUIT_LV.setInvisible();
+        INTEGRATED_CIRCUIT_MV.setInvisible();
+        INTEGRATED_CIRCUIT_HV.setInvisible();
+        NAND_CHIP_ULV.setInvisible();
+        MICROPROCESSOR_LV.setInvisible();
+        PROCESSOR_MV.setInvisible();
+        PROCESSOR_ASSEMBLY_HV.setInvisible();
+        WORKSTATION_EV.setInvisible();
+        MAINFRAME_IV.setInvisible();
+        NANO_PROCESSOR_HV.setInvisible();
+        NANO_PROCESSOR_ASSEMBLY_EV.setInvisible();
+        NANO_COMPUTER_IV.setInvisible();
+        NANO_MAINFRAME_LUV.setInvisible();
+        QUANTUM_PROCESSOR_EV.setInvisible();
+        QUANTUM_ASSEMBLY_IV.setInvisible();
+        QUANTUM_COMPUTER_LUV.setInvisible();
+        QUANTUM_MAINFRAME_ZPM.setInvisible();
+        CRYSTAL_PROCESSOR_IV.setInvisible();
+        CRYSTAL_ASSEMBLY_LUV.setInvisible();
+        CRYSTAL_COMPUTER_ZPM.setInvisible();
+        CRYSTAL_MAINFRAME_UV.setInvisible();
+        WETWARE_PROCESSOR_LUV.setInvisible();
+        WETWARE_PROCESSOR_ASSEMBLY_ZPM.setInvisible();
+        WETWARE_SUPER_COMPUTER_UV.setInvisible();
+        WETWARE_MAINFRAME_UHV.setInvisible();
         GTRecipeHandler.removeRecipesByInputs(CHEMICAL_BATH_RECIPES, new ItemStack[]{CARBON_FIBERS.getStackForm(1)}, new FluidStack[]{Epoxy.getFluid(144)});
         GTRecipeHandler.removeRecipesByInputs(CHEMICAL_BATH_RECIPES, new ItemStack[]{OreDictUnifier.get(wireFine, BorosilicateGlass)}, new FluidStack[]{Epoxy.getFluid(144)});
     }
 
     public static void registerCircuits() {
         removePreexistingCircuits();
-        Chips.registerLithography();
+        SMD.registerSMDRecipes();
+        Chips.registerChips();
         registerBoards();
+        registerRecipes();
     }
-
     public static void registerBoards() {
         primitiveBoard();
         electronicBoard();
@@ -85,7 +131,22 @@ public class CircuitRecipes {
         cosmicBoard();
         supraBoard();
     }
-
+    public static void registerRecipes() {
+        primitive();
+        electronic();
+        integrated();
+        micro();
+        nano();
+        imc();
+        optical();
+        crystal();
+        wetware();
+        bioware();
+        quantum();
+        exotic();
+        cosmic();
+        supra();
+    }
     private static void primitiveBoard() {
         //Primitive Point to Point PCB
         MIXER_RECIPES.recipeBuilder()
@@ -115,7 +176,6 @@ public class CircuitRecipes {
                 PRIMITIVE_PREBOARD.getStackForm());
 
     }
-
     private static void electronicBoard() {
         ///Silicate Stenciled PCB
         BLAST_RECIPES.recipeBuilder()
@@ -142,8 +202,8 @@ public class CircuitRecipes {
                 .duration(20)
                 .buildAndRegister();
     }
-    public static Material[] laminatorFluids = {Polyethylene,PolyvinylChloride,Polytetrafluoroethylene,Polybenzimidazole};
     private static void integratedBoard() {
+        Material[] laminatorFluids = {Polyethylene,PolyvinylChloride,Polytetrafluoroethylene,Polybenzimidazole};
         //Machine Stenciled PCB
         for (int i = 0; i < laminatorFluids.length; i++) {
             LAMINATOR_RECIPES.recipeBuilder()
@@ -304,132 +364,8 @@ public class CircuitRecipes {
                 .output(OPTICAL_BOARD)
                 .buildAndRegister();
     }
-
     private static void crystalBoard(){
-        //Energy Modulus PCB
-        MIXER_RECIPES.recipeBuilder()
-                .EUt(VA[EV])
-                .duration(50)
-                .input(dust,Diamond)
-                .fluidInputs(DistilledWater.getFluid(1000))
-                .fluidOutputs(DiamondCVDSolution.getFluid(1000))
-                .buildAndRegister();
 
-        //TODO: CARBON - Make this CVD recipe
-        LAMINATOR_RECIPES.recipeBuilder()
-                .EUt(VA[LuV])
-                .duration(100)
-                .input(SAPPHIRE_WAFER)
-                .fluidInputs(DiamondCVDSolution.getFluid(50))
-                .output(COATED_SAPPHIRE_WAFER)
-                .buildAndRegister();
-
-        CHEMICAL_BATH_RECIPES.recipeBuilder()
-                .EUt(VA[IV])
-                .duration(100)
-                .input(COATED_SAPPHIRE_WAFER)
-                .fluidInputs(Starlight.getFluid(250))
-                .output(DIRTY_COATED_SAPPHIRE_WAFER)
-                .buildAndRegister();
-
-        CHEMICAL_BATH_RECIPES.recipeBuilder()
-                .EUt(VA[LuV])
-                .duration(60)
-                .input(DIRTY_COATED_SAPPHIRE_WAFER)
-                .fluidInputs(Dysprosium.getFluid(144))
-                .output(CLEANED_COATED_SAPPHIRE_WAFER)
-                .output(ingot,Dysprosium)
-                .buildAndRegister();
-
-        AUTOCLAVE_RECIPES.recipeBuilder()
-                .EUt(VA[ZPM])
-                .duration(5)
-                .input(CLEANED_COATED_SAPPHIRE_WAFER)
-                .fluidInputs(Helium.getPlasma(150))
-                .output(SAPPHIRE_SUBSTRATE_PREP)
-                .buildAndRegister();
-
-        CHEMICAL_BATH_RECIPES.recipeBuilder()
-                .EUt(VA[IV])
-                .duration(130)
-                .input(SAPPHIRE_SUBSTRATE_PREP)
-                .fluidInputs(AquaRegia.getFluid(250))
-                .output(ETCHED_SAPPHIRE_WAFER)
-                .buildAndRegister();
-
-        BLAST_RECIPES.recipeBuilder()
-                .EUt(VA[ZPM])
-                .duration(340)
-                .blastFurnaceTemp(8600)
-                .input(ETCHED_SAPPHIRE_WAFER)
-                .notConsumable(Argon.getFluid(1))
-                .output(SUPERHEATED_SAPPHIRE_WAFER)
-                .buildAndRegister();
-
-        //TODO: ANYONE - Find a way to either/or viable/nonviable here
-        LAMINATOR_RECIPES.recipeBuilder()
-                .EUt(VA[LuV])
-                .duration(40)
-                .input(SUPERHEATED_SAPPHIRE_WAFER)
-                .input(foil,Palladium)
-                .output(VIABLE_SAPPHIRE_WAFER)
-                //.chancedOutput(NONVIABLE_SAPPHIRE_WAFER, 50,1)
-                .buildAndRegister();
-
-        CHEMICAL_BATH_RECIPES.recipeBuilder()
-                .EUt(VA[IV])
-                .duration(1000)
-                .input(NONVIABLE_SAPPHIRE_WAFER)
-                .fluidInputs(Starlight.getFluid(500))
-                .output(RECYCLED_SAPPHIRE_WAFER)
-                .buildAndRegister();
-
-        CHEMICAL_BATH_RECIPES.recipeBuilder()
-                .EUt(VA[IV])
-                .duration(10)
-                .input(RECYCLED_SAPPHIRE_WAFER)
-                .fluidInputs(Dysprosium.getFluid(288))
-                .output(CLEANED_COATED_SAPPHIRE_WAFER)
-                .output(ingot ,Dysprosium,2);
-
-        LAMINATOR_RECIPES.recipeBuilder()
-                .EUt(VA[ZPM])
-                .duration(140)
-                .input(VIABLE_SAPPHIRE_WAFER)
-                .input(foil,Rutherfordium)
-                .output(SINTERED_SAPPHIRE_WAFER)
-                .buildAndRegister();
-
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .EUt(VA[ZPM])
-                .duration(30)
-                .input(wireFine,Palladium,2)
-                .input(SINTERED_SAPPHIRE_WAFER)
-                .output(WIRED_SAPPHIRE_WAFER)
-                .buildAndRegister();
-
-        CUTTER_RECIPES.recipeBuilder()
-                .EUt(VA[ZPM])
-                .duration(30)
-                .input(WIRED_SAPPHIRE_WAFER)
-                .output(SAPPHIRE_CHIP,32)
-                .buildAndRegister();
-
-        LAMINATOR_RECIPES.recipeBuilder()
-                .EUt(VA[IV])
-                .duration(20)
-                .input(SAPPHIRE_CHIP)
-                .input(foil,Kapton_K)
-                .output(CRYSTAL_PREBOARD)
-                .buildAndRegister();
-
-        CANNER_RECIPES.recipeBuilder()
-                .EUt(VA[LuV])
-                .duration(65)
-                .input(CRYSTAL_PREBOARD)
-                .fluidInputs(Neon.getFluid(10))
-                .output(CRYSTAL_BOARD)
-                .buildAndRegister();
     }
     private static void wetwareBoard(){
         //Organic Neural Network Support Unit
@@ -448,6 +384,62 @@ public class CircuitRecipes {
     }
     private static void supraBoard(){
         //Temporally Isolated Calculation Framework
+    }
+
+    public static void primitive() {
+
+    }
+
+    public static void electronic() {
+
+    }
+
+    public static void integrated() {
+
+    }
+
+    public static void micro() {
+
+    }
+
+    public static void nano() {
+
+    }
+
+    public static void imc() {
+
+    }
+
+    public static void optical() {
+
+    }
+
+    public static void crystal() {
+
+    }
+
+    public static void wetware() {
+
+    }
+
+    public static void bioware() {
+
+    }
+
+    public static void quantum() {
+
+    }
+
+    public static void exotic() {
+
+    }
+
+    public static void cosmic() {
+
+    }
+
+    public static void supra() {
+
     }
 
 

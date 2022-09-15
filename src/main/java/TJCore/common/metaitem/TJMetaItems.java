@@ -267,4 +267,8 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem WIRED_SAPPHIRE_WAFER;
     public static MetaItem<?>.MetaValueItem SAPPHIRE_WAFER;
     public static MetaItem<?>.MetaValueItem SAPPHIRE_CHIP;
+
+    // Misc. SMD ITEMS
+    public static MetaItem<?>.MetaValueItem FERROUS_INDUCTOR_CORE;
+    public static MetaItem<?>.MetaValueItem TUNGSTEN_INDUCTOR_CORE;
 }

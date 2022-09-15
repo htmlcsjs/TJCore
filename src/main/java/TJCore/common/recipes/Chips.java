@@ -5,13 +5,12 @@ import gregtech.api.unification.material.Material;
 
 import static TJCore.api.material.TJMaterials.*;
 import static TJCore.common.metaitem.TJMetaItems.*;
-import static TJCore.common.recipes.recipemaps.TJRecipeMaps.LAMINATOR_RECIPES;
-import static TJCore.common.recipes.recipemaps.TJRecipeMaps.PRINTER_RECIPES;
-import static gregtech.api.GTValues.VA;
+import static TJCore.common.recipes.recipemaps.TJRecipeMaps.*;
+import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.ore.OrePrefix.foil;
-import static gregtech.api.unification.ore.OrePrefix.wireFine;
+import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.api.unification.ore.OrePrefix.ingot;
 
 
 public class Chips {
@@ -37,8 +36,17 @@ public class Chips {
     static Material[] printMaterial = {Polyethylene, PolyvinylChloride, Polytetrafluoroethylene, PolyphenyleneSulfide, Polybenzimidazole};
     static Material[] photopolymers = {HydrogenSilsesquioxane, HydrogenSilsesquioxane, HydrogenSilsesquioxane, SU8_Photoresist, SU8_Photoresist};
 
+    public static void registerChips(){
+        electronicChip();
+        registerLithography();
+        crystalChip();
+    }
 
-    public static void registerLithography() {
+    private static void electronicChip() {
+
+    }
+
+    private static void registerLithography() {
 
         //TODO: CARBON make this recipe not overlap with integrated circuits
 
@@ -142,5 +150,133 @@ public class Chips {
                     .duration(20)
                     .buildAndRegister();
         }
+    }
+
+    private static void crystalChip() {
+        //Energy Modulus PCB
+        MIXER_RECIPES.recipeBuilder()
+                .EUt(VA[EV])
+                .duration(50)
+                .input(dust,Diamond)
+                .fluidInputs(DistilledWater.getFluid(1000))
+                .fluidOutputs(DiamondCVDSolution.getFluid(1000))
+                .buildAndRegister();
+
+        //TODO: CARBON - Make this CVD recipe
+        LAMINATOR_RECIPES.recipeBuilder()
+                .EUt(VA[LuV])
+                .duration(100)
+                .input(SAPPHIRE_WAFER)
+                .fluidInputs(DiamondCVDSolution.getFluid(50))
+                .output(COATED_SAPPHIRE_WAFER)
+                .buildAndRegister();
+
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .EUt(VA[IV])
+                .duration(100)
+                .input(COATED_SAPPHIRE_WAFER)
+                .fluidInputs(Starlight.getFluid(250))
+                .output(DIRTY_COATED_SAPPHIRE_WAFER)
+                .buildAndRegister();
+
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .EUt(VA[LuV])
+                .duration(60)
+                .input(DIRTY_COATED_SAPPHIRE_WAFER)
+                .fluidInputs(Dysprosium.getFluid(144))
+                .output(CLEANED_COATED_SAPPHIRE_WAFER)
+                .output(ingot,Dysprosium)
+                .buildAndRegister();
+
+        AUTOCLAVE_RECIPES.recipeBuilder()
+                .EUt(VA[ZPM])
+                .duration(5)
+                .input(CLEANED_COATED_SAPPHIRE_WAFER)
+                .fluidInputs(Helium.getPlasma(150))
+                .output(SAPPHIRE_SUBSTRATE_PREP)
+                .buildAndRegister();
+
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .EUt(VA[IV])
+                .duration(130)
+                .input(SAPPHIRE_SUBSTRATE_PREP)
+                .fluidInputs(AquaRegia.getFluid(250))
+                .output(ETCHED_SAPPHIRE_WAFER)
+                .buildAndRegister();
+
+        BLAST_RECIPES.recipeBuilder()
+                .EUt(VA[ZPM])
+                .duration(340)
+                .blastFurnaceTemp(8600)
+                .input(ETCHED_SAPPHIRE_WAFER)
+                .notConsumable(Argon.getFluid(1))
+                .output(SUPERHEATED_SAPPHIRE_WAFER)
+                .buildAndRegister();
+
+        //TODO: ANYONE - Find a way to either/or viable/nonviable here
+        VACUUM_RECIPES.recipeBuilder()
+                .EUt(VA[LuV])
+                .duration(40)
+                .input(SUPERHEATED_SAPPHIRE_WAFER)
+                .fluidInputs(DistilledWater.getFluid(1000))
+                .output(VIABLE_SAPPHIRE_WAFER)
+                .fluidOutputs(Steam.getFluid(1000))
+                //.chancedOutput(NONVIABLE_SAPPHIRE_WAFER, 5000)
+                .buildAndRegister();
+
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .EUt(VA[IV])
+                .duration(1000)
+                .input(NONVIABLE_SAPPHIRE_WAFER)
+                .fluidInputs(Starlight.getFluid(500))
+                .output(RECYCLED_SAPPHIRE_WAFER)
+                .buildAndRegister();
+
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .EUt(VA[IV])
+                .duration(10)
+                .input(RECYCLED_SAPPHIRE_WAFER)
+                .fluidInputs(Dysprosium.getFluid(288))
+                .output(CLEANED_COATED_SAPPHIRE_WAFER)
+                .output(ingot ,Dysprosium,2);
+
+        LAMINATOR_RECIPES.recipeBuilder()
+                .EUt(VA[ZPM])
+                .duration(140)
+                .input(VIABLE_SAPPHIRE_WAFER)
+                .input(foil,Rutherfordium)
+                .output(SINTERED_SAPPHIRE_WAFER)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .EUt(VA[ZPM])
+                .duration(30)
+                .input(wireFine,Palladium,2)
+                .input(SINTERED_SAPPHIRE_WAFER)
+                .output(WIRED_SAPPHIRE_WAFER)
+                .buildAndRegister();
+
+        CUTTER_RECIPES.recipeBuilder()
+                .EUt(VA[ZPM])
+                .duration(30)
+                .input(WIRED_SAPPHIRE_WAFER)
+                .output(SAPPHIRE_CHIP,32)
+                .buildAndRegister();
+
+        LAMINATOR_RECIPES.recipeBuilder()
+                .EUt(VA[IV])
+                .duration(20)
+                .input(SAPPHIRE_CHIP)
+                .input(foil,Kapton_K)
+                .output(CRYSTAL_PREBOARD)
+                .buildAndRegister();
+
+        CANNER_RECIPES.recipeBuilder()
+                .EUt(VA[LuV])
+                .duration(65)
+                .input(CRYSTAL_PREBOARD)
+                .fluidInputs(Neon.getFluid(10))
+                .output(CRYSTAL_BOARD)
+                .buildAndRegister();
     }
 }

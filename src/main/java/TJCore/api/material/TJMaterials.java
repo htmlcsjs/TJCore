@@ -51,6 +51,8 @@ public class TJMaterials {
 
     public static Material AllylAcetate;
 
+    public static Material SilverLeadOxide;
+
     public static Material LuminescentSiliconNanocrystals;
 
     public static Material SeleniumMonobromide;

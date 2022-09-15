@@ -78,9 +78,9 @@ dependencies {
     deobfCompile 'curse.maven:gregicality-multiblocks-564858:3941516'
 
     // DE requires Brandon's Core and Redstone Flux. Change them all to deobfCompile to use them in-game
-    compileOnly 'curse.maven:draconic_evolution-223565:3431261'
-    compileOnly 'curse.maven:brandons_core-231382:3408276'
-    compileOnly 'curse.maven:redstone_flux-270789:2920436'
+    deobfCompile 'curse.maven:draconic_evolution-223565:3431261'
+    deobfCompile 'curse.maven:brandons_core-231382:3408276'
+    deobfCompile 'curse.maven:redstone_flux-270789:2920436'
 }
 
 processResources {

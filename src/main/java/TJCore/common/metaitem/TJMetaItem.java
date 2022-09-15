@@ -221,7 +221,7 @@ public class    TJMetaItem extends StandardMetaItem {
         OPTICAL_BASE = addItem(575,"opticalbase");
         LAMINATED_OPTICAL_BASE = addItem(576,"laminatedopticalbase");
 
-        // Crystal PCB ITEMS
+        // Crystal CHIP ITEMS
         COATED_SAPPHIRE_WAFER = addItem(577,"coatedsapphirewafer");
         DIRTY_COATED_SAPPHIRE_WAFER = addItem(578,"dirtycoatedsapphirewafer");
         CLEANED_COATED_SAPPHIRE_WAFER = addItem(579,"cleanedcoatedsapphirewafer");
@@ -235,5 +235,9 @@ public class    TJMetaItem extends StandardMetaItem {
         WIRED_SAPPHIRE_WAFER = addItem(587,"wiredsapphirewafer");
         SAPPHIRE_WAFER = addItem(588,"sapphirewafer");
         SAPPHIRE_CHIP = addItem(589,"sapphirechip");
+
+        // Misc. SMD ITEMS
+        FERROUS_INDUCTOR_CORE = addItem(1001, "ferrousinductorcore");
+        TUNGSTEN_INDUCTOR_CORE = addItem(1002,"tungsteninductorcore");
     }
 }

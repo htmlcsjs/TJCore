@@ -155,6 +155,11 @@ public class TJFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.SHINY)
                 .build();
 
+        SilverLeadOxide = new Material.Builder(25020, "silverleadoxide")
+                .dust()
+                .color(0x260954)
+                .iconSet(MaterialIconSet.SHINY)
+                .build();
     }
 
     public static void registerProperties() {
@@ -166,6 +171,7 @@ public class TJFirstDegreeMaterials {
 
         FluidPipeProperties silicaCeramicFluidPipeProps = new FluidPipeProperties(1000, 18, false, false, false, false);
         SilicaCeramic.setProperty(PropertyKey.FLUID_PIPE, silicaCeramicFluidPipeProps);
+        SilicaCeramic.addFlags(MaterialFlags.NO_WORKING,MaterialFlags.NO_SMELTING,MaterialFlags.NO_SMASHING);
 
         FluidPipeProperties bt6FluidPipeProps = new FluidPipeProperties(1500, 36, false, true, false, false);
         BT6.setProperty(PropertyKey.FLUID_PIPE, bt6FluidPipeProps);
