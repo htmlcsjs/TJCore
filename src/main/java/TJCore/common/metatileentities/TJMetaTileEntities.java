@@ -2,6 +2,7 @@ package TJCore.common.metatileentities;
 
 import TJCore.TJValues;
 import TJCore.common.metatileentities.multi.electric.ArmorInfuser;
+import TJCore.common.metatileentities.multi.electric.ExposureChamber;
 import TJCore.common.metatileentities.multi.electric.SurfaceRockDrill;
 import TJCore.common.metatileentities.multi.electric.TreeFarmer;
 import TJCore.common.metatileentities.multi.fusion.MegaFusion;
@@ -37,17 +38,17 @@ public class TJMetaTileEntities {
     public static TreeFarmer TREE_FARMER;
     public static MegaFusion MEGA_FUSION;
     public static SurfaceRockDrill SURFACE_ROCK_DRILL;
+    public static ExposureChamber EXPOSURE_CHAMBER;
 
     public static void init() {
         registerSimpleMetaTileEntity(COMPONENT_ASSEMBLER, 12001, "component_assembler", TJRecipeMaps.COMPONENT_ASSEMBLER_RECIPES, Textures.ASSEMBLER_OVERLAY, true);
-
         STEAM_ASSEMBLER = registerMetaTileEntity(12030, new SteamAssembler(tjcoreID("steam_assembler")));
         //TODO register STEAM_MIXER and STEAM_DEHYDRATOR here
         ARMOR_INFUSER = registerMetaTileEntity(12033, new ArmorInfuser(tjcoreID("armor_infuser")));
         TREE_FARMER = registerMetaTileEntity(12034, new TreeFarmer(tjcoreID("tree_farmer")));
         MEGA_FUSION = registerMetaTileEntity(12035, new MegaFusion(tjcoreID("mega_fusion")));
         SURFACE_ROCK_DRILL = registerMetaTileEntity(12036, new SurfaceRockDrill(tjcoreID("surface_rock_drill")));
-
+        EXPOSURE_CHAMBER = registerMetaTileEntity(12037, new ExposureChamber(tjcoreID("exposure_chamber")));
         registerSimpleMetaTileEntity(LAMINATOR, 12070, "laminator", TJRecipeMaps.LAMINATOR_RECIPES, Textures.BENDER_OVERLAY, true);
         registerSimpleMetaTileEntity(DEHYDRATOR, 12080, "dehydrator", TJRecipeMaps.DEHYDRATOR_RECIPES, Textures.PRIMITIVE_BLAST_FURNACE_OVERLAY, true);
         registerSimpleMetaTileEntity(PRINTER, 12090, "printer", TJRecipeMaps.PRINTER_RECIPES, Textures.LASER_ENGRAVER_OVERLAY, true);
