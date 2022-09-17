@@ -74,13 +74,14 @@ dependencies {
     deobfCompile 'CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.680'
     deobfCompile "team.chisel.ctm:CTM:MC1.12.2-1.0.2.31"
 
-    deobfCompile 'curse.maven:gregtech-ce-unofficial-557242:3949406'
     deobfCompile 'curse.maven:gregicality-multiblocks-564858:3941516'
 
     // DE requires Brandon's Core and Redstone Flux. Change them all to deobfCompile to use them in-game
     deobfCompile 'curse.maven:draconic_evolution-223565:3431261'
     deobfCompile 'curse.maven:brandons_core-231382:3408276'
     deobfCompile 'curse.maven:redstone_flux-270789:2920436'
+    provided files('libs/gregtech-1.12.2-2.4.0-gcys-alpha.jar')
+    provided files('libs/GregicalityScience-1.12.2-0.0.1-alpha.jar')
 }
 
 processResources {

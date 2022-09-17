@@ -60,9 +60,6 @@ public class TJFirstDegreeMaterials {
                 .build()
                 .setFormula("MoS2", true);
 
-
-        Bromine.setProperty(PropertyKey.FLUID, new FluidProperty());
-
         PhenylmagnesiumBromide = new Material.Builder(25005,"phenylmagnesiumbromide")
                 .fluid()
                 .colorAverage()
