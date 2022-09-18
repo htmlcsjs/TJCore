@@ -39,15 +39,14 @@ public class TJMaterials {
     public static Material NickelPlatedTin;
 
     //Chemicals
-    public static Material TriphenylPhosphine;// PhosphorusTrichloride + PhenylmagnesiumBromide → TriphenylPhosphine + 3(Mg,Br,Cl)
-    public static Material PhosphorusTrichloride; // P4 + 6 Cl2 → 4 PCl3
-    public static Material PhenylmagnesiumBromide; // Bromobenzene + mg
-    public static Material Bromobenzene; // Benzene + Bromine
+    public static Material TriphenylPhosphine;
+    public static Material PhenylmagnesiumBromide;
+    public static Material Bromobenzene;
     public static Material HydrogenSilsesquioxane;
     public static Material SU8_Photoresist;
     public static Material MolybdenumSulfide;
-    public static Material Acetylene; // C2H2
     public static Material Difluoroethane; //C2H4F2
+    public static Material PalladiumChloride; // PdCl2
 
     public static Material AllylAcetate;
 
@@ -56,6 +55,11 @@ public class TJMaterials {
     public static Material LuminescentSiliconNanocrystals;
 
     public static Material SeleniumMonobromide;
+
+    public static Material HydraziniumChloride;
+    public static Material DibromoisophthalicAcid;
+
+    public static Material Dibromoterephthaloyldichloride;
 
     // Cermaics + Glass
     public static Material SilicaCeramic;
@@ -70,6 +74,10 @@ public class TJMaterials {
 
     // Mixtures
     public static Material DiamondCVDSolution;
+
+    public static Material P1Solution;
+    public static Material TetrakisPDCatalyst;
+
 
     // Magic materials, unknown composition
     public static Material Draconium;

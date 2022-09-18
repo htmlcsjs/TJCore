@@ -3,7 +3,9 @@ package TJCore.common;
 import TJCore.TJValues;
 import TJCore.api.TJOreDictionaryLoader;
 import TJCore.common.recipes.*;
+import TJCore.common.recipes.polymers.TJPolymers;
 import gregtech.api.block.VariantItemBlock;
+import gregtech.loaders.recipe.chemistry.PolymerRecipes;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -49,6 +51,7 @@ public class CommonProxy {
         TJOreDictionaryLoader.init();
 
         CircuitRecipes.registerCircuits();
+        TJPolymers.registerPolymers();
         GTComponents.registerComponents();
         GTComponents.registerHullsCasings();
 

@@ -4,6 +4,7 @@ package TJCore.common.recipes.chains;
 //import gregtech.api.unification.OreDictUnifier;
 
 import static TJCore.api.material.TJMaterials.*;
+import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
 
 import static gregtech.api.recipes.RecipeMaps.*;

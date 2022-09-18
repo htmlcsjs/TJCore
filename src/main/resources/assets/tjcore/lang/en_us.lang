@@ -8,6 +8,8 @@ material.bromobenzene=Bromobenzene
 material.draconium=Draconium
 material.silicaceramic=Ceramic
 material.nickelplatedtin=Nickel Plated Tin
+material.dibromoterephthaloyldichloride=2,5-dibromo-terephthaloyl dichloride
+material.p_one_solution=Impure P1 Solution
 
 //machines
 tjcore.machine.component_assembler.lv.name=LV Component Assembler
@@ -58,12 +60,12 @@ metaitem.integrated_preboard.name=Plastic Substrate
 metaitem.micro_preboard.name=Simple Epoxy PCB Preparation
 metaitem.nano_preboard.name=Reinforced Epoxy PCB Preparation
 metaitem.imc_preboard.name=Multi-Layer Epoxy PCB Preparation
-metaitem.optical_preboard.name=Pre-Etch Optical PCB
-metaitem.crystal_preboard.name=Raw Crystal PCB
+metaitem.optical_preboard.name=Coated Optical PCB
+metaitem.crystal_preboard.name=Assembled Crystal PCB Sheet
 metaitem.bioware_preboard.name=Non-Equilibrium Reaction Chamber Base
 metaitem.wetware_preboard.name=Wetware Preparation
 metaitem.quantum_preboard.name=Q-Bit Data Transfer Board
-metaitem.exotic_preboard.name=
+metaitem.exotic_preboard.name=Spintronic Logistics PCB
 metaitem.cosmic_preboard.name=
 metaitem.supra_preboard.name=
 

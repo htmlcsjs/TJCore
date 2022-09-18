@@ -40,18 +40,12 @@ public class TJFirstDegreeMaterials {
 
 
         TriphenylPhosphine  = new Material.Builder(25002,"triphenylphosphine")
+                .dust()
                 .fluid()
                 .colorAverage()
                 .components(Phosphorus, 1, Carbon, 18, Hydrogen, 15)
                 .build()
                 .setFormula("P(C6H5)3", true);
-
-        PhosphorusTrichloride = new Material.Builder(25003, "phosphorustrichloride")
-                .fluid()
-                .colorAverage()
-                .components(Phosphorus, 1, Chlorine, 3)
-                .build()
-                .setFormula("PCl3", true);
 
         MolybdenumSulfide = new Material.Builder(25004, "molybdenumsulfide")
                 .fluid()
@@ -154,8 +148,48 @@ public class TJFirstDegreeMaterials {
 
         SilverLeadOxide = new Material.Builder(25020, "silverleadoxide")
                 .dust()
-                .color(0x260954)
+                .colorAverage()
+                .components(Silver, 1, Lead, 1, Oxygen, 1)
                 .iconSet(MaterialIconSet.SHINY)
+                .build();
+
+        PalladiumChloride = new Material.Builder(25021, "palladiumchloride")
+                .dust()
+                .colorAverage()
+                .components(Palladium, 1, Chlorine, 2)
+                .build()
+                .setFormula("PdCl2",true);
+
+        TetrakisPDCatalyst = new Material.Builder(25022, "tretrakispdcatalyst")
+                .dust()
+                .color(0x9bd1e8)
+                .iconSet(MaterialIconSet.SHINY)
+                .build();
+
+        HydraziniumChloride = new Material.Builder(25023, "hydraziniumchloride")
+                .fluid()
+                .colorAverage()
+                .components(Nitrogen, 2, Hydrogen, 5, Chlorine, 1)
+                .build()
+                .setFormula("N2H4HCl", true);
+
+        DibromoisophthalicAcid = new Material.Builder(25024, "dibromoisophthalicacid")
+                .fluid()
+                .colorAverage()
+                .components(Carbon, 8, Hydrogen, 5, Bromine, 1, Oxygen, 4)
+                .build()
+                .setFormula("C8H5BrO4",true);
+
+        Dibromoterephthaloyldichloride = new Material.Builder(25025, "dibromoterephthaloyldichloride")
+                .fluid()
+                .colorAverage()
+                .components(Carbon, 8, Hydrogen, 2, Bromine, 2, Chlorine, 2, Oxygen, 2)
+                .build()
+                .setFormula("C8H2Br2Cl2O2",true);
+
+        P1Solution = new Material.Builder(25026, "p_one_solution")
+                .fluid()
+                .color(0x6b0c05)
                 .build();
     }
 
