@@ -15,6 +15,8 @@ import static gregtech.api.unification.ore.OrePrefix.ingot;
 
 public class Chips {
 
+    // Lithography Arrays
+
     static MetaItem<?>.MetaValueItem[] boule = {SILICON_BOULE, ANTIMONY_DOPED_SILICON_BOULE, BORON_DOPED_SILICON_BOULE, GALLIUM_ARSENIDE_BOULE, SILVER_GALLIUM_SELENIDE_BOULE};
     static MetaItem<?>.MetaValueItem[] rawWafer = {SILICON_WAFER, ANTIMONY_DOPED_SILICON_WAFER, BORON_DOPED_SILICON_WAFER, GALLIUM_ARSENIDE_WAFER, SILVER_GALLIUM_SELENIDE_WAFER};
     static MetaItem<?>.MetaValueItem[] layered = {LAYERED_SILICON_WAFER, LAYERED_ANTIMONY_DOPED_SILICON_WAFER, LAYERED_BORON_DOPED_SILICON_WAFER, LAYERED_GALLIUM_ARSENIDE_WAFER, LAYERED_SILVER_GALLIUM_SELENIDE_WAFER};
@@ -38,15 +40,34 @@ public class Chips {
 
     public static void registerChips(){
         electronicChip();
-        registerLithography();
+        lithographyChips();
         crystalChip();
+        wetwareChip();
+        biowareChip();
+        quantumChip();
+        exoticChip();
+        cosmicChip();
+        supraChip();
     }
 
     private static void electronicChip() {
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .duration(900)
+                .EUt(VA[LV])
+                .input(SILICON_WAFER)
+                .notConsumable(craftingLens, Glass)
+                .output(SIMPLE_CPU_WAFER)
+                .buildAndRegister();
 
+        CUTTER_RECIPES.recipeBuilder()
+                .duration(500)
+                .EUt(VA[LV])
+                .input(SIMPLE_CPU_WAFER)
+                .output(SIMPLE_CPU,4)
+                .buildAndRegister();
     }
 
-    private static void registerLithography() {
+    private static void lithographyChips() {
 
         //TODO: CARBON make this recipe not overlap with integrated circuits
 
@@ -153,7 +174,7 @@ public class Chips {
     }
 
     private static void crystalChip() {
-        //Energy Modulus PCB
+        //Crystal Chip
         MIXER_RECIPES.recipeBuilder()
                 .EUt(VA[EV])
                 .duration(50)
@@ -278,5 +299,29 @@ public class Chips {
                 .fluidInputs(Neon.getFluid(10))
                 .output(CRYSTAL_BOARD)
                 .buildAndRegister();
+    }
+
+    private static void wetwareChip() {
+
+    }
+
+    private static void biowareChip() {
+
+    }
+
+    private static void quantumChip() {
+
+    }
+
+    private static void exoticChip() {
+
+    }
+
+    private static void cosmicChip() {
+
+    }
+
+    private static void supraChip() {
+
     }
 }

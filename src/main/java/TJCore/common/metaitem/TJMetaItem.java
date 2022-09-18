@@ -236,6 +236,11 @@ public class    TJMetaItem extends StandardMetaItem {
         SAPPHIRE_WAFER = addItem(588,"sapphirewafer");
         SAPPHIRE_CHIP = addItem(589,"sapphirechip");
 
+        // Electronic CHIP ITEMS
+
+        SIMPLE_CPU_WAFER = addItem(590,"simplecpuwafer");
+        SIMPLE_CPU = addItem(591, "simplecpu");
+
         // Misc. SMD ITEMS
         FERROUS_INDUCTOR_CORE = addItem(1001, "ferrousinductorcore");
         TUNGSTEN_INDUCTOR_CORE = addItem(1002,"tungsteninductorcore");

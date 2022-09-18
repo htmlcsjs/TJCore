@@ -268,6 +268,13 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem SAPPHIRE_WAFER;
     public static MetaItem<?>.MetaValueItem SAPPHIRE_CHIP;
 
+    // Electronic Chip Items
+
+    public static MetaItem<?>.MetaValueItem SIMPLE_CPU_WAFER;
+    public static MetaItem<?>.MetaValueItem SIMPLE_CPU;
+
+    // Wetware PCB Items
+
     // Misc. SMD ITEMS
     public static MetaItem<?>.MetaValueItem FERROUS_INDUCTOR_CORE;
     public static MetaItem<?>.MetaValueItem TUNGSTEN_INDUCTOR_CORE;
