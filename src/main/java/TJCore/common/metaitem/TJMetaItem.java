@@ -67,74 +67,74 @@ public class    TJMetaItem extends StandardMetaItem {
         COSMIC_BOARD = addItem(76, "cosmic_board");
         SUPRA_BOARD = addItem(77, "supra_board");
 
-        PRIMITIVE_ASSEMBLY_ULV = addItem(100, "circuit.primitive_assembly_ulv").setUnificationData(OrePrefix.circuit,   Tier.ULV);
-        PRIMITIVE_COMPUTER_LV = addItem(101, "circuit.primitive_computer_lv").setUnificationData(OrePrefix.circuit,    Tier.LV);
-        PRIMITIVE_MAINFRAME_MV = addItem(102, "circuit.primitive_mainframe_mv").setUnificationData(OrePrefix.circuit,  Tier.MV);
+        PRIMITIVE_ASSEMBLY_ULV = addItem(100, "circuit.primitive_ulv").setUnificationData(OrePrefix.circuit,   Tier.ULV);
+        PRIMITIVE_COMPUTER_LV = addItem(101, "circuit.primitive_lv").setUnificationData(OrePrefix.circuit,    Tier.LV);
+        PRIMITIVE_MAINFRAME_MV = addItem(102, "circuit.primitive_mv").setUnificationData(OrePrefix.circuit,  Tier.MV);
 
-        ELECTRONIC_PROCESSOR_ULV = addItem(103, "circuit.electronic_processor_ulv").setUnificationData(OrePrefix.circuit,   Tier.ULV);
-        ELECTRONIC_ASSEMBLY_LV = addItem(104, "circuit.electronic_assembly_lv").setUnificationData(OrePrefix.circuit,      Tier.LV);
-        ELECTRONIC_COMPUTER_MV = addItem(105, "circuit.electronic_computer_mv").setUnificationData(OrePrefix.circuit,      Tier.MV);
-        ELECTRONIC_MAINFRAME_HV = addItem(106, "circuit.electronic_mainframe_hv").setUnificationData(OrePrefix.circuit,    Tier.HV);
+        ELECTRONIC_PROCESSOR_ULV = addItem(103, "circuit.electronic_ulv").setUnificationData(OrePrefix.circuit,   Tier.ULV);
+        ELECTRONIC_ASSEMBLY_LV = addItem(104, "circuit.electronic_lv").setUnificationData(OrePrefix.circuit,      Tier.LV);
+        ELECTRONIC_COMPUTER_MV = addItem(105, "circuit.electronic_mv").setUnificationData(OrePrefix.circuit,      Tier.MV);
+        ELECTRONIC_MAINFRAME_HV = addItem(106, "circuit.electronic_hv").setUnificationData(OrePrefix.circuit,    Tier.HV);
 
-        INTEGRATED_PROCESSOR_LV = addItem(107, "circuit.integrated_processor_lv").setUnificationData(OrePrefix.circuit,    Tier.LV);
-        INTEGRATED_ASSEMBLY_MV = addItem(108, "circuit.integrated_assembly_mv").setUnificationData(OrePrefix.circuit,      Tier.MV);
-        INTEGRATED_COMPUTER_HV = addItem(109, "circuit.integrated_computer_hv").setUnificationData(OrePrefix.circuit,      Tier.HV);
-        INTEGRATED_MAINFRAME_EV = addItem(110, "circuit.integrated_mainframe_ev").setUnificationData(OrePrefix.circuit,    Tier.EV);
+        INTEGRATED_PROCESSOR_LV = addItem(107, "circuit.integrated_lv").setUnificationData(OrePrefix.circuit,    Tier.LV);
+        INTEGRATED_ASSEMBLY_MV = addItem(108, "circuit.integrated_mv").setUnificationData(OrePrefix.circuit,      Tier.MV);
+        INTEGRATED_COMPUTER_HV = addItem(109, "circuit.integrated_hv").setUnificationData(OrePrefix.circuit,      Tier.HV);
+        INTEGRATED_MAINFRAME_EV = addItem(110, "circuit.integrated_ev").setUnificationData(OrePrefix.circuit,    Tier.EV);
 
-        MICRO_PROCESSOR_MV = addItem(111, "circuit.micro_processor_mv").setUnificationData(OrePrefix.circuit, Tier.MV);
-        MICRO_ASSEMBLY_HV = addItem(112, "circuit.micro_assembly_hv").setUnificationData(OrePrefix.circuit, Tier.HV);
-        MICRO_COMPUTER_EV = addItem(113, "circuit.micro_computer_ev").setUnificationData(OrePrefix.circuit, Tier.EV);
-        MICRO_MAINFRAME_IV = addItem(114, "circuit.micro_mainframe_iv").setUnificationData(OrePrefix.circuit, Tier.IV);
+        MICRO_PROCESSOR_MV = addItem(111, "circuit.micro_mv").setUnificationData(OrePrefix.circuit, Tier.MV);
+        MICRO_ASSEMBLY_HV = addItem(112, "circuit.micro_hv").setUnificationData(OrePrefix.circuit, Tier.HV);
+        MICRO_COMPUTER_EV = addItem(113, "circuit.micro_ev").setUnificationData(OrePrefix.circuit, Tier.EV);
+        MICRO_MAINFRAME_IV = addItem(114, "circuit.micro_iv").setUnificationData(OrePrefix.circuit, Tier.IV);
 
-        NANO_PROCESSOR_HV = addItem(115, "circuit.nano_processor_hv").setUnificationData(OrePrefix.circuit, Tier.HV);
-        NANO_ASSEMBLY_EV = addItem(116, "circuit.nano_assembly_ev").setUnificationData(OrePrefix.circuit, Tier.EV);
-        NANO_COMPUTER_IV = addItem(117, "circuit.nano_computer_iv").setUnificationData(OrePrefix.circuit, Tier.IV);
-        NANO_MAINFRAME_LUV = addItem(118, "circuit.nano_mainframe_luv").setUnificationData(OrePrefix.circuit, Tier.LuV);
+        NANO_PROCESSOR_HV = addItem(115, "circuit.nano_hv").setUnificationData(OrePrefix.circuit, Tier.HV);
+        NANO_ASSEMBLY_EV = addItem(116, "circuit.nano_ev").setUnificationData(OrePrefix.circuit, Tier.EV);
+        NANO_COMPUTER_IV = addItem(117, "circuit.nano_iv").setUnificationData(OrePrefix.circuit, Tier.IV);
+        NANO_MAINFRAME_LUV = addItem(118, "circuit.nano_luv").setUnificationData(OrePrefix.circuit, Tier.LuV);
 
-        IMC_PROCESSOR_EV = addItem(119, "circuit.imc_processor_ev").setUnificationData(OrePrefix.circuit, Tier.EV);
-        IMC_ASSEMBLY_IV = addItem(120, "circuit.imc_assembly_iv").setUnificationData(OrePrefix.circuit, Tier.IV);
-        IMC_COMPUTER_LUV = addItem(121, "circuit.imc_computer_luv").setUnificationData(OrePrefix.circuit, Tier.LuV);
-        IMC_MAINFRAME_ZPM = addItem(122, "circuit.imc_mainframe_zpm").setUnificationData(OrePrefix.circuit, Tier.ZPM);
+        IMC_PROCESSOR_EV = addItem(119, "circuit.imc_ev").setUnificationData(OrePrefix.circuit, Tier.EV);
+        IMC_ASSEMBLY_IV = addItem(120, "circuit.imc_iv").setUnificationData(OrePrefix.circuit, Tier.IV);
+        IMC_COMPUTER_LUV = addItem(121, "circuit.imc_luv").setUnificationData(OrePrefix.circuit, Tier.LuV);
+        IMC_MAINFRAME_ZPM = addItem(122, "circuit.imc_zpm").setUnificationData(OrePrefix.circuit, Tier.ZPM);
 
-        OPTICAL_PROCESSOR_IV = addItem(123, "circuit.optical_processor_iv").setUnificationData(OrePrefix.circuit, Tier.IV);
-        OPTICAL_ASSEMBLY_LUV = addItem(124, "circuit.optical_assembly_luv").setUnificationData(OrePrefix.circuit, Tier.LuV);
-        OPTICAL_COMPUTER_ZPM = addItem(125, "circuit.optical_computer_zpm").setUnificationData(OrePrefix.circuit, Tier.ZPM);
-        OPTICAL_MAINFRAME_UV = addItem(126, "circuit.optical_mainframe_uv").setUnificationData(OrePrefix.circuit, Tier.UV);
+        OPTICAL_PROCESSOR_IV = addItem(123, "circuit.optical_iv").setUnificationData(OrePrefix.circuit, Tier.IV);
+        OPTICAL_ASSEMBLY_LUV = addItem(124, "circuit.optical_luv").setUnificationData(OrePrefix.circuit, Tier.LuV);
+        OPTICAL_COMPUTER_ZPM = addItem(125, "circuit.optical_zpm").setUnificationData(OrePrefix.circuit, Tier.ZPM);
+        OPTICAL_MAINFRAME_UV = addItem(126, "circuit.optical_uv").setUnificationData(OrePrefix.circuit, Tier.UV);
 
-        CRYSTAL_PROCESSOR_LUV = addItem(127, "circuit.crystal_processor_luv").setUnificationData(OrePrefix.circuit, Tier.LuV);
-        CRYSTAL_ASSEMBLY_ZPM = addItem(128, "circuit.crystal_assembly_zpm").setUnificationData(OrePrefix.circuit, Tier.ZPM);
-        CRYSTAL_COMPUTER_UV = addItem(129, "circuit.crystal_computer_uv").setUnificationData(OrePrefix.circuit, Tier.UV);
-        CRYSTAL_MAINFRAME_UHV = addItem(130, "circuit.crystal_mainframe_uhv").setUnificationData(OrePrefix.circuit, Tier.UHV);
+        CRYSTAL_PROCESSOR_LUV = addItem(127, "circuit.crystal_luv").setUnificationData(OrePrefix.circuit, Tier.LuV);
+        CRYSTAL_ASSEMBLY_ZPM = addItem(128, "circuit.crystal_zpm").setUnificationData(OrePrefix.circuit, Tier.ZPM);
+        CRYSTAL_COMPUTER_UV = addItem(129, "circuit.crystal_uv").setUnificationData(OrePrefix.circuit, Tier.UV);
+        CRYSTAL_MAINFRAME_UHV = addItem(130, "circuit.crystal_uhv").setUnificationData(OrePrefix.circuit, Tier.UHV);
 
-        WETWARE_PROCESSOR_ZPM = addItem(131, "circuit.wetware_processor_zpm").setUnificationData(OrePrefix.circuit, Tier.UV);
-        WETWARE_ASSEMBLY_UV = addItem(132, "circuit.wetware_assembly_uv").setUnificationData(OrePrefix.circuit, Tier.UHV);
-        WETWARE_COMPUTER_UHV = addItem(133, "circuit.wetware_computer_uhv").setUnificationData(OrePrefix.circuit, Tier.UEV);
-        WETWARE_MAINFRAME_UEV = addItem(134, "circuit.wetware_mainframe_uev").setUnificationData(OrePrefix.circuit, Tier.UIV);
+        WETWARE_PROCESSOR_ZPM = addItem(131, "circuit.wetware_zpm").setUnificationData(OrePrefix.circuit, Tier.UV);
+        WETWARE_ASSEMBLY_UV = addItem(132, "circuit.wetware_uv").setUnificationData(OrePrefix.circuit, Tier.UHV);
+        WETWARE_COMPUTER_UHV = addItem(133, "circuit.wetware_uhv").setUnificationData(OrePrefix.circuit, Tier.UEV);
+        WETWARE_MAINFRAME_UEV = addItem(134, "circuit.wetware_uev").setUnificationData(OrePrefix.circuit, Tier.UIV);
 
-        BIOWARE_PROCESSOR_UV = addItem(135, "circuit.bioware_processor_uv").setUnificationData(OrePrefix.circuit, Tier.ZPM);
-        BIOWARE_ASSEMBLY_UHV = addItem(136, "circuit.bioware_assembly_uhv").setUnificationData(OrePrefix.circuit, Tier.UV);
-        BIOWARE_COMPUTER_UEV = addItem(137, "circuit.bioware_computer_uev").setUnificationData(OrePrefix.circuit, Tier.UHV);
-        BIOWARE_MAINFRAME_UIV = addItem(138,"circuit.bioware_mainframe_uiv");
+        BIOWARE_PROCESSOR_UV = addItem(135, "circuit.bioware_uv").setUnificationData(OrePrefix.circuit, Tier.ZPM);
+        BIOWARE_ASSEMBLY_UHV = addItem(136, "circuit.bioware_uhv").setUnificationData(OrePrefix.circuit, Tier.UV);
+        BIOWARE_COMPUTER_UEV = addItem(137, "circuit.bioware_uev").setUnificationData(OrePrefix.circuit, Tier.UHV);
+        BIOWARE_MAINFRAME_UIV = addItem(138,"circuit.bioware_uiv");
 
-        QUANTUM_PROCESSOR_UHV = addItem(139,"circuit.quantum_processor_uhv").setUnificationData(OrePrefix.circuit, Tier.UHV);
-        QUANTUM_ASSEMBLY_UEV = addItem(140,"circuit.quantum_assembly_uev").setUnificationData(OrePrefix.circuit, Tier.UEV);
-        QUANTUM_COMPUTER_UIV = addItem(141,"circuit.quantum_computer_uiv").setUnificationData(OrePrefix.circuit, Tier.UIV);
-        QUANTUM_MAINFRAME_UXV = addItem(142,"circuit.quantum_mainframe_uxv").setUnificationData(OrePrefix.circuit, Tier.UXV);
+        QUANTUM_PROCESSOR_UHV = addItem(139,"circuit.quantum_uhv").setUnificationData(OrePrefix.circuit, Tier.UHV);
+        QUANTUM_ASSEMBLY_UEV = addItem(140,"circuit.quantum_uev").setUnificationData(OrePrefix.circuit, Tier.UEV);
+        QUANTUM_COMPUTER_UIV = addItem(141,"circuit.quantum_uiv").setUnificationData(OrePrefix.circuit, Tier.UIV);
+        QUANTUM_MAINFRAME_UXV = addItem(142,"circuit.quantum_uxv").setUnificationData(OrePrefix.circuit, Tier.UXV);
 
-        EXOTIC_PROCESSOR_UEV = addItem(143,"circuit.exotic_processor_uev").setUnificationData(OrePrefix.circuit, Tier.UEV);
-        EXOTIC_ASSEMBLY_UIV = addItem(144,"circuit.exotic_assembly_uiv").setUnificationData(OrePrefix.circuit, Tier.UIV);
-        EXOTIC_COMPUTER_UXV = addItem(145,"circuit.exotic_computer_uxv").setUnificationData(OrePrefix.circuit, Tier.UXV);
-        EXOTIC_MAINFRAME_OPV = addItem(146,"circuit.exotic_mainframe_opv").setUnificationData(OrePrefix.circuit, Tier.OpV);
+        EXOTIC_PROCESSOR_UEV = addItem(143,"circuit.exotic_uev").setUnificationData(OrePrefix.circuit, Tier.UEV);
+        EXOTIC_ASSEMBLY_UIV = addItem(144,"circuit.exotic_uiv").setUnificationData(OrePrefix.circuit, Tier.UIV);
+        EXOTIC_COMPUTER_UXV = addItem(145,"circuit.exotic_uxv").setUnificationData(OrePrefix.circuit, Tier.UXV);
+        EXOTIC_MAINFRAME_OPV = addItem(146,"circuit.exotic_opv").setUnificationData(OrePrefix.circuit, Tier.OpV);
 
-        COSMIC_PROCESSOR_UIV = addItem(147,"circuit.cosmic_processor_uiv").setUnificationData(OrePrefix.circuit, Tier.UIV);
-        COSMIC_ASSEMBLY_UXV = addItem(148,"circuit.cosmic_assembly_uxv").setUnificationData(OrePrefix.circuit, Tier.UXV);
-        COSMIC_COMPUTER_OPV = addItem(149,"circuit.cosmic_computer_opv").setUnificationData(OrePrefix.circuit, Tier.OpV);
-        COSMIC_MAINFRAME_MAX = addItem(150,"circuit.cosmic_mainframe_max").setUnificationData(OrePrefix.circuit, Tier.MAX);
+        COSMIC_PROCESSOR_UIV = addItem(147,"circuit.cosmic_uiv").setUnificationData(OrePrefix.circuit, Tier.UIV);
+        COSMIC_ASSEMBLY_UXV = addItem(148,"circuit.cosmic_uxv").setUnificationData(OrePrefix.circuit, Tier.UXV);
+        COSMIC_COMPUTER_OPV = addItem(149,"circuit.cosmic_opv").setUnificationData(OrePrefix.circuit, Tier.OpV);
+        COSMIC_MAINFRAME_MAX = addItem(150,"circuit.cosmic_max").setUnificationData(OrePrefix.circuit, Tier.MAX);
 
-        SUPRA_PROCESSOR_UXV = addItem(151,"circuit.supra_processor_uxv").setUnificationData(OrePrefix.circuit, Tier.UXV);
-        SUPRA_ASSEMBLY_OPV = addItem(152,"circuit.supra_assembly_opv").setUnificationData(OrePrefix.circuit, Tier.OpV);
-        SUPRA_COMPUTER_MAX = addItem(153,"circuit.supra_computer_max").setUnificationData(OrePrefix.circuit, Tier.MAX);
-        SUPRA_MAINFRAME_ALL = addItem(154,"circuit.supra_mainframe_all")
+        SUPRA_PROCESSOR_UXV = addItem(151,"circuit.supra_uxv").setUnificationData(OrePrefix.circuit, Tier.UXV);
+        SUPRA_ASSEMBLY_OPV = addItem(152,"circuit.supra_opv").setUnificationData(OrePrefix.circuit, Tier.OpV);
+        SUPRA_COMPUTER_MAX = addItem(153,"circuit.supra_max").setUnificationData(OrePrefix.circuit, Tier.MAX);
+        SUPRA_MAINFRAME_ALL = addItem(154,"circuit.supra_all")
                 .setUnificationData(OrePrefix.circuit, Tier.ULV)
                 .setUnificationData(OrePrefix.circuit, Tier.LV)
                 .setUnificationData(OrePrefix.circuit, Tier.MV)
@@ -168,11 +168,11 @@ public class    TJMetaItem extends StandardMetaItem {
         GALLIUM_ARSENIDE_BOULE = addItem(503, "gallium_arsenide_boule");
         SILVER_GALLIUM_SELENIDE_BOULE = addItem(504, "siliver_gallium_selenide_boule");
 
-        SILICON_WAFER = addItem(505, "silicon_wafter");
-        ANTIMONY_DOPED_SILICON_WAFER = addItem(506, "antimony_doped_silicon_wafter");
-        BORON_DOPED_SILICON_WAFER = addItem(507, "boron_doped_silicon_wafter");
-        GALLIUM_ARSENIDE_WAFER = addItem(508, "gallium_arsenide_wafter");
-        SILVER_GALLIUM_SELENIDE_WAFER = addItem(509, "siliver_gallium_selenide_wafter");
+        SILICON_WAFER = addItem(505, "silicon_wafer");
+        ANTIMONY_DOPED_SILICON_WAFER = addItem(506, "antimony_doped_silicon_wafer");
+        BORON_DOPED_SILICON_WAFER = addItem(507, "boron_doped_silicon_wafer");
+        GALLIUM_ARSENIDE_WAFER = addItem(508, "gallium_arsenide_wafer");
+        SILVER_GALLIUM_SELENIDE_WAFER = addItem(509, "siliver_gallium_selenide_wafer");
 
         LAYERED_SILICON_WAFER = addItem(505+5, "layered_silicon_wafer");
         LAYERED_ANTIMONY_DOPED_SILICON_WAFER = addItem(506+5, "layered_antimoy_doped_silicon_wafer");
