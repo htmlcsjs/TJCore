@@ -151,12 +151,6 @@ public class    TJMetaItem extends StandardMetaItem {
                 .setUnificationData(OrePrefix.circuit, Tier.OpV)
                 .setUnificationData(OrePrefix.circuit, Tier.MAX);
 
-
-        TREATED_CPU_WAFER = addItem(200, "wafer.cpu_treated");
-        TREATED_RAM_WAFER = addItem(201, "wafer.ram_treated");
-        TREATED_ULPIC_WAFER = addItem(202, "wafer.ulpic_treated");
-        TREATED_NANO_CPU_WAFER = addItem(203, "wafer.nano_cpu_treated");
-
         //METAITEMS FOR CIRCUITS / FRAMEWORKS
         WETPHENOLICPULP = addItem(300, "wetphenolicpulp");
         WETPRESSEDPHENOLICSUBSTRATE = addItem(301, "wetpressedphenolicsubstrate");
@@ -166,73 +160,73 @@ public class    TJMetaItem extends StandardMetaItem {
         ANTIMONY_DOPED_SILICON_BOULE = addItem(501, "antimony_doped_silicon_boule");
         BORON_DOPED_SILICON_BOULE = addItem(502, "boron_doped_silicon_boule");
         GALLIUM_ARSENIDE_BOULE = addItem(503, "gallium_arsenide_boule");
-        SILVER_GALLIUM_SELENIDE_BOULE = addItem(504, "siliver_gallium_selenide_boule");
+        SILVER_GALLIUM_SELENIDE_BOULE = addItem(504, "silver_gallium_selenide_boule");
 
         SILICON_WAFER = addItem(505, "silicon_wafer");
         ANTIMONY_DOPED_SILICON_WAFER = addItem(506, "antimony_doped_silicon_wafer");
         BORON_DOPED_SILICON_WAFER = addItem(507, "boron_doped_silicon_wafer");
         GALLIUM_ARSENIDE_WAFER = addItem(508, "gallium_arsenide_wafer");
-        SILVER_GALLIUM_SELENIDE_WAFER = addItem(509, "siliver_gallium_selenide_wafer");
+        SILVER_GALLIUM_SELENIDE_WAFER = addItem(509, "silver_gallium_selenide_wafer");
 
-        LAYERED_SILICON_WAFER = addItem(505+5, "layered_silicon_wafer");
-        LAYERED_ANTIMONY_DOPED_SILICON_WAFER = addItem(506+5, "layered_antimoy_doped_silicon_wafer");
-        LAYERED_BORON_DOPED_SILICON_WAFER = addItem(507+5, "layered_boron_doped_silicon_wafer");
-        LAYERED_GALLIUM_ARSENIDE_WAFER = addItem(508+5, "layered_gallium_arsenide_wafer");
-        LAYERED_SILVER_GALLIUM_SELENIDE_WAFER = addItem(509+5, "layered_silver_gallium_selenide_wafer");
+        LAYERED_SILICON_WAFER = addItem(510, "layered_silicon_wafer");
+        LAYERED_ANTIMONY_DOPED_SILICON_WAFER = addItem(511, "layered_antimony_doped_silicon_wafer");
+        LAYERED_BORON_DOPED_SILICON_WAFER = addItem(512, "layered_boron_doped_silicon_wafer");
+        LAYERED_GALLIUM_ARSENIDE_WAFER = addItem(513, "layered_gallium_arsenide_wafer");
+        LAYERED_SILVER_GALLIUM_SELENIDE_WAFER = addItem(514, "layered_silver_gallium_selenide_wafer");
 
-        PREPARED_SILICON_WAFER = addItem(510+5, "prepared_silicon_wafer");
-        PREPARED_ANTIMONY_DOPED_SILICON_WAFER = addItem(511+5, "prepared_antimony_doped_silicon_wafer");
-        PREPARED_BORON_DOPED_SILICON_WAFER = addItem(512+5, "prepared_boron_doped_silicon_wafer");
-        PREPARED_GALLIUM_ARSENIDE_WAFER = addItem(513+5, "prepared_gallium_arsenide_wafer");
-        PREPARED_SILVER_GALLIUM_SELENIDE_WAFER = addItem(514+5, "prepared_silver_gallium_selenide_wafer");
+        PREPARED_SILICON_WAFER = addItem(515, "prepared_silicon_wafer");
+        PREPARED_ANTIMONY_DOPED_SILICON_WAFER = addItem(516, "prepared_antimony_doped_silicon_wafer");
+        PREPARED_BORON_DOPED_SILICON_WAFER = addItem(517, "prepared_boron_doped_silicon_wafer");
+        PREPARED_GALLIUM_ARSENIDE_WAFER = addItem(518, "prepared_gallium_arsenide_wafer");
+        PREPARED_SILVER_GALLIUM_SELENIDE_WAFER = addItem(519, "prepared_silver_gallium_selenide_wafer");
 
-        INTEGRATED_WAFER_LITHOGRAPHY_PREP = addItem(515+5, "integrated_wafer_lithography_prep");
-        MICRO_WAFER_LITHOGRAPHY_PREP = addItem(516+5, "micro_wafer_lithography_prep");
-        NANO_WAFER_LITHOGRAPHY_PREP = addItem(517+5, "nano_wafer_lithography_prep");
-        IMC_WAFER_LITHOGRAPHY_PREP = addItem(518+5, "imc_wafer_lithography_prep");
-        OPTICAL_WAFER_LITHOGRAPHY_PREP = addItem(519+5, "optical_wafer_lithography_prep");
+        INTEGRATED_WAFER_LITHOGRAPHY_PREP = addItem(520, "integrated_wafer_lithography_prep");
+        MICRO_WAFER_LITHOGRAPHY_PREP = addItem(521, "micro_wafer_lithography_prep");
+        NANO_WAFER_LITHOGRAPHY_PREP = addItem(522, "nano_wafer_lithography_prep");
+        IMC_WAFER_LITHOGRAPHY_PREP = addItem(523, "imc_wafer_lithography_prep");
+        OPTICAL_WAFER_LITHOGRAPHY_PREP = addItem(524, "optical_wafer_lithography_prep");
 
-        PREBAKED_INTEGRATED_WAFER = addItem(520+5, "prebaked_integrated_wafer");
-        PREBAKED_MICRO_WAFER = addItem(521+5, "prebaked_micro_wafer");
-        PREBAKED_NANO_WAFER = addItem(522+5, "prebaked_nano_wafer");
-        PREBAKED_IMC_WAFER = addItem(523+5, "prebaked_imc_wafer");
-        PREBAKED_OPTICAL_WAFER = addItem(524+5, "prebaked_optical_wafer");
+        PREBAKED_INTEGRATED_WAFER = addItem(525, "prebaked_integrated_wafer");
+        PREBAKED_MICRO_WAFER = addItem(526, "prebaked_micro_wafer");
+        PREBAKED_NANO_WAFER = addItem(527, "prebaked_nano_wafer");
+        PREBAKED_IMC_WAFER = addItem(528, "prebaked_imc_wafer");
+        PREBAKED_OPTICAL_WAFER = addItem(529, "prebaked_optical_wafer");
 
-        TREATED_INTEGRATED_WAFER = addItem(525+5, "treated_integrated_wafer");
-        TREATED_MICRO_WAFER = addItem(526+5, "treated_micro_wafer");
-        TREATED_NANO_WAFER = addItem(527+5, "treated_nano_wafer");
-        TREATED_IMC_WAFER = addItem(528+5, "treated_imc_wafer");
-        TREATED_OPTICAL_WAFER = addItem(529+5, "treated_optical_wafer");
+        TREATED_INTEGRATED_WAFER = addItem(530, "treated_integrated_wafer");
+        TREATED_MICRO_WAFER = addItem(531, "treated_micro_wafer");
+        TREATED_NANO_WAFER = addItem(532, "treated_nano_wafer");
+        TREATED_IMC_WAFER = addItem(533, "treated_imc_wafer");
+        TREATED_OPTICAL_WAFER = addItem(534, "treated_optical_wafer");
 
-        RAW_INTEGRATED_WAFER = addItem(530+5, "raw_integrated_wafer");
-        RAW_MICRO_WAFER = addItem(531+5, "raw_micro_wafer");
-        RAW_NANO_WAFER = addItem(532+5, "raw_nano_wafer");
-        RAW_IMC_WAFER = addItem(533+5, "raw_imc_wafer");
-        RAW_OPTICAL_WAFER = addItem(534+5, "raw_optical_wafer");
+        RAW_INTEGRATED_WAFER = addItem(535, "raw_integrated_wafer");
+        RAW_MICRO_WAFER = addItem(536, "raw_micro_wafer");
+        RAW_NANO_WAFER = addItem(537, "raw_nano_wafer");
+        RAW_IMC_WAFER = addItem(538, "raw_imc_wafer");
+        RAW_OPTICAL_WAFER = addItem(539, "raw_optical_wafer");
 
-        BAKED_INTEGRATED_WAFER = addItem(535+5, "baked_integrated_wafer");
-        BAKED_MICRO_WAFER = addItem(536+5, "baked_micro_wafer");
-        BAKED_NANO_WAFER = addItem(537+5, "baked_nano_wafer");
-        BAKED_IMC_WAFER = addItem(538+5, "baked_imc_wafer");
-        BAKED_OPTICAL_WAFER = addItem(539+5, "baked_optical_wafer");
+        BAKED_INTEGRATED_WAFER = addItem(540, "baked_integrated_wafer");
+        BAKED_MICRO_WAFER = addItem(541, "baked_micro_wafer");
+        BAKED_NANO_WAFER = addItem(542, "baked_nano_wafer");
+        BAKED_IMC_WAFER = addItem(543, "baked_imc_wafer");
+        BAKED_OPTICAL_WAFER = addItem(544, "baked_optical_wafer");
 
-        INTEGRATED_WAFER = addItem(540+5, "integrated_wafer");
-        MICRO_WAFER = addItem(541+5, "micro_wafer");
-        NANO_WAFER = addItem(542+5, "nano_wafer");
-        IMC_WAFER = addItem(543+5, "imc_wafer");
-        OPTICAL_WAFER = addItem(544+5, "optical_wafer");
+        INTEGRATED_WAFER = addItem(545, "integrated_wafer");
+        MICRO_WAFER = addItem(546, "micro_wafer");
+        NANO_WAFER = addItem(547, "nano_wafer");
+        IMC_WAFER = addItem(548, "imc_wafer");
+        OPTICAL_WAFER = addItem(549, "optical_wafer");
 
-        ETCHED_INTEGRATED_WAFER = addItem(545+5, "etched_integrated_wafer");
-        ETCHED_MICRO_WAFER = addItem(546+5, "etched_micro_wafer");
-        ETCHED_NANO_WAFER = addItem(547+5, "etched_nano_wafer");
-        ETCHED_IMC_WAFER = addItem(548+5, "etched_imc_wafer");
-        ETCHED_OPTICAL_WAFER = addItem(549+5, "etched_optical_wafer");
+        ETCHED_INTEGRATED_WAFER = addItem(550, "etched_integrated_wafer");
+        ETCHED_MICRO_WAFER = addItem(551, "etched_micro_wafer");
+        ETCHED_NANO_WAFER = addItem(552, "etched_nano_wafer");
+        ETCHED_IMC_WAFER = addItem(553, "etched_imc_wafer");
+        ETCHED_OPTICAL_WAFER = addItem(554, "etched_optical_wafer");
 
-        INTEGRATED_CHIP = addItem(550+5, "integrated_chip");
-        MICRO_CHIP = addItem(551+5, "micro_chip");
-        NANO_CHIP = addItem(552+5, "nano_chip");
-        IMC_CHIP = addItem(553+5, "imc_chip");
-        OPTICAL_CHIP = addItem(554+5, "optical_chip");
+        INTEGRATED_CHIP = addItem(555, "integrated_chip");
+        MICRO_CHIP = addItem(556, "micro_chip");
+        NANO_CHIP = addItem(557, "nano_chip");
+        IMC_CHIP = addItem(558, "imc_chip");
+        OPTICAL_CHIP = addItem(559, "optical_chip");
 
         INTEGRATED_HARD_MASK = addItem(560, "integrated_hard_mask");
         MICRO_HARD_MASK = addItem(561, "micro_hard_mask");
@@ -247,41 +241,41 @@ public class    TJMetaItem extends StandardMetaItem {
         UVEMITTER_E = addItem(569, "uvemitter_e");
 
         // Micro-Nano PCB ITEMS
-        COPPER_LAMINATED_EPOXID = addItem(570, "copperlaminatedepoxid");
-        ELECTRUM_LAMINATED_EPOXID = addItem(571, "electrumlaminatedepoxid");
-        GERMANIUM_LAMINATED_EPOXID = addItem(572,"germaniumlaminatedepoxid");
-        FIBERGLASS_MESH = addItem(573,"fiberglassmesh");
+        COPPER_LAMINATED_EPOXID = addItem(570, "copper_laminated_epoxid");
+        ELECTRUM_LAMINATED_EPOXID = addItem(571, "electrum_laminated_epoxid");
+        GERMANIUM_LAMINATED_EPOXID = addItem(572,"germanium_laminated_epoxid");
+        FIBERGLASS_MESH = addItem(573,"fiber_glass_mesh");
 
         // Optical PCB ITEMS
-        ZBLANMATRIX = addItem(574,"zblanmatrix");
-        OPTICAL_BASE = addItem(575,"opticalbase");
-        LAMINATED_OPTICAL_BASE = addItem(576,"laminatedopticalbase");
+        ZBLANMATRIX = addItem(574,"zblan_matrix");
+        OPTICAL_BASE = addItem(575,"optical_base");
+        LAMINATED_OPTICAL_BASE = addItem(576,"laminated_optical_base");
 
         // Crystal CHIP ITEMS
-        COATED_SAPPHIRE_WAFER = addItem(577,"coatedsapphirewafer");
-        DIRTY_COATED_SAPPHIRE_WAFER = addItem(578,"dirtycoatedsapphirewafer");
-        CLEANED_COATED_SAPPHIRE_WAFER = addItem(579,"cleanedcoatedsapphirewafer");
-        SAPPHIRE_SUBSTRATE_PREP = addItem(580,"sapphiresubstrateprep");
-        ETCHED_SAPPHIRE_WAFER = addItem(581,"etchedsapphirewafer");
-        SUPERHEATED_SAPPHIRE_WAFER = addItem(582,"superheatedsapphirewafer");
-        VIABLE_SAPPHIRE_WAFER = addItem(583,"viablesapphirewafer");
-        NONVIABLE_SAPPHIRE_WAFER = addItem(584,"nonviablesapphirewafer");
-        RECYCLED_SAPPHIRE_WAFER = addItem(585,"recycledsapphirewafer");
-        SINTERED_SAPPHIRE_WAFER = addItem(586,"sinteredsapphirewafer");
-        WIRED_SAPPHIRE_WAFER = addItem(587,"wiredsapphirewafer");
-        SAPPHIRE_WAFER = addItem(588,"sapphirewafer");
+        COATED_SAPPHIRE_WAFER = addItem(577,"coated_sapphire_wafer");
+        DIRTY_COATED_SAPPHIRE_WAFER = addItem(578,"dirty_coated_sapphire_wafer");
+        CLEANED_COATED_SAPPHIRE_WAFER = addItem(579,"cleaned_coated_sapphire_wafer");
+        SAPPHIRE_SUBSTRATE_PREP = addItem(580,"sapphire_substrate_prep");
+        ETCHED_SAPPHIRE_WAFER = addItem(581,"etched_sapphire_wafer");
+        SUPERHEATED_SAPPHIRE_WAFER = addItem(582,"superheated_sapphire_wafer");
+        VIABLE_SAPPHIRE_WAFER = addItem(583,"viable_sapphire_wafer");
+        NONVIABLE_SAPPHIRE_WAFER = addItem(584,"nonviable_sapphire_wafer");
+        RECYCLED_SAPPHIRE_WAFER = addItem(585,"recycled_sapphire_wafer");
+        SINTERED_SAPPHIRE_WAFER = addItem(586,"sintered_sapphire_wafer");
+        WIRED_SAPPHIRE_WAFER = addItem(587,"wired_sapphire_wafer");
+        SAPPHIRE_WAFER = addItem(588,"sapphire_wafer");
         RAW_SAPPHIRE_CHIP = addItem(601, "raw_crystal_chip");
-        SAPPHIRE_CHIP = addItem(589,"sapphirechip");
+        SAPPHIRE_CHIP = addItem(589,"sapphire_chip");
 
         // Electronic CHIP ITEMS
 
-        SIMPLE_CPU_WAFER = addItem(590,"simplecpuwafer");
-        SIMPLE_CPU = addItem(591, "simplecpu");
+        SIMPLE_CPU_WAFER = addItem(590,"simple_cpu_wafer");
+        SIMPLE_CPU = addItem(591, "simple_cpu");
 
         // Crystal PCB Items
 
         PROCESSED_CRYSTAL_WAFER = addItem(592,"processed_crystal_wafer");
-        CRYSTAL_WAFER_PREP = addItem(593,"crsytal_wafer_prep");
+        CRYSTAL_WAFER_PREP = addItem(593,"crystal_wafer_prep");
         RUTH_COATED_CRYSTAL_WAFER = addItem(594,"ruth_coated_crystal_wafer");
         CRYSTAL_SFET_BUNDLE = addItem(595,"crystal_sfet_bundle");
         CRYSTAL_SFET_WAFER = addItem(596,"crystal_sfet_wafer");
@@ -291,7 +285,7 @@ public class    TJMetaItem extends StandardMetaItem {
         GAMMA_EMITTING_DIODE = addItem(600,"gamma_emitting_diode");
 
         // Misc. SMD ITEMS
-        FERROUS_INDUCTOR_CORE = addItem(1001, "ferrousinductorcore");
-        TUNGSTEN_INDUCTOR_CORE = addItem(1002,"tungsteninductorcore");
+        FERROUS_INDUCTOR_CORE = addItem(1001, "ferrous_inductor_core");
+        TUNGSTEN_INDUCTOR_CORE = addItem(1002,"tungsten_inductor_core");
     }
 }

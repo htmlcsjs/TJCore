@@ -257,12 +257,6 @@ public class TJMetaItems {
 
     //Biochem Processes
 
-    public static MetaItem<?>.MetaValueItem TREATED_CPU_WAFER;
-    public static MetaItem<?>.MetaValueItem TREATED_RAM_WAFER;
-    public static MetaItem<?>.MetaValueItem TREATED_NANO_CPU_WAFER;
-    public static MetaItem<?>.MetaValueItem TREATED_ULPIC_WAFER;
-    //public static MetaItem<?>.MetaValueItem TREATED_CPU_WAFER;
-
     //Micro-Nano PCB ITEMS
     public static MetaItem<?>.MetaValueItem COPPER_LAMINATED_EPOXID;
     public static MetaItem<?>.MetaValueItem ELECTRUM_LAMINATED_EPOXID;
