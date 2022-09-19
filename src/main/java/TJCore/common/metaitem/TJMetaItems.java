@@ -218,15 +218,34 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem CRYSTAL_COMPUTER_UV;
     public static MetaItem<?>.MetaValueItem CRYSTAL_MAINFRAME_UHV;
 
-    public static MetaItem<?>.MetaValueItem BIOWARE_PROCESSOR_ZPM;
-    public static MetaItem<?>.MetaValueItem BIOWARE_ASSEMBLY_UV;
-    public static MetaItem<?>.MetaValueItem BIOWARE_COMPUTER_UHV;
-    public static MetaItem<?>.MetaValueItem BIOWARE_MAINFRAME_UEV;
 
-    public static MetaItem<?>.MetaValueItem WETWARE_PROCESSOR_UV;
-    public static MetaItem<?>.MetaValueItem WETWARE_ASSEMBLY_UHV;
-    public static MetaItem<?>.MetaValueItem WETWARE_COMPUTER_UEV;
-    public static MetaItem<?>.MetaValueItem WETWARE_MAINFRAME_UIV;
+
+    public static MetaItem<?>.MetaValueItem WETWARE_PROCESSOR_ZPM;
+    public static MetaItem<?>.MetaValueItem WETWARE_ASSEMBLY_UV;
+    public static MetaItem<?>.MetaValueItem WETWARE_COMPUTER_UHV;
+    public static MetaItem<?>.MetaValueItem WETWARE_MAINFRAME_UEV;
+    public static MetaItem<?>.MetaValueItem BIOWARE_PROCESSOR_UV;
+    public static MetaItem<?>.MetaValueItem BIOWARE_ASSEMBLY_UHV;
+    public static MetaItem<?>.MetaValueItem BIOWARE_COMPUTER_UEV;
+
+    public static MetaItem<?>.MetaValueItem BIOWARE_MAINFRAME_UIV;
+    public static MetaItem<?>.MetaValueItem QUANTUM_PROCESSOR_UHV;
+    public static MetaItem<?>.MetaValueItem QUANTUM_ASSEMBLY_UEV;
+    public static MetaItem<?>.MetaValueItem QUANTUM_COMPUTER_UIV;
+    public static MetaItem<?>.MetaValueItem QUANTUM_MAINFRAME_UXV;
+    public static MetaItem<?>.MetaValueItem EXOTIC_PROCESSOR_UEV;
+    public static MetaItem<?>.MetaValueItem EXOTIC_ASSEMBLY_UIV;
+    public static MetaItem<?>.MetaValueItem EXOTIC_COMPUTER_UXV;
+    public static MetaItem<?>.MetaValueItem EXOTIC_MAINFRAME_OPV;
+    public static MetaItem<?>.MetaValueItem COSMIC_PROCESSOR_UIV;
+    public static MetaItem<?>.MetaValueItem COSMIC_ASSEMBLY_UXV;
+    public static MetaItem<?>.MetaValueItem COSMIC_COMPUTER_OPV;
+    public static MetaItem<?>.MetaValueItem COSMIC_MAINFRAME_MAX;
+    public static MetaItem<?>.MetaValueItem SUPRA_PROCESSOR_UXV;
+    public static MetaItem<?>.MetaValueItem SUPRA_ASSEMBLY_OPV;
+    public static MetaItem<?>.MetaValueItem SUPRA_COMPUTER_MAX;
+    public static MetaItem<?>.MetaValueItem SUPRA_MAINFRAME_ALL;
+
 
     // less tiers of smd, make them upgrading on a *random* pattern
     // have like 4 or 5 tiers of each smd max (giving us a chance to make them more complex on later tiers than just wire, plate, fluid)
@@ -253,7 +272,8 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem OPTICAL_BASE;
     public static MetaItem<?>.MetaValueItem LAMINATED_OPTICAL_BASE;
 
-    //Cystal PCB ITEMS
+    //Cystal Chip ITEMS
+    public static MetaItem<?>.MetaValueItem SAPPHIRE_WAFER;
     public static MetaItem<?>.MetaValueItem COATED_SAPPHIRE_WAFER;
     public static MetaItem<?>.MetaValueItem DIRTY_COATED_SAPPHIRE_WAFER;
     public static MetaItem<?>.MetaValueItem CLEANED_COATED_SAPPHIRE_WAFER;
@@ -265,8 +285,20 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem RECYCLED_SAPPHIRE_WAFER;
     public static MetaItem<?>.MetaValueItem SINTERED_SAPPHIRE_WAFER;
     public static MetaItem<?>.MetaValueItem WIRED_SAPPHIRE_WAFER;
-    public static MetaItem<?>.MetaValueItem SAPPHIRE_WAFER;
+    public static MetaItem<?>.MetaValueItem RAW_SAPPHIRE_CHIP;
     public static MetaItem<?>.MetaValueItem SAPPHIRE_CHIP;
+
+    // Crystal PCB Items
+
+    public static MetaItem<?>.MetaValueItem PROCESSED_CRYSTAL_WAFER;
+    public static MetaItem<?>.MetaValueItem CRYSTAL_WAFER_PREP;
+    public static MetaItem<?>.MetaValueItem RUTH_COATED_CRYSTAL_WAFER;
+    public static MetaItem<?>.MetaValueItem CRYSTAL_SFET_BUNDLE;
+    public static MetaItem<?>.MetaValueItem CRYSTAL_SFET_WAFER;
+    public static MetaItem<?>.MetaValueItem CLEAN_CRYSTAL_SFET_WAFER;
+    public static MetaItem<?>.MetaValueItem REFRACTING_SHEET;
+    public static MetaItem<?>.MetaValueItem LAMINATED_CRYSTAL_PCB_SHEET;
+    public static MetaItem<?>.MetaValueItem GAMMA_EMITTING_DIODE;
 
     // Electronic Chip Items
 
