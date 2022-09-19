@@ -89,6 +89,7 @@ public class TJFirstDegreeMaterials {
 
         ZBLAN = new Material.Builder(25010, "zblan")
                 .ingot()
+                .fluid()
                 .blastTemp(3600)
                 .color(0x0e0e0).iconSet(MaterialIconSet.SHINY)
                 .flags(SetMaterialFlags(STANDARDLENS,STANDARDFOIL,STANDARDWIREFINE))
@@ -131,13 +132,6 @@ public class TJFirstDegreeMaterials {
         DiamondCVDSolution = new Material.Builder(25017, "diamondcvdsolution")
                 .fluid()
                 .color(0x65b1fc)
-                .build();
-
-        Kapton_K = new Material.Builder(25018,"kaptonk")
-                .fluid()
-                .ingot()
-                .iconSet(MaterialIconSet.DULL)
-                .color(0xb7c474)
                 .build();
 
         Starlight = new Material.Builder(25019, "starlight")
@@ -191,6 +185,19 @@ public class TJFirstDegreeMaterials {
                 .fluid()
                 .color(0x6b0c05)
                 .build();
+
+        HafniumSilicate = new Material.Builder(25027, "hafnium_silicate")
+                .dust()
+                .colorAverage()
+                .components(Hafnium, 1, Oxygen, 4, Silicon, 1)
+                .build()
+                .setFormula("HfO4Si", true);
+
+        Cobalt60 = new Material.Builder(25028,"cobalt_sixty")
+                .dust()
+                .iconSet(MaterialIconSet.SHINY)
+                .color(Cobalt.getMaterialRGB())
+                .build();
     }
 
     public static void registerProperties() {
@@ -222,9 +229,9 @@ public class TJFirstDegreeMaterials {
         PolyvinylChloride.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
         Polyethylene.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
         ReinforcedEpoxyResin.addFlags(MaterialFlags.GENERATE_FOIL);
-        Kapton_K.addFlags(MaterialFlags.GENERATE_FOIL);
 
         // Metals
+        VanadiumGallium.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
         TinAlloy.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
 
         // becuase of techs foolishness and thinking graphenes are a foil

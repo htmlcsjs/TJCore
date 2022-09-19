@@ -13,6 +13,7 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
@@ -46,10 +47,9 @@ public class CommonProxy {
         return itemBlock;
     }
     
-    @SubscribeEvent()
+    @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void init(RegistryEvent.Register<IRecipe> event) {
         TJOreDictionaryLoader.init();
-
         CircuitRecipes.registerCircuits();
         TJPolymers.registerPolymers();
         GTComponents.registerComponents();

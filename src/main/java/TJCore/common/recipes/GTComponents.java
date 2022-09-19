@@ -346,7 +346,7 @@ public class GTComponents {
             ModHandler.removeRecipeByName("gregtech:casing_" + voltage);
 
             BlockMachineCasing.MachineCasingType machinecasingtype = BlockMachineCasing.MachineCasingType.values()[i];
-            GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{OreDictUnifier.get(plate, material[i], 8), IntCircuitIngredient.getIntegratedCircuit(8)});
+            //GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{OreDictUnifier.get(plate, material[i], 8), IntCircuitIngredient.getIntegratedCircuit(8)});
             //GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.values()[i]), OreDictUnifier.get(cableGtSingle, wireMaterial[i], 2)}, new FluidStack[]{fluidMaterials[i].getFluid(288)});
             //if(i==2)
                 //GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{MetaTileEntities.HULL[i].getStackForm(), OreDictUnifier.get(cableGtSingle, AnnealedCopper, 2)}, new FluidStack[]{Polyethylene.getFluid(288)});

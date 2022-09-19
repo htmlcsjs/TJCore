@@ -1,11 +1,18 @@
 package TJCore.common.recipes;
 
+import TJCore.common.metaitem.TJMetaItem;
+import TJCore.common.metaitem.TJMetaItems;
 import gregicality.multiblocks.GregicalityMultiblocks;
 import gregicality.multiblocks.api.recipes.GCYMRecipeMaps;
+import gregicality.science.api.unification.materials.GCYSMaterials;
+import gregicality.science.common.items.GCYSMetaItems;
+import gregicality.science.loaders.recipe.GCYSRecipeLoader;
+import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Material;
+import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.UnificationEntry;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
@@ -13,18 +20,15 @@ import org.lwjgl.opencl.CL;
 
 
 import static TJCore.common.metaitem.TJMetaItems.*;
-import static TJCore.common.recipes.recipemaps.TJRecipeMaps.DEHYDRATOR_RECIPES;
-import static TJCore.common.recipes.recipemaps.TJRecipeMaps.LAMINATOR_RECIPES;
 import static TJCore.api.material.TJMaterials.*;
+import static TJCore.common.recipes.recipemaps.TJRecipeMaps.*;
 import static gregtech.api.GTValues.*;
+import static gregtech.api.metatileentity.multiblock.CleanroomType.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static gregicality.multiblocks.api.recipes.GCYMRecipeMaps.*;
-import static gregtech.common.items.MetaItems.NANO_COMPUTER_IV;
-import static gregtech.common.items.MetaItems.NANO_MAINFRAME_LUV;
-import static gregtech.common.items.MetaItems.NANO_PROCESSOR_HV;
 
 public class CircuitRecipes {
 
@@ -88,10 +92,10 @@ public class CircuitRecipes {
         PROCESSOR_ASSEMBLY_HV.setInvisible();
         WORKSTATION_EV.setInvisible();
         MAINFRAME_IV.setInvisible();
-        NANO_PROCESSOR_HV.setInvisible();
+        //NANO_PROCESSOR_HV.setInvisible();
         NANO_PROCESSOR_ASSEMBLY_EV.setInvisible();
-        NANO_COMPUTER_IV.setInvisible();
-        NANO_MAINFRAME_LUV.setInvisible();
+        //NANO_COMPUTER_IV.setInvisible();
+        //NANO_MAINFRAME_LUV.setInvisible();
         QUANTUM_PROCESSOR_EV.setInvisible();
         QUANTUM_ASSEMBLY_IV.setInvisible();
         QUANTUM_COMPUTER_LUV.setInvisible();
@@ -103,7 +107,17 @@ public class CircuitRecipes {
         WETWARE_PROCESSOR_LUV.setInvisible();
         WETWARE_PROCESSOR_ASSEMBLY_ZPM.setInvisible();
         WETWARE_SUPER_COMPUTER_UV.setInvisible();
-        WETWARE_MAINFRAME_UHV.setInvisible();
+        GTRecipeHandler.removeAllRecipes(CIRCUIT_ASSEMBLER_RECIPES);
+
+        GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{
+                FLUID_CELL_LARGE_STAINLESS_STEEL.getStackForm(),
+                OreDictUnifier.get(plate, Naquadah,4),
+                OreDictUnifier.get(plate, Ruridit, 2),
+                OreDictUnifier.get(bolt, Trinium, 12),
+                OreDictUnifier.get(stick,SamariumMagnetic),
+                OreDictUnifier.get(rotor,Iridium),
+                ELECTRIC_MOTOR_LuV.getStackForm()},
+                new FluidStack[]{SolderingAlloy.getFluid(144)});
         GTRecipeHandler.removeRecipesByInputs(CHEMICAL_BATH_RECIPES, new ItemStack[]{CARBON_FIBERS.getStackForm(1)}, new FluidStack[]{Epoxy.getFluid(144)});
         GTRecipeHandler.removeRecipesByInputs(CHEMICAL_BATH_RECIPES, new ItemStack[]{OreDictUnifier.get(wireFine, BorosilicateGlass)}, new FluidStack[]{Epoxy.getFluid(144)});
     }
@@ -365,7 +379,92 @@ public class CircuitRecipes {
                 .buildAndRegister();
     }
     private static void crystalBoard(){
+        FSZM_RECIPES.recipeBuilder()
+                .duration(80)
+                .EUt(VA[EV])
+                .input(SAPPHIRE_WAFER)
+                .fluidInputs(Argon.getFluid(50))
+                .output(PROCESSED_CRYSTAL_WAFER)
+                .buildAndRegister();
 
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .duration(120)
+                .EUt(VA[EV])
+                .input(PROCESSED_CRYSTAL_WAFER)
+                .fluidInputs(ZBLAN.getFluid(16))
+                .output(CRYSTAL_WAFER_PREP)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .duration(120)
+                .EUt(VA[LuV])
+                .input(CRYSTAL_WAFER_PREP)
+                .input(foil, Rutherfordium)
+                .output(RUTH_COATED_CRYSTAL_WAFER)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(140)
+                .EUt(VA[IV])
+                .input(dust, HafniumSilicate, 4)
+                .input(wireFine, Rhodium)
+                .output(CRYSTAL_SFET_BUNDLE, 32)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(90)
+                .EUt(VA[ZPM])
+                .input(RUTH_COATED_CRYSTAL_WAFER)
+                .input(CRYSTAL_SFET_BUNDLE, 4)
+                .output(CRYSTAL_SFET_WAFER)
+                .buildAndRegister();
+
+        AUTOCLAVE_RECIPES.recipeBuilder()
+                .duration(5)
+                .EUt(VA[IV])
+                .input(CRYSTAL_SFET_WAFER)
+                .fluidInputs(Helium.getPlasma(50))
+                .output(CLEAN_CRYSTAL_SFET_WAFER)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(55)
+                .EUt(VA[EV])
+                .input(foil,Germanium, 2)
+                .input(foil,ZBLAN)
+                .output(REFRACTING_SHEET)
+                .buildAndRegister();
+
+        LAMINATOR_RECIPES.recipeBuilder()
+                .duration(105)
+                .EUt(VA[EV])
+                .input(REFRACTING_SHEET)
+                .input(CLEAN_CRYSTAL_SFET_WAFER)
+                .output(LAMINATED_CRYSTAL_PCB_SHEET)
+                .buildAndRegister();
+
+        PACKER_RECIPES.recipeBuilder()
+                .duration(20)
+                .EUt(VA[MV])
+                .input(dust, Cobalt60)
+                .input(foil,Lead)
+                .output(GAMMA_EMITTING_DIODE, 16)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(65)
+                .EUt(VA[ZPM])
+                .input(LAMINATED_CRYSTAL_PCB_SHEET)
+                .input(GAMMA_EMITTING_DIODE, 8)
+                .output(CRYSTAL_PREBOARD)
+                .buildAndRegister();
+
+        CUTTER_RECIPES.recipeBuilder()
+                .duration(160)
+                .EUt(VA[EV])
+                .input(CRYSTAL_PREBOARD)
+                .output(CRYSTAL_BOARD, 8)
+                .buildAndRegister();
     }
     private static void wetwareBoard(){
         //Organic Neural Network Support Unit
@@ -387,35 +486,343 @@ public class CircuitRecipes {
     }
 
     public static void primitive() {
+        ModHandler.addShapedRecipe("primitive_assembly_ulv", PRIMITIVE_ASSEMBLY_ULV.getStackForm(),
+                "RVR", "WBW", " V ",
+                'R', RESISTOR.getStackForm(),
+                'V', VACUUM_TUBE.getStackForm(),
+                'B', PRIMITIVE_BOARD.getStackForm(),
+                'W', OreDictUnifier.get(wireGtSingle, Tin));
 
+        ModHandler.addShapedRecipe("primitive_computer_lv", PRIMITIVE_COMPUTER_LV.getStackForm(),
+                "CAC", "WBW", "PAP",
+                'C', CAPACITOR.getStackForm(),
+                'A', PRIMITIVE_ASSEMBLY_ULV.getStackForm(),
+                'W', OreDictUnifier.get(cableGtSingle, RedAlloy),
+                'B', PRIMITIVE_BOARD.getStackForm(),
+                'P', OreDictUnifier.get(plate, Tin));
+
+        ModHandler.addShapedRecipe("primitive_mainframe_mv", PRIMITIVE_MAINFRAME_MV.getStackForm(),
+                "DPD", "CFC", "TGT",
+                'C', PRIMITIVE_COMPUTER_LV.getStackForm(),
+                'D', DIODE.getStackForm(),
+                'F', OreDictUnifier.get(frameGt, Wood),
+                'P', OreDictUnifier.get(plate, WroughtIron),
+                'T', TRANSISTOR.getStackForm(),
+                'G', OreDictUnifier.get(cableGtSingle, Tin));
     }
 
+    // Processor - CR
+    // Assembly - TR
+    // Computer - IC
+    // Mainframe - TD
     public static void electronic() {
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[LV])
+                .input(SIMPLE_CPU)
+                .input(ELECTRONIC_BOARD)
+                .input(CAPACITOR,2)
+                .input(RESISTOR, 2)
+                .input(wireFine, Tin, 4)
+                .output(ELECTRONIC_PROCESSOR_ULV, 2)
+                .buildAndRegister();
 
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[LV])
+                .input(ELECTRONIC_PROCESSOR_ULV, 2)
+                .input(ELECTRONIC_BOARD)
+                .input(TRANSISTOR, 2)
+                .input(RESISTOR, 2)
+                .input(wireFine, Tin, 2)
+                .output(ELECTRONIC_ASSEMBLY_LV)
+                .buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[LV])
+                .input(ELECTRONIC_ASSEMBLY_LV, 2)
+                .input(plate, Aluminium)
+                .input(INDUCTOR, 2)
+                .input(CAPACITOR, 2)
+                .input(wireFine, Copper, 2)
+                .output(ELECTRONIC_COMPUTER_MV)
+                .buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[LV])
+                .input(ELECTRONIC_COMPUTER_MV)
+                .input(frameGt, Aluminium)
+                .input(TRANSISTOR, 2)
+                .input(DIODE, 2)
+                .input(cableGtSingle, Copper, 2)
+                .output(ELECTRONIC_MAINFRAME_HV)
+                .buildAndRegister();
     }
 
     public static void integrated() {
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[MV])
+                .cleanroom(CLEANROOM)
+                .input(INTEGRATED_CHIP)
+                .input(INTEGRATED_BOARD)
+                .input(SMD_CAPACITOR_1, 2)
+                .input(SMD_RESISTOR_1, 2)
+                .input(wireFine, Copper, 4)
+                .output(INTEGRATED_PROCESSOR_LV, 4)
+                .buildAndRegister();
 
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[MV])
+                .cleanroom(CLEANROOM)
+                .input(INTEGRATED_PROCESSOR_LV,2)
+                .input(INTEGRATED_BOARD)
+                .input(SMD_TRANSISTOR_1, 2)
+                .input(SMD_RESISTOR_1, 2)
+                .input(wireFine, Copper, 2)
+                .output(INTEGRATED_ASSEMBLY_MV)
+                .buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[MV])
+                .cleanroom(CLEANROOM)
+                .input(INTEGRATED_ASSEMBLY_MV,2)
+                .input(plate, StainlessSteel)
+                .input(SMD_INDUCTOR_1, 2)
+                .input(SMD_CAPACITOR_1, 2)
+                .input(wireFine, Electrum, 2)
+                .output(INTEGRATED_COMPUTER_HV)
+                .buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[MV])
+                .cleanroom(CLEANROOM)
+                .input(INTEGRATED_COMPUTER_HV,2)
+                .input(frameGt, StainlessSteel)
+                .input(SMD_TRANSISTOR_1, 2)
+                .input(SMD_DIODE_1, 2)
+                .input(cableGtSingle, Electrum,2)
+                .output(INTEGRATED_MAINFRAME_EV)
+                .buildAndRegister();
     }
 
     public static void micro() {
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[HV])
+                .cleanroom(CLEANROOM)
+                .input(MICRO_CHIP)
+                .input(MICRO_BOARD)
+                .input(SMD_CAPACITOR_1, 2)
+                .input(SMD_RESISTOR_1, 2)
+                .input(wireFine, Electrum,4)
+                .output(MICRO_PROCESSOR_MV, 4)
+                .buildAndRegister();
 
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[HV])
+                .cleanroom(CLEANROOM)
+                .input(MICRO_PROCESSOR_MV, 2)
+                .input(MICRO_BOARD)
+                .input(SMD_TRANSISTOR_1, 2)
+                .input(SMD_RESISTOR_1, 2)
+                .input(wireFine, Electrum, 2)
+                .output(MICRO_ASSEMBLY_HV)
+                .buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[HV])
+                .cleanroom(CLEANROOM)
+                .input(MICRO_ASSEMBLY_HV,2 )
+                .input(plate, Titanium)
+                .input(SMD_INDUCTOR_1, 2)
+                .input(SMD_CAPACITOR_1, 2)
+                .input(wireFine, Aluminium, 2)
+                .output(MICRO_COMPUTER_EV)
+                .buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[HV])
+                .cleanroom(CLEANROOM)
+                .input(MICRO_COMPUTER_EV, 2)
+                .input(frameGt, Titanium)
+                .input(SMD_TRANSISTOR_1, 2)
+                .input(SMD_DIODE_1, 2)
+                .input(cableGtSingle, Aluminium, 2)
+                .output(MICRO_MAINFRAME_IV)
+                .buildAndRegister();
     }
 
     public static void nano() {
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[EV])
+                .cleanroom(CLEANROOM)
+                .input(NANO_CHIP)
+                .input(NANO_BOARD)
+                .input(SMD_CAPACITOR_1, 2)
+                .input(SMD_RESISTOR_2, 2)
+                .input(wireFine, Aluminium, 4)
+                .output(TJMetaItems.NANO_PROCESSOR_HV, 4)
+                .buildAndRegister();
 
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[EV])
+                .cleanroom(CLEANROOM)
+                .input(TJMetaItems.NANO_PROCESSOR_HV, 2)
+                .input(NANO_BOARD)
+                .input(SMD_TRANSISTOR_1, 2)
+                .input(SMD_RESISTOR_2, 2)
+                .input(wireFine, Aluminium, 2)
+                .output(NANO_ASSEMBLY_EV)
+                .buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[EV])
+                .cleanroom(CLEANROOM)
+                .input(NANO_ASSEMBLY_EV, 2)
+                .input(plate, TungstenSteel)
+                .input(SMD_INDUCTOR_1, 2)
+                .input(SMD_CAPACITOR_1, 2)
+                .input(wireFine, Platinum, 2)
+                .output(TJMetaItems.NANO_COMPUTER_IV)
+                .buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[EV])
+                .cleanroom(CLEANROOM)
+                .input(TJMetaItems.NANO_COMPUTER_IV, 2)
+                .input(frameGt, TungstenSteel)
+                .input(SMD_TRANSISTOR_1, 2)
+                .input(SMD_DIODE_1, 2)
+                .input(cableGtSingle, Platinum, 2)
+                .output(TJMetaItems.NANO_MAINFRAME_LUV)
+                .buildAndRegister();
     }
 
     public static void imc() {
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[IV])
+                .cleanroom(CLEANROOM)
+                .input(IMC_CHIP)
+                .input(IMC_BOARD)
+                .input(SMD_CAPACITOR_1, 2)
+                .input(SMD_RESISTOR_2, 2)
+                .input(wireFine, Platinum, 4)
+                .output(IMC_PROCESSOR_EV, 4)
+                .buildAndRegister();
 
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[IV])
+                .cleanroom(CLEANROOM)
+                .input(IMC_PROCESSOR_EV,2)
+                .input(IMC_BOARD)
+                .input(SMD_TRANSISTOR_1, 2)
+                .input(SMD_RESISTOR_2, 2)
+                .input(wireFine, Platinum, 2)
+                .output(IMC_ASSEMBLY_IV)
+                .buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[IV])
+                .cleanroom(CLEANROOM)
+                .input(IMC_ASSEMBLY_IV)
+                .input(plate, RhodiumPlatedPalladium)
+                .input(SMD_INDUCTOR_1, 2)
+                .input(SMD_CAPACITOR_1, 2)
+                .input(wireFine, NiobiumTitanium, 2)
+                .output(IMC_COMPUTER_LUV)
+                .buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[IV])
+                .cleanroom(CLEANROOM)
+                .input(IMC_COMPUTER_LUV)
+                .input(frameGt, RhodiumPlatedPalladium)
+                .input(SMD_TRANSISTOR_1, 2)
+                .input(SMD_DIODE_2, 2)
+                .input(cableGtSingle, NiobiumTitanium, 2)
+                .output(IMC_MAINFRAME_ZPM)
+                .buildAndRegister();
     }
 
     public static void optical() {
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[LuV])
+                .cleanroom(CLEANROOM)
+                .input(OPTICAL_CHIP)
+                .input(OPTICAL_BOARD)
+                .input(SMD_CAPACITOR_2, 2)
+                .input(SMD_RESISTOR_2, 2)
+                .input(wireFine, NiobiumTitanium, 4)
+                .output(OPTICAL_PROCESSOR_IV, 4)
+                .buildAndRegister();
 
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[LuV])
+                .cleanroom(CLEANROOM)
+                .input(OPTICAL_PROCESSOR_IV, 2)
+                .input(OPTICAL_BOARD)
+                .input(SMD_TRANSISTOR_2, 2)
+                .input(SMD_RESISTOR_2, 2)
+                .input(wireFine, NiobiumTitanium, 2)
+                .output(OPTICAL_ASSEMBLY_LUV)
+                .buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[LuV])
+                .cleanroom(CLEANROOM)
+                .input(OPTICAL_ASSEMBLY_LUV, 2)
+                .input(plate, NaquadahAlloy)
+                .input(SMD_INDUCTOR_2, 2)
+                .input(SMD_CAPACITOR_2, 2)
+                .input(wireFine, VanadiumGallium, 2)
+                .output(OPTICAL_COMPUTER_ZPM)
+                .buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[LuV])
+                .cleanroom(CLEANROOM)
+                .input(OPTICAL_COMPUTER_ZPM, 2)
+                .input(frameGt, NaquadahAlloy)
+                .input(SMD_TRANSISTOR_2, 2)
+                .input(SMD_DIODE_2, 2)
+                .input(cableGtSingle, VanadiumGallium)
+                .output(OPTICAL_MAINFRAME_UV)
+                .buildAndRegister();
     }
 
     public static void crystal() {
-
+        /*CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[ZPM])
+                .cleanroom(CLEANROOM)
+                .input()
+                .input()
+                .input()
+                .input()
+                .input()
+                .output()
+                .buildAndRegister(); */
     }
 
     public static void wetware() {

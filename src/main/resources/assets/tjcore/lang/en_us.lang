@@ -69,6 +69,37 @@ metaitem.exotic_preboard.name=Spintronic Logistics PCB
 metaitem.cosmic_preboard.name=
 metaitem.supra_preboard.name=
 
+//Crystal Items
+metaitem.coatedsapphirewafer.name=Coated Sapphire Wafer
+metaitem.dirtycoatedsapphirewafer.name=Dirty Coated Sapphire Wafer
+metaitem.cleanedcoatedsapphirewafer.name=Cleaned Coated Sapphire Wafer
+metaitem.sapphiresubstrateprep.name=Sapphire Substrate Preparation
+metaitem.etchedsapphirewafer.name=Etched Sapphire Wafer
+metaitem.superheatedsapphirewafer.name=Superheated Sapphire Wafer
+metaitem.viablesapphirewafer.name=Viable Sapphire Wafer
+metaitem.nonviablesapphirewafer.name=Non-Viable Sapphire Wafer
+metaitem.recycledsapphirewafer.name=Recycled Sapphire Wafer
+metaitem.sinteredsapphirewafer.name=Sintered Sapphire Wafer
+metaitem.wiredsapphirewafer.name=Wired Sapphire Wafer
+metaitem.sapphirewafer.name=Sapphire Wafer
+metaitem.raw_crystal_chip.name=Raw Crystal Chip
+metaitem.sapphirechip.name=Sealed Crystal Computation Unit
+metaitem.processed_crystal_wafer.name=Processed Crystal Wafer
+metaitem.crsytal_wafer_prep.name=Crystal Wafer (Prepared)
+metaitem.ruth_coated_crystal_wafer.name=Rutherfordium Wrapped Crystal Wafer
+metaitem.crystal_sfet_bundle.name=Crystal SFET Bundle
+metaitem.crystal_sfet_wafer.name=Crystal SFET Wafer
+metaitem.clean_crystal_sfet_wafer.name=Clean Crystal SFET Wafer
+metaitem.refracting_sheet.name=Refracting Sheet
+metaitem.laminated_crystal_pcb_sheet.name=Laminated Crystal PCB Sheet
+metaitem.gamma_emitting_diode.name=GED (Gamma Emitting Diode)
+
+//SMD Items
+metaitem.ferrousinductorcore.name=
+metaitem.tungsteninductorcore.name=
+
+
+
 metaitem.circuit.primitive_assembly.name=Primitive Assembly
 metaitem.circuit.primitive_computer.name=Primitive Computer
 metaitem.circuit.primitive_mainframe.name=Primitive Mainframe

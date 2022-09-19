@@ -1,11 +1,15 @@
 package TJCore.common.recipes;
 
+import gregicality.science.api.recipes.GCYSRecipeMaps;
+import gregicality.science.loaders.recipe.chain.KaptonChain;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.unification.material.Material;
 
 import static TJCore.api.material.TJMaterials.*;
 import static TJCore.common.metaitem.TJMetaItems.*;
 import static TJCore.common.recipes.recipemaps.TJRecipeMaps.*;
+import static gregicality.science.api.unification.materials.GCYSMaterials.*;
+import static gregicality.science.api.recipes.GCYSRecipeMaps.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
@@ -74,12 +78,16 @@ public class Chips {
         //HARDMASK recipe generation
 
         for (int i = 0; i < hardMask.length; i++) {
-            PRINTER_RECIPES.recipeBuilder()
-                    .input(wireFine, printMaterial[i], 48 / (i + 1))
-                    .output(hardMask[i])
-                    .EUt(VA[i + 1])
-                    .duration(3000)
-                    .buildAndRegister();
+            for (int j = 0; j < printMaterial.length; j++) {
+                PRINTER_RECIPES.recipeBuilder()
+                        .input(wireFine, printMaterial[j], 48 / (j + 1))
+                        .circuitMeta(i)
+                        .output(hardMask[i])
+                        .EUt(VA[i + 1])
+                        .duration(3000)
+                        .buildAndRegister();
+            }
+
         }
 
         //Wafer generation for each type
@@ -184,7 +192,7 @@ public class Chips {
                 .buildAndRegister();
 
         //TODO: CARBON - Make this CVD recipe
-        LAMINATOR_RECIPES.recipeBuilder()
+        CVD_RECIPES.recipeBuilder()
                 .EUt(VA[LuV])
                 .duration(100)
                 .input(SAPPHIRE_WAFER)
@@ -281,23 +289,16 @@ public class Chips {
                 .EUt(VA[ZPM])
                 .duration(30)
                 .input(WIRED_SAPPHIRE_WAFER)
-                .output(SAPPHIRE_CHIP,32)
+                .output(RAW_SAPPHIRE_CHIP,32)
                 .buildAndRegister();
 
-        LAMINATOR_RECIPES.recipeBuilder()
-                .EUt(VA[IV])
-                .duration(20)
-                .input(SAPPHIRE_CHIP)
-                .input(foil,Kapton_K)
-                .output(CRYSTAL_PREBOARD)
-                .buildAndRegister();
 
         CANNER_RECIPES.recipeBuilder()
                 .EUt(VA[LuV])
                 .duration(65)
-                .input(CRYSTAL_PREBOARD)
+                .input(RAW_SAPPHIRE_CHIP)
                 .fluidInputs(Neon.getFluid(10))
-                .output(CRYSTAL_BOARD)
+                .output(SAPPHIRE_CHIP)
                 .buildAndRegister();
     }
 

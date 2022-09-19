@@ -1,4 +1,6 @@
 package TJCore.api.material;
+import gregtech.api.unification.Element;
+import gregtech.api.unification.Elements;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialFlag;
 
@@ -33,6 +35,10 @@ public class TJMaterials {
         return result;
     }
 
+    //Isotopes
+    public static final Element Co60 = Elements.add(27L, 33L, -1L, (String)null, "Cobalt-60", "Co-60", true);
+    public static Material Cobalt60;
+
     //Alloys
     public static Material BT6;
     public static Material Birmabright;
@@ -61,6 +67,8 @@ public class TJMaterials {
 
     public static Material Dibromoterephthaloyldichloride;
 
+    public static Material HafniumSilicate;
+
     // Cermaics + Glass
     public static Material SilicaCeramic;
     public static Material ZBLAN;
@@ -70,7 +78,6 @@ public class TJMaterials {
 
     // Polymers
     public static Material Ladder_Poly_P_Phenylene;
-    public static Material Kapton_K;
 
     // Mixtures
     public static Material DiamondCVDSolution;
