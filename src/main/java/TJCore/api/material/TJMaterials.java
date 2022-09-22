@@ -44,7 +44,27 @@ public class TJMaterials {
     public static Material Birmabright;
     public static Material NickelPlatedTin;
 
+    //Soldering Alloys
+    public static Material SolderingAlloyI;
+    public static Material SolderingAlloyII;
+    public static Material SolderingAlloyIII;
+    public static Material SolderingAlloyIV;
+    public static Material SolderingAlloyV;
+    public static Material SolderingAlloyVI;
+
+    public static Material FritSolderMix;
+    public static Material SolderVPrep;
+    public static Material SolderVPrepClean;
+    public static Material SolderVStruct;
+    public static Material IndiumRadium;
+    public static Material IndiumRadiumRadon;
+    public static Material PilledFoilMix;
+    public static Material IrradiatingMix;
+    public static Material SolderVIPrep;
+
+
     //Chemicals
+    public static Material Silane;
     public static Material TriphenylPhosphine;
     public static Material PhenylmagnesiumBromide;
     public static Material Bromobenzene;
@@ -80,6 +100,8 @@ public class TJMaterials {
     public static Material Ladder_Poly_P_Phenylene;
 
     // Mixtures
+
+    public static Material ArgonSilane;
     public static Material DiamondCVDSolution;
 
     public static Material P1Solution;

@@ -96,8 +96,13 @@ public class CircuitRecipes {
         Chips.registerChips();
         registerBoards();
         registerRecipes();
+        registerSolder();
+    }
+
+    private static void registerSolder() {
 
     }
+
     public static void registerBoards() {
         primitiveBoard();
         electronicBoard();

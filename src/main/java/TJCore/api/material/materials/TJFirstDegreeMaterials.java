@@ -1,5 +1,6 @@
 package TJCore.api.material.materials;
 
+import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import gregtech.api.unification.crafttweaker.CTMaterialBuilder;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialFlag;
@@ -7,6 +8,8 @@ import gregtech.api.unification.material.info.MaterialFlags;
 import gregtech.api.unification.material.info.MaterialIconSet;
 import gregtech.api.unification.material.properties.*;
 import net.minecraftforge.fluids.Fluid;
+
+import java.util.ArrayList;
 
 import static TJCore.api.material.TJMaterials.*;
 
@@ -107,7 +110,7 @@ public class TJFirstDegreeMaterials {
                 .fluid()
                 .color(0x471525)
                 .build()
-                .setFormula(" [HSiO3/2]", true);
+                .setFormula("[HSiO3/2]", true);
 
         //TODO: CARBON make the formula for SU-8 Photoresist
         SU8_Photoresist = new Material.Builder(25013, "su_photoresist")
@@ -197,6 +200,120 @@ public class TJFirstDegreeMaterials {
                 .dust()
                 .iconSet(MaterialIconSet.SHINY)
                 .color(Cobalt.getMaterialRGB())
+                .build()
+                .setFormula("Co-60", false);
+
+        FritSolderMix = new Material.Builder(25035,"glass_frit_solder_mixture")
+                .dust()
+                .colorAverage()
+                .components(Glass, 36, Yttrium, 1, Copper, 3)
+                .build()
+                .setFormula("(SiO2)36Cu3Y1", true);
+
+        SolderVPrep = new Material.Builder(25036, "solder_v_prep")
+                .dust()
+                .colorAverage()
+                .components(Tin, 2, Gold, 1, Bismuth, 1)
+                .build()
+                .setFormula("Sn2AuBi",true);
+
+        SolderVPrepClean = new Material.Builder(25037, "solder_v_prep_clean")
+                .dust()
+                .colorAverage()
+                .components(SolderVPrep, 1)
+                .build()
+                .setFormula("Sn2AuBi", true);
+
+        SolderVStruct = new Material.Builder(25038, "solder_v_prestructure")
+                .dust()
+                .colorAverage()
+                .components(SolderVPrepClean, 9, Lanthanum, 1, Cerium, 1)
+                .build()
+                .setFormula("(Sn2AuBi)9LaCe",true);
+
+        IndiumRadium = new Material.Builder(25039, "indium_radium")
+                .dust()
+                .colorAverage()
+                .components(Indium, 6, Radium, 2)
+                .build()
+                .setFormula("In6Ra4", true);
+
+        IndiumRadiumRadon = new Material.Builder(25040, "indium_radium_radon")
+                .dust()
+                .colorAverage()
+                .components(Indium, 6, Radium, 2, Radon, 2)
+                .build()
+                .setFormula("In6Ra2Rn2",true);
+
+        PilledFoilMix = new Material.Builder(25041, "pilled_foil_mix")
+                .dust()
+                .colorAverage()
+                .components(Ruthenium, 2, Gold, 2, Copper, 2, Lutetium, 2)
+                .build()
+                .setFormula("Ru2Au2Cu2Lu2", true);
+
+        IrradiatingMix = new Material.Builder(25042, "irradiating_mixture")
+                .dust()
+                .colorAverage()
+                .components(IndiumRadiumRadon, 2, PilledFoilMix, 2, Cobalt60, 3)
+                .build();
+
+        SolderVIPrep = new Material.Builder(25043, "solder_vi_prep")
+                .dust()
+                .colorAverage()
+                .components(IrradiatingMix, 8, Tritanium, 1, Moscovium, 1)
+                .build();
+
+        ArgonSilane = new Material.Builder(25044, "argon_silane")
+                .fluid()
+                .plasma()
+                .components(Argon, 1, Silane, 1)
+                .color(0x24BB18)
+                .build();
+
+        Silane = new Material.Builder(25045, "silane")
+                .fluid()
+                .colorAverage()
+                .components(Silicon, 1, Hydrogen, 4)
+                .build()
+                .setFormula("SiH4", true);
+
+        SolderingAlloyI = new Material.Builder(25029, "soldering_alloy_i")
+                .ingot()
+                .colorAverage()
+                .components(Lead, 6, Tin, 4)
+                .build()
+                .setFormula("Pb4Sn4", true);
+        SolderingAlloyII = new Material.Builder(25030, "soldering_alloy_ii")
+                .ingot()
+                .colorAverage()
+                .components(Tin,6,Silver,3,Antimony,1)
+                .build()
+                .setFormula("Sn6Ag3Sb", true);
+        SolderingAlloyIII = new Material.Builder(25031, "soldering_alloy_iii")
+                .ingot()
+                .colorAverage()
+                .components(FritSolderMix, 9, Zinc, 1)
+                .build()
+                .setFormula("((SiO2)36Cu3Y1)9Zn", true);
+        SolderingAlloyIV = new Material.Builder(25032, "soldering_alloy_iv")
+                .ingot()
+                .colorAverage()
+                .components(IndiumGalliumPhosphide, 6, Bismuth, 2, Tellurium, 1, Platinum, 1)
+                .build()
+                .setFormula("", true);
+        SolderingAlloyV = new Material.Builder(25033, "soldering_alloy_v")
+                .ingot()
+                .colorAverage()
+                .iconSet(MaterialIconSet.BRIGHT)
+                .components(SolderVStruct, 11, SiliconCarbide, 3, NiobiumTitanium, 2)
+                .build()
+                .setFormula("((Sn2AuBi)9LaCe)11(SiC)3(Nb3Ti)2", true);
+        SolderingAlloyVI = new Material.Builder(25034, "soldering_alloy_vi")
+                .ingot()
+                .colorAverage()
+                .iconSet(MaterialIconSet.SHINY)
+                .components(SolderVIPrep, 1, ArgonSilane, 4)
                 .build();
     }
 
