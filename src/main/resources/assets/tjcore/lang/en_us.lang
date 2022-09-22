@@ -100,6 +100,71 @@ metaitem.tungsteninductorcore.name=
 
 
 
-metaitem.circuit.primitive_assembly.name=Primitive Assembly
-metaitem.circuit.primitive_computer.name=Primitive Computer
-metaitem.circuit.primitive_mainframe.name=Primitive Mainframe
+metaitem.circuit.primitive_ulv.name=Primitive Assembly
+metaitem.circuit.primitive_lv.name=Primitive Computer
+metaitem.circuit.primitive_mv.name=Primitive Mainframe
+
+metaitem.circuit.electronic_ulv.name=Electronic Processor
+metaitem.circuit.electronic_lv.name=Electronic Assembly
+metaitem.circuit.electronic_mv.name=Electronic Computer
+metaitem.circuit.electronic_mv.name=Electronic Mainframe
+
+metaitem.circuit.integrated_lv.name=Integrated Processor
+metaitem.circuit.integrated_mv.name=Integrated Assembly
+metaitem.circuit.integrated_hv.name=Integrated Computer
+metaitem.circuit.integrated_ev.name=Integrated Mainframe
+
+metaitem.circuit.micro_mv.name=Micro Processor
+metaitem.circuit.micro_hv.name=Micro Assembly
+metaitem.circuit.micro_ev.name=Micro Computer
+metaitem.circuit.micro_iv.name=Micro Mainframe
+
+metaitem.circuit.nano_hv.name=Nano Processor
+metaitem.circuit.nano_ev.name=Nano Assembly
+metaitem.circuit.nano_iv.name=Nano Computer
+metaitem.circuit.nano_luv.name=Nano Mainframe
+
+metaitem.circuit.imc_ev.name=In-Memory Computation Processor
+metaitem.circuit.imc_iv.name=In-Memory Computation Assembly
+metaitem.circuit.imc_luv.name=In-Memory Computation Computer
+metaitem.circuit.imc_zpm.name=In-Memory Computation Mainframe
+
+metaitem.circuit.optical_iv.name=Optical Processor
+metaitem.circuit.optical_luv.name=Optical Assembly
+metaitem.circuit.optical_zpm.name=Optical Computer
+metaitem.circuit.optical_uv.name=Optical Mainframe
+
+metaitem.circuit.crystal_luv.name=Crystal Processor
+metaitem.circuit.crystal_zpm.name=Crystal Assembly
+metaitem.circuit.crystal_uv.name=Crystal Computer
+metaitem.circuit.crystal_uhv.name=Crystal Mainframe
+
+metaitem.circuit.wetware_zpm.name=Wetware Processor
+metaitem.circuit.wetware_uv.name=Wetware Assembly
+metaitem.circuit.wetware_uhv.name=Wetware Computer
+metaitem.circuit.wetware_uev.name=Wetware Mainframe
+
+metaitem.circuit.bioware_uv.name=Bioware Processor
+metaitem.circuit.bioware_uhv.name=Bioware Assembly
+metaitem.circuit.bioware_uev.name=Bioware Computer
+metaitem.circuit.bioware_uiv.name=Bioware Mainframe
+
+metaitem.circuit.quantum_uhv.name=Quantum Processor
+metaitem.circuit.quantum_uev.name=Quantum Assembly
+metaitem.circuit.quantum_uiv.name=Quantum Computer
+metaitem.circuit.quantum_uxv.name=Quantum Mainframe
+
+metaitem.circuit.exotic_uev.name=Exotic Processor
+metaitem.circuit.exotic_uiv.name=Exotic Assembly
+metaitem.circuit.exotic_uxv.name=Exotic Computer
+metaitem.circuit.exotic_opv.name=Exotic Mainframe
+
+metaitem.circuit.cosmic_uiv.name=Cosmic Processor
+metaitem.circuit.cosmic_uxv.name=Cosmic Assembly
+metaitem.circuit.cosmic_opv.name=Cosmic Computer
+metaitem.circuit.cosmic_max.name=Cosmic Mainframe
+
+metaitem.circuit.supra_uxv.name=Supra-Causal Processor
+metaitem.circuit.supra_opv.name=Supra-Causal Assembly
+metaitem.circuit.supra_max.name=Supra-Causal Computer
+metaitem.circuit.supra_all.name=Supra-Causal Mainframe

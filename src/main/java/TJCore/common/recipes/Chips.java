@@ -80,7 +80,7 @@ public class Chips {
         for (int i = 0; i < hardMask.length; i++) {
             for (int j = 0; j < printMaterial.length; j++) {
                 PRINTER_RECIPES.recipeBuilder()
-                        .input(wireFine, printMaterial[j], 48 / (j + 1))
+                        .input(wireFine, printMaterial[j], (48 / (j + 1)))
                         .circuitMeta(i)
                         .output(hardMask[i])
                         .EUt(VA[i + 1])

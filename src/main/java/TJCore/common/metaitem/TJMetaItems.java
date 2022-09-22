@@ -218,29 +218,31 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem CRYSTAL_COMPUTER_UV;
     public static MetaItem<?>.MetaValueItem CRYSTAL_MAINFRAME_UHV;
 
-
-
     public static MetaItem<?>.MetaValueItem WETWARE_PROCESSOR_ZPM;
     public static MetaItem<?>.MetaValueItem WETWARE_ASSEMBLY_UV;
     public static MetaItem<?>.MetaValueItem WETWARE_COMPUTER_UHV;
     public static MetaItem<?>.MetaValueItem WETWARE_MAINFRAME_UEV;
+
     public static MetaItem<?>.MetaValueItem BIOWARE_PROCESSOR_UV;
     public static MetaItem<?>.MetaValueItem BIOWARE_ASSEMBLY_UHV;
     public static MetaItem<?>.MetaValueItem BIOWARE_COMPUTER_UEV;
-
     public static MetaItem<?>.MetaValueItem BIOWARE_MAINFRAME_UIV;
+
     public static MetaItem<?>.MetaValueItem QUANTUM_PROCESSOR_UHV;
     public static MetaItem<?>.MetaValueItem QUANTUM_ASSEMBLY_UEV;
     public static MetaItem<?>.MetaValueItem QUANTUM_COMPUTER_UIV;
     public static MetaItem<?>.MetaValueItem QUANTUM_MAINFRAME_UXV;
+
     public static MetaItem<?>.MetaValueItem EXOTIC_PROCESSOR_UEV;
     public static MetaItem<?>.MetaValueItem EXOTIC_ASSEMBLY_UIV;
     public static MetaItem<?>.MetaValueItem EXOTIC_COMPUTER_UXV;
     public static MetaItem<?>.MetaValueItem EXOTIC_MAINFRAME_OPV;
+
     public static MetaItem<?>.MetaValueItem COSMIC_PROCESSOR_UIV;
     public static MetaItem<?>.MetaValueItem COSMIC_ASSEMBLY_UXV;
     public static MetaItem<?>.MetaValueItem COSMIC_COMPUTER_OPV;
     public static MetaItem<?>.MetaValueItem COSMIC_MAINFRAME_MAX;
+
     public static MetaItem<?>.MetaValueItem SUPRA_PROCESSOR_UXV;
     public static MetaItem<?>.MetaValueItem SUPRA_ASSEMBLY_OPV;
     public static MetaItem<?>.MetaValueItem SUPRA_COMPUTER_MAX;
@@ -254,12 +256,6 @@ public class TJMetaItems {
     public static ToolMetaItem<?>.MetaToolValueItem LITHOGRAPHY_MASK;
 
     //Biochem Processes
-
-    public static MetaItem<?>.MetaValueItem TREATED_CPU_WAFER;
-    public static MetaItem<?>.MetaValueItem TREATED_RAM_WAFER;
-    public static MetaItem<?>.MetaValueItem TREATED_NANO_CPU_WAFER;
-    public static MetaItem<?>.MetaValueItem TREATED_ULPIC_WAFER;
-    //public static MetaItem<?>.MetaValueItem TREATED_CPU_WAFER;
 
     //Micro-Nano PCB ITEMS
     public static MetaItem<?>.MetaValueItem COPPER_LAMINATED_EPOXID;
