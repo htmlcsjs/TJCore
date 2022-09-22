@@ -10,6 +10,7 @@ import gregicality.science.loaders.recipe.GCYSRecipeLoader;
 import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
+import gregtech.api.recipes.RecipeMap;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.ore.OrePrefix;
@@ -128,6 +129,7 @@ public class CircuitRecipes {
         Chips.registerChips();
         registerBoards();
         registerRecipes();
+
     }
     public static void registerBoards() {
         primitiveBoard();
@@ -386,23 +388,7 @@ public class CircuitRecipes {
                 .fluidInputs(Argon.getFluid(50))
                 .output(PROCESSED_CRYSTAL_WAFER)
                 .buildAndRegister();
-
-        CHEMICAL_BATH_RECIPES.recipeBuilder()
-                .duration(120)
-                .EUt(VA[EV])
-                .input(PROCESSED_CRYSTAL_WAFER)
-                .fluidInputs(ZBLAN.getFluid(16))
-                .output(CRYSTAL_WAFER_PREP)
-                .buildAndRegister();
-
-        LASER_ENGRAVER_RECIPES.recipeBuilder()
-                .duration(120)
-                .EUt(VA[LuV])
-                .input(CRYSTAL_WAFER_PREP)
-                .input(foil, Rutherfordium)
-                .output(RUTH_COATED_CRYSTAL_WAFER)
-                .buildAndRegister();
-
+        
         ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(140)
                 .EUt(VA[IV])
@@ -414,17 +400,9 @@ public class CircuitRecipes {
         ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(90)
                 .EUt(VA[ZPM])
-                .input(RUTH_COATED_CRYSTAL_WAFER)
+                .input(PROCESSED_CRYSTAL_WAFER)
                 .input(CRYSTAL_SFET_BUNDLE, 4)
                 .output(CRYSTAL_SFET_WAFER)
-                .buildAndRegister();
-
-        AUTOCLAVE_RECIPES.recipeBuilder()
-                .duration(5)
-                .EUt(VA[IV])
-                .input(CRYSTAL_SFET_WAFER)
-                .fluidInputs(Helium.getPlasma(50))
-                .output(CLEAN_CRYSTAL_SFET_WAFER)
                 .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder()
@@ -439,7 +417,8 @@ public class CircuitRecipes {
                 .duration(105)
                 .EUt(VA[EV])
                 .input(REFRACTING_SHEET)
-                .input(CLEAN_CRYSTAL_SFET_WAFER)
+                .input(CRYSTAL_SFET_WAFER)
+                .fluidInputs(Ladder_Poly_P_Phenylene.getFluid(288))
                 .output(LAMINATED_CRYSTAL_PCB_SHEET)
                 .buildAndRegister();
 

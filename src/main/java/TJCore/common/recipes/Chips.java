@@ -274,6 +274,7 @@ public class Chips {
                 .duration(140)
                 .input(VIABLE_SAPPHIRE_WAFER)
                 .input(foil,Rutherfordium)
+                .fluidInputs()
                 .output(SINTERED_SAPPHIRE_WAFER)
                 .buildAndRegister();
 

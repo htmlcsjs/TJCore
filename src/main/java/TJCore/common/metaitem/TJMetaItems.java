@@ -291,11 +291,8 @@ public class TJMetaItems {
     // Crystal PCB Items
 
     public static MetaItem<?>.MetaValueItem PROCESSED_CRYSTAL_WAFER;
-    public static MetaItem<?>.MetaValueItem CRYSTAL_WAFER_PREP;
-    public static MetaItem<?>.MetaValueItem RUTH_COATED_CRYSTAL_WAFER;
     public static MetaItem<?>.MetaValueItem CRYSTAL_SFET_BUNDLE;
     public static MetaItem<?>.MetaValueItem CRYSTAL_SFET_WAFER;
-    public static MetaItem<?>.MetaValueItem CLEAN_CRYSTAL_SFET_WAFER;
     public static MetaItem<?>.MetaValueItem REFRACTING_SHEET;
     public static MetaItem<?>.MetaValueItem LAMINATED_CRYSTAL_PCB_SHEET;
     public static MetaItem<?>.MetaValueItem GAMMA_EMITTING_DIODE;
