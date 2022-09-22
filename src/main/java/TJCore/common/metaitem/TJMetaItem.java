@@ -275,11 +275,8 @@ public class    TJMetaItem extends StandardMetaItem {
         // Crystal PCB Items
 
         PROCESSED_CRYSTAL_WAFER = addItem(592,"processed_crystal_wafer");
-        CRYSTAL_WAFER_PREP = addItem(593,"crystal_wafer_prep");
-        RUTH_COATED_CRYSTAL_WAFER = addItem(594,"ruth_coated_crystal_wafer");
         CRYSTAL_SFET_BUNDLE = addItem(595,"crystal_sfet_bundle");
         CRYSTAL_SFET_WAFER = addItem(596,"crystal_sfet_wafer");
-        CLEAN_CRYSTAL_SFET_WAFER = addItem(597,"clean_crystal_sfet_wafer");
         REFRACTING_SHEET = addItem(598,"refracting_sheet");
         LAMINATED_CRYSTAL_PCB_SHEET = addItem(599,"laminated_crystal_pcb_sheet");
         GAMMA_EMITTING_DIODE = addItem(600,"gamma_emitting_diode");
