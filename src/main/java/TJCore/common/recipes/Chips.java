@@ -84,7 +84,7 @@ public class Chips {
                         .circuitMeta(i)
                         .output(hardMask[i])
                         .EUt(VA[i + 1])
-                        .duration(3000)
+                        .duration(300)
                         .buildAndRegister();
             }
 
@@ -96,8 +96,8 @@ public class Chips {
 
             CUTTER_RECIPES.recipeBuilder()
                     .input(boule[i])
-                    .output(rawWafer[i])
-                    .EUt(tierPower)
+                    .output(rawWafer[i], 16*(i+1))
+                    .EUt(VA[LV])
                     .duration(400)
                     .buildAndRegister();
 
@@ -106,7 +106,7 @@ public class Chips {
                     .input(foil, conductor[i])
                     .fluidInputs(polymer[i].getFluid(16))
                     .output(layered[i])
-                    .EUt(tierPower)
+                    .EUt(VA[LV])
                     .duration(400)
                     .buildAndRegister();
 
@@ -114,7 +114,7 @@ public class Chips {
                     .input(layered[i])
                     .input(foil, polymer[i], 2)
                     .output(prepared[i])
-                    .EUt(30)
+                    .EUt(VA[LV])
                     .duration(200)
                     .buildAndRegister();
 
@@ -122,14 +122,14 @@ public class Chips {
                     .input(prepared[i])
                     .input(hardMask[i])
                     .output(lithPrep[i])
-                    .EUt(tierPower)
+                    .EUt(VA[LV])
                     .duration(20)
                     .buildAndRegister();
 
             FURNACE_RECIPES.recipeBuilder()
                     .input(lithPrep[i])
                     .output(prebaked[i])
-                    .EUt(30)
+                    .EUt(VA[LV])
                     .duration(600)
                     .buildAndRegister();
 
@@ -138,7 +138,7 @@ public class Chips {
                     .fluidInputs(photopolymers[i].getFluid(25 * (i + 1)))
                     .output(treated[i])
                     .EUt(tierPower)
-                    .duration(60)
+                    .duration(VA[LV])
                     .buildAndRegister();
 
             LASER_ENGRAVER_RECIPES.recipeBuilder()
@@ -152,14 +152,14 @@ public class Chips {
             FURNACE_RECIPES.recipeBuilder()
                     .input(raw[i])
                     .output(baked[i])
-                    .EUt(30)
+                    .EUt(VA[LV])
                     .duration(600)
                     .buildAndRegister();
 
             PACKER_RECIPES.recipeBuilder()
                     .input(baked[i])
                     .outputs(wafer[i].getStackForm(), hardMask[i].getStackForm())
-                    .EUt(30)
+                    .EUt(VA[LV])
                     .duration(200)
                     .buildAndRegister();
 
@@ -167,7 +167,7 @@ public class Chips {
                     .input(wafer[i])
                     .fluidInputs(NitricAcid.getFluid(25 * (i + 1)))
                     .output(etched[i])
-                    .EUt(tierPower)
+                    .EUt(VA[LV])
                     .duration(20)
                     .buildAndRegister();
 
@@ -175,7 +175,7 @@ public class Chips {
                     .input(etched[i])
                     .output(chip[i], 64)
                     .output(chip[i], 64)
-                    .EUt(tierPower)
+                    .EUt(VA[LV])
                     .duration(20)
                     .buildAndRegister();
         }
