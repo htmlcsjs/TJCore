@@ -5,6 +5,7 @@ import gregicality.science.loaders.recipe.chain.KaptonChain;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.unification.material.Material;
 
+import static TJCore.api.TJOreDictionaryLoader.*;
 import static TJCore.api.material.TJMaterials.*;
 import static TJCore.common.metaitem.TJMetaItems.*;
 import static TJCore.common.recipes.recipemaps.TJRecipeMaps.*;
@@ -281,7 +282,7 @@ public class Chips {
         ASSEMBLER_RECIPES.recipeBuilder()
                 .EUt(VA[ZPM])
                 .duration(30)
-                .input(wireFine,Palladium,2)
+                .input(nanoWire,Palladium,2)
                 .input(SINTERED_SAPPHIRE_WAFER)
                 .output(WIRED_SAPPHIRE_WAFER)
                 .buildAndRegister();

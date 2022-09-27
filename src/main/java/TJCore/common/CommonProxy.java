@@ -25,7 +25,7 @@ import static TJCore.common.blocks.TJMetaBlocks.DRACONIC_CASING;
 public class CommonProxy {
 
     public void preInit() {
-
+        TJOreDictionaryLoader.init();
     }
     
     @SubscribeEvent
@@ -47,9 +47,9 @@ public class CommonProxy {
         return itemBlock;
     }
     
-    @SubscribeEvent(priority = EventPriority.LOWEST)
+    @SubscribeEvent(priority = EventPriority.LOW)
     public static void init(RegistryEvent.Register<IRecipe> event) {
-        TJOreDictionaryLoader.init();
+        MaterialProcessing.registerMaterialProcessing();
         CircuitRecipes.registerCircuits();
         TJPolymers.registerPolymers();
         GTComponents.registerComponents();
@@ -63,5 +63,6 @@ public class CommonProxy {
         MultiblockHatches.registerIOHatches();
         Ores.RegisterOres();
         MaterialRecipes.register();
+
     }
 }

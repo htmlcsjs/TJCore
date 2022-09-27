@@ -264,12 +264,6 @@ public class TJFirstDegreeMaterials {
                 .components(IrradiatingMix, 8, Tritanium, 1, Moscovium, 1)
                 .build();
 
-        ArgonSilane = new Material.Builder(25044, "argon_silane")
-                .fluid()
-                .plasma()
-                .components(Argon, 1, Silane, 1)
-                .color(0x24BB18)
-                .build();
 
         Silane = new Material.Builder(25045, "silane")
                 .fluid()
@@ -277,6 +271,13 @@ public class TJFirstDegreeMaterials {
                 .components(Silicon, 1, Hydrogen, 4)
                 .build()
                 .setFormula("SiH4", true);
+
+        ArgonSilane = new Material.Builder(25044, "argon_silane")
+                .fluid()
+                .plasma()
+                .components(Argon, 1, Silane, 1)
+                .color(0x24BB18)
+                .build();
 
         SolderingAlloyI = new Material.Builder(25029, "soldering_alloy_i")
                 .ingot()

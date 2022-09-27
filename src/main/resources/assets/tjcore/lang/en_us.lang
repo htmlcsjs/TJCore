@@ -1,3 +1,7 @@
+//oredicts
+item.material.oreprefix.nanowire=%s Nanowire
+item.material.oreprefix.nanofoil=%s Nanofoil
+
 //materials
 material.bt_6=BT6
 material.birmabright=Birmabright
