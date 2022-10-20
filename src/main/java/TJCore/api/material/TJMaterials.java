@@ -44,6 +44,13 @@ public class TJMaterials {
     public static Material Birmabright;
     public static Material NickelPlatedTin;
 
+    public static Material DegenerateRhenium;
+
+    public static Material NihoniumTriiodide;
+
+    public static Material SuperheavyH;
+    public static Material SuperheavyL;
+
     //Soldering Alloys
     public static Material SolderingAlloyI;
     public static Material SolderingAlloyII;
@@ -97,6 +104,8 @@ public class TJMaterials {
     // Metals
 
     // Polymers
+
+    public static Material CarbonNanotubePolymer;
     public static Material Ladder_Poly_P_Phenylene;
 
     // Mixtures
@@ -118,5 +127,10 @@ public class TJMaterials {
     public static Material Starmetal;
     public static Material Starlight;
     public static Material Salis;
+
+    //endgame unknown
+    public static Material Gluons;
+    public static Material HeavyQuarks;
+    public static Material LightQuarks;
 
 }

@@ -9,7 +9,10 @@ import gregtech.api.unification.material.info.MaterialFlag;
 import gregtech.api.unification.material.info.MaterialFlags;
 import gregtech.api.unification.material.info.MaterialIconSet;
 import gregtech.api.unification.material.properties.*;
+import gregtech.loaders.recipe.handlers.WireCombiningHandler;
 import net.minecraftforge.fluids.Fluid;
+import org.apache.http.impl.conn.Wire;
+import scala.sys.Prop;
 
 import java.util.ArrayList;
 
@@ -282,30 +285,35 @@ public class TJFirstDegreeMaterials {
                 .build();
 
         SolderingAlloyI = new Material.Builder(25029, "soldering_alloy_i")
+                .fluid()
                 .ingot()
                 .colorAverage()
                 .components(Lead, 6, Tin, 4)
                 .build()
                 .setFormula("Pb4Sn4", true);
         SolderingAlloyII = new Material.Builder(25030, "soldering_alloy_ii")
+                .fluid()
                 .ingot()
                 .colorAverage()
                 .components(Tin,6,Silver,3,Antimony,1)
                 .build()
                 .setFormula("Sn6Ag3Sb", true);
         SolderingAlloyIII = new Material.Builder(25031, "soldering_alloy_iii")
+                .fluid()
                 .ingot()
                 .colorAverage()
                 .components(FritSolderMix, 9, Zinc, 1)
                 .build()
                 .setFormula("((SiO2)36Cu3Y1)9Zn", true);
         SolderingAlloyIV = new Material.Builder(25032, "soldering_alloy_iv")
+                .fluid()
                 .ingot()
                 .colorAverage()
                 .components(IndiumGalliumPhosphide, 6, Bismuth, 2, Tellurium, 1, Platinum, 1)
                 .build()
                 .setFormula("", true);
         SolderingAlloyV = new Material.Builder(25033, "soldering_alloy_v")
+                .fluid()
                 .ingot()
                 .colorAverage()
                 .iconSet(MaterialIconSet.BRIGHT)
@@ -313,10 +321,66 @@ public class TJFirstDegreeMaterials {
                 .build()
                 .setFormula("((Sn2AuBi)9LaCe)11(SiC)3(Nb3Ti)2", true);
         SolderingAlloyVI = new Material.Builder(25034, "soldering_alloy_vi")
+                .fluid()
                 .ingot()
                 .colorAverage()
                 .iconSet(MaterialIconSet.SHINY)
                 .components(SolderVIPrep, 1, ArgonSilane, 4)
+                .build();
+
+        CarbonNanotubePolymer = new Material.Builder(25046, "carbon_nanotube_polymer")
+                .dust()
+                .ingot()
+                .color(0x0d0d0d)
+                .iconSet(MaterialIconSet.SHINY)
+                .components(CarbonNanotube, 5, Kevlar, 2)
+                .build();
+
+        DegenerateRhenium = new Material.Builder(25047, "degenerate_rhenium")
+                .dust()
+                .ingot()
+                .color(0xc9c9c9)
+                .iconSet(MaterialIconSet.METALLIC)
+                .components(Rhenium, 1)
+                .build();
+
+        NihoniumTriiodide = new Material.Builder(25048, "nihonium_triiodide")
+                .dust()
+                .ingot()
+                .color(0x5986a8)
+                .iconSet(MaterialIconSet.SHINY)
+                .components(Nihonium, 1, Iodine, 3)
+                .build();
+
+        SuperheavyL = new Material.Builder(25049, "superheavy_l")
+                .dust()
+                .ingot()
+                .colorAverage()
+                .iconSet(MaterialIconSet.SHINY)
+                .components(Nobelium, 1, Lawrencium, 1, Meitnerium, 1, Darmstadtium, 1, Roentgenium, 1, Copernicium, 1)
+                .build();
+
+        SuperheavyH = new Material.Builder(25050, "superheavy_h")
+                .dust()
+                .ingot()
+                .colorAverage()
+                .iconSet(MaterialIconSet.SHINY)
+                .components(Nihonium, 1, Flerovium, 1, Moscovium, 1, Livermorium, 1, Tennessine, 1, Oganesson, 1)
+                .build();
+
+        Gluons = new Material.Builder(25051, "gluons")
+                .fluid()
+                .color(0xffffff)
+                .build();
+
+        LightQuarks = new Material.Builder(25052, "light_quarks")
+                .fluid()
+                .color(0x59ff7d)
+                .build();
+
+        HeavyQuarks = new Material.Builder(25053, "heavy_quarks")
+                .fluid()
+                .color(0x4a080b)
                 .build();
     }
 
@@ -352,11 +416,25 @@ public class TJFirstDegreeMaterials {
         ZBLAN.addFlags(MaterialFlags.GENERATE_FRAME);
         PedotPSS.addFlags(MaterialFlags.GENERATE_FRAME);
         PedotTMA.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
+        CarbonNanotubePolymer.addFlags(MaterialFlags.GENERATE_FRAME, MaterialFlags.NO_WORKING);
 
         // Metals
         VanadiumGallium.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
         TinAlloy.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
         Dysprosium.addFlags(MaterialFlags.GENERATE_PLATE, MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_FRAME);
+        Vibranium.addFlags(MaterialFlags.GENERATE_FRAME, MaterialFlags.GENERATE_BOLT_SCREW);
+
+        WireProperties NihoniumTriiodideProp = new WireProperties(134217728, 2, 64);
+        NihoniumTriiodide.setProperty(PropertyKey.WIRE, NihoniumTriiodideProp);
+        NihoniumTriiodide.addFlags(MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_RING);
+        Nihonium.addFlags(MaterialFlags.GENERATE_PLATE);
+        WireProperties SuperheavyHProp = new WireProperties(536870912, 4, 128);
+        SuperheavyH.setProperty(PropertyKey.WIRE, SuperheavyHProp);
+        SuperheavyH.addFlags(MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_BOLT_SCREW);
+        SuperheavyL.addFlags(MaterialFlags.GENERATE_FRAME, MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_RING, MaterialFlags.GENERATE_BOLT_SCREW);
+        WireProperties NeutroniumProp = new WireProperties(2147483647, 4,0);
+        Neutronium.setProperty(PropertyKey.WIRE, NeutroniumProp);
+        Neutronium.addFlags(MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_FOIL);
 
         // becuase of techs foolishness and thinking graphenes are a foil
         Graphene.addFlags(MaterialFlags.GENERATE_FOIL);

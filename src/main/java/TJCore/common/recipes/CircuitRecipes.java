@@ -23,6 +23,7 @@ import org.lwjgl.opencl.CL;
 import static TJCore.common.metaitem.TJMetaItems.*;
 import static TJCore.api.material.TJMaterials.*;
 import static TJCore.common.recipes.recipemaps.TJRecipeMaps.*;
+import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregicality.science.common.items.GCYSMetaItems.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.metatileentity.multiblock.CleanroomType.*;
@@ -81,6 +82,10 @@ public class CircuitRecipes {
         GOOWARE_ASSEMBLY.setInvisible();
         GOOWARE_COMPUTER.setInvisible();
         GOOWARE_MAINFRAME.setInvisible();
+        OPTICAL_PROCESSOR.setInvisible();
+        OPTICAL_ASSEMBLY.setInvisible();
+        OPTICAL_COMPUTER.setInvisible();
+        OPTICAL_MAINFRAME.setInvisible();
         SPINTRONIC_PROCESSOR.setInvisible();
         SPINTRONIC_ASSEMBLY.setInvisible();
         SPINTRONIC_COMPUTER.setInvisible();
@@ -94,7 +99,6 @@ public class CircuitRecipes {
         SUPRACAUSAL_COMPUTER.setInvisible();
         SUPRACAUSAL_MAINFRAME.setInvisible();
         GTRecipeHandler.removeAllRecipes(CIRCUIT_ASSEMBLER_RECIPES);
-
         GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{
                 FLUID_CELL_LARGE_STAINLESS_STEEL.getStackForm(),
                 OreDictUnifier.get(plate, Naquadah,4),
@@ -899,10 +903,10 @@ public class CircuitRecipes {
                 .EUt(VA[UHV])
                 .cleanroom(STERILE_CLEANROOM)
                 .input(BIOWARE_ASSEMBLY_UHV)
-                .input(plate, GCYSMaterials.PedotPSS)
+                .input(plate, PedotPSS)
                 .input(SMD_CAPACITOR_3, 2)
                 .input(SMD_INDUCTOR_3, 2)
-                .input(wireFine, GCYSMaterials.PedotTMA, 2)
+                .input(wireFine, PedotTMA, 2)
                 .output(BIOWARE_COMPUTER_UEV)
                 .buildAndRegister();
 
@@ -911,23 +915,203 @@ public class CircuitRecipes {
                 .EUt(VA[UHV])
                 .cleanroom(STERILE_CLEANROOM)
                 .input(BIOWARE_COMPUTER_UEV, 2)
-                .input(frameGt, GCYSMaterials.PedotPSS)
+                .input(frameGt, PedotPSS)
                 .input(SMD_DIODE_3, 2)
                 .input(SMD_TRANSISTOR_3, 2)
-                .input(cableGtSingle, GCYSMaterials.PedotTMA,2)
+                .input(cableGtSingle, PedotTMA,2)
                 .output(BIOWARE_MAINFRAME_UIV)
                 .buildAndRegister();
     }
     public static void quantum() {
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[UEV])
+                .input(QUANTUM_CPU)
+                .input(QUANTUM_BOARD)
+                .input(SMD_RESISTOR_4, 2)
+                .input(SMD_CAPACITOR_4, 2)
+                .input(wireFine, PedotTMA, 4)
+                .output(QUANTUM_PROCESSOR_UHV, 4)
+                .buildAndRegister();
 
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[UEV])
+                .input(QUANTUM_PROCESSOR_UHV, 2)
+                .input(QUANTUM_BOARD)
+                .input(SMD_TRANSISTOR_4, 2)
+                .input(SMD_RESISTOR_4, 2)
+                .input(wireFine, PedotTMA, 2)
+                .output(QUANTUM_ASSEMBLY_UEV)
+                .buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[UEV])
+                .input(QUANTUM_ASSEMBLY_UEV, 2)
+                .input(plate, CarbonNanotubePolymer)
+                .input(SMD_CAPACITOR_4, 2)
+                .input(SMD_INDUCTOR_4, 2)
+                .input(wireFine, CarbonNanotube, 2)
+                .output(QUANTUM_COMPUTER_UIV)
+                .buildAndRegister();
+
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .duration(180)
+                .EUt(VA[UEV])
+                .fluidInputs(SolderingAlloyV.getFluid(288))
+                .fluidInputs(Helium.getFluid(1000))
+                .input(QUANTUM_COMPUTER_UIV, 2)
+                .input(frameGt, CarbonNanotubePolymer)
+                .input(SMD_DIODE_3, 16)
+                .input(SMD_TRANSISTOR_4, 8)
+                .input(SMD_INDUCTOR_4, 8)
+                .input(SMD_RESISTOR_4, 8)
+                .input(BOSE_EINSTEIN_CONDENSATE, 2)
+                .input(foil, Phosphorene, 2)
+                .input(bolt, Adamantium, 4)
+                .input(cableGtSingle, CarbonNanotube, 4)
+                .output(QUANTUM_MAINFRAME_UXV)
+                .buildAndRegister();
     }
     public static void exotic() {
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[UIV])
+                .input(EXOTIC_CPU)
+                .input(EXOTIC_BOARD)
+                .input(SMD_RESISTOR_4, 2)
+                .input(SMD_CAPACITOR_4, 2)
+                .input(wireFine, CarbonNanotube, 4)
+                .output(EXOTIC_PROCESSOR_UEV)
+                .buildAndRegister();
 
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[UIV])
+                .input(EXOTIC_PROCESSOR_UEV, 2)
+                .input(EXOTIC_BOARD)
+                .input(SMD_RESISTOR_4, 2)
+                .input(SMD_TRANSISTOR_4, 2)
+                .input(wireFine, CarbonNanotube, 2)
+                .output(EXOTIC_ASSEMBLY_UIV)
+                .buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[UIV])
+                .input(EXOTIC_ASSEMBLY_UIV, 2)
+                .input(plate, Vibranium)
+                .input(SMD_CAPACITOR_4, 2)
+                .input(SMD_INDUCTOR_4, 2)
+                .input(wireFine, NihoniumTriiodide, 2)
+                .output(EXOTIC_COMPUTER_UXV)
+                .buildAndRegister();
+
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .duration(180)
+                .EUt(VA[UIV])
+                .fluidInputs(SolderingAlloyV.getFluid(288))
+                .fluidInputs(HeliumNeon.getFluid(1000))
+                .input(EXOTIC_COMPUTER_UXV, 2)
+                .input(frameGt, Vibranium)
+                .input(SMD_DIODE_4, 8)
+                .input(SMD_TRANSISTOR_4, 16)
+                .input(SMD_INDUCTOR_4, 8)
+                .input(SMD_RESISTOR_4, 8)
+                .input(BOSE_EINSTEIN_CONDENSATE, 4)
+                .input(foil, Fullerene, 2)
+                .input(bolt, Vibranium, 4)
+                .input(cableGtSingle, NihoniumTriiodide, 4)
+                .output(EXOTIC_MAINFRAME_OPV)
+                .buildAndRegister();
     }
     public static void cosmic() {
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[UXV])
+                .input(COSMIC_CPU)
+                .input(COSMIC_BOARD)
+                .input(SMD_RESISTOR_5, 2)
+                .input(SMD_CAPACITOR_5, 2)
+                .input(wireFine, NihoniumTriiodide, 4)
+                .output(COSMIC_PROCESSOR_UIV, 4)
+                .buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[UXV])
+                .input(COSMIC_PROCESSOR_UIV, 2)
+                .input(COSMIC_BOARD)
+                .input(SMD_RESISTOR_5, 2)
+                .input(SMD_TRANSISTOR_4, 2)
+                .input(wireFine, NihoniumTriiodide, 2)
+                .output(COSMIC_ASSEMBLY_UXV)
+                .buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[UXV])
+                .input(COSMIC_ASSEMBLY_UXV, 2)
+                .input(plate, SuperheavyL)
+                .input(SMD_CAPACITOR_5, 2)
+                .input(SMD_INDUCTOR_5, 2)
+                .input(wireFine, SuperheavyH, 2)
+                .output(COSMIC_COMPUTER_OPV)
+                .buildAndRegister();
+
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .duration(180)
+                .EUt(VA[UXV])
+                .fluidInputs(SolderingAlloyVI.getFluid(288))
+                .fluidInputs(LightQuarks.getFluid(1000))
+                .input(COSMIC_COMPUTER_OPV, 2)
+                .input(frameGt, SuperheavyL)
+                .input(SMD_DIODE_4, 8)
+                .input(SMD_TRANSISTOR_4, 16)
+                .input(SMD_INDUCTOR_5, 8)
+                .input(SMD_RESISTOR_5, 8)
+                .input(BOSE_EINSTEIN_CONDENSATE, 4)
+                .input(gem, CubicHeterodiamond,  2)
+                .input(ring, SuperheavyL, 2)
+                .input(cableGtSingle, NihoniumTriiodide, 4)
+                .output(COSMIC_MAINFRAME_MAX)
+                .buildAndRegister();
 
     }
     public static void supra() {
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[UXV])
+                .input(SUPRA_CPU)
+                .input(SUPRA_BOARD)
+                .input(SMD_RESISTOR_5, 2)
+                .input(SMD_CAPACITOR_5, 2)
+                .input(wireFine, SuperheavyH, 4)
+                .output(SUPRA_PROCESSOR_UXV, 4)
+                .buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[UXV])
+                .input(SUPRA_PROCESSOR_UXV, 2)
+                .input(SUPRA_BOARD)
+                .input(SMD_RESISTOR_5, 2)
+                .input(SMD_TRANSISTOR_5, 2)
+                .input(wireFine, SuperheavyH, 2)
+                .output(SUPRA_ASSEMBLY_OPV)
+                .buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[UXV])
+                .input(SUPRA_ASSEMBLY_OPV, 2)
+                .input(plate, Neutronium)
+                .input(SMD_CAPACITOR_5, 2)
+                .input(SMD_INDUCTOR_5, 2)
+                .input(wireFine, Neutronium, 2)
+                .output(SUPRA_COMPUTER_MAX)
+                .buildAndRegister();
 
     }
 }
