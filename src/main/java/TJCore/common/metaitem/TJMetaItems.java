@@ -303,4 +303,14 @@ public class TJMetaItems {
     // Misc. SMD ITEMS
     public static MetaItem<?>.MetaValueItem FERROUS_INDUCTOR_CORE;
     public static MetaItem<?>.MetaValueItem TUNGSTEN_INDUCTOR_CORE;
+
+    // Chips - Post Wetware
+
+    public static MetaItem<?>.MetaValueItem WETWARE_CPU;
+    public static MetaItem<?>.MetaValueItem BIOWARE_CPU;
+    //already technically exists, do we want to use that item and change lang?
+    public static MetaItem<?>.MetaValueItem QUANTUM_CPU;
+    public static MetaItem<?>.MetaValueItem EXOTIC_CPU;
+    public static MetaItem<?>.MetaValueItem COSMIC_CPU;
+    public static MetaItem<?>.MetaValueItem SUPRA_CPU;
 }

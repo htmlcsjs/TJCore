@@ -37,6 +37,18 @@ public class    TJMetaItem extends StandardMetaItem {
         SMD_CAPACITOR_3 = addItem(14, "component.smd_capacitor_3").setUnificationData(OrePrefix.component, Component.Capacitor);
         SMD_INDUCTOR_3 = addItem(15, "component.smd_inductor_3").setUnificationData(OrePrefix.component, Component.Inductor);
 
+        SMD_RESISTOR_4 = addItem(16, "component.smd_resistor_4").setUnificationData(OrePrefix.component, Component.Resistor);
+        SMD_TRANSISTOR_4 = addItem(17, "component.smd_transistor_4").setUnificationData(OrePrefix.component, Component.Transistor);
+        SMD_DIODE_4 = addItem(18, "component.smd_diode_4").setUnificationData(OrePrefix.component, Component.Diode);
+        SMD_CAPACITOR_4 = addItem(19, "component.smd_capacitor_4").setUnificationData(OrePrefix.component, Component.Capacitor);
+        SMD_INDUCTOR_4 = addItem(20, "component.smd_inductor_4").setUnificationData(OrePrefix.component, Component.Inductor);
+
+        SMD_RESISTOR_5 = addItem(21, "component.smd_resistor_5").setUnificationData(OrePrefix.component, Component.Resistor);
+        SMD_TRANSISTOR_5 = addItem(22, "component.smd_transistor_5").setUnificationData(OrePrefix.component, Component.Transistor);
+        SMD_DIODE_5 = addItem(23, "component.smd_diode_5").setUnificationData(OrePrefix.component, Component.Diode);
+        SMD_CAPACITOR_5 = addItem(24, "component.smd_capacitor_5").setUnificationData(OrePrefix.component, Component.Capacitor);
+        SMD_INDUCTOR_5 = addItem(25, "component.smd_inductor_5").setUnificationData(OrePrefix.component, Component.Inductor);
+
         PRIMITIVE_PREBOARD = addItem(50, "primitive_preboard");
         ELECTRONIC_PREBOARD = addItem(51, "electronic_preboard");
         INTEGRATED_PREBOARD = addItem(52, "integrated_preboard");
@@ -281,8 +293,19 @@ public class    TJMetaItem extends StandardMetaItem {
         LAMINATED_CRYSTAL_PCB_SHEET = addItem(599,"laminated_crystal_pcb_sheet");
         GAMMA_EMITTING_DIODE = addItem(600,"gamma_emitting_diode");
 
+        // Wetware CPU Items
+
+
         // Misc. SMD ITEMS
         FERROUS_INDUCTOR_CORE = addItem(1001, "ferrous_inductor_core");
         TUNGSTEN_INDUCTOR_CORE = addItem(1002,"tungsten_inductor_core");
+
+        // CPU'S - post crystal
+        WETWARE_CPU = addItem(620, "wetware_cpu");
+        BIOWARE_CPU = addItem(621, "bioware_cpu");
+        QUANTUM_CPU = addItem(622, "quantum_cpu");
+        EXOTIC_CPU = addItem(623, "exotic_cpu");
+        COSMIC_CPU = addItem(624, "cosmic_cpu");
+        SUPRA_CPU = addItem(625, "supra_cpu");
     }
 }

@@ -23,6 +23,7 @@ import org.lwjgl.opencl.CL;
 import static TJCore.common.metaitem.TJMetaItems.*;
 import static TJCore.api.material.TJMaterials.*;
 import static TJCore.common.recipes.recipemaps.TJRecipeMaps.*;
+import static gregicality.science.common.items.GCYSMetaItems.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.metatileentity.multiblock.CleanroomType.*;
 import static gregtech.api.recipes.RecipeMaps.*;
@@ -76,6 +77,22 @@ public class CircuitRecipes {
         WETWARE_PROCESSOR_LUV.setInvisible();
         WETWARE_PROCESSOR_ASSEMBLY_ZPM.setInvisible();
         WETWARE_SUPER_COMPUTER_UV.setInvisible();
+        GOOWARE_PROCESSOR.setInvisible();
+        GOOWARE_ASSEMBLY.setInvisible();
+        GOOWARE_COMPUTER.setInvisible();
+        GOOWARE_MAINFRAME.setInvisible();
+        SPINTRONIC_PROCESSOR.setInvisible();
+        SPINTRONIC_ASSEMBLY.setInvisible();
+        SPINTRONIC_COMPUTER.setInvisible();
+        SPINTRONIC_MAINFRAME.setInvisible();
+        COSMIC_PROCESSOR.setInvisible();
+        COSMIC_ASSEMBLY.setInvisible();
+        COSMIC_COMPUTER.setInvisible();
+        COSMIC_MAINFRAME.setInvisible();
+        SUPRACAUSAL_PROCESSOR.setInvisible();
+        SUPRACAUSAL_ASSEMBLY.setInvisible();
+        SUPRACAUSAL_COMPUTER.setInvisible();
+        SUPRACAUSAL_MAINFRAME.setInvisible();
         GTRecipeHandler.removeAllRecipes(CIRCUIT_ASSEMBLER_RECIPES);
 
         GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{
@@ -349,7 +366,7 @@ public class CircuitRecipes {
                 .input(wireFine,ZBLAN)
                 .input(OPTICAL_PREBOARD)
                 .fluidInputs(Ladder_Poly_P_Phenylene.getFluid(50))
-                .output(OPTICAL_BOARD)
+                .output(TJMetaItems.OPTICAL_BOARD)
                 .buildAndRegister();
     }
     private static void crystalBoard(){
@@ -711,7 +728,7 @@ public class CircuitRecipes {
                 .EUt(VA[LuV])
                 .cleanroom(CLEANROOM)
                 .input(OPTICAL_CHIP)
-                .input(OPTICAL_BOARD)
+                .input(TJMetaItems.OPTICAL_BOARD)
                 .input(SMD_CAPACITOR_2, 2)
                 .input(SMD_RESISTOR_2, 2)
                 .input(wireFine, NiobiumTitanium, 4)
@@ -723,7 +740,7 @@ public class CircuitRecipes {
                 .EUt(VA[LuV])
                 .cleanroom(CLEANROOM)
                 .input(OPTICAL_PROCESSOR_IV, 2)
-                .input(OPTICAL_BOARD)
+                .input(TJMetaItems.OPTICAL_BOARD)
                 .input(SMD_TRANSISTOR_2, 2)
                 .input(SMD_RESISTOR_2, 2)
                 .input(wireFine, NiobiumTitanium, 2)
@@ -735,7 +752,7 @@ public class CircuitRecipes {
                 .EUt(VA[LuV])
                 .cleanroom(CLEANROOM)
                 .input(OPTICAL_ASSEMBLY_LUV, 2)
-                .input(plate, NaquadahAlloy)
+                .input(plate, ZBLAN)
                 .input(SMD_INDUCTOR_2, 2)
                 .input(SMD_CAPACITOR_2, 2)
                 .input(wireFine, VanadiumGallium, 2)
@@ -747,31 +764,159 @@ public class CircuitRecipes {
                 .EUt(VA[LuV])
                 .cleanroom(CLEANROOM)
                 .input(OPTICAL_COMPUTER_ZPM, 2)
-                .input(frameGt, NaquadahAlloy)
+                .input(frameGt, ZBLAN)
                 .input(SMD_TRANSISTOR_2, 2)
                 .input(SMD_DIODE_2, 2)
-                .input(cableGtSingle, VanadiumGallium)
+                .input(cableGtSingle, VanadiumGallium,2)
                 .output(OPTICAL_MAINFRAME_UV)
                 .buildAndRegister();
     }
     public static void crystal() {
-        /*CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(50)
                 .EUt(VA[ZPM])
                 .cleanroom(CLEANROOM)
-                .input()
-                .input()
-                .input()
-                .input()
-                .input()
-                .output()
-                .buildAndRegister(); */
+                .input(SAPPHIRE_CHIP)
+                .input(CRYSTAL_BOARD)
+                .input(SMD_CAPACITOR_2, 2)
+                .input(SMD_RESISTOR_3, 2)
+                .input(wireFine, VanadiumGallium, 4)
+                .output(CRYSTAL_PROCESSOR_LUV, 4)
+                .buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[ZPM])
+                .cleanroom(CLEANROOM)
+                .input(CRYSTAL_PROCESSOR_LUV, 2)
+                .input(CRYSTAL_BOARD)
+                .input(SMD_TRANSISTOR_2, 2)
+                .input(SMD_RESISTOR_2, 2)
+                .input(wireFine, VanadiumGallium, 2)
+                .output(CRYSTAL_ASSEMBLY_ZPM)
+                .buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[ZPM])
+                .cleanroom(CLEANROOM)
+                .input(CRYSTAL_ASSEMBLY_ZPM, 2)
+                .input(plate, Europium)
+                .input(SMD_CAPACITOR_2, 2)
+                .input(SMD_INDUCTOR_2, 2)
+                .input(wireFine, Naquadah,2)
+                .output(CRYSTAL_COMPUTER_UV)
+                .buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[ZPM])
+                .cleanroom(CLEANROOM)
+                .input(CRYSTAL_COMPUTER_UV, 2)
+                .input(frameGt, Europium)
+                .input(SMD_TRANSISTOR_2, 2)
+                .input(SMD_DIODE_2, 2)
+                .input(cableGtSingle, Naquadah,2)
+                .output(CRYSTAL_MAINFRAME_UHV)
+                .buildAndRegister();
     }
     public static void wetware() {
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[UV])
+                .cleanroom(STERILE_CLEANROOM)
+                .input(WETWARE_CPU)
+                .input(TJMetaItems.WETWARE_BOARD)
+                .input(SMD_RESISTOR_3, 2)
+                .input(SMD_CAPACITOR_3, 2)
+                .input(wireFine, Naquadah, 4)
+                .output(WETWARE_PROCESSOR_ZPM, 4)
+                .buildAndRegister();
 
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[UV])
+                .cleanroom(STERILE_CLEANROOM)
+                .input(WETWARE_PROCESSOR_ZPM, 2)
+                .input(TJMetaItems.WETWARE_BOARD)
+                .input(SMD_TRANSISTOR_3, 2)
+                .input(SMD_RESISTOR_3, 2)
+                .input(wireFine, Naquadah, 2)
+                .output(WETWARE_ASSEMBLY_UV)
+                .buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[UV])
+                .cleanroom(STERILE_CLEANROOM)
+                .input(WETWARE_ASSEMBLY_UV, 2)
+                .input(plate, Duranium)
+                .input(SMD_CAPACITOR_3, 2)
+                .input(SMD_INDUCTOR_3, 2)
+                .input(wireFine, YttriumBariumCuprate, 2)
+                .output(WETWARE_COMPUTER_UHV)
+                .buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[UV])
+                .cleanroom(STERILE_CLEANROOM)
+                .input(WETWARE_COMPUTER_UHV,2)
+                .input(frameGt, Duranium)
+                .input(SMD_DIODE_2, 2)
+                .input(SMD_TRANSISTOR_3, 2)
+                .input(cableGtSingle, YttriumBariumCuprate,2)
+                .output(WETWARE_MAINFRAME_UEV)
+                .buildAndRegister();
     }
     public static void bioware() {
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[UHV])
+                .cleanroom(STERILE_CLEANROOM)
+                .input(BIOWARE_CPU)
+                .input(BIOWARE_BOARD)
+                .input(SMD_RESISTOR_4,2)
+                .input(SMD_CAPACITOR_3, 2)
+                .input(wireFine, YttriumBariumCuprate, 4)
+                .output(BIOWARE_PROCESSOR_UV, 4)
+                .buildAndRegister();
 
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[UHV])
+                .cleanroom(STERILE_CLEANROOM)
+                .input(BIOWARE_PROCESSOR_UV)
+                .input(BIOWARE_BOARD)
+                .input(SMD_TRANSISTOR_3, 2)
+                .input(SMD_RESISTOR_4, 2)
+                .input(wireFine, YttriumBariumCuprate, 2)
+                .output(BIOWARE_ASSEMBLY_UHV)
+                .buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[UHV])
+                .cleanroom(STERILE_CLEANROOM)
+                .input(BIOWARE_ASSEMBLY_UHV)
+                .input(plate, GCYSMaterials.PedotPSS)
+                .input(SMD_CAPACITOR_3, 2)
+                .input(SMD_INDUCTOR_3, 2)
+                .input(wireFine, GCYSMaterials.PedotTMA, 2)
+                .output(BIOWARE_COMPUTER_UEV)
+                .buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(50)
+                .EUt(VA[UHV])
+                .cleanroom(STERILE_CLEANROOM)
+                .input(BIOWARE_COMPUTER_UEV, 2)
+                .input(frameGt, GCYSMaterials.PedotPSS)
+                .input(SMD_DIODE_3, 2)
+                .input(SMD_TRANSISTOR_3, 2)
+                .input(cableGtSingle, GCYSMaterials.PedotTMA,2)
+                .output(BIOWARE_MAINFRAME_UIV)
+                .buildAndRegister();
     }
     public static void quantum() {
 

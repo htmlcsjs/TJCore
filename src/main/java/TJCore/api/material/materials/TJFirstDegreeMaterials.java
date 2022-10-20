@@ -1,6 +1,8 @@
 package TJCore.api.material.materials;
 
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
+
+import gregicality.science.api.unification.materials.GCYSMaterials;
 import gregtech.api.unification.crafttweaker.CTMaterialBuilder;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialFlag;
@@ -347,10 +349,14 @@ public class TJFirstDegreeMaterials {
         PolyvinylChloride.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
         Polyethylene.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
         ReinforcedEpoxyResin.addFlags(MaterialFlags.GENERATE_FOIL);
+        ZBLAN.addFlags(MaterialFlags.GENERATE_FRAME);
+        PedotPSS.addFlags(MaterialFlags.GENERATE_FRAME);
+        PedotTMA.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
 
         // Metals
         VanadiumGallium.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
         TinAlloy.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
+        Dysprosium.addFlags(MaterialFlags.GENERATE_PLATE, MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_FRAME);
 
         // becuase of techs foolishness and thinking graphenes are a foil
         Graphene.addFlags(MaterialFlags.GENERATE_FOIL);
