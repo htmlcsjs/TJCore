@@ -14,15 +14,19 @@ import gregtech.api.recipes.ModHandler;
 import gregtech.api.recipes.RecipeMap;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.properties.OreProperty;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.items.MetaItems;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.advancements.critereon.OredictItemPredicate;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.oredict.OreDictionary;
 import org.lwjgl.opencl.CL;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static TJCore.common.metaitem.TJMetaItems.*;
 import static TJCore.api.material.TJMaterials.*;
@@ -40,74 +44,9 @@ import static gregicality.multiblocks.api.recipes.GCYMRecipeMaps.*;
 public class CircuitRecipes {
 
     public static void removePreexistingCircuits() {
-        ArrayList<MetaItem.MetaValueItem> oldCircuits = new ArrayList<>();
-        oldCircuits.add(ELECTRONIC_CIRCUIT_LV);
-        oldCircuits.add(SMD_CAPACITOR);
-        oldCircuits.add(SMD_DIODE);
-        oldCircuits.add(SMD_RESISTOR);
-        oldCircuits.add(SMD_TRANSISTOR);
-        oldCircuits.add(SMD_INDUCTOR);
-        oldCircuits.add(ADVANCED_SMD_CAPACITOR);
-        oldCircuits.add(ADVANCED_SMD_DIODE);
-        oldCircuits.add(ADVANCED_SMD_RESISTOR);
-        oldCircuits.add(ADVANCED_SMD_TRANSISTOR);
-        oldCircuits.add(ADVANCED_SMD_INDUCTOR);
-        oldCircuits.add(ELECTRONIC_CIRCUIT_LV);
-        oldCircuits.add(ELECTRONIC_CIRCUIT_MV);
-        oldCircuits.add(INTEGRATED_CIRCUIT_LV);
-        oldCircuits.add(INTEGRATED_CIRCUIT_MV);
-        oldCircuits.add(INTEGRATED_CIRCUIT_HV);
-        oldCircuits.add(NAND_CHIP_ULV);
-        oldCircuits.add(MICROPROCESSOR_LV);
-        oldCircuits.add(PROCESSOR_MV);
-        oldCircuits.add(PROCESSOR_ASSEMBLY_HV);
-        oldCircuits.add(WORKSTATION_EV);
-        oldCircuits.add(MAINFRAME_IV);
-        oldCircuits.add(MetaItems.NANO_PROCESSOR_HV);
-        oldCircuits.add(NANO_PROCESSOR_ASSEMBLY_EV);
-        oldCircuits.add(MetaItems.NANO_COMPUTER_IV);
-        oldCircuits.add(MetaItems.NANO_MAINFRAME_LUV);
-        oldCircuits.add(QUANTUM_PROCESSOR_EV);
-        oldCircuits.add(QUANTUM_ASSEMBLY_IV);
-        oldCircuits.add(QUANTUM_COMPUTER_LUV);
-        oldCircuits.add(QUANTUM_MAINFRAME_ZPM);
-        oldCircuits.add(CRYSTAL_PROCESSOR_IV);
-        oldCircuits.add(CRYSTAL_ASSEMBLY_LUV);
-        oldCircuits.add(CRYSTAL_COMPUTER_ZPM);
-        oldCircuits.add(CRYSTAL_MAINFRAME_UV);
-        oldCircuits.add(WETWARE_PROCESSOR_LUV);
-        oldCircuits.add(WETWARE_PROCESSOR_ASSEMBLY_ZPM);
-        oldCircuits.add(WETWARE_SUPER_COMPUTER_UV);
-        oldCircuits.add(WETWARE_MAINFRAME_UHV);
-        oldCircuits.add(GOOWARE_PROCESSOR);
-        oldCircuits.add(GOOWARE_ASSEMBLY);
-        oldCircuits.add(GOOWARE_COMPUTER);
-        oldCircuits.add(GOOWARE_MAINFRAME);
-        oldCircuits.add(OPTICAL_PROCESSOR);
-        oldCircuits.add(OPTICAL_ASSEMBLY);
-        oldCircuits.add(OPTICAL_COMPUTER);
-        oldCircuits.add(OPTICAL_MAINFRAME);
-        oldCircuits.add(SPINTRONIC_PROCESSOR);
-        oldCircuits.add(SPINTRONIC_ASSEMBLY);
-        oldCircuits.add(SPINTRONIC_COMPUTER);
-        oldCircuits.add(SPINTRONIC_MAINFRAME);
-        oldCircuits.add(COSMIC_PROCESSOR);
-        oldCircuits.add(COSMIC_ASSEMBLY);
-        oldCircuits.add(COSMIC_COMPUTER);
-        oldCircuits.add(COSMIC_MAINFRAME);
-        oldCircuits.add(SUPRACAUSAL_PROCESSOR);
-        oldCircuits.add(SUPRACAUSAL_ASSEMBLY);
-        oldCircuits.add(SUPRACAUSAL_COMPUTER);
-        oldCircuits.add(SUPRACAUSAL_MAINFRAME);
-
+        oreDictHandling();
         GTRecipeHandler.removeAllRecipes(CIRCUIT_ASSEMBLER_RECIPES);
         GTRecipeHandler.removeAllRecipes(ASSEMBLY_LINE_RECIPES);
-
-        for (MetaItem.MetaValueItem circuit: oldCircuits) {
-            circuit.setInvisible();
-            circuit.disableModelLoading();
-        }
-
         GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{
                 FLUID_CELL_LARGE_STAINLESS_STEEL.getStackForm(),
                 OreDictUnifier.get(plate, Naquadah,4),
@@ -119,6 +58,38 @@ public class CircuitRecipes {
                 new FluidStack[]{SolderingAlloy.getFluid(144)});
         GTRecipeHandler.removeRecipesByInputs(CHEMICAL_BATH_RECIPES, new ItemStack[]{CARBON_FIBERS.getStackForm(1)}, new FluidStack[]{Epoxy.getFluid(144)});
         GTRecipeHandler.removeRecipesByInputs(CHEMICAL_BATH_RECIPES, new ItemStack[]{OreDictUnifier.get(wireFine, BorosilicateGlass)}, new FluidStack[]{Epoxy.getFluid(144)});
+    }
+
+    public static void oreDictHandling() {
+        List<String> toRemove = new ArrayList<>();
+        toRemove.add("circuitUlv");
+        toRemove.add("circuitLv");
+        toRemove.add("circuitMv");
+        toRemove.add("circuitHv");
+        toRemove.add("circuitEv");
+        toRemove.add("circuitIv");
+        toRemove.add("circuitLuv");
+        toRemove.add("circuitZpm");
+        toRemove.add("circuitUv");
+        toRemove.add("circuitUhv");
+        toRemove.add("circuitUev");
+        toRemove.add("circuitUiv");
+        toRemove.add("circuitUxv");
+        toRemove.add("circuitOpv");
+        toRemove.add("circuitMax");
+
+        for (String oredict : toRemove) {
+            List<ItemStack> list = OreDictionary.getOres(oredict, false);
+            for (int i = 0; i < list.size(); i++) {
+                ItemStack stack = list.get(i);
+                if (!(stack.getItem() instanceof TJMetaItem)) {
+                    MetaItem<?>.MetaValueItem valueItem = ((MetaItem) stack.getItem()).getItem(stack);
+                    valueItem.setInvisible();
+                    list.remove(i);
+                    i--;
+                }
+            }
+        }
     }
     public static void registerCircuits() {
         removePreexistingCircuits();
