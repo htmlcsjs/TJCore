@@ -416,13 +416,15 @@ public class TJFirstDegreeMaterials {
         ZBLAN.addFlags(MaterialFlags.GENERATE_FRAME);
         PedotPSS.addFlags(MaterialFlags.GENERATE_FRAME);
         PedotTMA.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
-        CarbonNanotubePolymer.addFlags(MaterialFlags.GENERATE_FRAME, MaterialFlags.NO_WORKING);
+        CarbonNanotubePolymer.addFlags(MaterialFlags.GENERATE_FRAME, MaterialFlags.GENERATE_PLATE, MaterialFlags.NO_WORKING, MaterialFlags.NO_SMASHING, MaterialFlags.NO_SMELTING);
 
         // Metals
         VanadiumGallium.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
         TinAlloy.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
         Dysprosium.addFlags(MaterialFlags.GENERATE_PLATE, MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_FRAME);
         Vibranium.addFlags(MaterialFlags.GENERATE_FRAME, MaterialFlags.GENERATE_BOLT_SCREW);
+        RhodiumPlatedPalladium.addFlags(MaterialFlags.GENERATE_FRAME);
+        Duranium.addFlags(MaterialFlags.GENERATE_FRAME);
 
         WireProperties NihoniumTriiodideProp = new WireProperties(134217728, 2, 64);
         NihoniumTriiodide.setProperty(PropertyKey.WIRE, NihoniumTriiodideProp);

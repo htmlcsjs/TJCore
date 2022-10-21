@@ -111,7 +111,7 @@ metaitem.circuit.primitive_mv.name=Primitive Mainframe
 metaitem.circuit.electronic_ulv.name=Electronic Processor
 metaitem.circuit.electronic_lv.name=Electronic Assembly
 metaitem.circuit.electronic_mv.name=Electronic Computer
-metaitem.circuit.electronic_mv.name=Electronic Mainframe
+metaitem.circuit.electronic_hv.name=Electronic Mainframe
 
 metaitem.circuit.integrated_lv.name=Integrated Processor
 metaitem.circuit.integrated_mv.name=Integrated Assembly

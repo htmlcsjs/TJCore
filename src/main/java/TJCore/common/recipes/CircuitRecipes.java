@@ -7,6 +7,7 @@ import gregicality.multiblocks.api.recipes.GCYMRecipeMaps;
 import gregicality.science.api.unification.materials.GCYSMaterials;
 import gregicality.science.common.items.GCYSMetaItems;
 import gregicality.science.loaders.recipe.GCYSRecipeLoader;
+import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
@@ -15,10 +16,13 @@ import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.UnificationEntry;
+import gregtech.common.items.MetaItems;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 import org.lwjgl.opencl.CL;
 
+
+import java.util.ArrayList;
 
 import static TJCore.common.metaitem.TJMetaItems.*;
 import static TJCore.api.material.TJMaterials.*;
@@ -36,69 +40,74 @@ import static gregicality.multiblocks.api.recipes.GCYMRecipeMaps.*;
 public class CircuitRecipes {
 
     public static void removePreexistingCircuits() {
-        ELECTRONIC_CIRCUIT_LV.setInvisible();
-        RESISTOR.setInvisible();
-        DIODE.setInvisible();
-        CAPACITOR.setInvisible();
-        TRANSISTOR.setInvisible();
-        INDUCTOR.setInvisible();
-        SMD_CAPACITOR.setInvisible();
-        SMD_DIODE.setInvisible();
-        SMD_RESISTOR.setInvisible();
-        SMD_TRANSISTOR.setInvisible();
-        SMD_INDUCTOR.setInvisible();
-        ADVANCED_SMD_CAPACITOR.setInvisible();
-        ADVANCED_SMD_DIODE.setInvisible();
-        ADVANCED_SMD_RESISTOR.setInvisible();
-        ADVANCED_SMD_TRANSISTOR.setInvisible();
-        ADVANCED_SMD_INDUCTOR.setInvisible();
-        ELECTRONIC_CIRCUIT_LV.setInvisible();
-        ELECTRONIC_CIRCUIT_MV.setInvisible();
-        INTEGRATED_CIRCUIT_LV.setInvisible();
-        INTEGRATED_CIRCUIT_MV.setInvisible();
-        INTEGRATED_CIRCUIT_HV.setInvisible();
-        NAND_CHIP_ULV.setInvisible();
-        MICROPROCESSOR_LV.setInvisible();
-        PROCESSOR_MV.setInvisible();
-        PROCESSOR_ASSEMBLY_HV.setInvisible();
-        WORKSTATION_EV.setInvisible();
-        MAINFRAME_IV.setInvisible();
-        //NANO_PROCESSOR_HV.setInvisible();
-        NANO_PROCESSOR_ASSEMBLY_EV.setInvisible();
-        //NANO_COMPUTER_IV.setInvisible();
-        //NANO_MAINFRAME_LUV.setInvisible();
-        QUANTUM_PROCESSOR_EV.setInvisible();
-        QUANTUM_ASSEMBLY_IV.setInvisible();
-        QUANTUM_COMPUTER_LUV.setInvisible();
-        QUANTUM_MAINFRAME_ZPM.setInvisible();
-        CRYSTAL_PROCESSOR_IV.setInvisible();
-        CRYSTAL_ASSEMBLY_LUV.setInvisible();
-        CRYSTAL_COMPUTER_ZPM.setInvisible();
-        CRYSTAL_MAINFRAME_UV.setInvisible();
-        WETWARE_PROCESSOR_LUV.setInvisible();
-        WETWARE_PROCESSOR_ASSEMBLY_ZPM.setInvisible();
-        WETWARE_SUPER_COMPUTER_UV.setInvisible();
-        GOOWARE_PROCESSOR.setInvisible();
-        GOOWARE_ASSEMBLY.setInvisible();
-        GOOWARE_COMPUTER.setInvisible();
-        GOOWARE_MAINFRAME.setInvisible();
-        OPTICAL_PROCESSOR.setInvisible();
-        OPTICAL_ASSEMBLY.setInvisible();
-        OPTICAL_COMPUTER.setInvisible();
-        OPTICAL_MAINFRAME.setInvisible();
-        SPINTRONIC_PROCESSOR.setInvisible();
-        SPINTRONIC_ASSEMBLY.setInvisible();
-        SPINTRONIC_COMPUTER.setInvisible();
-        SPINTRONIC_MAINFRAME.setInvisible();
-        COSMIC_PROCESSOR.setInvisible();
-        COSMIC_ASSEMBLY.setInvisible();
-        COSMIC_COMPUTER.setInvisible();
-        COSMIC_MAINFRAME.setInvisible();
-        SUPRACAUSAL_PROCESSOR.setInvisible();
-        SUPRACAUSAL_ASSEMBLY.setInvisible();
-        SUPRACAUSAL_COMPUTER.setInvisible();
-        SUPRACAUSAL_MAINFRAME.setInvisible();
+        ArrayList<MetaItem.MetaValueItem> oldCircuits = new ArrayList<>();
+        oldCircuits.add(ELECTRONIC_CIRCUIT_LV);
+        oldCircuits.add(SMD_CAPACITOR);
+        oldCircuits.add(SMD_DIODE);
+        oldCircuits.add(SMD_RESISTOR);
+        oldCircuits.add(SMD_TRANSISTOR);
+        oldCircuits.add(SMD_INDUCTOR);
+        oldCircuits.add(ADVANCED_SMD_CAPACITOR);
+        oldCircuits.add(ADVANCED_SMD_DIODE);
+        oldCircuits.add(ADVANCED_SMD_RESISTOR);
+        oldCircuits.add(ADVANCED_SMD_TRANSISTOR);
+        oldCircuits.add(ADVANCED_SMD_INDUCTOR);
+        oldCircuits.add(ELECTRONIC_CIRCUIT_LV);
+        oldCircuits.add(ELECTRONIC_CIRCUIT_MV);
+        oldCircuits.add(INTEGRATED_CIRCUIT_LV);
+        oldCircuits.add(INTEGRATED_CIRCUIT_MV);
+        oldCircuits.add(INTEGRATED_CIRCUIT_HV);
+        oldCircuits.add(NAND_CHIP_ULV);
+        oldCircuits.add(MICROPROCESSOR_LV);
+        oldCircuits.add(PROCESSOR_MV);
+        oldCircuits.add(PROCESSOR_ASSEMBLY_HV);
+        oldCircuits.add(WORKSTATION_EV);
+        oldCircuits.add(MAINFRAME_IV);
+        oldCircuits.add(MetaItems.NANO_PROCESSOR_HV);
+        oldCircuits.add(NANO_PROCESSOR_ASSEMBLY_EV);
+        oldCircuits.add(MetaItems.NANO_COMPUTER_IV);
+        oldCircuits.add(MetaItems.NANO_MAINFRAME_LUV);
+        oldCircuits.add(QUANTUM_PROCESSOR_EV);
+        oldCircuits.add(QUANTUM_ASSEMBLY_IV);
+        oldCircuits.add(QUANTUM_COMPUTER_LUV);
+        oldCircuits.add(QUANTUM_MAINFRAME_ZPM);
+        oldCircuits.add(CRYSTAL_PROCESSOR_IV);
+        oldCircuits.add(CRYSTAL_ASSEMBLY_LUV);
+        oldCircuits.add(CRYSTAL_COMPUTER_ZPM);
+        oldCircuits.add(CRYSTAL_MAINFRAME_UV);
+        oldCircuits.add(WETWARE_PROCESSOR_LUV);
+        oldCircuits.add(WETWARE_PROCESSOR_ASSEMBLY_ZPM);
+        oldCircuits.add(WETWARE_SUPER_COMPUTER_UV);
+        oldCircuits.add(WETWARE_MAINFRAME_UHV);
+        oldCircuits.add(GOOWARE_PROCESSOR);
+        oldCircuits.add(GOOWARE_ASSEMBLY);
+        oldCircuits.add(GOOWARE_COMPUTER);
+        oldCircuits.add(GOOWARE_MAINFRAME);
+        oldCircuits.add(OPTICAL_PROCESSOR);
+        oldCircuits.add(OPTICAL_ASSEMBLY);
+        oldCircuits.add(OPTICAL_COMPUTER);
+        oldCircuits.add(OPTICAL_MAINFRAME);
+        oldCircuits.add(SPINTRONIC_PROCESSOR);
+        oldCircuits.add(SPINTRONIC_ASSEMBLY);
+        oldCircuits.add(SPINTRONIC_COMPUTER);
+        oldCircuits.add(SPINTRONIC_MAINFRAME);
+        oldCircuits.add(COSMIC_PROCESSOR);
+        oldCircuits.add(COSMIC_ASSEMBLY);
+        oldCircuits.add(COSMIC_COMPUTER);
+        oldCircuits.add(COSMIC_MAINFRAME);
+        oldCircuits.add(SUPRACAUSAL_PROCESSOR);
+        oldCircuits.add(SUPRACAUSAL_ASSEMBLY);
+        oldCircuits.add(SUPRACAUSAL_COMPUTER);
+        oldCircuits.add(SUPRACAUSAL_MAINFRAME);
+
         GTRecipeHandler.removeAllRecipes(CIRCUIT_ASSEMBLER_RECIPES);
+        GTRecipeHandler.removeAllRecipes(ASSEMBLY_LINE_RECIPES);
+
+        for (MetaItem.MetaValueItem circuit: oldCircuits) {
+            circuit.setInvisible();
+            circuit.disableModelLoading();
+        }
+
         GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{
                 FLUID_CELL_LARGE_STAINLESS_STEEL.getStackForm(),
                 OreDictUnifier.get(plate, Naquadah,4),
@@ -522,7 +531,7 @@ public class CircuitRecipes {
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(50)
                 .EUt(VA[LV])
-                .input(ELECTRONIC_COMPUTER_MV)
+                .input(ELECTRONIC_COMPUTER_MV, 2)
                 .input(frameGt, Aluminium)
                 .input(TRANSISTOR, 2)
                 .input(DIODE, 2)
@@ -706,7 +715,7 @@ public class CircuitRecipes {
                 .duration(50)
                 .EUt(VA[IV])
                 .cleanroom(CLEANROOM)
-                .input(IMC_ASSEMBLY_IV)
+                .input(IMC_ASSEMBLY_IV, 2)
                 .input(plate, RhodiumPlatedPalladium)
                 .input(SMD_INDUCTOR_1, 2)
                 .input(SMD_CAPACITOR_1, 2)
@@ -718,7 +727,7 @@ public class CircuitRecipes {
                 .duration(50)
                 .EUt(VA[IV])
                 .cleanroom(CLEANROOM)
-                .input(IMC_COMPUTER_LUV)
+                .input(IMC_COMPUTER_LUV, 2)
                 .input(frameGt, RhodiumPlatedPalladium)
                 .input(SMD_TRANSISTOR_1, 2)
                 .input(SMD_DIODE_2, 2)
@@ -890,7 +899,7 @@ public class CircuitRecipes {
                 .duration(50)
                 .EUt(VA[UHV])
                 .cleanroom(STERILE_CLEANROOM)
-                .input(BIOWARE_PROCESSOR_UV)
+                .input(BIOWARE_PROCESSOR_UV, 2)
                 .input(BIOWARE_BOARD)
                 .input(SMD_TRANSISTOR_3, 2)
                 .input(SMD_RESISTOR_4, 2)
@@ -902,7 +911,7 @@ public class CircuitRecipes {
                 .duration(50)
                 .EUt(VA[UHV])
                 .cleanroom(STERILE_CLEANROOM)
-                .input(BIOWARE_ASSEMBLY_UHV)
+                .input(BIOWARE_ASSEMBLY_UHV, 2)
                 .input(plate, PedotPSS)
                 .input(SMD_CAPACITOR_3, 2)
                 .input(SMD_INDUCTOR_3, 2)
