@@ -44,7 +44,7 @@ public class TJOreDictionaryLoader {
 
 
     public static void registerOrePrefixes() {
-        nanoWire.setGenerationCondition(material -> ((material.isElement() && material.isSolid() && material.hasFluid())) || material.hasFlag(GENERATE_NANOWIRE));
+        nanoWire.setGenerationCondition(material -> ((material.isElement() && material.isSolid() && material.hasFluid())) || material.hasFlag(  GENERATE_NANOWIRE));
         createMaterialItem(nanoWire);
     }
 

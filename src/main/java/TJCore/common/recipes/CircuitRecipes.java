@@ -90,6 +90,16 @@ public class CircuitRecipes {
                 }
             }
         }
+        SMD_CAPACITOR.setInvisible();
+        SMD_DIODE.setInvisible();
+        SMD_INDUCTOR.setInvisible();
+        SMD_TRANSISTOR.setInvisible();
+        SMD_RESISTOR.setInvisible();
+        ADVANCED_SMD_CAPACITOR.setInvisible();
+        ADVANCED_SMD_RESISTOR.setInvisible();
+        ADVANCED_SMD_TRANSISTOR.setInvisible();
+        ADVANCED_SMD_DIODE.setInvisible();
+        ADVANCED_SMD_INDUCTOR.setInvisible();
     }
     public static void registerCircuits() {
         removePreexistingCircuits();
