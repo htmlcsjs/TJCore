@@ -105,70 +105,136 @@ metaitem.tungsteninductorcore.name=
 
 
 metaitem.circuit.primitive_ulv.name=Primitive Assembly
+metaitem.circuit.primitive_ulv.tooltip=First ULV Circuit
 metaitem.circuit.primitive_lv.name=Primitive Computer
+metaitem.circuit.primitive_lv.tooltip=First LV Circuit
 metaitem.circuit.primitive_mv.name=Primitive Mainframe
+metaitem.circuit.primitive_mv.tooltip=First MV Circuit
 
 metaitem.circuit.electronic_ulv.name=Electronic Processor
+metaitem.circuit.electronic_ulv.tooltip=Second ULV Circuit
 metaitem.circuit.electronic_lv.name=Electronic Assembly
+metaitem.circuit.electronic_lv.tooltip=Second LV Circuit
 metaitem.circuit.electronic_mv.name=Electronic Computer
+metaitem.circuit.electronic_mv.tooltip=Second MV Circuit
 metaitem.circuit.electronic_hv.name=Electronic Mainframe
+metaitem.circuit.electronic_hv.tooltip=First HV Circuit
 
 metaitem.circuit.integrated_lv.name=Integrated Processor
+metaitem.circuit.integrated_lv.tooltip=Third and Final LV Circuit
 metaitem.circuit.integrated_mv.name=Integrated Assembly
+metaitem.circuit.integrated_mv.tooltip=Third MV Circuit
 metaitem.circuit.integrated_hv.name=Integrated Computer
+metaitem.circuit.integrated_hv.tooltip=Second HV Circuit
 metaitem.circuit.integrated_ev.name=Integrated Mainframe
+metaitem.circuit.integrated_ev.tooltip=First EV Circuit
 
 metaitem.circuit.micro_mv.name=Micro Processor
+metaitem.circuit.micro_mv.tooltip=Fourth and Final MV Circuit
 metaitem.circuit.micro_hv.name=Micro Assembly
+metaitem.circuit.micro_hv.tooltip=Third HV Circuit
 metaitem.circuit.micro_ev.name=Micro Computer
+metaitem.circuit.micro_ev.tooltip=Second EV Circuit
 metaitem.circuit.micro_iv.name=Micro Mainframe
+metaitem.circuit.micro_iv.tooltip=First IV Circuit
 
 metaitem.circuit.nano_hv.name=Nano Processor
+metaitem.circuit.nano_hv.tooltip=Fourth and Final HV Circuit
 metaitem.circuit.nano_ev.name=Nano Assembly
+metaitem.circuit.nano_ev.tooltip=Third EV Circuit
 metaitem.circuit.nano_iv.name=Nano Computer
+metaitem.circuit.nano_iv.tooltip=Second IV Circuit
 metaitem.circuit.nano_luv.name=Nano Mainframe
+metaitem.circuit.nano_luv.tooltip=First LuV Circuit
 
 metaitem.circuit.imc_ev.name=In-Memory Computation Processor
+metaitem.circuit.imc_ev.tooltip=Fourth and Final EV Circuit
 metaitem.circuit.imc_iv.name=In-Memory Computation Assembly
+metaitem.circuit.imc_iv.tooltip=Third IV Circuit
 metaitem.circuit.imc_luv.name=In-Memory Computation Computer
+metaitem.circuit.imc_luv.tooltip=Second LuV Circuit
 metaitem.circuit.imc_zpm.name=In-Memory Computation Mainframe
+metaitem.circuit.imc_zpm.tooltip=First ZPM Circuit
 
 metaitem.circuit.optical_iv.name=Optical Processor
+metaitem.circuit.optical_iv.tooltip=Fourth and Final IV Circuit
 metaitem.circuit.optical_luv.name=Optical Assembly
+metaitem.circuit.optical_luv.tooltip=Third LuV Circuit
 metaitem.circuit.optical_zpm.name=Optical Computer
+metaitem.circuit.optical_zpm.tooltip=Second ZPM Circuit
 metaitem.circuit.optical_uv.name=Optical Mainframe
+metaitem.circuit.optical_uv.tooltip=First UV Circuit
 
 metaitem.circuit.crystal_luv.name=Crystal Processor
+metaitem.circuit.crystal_luv.tooltip=Fourth and Final LuV Circuit
 metaitem.circuit.crystal_zpm.name=Crystal Assembly
+metaitem.circuit.crystal_zpm.tooltip=Third ZPM Circuit
 metaitem.circuit.crystal_uv.name=Crystal Computer
+metaitem.circuit.crystal_uv.tooltip=Second UV Circuit
 metaitem.circuit.crystal_uhv.name=Crystal Mainframe
+metaitem.circuit.crystal_uhv.tooltip=First UHV Circuit
 
 metaitem.circuit.wetware_zpm.name=Wetware Processor
+metaitem.circuit.wetware_zpm.tooltip=Fourth and Final ZPM Circuit
 metaitem.circuit.wetware_uv.name=Wetware Assembly
+metaitem.circuit.wetware_uv.tooltip=Third UV Circuit
 metaitem.circuit.wetware_uhv.name=Wetware Computer
+metaitem.circuit.wetware_uhv.tooltip=Second UHV Circuit
 metaitem.circuit.wetware_uev.name=Wetware Mainframe
+metaitem.circuit.wetware_uev.tooltip=First UEV Circuit
 
 metaitem.circuit.bioware_uv.name=Bioware Processor
+metaitem.circuit.bioware_uv.tooltip=Fourth and Final UV Circuit
 metaitem.circuit.bioware_uhv.name=Bioware Assembly
+metaitem.circuit.bioware_uhv.tooltip=Third UHV Circuit
 metaitem.circuit.bioware_uev.name=Bioware Computer
+metaitem.circuit.bioware_uev.tooltip=Second UEV Circuit
 metaitem.circuit.bioware_uiv.name=Bioware Mainframe
+metaitem.circuit.bioware_uiv.tooltip=First UIV Circuit
 
 metaitem.circuit.quantum_uhv.name=Quantum Processor
+metaitem.circuit.quantum_uhv.tooltip=Fourth and Final UHV Circuit
 metaitem.circuit.quantum_uev.name=Quantum Assembly
+metaitem.circuit.quantum_uev.tooltip=Third UEV Circuit
 metaitem.circuit.quantum_uiv.name=Quantum Computer
+metaitem.circuit.quantum_uiv.tooltip=Second UIV Circuit
 metaitem.circuit.quantum_uxv.name=Quantum Mainframe
+metaitem.circuit.quantum_uxv.tooltip=First UXV Circuit
 
 metaitem.circuit.exotic_uev.name=Exotic Processor
+metaitem.circuit.exotic_uev.tooltip=Fourth and Final UEV Circuit
 metaitem.circuit.exotic_uiv.name=Exotic Assembly
+metaitem.circuit.exotic_uiv.tooltip=Third UIV Circuit
 metaitem.circuit.exotic_uxv.name=Exotic Computer
+metaitem.circuit.exotic_uxv.tooltip=Second UXV Circuit
 metaitem.circuit.exotic_opv.name=Exotic Mainframe
+metaitem.circuit.exotic_opv.tooltip=First OpV Circuit
 
 metaitem.circuit.cosmic_uiv.name=Cosmic Processor
+metaitem.circuit.cosmic_uiv.tooltip=Fourth and Final UIV Circuit
 metaitem.circuit.cosmic_uxv.name=Cosmic Assembly
+metaitem.circuit.cosmic_uxv.tooltip=Third UXV Circuit
 metaitem.circuit.cosmic_opv.name=Cosmic Computer
+metaitem.circuit.cosmic_opv.tooltip=Second OpV Circuit
 metaitem.circuit.cosmic_max.name=Cosmic Mainframe
+metaitem.circuit.cosmic_max.tooltip=First MAX Circuit
 
 metaitem.circuit.supra_uxv.name=Supra-Causal Processor
+metaitem.circuit.supra_uxv.tooltip=Fourth and Final UXV Circuit
 metaitem.circuit.supra_opv.name=Supra-Causal Assembly
+metaitem.circuit.supra_opv.tooltip=Third and Final OpV Circuit
 metaitem.circuit.supra_max.name=Supra-Causal Computer
+metaitem.circuit.supra_max.tooltip=Second and Final MAX Circuit
 metaitem.circuit.supra_all.name=Supra-Causal Mainframe
+metaitem.circuit.supra_all.tooltip=Meme Circuit Lol
+
+metaitem.component.smd_capacitor_1.name=Basic SMD Capacitor
+metaitem.component.smd_capacitor_1.tooltip=Basic Energy Storage
+metaitem.component.smd_capacitor_2.name=Good SMD Capacitor
+metaitem.component.smd_capacitor_2.tooltip=Storing Light
+metaitem.component.smd_capacitor_3.name=Advanced SMD Capacitor
+metaitem.component.smd_capacitor_3.tooltip=Bacteria Powered
+metaitem.component.smd_capacitor_4.name=Extreme SMD Capacitor
+metaitem.component.smd_capacitor_4.tooltip=Smaller Than Ever Before
+metaitem.component.smd_capacitor_5.name=Super Ultra Hyper Giga Big RGB Cyber Mega SMD Capacitor
+metaitem.component.smd_capacitor_5.tooltip=Now Subatomic in Scale!
