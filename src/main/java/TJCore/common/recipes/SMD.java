@@ -381,7 +381,7 @@ public class SMD {
                 .EUt(VA[ZPM])
                 .fluidInputs(XenonOxyTetraFluoride.getFluid(3000), BoronTrifluoride.getFluid(2000))
                 .fluidOutputs(XenonHexaFluoride.getFluid(3000))
-                .output(dust, BoronTrioxide)
+                .output(dust, BoronTrioxide, 5)
                 .buildAndRegister();
 
         MIXER_RECIPES.recipeBuilder()

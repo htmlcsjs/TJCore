@@ -588,9 +588,13 @@ public class TJFirstDegreeMaterials {
         LeadZirconateTitanate.setProperty(PropertyKey.FLUID_PIPE, PZTPipeProps);
         Fermium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Dubnium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Einsteinium.setProperty(PropertyKey.DUST, new DustProperty());
+        Technetium.setProperty(PropertyKey.DUST, new DustProperty());
+        Actinium.setProperty(PropertyKey.DUST, new DustProperty());
+        Astatine.setProperty(PropertyKey.DUST, new DustProperty());
 
 
-        // becuase of techs foolishness and thinking graphenes are a foil
+        // becuase of techs foolishness and thinking graphenes are a foile
         Graphene.addFlags(MaterialFlags.GENERATE_FOIL);
     }
 
