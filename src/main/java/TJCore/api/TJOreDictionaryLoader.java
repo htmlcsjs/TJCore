@@ -1,12 +1,14 @@
 package TJCore.api;
 
 import TJCore.TJValues;
+import TJCore.api.material.TJMaterials;
 import TJCore.api.material.materials.info.TJMaterialIconTypes;
 import com.brandon3055.draconicevolution.DEFeatures;
 import gregtech.api.GTValues;
 import gregtech.api.items.materialitem.MetaPrefixItem;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
+import gregtech.api.unification.material.info.MaterialFlag;
 import gregtech.api.unification.material.properties.PropertyKey;
 import gregtech.api.unification.ore.OrePrefix;
 import net.minecraft.item.ItemStack;
@@ -36,8 +38,13 @@ public class TJOreDictionaryLoader {
         }
     }
 
+    public static final MaterialFlag GENERATE_NANOWIRE = new MaterialFlag.Builder("generate_nanowire")
+            .requireProps(PropertyKey.FLUID)
+            .build();
+
+
     public static void registerOrePrefixes() {
-        nanoWire.setGenerationCondition(material -> (material.isElement() && material.isSolid() && material.hasFluid()));
+        nanoWire.setGenerationCondition(material -> ((material.isElement() && material.isSolid() && material.hasFluid())) || material.hasFlag(GENERATE_NANOWIRE));
         createMaterialItem(nanoWire);
     }
 

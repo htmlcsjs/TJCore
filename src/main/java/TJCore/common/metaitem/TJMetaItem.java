@@ -45,7 +45,6 @@ public class    TJMetaItem extends StandardMetaItem {
 
         SMD_RESISTOR_5 = addItem(21, "component.smd_resistor_5").setUnificationData(OrePrefix.component, Component.Resistor);
         SMD_TRANSISTOR_5 = addItem(22, "component.smd_transistor_5").setUnificationData(OrePrefix.component, Component.Transistor);
-        SMD_DIODE_5 = addItem(23, "component.smd_diode_5").setUnificationData(OrePrefix.component, Component.Diode);
         SMD_CAPACITOR_5 = addItem(24, "component.smd_capacitor_5").setUnificationData(OrePrefix.component, Component.Capacitor);
         SMD_INDUCTOR_5 = addItem(25, "component.smd_inductor_5").setUnificationData(OrePrefix.component, Component.Inductor);
 
@@ -296,9 +295,7 @@ public class    TJMetaItem extends StandardMetaItem {
         // Wetware CPU Items
 
 
-        // Misc. SMD ITEMS
-        FERROUS_INDUCTOR_CORE = addItem(1001, "ferrous_inductor_core");
-        TUNGSTEN_INDUCTOR_CORE = addItem(1002,"tungsten_inductor_core");
+
 
         // CPU'S - post crystal
         WETWARE_CPU = addItem(620, "wetware_cpu");
@@ -307,5 +304,19 @@ public class    TJMetaItem extends StandardMetaItem {
         EXOTIC_CPU = addItem(623, "exotic_cpu");
         COSMIC_CPU = addItem(624, "cosmic_cpu");
         SUPRA_CPU = addItem(625, "supra_cpu");
+
+        // Misc. SMD ITEMS
+        FERROUS_INDUCTOR_CORE = addItem(1001, "ferrous_inductor_core");
+        TUNGSTEN_INDUCTOR_CORE = addItem(1002,"tungsten_inductor_core");
+        LANGMUIR_OSCILATOR = addItem(1003, "langmuir_wave_oscilator");
+        LANGMUIR_HOUSING = addItem(1004, "langmuir_qbit_housing");
+        SQUID_BASE = addItem(1005, "squid_base");
+        TRANSMON_SUPPORT = addItem(1006, "transmon_support_system");
+        GRAPHENE_ALUMINOSILICATE_AEROGEL = addItem(1007, "graphene_aluminosilicate_aerogel");
+        CNT_SHORT = addItem(1008, "short_carbon_nanotube_strand");
+        CNT_LONG = addItem(1009, "long_carbon_nanotube_strand");
+        LAYERED_POLYMER_FOIL = addItem(1010, "layered_polyer_foil");
+        STERILE_POLYMER_FOIL = addItem(1011, "sterile_polymer_foil");
+
     }
 }

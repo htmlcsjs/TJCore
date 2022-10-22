@@ -1,5 +1,6 @@
 package TJCore.api.material.materials;
 
+import static TJCore.api.TJOreDictionaryLoader.GENERATE_NANOWIRE;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 
 import gregicality.science.api.unification.materials.GCYSMaterials;
@@ -355,7 +356,7 @@ public class TJFirstDegreeMaterials {
         SuperheavyL = new Material.Builder(25049, "superheavy_l")
                 .dust()
                 .ingot()
-                .colorAverage()
+                .color(0x000a8f)
                 .iconSet(MaterialIconSet.SHINY)
                 .components(Nobelium, 1, Lawrencium, 1, Meitnerium, 1, Darmstadtium, 1, Roentgenium, 1, Copernicium, 1)
                 .build();
@@ -382,29 +383,144 @@ public class TJFirstDegreeMaterials {
                 .fluid()
                 .color(0x4a080b)
                 .build();
+
+        BismuthTelluride = new Material.Builder(25054, "bismuth_telluride")
+                .ingot()
+                .colorAverage()
+                .components(Bismuth, 2, Tellurium, 3)
+                .build();
+
+        SynthDiamond = new Material.Builder(25055, "synthetic_diamond")
+                .dust()
+                .gem()
+                .color(0x8fbaff)
+                .components(Carbon, 8)
+                .build();
+
+        GraphenePQD = new Material.Builder(25056, "photoluminescent_graphene_quantum_dots")
+                .dust()
+                .color(0x616161)
+                .iconSet(MaterialIconSet.SHINY)
+                .components(Carbon, 6)
+                .build();
+
+        HeavyQuarkDegenerate = new Material.Builder(25057, "heavy_quark_degenerate_matter")
+                .fluid()
+                .ingot()
+                .color(0x171717)
+                .components(Gluons, 1, HeavyQuarks, 4, LightQuarks, 1)
+                .build();
+
+        BismuthIridiumOxide = new Material.Builder(25058, "bismuth_iridium_oxide")
+                .ingot()
+                .colorAverage()
+                .components(Bismuth, 2, Iridium, 2, Oxygen, 7)
+                .iconSet(MaterialIconSet.DULL)
+                .build();
+
+        IndiumFluoride = new Material.Builder(25059, "indium_fluoride")
+                .fluid()
+                .color(0x2d5c53)
+                .components(Indium, 1, Fluorine, 3)
+                .build();
+
+        EnrichedNaqAlloy = new Material.Builder(25060, "enriched_naquadah_alloy")
+                .ingot()
+                .fluid()
+                .colorAverage()
+                .components(NaquadahEnriched, 16, Einsteinium, 4, Rhodium, 4, Technetium, 4, Astatine, 2, Erbium, 2)
+                .blastTemp(9700)
+                .iconSet(MaterialIconSet.SHINY)
+                .build();
+
+        SodiumPotassiumNiobate = new Material.Builder(25061, "sodium_potassium_niobate")
+                .ingot()
+                .colorAverage()
+                .components(Sodium, 1, Potassium, 1, Niobium, 2, Oxygen, 6)
+                .blastTemp(3600)
+                .build();
+
+        TriniumSteel = new Material.Builder(25062, "trinium_steel")
+                .ingot()
+                .iconSet(MaterialIconSet.SHINY)
+                .blastTemp(10200)
+                .colorAverage()
+                .components(Trinium, 18, Tungsten, 6, Vanadium, 4, Chrome, 2, Tantalum, 1, Cobalt, 1)
+                .build();
+
+        LeadZirconateTitanate = new Material.Builder(25063, "lead_zirconate_titanate")
+                .ingot()
+                .iconSet(MaterialIconSet.DULL)
+                .blastTemp(6100)
+                .color(0x355232)
+                .components(Lead, 12, Titanium, 1, Zirconium, 1, Oxygen, 16)
+                .build();
+
+        XenonFluorideSupercondiveMix = new Material.Builder(25064, "xenon_fluoride_mix")
+                .fluid()
+                .color(0x251a33)
+                .build();
+
+
+        XenonOxyTetraFluoride = new Material.Builder(25065, "xenon_oxytetrafluoride")
+                .fluid()
+                .colorAverage()
+                .components(Xenon, 1, Oxygen, 1, Fluorine, 4)
+                .build();
+
+        XenonDioxide = new Material.Builder(25066, "xenon_dioxide")
+                .fluid()
+                .colorAverage()
+                .components(Xenon, 1, Oxygen, 2)
+                .build();
+
+        XenonTetraFluoride = new Material.Builder(25067, "xenon_tetrafluoride")
+                .fluid()
+                .color(0x3d1e42)
+                .components(Xenon, 1, Fluorine, 4)
+                .build();
+        XenonHexaFluoride = new Material.Builder(25068, "xenon_hexafluoride")
+                .fluid()
+                .color(0x8d5cff)
+                .components(Xenon, 1, Fluorine, 6)
+                .build();
+
+        TerfenolD_H = new Material.Builder(25069, "terfenol_d_heavy")
+                .ingot()
+                .blastTemp(10200)
+                .components(Osmium, 12, Iron, 6, Dysprosium, 2, Terbium, 1)
+                .color(0x4d4d4d)
+                .build();
+
+        TerfenolD_L = new Material.Builder(25070, "terfenol_d_light")
+                .ingot()
+                .blastTemp(10200)
+                .components(Lithium7, 12, Iron, 6, Dysprosium, 2, Terbium, 1)
+                .color(0x9c9c9c)
+                .build();
+
+        SuspendedPGQD = new Material.Builder(25071, "suspended_pgqd")
+                .fluid()
+                .color(0x65ad95)
+                .components(Krypton, 1, GraphenePQD, 1)
+                .build();
+
+        Leptons = new Material.Builder(25072, "leptons")
+                .fluid()
+                .color(0x5500ff)
+                .build();
     }
 
     public static void registerProperties() {
 
-        Dysprosium.setProperty(PropertyKey.FLUID, new FluidProperty());
-
-        FluidPipeProperties birmabrightFluidPipeProps = new FluidPipeProperties(1500, 24, false, true, false, false);
-        Birmabright.setProperty(PropertyKey.FLUID_PIPE, birmabrightFluidPipeProps);
-
-        FluidPipeProperties silicaCeramicFluidPipeProps = new FluidPipeProperties(1000, 18, false, false, false, false);
-        SilicaCeramic.setProperty(PropertyKey.FLUID_PIPE, silicaCeramicFluidPipeProps);
-        SilicaCeramic.addFlags(MaterialFlags.NO_WORKING,MaterialFlags.NO_SMELTING,MaterialFlags.NO_SMASHING);
-
-        FluidPipeProperties bt6FluidPipeProps = new FluidPipeProperties(1500, 36, false, true, false, false);
-        BT6.setProperty(PropertyKey.FLUID_PIPE, bt6FluidPipeProps);
-
-        WireProperties BlueSteelWireProps = new WireProperties(512, 2, 6);
-        BlueSteel.setProperty(PropertyKey.WIRE, BlueSteelWireProps);
-        FluidPipeProperties bluesteelFluidPipeProps = new FluidPipeProperties(1500, 30, false, true, false, false);
-        BlueSteel.setProperty(PropertyKey.FLUID_PIPE, bluesteelFluidPipeProps);
-
         // Glass + Ceramics
+        SilicaCeramic.addFlags(MaterialFlags.NO_WORKING,MaterialFlags.NO_SMELTING,MaterialFlags.NO_SMASHING, MaterialFlags.GENERATE_RING, MaterialFlags.GENERATE_FOIL);
+        ZBLAN.addFlags(MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_PLATE, MaterialFlags.GENERATE_BOLT_SCREW);
         Fiberglass.addFlags(MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_FOIL);
+        BismuthTelluride.addFlags(MaterialFlags.GENERATE_FOIL);
+        BismuthIridiumOxide.addFlags(MaterialFlags.NO_WORKING, MaterialFlags.NO_SMASHING, MaterialFlags.GENERATE_PLATE);
+        SodiumPotassiumNiobate.addFlags(MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_ROUND);
+        LeadZirconateTitanate.addFlags(MaterialFlags.GENERATE_PLATE, MaterialFlags.GENERATE_RING);
 
         // Polymers
         Polybenzimidazole.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
@@ -417,6 +533,7 @@ public class TJFirstDegreeMaterials {
         PedotPSS.addFlags(MaterialFlags.GENERATE_FRAME);
         PedotTMA.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
         CarbonNanotubePolymer.addFlags(MaterialFlags.GENERATE_FRAME, MaterialFlags.GENERATE_PLATE, MaterialFlags.NO_WORKING, MaterialFlags.NO_SMASHING, MaterialFlags.NO_SMELTING);
+        PolyvinylButyral.addFlags(MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_RING);
 
         // Metals
         VanadiumGallium.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
@@ -425,22 +542,56 @@ public class TJFirstDegreeMaterials {
         Vibranium.addFlags(MaterialFlags.GENERATE_FRAME, MaterialFlags.GENERATE_BOLT_SCREW);
         RhodiumPlatedPalladium.addFlags(MaterialFlags.GENERATE_FRAME);
         Duranium.addFlags(MaterialFlags.GENERATE_FRAME);
-
-        WireProperties NihoniumTriiodideProp = new WireProperties(134217728, 2, 64);
-        NihoniumTriiodide.setProperty(PropertyKey.WIRE, NihoniumTriiodideProp);
         NihoniumTriiodide.addFlags(MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_RING);
-        Nihonium.addFlags(MaterialFlags.GENERATE_PLATE);
-        WireProperties SuperheavyHProp = new WireProperties(536870912, 4, 128);
-        SuperheavyH.setProperty(PropertyKey.WIRE, SuperheavyHProp);
+        Nihonium.addFlags(MaterialFlags.GENERATE_PLATE, GENERATE_NANOWIRE);
         SuperheavyH.addFlags(MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_BOLT_SCREW);
         SuperheavyL.addFlags(MaterialFlags.GENERATE_FRAME, MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_RING, MaterialFlags.GENERATE_BOLT_SCREW);
+        Neutronium.addFlags(MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_ROUND);
+        HeavyQuarkDegenerate.addFlags(MaterialFlags.GENERATE_FRAME, MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_BOLT_SCREW, MaterialFlags.GENERATE_RING, MaterialFlags.GENERATE_GEAR, MaterialFlags.GENERATE_LONG_ROD, GENERATE_NANOWIRE, MaterialFlags.DISABLE_DECOMPOSITION, MaterialFlags.NO_SMELTING, MaterialFlags.NO_SMASHING, MaterialFlags.NO_WORKING);
+        Taranium.addFlags(MaterialFlags.GENERATE_BOLT_SCREW, MaterialFlags.GENERATE_LONG_ROD, MaterialFlags.GENERATE_SPRING_SMALL, GENERATE_NANOWIRE);
+        TriniumSteel.addFlags(MaterialFlags.GENERATE_FRAME, MaterialFlags.GENERATE_SPRING, MaterialFlags.GENERATE_PLATE, MaterialFlags.GENERATE_BOLT_SCREW);
+        Fermium.addFlags(MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_SPRING_SMALL);
+        Dubnium.addFlags(MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_ROUND, MaterialFlags.GENERATE_FINE_WIRE, GENERATE_NANOWIRE);
+        TerfenolD_L.addFlags(MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_RING, MaterialFlags.GENERATE_SPRING, MaterialFlags.GENERATE_BOLT_SCREW, MaterialFlags.GENERATE_ROTOR);
+        TerfenolD_H.addFlags(MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_FRAME, MaterialFlags.GENERATE_GEAR, MaterialFlags.GENERATE_SMALL_GEAR, MaterialFlags.GENERATE_DENSE);
+        EnrichedNaqAlloy.addFlags(MaterialFlags.GENERATE_DENSE, MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_GEAR, MaterialFlags.GENERATE_SMALL_GEAR, MaterialFlags.GENERATE_BOLT_SCREW, MaterialFlags.GENERATE_RING, MaterialFlags.GENERATE_ROUND, MaterialFlags.GENERATE_FRAME);
+        PolystyreneSulfonate.addFlags(MaterialFlags.GENERATE_FOIL);
+        Nichrome.addFlags(MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_RING);
+
+        //Properties
+        PlasmaProperty HQDPlasmaProp = new PlasmaProperty();
+        HeavyQuarkDegenerate.setProperty(PropertyKey.PLASMA, HQDPlasmaProp);
+        IngotProperty TaraniumIngotProp = new IngotProperty();
+        WireProperties TaraniumWireProp = new WireProperties(536870912, 2, 64);
+        Taranium.setProperty(PropertyKey.INGOT, TaraniumIngotProp);
+        Taranium.setProperty(PropertyKey.WIRE, TaraniumWireProp);
+        WireProperties NihoniumTriiodideProp = new WireProperties(134217728, 2, 64);
+        NihoniumTriiodide.setProperty(PropertyKey.WIRE, NihoniumTriiodideProp);
+        WireProperties SuperheavyHProp = new WireProperties(536870912, 4, 128);
+        SuperheavyH.setProperty(PropertyKey.WIRE, SuperheavyHProp);
         WireProperties NeutroniumProp = new WireProperties(2147483647, 4,0);
         Neutronium.setProperty(PropertyKey.WIRE, NeutroniumProp);
-        Neutronium.addFlags(MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_FOIL);
+        FluidPipeProperties bt6FluidPipeProps = new FluidPipeProperties(1500, 36, false, true, false, false);
+        BT6.setProperty(PropertyKey.FLUID_PIPE, bt6FluidPipeProps);
+        WireProperties BlueSteelWireProps = new WireProperties(512, 2, 6);
+        BlueSteel.setProperty(PropertyKey.WIRE, BlueSteelWireProps);
+        FluidPipeProperties bluesteelFluidPipeProps = new FluidPipeProperties(1500, 30, false, true, false, false);
+        BlueSteel.setProperty(PropertyKey.FLUID_PIPE, bluesteelFluidPipeProps);
+        WireProperties EnrichedNaqAlloyProps = new WireProperties(2097152, 2, 48);
+        EnrichedNaqAlloy.setProperty(PropertyKey.WIRE, EnrichedNaqAlloyProps);
+        Dysprosium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        FluidPipeProperties birmabrightFluidPipeProps = new FluidPipeProperties(1500, 24, false, true, false, false);
+        Birmabright.setProperty(PropertyKey.FLUID_PIPE, birmabrightFluidPipeProps);
+        FluidPipeProperties silicaCeramicFluidPipeProps = new FluidPipeProperties(1000, 18, false, false, false, false);
+        SilicaCeramic.setProperty(PropertyKey.FLUID_PIPE, silicaCeramicFluidPipeProps);
+        FluidPipeProperties PZTPipeProps = new FluidPipeProperties(3200, 46,false,true,true,false);
+        LeadZirconateTitanate.setProperty(PropertyKey.FLUID_PIPE, PZTPipeProps);
+        Fermium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Dubnium.setProperty(PropertyKey.INGOT, new IngotProperty());
+
 
         // becuase of techs foolishness and thinking graphenes are a foil
         Graphene.addFlags(MaterialFlags.GENERATE_FOIL);
-
     }
 
 }

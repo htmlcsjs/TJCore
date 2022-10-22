@@ -3,12 +3,11 @@ import gregtech.api.unification.Element;
 import gregtech.api.unification.Elements;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialFlag;
-
+import gregtech.api.unification.material.properties.PropertyKey;
+import org.jetbrains.annotations.NotNull;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 
 public class TJMaterials {
@@ -43,13 +42,15 @@ public class TJMaterials {
     public static Material BT6;
     public static Material Birmabright;
     public static Material NickelPlatedTin;
-
     public static Material DegenerateRhenium;
-
     public static Material NihoniumTriiodide;
-
     public static Material SuperheavyH;
     public static Material SuperheavyL;
+    public static Material EnrichedNaqAlloy;
+    public static Material TriniumSteel;
+    public static Material TerfenolD_H;
+    public static Material TerfenolD_L;
+
 
     //Soldering Alloys
     public static Material SolderingAlloyI;
@@ -58,7 +59,6 @@ public class TJMaterials {
     public static Material SolderingAlloyIV;
     public static Material SolderingAlloyV;
     public static Material SolderingAlloyVI;
-
     public static Material FritSolderMix;
     public static Material SolderVPrep;
     public static Material SolderVPrepClean;
@@ -80,26 +80,30 @@ public class TJMaterials {
     public static Material MolybdenumSulfide;
     public static Material Difluoroethane; //C2H4F2
     public static Material PalladiumChloride; // PdCl2
-
     public static Material AllylAcetate;
-
     public static Material SilverLeadOxide;
-
     public static Material LuminescentSiliconNanocrystals;
-
     public static Material SeleniumMonobromide;
-
     public static Material HydraziniumChloride;
     public static Material DibromoisophthalicAcid;
-
     public static Material Dibromoterephthaloyldichloride;
-
     public static Material HafniumSilicate;
+    public static Material GraphenePQD;
+    public static Material BismuthIridiumOxide;
+    public static Material IndiumFluoride;
+    public static Material XenonDioxide;
+    public static Material XenonTetraFluoride;
+    public static Material XenonOxyTetraFluoride;
+    public static Material XenonHexaFluoride;
 
     // Cermaics + Glass
+    public static Material SodiumPotassiumNiobate;
+    public static Material BismuthTelluride;
     public static Material SilicaCeramic;
     public static Material ZBLAN;
     public static Material Fiberglass;
+    public static Material SynthDiamond;
+    public static Material LeadZirconateTitanate;
 
     // Metals
 
@@ -109,10 +113,10 @@ public class TJMaterials {
     public static Material Ladder_Poly_P_Phenylene;
 
     // Mixtures
-
+    public static Material SuspendedPGQD;
     public static Material ArgonSilane;
     public static Material DiamondCVDSolution;
-
+    public static Material XenonFluorideSupercondiveMix;
     public static Material P1Solution;
     public static Material TetrakisPDCatalyst;
 
@@ -132,5 +136,8 @@ public class TJMaterials {
     public static Material Gluons;
     public static Material HeavyQuarks;
     public static Material LightQuarks;
+
+    public static Material Leptons;
+    public static Material HeavyQuarkDegenerate;
 
 }

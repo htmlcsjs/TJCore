@@ -53,7 +53,6 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem SMD_DIODE_2;
     public static MetaItem<?>.MetaValueItem SMD_DIODE_3;
     public static MetaItem<?>.MetaValueItem SMD_DIODE_4;
-    public static MetaItem<?>.MetaValueItem SMD_DIODE_5;
 
     public static MetaItem<?>.MetaValueItem SMD_CAPACITOR_1;
     public static MetaItem<?>.MetaValueItem SMD_CAPACITOR_2;
@@ -303,6 +302,17 @@ public class TJMetaItems {
     // Misc. SMD ITEMS
     public static MetaItem<?>.MetaValueItem FERROUS_INDUCTOR_CORE;
     public static MetaItem<?>.MetaValueItem TUNGSTEN_INDUCTOR_CORE;
+    public static MetaItem<?>.MetaValueItem LANGMUIR_HOUSING;
+    public static MetaItem<?>.MetaValueItem TRANSMON_SUPPORT;
+    public static MetaItem<?>.MetaValueItem SQUID_BASE;
+    public static MetaItem<?>.MetaValueItem LANGMUIR_OSCILATOR;
+    public static MetaItem<?>.MetaValueItem GRAPHENE_ALUMINOSILICATE_AEROGEL;
+    public static MetaItem<?>.MetaValueItem CNT_SHORT;
+    public static MetaItem<?>.MetaValueItem CNT_LONG;
+    public static MetaItem<?>.MetaValueItem STERILE_POLYMER_FOIL;
+    public static MetaItem<?>.MetaValueItem LAYERED_POLYMER_FOIL;
+    //public static MetaItem<?>.MetaValueItem
+    //public static MetaItem<?>.MetaValueItem
 
     // Chips - Post Wetware
 
