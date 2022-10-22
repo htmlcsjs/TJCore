@@ -236,5 +236,48 @@ metaitem.component.smd_capacitor_3.name=Advanced SMD Capacitor
 metaitem.component.smd_capacitor_3.tooltip=Bacteria Powered
 metaitem.component.smd_capacitor_4.name=Extreme SMD Capacitor
 metaitem.component.smd_capacitor_4.tooltip=Smaller Than Ever Before
-metaitem.component.smd_capacitor_5.name=Super Ultra Hyper Giga Big RGB Cyber Mega SMD Capacitor
-metaitem.component.smd_capacitor_5.tooltip=Now Subatomic in Scale!
+metaitem.component.smd_capacitor_5.name=Ultimate SMD Capacitor
+metaitem.component.smd_capacitor_5.tooltip=Now Subatomic in Scale
+
+metaitem.component.smd_transistor_1.name=Basic SMD Transistor
+metaitem.component.smd_transistor_1.tooltip=A Smaller Logic Gate
+metaitem.component.smd_transistor_2.name=Good SMD Transistor
+metaitem.component.smd_transistor_2.tooltip=Non-Linear Optics
+metaitem.component.smd_transistor_3.name=Advanced SMD Transistor
+metaitem.component.smd_transistor_3.tooltip=Evolutionary Decisions
+metaitem.component.smd_transistor_4.name=Extreme SMD Transistor
+metaitem.component.smd_transistor_4.tooltip=Superconducting Q-Bit Logic
+metaitem.component.smd_transistor_5.name=Ultimate SMD Transistor
+metaitem.component.smd_transistor_5.tooltip=Fundamental Force Redirection
+
+metaitem.component.smd_resistor_1.name=Basic SMD Resistor
+metaitem.component.smd_resistor_1.tooltip=Current Control, Now Smaller
+metaitem.component.smd_resistor_2.name=Good SMD Resistor
+metaitem.component.smd_resistor_2.tooltip=High Current Resistance
+metaitem.component.smd_resistor_3.name=Advanced SMD Resistor
+metaitem.component.smd_resistor_3.tooltip=Bartworks Energy Flow Control
+metaitem.component.smd_resistor_4.name=Extreme SMD Resistor
+metaitem.component.smd_resistor_4.tooltip=Encased Plasma
+metaitem.component.smd_resistor_5.name=Ultimate SMD Resistor
+metaitem.component.smd_resistor_5.tooltip=Physical Law Violation
+
+metaitem.component.smd_diode_1.name=Basic SMD Diode
+metaitem.component.smd_diode_1.tooltip=Current Restriction
+metaitem.component.smd_diode_2.name=Good SMD Diode
+metaitem.component.smd_diode_2.tooltip=One Way Mirror (Very Small)
+metaitem.component.smd_diode_3.name=Advanced SMD Diode
+metaitem.component.smd_diode_3.tooltip=Mildly Radioactive
+metaitem.component.smd_diode_4.name=Extreme SMD Diode
+metaitem.component.smd_diode_4.tooltip=Subatomic Particle Filter
+
+
+metaitem.component.smd_inductor_1.name=Basic SMD Inductor
+metaitem.component.smd_inductor_1.tooltip=Ferrous Inductor
+metaitem.component.smd_inductor_2.name=Good SMD Inductor
+metaitem.component.smd_inductor_2.tooltip=Improved Induction
+metaitem.component.smd_inductor_3.name=Advanced SMD Inductor
+metaitem.component.smd_inductor_3.tooltip=Reaction Modulation
+metaitem.component.smd_inductor_4.name=Extreme SMD Inductor
+metaitem.component.smd_inductor_4.tooltip=Insane Oscillation
+metaitem.component.smd_inductor_5.name=Ultimate SMD Inductor
+metaitem.component.smd_inductor_5.tooltip=Spatial Distortion

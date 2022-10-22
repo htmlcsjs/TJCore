@@ -49,14 +49,15 @@ public class SMD {
                 .output(SMD_TRANSISTOR_2, 32)
                 .buildAndRegister();
 
+        //TODO - replace steel wire with
         ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(65)
                 .EUt(VA[LuV])
-                .input(nanoWire, Lead, 16)
-                .input(foil, PolyvinylButyral, 4)
-                .input(wireFine, Steel, 4)
                 .input(plate, BismuthTelluride)
-                .fluidInputs(Polystyrene.getFluid(144))
+                .input(foil, PolyvinylButyral, 4)
+                .input(pipeTinyFluid, Chrome, 4)
+                .input(nanoWire, Lead, 16)
+                .fluidInputs(Glycerol.getFluid(250))
                 .output(SMD_TRANSISTOR_3, 32)
                 .buildAndRegister();
 
@@ -96,8 +97,9 @@ public class SMD {
                 .EUt(VA[EV])
                 .input(dust, Silicon, 2)
                 .input(dustSmall, Gallium, 2)
-                .input(wireFine, Nichrome)
-                .fluidInputs(Polyethylene.getFluid(288))
+                .input(foil, TungstenCarbide, 2)
+                .input(wireFine, Nichrome, 4)
+                .fluidInputs(Polytetrafluoroethylene.getFluid(288))
                 .output(SMD_RESISTOR_2, 32)
                 .buildAndRegister();
 

@@ -471,10 +471,6 @@ public class CircuitRecipes {
                 'T', TRANSISTOR.getStackForm(),
                 'G', OreDictUnifier.get(cableGtSingle, Tin));
     }
-    // Processor - CR
-    // Assembly - TR
-    // Computer - IC
-    // Mainframe - TD
     public static void electronic() {
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(50)
@@ -785,7 +781,7 @@ public class CircuitRecipes {
                 .input(CRYSTAL_PROCESSOR_LUV, 2)
                 .input(CRYSTAL_BOARD)
                 .input(SMD_TRANSISTOR_2, 2)
-                .input(SMD_RESISTOR_2, 2)
+                .input(SMD_RESISTOR_3, 2)
                 .input(wireFine, VanadiumGallium, 2)
                 .output(CRYSTAL_ASSEMBLY_ZPM)
                 .buildAndRegister();
