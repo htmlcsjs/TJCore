@@ -95,6 +95,10 @@ public class TJMaterials {
     public static Material XenonTetraFluoride;
     public static Material XenonOxyTetraFluoride;
     public static Material XenonHexaFluoride;
+    public static Material NeonFluoride;
+    public static Material ExcitedNeonFluoride;
+
+    public static Material ArgonFluorine;
 
     // Cermaics + Glass
     public static Material SodiumPotassiumNiobate;

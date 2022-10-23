@@ -74,20 +74,20 @@ metaitem.cosmic_preboard.name=
 metaitem.supra_preboard.name=
 
 //Crystal Items
-metaitem.coatedsapphirewafer.name=Coated Sapphire Wafer
-metaitem.dirtycoatedsapphirewafer.name=Dirty Coated Sapphire Wafer
-metaitem.cleanedcoatedsapphirewafer.name=Cleaned Coated Sapphire Wafer
-metaitem.sapphiresubstrateprep.name=Sapphire Substrate Preparation
-metaitem.etchedsapphirewafer.name=Etched Sapphire Wafer
-metaitem.superheatedsapphirewafer.name=Superheated Sapphire Wafer
-metaitem.viablesapphirewafer.name=Viable Sapphire Wafer
-metaitem.nonviablesapphirewafer.name=Non-Viable Sapphire Wafer
-metaitem.recycledsapphirewafer.name=Recycled Sapphire Wafer
-metaitem.sinteredsapphirewafer.name=Sintered Sapphire Wafer
-metaitem.wiredsapphirewafer.name=Wired Sapphire Wafer
-metaitem.sapphirewafer.name=Sapphire Wafer
+metaitem.coated_sapphire_wafer.name=Coated Sapphire Wafer
+metaitem.dirty_coated_sapphire_wafer.name=Dirty Coated Sapphire Wafer
+metaitem.cleaned_coated_sapphire_wafer.name=Cleaned Coated Sapphire Wafer
+metaitem.sapphire_substrate_prep.name=Sapphire Substrate Preparation
+metaitem.etched_sapphire_wafer.name=Etched Sapphire Wafer
+metaitem.superheated_sapphire_wafer.name=Superheated Sapphire Wafer
+metaitem.viable_sapphire_wafer.name=Viable Sapphire Wafer
+metaitem.non_viable_sapphire_wafer.name=Non-Viable Sapphire Wafer
+metaitem.recycled_sapphire_wafer.name=Recycled Sapphire Wafer
+metaitem.sintered_sapphire_wafer.name=Sintered Sapphire Wafer
+metaitem.wired_sapphire_wafer.name=Wired Sapphire Wafer
+metaitem.sapphire_wafer.name=Sapphire Wafer
 metaitem.raw_crystal_chip.name=Raw Crystal Chip
-metaitem.sapphirechip.name=Sealed Crystal Computation Unit
+metaitem.sapphire_chip.name=Sealed Crystal Computation Unit
 metaitem.processed_crystal_wafer.name=Processed Crystal Wafer
 metaitem.crsytal_wafer_prep.name=Crystal Wafer (Prepared)
 metaitem.ruth_coated_crystal_wafer.name=Rutherfordium Wrapped Crystal Wafer
@@ -95,8 +95,10 @@ metaitem.crystal_sfet_bundle.name=Crystal SFET Bundle
 metaitem.crystal_sfet_wafer.name=Crystal SFET Wafer
 metaitem.clean_crystal_sfet_wafer.name=Clean Crystal SFET Wafer
 metaitem.refracting_sheet.name=Refracting Sheet
+metaitem.reflecting_sheet.name=Reflecting Sheet
 metaitem.laminated_crystal_pcb_sheet.name=Laminated Crystal PCB Sheet
 metaitem.gamma_emitting_diode.name=GED (Gamma Emitting Diode)
+
 
 //SMD Items
 metaitem.ferrousinductorcore.name=Ferrous Inductor Core
@@ -281,3 +283,20 @@ metaitem.component.smd_inductor_4.name=Extreme SMD Inductor
 metaitem.component.smd_inductor_4.tooltip=Insane Oscillation
 metaitem.component.smd_inductor_5.name=Ultimate SMD Inductor
 metaitem.component.smd_inductor_5.tooltip=Spatial Distortion
+
+metaitem.uvemitter_a.name=Mercury Vapor Fluorescent Tube
+metaitem.uvemitter_a.tooltip=Ultraviolet Emitter 1
+metaitem.uvemitter_b.name=Hydrogen Arc Lamp
+metaitem.uvemitter_b.tooltip=Ultraviolet Emitter 2
+metaitem.uvemitter_c.name=Deuterium Arc Lamp
+metaitem.uvemitter_c.tooltip=Ultraviolet Emitter 3
+metaitem.uvemitter_d.name=Neon-Fluorine Excimer Lamp
+metaitem.uvemitter_d.tooltip=Ultraviolet Emitter 4
+metaitem.uvemitter_e.name=Argon-Fluorine Ultraviolet Laser
+metaitem.uvemitter_e.tooltip=Ultraviolet Emitter 5
+
+metaitem.ballast.name=Fluorescent Tube Ballast
+metaitem.empty_geissler_tube.name=Empty Geissler Tube
+metaitem.empty_arc_lamp.name=Empty Arc Lamp
+metaitem.empty_excimer_lamp.name=Empty Excimer Lamp
+metaitem.laser_tube.name=Empty Laser Tube

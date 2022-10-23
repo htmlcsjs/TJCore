@@ -146,6 +146,14 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem IMC_HARD_MASK;
     public static MetaItem<?>.MetaValueItem OPTICAL_HARD_MASK;
 
+    public static MetaItem<?>.MetaValueItem BALLAST;
+    public static MetaItem<?>.MetaValueItem EMPTY_GEISSLER_TUBE;
+
+    public static MetaItem<?>.MetaValueItem EMPTY_ARC_LAMP;
+    public static MetaItem<?>.MetaValueItem EMPTY_EXCIMER_LAMP;
+
+    public static MetaItem<?>.MetaValueItem LASER_TUBE;
+
     //Circuit Boards
     public static MetaItem<?>.MetaValueItem PRIMITIVE_PREBOARD;
     public static MetaItem<?>.MetaValueItem ELECTRONIC_PREBOARD;
@@ -291,6 +299,7 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem CRYSTAL_SFET_BUNDLE;
     public static MetaItem<?>.MetaValueItem CRYSTAL_SFET_WAFER;
     public static MetaItem<?>.MetaValueItem REFRACTING_SHEET;
+    public static MetaItem<?>.MetaValueItem REFLECTING_SHEET;
     public static MetaItem<?>.MetaValueItem LAMINATED_CRYSTAL_PCB_SHEET;
     public static MetaItem<?>.MetaValueItem GAMMA_EMITTING_DIODE;
 
@@ -325,4 +334,5 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem EXOTIC_CPU;
     public static MetaItem<?>.MetaValueItem COSMIC_CPU;
     public static MetaItem<?>.MetaValueItem SUPRA_CPU;
+
 }

@@ -14,6 +14,7 @@ import gregtech.api.unification.material.properties.*;
 import gregtech.loaders.recipe.handlers.WireCombiningHandler;
 import net.minecraftforge.fluids.Fluid;
 import org.apache.http.impl.conn.Wire;
+import org.codehaus.plexus.util.Os;
 import scala.sys.Prop;
 
 import java.util.ArrayList;
@@ -502,6 +503,25 @@ public class TJFirstDegreeMaterials {
                 .fluid()
                 .color(0x5500ff)
                 .build();
+
+        NeonFluoride = new Material.Builder(25073, "neon_fluoride")
+                .fluid()
+                .colorAverage()
+                .components(Neon, 1, Fluorine, 1)
+                .build();
+
+        ExcitedNeonFluoride = new Material.Builder(25074, "excited_neon_fluoride")
+                .fluid()
+                .colorAverage()
+                .color(NeonFluoride.getMaterialRGB())
+                .components(NeonFluoride, 1)
+                .build();
+
+        ArgonFluorine = new Material.Builder(25075, "argon_fluorine")
+                .fluid()
+                .color(0x00ff88)
+                .components(Argon, 1, Fluorine, 1)
+                .build();
     }
 
     public static void registerProperties() {
@@ -553,6 +573,11 @@ public class TJFirstDegreeMaterials {
         ZBLANGlass.addFlags(MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_BOLT_SCREW);
         ErbiumDopedZBLANGlass.addFlags(MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_FINE_WIRE);
         PraseodymiumDopedZBLANGlass.addFlags(MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_FINE_WIRE);
+        Cobalt.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
+        Carbon.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
+        Osmium.addFlags(MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_SPRING, MaterialFlags.GENERATE_SPRING_SMALL);
+        NeodymiumMagnetic.addFlags(MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_RING);
+        Rutherfordium.addFlags(MaterialFlags.GENERATE_FOIL);
 
         //Properties
         PlasmaProperty HQDPlasmaProp = new PlasmaProperty();
@@ -588,6 +613,9 @@ public class TJFirstDegreeMaterials {
         Technetium.setProperty(PropertyKey.DUST, new DustProperty());
         Actinium.setProperty(PropertyKey.DUST, new DustProperty());
         Astatine.setProperty(PropertyKey.DUST, new DustProperty());
+        Carbon.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Rutherfordium.setProperty(PropertyKey.DUST, new DustProperty());
+        Rutherfordium.setProperty(PropertyKey.INGOT, new IngotProperty());
 
 
         // becuase of techs foolishness and thinking graphenes are a foile

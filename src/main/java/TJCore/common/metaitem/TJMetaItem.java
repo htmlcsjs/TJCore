@@ -291,9 +291,7 @@ public class    TJMetaItem extends StandardMetaItem {
         REFRACTING_SHEET = addItem(598,"refracting_sheet");
         LAMINATED_CRYSTAL_PCB_SHEET = addItem(599,"laminated_crystal_pcb_sheet");
         GAMMA_EMITTING_DIODE = addItem(600,"gamma_emitting_diode");
-
-        // Wetware CPU Items
-
+        REFLECTING_SHEET = addItem(602, "reflecting_sheet");
 
 
 
@@ -305,6 +303,11 @@ public class    TJMetaItem extends StandardMetaItem {
         COSMIC_CPU = addItem(624, "cosmic_cpu");
         SUPRA_CPU = addItem(625, "supra_cpu");
         STENCILING_CUTHEAD = addItem(626, "stencil_cutting_head");
+        BALLAST = addItem(627,"ballast");
+        EMPTY_GEISSLER_TUBE = addItem(628, "empty_geissler_tube");
+        EMPTY_ARC_LAMP = addItem(629, "empty_arc_lamp");
+        EMPTY_EXCIMER_LAMP = addItem(630, "empty_excimer_lamp");
+        LASER_TUBE = addItem(631, "laser_tube");
 
         // Misc. SMD ITEMS
         FERROUS_INDUCTOR_CORE = addItem(1001, "ferrous_inductor_core");
@@ -318,6 +321,7 @@ public class    TJMetaItem extends StandardMetaItem {
         CNT_LONG = addItem(1009, "long_carbon_nanotube_strand");
         LAYERED_POLYMER_FOIL = addItem(1010, "layered_polyer_foil");
         STERILE_POLYMER_FOIL = addItem(1011, "sterile_polymer_foil");
+
 
     }
 }

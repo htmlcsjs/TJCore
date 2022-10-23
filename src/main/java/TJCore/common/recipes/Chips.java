@@ -426,13 +426,14 @@ public class Chips {
                 .input(RECYCLED_SAPPHIRE_WAFER)
                 .fluidInputs(Dysprosium.getFluid(288))
                 .output(CLEANED_COATED_SAPPHIRE_WAFER)
-                .output(ingot ,Dysprosium,2);
+                .output(ingot ,Dysprosium,2)
+                .buildAndRegister();
 
         LAMINATOR_RECIPES.recipeBuilder()
                 .EUt(VA[ZPM])
                 .duration(140)
                 .input(VIABLE_SAPPHIRE_WAFER)
-                .input(foil,Rutherfordium)
+                .input(foil, Rutherfordium)
                 .fluidInputs()
                 .output(SINTERED_SAPPHIRE_WAFER)
                 .buildAndRegister();
