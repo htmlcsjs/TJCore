@@ -44,9 +44,17 @@ import static gregicality.multiblocks.api.recipes.GCYMRecipeMaps.*;
 public class CircuitRecipes {
 
     public static void removePreexistingCircuits() {
+
         oreDictHandling();
+
         GTRecipeHandler.removeAllRecipes(CIRCUIT_ASSEMBLER_RECIPES);
         GTRecipeHandler.removeAllRecipes(ASSEMBLY_LINE_RECIPES);
+
+        GTRecipeHandler.removeRecipesByInputs(AUTOCLAVE_RECIPES, new ItemStack[] {OreDictUnifier.get(dust, Carbon,4)}, new FluidStack[] {Polyethylene.getFluid(36)});
+        GTRecipeHandler.removeRecipesByInputs(AUTOCLAVE_RECIPES, new ItemStack[] {OreDictUnifier.get(dust, Carbon,4)}, new FluidStack[] {Polytetrafluoroethylene.getFluid(18)});
+        GTRecipeHandler.removeRecipesByInputs(AUTOCLAVE_RECIPES, new ItemStack[] {OreDictUnifier.get(dust, Carbon,4)}, new FluidStack[] {Epoxy.getFluid(9)});
+        GTRecipeHandler.removeRecipesByInputs(AUTOCLAVE_RECIPES, new ItemStack[] {OreDictUnifier.get(dust, Carbon,8)}, new FluidStack[] {Polybenzimidazole.getFluid(9)});
+
         GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{
                 FLUID_CELL_LARGE_STAINLESS_STEEL.getStackForm(),
                 OreDictUnifier.get(plate, Naquadah,4),
@@ -59,7 +67,6 @@ public class CircuitRecipes {
         GTRecipeHandler.removeRecipesByInputs(CHEMICAL_BATH_RECIPES, new ItemStack[]{CARBON_FIBERS.getStackForm(1)}, new FluidStack[]{Epoxy.getFluid(144)});
         GTRecipeHandler.removeRecipesByInputs(CHEMICAL_BATH_RECIPES, new ItemStack[]{OreDictUnifier.get(wireFine, BorosilicateGlass)}, new FluidStack[]{Epoxy.getFluid(144)});
     }
-
     public static void oreDictHandling() {
         List<String> toRemove = new ArrayList<>();
         toRemove.add("circuitUlv");
@@ -109,11 +116,9 @@ public class CircuitRecipes {
         registerRecipes();
         registerSolder();
     }
-
     private static void registerSolder() {
 
     }
-
     public static void registerBoards() {
         primitiveBoard();
         electronicBoard();
@@ -239,6 +244,7 @@ public class CircuitRecipes {
                 .duration(50)
                 .input(foil,Epoxy,4)
                 .input(foil,AnnealedCopper,2)
+                .fluidInputs(Epoxy.getFluid(16))
                 .output(COPPER_LAMINATED_EPOXID)
                 .buildAndRegister();
 
