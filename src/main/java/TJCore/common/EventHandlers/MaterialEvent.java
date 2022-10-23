@@ -16,8 +16,6 @@ public class MaterialEvent {
     public static void onMaterialsInit(GregTechAPI.MaterialEvent event) {
         TJFirstDegreeMaterials.registerMaterials();
         TJFirstDegreeMaterials.registerProperties();
-
-
     }
 
 

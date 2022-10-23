@@ -44,7 +44,7 @@ public class SMD {
                 .EUt(VA[IV])
                 .input(foil, Ladder_Poly_P_Phenylene, 2)
                 .input(plate, Ruthenium)
-                .input(wireFine, ZBLAN)
+                .input(wireFine, ZBLANGlass)
                 .fluidInputs(SeleniumMonobromide.getFluid(288))
                 .output(SMD_TRANSISTOR_2, 32)
                 .buildAndRegister();
@@ -150,7 +150,7 @@ public class SMD {
                 .EUt(VA[LuV])
                 .input(foil, Ladder_Poly_P_Phenylene, 2)
                 .input(dust, LuminescentSiliconNanocrystals, 2)
-                .input(bolt, ZBLAN)
+                .input(wireFine, ZBLANGlass)
                 .fluidInputs(SeleniumMonobromide.getFluid(144))
                 .output(SMD_CAPACITOR_2, 32)
                 .buildAndRegister();

@@ -18,6 +18,7 @@ import gregtech.api.unification.material.properties.OreProperty;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.items.MetaItems;
+import gregtech.loaders.recipe.chemistry.PolymerRecipes;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.advancements.critereon.OredictItemPredicate;
 import net.minecraftforge.fluids.FluidStack;
@@ -239,12 +240,13 @@ public class CircuitRecipes {
     }
     private static void microBoard() {
         //Simple Etched PCB
+
         LAMINATOR_RECIPES.recipeBuilder()
                 .EUt(500)
                 .duration(50)
                 .input(foil,Epoxy,4)
                 .input(foil,AnnealedCopper,2)
-                .fluidInputs(Epoxy.getFluid(16))
+                .fluidInputs(Polyethylene.getFluid(144))
                 .output(COPPER_LAMINATED_EPOXID)
                 .buildAndRegister();
 
@@ -272,6 +274,7 @@ public class CircuitRecipes {
                 .input(foil, Epoxy, 4)
                 .input(foil, Electrum)
                 .input(foil, Fiberglass)
+                .fluidInputs(Polyethylene.getFluid(144))
                 .output(ELECTRUM_LAMINATED_EPOXID,2)
                 .buildAndRegister();
 
@@ -279,8 +282,8 @@ public class CircuitRecipes {
                 .EUt(500)
                 .duration(35)
                 .input(ELECTRUM_LAMINATED_EPOXID)
-                .input(foil,Epoxy)
-                .output(MICRO_PREBOARD)
+                .input(foil,Polyethylene)
+                .output(NANO_PREBOARD)
                 .buildAndRegister();
 
         CHEMICAL_BATH_RECIPES.recipeBuilder()
@@ -288,7 +291,7 @@ public class CircuitRecipes {
                 .duration(20)
                 .input(MICRO_PREBOARD)
                 .fluidInputs(NitricAcid.getFluid(50))
-                .output(MICRO_BOARD)
+                .output(NANO_BOARD)
                 .buildAndRegister();
     }
     private static void imcBoard(){
@@ -311,9 +314,10 @@ public class CircuitRecipes {
         LAMINATOR_RECIPES.recipeBuilder()
                 .EUt(VA[IV])
                 .duration(20)
-                .input(foil,ReinforcedEpoxyResin,2)
+                .input(plate, ReinforcedEpoxyResin)
                 .input(foil,Germanium)
                 .input(foil,Fiberglass)
+                .fluidInputs(Polyethylene.getFluid(144))
                 .output(GERMANIUM_LAMINATED_EPOXID,2)
                 .buildAndRegister();
 
@@ -321,7 +325,7 @@ public class CircuitRecipes {
                 .EUt(VA[EV])
                 .duration(15)
                 .input(GERMANIUM_LAMINATED_EPOXID)
-                .input(foil,Epoxy)
+                .input(foil,Polyethylene)
                 .output(IMC_PREBOARD)
                 .buildAndRegister();
 
@@ -339,7 +343,7 @@ public class CircuitRecipes {
         ASSEMBLER_RECIPES.recipeBuilder()
                 .EUt(VA[IV])
                 .duration(20)
-                .input(wireFine,ZBLAN)
+                .input(wireFine, ZBLANGlass)
                 .fluidInputs(Europium.getFluid(25))
                 .output(ZBLANMATRIX)
                 .buildAndRegister();
@@ -357,7 +361,7 @@ public class CircuitRecipes {
                 .duration(40)
                 .input(OPTICAL_BASE)
                 .input(dustSmall,IndiumPhosphide)
-                .input(foil,ZBLAN)
+                .input(foil,ErbiumDopedZBLANGlass)
                 .output(LAMINATED_OPTICAL_BASE)
                 .buildAndRegister();
 
@@ -373,7 +377,7 @@ public class CircuitRecipes {
         ASSEMBLER_RECIPES.recipeBuilder()
                 .EUt(VA[EV])
                 .duration(20)
-                .input(wireFine,ZBLAN)
+                .input(wireFine,ZBLANGlass, 4)
                 .input(OPTICAL_PREBOARD)
                 .fluidInputs(Ladder_Poly_P_Phenylene.getFluid(50))
                 .output(TJMetaItems.OPTICAL_BOARD)
@@ -408,7 +412,7 @@ public class CircuitRecipes {
                 .duration(55)
                 .EUt(VA[EV])
                 .input(foil,Germanium, 2)
-                .input(foil,ZBLAN)
+                .input(foil,PraseodymiumDopedZBLANGlass)
                 .output(REFRACTING_SHEET)
                 .buildAndRegister();
 
@@ -514,7 +518,7 @@ public class CircuitRecipes {
                 .duration(50)
                 .EUt(VA[LV])
                 .input(ELECTRONIC_ASSEMBLY_LV, 2)
-                .input(plate, Aluminium)
+                .input(plate, Aluminium, 2)
                 .input(INDUCTOR, 2)
                 .input(CAPACITOR, 2)
                 .input(wireFine, Copper, 2)
@@ -562,7 +566,7 @@ public class CircuitRecipes {
                 .EUt(VA[MV])
                 .cleanroom(CLEANROOM)
                 .input(INTEGRATED_ASSEMBLY_MV,2)
-                .input(plate, StainlessSteel)
+                .input(plate, StainlessSteel, 2)
                 .input(SMD_INDUCTOR_1, 2)
                 .input(SMD_CAPACITOR_1, 2)
                 .input(wireFine, Electrum, 2)
@@ -611,7 +615,7 @@ public class CircuitRecipes {
                 .EUt(VA[HV])
                 .cleanroom(CLEANROOM)
                 .input(MICRO_ASSEMBLY_HV,2 )
-                .input(plate, Titanium)
+                .input(plate, Titanium, 2)
                 .input(SMD_INDUCTOR_1, 2)
                 .input(SMD_CAPACITOR_1, 2)
                 .input(wireFine, Aluminium, 2)
@@ -660,7 +664,7 @@ public class CircuitRecipes {
                 .EUt(VA[EV])
                 .cleanroom(CLEANROOM)
                 .input(NANO_ASSEMBLY_EV, 2)
-                .input(plate, TungstenSteel)
+                .input(plate, TungstenSteel, 2)
                 .input(SMD_INDUCTOR_1, 2)
                 .input(SMD_CAPACITOR_1, 2)
                 .input(wireFine, Platinum, 2)
@@ -709,7 +713,7 @@ public class CircuitRecipes {
                 .EUt(VA[IV])
                 .cleanroom(CLEANROOM)
                 .input(IMC_ASSEMBLY_IV, 2)
-                .input(plate, RhodiumPlatedPalladium)
+                .input(plate, RhodiumPlatedPalladium, 2)
                 .input(SMD_INDUCTOR_1, 2)
                 .input(SMD_CAPACITOR_1, 2)
                 .input(wireFine, NiobiumTitanium, 2)
@@ -758,7 +762,7 @@ public class CircuitRecipes {
                 .EUt(VA[LuV])
                 .cleanroom(CLEANROOM)
                 .input(OPTICAL_ASSEMBLY_LUV, 2)
-                .input(plate, ZBLAN)
+                .input(plate, HSSE ,2)
                 .input(SMD_INDUCTOR_2, 2)
                 .input(SMD_CAPACITOR_2, 2)
                 .input(wireFine, VanadiumGallium, 2)
@@ -770,7 +774,7 @@ public class CircuitRecipes {
                 .EUt(VA[LuV])
                 .cleanroom(CLEANROOM)
                 .input(OPTICAL_COMPUTER_ZPM, 2)
-                .input(frameGt, ZBLAN)
+                .input(frameGt, HSSE)
                 .input(SMD_TRANSISTOR_2, 2)
                 .input(SMD_DIODE_2, 2)
                 .input(cableGtSingle, VanadiumGallium,2)
@@ -807,7 +811,7 @@ public class CircuitRecipes {
                 .EUt(VA[ZPM])
                 .cleanroom(CLEANROOM)
                 .input(CRYSTAL_ASSEMBLY_ZPM, 2)
-                .input(plate, Europium)
+                .input(plate, Europium, 2)
                 .input(SMD_CAPACITOR_2, 2)
                 .input(SMD_INDUCTOR_2, 2)
                 .input(wireFine, Naquadah,2)
@@ -856,7 +860,7 @@ public class CircuitRecipes {
                 .EUt(VA[UV])
                 .cleanroom(STERILE_CLEANROOM)
                 .input(WETWARE_ASSEMBLY_UV, 2)
-                .input(plate, Duranium)
+                .input(plate, Duranium, 2)
                 .input(SMD_CAPACITOR_3, 2)
                 .input(SMD_INDUCTOR_3, 2)
                 .input(wireFine, YttriumBariumCuprate, 2)
@@ -905,7 +909,7 @@ public class CircuitRecipes {
                 .EUt(VA[UHV])
                 .cleanroom(STERILE_CLEANROOM)
                 .input(BIOWARE_ASSEMBLY_UHV, 2)
-                .input(plate, PedotPSS)
+                .input(plate, PedotPSS, 2)
                 .input(SMD_CAPACITOR_3, 2)
                 .input(SMD_INDUCTOR_3, 2)
                 .input(wireFine, PedotTMA, 2)
@@ -917,7 +921,7 @@ public class CircuitRecipes {
                 .EUt(VA[UHV])
                 .cleanroom(STERILE_CLEANROOM)
                 .input(BIOWARE_COMPUTER_UEV, 2)
-                .input(frameGt, PedotPSS)
+                .input(frameGt, PedotPSS, 2)
                 .input(SMD_DIODE_3, 2)
                 .input(SMD_TRANSISTOR_3, 2)
                 .input(cableGtSingle, PedotTMA,2)
@@ -951,7 +955,7 @@ public class CircuitRecipes {
                 .duration(50)
                 .EUt(VA[UEV])
                 .input(QUANTUM_ASSEMBLY_UEV, 2)
-                .input(plate, CarbonNanotubePolymer)
+                .input(plate, CarbonNanotubePolymer, 2)
                 .input(SMD_CAPACITOR_4, 2)
                 .input(SMD_INDUCTOR_4, 2)
                 .input(wireFine, CarbonNanotube, 2)
@@ -1003,7 +1007,7 @@ public class CircuitRecipes {
                 .duration(50)
                 .EUt(VA[UIV])
                 .input(EXOTIC_ASSEMBLY_UIV, 2)
-                .input(plate, Vibranium)
+                .input(plate, Vibranium, 2)
                 .input(SMD_CAPACITOR_4, 2)
                 .input(SMD_INDUCTOR_4, 2)
                 .input(wireFine, NihoniumTriiodide, 2)
@@ -1055,7 +1059,7 @@ public class CircuitRecipes {
                 .duration(50)
                 .EUt(VA[UXV])
                 .input(COSMIC_ASSEMBLY_UXV, 2)
-                .input(plate, SuperheavyL)
+                .input(plate, SuperheavyL, 2)
                 .input(SMD_CAPACITOR_5, 2)
                 .input(SMD_INDUCTOR_5, 2)
                 .input(wireFine, SuperheavyH, 2)
@@ -1108,7 +1112,7 @@ public class CircuitRecipes {
                 .duration(50)
                 .EUt(VA[UXV])
                 .input(SUPRA_ASSEMBLY_OPV, 2)
-                .input(plate, Neutronium)
+                .input(plate, Neutronium, 2)
                 .input(SMD_CAPACITOR_5, 2)
                 .input(SMD_INDUCTOR_5, 2)
                 .input(wireFine, Neutronium, 2)

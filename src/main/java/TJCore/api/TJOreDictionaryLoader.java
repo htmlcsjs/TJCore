@@ -23,6 +23,7 @@ import static gregtech.api.unification.ore.OrePrefix.Flags.ENABLE_UNIFICATION;
 public class TJOreDictionaryLoader {
 
     public static final OrePrefix nanoWire = new OrePrefix("nanowire", (long)GTValues.M / 144, null, TJMaterialIconTypes.nanoWireIcon, ENABLE_UNIFICATION, null);
+    public static final OrePrefix nanoFoil = new OrePrefix("nanofoil", (long)GTValues.M / 144, null, TJMaterialIconTypes.nanoFoilIcon, ENABLE_UNIFICATION, null);
 
     public static void init() {
         registerOrePrefixes();
@@ -42,10 +43,16 @@ public class TJOreDictionaryLoader {
             .requireProps(PropertyKey.FLUID)
             .build();
 
+    public static final MaterialFlag GENERATE_NANOFOIL = new MaterialFlag.Builder("generate_nanofoil")
+            .requireProps(PropertyKey.FLUID)
+            .build();
+
 
     public static void registerOrePrefixes() {
         nanoWire.setGenerationCondition(material -> ((material.isElement() && material.isSolid() && material.hasFluid())) || material.hasFlag(  GENERATE_NANOWIRE));
         createMaterialItem(nanoWire);
+        nanoFoil.setGenerationCondition(material -> ((material.isElement() && material.isSolid() && material.hasFluid())) || material.hasFlag(  GENERATE_NANOFOIL));
+        createMaterialItem(nanoFoil);
     }
 
     public static void createMaterialItem(OrePrefix orePrefix) {

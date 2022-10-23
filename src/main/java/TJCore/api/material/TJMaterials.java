@@ -100,7 +100,6 @@ public class TJMaterials {
     public static Material SodiumPotassiumNiobate;
     public static Material BismuthTelluride;
     public static Material SilicaCeramic;
-    public static Material ZBLAN;
     public static Material Fiberglass;
     public static Material SynthDiamond;
     public static Material LeadZirconateTitanate;

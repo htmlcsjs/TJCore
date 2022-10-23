@@ -19,6 +19,25 @@ import static gregtech.api.unification.material.Materials.*;
 public class MaterialProcessing {
     public static void registerMaterialProcessing(){
         nanoWire.addProcessingHandler(PropertyKey.INGOT, MaterialProcessing::registerNanoWires);
+        nanoFoil.addProcessingHandler(PropertyKey.INGOT, MaterialProcessing::registerNanoFoils);
+    }
+
+    public static void registerNanoFoils(OrePrefix prefix, @NotNull Material mat, IngotProperty prop) {
+        NANOSCALE_GROWTH_RECIPES.recipeBuilder()
+                .EUt(VA[ZPM])
+                .duration(120)
+                .circuitMeta(1)
+                .fluidInputs(mat.getFluid(16))
+                .output(prefix, mat, 16)
+                .buildAndRegister();
+
+        RecipeMaps.EXTRACTOR_RECIPES.recipeBuilder()
+                .EUt(VA[LV])
+                .duration(5)
+                .input(prefix, mat)
+                .fluidOutputs(mat.getFluid(1))
+                .buildAndRegister();
+
     }
     public static void registerNanoWires(OrePrefix prefix, @NotNull Material mat, IngotProperty prop) {
              NANOSCALE_GROWTH_RECIPES.recipeBuilder()
