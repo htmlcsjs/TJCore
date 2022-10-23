@@ -304,6 +304,7 @@ public class    TJMetaItem extends StandardMetaItem {
         EXOTIC_CPU = addItem(623, "exotic_cpu");
         COSMIC_CPU = addItem(624, "cosmic_cpu");
         SUPRA_CPU = addItem(625, "supra_cpu");
+        STENCILING_CUTHEAD = addItem(626, "stencil_cutting_head");
 
         // Misc. SMD ITEMS
         FERROUS_INDUCTOR_CORE = addItem(1001, "ferrous_inductor_core");

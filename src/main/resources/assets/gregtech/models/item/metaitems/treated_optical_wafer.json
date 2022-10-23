@@ -2,6 +2,10 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "tjcore:items/metaitems/treated_optical_wafer"
+    "layer0": "tjcore:items/metaitems/silver_gallium_selenide_wafer",
+    "layer1": "tjcore:items/metaitems/default_layered",
+    "layer2": "tjcore:items/metaitems/default_prepared",
+    "layer3": "tjcore:items/metaitems/optical_hard_mask",
+    "layer4": "tjcore:items/metaitems/default_treated"
   }
 }

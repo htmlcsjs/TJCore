@@ -2,6 +2,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "tjcore:items/metaitems/layered_antimony_doped_silicon_wafer"
+    "layer0": "tjcore:items/metaitems/antimony_doped_silicon_wafer",
+    "layer1": "tjcore:items/metaitems/default_layered"
   }
 }

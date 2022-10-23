@@ -254,6 +254,8 @@ public class TJMetaItems {
     //
     public static ToolMetaItem<?>.MetaToolValueItem LITHOGRAPHY_MASK;
 
+    public static MetaItem<?>.MetaValueItem STENCILING_CUTHEAD;
+
     //Biochem Processes
 
     //Micro-Nano PCB ITEMS

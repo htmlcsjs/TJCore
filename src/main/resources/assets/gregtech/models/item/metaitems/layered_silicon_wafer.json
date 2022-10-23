@@ -2,6 +2,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "tjcore:items/metaitems/layered_silicon_wafer"
+    "layer0": "tjcore:items/metaitems/silicon_wafer",
+    "layer1": "tjcore:items/metaitems/default_layered"
   }
 }

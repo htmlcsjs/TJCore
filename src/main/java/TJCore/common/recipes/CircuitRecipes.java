@@ -214,9 +214,19 @@ public class CircuitRecipes {
                     .duration(20)
                     .buildAndRegister();
         }
+
+        ModHandler.addShapedRecipe("stencil_cutting_head", STENCILING_CUTHEAD.getStackForm(),
+                "RP ", "RG ", "SL ",
+                'R', OreDictUnifier.get(stick, Steel),
+                'P', OreDictUnifier.get(plate, Steel),
+                'G', OreDictUnifier.get(gear, Steel),
+                'L', OreDictUnifier.get(springSmall, Steel),
+                'S', OreDictUnifier.get(screw, Steel));
+
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(INTEGRATED_PREBOARD)
-                .input(foil, Copper)
+                .input(foil, Polyethylene)
+                .notConsumable(STENCILING_CUTHEAD)
                 .output(INTEGRATED_BOARD)
                 .EUt(120)
                 .duration(40)

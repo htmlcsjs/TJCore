@@ -2,6 +2,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "tjcore:items/metaitems/layered_silver_gallium_selenide_wafer"
+    "layer0": "tjcore:items/metaitems/silver_gallium_selenide_wafer",
+    "layer1": "tjcore:items/metaitems/default_layered"
   }
 }

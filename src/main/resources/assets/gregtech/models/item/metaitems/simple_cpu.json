@@ -2,6 +2,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "tjcore:items/metaitems/simple_cpu"
+    "layer0": "gregtech:items/metaitems/plate.central_processing_unit"
   }
 }

@@ -30,7 +30,6 @@ tjcore.machine.armor_infuser.name=Armor Infuser
 tjcore.machine.steam_assembler.name=Steam Component Assembler
 tjcore.machine.tree_farmer.name=Tree Farmer
 tjcore.machine.surfacerockdrill.name=SurfaceRockDrill
-
 tjcore.machine.armor_infuser.description=The armor infuser is an advanced machine capable of upgrading Draconic Evolution tools and armor.
 
 // Recipe Maps
@@ -38,6 +37,7 @@ recipemap.component_assembler.name=Component Assembler
 recipemap.steam_assembler.name=Steam Component Assembler
 recipemap.tree_farmer.name=Tree Farmer
 recipemap.armor_infuser.name=Armor Infusion
+recipemap.laminator.name=Laminator
 
 tile.draconic_casing.draconic_casing_normal.name=Draconic Casing
 
@@ -99,8 +99,8 @@ metaitem.laminated_crystal_pcb_sheet.name=Laminated Crystal PCB Sheet
 metaitem.gamma_emitting_diode.name=GED (Gamma Emitting Diode)
 
 //SMD Items
-metaitem.ferrousinductorcore.name=
-metaitem.tungsteninductorcore.name=
+metaitem.ferrousinductorcore.name=Ferrous Inductor Core
+metaitem.tungsteninductorcore.name=Tungsten Inductor Core
 
 
 
