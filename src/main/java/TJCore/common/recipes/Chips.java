@@ -105,7 +105,7 @@ public class Chips {
             LAMINATOR_RECIPES.recipeBuilder()
                     .input(rawWafer[i])
                     .input(foil, conductor[i])
-                    .fluidInputs(polymer[i].getFluid(16))
+                    .fluidInputs(Polyethylene.getFluid(16))
                     .output(layered[i])
                     .EUt(VA[LV])
                     .duration(400)
@@ -113,7 +113,7 @@ public class Chips {
 
             LAMINATOR_RECIPES.recipeBuilder()
                     .input(layered[i])
-                    .input(foil, polymer[i], 2)
+                    .input(foil, polymer[i], 4)
                     .output(prepared[i])
                     .EUt(VA[LV])
                     .duration(200)
@@ -137,6 +137,7 @@ public class Chips {
             CHEMICAL_BATH_RECIPES.recipeBuilder()
                     .input(prebaked[i])
                     .fluidInputs(photopolymers[i].getFluid(25 * (i + 1)))
+                    .output(dust, polymer[i])
                     .output(treated[i])
                     .EUt(tierPower)
                     .duration(VA[LV])
@@ -147,7 +148,7 @@ public class Chips {
                     .notConsumable(uvEmitter[i])
                     .output(raw[i])
                     .EUt(tierPower)
-                    .duration(300)
+                    .duration(100)
                     .buildAndRegister();
 
             FURNACE_RECIPES.recipeBuilder()
