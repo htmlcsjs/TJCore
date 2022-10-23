@@ -17,6 +17,7 @@ import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.OreProperty;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.UnificationEntry;
+import gregtech.common.items.MetaItem1;
 import gregtech.common.items.MetaItems;
 import gregtech.loaders.recipe.chemistry.PolymerRecipes;
 import net.minecraft.item.ItemStack;
@@ -98,6 +99,8 @@ public class CircuitRecipes {
                 }
             }
         }
+
+        VACUUM_TUBE.setInvisible(true);
         SMD_CAPACITOR.setInvisible();
         SMD_DIODE.setInvisible();
         SMD_INDUCTOR.setInvisible();
@@ -344,7 +347,7 @@ public class CircuitRecipes {
                 .EUt(VA[IV])
                 .duration(20)
                 .input(wireFine, ZBLANGlass)
-                .fluidInputs(Europium.getFluid(25))
+                .fluidInputs(Europium.getFluid(16))
                 .output(ZBLANMATRIX)
                 .buildAndRegister();
 

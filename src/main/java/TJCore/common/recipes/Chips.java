@@ -1,9 +1,12 @@
 package TJCore.common.recipes;
 
+import TJCore.common.metaitem.TJMetaItem;
+import TJCore.common.metaitem.TJMetaItems;
 import gregicality.science.api.recipes.GCYSRecipeMaps;
 import gregicality.science.loaders.recipe.chain.KaptonChain;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.Materials;
 
 import static TJCore.api.TJOreDictionaryLoader.*;
 import static TJCore.api.material.TJMaterials.*;
@@ -16,14 +19,15 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.api.unification.ore.OrePrefix.ingot;
+import static gregtech.common.items.MetaItems.*;
 
 
 public class Chips {
 
     // Lithography Arrays
 
-    static MetaItem<?>.MetaValueItem[] boule = {SILICON_BOULE, ANTIMONY_DOPED_SILICON_BOULE, BORON_DOPED_SILICON_BOULE, GALLIUM_ARSENIDE_BOULE, SILVER_GALLIUM_SELENIDE_BOULE};
-    static MetaItem<?>.MetaValueItem[] rawWafer = {SILICON_WAFER, ANTIMONY_DOPED_SILICON_WAFER, BORON_DOPED_SILICON_WAFER, GALLIUM_ARSENIDE_WAFER, SILVER_GALLIUM_SELENIDE_WAFER};
+    static MetaItem<?>.MetaValueItem[] boule = {TJMetaItems.SILICON_BOULE, ANTIMONY_DOPED_SILICON_BOULE, BORON_DOPED_SILICON_BOULE, GALLIUM_ARSENIDE_BOULE, SILVER_GALLIUM_SELENIDE_BOULE};
+    static MetaItem<?>.MetaValueItem[] rawWafer = {TJMetaItems.SILICON_WAFER, ANTIMONY_DOPED_SILICON_WAFER, BORON_DOPED_SILICON_WAFER, GALLIUM_ARSENIDE_WAFER, SILVER_GALLIUM_SELENIDE_WAFER};
     static MetaItem<?>.MetaValueItem[] layered = {LAYERED_SILICON_WAFER, LAYERED_ANTIMONY_DOPED_SILICON_WAFER, LAYERED_BORON_DOPED_SILICON_WAFER, LAYERED_GALLIUM_ARSENIDE_WAFER, LAYERED_SILVER_GALLIUM_SELENIDE_WAFER};
     static MetaItem<?>.MetaValueItem[] prepared = {PREPARED_SILICON_WAFER, PREPARED_ANTIMONY_DOPED_SILICON_WAFER, PREPARED_BORON_DOPED_SILICON_WAFER, PREPARED_GALLIUM_ARSENIDE_WAFER, PREPARED_SILVER_GALLIUM_SELENIDE_WAFER};
     static MetaItem<?>.MetaValueItem[] lithPrep = {INTEGRATED_WAFER_LITHOGRAPHY_PREP, MICRO_WAFER_LITHOGRAPHY_PREP, NANO_WAFER_LITHOGRAPHY_PREP, IMC_WAFER_LITHOGRAPHY_PREP, OPTICAL_WAFER_LITHOGRAPHY_PREP};
@@ -38,7 +42,6 @@ public class Chips {
     static MetaItem<?>.MetaValueItem[] hardMask = {INTEGRATED_HARD_MASK, MICRO_HARD_MASK, NANO_HARD_MASK, IMC_HARD_MASK, OPTICAL_HARD_MASK};
     static Material[] conductor = {Copper, NickelPlatedTin, Electrum, Platinum, ZBLANGlass};
     static MetaItem<?>.MetaValueItem[] uvEmitter = {UVEMITTER_A, UVEMITTER_B, UVEMITTER_C, UVEMITTER_D, UVEMITTER_E};
-
     static Material[] polymer = {Polyethylene, PolyvinylChloride, Polytetrafluoroethylene, PolyphenyleneSulfide, Ladder_Poly_P_Phenylene};
     static Material[] printMaterial = {Polyethylene, PolyvinylChloride, Polytetrafluoroethylene, PolyphenyleneSulfide, Polybenzimidazole};
     static Material[] photopolymers = {HydrogenSilsesquioxane, HydrogenSilsesquioxane, HydrogenSilsesquioxane, SU8_Photoresist, SU8_Photoresist};
@@ -59,7 +62,7 @@ public class Chips {
         LASER_ENGRAVER_RECIPES.recipeBuilder()
                 .duration(900)
                 .EUt(VA[LV])
-                .input(SILICON_WAFER)
+                .input(TJMetaItems.SILICON_WAFER)
                 .notConsumable(craftingLens, Glass)
                 .output(SIMPLE_CPU_WAFER)
                 .buildAndRegister();
@@ -74,9 +77,149 @@ public class Chips {
 
     private static void lithographyChips() {
 
-        //TODO: CARBON make this recipe not overlap with integrated circuits
+        //UV Emitter Recipes
+        //emitter 1 - Mercury Geissler Tube -> Mercury Vapor Halide Lamp
+        //emitter 2 - Empty Arc Lamp -> Hydrogen Arc Lamp
+        //emitter 3 - Empty Arc Lamp -> Deuterium Arc Lamp
+        //emitter 4 - Empty Excimer Lamp -> NeF* Excimer Lamp
+        //emitter 5 - Empty Laser Tube -> Argon-Fluorine UV Laser
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(45)
+                .EUt(VA[LV])
+                .input(RESISTOR)
+                .input(wireFine, Steel, 4)
+                .input(wireFine, AnnealedCopper, 4)
+                .output(BALLAST)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(130)
+                .EUt(VA[LV])
+                .input(GLASS_TUBE)
+                .input(wireFine, Cobalt)
+                .input(ring, Kovar)
+                .output(EMPTY_GEISSLER_TUBE)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(85)
+                .EUt(VA[LV])
+                .input(BALLAST)
+                .input(EMPTY_GEISSLER_TUBE)
+                .input(plate, SterlingSilver, 2)
+                .input(wireFine, AnnealedCopper, 2)
+                .fluidInputs(Mercury.getFluid(125))
+                .output(UVEMITTER_A)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(140)
+                .EUt(VA[MV])
+                .input(wireFine, Carbon)
+                .input(GLASS_TUBE)
+                .input(ring, StainlessSteel)
+                .fluidInputs(SolderingAlloy.getFluid(144))
+                .output(EMPTY_ARC_LAMP)
+                .buildAndRegister();
+
+        CANNER_RECIPES.recipeBuilder()
+                .duration(20)
+                .EUt(VA[MV])
+                .input(EMPTY_ARC_LAMP)
+                .fluidInputs(Hydrogen.getFluid(1000))
+                .output(UVEMITTER_B)
+                .buildAndRegister();
+
+        CANNER_RECIPES.recipeBuilder()
+                .duration(20)
+                .EUt(VA[HV])
+                .input(EMPTY_ARC_LAMP)
+                .fluidInputs(Deuterium.getFluid(1000))
+                .output(UVEMITTER_C)
+                .buildAndRegister();
+
+        CHEMICAL_RECIPES.recipeBuilder()
+                .duration(40)
+                .EUt(VA[EV])
+                .fluidInputs(Neon.getFluid(1000))
+                .fluidInputs(Fluorine.getFluid(1000))
+                .fluidOutputs(NeonFluoride.getFluid(1000))
+                .buildAndRegister();
+
+        CHEMICAL_RECIPES.recipeBuilder()
+                .duration(135)
+                .fluidInputs(NeonFluoride.getFluid(1000))
+                .notConsumable(plate, NeodymiumMagnetic)
+                .notConsumable(Hydrogen.getFluid(500))
+                .fluidOutputs(ExcitedNeonFluoride.getFluid(1000))
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(185)
+                .EUt(VA[EV])
+                .input(ELECTRIC_PUMP_EV)
+                .input(ring, SiliconeRubber)
+                .input(GLASS_TUBE)
+                .input(wireFine, Platinum, 4)
+                .input(wireFine, Polyethylene, 4)
+                .fluidInputs(ExcitedNeonFluoride.getFluid(1000))
+                .output(UVEMITTER_D)
+                .buildAndRegister();
+
+        LAMINATOR_RECIPES.recipeBuilder()
+                .duration(25)
+                .EUt(VA[EV])
+                .input(foil, ErbiumDopedZBLANGlass)
+                .input(foil, Germanium)
+                .input(plate, PolyphenyleneSulfide)
+                .fluidInputs(HydrogenSulfide.getFluid(100))
+                .output(REFLECTING_SHEET)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(65)
+                .EUt(VA[IV])
+                .input(wireFine, Osmium)
+                .input(springSmall, NiobiumTitanium)
+                .input(REFLECTING_SHEET)
+                .fluidInputs(BorosilicateGlass.getFluid(288))
+                .output(LASER_TUBE)
+                .buildAndRegister();
+
+        MIXER_RECIPES.recipeBuilder()
+                .duration(45)
+                .EUt(VA[LV])
+                .fluidInputs(Argon.getFluid(1000))
+                .fluidInputs(Fluorine.getFluid(1000))
+                .fluidOutputs(ArgonFluorine.getFluid(1000))
+                .buildAndRegister();
+
+        CANNER_RECIPES.recipeBuilder()
+                .duration(110)
+                .EUt(VA[EV])
+                .input(LASER_TUBE)
+                .fluidInputs(ArgonFluorine.getFluid(100))
+                .output(UVEMITTER_E)
+                .buildAndRegister();
 
         //HARDMASK recipe generation
+
+        EXTRUDER_RECIPES.recipeBuilder()
+                .EUt(24)
+                .duration(15)
+                .input(dust, Ladder_Poly_P_Phenylene)
+                .notConsumable(SHAPE_EXTRUDER_FOIL)
+                .output(foil, Ladder_Poly_P_Phenylene, 4)
+                .buildAndRegister();
+
+        EXTRUDER_RECIPES.recipeBuilder()
+                .EUt(24)
+                .duration(15)
+                .input(ingot, Ladder_Poly_P_Phenylene)
+                .notConsumable(SHAPE_EXTRUDER_FOIL)
+                .output(foil, Ladder_Poly_P_Phenylene, 4)
+                .buildAndRegister();
 
         for (int i = 0; i < hardMask.length; i++) {
             for (int j = 0; j < printMaterial.length; j++) {
@@ -94,6 +237,7 @@ public class Chips {
         //Wafer generation for each type
         for (int i = 0; i < boule.length; i++) {
             int tierPower = VA[i + 1];
+
 
             CUTTER_RECIPES.recipeBuilder()
                     .input(boule[i])
@@ -143,13 +287,26 @@ public class Chips {
                     .duration(VA[LV])
                     .buildAndRegister();
 
-            LASER_ENGRAVER_RECIPES.recipeBuilder()
-                    .input(treated[i])
-                    .notConsumable(uvEmitter[i])
-                    .output(raw[i])
-                    .EUt(tierPower)
-                    .duration(100)
-                    .buildAndRegister();
+            if (i < 2) {
+                CHEMICAL_BATH_RECIPES.recipeBuilder()
+                        .input(prebaked[i])
+                        .fluidInputs(SU8_Photoresist.getFluid(25 * (i + 1)))
+                        .output(dust, polymer[i])
+                        .output(treated[i])
+                        .EUt(tierPower)
+                        .duration(VA[LV])
+                        .buildAndRegister();
+            }
+
+            for (int j = i; j < uvEmitter.length; j++) {
+                LASER_ENGRAVER_RECIPES.recipeBuilder()
+                        .input(treated[i])
+                        .notConsumable(uvEmitter[j])
+                        .output(raw[i])
+                        .EUt(tierPower)
+                        .duration(100)
+                        .buildAndRegister();
+            }
 
             FURNACE_RECIPES.recipeBuilder()
                     .input(raw[i])
