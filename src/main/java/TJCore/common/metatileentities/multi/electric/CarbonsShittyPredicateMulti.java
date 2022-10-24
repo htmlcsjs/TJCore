@@ -66,7 +66,7 @@ public class CarbonsShittyPredicateMulti extends RecipeMapMultiblockController {
 
     @Override
     public boolean checkRecipe(@NotNull Recipe recipe, boolean consumeIfSuccess) {
-        return this.CoilTier >= recipe.getProperty()
+        return true;
     }
 
     @Override

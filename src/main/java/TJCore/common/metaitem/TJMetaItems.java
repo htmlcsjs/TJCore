@@ -304,6 +304,7 @@ public class TJMetaItems {
 
     // Electronic Chip Items
 
+    public static MetaItem<?>.MetaValueItem SIMPLE_SILICON_WAFER;
     public static MetaItem<?>.MetaValueItem SIMPLE_CPU_WAFER;
     public static MetaItem<?>.MetaValueItem SIMPLE_CPU;
 

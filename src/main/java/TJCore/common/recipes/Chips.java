@@ -59,16 +59,24 @@ public class Chips {
     }
 
     private static void electronicChip() {
-        LASER_ENGRAVER_RECIPES.recipeBuilder()
-                .duration(900)
+
+        CUTTER_RECIPES.recipeBuilder()
+                .duration(120)
                 .EUt(VA[LV])
-                .input(TJMetaItems.SILICON_WAFER)
+                .input(plate, Silicon)
+                .output(SIMPLE_SILICON_WAFER, 4)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .duration(440)
+                .EUt(VA[LV])
+                .input(SIMPLE_SILICON_WAFER)
                 .notConsumable(craftingLens, Glass)
                 .output(SIMPLE_CPU_WAFER)
                 .buildAndRegister();
 
         CUTTER_RECIPES.recipeBuilder()
-                .duration(500)
+                .duration(200)
                 .EUt(VA[LV])
                 .input(SIMPLE_CPU_WAFER)
                 .output(SIMPLE_CPU,4)
@@ -77,12 +85,52 @@ public class Chips {
 
     private static void lithographyChips() {
 
+        //Boule Recipes
+
+        BLAST_RECIPES.recipeBuilder()
+                .blastFurnaceTemp(1100)
+                .duration(420)
+                .EUt(VA[LV])
+                .input(dust, Silicon, 16)
+                .notConsumable(INTEGRATED_CIRCUIT)
+                .output(TJMetaItems.SILICON_BOULE)
+                .buildAndRegister();
+
+        BLAST_RECIPES.recipeBuilder()
+                .blastFurnaceTemp(2100)
+                .duration(420)
+                .EUt(VA[LV])
+                .input(dust, Silicon, 16)
+                .input(dustSmall, Antimony)
+                .output(ANTIMONY_DOPED_SILICON_BOULE)
+                .buildAndRegister();
+
+        BLAST_RECIPES.recipeBuilder()
+                .blastFurnaceTemp(3100)
+                .duration(420)
+                .EUt(VA[LV])
+                .input(dust, Silicon, 16)
+                .input(dustSmall, Boron)
+                .output(BORON_DOPED_SILICON_BOULE)
+                .buildAndRegister();
+
+        BLAST_RECIPES.recipeBuilder()
+                .blastFurnaceTemp(3900)
+                .duration(420)
+                .EUt(VA[LV])
+                .input(dust, GalliumArsenide, 16)
+                .output(GALLIUM_ARSENIDE_BOULE)
+                .buildAndRegister();
+
+        BLAST_RECIPES.recipeBuilder()
+                .blastFurnaceTemp(4800)
+                .duration(410)
+                .EUt(VA[LV])
+                .input(dust, SilverGalliumSelenide, 16)
+                .output(SILVER_GALLIUM_SELENIDE_BOULE)
+                .buildAndRegister();
+
         //UV Emitter Recipes
-        //emitter 1 - Mercury Geissler Tube -> Mercury Vapor Halide Lamp
-        //emitter 2 - Empty Arc Lamp -> Hydrogen Arc Lamp
-        //emitter 3 - Empty Arc Lamp -> Deuterium Arc Lamp
-        //emitter 4 - Empty Excimer Lamp -> NeF* Excimer Lamp
-        //emitter 5 - Empty Laser Tube -> Argon-Fluorine UV Laser
 
         ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(45)

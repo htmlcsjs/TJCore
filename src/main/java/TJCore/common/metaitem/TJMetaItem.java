@@ -307,6 +307,7 @@ public class    TJMetaItem extends StandardMetaItem {
         EMPTY_GEISSLER_TUBE = addItem(628, "empty_geissler_tube");
         EMPTY_ARC_LAMP = addItem(629, "empty_arc_lamp");
         LASER_TUBE = addItem(631, "laser_tube");
+        SIMPLE_SILICON_WAFER = addItem(632, "simple_silicon_wafer");
 
         // Misc. SMD ITEMS
         FERROUS_INDUCTOR_CORE = addItem(1001, "ferrous_inductor_core");

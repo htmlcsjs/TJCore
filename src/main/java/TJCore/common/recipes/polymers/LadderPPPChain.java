@@ -17,6 +17,15 @@ public class LadderPPPChain {
     public static void register() {
 
         CHEMICAL_RECIPES.recipeBuilder()
+                .duration(35)
+                .EUt(VA[MV])
+                .input(dust, Palladium)
+                .fluidInputs(HydrochloricAcid.getFluid(2000))
+                .fluidOutputs(Hydrogen.getFluid(2000))
+                .output(dust, PalladiumChloride)
+                .buildAndRegister();
+
+        CHEMICAL_RECIPES.recipeBuilder()
                 .duration(120)
                 .EUt(VA[MV])
                 .fluidInputs(Benzene.getFluid(1000), Bromine.getFluid(2000))

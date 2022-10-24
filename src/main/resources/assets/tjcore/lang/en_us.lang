@@ -16,6 +16,13 @@ material.dibromoterephthaloyldichloride=2,5-dibromo-terephthaloyl dichloride
 material.p_one_solution=Impure P1 Solution
 material.su_photoresist=SU8-Photoresist
 material.hydrogensilsesquioxane=Hydrogen Silsesquioxane (HSQ)
+material.polypphenylene.name=Ladder Poly(p-phenylene)
+material.tretrakispdcatalyst.name=Tetrakis-Pd Catalyst
+material.palladiumchloride.name=Palladium Dichloride
+material.hydraziniumchloride.name=Hydrazinium Chloride
+material.dibromoisophthalicacid.name=2-Dibromoisophthalic Acid
+material.superheavy_l.name=Superheavy Alloy (Light)
+material.superheavy_h.name=Superheavy Alloy (Heavy)
 
 //machines
 tjcore.machine.component_assembler.lv.name=LV Component Assembler
@@ -44,6 +51,8 @@ recipemap.laminator.name=Laminator
 tile.draconic_casing.draconic_casing_normal.name=Draconic Casing
 
 gregtech.machine.component_assembler.tooltip=Steady there
+
+// Metaitems
 
 metaitem.primitive_board.name=Primitive Point to Point PCB
 metaitem.electronic_board.name=Silicate Stenciled PCB
@@ -285,23 +294,11 @@ metaitem.component.smd_inductor_4.name=Extreme SMD Inductor
 metaitem.component.smd_inductor_4.tooltip=Insane Oscillation
 metaitem.component.smd_inductor_5.name=Ultimate SMD Inductor
 metaitem.component.smd_inductor_5.tooltip=Spatial Distortion
-
-metaitem.uvemitter_a.name=Mercury Vapor Fluorescent Tube
-metaitem.uvemitter_a.tooltip=Ultraviolet Emitter 1
-metaitem.uvemitter_b.name=Hydrogen Arc Lamp
-metaitem.uvemitter_b.tooltip=Ultraviolet Emitter 2
-metaitem.uvemitter_c.name=Deuterium Arc Lamp
-metaitem.uvemitter_c.tooltip=Ultraviolet Emitter 3
-metaitem.uvemitter_d.name=Neon-Fluorine Excimer Lamp
-metaitem.uvemitter_d.tooltip=Ultraviolet Emitter 4
-metaitem.uvemitter_e.name=Argon-Fluorine Ultraviolet Laser
-metaitem.uvemitter_e.tooltip=Ultraviolet Emitter 5
-
-metaitem.ballast.name=Fluorescent Tube Ballast
-metaitem.empty_geissler_tube.name=Empty Geissler Tube
-metaitem.empty_arc_lamp.name=Empty Arc Lamp
-metaitem.empty_excimer_lamp.name=Empty Excimer Lamp
-metaitem.laser_tube.name=Empty Laser Tube
+metaitem.simple_cpu_wafer.name=Simple CPU Wafer
+metaitem.simple_cpu_wafer.tooltip=Clumsy Engraving
+metaitem.simple_cpu.name=Simple CPU
+metaitem.simple_cpu.tooltip=Good Enough
+metaitem.simple_silicon_wafer.name=Simple Silicon Wafer
 
 //Lithogrpahy
 
@@ -389,6 +386,22 @@ metaitem.nano_hard_mask.name=Grating Lithography Mask (Nano CPU)
 metaitem.imc_hard_mask.name=Grating Lithography Mask (IMC CPU)
 metaitem.optical_hard_mask.name=Grating Lithography Mask (Optical CPU)
 
+metaitem.uvemitter_a.name=Mercury Vapor Fluorescent Tube
+metaitem.uvemitter_a.tooltip=Ultraviolet Emitter 1
+metaitem.uvemitter_b.name=Hydrogen Arc Lamp
+metaitem.uvemitter_b.tooltip=Ultraviolet Emitter 2
+metaitem.uvemitter_c.name=Deuterium Arc Lamp
+metaitem.uvemitter_c.tooltip=Ultraviolet Emitter 3
+metaitem.uvemitter_d.name=Neon-Fluorine Excimer Lamp
+metaitem.uvemitter_d.tooltip=Ultraviolet Emitter 4
+metaitem.uvemitter_e.name=Argon-Fluorine Ultraviolet Laser
+metaitem.uvemitter_e.tooltip=Ultraviolet Emitter 5
+
+metaitem.ballast.name=Fluorescent Tube Ballast
+metaitem.empty_geissler_tube.name=Empty Geissler Tube
+metaitem.empty_arc_lamp.name=Empty Arc Lamp
+metaitem.empty_excimer_lamp.name=Empty Excimer Lamp
+metaitem.laser_tube.name=Empty Laser Tube
 
 
 

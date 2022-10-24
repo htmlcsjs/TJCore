@@ -522,6 +522,12 @@ public class TJFirstDegreeMaterials {
                 .color(0x00ff88)
                 .components(Argon, 1, Fluorine, 1)
                 .build();
+
+        SilverGalliumSelenide = new Material.Builder(25076, "silver_gallium_selenide")
+                .dust()
+                .colorAverage()
+                .components(Silver, 1, Gallium, 1, Selenium, 2)
+                .build();
     }
 
     public static void registerProperties() {
