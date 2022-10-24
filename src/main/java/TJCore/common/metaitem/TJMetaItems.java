@@ -150,7 +150,6 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem EMPTY_GEISSLER_TUBE;
 
     public static MetaItem<?>.MetaValueItem EMPTY_ARC_LAMP;
-    public static MetaItem<?>.MetaValueItem EMPTY_EXCIMER_LAMP;
 
     public static MetaItem<?>.MetaValueItem LASER_TUBE;
 
@@ -322,8 +321,7 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem CNT_LONG;
     public static MetaItem<?>.MetaValueItem STERILE_POLYMER_FOIL;
     public static MetaItem<?>.MetaValueItem LAYERED_POLYMER_FOIL;
-    //public static MetaItem<?>.MetaValueItem
-    //public static MetaItem<?>.MetaValueItem
+
 
     // Chips - Post Wetware
 

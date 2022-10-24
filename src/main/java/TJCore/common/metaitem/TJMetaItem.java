@@ -306,7 +306,6 @@ public class    TJMetaItem extends StandardMetaItem {
         BALLAST = addItem(627,"ballast");
         EMPTY_GEISSLER_TUBE = addItem(628, "empty_geissler_tube");
         EMPTY_ARC_LAMP = addItem(629, "empty_arc_lamp");
-        EMPTY_EXCIMER_LAMP = addItem(630, "empty_excimer_lamp");
         LASER_TUBE = addItem(631, "laser_tube");
 
         // Misc. SMD ITEMS

@@ -14,6 +14,8 @@ material.silicaceramic=Ceramic
 material.nickelplatedtin=Nickel Plated Tin
 material.dibromoterephthaloyldichloride=2,5-dibromo-terephthaloyl dichloride
 material.p_one_solution=Impure P1 Solution
+material.su_photoresist=SU8-Photoresist
+material.hydrogensilsesquioxane=Hydrogen Silsesquioxane (HSQ)
 
 //machines
 tjcore.machine.component_assembler.lv.name=LV Component Assembler
@@ -149,13 +151,13 @@ metaitem.circuit.nano_iv.tooltip=Second IV Circuit
 metaitem.circuit.nano_luv.name=Nano Mainframe
 metaitem.circuit.nano_luv.tooltip=First LuV Circuit
 
-metaitem.circuit.imc_ev.name=In-Memory Computation Processor
+metaitem.circuit.imc_ev.name=In-Memory Computation (IMC) Processor
 metaitem.circuit.imc_ev.tooltip=Fourth and Final EV Circuit
-metaitem.circuit.imc_iv.name=In-Memory Computation Assembly
+metaitem.circuit.imc_iv.name=In-Memory Computation (IMC) Assembly
 metaitem.circuit.imc_iv.tooltip=Third IV Circuit
-metaitem.circuit.imc_luv.name=In-Memory Computation Computer
+metaitem.circuit.imc_luv.name=In-Memory Computation (IMC) Computer
 metaitem.circuit.imc_luv.tooltip=Second LuV Circuit
-metaitem.circuit.imc_zpm.name=In-Memory Computation Mainframe
+metaitem.circuit.imc_zpm.name=In-Memory Computation (IMC) Mainframe
 metaitem.circuit.imc_zpm.tooltip=First ZPM Circuit
 
 metaitem.circuit.optical_iv.name=Optical Processor
@@ -300,3 +302,93 @@ metaitem.empty_geissler_tube.name=Empty Geissler Tube
 metaitem.empty_arc_lamp.name=Empty Arc Lamp
 metaitem.empty_excimer_lamp.name=Empty Excimer Lamp
 metaitem.laser_tube.name=Empty Laser Tube
+
+//Lithogrpahy
+
+metaitem.silicon_boule.name=Silicon Boule
+metaitem.antimony_doped_silicon_boule.name=Antimony Doped Silicon Boule
+metaitem.boron_doped_silicon_boule.name=Boron Doped Silicon Boule
+metaitem.gallium_arsenide_boule.name=Gallium Arsenide Boule
+metaitem.silver_gallium_selenide_boule.name=Silver Gallium Selenide Boule
+
+metaitem.silicon_wafer.name=Silicon Wafer
+metaitem.antimony_doped_silicon_wafer.name=Antimony Doped Silicon Wafer
+metaitem.boron_doped_silicon_wafer.name=Boron Doped Silicon Wafer
+metaitem.gallium_arsenide_wafer.name=Gallium Arsenide Wafer
+metaitem.silver_gallium_selenide_wafer.name=Silver Gallium Selenide Wafer
+
+metaitem.layered_silicon_wafer.name=Layered Silicon Wafer
+metaitem.layered_antimony_doped_silicon_wafer.name=Layered Antimony Doped Silicon Wafer
+metaitem.layered_boron_doped_silicon_wafer.name=Layered Boron Doped Silicon Wafer
+metaitem.layered_gallium_arsenide_wafer.name=Layered Gallium Arsenide Wafer
+metaitem.layered_silver_gallium_selenide_wafer.name=Layered Silver Gallium Selenide Wafer
+
+metaitem.prepared_silicon_wafer.name=Polymer Wrapped Silicon Wafer
+metaitem.prepared_antimony_doped_silicon_wafer.name=Polymer Wrapped Antimony Doped Silicon Wafer
+metaitem.prepared_boron_doped_silicon_wafer.name=Polymer Wrapped Boron Doped Silicon Wafer
+metaitem.prepared_gallium_arsenide_wafer.name=Polymer Wrapped Gallium Arsenide Wafer
+metaitem.prepared_silver_gallium_selenide_wafer.name=Polymer Wrapped Silver Gallium Selenide Wafer
+
+metaitem.integrated_wafer_lithography_prep.name=Integrated Wafer (Lithography Prepared)
+metaitem.micro_wafer_lithography_prep.name=Micro Wafer (Lithography Prepared)
+metaitem.nano_wafer_lithography_prep.name=Nano Wafer (Lithography Prepared)
+metaitem.imc_wafer_lithography_prep.name=IMC Wafer (Lithography Prepared)
+metaitem.optical_wafer_lithography_prep.name=Optical Wafer (Lithography Prepared)
+
+metaitem.prebaked_integrated_wafer.name=Prebaked Integrated Wafer
+metaitem.prebaked_micro_wafer.name=Prebaked Micro Wafer
+metaitem.prebaked_nano_wafer.name=Prebaked Nano Wafer
+metaitem.prebaked_imc_wafer.name=Prebaked IMC Wafer
+metaitem.prebaked_optical_wafer.name=Prebaked Optical Wafer
+
+metaitem.treated_integrated_wafer.name=Treated Integrated Wafer
+metaitem.treated_micro_wafer.name=Treated Micro Wafer
+metaitem.treated_nano_wafer.name=Treated Nano Wafer
+metaitem.treated_imc_wafer.name=Treated IMC Wafer
+metaitem.treated_optical_wafer.name=Treated Optical Wafer
+
+metaitem.raw_integrated_wafer.name=Raw Integrated Wafer
+metaitem.raw_micro_wafer.name=Raw Micro Wafer
+metaitem.raw_nano_wafer.name=Raw Nano Wafer
+metaitem.raw_imc_wafer.name=Raw IMC Wafer
+metaitem.raw_optical_wafer.name=Raw Optical Wafer
+
+metaitem.baked_integrated_wafer.name=Baked Integrated Wafer
+metaitem.baked_micro_wafer.name=Baked Micro Wafer
+metaitem.baked_nano_wafer.name=Baked Nano Wafer
+metaitem.baked_imc_wafer.name=Baked IMC Wafer
+metaitem.baked_optical_wafer.name=Baked Optical Wafer
+
+metaitem.integrated_wafer.name=Integrated CPU Wafer
+metaitem.micro_wafer.name=Micro CPU Wafer
+metaitem.nano_wafer.name=Nano CPU Wafer
+metaitem.imc_wafer.name=IMC CPU Wafer
+metaitem.optical_wafer.name=Optical CPU Wafer
+
+metaitem.etched_integrated_wafer.name=Etched Integrated CPU Wafer
+metaitem.etched_micro_wafer.name=Etched Micro CPU Wafer
+metaitem.etched_nano_wafer.name=Etched Nano CPU Wafer
+metaitem.etched_imc_wafer.name=Etched IMC CPU Wafer
+metaitem.etched_optical_wafer.name=Etched Optical CPU Wafer
+
+metaitem.integrated_chip.name=Integrated CPU
+metaitem.micro_chip.name=Micro CPU
+metaitem.nano_chip.name=Nano CPU
+metaitem.imc_chip.name=IMC CPU
+metaitem.optical_chip.name=Optical CPU
+
+metaitem.integrated_chip.tooltip=Integrated Computation
+metaitem.micro_chip.tooltip=Microscopic Computation
+metaitem.nano_chip.tooltip=Nanoscale Computation
+metaitem.imc_chip.tooltip=In Memory Computation
+metaitem.optical_chip.tooltip=Lightspeed Computation
+
+metaitem.integrated_hard_mask.name=Grating Lithography Mask (Integrated CPU)
+metaitem.micro_hard_mask.name=Grating Lithography Mask (Micro CPU)
+metaitem.nano_hard_mask.name=Grating Lithography Mask (Nano CPU)
+metaitem.imc_hard_mask.name=Grating Lithography Mask (IMC CPU)
+metaitem.optical_hard_mask.name=Grating Lithography Mask (Optical CPU)
+
+
+
+
