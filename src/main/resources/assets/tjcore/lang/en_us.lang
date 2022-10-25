@@ -16,13 +16,13 @@ material.dibromoterephthaloyldichloride=2,5-dibromo-terephthaloyl dichloride
 material.p_one_solution=Impure P1 Solution
 material.su_photoresist=SU8-Photoresist
 material.hydrogensilsesquioxane=Hydrogen Silsesquioxane (HSQ)
-material.polypphenylene.name=Ladder Poly(p-phenylene)
-material.tretrakispdcatalyst.name=Tetrakis-Pd Catalyst
-material.palladiumchloride.name=Palladium Dichloride
-material.hydraziniumchloride.name=Hydrazinium Chloride
-material.dibromoisophthalicacid.name=2-Dibromoisophthalic Acid
-material.superheavy_l.name=Superheavy Alloy (Light)
-material.superheavy_h.name=Superheavy Alloy (Heavy)
+material.polypphenylene=Ladder Poly(p-phenylene)
+material.tretrakispdcatalyst=Tetrakis-Pd Catalyst
+material.palladiumchloride=Palladium Dichloride
+material.hydraziniumchloride=Hydrazinium Chloride
+material.dibromoisophthalicacid=2-Dibromoisophthalic Acid
+material.superheavy_l=Superheavy Alloy (Light)
+material.superheavy_h=Superheavy Alloy (Heavy)
 
 //machines
 tjcore.machine.component_assembler.lv.name=LV Component Assembler
