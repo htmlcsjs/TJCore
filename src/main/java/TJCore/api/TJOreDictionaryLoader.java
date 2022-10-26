@@ -9,6 +9,8 @@ import gregtech.api.items.materialitem.MetaPrefixItem;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.material.info.MaterialFlag;
+import gregtech.api.unification.material.properties.FluidProperty;
+import gregtech.api.unification.material.properties.IngotProperty;
 import gregtech.api.unification.material.properties.PropertyKey;
 import gregtech.api.unification.ore.OrePrefix;
 import net.minecraft.item.ItemStack;
@@ -17,6 +19,9 @@ import net.minecraftforge.fml.common.Optional;
 import net.minecraftforge.oredict.OreDictionary;
 import org.jline.builtins.Nano;
 
+import static TJCore.common.recipes.recipemaps.TJRecipeMaps.NANOSCALE_GROWTH_RECIPES;
+import static gregtech.api.GTValues.VA;
+import static gregtech.api.GTValues.ZPM;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.Flags.ENABLE_UNIFICATION;
 
@@ -47,12 +52,33 @@ public class TJOreDictionaryLoader {
             .requireProps(PropertyKey.FLUID)
             .build();
 
-
     public static void registerOrePrefixes() {
         nanoWire.setGenerationCondition(material -> ((material.isElement() && material.isSolid() && material.hasFluid())) || material.hasFlag(  GENERATE_NANOWIRE));
         createMaterialItem(nanoWire);
         nanoFoil.setGenerationCondition(material -> ((material.isElement() && material.isSolid() && material.hasFluid())) || material.hasFlag(  GENERATE_NANOFOIL));
         createMaterialItem(nanoFoil);
+
+    }
+
+    public static void registerRecipes() {
+        nanoWire.addProcessingHandler(PropertyKey.FLUID, TJOreDictionaryLoader::createNanoGrowthRecipe);
+        nanoFoil.addProcessingHandler(PropertyKey.FLUID, TJOreDictionaryLoader::createNanoGrowthRecipe);
+    }
+
+    public static void createNanoGrowthRecipe(OrePrefix prefix, Material mat, FluidProperty prop) {
+        int cirNum = (prefix == nanoFoil ? 0 : 1);
+        if (mat.hasProperty(PropertyKey.FLUID)) {
+            NANOSCALE_GROWTH_RECIPES.recipeBuilder()
+                    .circuitMeta(cirNum)
+                    .duration(40)
+                    .EUt(VA[ZPM])
+                    .fluidInputs(mat.getFluid(1))
+                    .output(prefix, mat)
+                    .buildAndRegister();
+        } else {
+            TJLog.logger.debug("Material: " + mat.getLocalizedName() + " does not have a fluid!");
+        }
+
     }
 
     public static void createMaterialItem(OrePrefix orePrefix) {

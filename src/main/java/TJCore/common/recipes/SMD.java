@@ -181,7 +181,7 @@ public class SMD {
         ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(50)
                 .EUt(VA[UXV])
-                .input(plate, Draconium, 2)
+                .input(plate, Copper, 2)
                 .input(dust, Cobalt60, 2)
                 .input(bolt, SuperheavyH, 2)
                 .input(nanoWire, HeavyQuarkDegenerate, 16)
