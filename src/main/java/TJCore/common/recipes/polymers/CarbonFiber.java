@@ -1,16 +1,10 @@
 package TJCore.common.recipes.polymers;
-import javax.sound.sampled.Mixer;
 
 import static TJCore.common.metaitem.TJMetaItems.*;
 import static TJCore.common.recipes.recipemaps.TJRecipeMaps.LAMINATOR_RECIPES;
 import static TJCore.common.recipes.recipemaps.TJRecipeMaps.LOOM_RECIPES;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
-
 import static TJCore.api.material.TJMaterials.*;
-import static gregicality.science.api.recipes.GCYSRecipeMaps.*;
-import static gregicality.multiblocks.api.recipes.GCYMRecipeMaps.*;
-import static gregicality.science.api.unification.materials.GCYSMaterials.Acetylene;
-import static gregicality.science.api.unification.materials.GCYSMaterials.PhosphorusTrichloride;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
