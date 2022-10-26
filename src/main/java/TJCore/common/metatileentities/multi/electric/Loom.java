@@ -70,7 +70,7 @@ public class Loom extends RecipeMapMultiblockController {
                 .where('c', selfPredicate())
                 .where(' ',TraceabilityPredicate.AIR)
                 .where('S', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.PTFE_INERT_CASING)))
-                .where('H', states(MetaBlocks.FRAMES.get(Materials.Polytetrafluoroethylene).getBlock(Materials.Polytetrafluoroethylene))
+                .where('H', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.PTFE_INERT_CASING))
                         .or(autoAbilities().setMinGlobalLimited(1, 1))
                         .or(abilities(MultiblockAbility.INPUT_ENERGY, MultiblockAbility.EXPORT_ITEMS).setMinGlobalLimited(1, 1)))
                 .where('G', states(MetaBlocks.TRANSPARENT_CASING.getState(BlockGlassCasing.CasingType.TEMPERED_GLASS)))
