@@ -255,15 +255,10 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem SUPRA_MAINFRAME_ALL;
 
 
-    // less tiers of smd, make them upgrading on a *random* pattern
-    // have like 4 or 5 tiers of each smd max (giving us a chance to make them more complex on later tiers than just wire, plate, fluid)
-
-    //
     public static ToolMetaItem<?>.MetaToolValueItem LITHOGRAPHY_MASK;
 
     public static MetaItem<?>.MetaValueItem STENCILING_CUTHEAD;
 
-    //Biochem Processes
 
     //Micro-Nano PCB ITEMS
     public static MetaItem<?>.MetaValueItem COPPER_LAMINATED_EPOXID;
@@ -333,5 +328,16 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem EXOTIC_CPU;
     public static MetaItem<?>.MetaValueItem COSMIC_CPU;
     public static MetaItem<?>.MetaValueItem SUPRA_CPU;
+    public static MetaItem<?>.MetaValueItem SPUN_POLYACRYLONITRILE;
+    public static MetaItem<?>.MetaValueItem WASHED_POLYACRLONITRILE;
+    public static MetaItem<?>.MetaValueItem BAKED_POLYACRLONITRILE;
+    public static MetaItem<?>.MetaValueItem OXIDIZED_CARBON_THREAD;
+    public static MetaItem<?>.MetaValueItem ETCHED_CARBON_THREAD;
+    public static MetaItem<?>.MetaValueItem COATED_CARBON_THREAD;
+    public static MetaItem<?>.MetaValueItem WOVEN_CARBON_FIBER;
+    public static MetaItem<?>.MetaValueItem THIN_WOVEN_CARBON_FIBER;
+    public static MetaItem<?>.MetaValueItem CARBON_FIBER_PLATE;
+    public static MetaItem<?>.MetaValueItem CARBON_FIBER_FOIL;
+
 
 }

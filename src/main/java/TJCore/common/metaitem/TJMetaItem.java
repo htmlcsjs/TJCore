@@ -325,14 +325,21 @@ public class    TJMetaItem extends StandardMetaItem {
         SUPRA_CPU = addItem(625, "supra_cpu");
 
 
-
-
-
         // Chemistry Intermediates (1051-1250)
+        SPUN_POLYACRYLONITRILE = addItem(1051,"spun_polyacrylonitrile");
+        WASHED_POLYACRLONITRILE = addItem(1052,"washed_polyacrylonitrile");
+        BAKED_POLYACRLONITRILE = addItem(1053,"baked_polyacrylonitrile");
+        OXIDIZED_CARBON_THREAD = addItem(1054,"oxidized_carbon_thread");
+        ETCHED_CARBON_THREAD = addItem(1055,"etched_carbon_thread");
+        COATED_CARBON_THREAD = addItem(1056,"coated_carbon_thread");
+        WOVEN_CARBON_FIBER = addItem(1057,"woven_carbon_fiber");
+        THIN_WOVEN_CARBON_FIBER = addItem(1058,"thin_woven_carbon_fiber");
 
         // Chemistry End Products (1250-1299)
         CNT_SHORT = addItem(1250, "short_carbon_nanotube_strand");
         CNT_LONG = addItem(1251, "long_carbon_nanotube_strand");
+        CARBON_FIBER_PLATE = addItem(1252,"carbon_fiber_plate");
+        CARBON_FIBER_FOIL = addItem(1253,"carbon_fiber_foil");
 
 
     }

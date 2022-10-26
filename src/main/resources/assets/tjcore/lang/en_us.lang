@@ -23,6 +23,11 @@ material.hydraziniumchloride=Hydrazinium Chloride
 material.dibromoisophthalicacid=2-Dibromoisophthalic Acid
 material.superheavy_l=Superheavy Alloy (Light)
 material.superheavy_h=Superheavy Alloy (Heavy)
+material.acrylonitrile=Acrylonitrile
+
+item.polyacrylonitrile.dustTiny=Tiny Pile of Polyacrylonitrile Pulp
+item.polyacrylonitrile.dustSmall=Small Pile of Polyacrylonitrile Pulp
+item.polyacrylonitrile.dust=Pile of Polyacrylonitrile Pulp
 
 //machines
 tjcore.machine.component_assembler.lv.name=LV Component Assembler
@@ -53,7 +58,6 @@ tile.draconic_casing.draconic_casing_normal.name=Draconic Casing
 gregtech.machine.component_assembler.tooltip=Steady there
 
 // Metaitems
-
 metaitem.primitive_board.name=Primitive Point to Point PCB
 metaitem.electronic_board.name=Silicate Stenciled PCB
 metaitem.integrated_board.name=Machine Stenciled PCB
@@ -68,7 +72,6 @@ metaitem.quantum_board.name=Q-Bit Computational Framework
 metaitem.exotic_board.name=Exotic Particle Manipulation Support Framework
 metaitem.cosmic_board.name=Cosmic-Soupᵗᵐ Physical Calculation Support Framework
 metaitem.supra_board.name=Temporally Isolated Calculation Framework
-
 metaitem.primitive_preboard.name=Phenolic Substrate
 metaitem.electronic_preboard.name=Silicate-Ceramic Substrate
 metaitem.integrated_preboard.name=Plastic Substrate
@@ -83,8 +86,6 @@ metaitem.quantum_preboard.name=Q-Bit Data Transfer Board
 metaitem.exotic_preboard.name=Spintronic Logistics PCB
 metaitem.cosmic_preboard.name=
 metaitem.supra_preboard.name=
-
-//Crystal Items
 metaitem.coated_sapphire_wafer.name=Coated Sapphire Wafer
 metaitem.dirty_coated_sapphire_wafer.name=Dirty Coated Sapphire Wafer
 metaitem.cleaned_coated_sapphire_wafer.name=Cleaned Coated Sapphire Wafer
@@ -109,14 +110,20 @@ metaitem.refracting_sheet.name=Refracting Sheet
 metaitem.reflecting_sheet.name=Reflecting Sheet
 metaitem.laminated_crystal_pcb_sheet.name=Laminated Crystal PCB Sheet
 metaitem.gamma_emitting_diode.name=GED (Gamma Emitting Diode)
-
-
-//SMD Items
 metaitem.ferrousinductorcore.name=Ferrous Inductor Core
 metaitem.tungsteninductorcore.name=Tungsten Inductor Core
+metaitem.spun_polyacrylonitrile.name=Spun Polyacrylonitrile
+metaitem.washed_polyacrylonitrile.name=Washed Polyacrylonitrile
+metaitem.baked_polyacrylonitrile.name=Crystalized Polyacrylonitrile Thread
+metaitem.oxidized_carbon_thread.name=Oxidized Carbon Thread
+metaitem.etched_carbon_thread.name=Etched Carbon Thread
+metaitem.coated_carbon_thread.name=Coated Carbon Thread
+metaitem.thin_woven_carbon_fiber.name=Thin Woven Carbon Threads
+metaitem.woven_carbon_fiber.name=Woven Carbon Threads
+metaitem.carbon_fiber_foil.name=Thin Carbon Fiber Sheet
+metaitem.carbon_fiber_plate.name=Carbon Fiber Plate
 
-
-
+//circuit lang
 metaitem.circuit.primitive_ulv.name=Primitive Assembly
 metaitem.circuit.primitive_ulv.tooltip=First ULV Circuit
 metaitem.circuit.primitive_lv.name=Primitive Computer
@@ -241,6 +248,7 @@ metaitem.circuit.supra_max.tooltip=Second and Final MAX Circuit
 metaitem.circuit.supra_all.name=Supra-Causal Mainframe
 metaitem.circuit.supra_all.tooltip=Meme Circuit Lol
 
+//smd lang
 metaitem.component.smd_capacitor_1.name=Basic SMD Capacitor
 metaitem.component.smd_capacitor_1.tooltip=Basic Energy Storage
 metaitem.component.smd_capacitor_2.name=Good SMD Capacitor
@@ -301,7 +309,6 @@ metaitem.simple_cpu.tooltip=Good Enough
 metaitem.simple_silicon_wafer.name=Simple Silicon Wafer
 
 //Lithogrpahy
-
 metaitem.silicon_boule.name=Silicon Boule
 metaitem.antimony_doped_silicon_boule.name=Antimony Doped Silicon Boule
 metaitem.boron_doped_silicon_boule.name=Boron Doped Silicon Boule
@@ -396,7 +403,6 @@ metaitem.uvemitter_d.name=Neon-Fluorine Excimer Lamp
 metaitem.uvemitter_d.tooltip=Ultraviolet Emitter 4
 metaitem.uvemitter_e.name=Argon-Fluorine Ultraviolet Laser
 metaitem.uvemitter_e.tooltip=Ultraviolet Emitter 5
-
 metaitem.ballast.name=Fluorescent Tube Ballast
 metaitem.empty_geissler_tube.name=Empty Geissler Tube
 metaitem.empty_arc_lamp.name=Empty Arc Lamp

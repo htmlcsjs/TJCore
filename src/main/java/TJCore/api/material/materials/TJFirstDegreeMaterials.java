@@ -528,6 +528,42 @@ public class TJFirstDegreeMaterials {
                 .colorAverage()
                 .components(Silver, 1, Gallium, 1, Selenium, 2)
                 .build();
+
+        BismuthPhosphomolybdate = new Material.Builder(25077, "bismuth_phosphomolybdate")
+                .dust()
+                .colorAverage()
+                .components(Bismuth, 9, Phosphorus, 1, Molybdenum, 12, Oxygen, 52)
+                .build();
+
+        Acrylonitrile = new Material.Builder(25078, "acrylonitrile")
+                .fluid()
+                .color(0x565734)
+                .components(Carbon, 3, Hydrogen, 3, Nitrogen, 1)
+                .build()
+                .setFormula("CH2CHCN", true);
+
+        SodiumThiocyanate = new Material.Builder(25079, "sodium_thiocyanate")
+                .dust()
+                .colorAverage()
+                .components(SodiumCyanide, 1, Sulfur, 1)
+                .build();
+
+        SodiumThiocyanatePolymerizationSolution = new Material.Builder(25080, "sodiumthiocyanatepolymerizationsolution")
+                .fluid()
+                .colorAverage()
+                .components(Water, 1, SodiumThiocyanate, 1)
+                .build();
+
+        Polyacrylonitrile = new Material.Builder(25081, "polyacrylonitrile")
+                .dust()
+                .color(0x854218)
+                .build();
+
+        CFCoatingSolution = new Material.Builder(25082, "cf_coating_solution")
+                .fluid()
+                .colorAverage()
+                .components(PolyvinylChloride, 1, Polyethylene, 1)
+                .build();
     }
 
     public static void registerProperties() {
@@ -543,7 +579,7 @@ public class TJFirstDegreeMaterials {
         // Polymers
         Polybenzimidazole.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
         PolyphenyleneSulfide.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
-        Polytetrafluoroethylene.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
+        Polytetrafluoroethylene.addFlags(MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_LONG_ROD);
         PolyvinylChloride.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
         Polyethylene.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
         ReinforcedEpoxyResin.addFlags(MaterialFlags.GENERATE_FOIL);

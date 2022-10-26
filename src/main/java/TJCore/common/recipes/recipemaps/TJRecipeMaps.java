@@ -32,7 +32,7 @@ public class TJRecipeMaps {
 
     public static final RecipeMap<SimpleRecipeBuilder> SURFACE_ROCK_DRILL_RECIPES = new RecipeMap<>("surface_rock_drill", 0, 12, 1, 1, 0, 0, 0, 0, new SimpleRecipeBuilder(), false);
 
-    public static final RecipeMap<SimpleRecipeBuilder> LAMINATOR_RECIPES = new RecipeMap<>("laminator", 1, 6, 1, 1, 0, 2, 0, 0, new SimpleRecipeBuilder(), false).setSound(GTSounds.ASSEMBLER);
+    public static final RecipeMap<SimpleRecipeBuilder> LAMINATOR_RECIPES = new RecipeMap<>("laminator", 1, 6, 1, 2, 0, 2, 0, 0, new SimpleRecipeBuilder(), false).setSound(GTSounds.ASSEMBLER);
 
     public static final RecipeMap<CarbonsShittyPredicateMultiRecipeBuilder> CARBONS_SHITTY_PREDICATE_MULTI_RECIPE_BUILDER_RECIPES = new RecipeMap<>("carbons_shitty_predicate_multi_recipe_map", 0, 1, 0, 1, 0, 1, 0, 1, new CarbonsShittyPredicateMultiRecipeBuilder(), false).setSound((GTSounds.SUS_RECORD));
 }

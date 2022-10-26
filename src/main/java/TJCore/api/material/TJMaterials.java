@@ -107,13 +107,20 @@ public class TJMaterials {
     public static Material Fiberglass;
     public static Material SynthDiamond;
     public static Material LeadZirconateTitanate;
+    public static Material BismuthPhosphomolybdate;
+    public static Material Acrylonitrile;
+    public static Material SodiumThiocyanate;
+    public static Material SodiumThiocyanatePolymerizationSolution;
 
     // Metals
 
     // Polymers
+    public static Material Polyacrylonitrile;
 
     public static Material CarbonNanotubePolymer;
     public static Material Ladder_Poly_P_Phenylene;
+
+
 
     // Mixtures
     public static Material SuspendedPGQD;
@@ -122,6 +129,8 @@ public class TJMaterials {
     public static Material XenonFluorideSupercondiveMix;
     public static Material P1Solution;
     public static Material TetrakisPDCatalyst;
+    public static Material CFCoatingSolution;
+
 
 
     // Magic materials, unknown composition
