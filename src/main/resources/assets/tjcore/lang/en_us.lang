@@ -24,6 +24,9 @@ material.dibromoisophthalicacid=2-Dibromoisophthalic Acid
 material.superheavy_l=Superheavy Alloy (Light)
 material.superheavy_h=Superheavy Alloy (Heavy)
 material.acrylonitrile=Acrylonitrile
+material.bismuth_phosphomolybdate=Bismuth Phosphomolybdate Catalyst
+material.cf_coating_solution=Carbon Fiber Coating Solution
+material.sodiumthiocyanatepolymerizationsolution=Sodium Thiocyanate Polymerization Solution
 
 item.polyacrylonitrile.dustTiny=Tiny Pile of Polyacrylonitrile Pulp
 item.polyacrylonitrile.dustSmall=Small Pile of Polyacrylonitrile Pulp
