@@ -48,6 +48,19 @@ public class    TJMetaItem extends StandardMetaItem {
         SMD_CAPACITOR_5 = addItem(24, "component.smd_capacitor_5").setUnificationData(OrePrefix.component, Component.Capacitor);
         SMD_INDUCTOR_5 = addItem(25, "component.smd_inductor_5").setUnificationData(OrePrefix.component, Component.Inductor);
 
+        // Misc. SMD ITEMS (26-49)
+
+        FERROUS_INDUCTOR_CORE = addItem(26, "ferrous_inductor_core");
+        TUNGSTEN_INDUCTOR_CORE = addItem(27,"tungsten_inductor_core");
+        LANGMUIR_OSCILATOR = addItem(28, "langmuir_wave_oscilator");
+        LANGMUIR_HOUSING = addItem(29, "langmuir_qbit_housing");
+        SQUID_BASE = addItem(30, "squid_base");
+        TRANSMON_SUPPORT = addItem(31, "transmon_support_system");
+        GRAPHENE_ALUMINOSILICATE_AEROGEL = addItem(32, "graphene_aluminosilicate_aerogel");
+        LAYERED_POLYMER_FOIL = addItem(33, "layered_polyer_foil");
+        STERILE_POLYMER_FOIL = addItem(34, "sterile_polymer_foil");
+
+        //Boards & Preboards (50-99)
         PRIMITIVE_PREBOARD = addItem(50, "primitive_preboard");
         ELECTRONIC_PREBOARD = addItem(51, "electronic_preboard");
         INTEGRATED_PREBOARD = addItem(52, "integrated_preboard");
@@ -78,6 +91,7 @@ public class    TJMetaItem extends StandardMetaItem {
         COSMIC_BOARD = addItem(76, "cosmic_board");
         SUPRA_BOARD = addItem(77, "supra_board");
 
+        //Circuit Metaitems (100-199)
         PRIMITIVE_ASSEMBLY_ULV = addItem(100, "circuit.primitive_ulv").setUnificationData(OrePrefix.circuit,   Tier.ULV);
         PRIMITIVE_COMPUTER_LV = addItem(101, "circuit.primitive_lv").setUnificationData(OrePrefix.circuit,    Tier.LV);
         PRIMITIVE_MAINFRAME_MV = addItem(102, "circuit.primitive_mv").setUnificationData(OrePrefix.circuit,  Tier.MV);
@@ -162,11 +176,28 @@ public class    TJMetaItem extends StandardMetaItem {
                 .setUnificationData(OrePrefix.circuit, Tier.OpV)
                 .setUnificationData(OrePrefix.circuit, Tier.MAX);
 
-        //METAITEMS FOR CIRCUITS / FRAMEWORKS
+        //Open (200-299)
+
+        //PCB Intermediate Metaitems Primitive - Crystal (300-499)
         WETPHENOLICPULP = addItem(300, "wetphenolicpulp");
         WETPRESSEDPHENOLICSUBSTRATE = addItem(301, "wetpressedphenolicsubstrate");
+        COPPER_LAMINATED_EPOXID = addItem(302, "copper_laminated_epoxid");
+        ELECTRUM_LAMINATED_EPOXID = addItem(303, "electrum_laminated_epoxid");
+        GERMANIUM_LAMINATED_EPOXID = addItem(304,"germanium_laminated_epoxid");
+        FIBERGLASS_MESH = addItem(305,"fiber_glass_mesh");
+        ZBLANMATRIX = addItem(306,"zblan_matrix");
+        OPTICAL_BASE = addItem(307,"optical_base");
+        LAMINATED_OPTICAL_BASE = addItem(308,"laminated_optical_base");
+        PROCESSED_CRYSTAL_WAFER = addItem(309,"processed_crystal_wafer");
+        CRYSTAL_SFET_BUNDLE = addItem(310,"crystal_sfet_bundle");
+        CRYSTAL_SFET_WAFER = addItem(311,"crystal_sfet_wafer");
+        REFRACTING_SHEET = addItem(312,"refracting_sheet");
+        LAMINATED_CRYSTAL_PCB_SHEET = addItem(313,"laminated_crystal_pcb_sheet");
+        GAMMA_EMITTING_DIODE = addItem(314,"gamma_emitting_diode");
+        REFLECTING_SHEET = addItem(315, "reflecting_sheet");
 
-        //METAITEMS FOR WAFERS
+
+        //Lithography Metaitems (500-599)
         SILICON_BOULE = addItem(500, "silicon_boule");
         ANTIMONY_DOPED_SILICON_BOULE = addItem(501, "antimony_doped_silicon_boule");
         BORON_DOPED_SILICON_BOULE = addItem(502, "boron_doped_silicon_boule");
@@ -251,76 +282,57 @@ public class    TJMetaItem extends StandardMetaItem {
         UVEMITTER_D = addItem(568, "uvemitter_d");
         UVEMITTER_E = addItem(569, "uvemitter_e");
 
-        // Micro-Nano PCB ITEMS
-        COPPER_LAMINATED_EPOXID = addItem(570, "copper_laminated_epoxid");
-        ELECTRUM_LAMINATED_EPOXID = addItem(571, "electrum_laminated_epoxid");
-        GERMANIUM_LAMINATED_EPOXID = addItem(572,"germanium_laminated_epoxid");
-        FIBERGLASS_MESH = addItem(573,"fiber_glass_mesh");
+        BALLAST = addItem(570,"ballast");
+        EMPTY_GEISSLER_TUBE = addItem(571, "empty_geissler_tube");
+        EMPTY_ARC_LAMP = addItem(572, "empty_arc_lamp");
+        LASER_TUBE = addItem(573, "laser_tube");
+        STENCILING_CUTHEAD = addItem(574, "stencil_cutting_head");
 
-        // Optical PCB ITEMS
-        ZBLANMATRIX = addItem(574,"zblan_matrix");
-        OPTICAL_BASE = addItem(575,"optical_base");
-        LAMINATED_OPTICAL_BASE = addItem(576,"laminated_optical_base");
+        // Chip Metaitems Excluding Lithography (600-999)
 
-        // Crystal CHIP ITEMS
-        COATED_SAPPHIRE_WAFER = addItem(577,"coated_sapphire_wafer");
-        DIRTY_COATED_SAPPHIRE_WAFER = addItem(578,"dirty_coated_sapphire_wafer");
-        CLEANED_COATED_SAPPHIRE_WAFER = addItem(579,"cleaned_coated_sapphire_wafer");
-        SAPPHIRE_SUBSTRATE_PREP = addItem(580,"sapphire_substrate_prep");
-        ETCHED_SAPPHIRE_WAFER = addItem(581,"etched_sapphire_wafer");
-        SUPERHEATED_SAPPHIRE_WAFER = addItem(582,"superheated_sapphire_wafer");
-        VIABLE_SAPPHIRE_WAFER = addItem(583,"viable_sapphire_wafer");
-        NONVIABLE_SAPPHIRE_WAFER = addItem(584,"nonviable_sapphire_wafer");
-        RECYCLED_SAPPHIRE_WAFER = addItem(585,"recycled_sapphire_wafer");
-        SINTERED_SAPPHIRE_WAFER = addItem(586,"sintered_sapphire_wafer");
-        WIRED_SAPPHIRE_WAFER = addItem(587,"wired_sapphire_wafer");
-        SAPPHIRE_WAFER = addItem(588,"sapphire_wafer");
-        RAW_SAPPHIRE_CHIP = addItem(601, "raw_crystal_chip");
-        SAPPHIRE_CHIP = addItem(589,"sapphire_chip");
+        // Electronic Chip
+        SIMPLE_SILICON_WAFER = addItem(600, "simple_silicon_wafer");
+        SIMPLE_CPU_WAFER = addItem(601,"simple_cpu_wafer");
+        SIMPLE_CPU = addItem(602, "simple_cpu");
 
-        // Electronic CHIP ITEMS
-
-        SIMPLE_CPU_WAFER = addItem(590,"simple_cpu_wafer");
-        SIMPLE_CPU = addItem(591, "simple_cpu");
-
-        // Crystal PCB Items
-
-        PROCESSED_CRYSTAL_WAFER = addItem(592,"processed_crystal_wafer");
-        CRYSTAL_SFET_BUNDLE = addItem(595,"crystal_sfet_bundle");
-        CRYSTAL_SFET_WAFER = addItem(596,"crystal_sfet_wafer");
-        REFRACTING_SHEET = addItem(598,"refracting_sheet");
-        LAMINATED_CRYSTAL_PCB_SHEET = addItem(599,"laminated_crystal_pcb_sheet");
-        GAMMA_EMITTING_DIODE = addItem(600,"gamma_emitting_diode");
-        REFLECTING_SHEET = addItem(602, "reflecting_sheet");
+        // Sapphire Chip
+        COATED_SAPPHIRE_WAFER = addItem(603,"coated_sapphire_wafer");
+        DIRTY_COATED_SAPPHIRE_WAFER = addItem(604,"dirty_coated_sapphire_wafer");
+        CLEANED_COATED_SAPPHIRE_WAFER = addItem(605,"cleaned_coated_sapphire_wafer");
+        SAPPHIRE_SUBSTRATE_PREP = addItem(606,"sapphire_substrate_prep");
+        ETCHED_SAPPHIRE_WAFER = addItem(607,"etched_sapphire_wafer");
+        SUPERHEATED_SAPPHIRE_WAFER = addItem(608,"superheated_sapphire_wafer");
+        VIABLE_SAPPHIRE_WAFER = addItem(609,"viable_sapphire_wafer");
+        NONVIABLE_SAPPHIRE_WAFER = addItem(610,"nonviable_sapphire_wafer");
+        RECYCLED_SAPPHIRE_WAFER = addItem(611,"recycled_sapphire_wafer");
+        SINTERED_SAPPHIRE_WAFER = addItem(612,"sintered_sapphire_wafer");
+        WIRED_SAPPHIRE_WAFER = addItem(613,"wired_sapphire_wafer");
+        SAPPHIRE_WAFER = addItem(614,"sapphire_wafer");
+        RAW_SAPPHIRE_CHIP = addItem(615, "raw_crystal_chip");
+        SAPPHIRE_CHIP = addItem(616,"sapphire_chip");
 
 
-
-        // CPU'S - post crystal
         WETWARE_CPU = addItem(620, "wetware_cpu");
-        BIOWARE_CPU = addItem(621, "bioware_cpu");
-        QUANTUM_CPU = addItem(622, "quantum_cpu");
-        EXOTIC_CPU = addItem(623, "exotic_cpu");
-        COSMIC_CPU = addItem(624, "cosmic_cpu");
-        SUPRA_CPU = addItem(625, "supra_cpu");
-        STENCILING_CUTHEAD = addItem(626, "stencil_cutting_head");
-        BALLAST = addItem(627,"ballast");
-        EMPTY_GEISSLER_TUBE = addItem(628, "empty_geissler_tube");
-        EMPTY_ARC_LAMP = addItem(629, "empty_arc_lamp");
-        LASER_TUBE = addItem(631, "laser_tube");
-        SIMPLE_SILICON_WAFER = addItem(632, "simple_silicon_wafer");
 
-        // Misc. SMD ITEMS
-        FERROUS_INDUCTOR_CORE = addItem(1001, "ferrous_inductor_core");
-        TUNGSTEN_INDUCTOR_CORE = addItem(1002,"tungsten_inductor_core");
-        LANGMUIR_OSCILATOR = addItem(1003, "langmuir_wave_oscilator");
-        LANGMUIR_HOUSING = addItem(1004, "langmuir_qbit_housing");
-        SQUID_BASE = addItem(1005, "squid_base");
-        TRANSMON_SUPPORT = addItem(1006, "transmon_support_system");
-        GRAPHENE_ALUMINOSILICATE_AEROGEL = addItem(1007, "graphene_aluminosilicate_aerogel");
-        CNT_SHORT = addItem(1008, "short_carbon_nanotube_strand");
-        CNT_LONG = addItem(1009, "long_carbon_nanotube_strand");
-        LAYERED_POLYMER_FOIL = addItem(1010, "layered_polyer_foil");
-        STERILE_POLYMER_FOIL = addItem(1011, "sterile_polymer_foil");
+        BIOWARE_CPU = addItem(621, "bioware_cpu");
+
+        QUANTUM_CPU = addItem(622, "quantum_cpu");
+
+        EXOTIC_CPU = addItem(623, "exotic_cpu");
+
+        COSMIC_CPU = addItem(624, "cosmic_cpu");
+
+        SUPRA_CPU = addItem(625, "supra_cpu");
+
+
+
+
+
+        // Chemistry Intermediates (1051-1250)
+
+        // Chemistry End Products (1250-1299)
+        CNT_SHORT = addItem(1250, "short_carbon_nanotube_strand");
+        CNT_LONG = addItem(1251, "long_carbon_nanotube_strand");
 
 
     }
