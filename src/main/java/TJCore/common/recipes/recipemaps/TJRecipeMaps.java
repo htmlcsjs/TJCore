@@ -18,7 +18,7 @@ public class TJRecipeMaps {
 
     public static final RecipeMap<IntCircuitRecipeBuilder> NANOSCALE_GROWTH_RECIPES = new RecipeMap<>("nanoscale_growth", 0,1,1,1,1,1,0,0,new IntCircuitRecipeBuilder(), false).setSound(GTSounds.SUS_RECORD).setSlotOverlay(true,false,GuiTextures.OUT_SLOT_OVERLAY).setSlotOverlay(false,true,GuiTextures.NEUTRAL_MATTER_OVERLAY).setSlotOverlay(false,false,GuiTextures.CIRCUIT_OVERLAY);
     public static final RecipeMap<IntCircuitRecipeBuilder> PRINTER_RECIPES = new RecipeMap<>("printer", 1, 9, 1, 2, 0, 1, 0, 1, new IntCircuitRecipeBuilder(), false).setSound(GTSounds.ASSEMBLER);
-
+    public static final RecipeMap<IntCircuitRecipeBuilder> LOOM_RECIPES = new RecipeMap<>("loom", 1,4,1,1,0,2,0,0,new IntCircuitRecipeBuilder(), false).setSlotOverlay(false, false, GuiTextures.STRING_SLOT_OVERLAY).setSlotOverlay(true,false,GuiTextures.PAPER_OVERLAY);
     public static final RecipeMap<SimpleRecipeBuilder> STEAM_COMPONENT_ASSEMBLER_RECIPES = new RecipeMap<>("steam_assembler", 3, 6, 1, 1, 0, 0, 0, 0, new SimpleRecipeBuilder(), false).setSound(GTSounds.ASSEMBLER);
 
     public static final RecipeMap<SimpleRecipeBuilder> TREE_FARMER_RECIPES = new RecipeMap<>("tree_farmer", 1, 3, 0, 6, 0, 1, 0, 1, new SimpleRecipeBuilder(), false).setSound(GTSounds.ASSEMBLER);
