@@ -635,10 +635,10 @@ public class TJFirstDegreeMaterials {
         PlasmaProperty HQDPlasmaProp = new PlasmaProperty();
         HeavyQuarkDegenerate.setProperty(PropertyKey.PLASMA, HQDPlasmaProp);
         IngotProperty TaraniumIngotProp = new IngotProperty();
-        WireProperties TaraniumWireProp = new WireProperties(536870912, 2, 64);
+        WireProperties TaraniumWireProp = new WireProperties(134217728, 2, 64);
         Taranium.setProperty(PropertyKey.INGOT, TaraniumIngotProp);
         Taranium.setProperty(PropertyKey.WIRE, TaraniumWireProp);
-        WireProperties NihoniumTriiodideProp = new WireProperties(134217728, 2, 64);
+        WireProperties NihoniumTriiodideProp = new WireProperties(33554432, 2, 64);
         NihoniumTriiodide.setProperty(PropertyKey.WIRE, NihoniumTriiodideProp);
         WireProperties SuperheavyHProp = new WireProperties(536870912, 4, 128);
         SuperheavyH.setProperty(PropertyKey.WIRE, SuperheavyHProp);
