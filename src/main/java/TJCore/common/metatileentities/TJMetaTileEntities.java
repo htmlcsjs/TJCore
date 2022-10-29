@@ -28,7 +28,6 @@ public class TJMetaTileEntities {
     public static SimpleMachineMetaTileEntity[] COMPONENT_ASSEMBLER = new SimpleMachineMetaTileEntity[GTValues.LuV];
     public static SimpleMachineMetaTileEntity[] PRINTER = new SimpleMachineMetaTileEntity[6];
     public static SimpleMachineMetaTileEntity[] LAMINATOR = new SimpleMachineMetaTileEntity[5];
-    public static SimpleMachineMetaTileEntity[] DEHYDRATOR = new SimpleMachineMetaTileEntity[5];
 
     public static SteamMixer STEAM_MIXER_BRONZE;
     public static SteamMixer STEAM_MIXER_STEEL;
@@ -54,9 +53,7 @@ public class TJMetaTileEntities {
         STEAM_MIXER_BRONZE = registerMetaTileEntity(12039, new SteamMixer(tjcoreID("steam_mixer_bronze"), false));
         STEAM_MIXER_STEEL = registerMetaTileEntity(12040, new SteamMixer(tjcoreID("steam_mixer_steel"), true));
         registerSimpleMetaTileEntity(LAMINATOR, 12070, "laminator", TJRecipeMaps.LAMINATOR_RECIPES, Textures.BENDER_OVERLAY, true);
-        registerSimpleMetaTileEntity(DEHYDRATOR, 12080, "dehydrator", TJRecipeMaps.DEHYDRATOR_RECIPES, Textures.PRIMITIVE_BLAST_FURNACE_OVERLAY, true);
-        registerSimpleMetaTileEntity(PRINTER, 12090, "printer", TJRecipeMaps.PRINTER_RECIPES, Textures.LASER_ENGRAVER_OVERLAY, true);
-
+        registerSimpleMetaTileEntity(PRINTER, 12080, "printer", TJRecipeMaps.PRINTER_RECIPES, Textures.LASER_ENGRAVER_OVERLAY, true);
     }
 
     private static void registerSimpleMetaTileEntity(SimpleMachineMetaTileEntity[] machines, int startID, String name, RecipeMap<?> map, ICubeRenderer texture, boolean frontfacing, Function<Integer, Integer> tankScalingFunction) {

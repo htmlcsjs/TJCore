@@ -33,6 +33,7 @@ import java.util.List;
 import static TJCore.common.metaitem.TJMetaItems.*;
 import static TJCore.api.material.TJMaterials.*;
 import static TJCore.common.recipes.recipemaps.TJRecipeMaps.*;
+import static gregicality.science.api.recipes.GCYSRecipeMaps.*;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregicality.science.common.items.GCYSMetaItems.*;
 import static gregtech.api.GTValues.*;
@@ -48,7 +49,6 @@ public class CircuitRecipes {
     public static void removePreexistingCircuits() {
 
         oreDictHandling();
-
         GTRecipeHandler.removeAllRecipes(CIRCUIT_ASSEMBLER_RECIPES);
         GTRecipeHandler.removeAllRecipes(ASSEMBLY_LINE_RECIPES);
 
@@ -172,7 +172,7 @@ public class CircuitRecipes {
                 .duration(20)
                 .buildAndRegister();
 
-        DEHYDRATOR_RECIPES.recipeBuilder()
+        DRYER_RECIPES.recipeBuilder()
                 .input(WETPRESSEDPHENOLICSUBSTRATE)
                 .output(PRIMITIVE_PREBOARD)
                 .EUt(8)
