@@ -630,6 +630,7 @@ public class TJFirstDegreeMaterials {
         Osmium.addFlags(MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_SPRING, MaterialFlags.GENERATE_SPRING_SMALL);
         NeodymiumMagnetic.addFlags(MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_RING);
         Rutherfordium.addFlags(MaterialFlags.GENERATE_FOIL);
+        Aluminium.addFlags(MaterialFlags.GENERATE_ROTOR);
 
         //Properties
         PlasmaProperty HQDPlasmaProp = new PlasmaProperty();

@@ -51,6 +51,7 @@ public class CommonProxy {
     public static void init(RegistryEvent.Register<IRecipe> event) {
         TJOreDictionaryLoader.registerRecipes();
         MaterialProcessing.registerMaterialProcessing();
+        MachineRecipes.registerMachines();
         CircuitRecipes.registerCircuits();
         TJPolymers.registerPolymers();
         GTComponents.registerComponents();
