@@ -564,6 +564,15 @@ public class TJFirstDegreeMaterials {
                 .colorAverage()
                 .components(PolyvinylChloride, 1, Polyethylene, 1)
                 .build();
+
+        GalvanizedSteel = new Material.Builder(25083, "galvanized_steel")
+                .ingot()
+                .color(0xb5b5b5)
+                .components(Iron, 9, Zinc, 1)
+                .iconSet(MaterialIconSet.SHINY)
+                .arcSmeltInto(Steel)
+                .flags(MaterialFlags.DISABLE_DECOMPOSITION, MaterialFlags.NO_WORKING, MaterialFlags.NO_SMASHING, MaterialFlags.NO_SMELTING)
+                .build();
     }
 
     public static void registerProperties() {
@@ -590,6 +599,7 @@ public class TJFirstDegreeMaterials {
         Epoxy.addFlags(MaterialFlags.GENERATE_FOIL);
 
         // Metals
+        GalvanizedSteel.addFlags(MaterialFlags.GENERATE_FRAME, MaterialFlags.GENERATE_ROTOR, MaterialFlags.GENERATE_GEAR, MaterialFlags.GENERATE_SMALL_GEAR, MaterialFlags.GENERATE_BOLT_SCREW, MaterialFlags.GENERATE_PLATE, MaterialFlags.GENERATE_SPRING_SMALL, MaterialFlags.GENERATE_SPRING, MaterialFlags.GENERATE_RING);
         VanadiumGallium.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
         TinAlloy.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
         Dysprosium.addFlags(MaterialFlags.GENERATE_PLATE, MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_FRAME);

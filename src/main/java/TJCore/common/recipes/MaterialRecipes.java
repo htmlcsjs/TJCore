@@ -1,12 +1,15 @@
 package TJCore.common.recipes;
 
 import TJCore.common.TJConfig;
+import gregtech.api.GTValues;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Material;
+
+import static TJCore.api.material.TJMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
 import gregtech.api.unification.material.properties.DustProperty;
 import gregtech.api.unification.material.properties.OreProperty;
@@ -16,6 +19,7 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.MetaBlocks;
+import static gregtech.api.recipes.RecipeMaps.*;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
@@ -23,10 +27,29 @@ import static gregtech.api.unification.material.info.MaterialFlags.*;
 public class MaterialRecipes {
 
     public static void register() {
+        galvanizedSteel();
         //if(TJConfig.recipes.harderFrames)
           //  frameGt.addProcessingHandler(PropertyKey.DUST, MaterialRecipes::createFrames);
 
         registerMetalCasings();
+    }
+
+    static OrePrefix[] types = new OrePrefix[]{ingot, plate, stick, stickLong, bolt, screw, ring, gear, gearSmall, rotor};
+
+    public static void galvanizedSteel() {
+        int tinyQuantity;
+        for (OrePrefix prefix : types) {
+
+            tinyQuantity = (int) ((prefix.getMaterialAmount(Steel))/ M) + 1;
+
+             ALLOY_SMELTER_RECIPES.recipeBuilder()
+                     .duration(tinyQuantity * 15)
+                     .EUt(8)
+                     .input(prefix, Steel, 1)
+                     .input(dustTiny, Zinc, tinyQuantity)
+                     .output(prefix, GalvanizedSteel)
+                     .buildAndRegister();
+        }
     }
 
     public static void createFrames(OrePrefix prefix, Material mat, DustProperty property) {
@@ -66,7 +89,6 @@ public class MaterialRecipes {
             ModHandler.removeRecipeByName("gregtech:casing_stainless_clean");
             ModHandler.removeRecipeByName("gregtech:casing_tungstensteel_robust");
             ModHandler.removeRecipeByName("gregtech:casing_hssg_robust");
-
             RecipeMaps.ASSEMBLER_RECIPES.recipeBuilder()
                     .input(frameGt, Steel)
                     .input(plate, Steel, 6)
