@@ -99,6 +99,18 @@ public class MachineRecipes {
                 'H', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.STEEL_HULL),
                 'P', OreDictUnifier.get(pipeNormalFluid, TinAlloy),
                 'E', OreDictUnifier.get(gear, Steel));
+        ModHandler.addShapedRecipe("steam_dryer_bronze", STEAM_DRYER_BRONZE.getStackForm(),
+                "PGP", "PHP", "PLP",
+                'L', OreDictUnifier.get(plateDouble,Copper),
+                'G', OreDictUnifier.get("blockGlass"),
+                'H', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_BRICKS_HULL),
+                'P', OreDictUnifier.get(pipeTinyFluid, Bronze));
+        ModHandler.addShapedRecipe("steam_dryer_steel", STEAM_DRYER_STEEL.getStackForm(),
+                "PGP", "PHP", "PLP",
+                'L', OreDictUnifier.get(plateDouble,Cupronickel),
+                'G', OreDictUnifier.get("blockGlass"),
+                'H', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.STEEL_BRICKS_HULL),
+                'P', OreDictUnifier.get(pipeTinyFluid, TinAlloy));
     }
 
     private static void registerMulti() {

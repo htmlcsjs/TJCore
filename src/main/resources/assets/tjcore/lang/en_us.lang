@@ -49,6 +49,8 @@ tjcore.machine.laminator.hv.name=Advanced Laminator I
 tjcore.machine.laminator.ev.name=Advanced Laminator II
 tjcore.machine.steam_mixer_bronze.name=Steam Mixer
 tjcore.machine.steam_mixer_steel.name=High Pressure Steam Mixer
+tjcore.machine.steam_dryer_bronze.name=Steam Dryer
+tjcore.machine.steam_dryer_steel.name=High Pressure Steam Dryer
 tjcore.machine.armor_infuser.name=Armor Infuser
 tjcore.machine.steam_assembler.name=Steam Component Assembler
 tjcore.machine.tree_farmer.name=Advanced Tree Farmer
@@ -133,6 +135,7 @@ metaitem.thin_woven_carbon_fiber.name=Thin Woven Carbon Threads
 metaitem.woven_carbon_fiber.name=Woven Carbon Threads
 metaitem.carbon_fiber_foil.name=Thin Carbon Fiber Sheet
 metaitem.carbon_fiber_plate.name=Carbon Fiber Plate
+metaitem.
 
 //circuit lang
 metaitem.circuit.primitive_ulv.name=Primitive Assembly

@@ -4,17 +4,14 @@ import TJCore.TJValues;
 import TJCore.common.metatileentities.multi.electric.*;
 import TJCore.common.metatileentities.multi.fusion.MegaFusion;
 import TJCore.common.metatileentities.multi.steam.SteamAssembler;
-import TJCore.common.metatileentities.multi.steam.SteamMixer;
 import TJCore.common.recipes.recipemaps.TJRecipeMaps;
 import gregtech.api.GTValues;
 import gregtech.api.metatileentity.SimpleMachineMetaTileEntity;
-import gregtech.api.metatileentity.SteamMetaTileEntity;
 import gregtech.api.recipes.RecipeMap;
 import gregtech.api.util.GTUtility;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.common.metatileentities.MetaTileEntities;
-import gregtech.common.metatileentities.steam.SteamExtractor;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.function.Function;
@@ -28,11 +25,12 @@ public class TJMetaTileEntities {
     public static SimpleMachineMetaTileEntity[] COMPONENT_ASSEMBLER = new SimpleMachineMetaTileEntity[GTValues.LuV];
     public static SimpleMachineMetaTileEntity[] PRINTER = new SimpleMachineMetaTileEntity[6];
     public static SimpleMachineMetaTileEntity[] LAMINATOR = new SimpleMachineMetaTileEntity[5];
-
+    public static SteamDryer STEAM_DRYER_BRONZE;
+    public static SteamDryer STEAM_DRYER_STEEL;
     public static SteamMixer STEAM_MIXER_BRONZE;
     public static SteamMixer STEAM_MIXER_STEEL;
     public static SteamAssembler STEAM_ASSEMBLER;
-    //TODO
+
     public static ArmorInfuser ARMOR_INFUSER;
     public static TreeFarmer TREE_FARMER;
     public static MegaFusion MEGA_FUSION;
@@ -52,6 +50,8 @@ public class TJMetaTileEntities {
         LOOM = registerMetaTileEntity(12038, new Loom(tjcoreID("loom")));
         STEAM_MIXER_BRONZE = registerMetaTileEntity(12039, new SteamMixer(tjcoreID("steam_mixer_bronze"), false));
         STEAM_MIXER_STEEL = registerMetaTileEntity(12040, new SteamMixer(tjcoreID("steam_mixer_steel"), true));
+        STEAM_DRYER_BRONZE = registerMetaTileEntity(12041, new SteamDryer(tjcoreID("steam_dryer_bronze"), false));
+        STEAM_DRYER_STEEL = registerMetaTileEntity(12042, new SteamDryer(tjcoreID("steam_dryer_steel"), true));
         registerSimpleMetaTileEntity(LAMINATOR, 12070, "laminator", TJRecipeMaps.LAMINATOR_RECIPES, Textures.BENDER_OVERLAY, true);
         registerSimpleMetaTileEntity(PRINTER, 12080, "printer", TJRecipeMaps.PRINTER_RECIPES, Textures.LASER_ENGRAVER_OVERLAY, true);
     }
