@@ -603,15 +603,15 @@ public class TJFirstDegreeMaterials {
         VanadiumGallium.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
         TinAlloy.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
         Dysprosium.addFlags(MaterialFlags.GENERATE_PLATE, MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_FRAME);
-        Vibranium.addFlags(MaterialFlags.GENERATE_FRAME, MaterialFlags.GENERATE_BOLT_SCREW, GENERATE_NANOFOIL);
+        Vibranium.addFlags(MaterialFlags.GENERATE_FRAME, MaterialFlags.GENERATE_BOLT_SCREW, GENERATE_NANOFOIL, MaterialFlags.GENERATE_ROTOR);
         RhodiumPlatedPalladium.addFlags(MaterialFlags.GENERATE_FRAME);
         Duranium.addFlags(MaterialFlags.GENERATE_FRAME, GENERATE_NANOFOIL);
         NihoniumTriiodide.addFlags(MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_RING);
         Nihonium.addFlags(MaterialFlags.GENERATE_PLATE, GENERATE_NANOWIRE);
         SuperheavyH.addFlags(MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_BOLT_SCREW);
         SuperheavyL.addFlags(MaterialFlags.GENERATE_FRAME, MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_RING, MaterialFlags.GENERATE_BOLT_SCREW);
-        Neutronium.addFlags(MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_ROUND);
-        HeavyQuarkDegenerate.addFlags(MaterialFlags.GENERATE_FRAME, MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_BOLT_SCREW, MaterialFlags.GENERATE_RING, MaterialFlags.GENERATE_GEAR, MaterialFlags.GENERATE_LONG_ROD, GENERATE_NANOWIRE, MaterialFlags.DISABLE_DECOMPOSITION, MaterialFlags.NO_SMELTING, MaterialFlags.NO_SMASHING, MaterialFlags.NO_WORKING);
+        Neutronium.addFlags(MaterialFlags.GENERATE_ROTOR, MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_ROUND);
+        HeavyQuarkDegenerate.addFlags(MaterialFlags.GENERATE_ROTOR, MaterialFlags.GENERATE_FRAME, MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_BOLT_SCREW, MaterialFlags.GENERATE_RING, MaterialFlags.GENERATE_GEAR, MaterialFlags.GENERATE_LONG_ROD, GENERATE_NANOWIRE, MaterialFlags.DISABLE_DECOMPOSITION, MaterialFlags.NO_SMELTING, MaterialFlags.NO_SMASHING, MaterialFlags.NO_WORKING);
         Taranium.addFlags(MaterialFlags.GENERATE_BOLT_SCREW, MaterialFlags.GENERATE_LONG_ROD, MaterialFlags.GENERATE_SPRING_SMALL, GENERATE_NANOWIRE);
         TriniumSteel.addFlags(MaterialFlags.GENERATE_FRAME, MaterialFlags.GENERATE_SPRING, MaterialFlags.GENERATE_PLATE, MaterialFlags.GENERATE_BOLT_SCREW);
         Fermium.addFlags(MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_SPRING_SMALL, GENERATE_NANOWIRE);
@@ -631,6 +631,7 @@ public class TJFirstDegreeMaterials {
         NeodymiumMagnetic.addFlags(MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_RING);
         Rutherfordium.addFlags(MaterialFlags.GENERATE_FOIL);
         Aluminium.addFlags(MaterialFlags.GENERATE_ROTOR);
+        Draconium.addFlags(MaterialFlags.GENERATE_ROTOR);
 
         //Properties
         PlasmaProperty HQDPlasmaProp = new PlasmaProperty();

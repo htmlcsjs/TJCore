@@ -25,6 +25,11 @@ public class TJMetaItems {
     //public static MetaItem<?>.MetaValueItem CAPACITOR;
     //public static MetaItem<?>.MetaValueItem INDUCTOR;
 
+    //Components + Microcrafting
+
+    public static MetaItem<?>.MetaValueItem STEAM_MOTOR;
+    public static MetaItem<?>.MetaValueItem STEAM_PISTON;
+    public static MetaItem<?>.MetaValueItem STEAM_PUMP;
     //CIRCUITFRAMEWORK
 
     public static MetaItem<?>.MetaValueItem WETPHENOLICPULP;
@@ -35,6 +40,7 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem UVEMITTER_C;
     public static MetaItem<?>.MetaValueItem UVEMITTER_D;
     public static MetaItem<?>.MetaValueItem UVEMITTER_E;
+
     //SMDs
 
     public static MetaItem<?>.MetaValueItem SMD_RESISTOR_1;
@@ -338,6 +344,5 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem THIN_WOVEN_CARBON_FIBER;
     public static MetaItem<?>.MetaValueItem CARBON_FIBER_PLATE;
     public static MetaItem<?>.MetaValueItem CARBON_FIBER_FOIL;
-
 
 }

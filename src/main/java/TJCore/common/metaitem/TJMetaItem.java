@@ -324,7 +324,6 @@ public class    TJMetaItem extends StandardMetaItem {
 
         SUPRA_CPU = addItem(625, "supra_cpu");
 
-
         // Chemistry Intermediates (1051-1250)
         SPUN_POLYACRYLONITRILE = addItem(1051,"spun_polyacrylonitrile");
         WASHED_POLYACRLONITRILE = addItem(1052,"washed_polyacrylonitrile");
@@ -341,6 +340,9 @@ public class    TJMetaItem extends StandardMetaItem {
         CARBON_FIBER_PLATE = addItem(1252,"carbon_fiber_plate");
         CARBON_FIBER_FOIL = addItem(1253,"carbon_fiber_foil");
 
-
+        // Microcrafting + Components (1300-1499)
+        STEAM_MOTOR = addItem(1254, "steam_motor");
+        STEAM_PISTON = addItem(1255, "steam_piston");
+        STEAM_PUMP = addItem(1256, "steam_pump");
     }
 }

@@ -31,6 +31,7 @@ import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.loaders.recipe.CraftingComponent;
 import gregtech.loaders.recipe.MetaTileEntityLoader;
 import net.minecraft.client.Minecraft;
+import net.minecraftforge.fml.common.Mod;
 import scala.tools.nsc.typechecker.Adaptations;
 
 import java.util.Map;
@@ -46,42 +47,33 @@ import static gregtech.loaders.recipe.CraftingComponent.*;
 
 public class MachineRecipes {
 
+
     static int[] vIndex = new int[]{ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX};
     static Material[] hullMat = new Material[]{Steel, Aluminium, StainlessSteel, Titanium, TungstenSteel, RhodiumPlatedPalladium, NaquadahAlloy, Darmstadtium, Orichalcum, Adamantium, Vibranium, Draconium, HeavyQuarkDegenerate, Neutronium};
-    static Material[] cableMat = new Material[]{Tin, Copper, Gold, Aluminium, Platinum, NiobiumTitanium, VanadiumGallium, YttriumBariumCuprate, EnrichedNaqAlloy, PedotTMA, NihoniumTriiodide, Taranium, SuperheavyH, Neutronium};
 
     public static void registerMachines() {
-        removeOldMachines();
-        setComponents();
+        //removeOldMachines();
+
         registerElectric();
         registerSteam();
         registerMulti();
     }
 
     private static void removeOldMachines() {
-        // LV -> UV
-        for (int i = LV; i <= UV; i++) {
-            ModHandler.removeRecipes(MIXER[i].getStackForm());
+        //removeAllTeirs(MIXER);
+    }
+
+    private static void removeAllTeirs(MetaTileEntity[] mteIn) {
+        for (MetaTileEntity mte: mteIn) {
+            if (mte != null) {
+                ModHandler.removeRecipes(mte.getStackForm());
+            }
         }
     }
 
-    private static void setComponents(){
-        ROTOR = new Component(Stream.of(new Object[][]{
-                {0, new UnificationEntry(OrePrefix.rotor, Steel)},
-                {1, new UnificationEntry(OrePrefix.rotor, GalvanizedSteel)},
-                {2, new UnificationEntry(OrePrefix.rotor, Aluminium)},
-                {3, new UnificationEntry(OrePrefix.rotor, StainlessSteel)},
-                {4, new UnificationEntry(OrePrefix.rotor, Titanium)},
-                {5, new UnificationEntry(OrePrefix.rotor, TungstenSteel)},
-                {6, new UnificationEntry(OrePrefix.rotor, RhodiumPlatedPalladium)},
-                {7, new UnificationEntry(OrePrefix.rotor, NaquadahAlloy)},
-                {8, new UnificationEntry(OrePrefix.rotor, Darmstadtium)},
-        }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
-    }
 
     private static void registerElectric() {
-        MetaTileEntityLoader.registerMachineRecipe(MIXER, "GRG", "GEG", "CMC", 'M', CraftingComponent.HULL, 'E', MOTOR, 'R', ROTOR, 'C', CIRCUIT, 'G', GLASS);
-
+        MetaTileEntityLoader.registerMachineRecipe(LAMINATOR, "MGM", "WHW", "PCP", 'M', MOTOR, 'G', COIL_ELECTRIC, 'W', CABLE, 'H', CraftingComponent.HULL, 'P', PISTON, 'C', CIRCUIT);
     }
 
     private static void registerSteam() {
@@ -111,6 +103,12 @@ public class MachineRecipes {
                 'G', OreDictUnifier.get("blockGlass"),
                 'H', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.STEEL_BRICKS_HULL),
                 'P', OreDictUnifier.get(pipeTinyFluid, TinAlloy));
+        ModHandler.addShapedRecipe("steam_macerator_bronze_alternate", STEAM_MACERATOR_BRONZE.getStackForm(),
+                "GPG", "PHP", "IPI",
+                'G', OreDictUnifier.get(gear, WroughtIron),
+                'P', OreDictUnifier.get(pipeSmallFluid, Bronze),
+                'H', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_HULL),
+                'I', OreDictUnifier.get("craftingPiston"));
     }
 
     private static void registerMulti() {

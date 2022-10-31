@@ -27,7 +27,7 @@ public class CommonProxy {
     public void preInit() {
         TJOreDictionaryLoader.init();
     }
-    
+
     @SubscribeEvent
     public static void RegisterBlocks(RegistryEvent.Register<Block> event) {
         IForgeRegistry<Block> registry = event.getRegistry();
@@ -54,8 +54,7 @@ public class CommonProxy {
         MachineRecipes.registerMachines();
         CircuitRecipes.registerCircuits();
         TJPolymers.registerPolymers();
-        GTComponents.registerComponents();
-        GTComponents.registerHullsCasings();
+        GTComponents.init();
 
         if (Loader.isModLoaded("draconicevolution")) {
             ArmorInfuserRecipes.register();
