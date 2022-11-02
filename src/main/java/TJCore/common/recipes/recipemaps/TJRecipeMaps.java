@@ -14,7 +14,7 @@ public class TJRecipeMaps {
 
     public static final RecipeMap<SimpleRecipeBuilder> FSZM_RECIPES = new RecipeMap<>("free_stand_zone_melter", 1,1,1,1,0,1,0,1,new SimpleRecipeBuilder(), false).setSlotOverlay(false,false, GuiTextures.HEATING_OVERLAY_1).setSlotOverlay(true,false,GuiTextures.CRYSTAL_OVERLAY);
 
-    public static final RecipeMap<SimpleRecipeBuilder> COMPONENT_ASSEMBLER_RECIPES = new RecipeMap<>("component_assembler", 3, 6, 1, 1, 0, 1, 0, 0, new SimpleRecipeBuilder(), false).setSound(GTSounds.ASSEMBLER);
+    public static final RecipeMap<SimpleRecipeBuilder> COMPONENT_ASSEMBLER_RECIPES = new RecipeMap<>("component_assembler", 2, 6, 1, 1, 0, 3, 0, 0, new SimpleRecipeBuilder(), false).setSound(GTSounds.ASSEMBLER);
 
     public static final RecipeMap<IntCircuitRecipeBuilder> NANOSCALE_GROWTH_RECIPES = new RecipeMap<>("nanoscale_growth", 0,1,1,1,1,1,0,0,new IntCircuitRecipeBuilder(), false).setSound(GTSounds.SUS_RECORD).setSlotOverlay(true,false,GuiTextures.OUT_SLOT_OVERLAY).setSlotOverlay(false,true,GuiTextures.NEUTRAL_MATTER_OVERLAY).setSlotOverlay(false,false,GuiTextures.CIRCUIT_OVERLAY);
     public static final RecipeMap<IntCircuitRecipeBuilder> PRINTER_RECIPES = new RecipeMap<>("printer", 1, 9, 1, 2, 0, 1, 0, 1, new IntCircuitRecipeBuilder(), false).setSound(GTSounds.ASSEMBLER);

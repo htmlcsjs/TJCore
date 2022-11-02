@@ -3,8 +3,7 @@ import gregtech.api.unification.Element;
 import gregtech.api.unification.Elements;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialFlag;
-import gregtech.api.unification.material.properties.PropertyKey;
-import org.jetbrains.annotations.NotNull;
+
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 
 import java.util.*;
@@ -51,7 +50,21 @@ public class TJMaterials {
     public static Material TerfenolD_H;
     public static Material TerfenolD_L;
     public static Material GalvanizedSteel;
-
+    public static Material LutetiumTantalate;
+    public static Material Iridrhodruthenium;
+    public static Material HEA_1;
+    public static Material HEA_2;
+    public static Material HEA_3;
+    public static Material HDCS_1;
+    public static Material HDCS_2;
+    public static Material HDCS_3;
+    public static Material Pikyonium;
+    public static Material TantalumCarbide;
+    public static Material HafniumCarbide;
+    public static Material SeaborgiumCarbide;
+    public static Material TantalumHafniumSeaborgiumCarbide;
+    public static Material TantalumHafniumSeaborgiumCarboNitride;
+    public static Material OganessonTetraTennesside;
 
     //Soldering Alloys
     public static Material SolderingAlloyI;
@@ -117,7 +130,7 @@ public class TJMaterials {
 
     // Polymers
     public static Material Polyacrylonitrile;
-
+    public static Material Polyetheretherketone;
     public static Material CarbonNanotubePolymer;
     public static Material Ladder_Poly_P_Phenylene;
 
@@ -142,15 +155,15 @@ public class TJMaterials {
     public static Material Void;
     public static Material ColdIron;
     public static Material Starmetal;
+    public static Material ManasteelAlloy;
     public static Material Starlight;
     public static Material Salis;
 
     //endgame unknown
+    public static Material ProgrammableMatter;
     public static Material Gluons;
     public static Material HeavyQuarks;
     public static Material LightQuarks;
-
     public static Material Leptons;
     public static Material HeavyQuarkDegenerate;
-
 }

@@ -4,6 +4,7 @@ import gregtech.api.GTValues;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
+import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.RecipeMap;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.OreDictUnifier;
@@ -18,6 +19,11 @@ import org.omg.CORBA.PUBLIC_MEMBER;
 import java.util.HashMap;
 import java.util.Map;
 
+import static TJCore.api.TJOreDictionaryLoader.*;
+import static TJCore.api.material.TJMaterials.*;
+import static gregicality.science.api.unification.materials.GCYSMaterials.*;
+import static TJCore.common.recipes.recipemaps.TJRecipeMaps.*;
+import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.ModHandler.*;
 import static gregtech.api.recipes.RecipeMaps.*;
@@ -31,7 +37,7 @@ import static gregtech.common.items.MetaItems.*;
 public class GTComponents {
 
     // Static Array Area :desolate:
-
+    public static Material[] tierCircuitNames = new Material[]{MarkerMaterials.Tier.ULV, MarkerMaterials.Tier.LV, MarkerMaterials.Tier.MV, MarkerMaterials.Tier.HV, MarkerMaterials.Tier.EV, MarkerMaterials.Tier.IV, MarkerMaterials.Tier.LuV, MarkerMaterials.Tier.ZPM, MarkerMaterials.Tier.UV, MarkerMaterials.Tier.UHV, MarkerMaterials.Tier.UEV, MarkerMaterials.Tier.UIV, MarkerMaterials.Tier.UXV, MarkerMaterials.Tier.OpV, MarkerMaterials.Tier.MAX};
     public static MetaItem<?>.MetaValueItem[] motors = new MetaItem<?>.MetaValueItem[]{ELECTRIC_MOTOR_LV, ELECTRIC_MOTOR_MV, ELECTRIC_MOTOR_HV, ELECTRIC_MOTOR_EV, ELECTRIC_MOTOR_IV, ELECTRIC_MOTOR_LuV, ELECTRIC_MOTOR_ZPM, ELECTRIC_MOTOR_UV, ELECTRIC_MOTOR_UHV, ELECTRIC_MOTOR_UEV, ELECTRIC_MOTOR_UIV, ELECTRIC_MOTOR_UXV, ELECTRIC_MOTOR_OpV};
     public static MetaItem<?>.MetaValueItem[] pistons = new MetaItem<?>.MetaValueItem[]{ELECTRIC_PISTON_LV, ELECTRIC_PISTON_MV, ELECTRIC_PISTON_HV, ELECTRIC_PISTON_EV, ELECTRIC_PISTON_IV, ELECTRIC_PISTON_LUV, ELECTRIC_PISTON_ZPM, ELECTRIC_PISTON_UV, ELECTRIC_PISTON_UHV, ELECTRIC_PISTON_UEV, ELECTRIC_PISTON_UIV, ELECTRIC_PISTON_UXV, ELECTRIC_PISTON_OpV};
     public static MetaItem<?>.MetaValueItem[] pump = new MetaItem<?>.MetaValueItem[]{ELECTRIC_PUMP_LV, ELECTRIC_PUMP_MV, ELECTRIC_PUMP_HV, ELECTRIC_PUMP_EV, ELECTRIC_PUMP_IV, ELECTRIC_PUMP_LuV, ELECTRIC_PUMP_ZPM, ELECTRIC_PUMP_UV, ELECTRIC_PUMP_UHV, ELECTRIC_PUMP_UEV, ELECTRIC_PUMP_UIV,ELECTRIC_PUMP_UXV, ELECTRIC_PUMP_OpV};
@@ -40,6 +46,19 @@ public class GTComponents {
     public static MetaItem<?>.MetaValueItem[] feildGen = new MetaItem<?>.MetaValueItem[]{FIELD_GENERATOR_LV, FIELD_GENERATOR_MV, FIELD_GENERATOR_HV, FIELD_GENERATOR_EV, FIELD_GENERATOR_IV, FIELD_GENERATOR_LuV, FIELD_GENERATOR_ZPM, FIELD_GENERATOR_UV, FIELD_GENERATOR_UHV, FIELD_GENERATOR_UEV, FIELD_GENERATOR_UIV, FIELD_GENERATOR_UXV, FIELD_GENERATOR_OpV};
     public static MetaItem<?>.MetaValueItem[] emitter = new MetaItem<?>.MetaValueItem[]{EMITTER_LV, EMITTER_MV, EMITTER_HV, EMITTER_EV, EMITTER_IV, EMITTER_LuV, EMITTER_ZPM, EMITTER_UV, EMITTER_UHV, EMITTER_UEV, EMITTER_UIV, EMITTER_UXV, EMITTER_OpV};
     public static MetaItem<?>.MetaValueItem[] sensor = new MetaItem<?>.MetaValueItem[]{SENSOR_LV, SENSOR_MV, SENSOR_HV, SENSOR_EV, SENSOR_IV, SENSOR_LuV, SENSOR_ZPM, SENSOR_UV, SENSOR_UHV, SENSOR_UEV, SENSOR_UIV, SENSOR_UXV, SENSOR_OpV};
+    private static final Material[] hullPlate = new Material[]{GalvanizedSteel, Aluminium, StainlessSteel, Titanium, TungstenSteel, LutetiumTantalate, Iridrhodruthenium, Tritanium, Bohrium, Adamantium, Vibranium, ProgrammableMatter, HeavyQuarkDegenerate};
+    private static final Material[] motorWires = new Material[]{Copper, AnnealedCopper, Electrum, Nichrome, Tungsten, AnnealedCopper, Platinum, YttriumBariumCuprate, Pikyonium, Gold, Ruthenium, Fermium, Trinium};
+    private static final Material[] magneticRod = new Material[]{IronMagnetic, SteelMagnetic, SteelMagnetic, SteelMagnetic, NeodymiumMagnetic, NeodymiumMagnetic, SamariumMagnetic, SamariumMagnetic, ChromiumGermaniumTellurideMagnetic, ChromiumGermaniumTellurideMagnetic, NeptuniumAluminide, NeptuniumAluminide, PlutoniumPhosphide};
+    private static final Material[] cableElectric = new Material[]{Tin, Copper, Gold, Aluminium, Platinum, NiobiumTitanium, VanadiumGallium, YttriumBariumCuprate, Pikyonium, PedotTMA, NihoniumTriiodide, Taranium, OganessonTetraTennesside};
+    private static final Material[] compMain = new Material[]{Steel, Aluminium, StainlessSteel, Titanium, TungstenSteel, VanadiumSteel, HSSE, Tritanium, EnrichedNaqAlloy, HDCS_1, HDCS_2, HDCS_3, SuperheavyL};
+    private static final Material[] bearingRound = new Material[]{SilicaCeramic, SilicaCeramic, SilicaCeramic, SilicaCeramic, SilicaCeramic, HSSG, HEA_1, HEA_2, HEA_3, Adamantium, Vibranium, TriniumSteel, HeavyQuarkDegenerate};
+    private static final Material[] lube = new Material[]{Lubricant, Lubricant, Lubricant, Lubricant, Lubricant, TriphenylPhosphine, TriphenylPhosphine, TriphenylPhosphine, TriphenylPhosphine, SuspendedPGQD, SuspendedPGQD, SuspendedPGQD, SuspendedPGQD, Leptons};
+    private static final Material[] rubbers = new Material[]{Rubber, SiliconeRubber, StyreneButadieneRubber};
+    public static final Material[] fluidPipes = new Material[]{SilicaCeramic, Potin, Polyethylene, Chrome, Polytetrafluoroethylene, Iridium, Polybenzimidazole, NiobiumTitanium, Duranium, HDCS_1, HDCS_2, HDCS_3, TantalumHafniumSeaborgiumCarboNitride};
+    //public static final Material[] a = new Material[]{};
+    //public static final Material[] a = new Material[]{};
+    //public static final Material[] a = new Material[]{};
+
 
     public static void init(){
         removeOldComponents();
@@ -47,17 +66,125 @@ public class GTComponents {
         registerHullsCasings();
     }
 
+    // Register recipes for standard GT components
     private static void registerComponents() {
+        // LV-IV Loop
+        for (int i = 0; i < 5; i++) {
+            //Component Assembler Recipes - Motor
+            COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
+                    .EUt(VA[i])
+                    .duration((i+1)*20)
+                    .input(wireGtSingle, motorWires[i], 4)
+                    .input(stick, magneticRod[i], i > HV ? 2 : 1)
+                    .input(stick, compMain[i], 2)
+                    .input(i > 2 ? cableGtDouble : cableGtSingle, cableElectric[i], 2)
+                    .fluidInputs(lube[i].getFluid(50*(i+1)))
+                    .output(motors[i])
+                    .buildAndRegister();
 
+            COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
+                    .EUt(VA[i])
+                    .duration((i+1)*20)
+                    .input(stick, compMain[i], 2)
+                    .input(plate, compMain[i], 2)
+                    .input(gear, compMain[i])
+                    .input(motors[i])
+                    .input(cableGtSingle, cableElectric[i])
+                    .fluidInputs(lube[i].getFluid(50*(i+1)))
+                    .output(pistons[i])
+                    .buildAndRegister();
+
+            COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
+                    .EUt(VA[i])
+                    .duration((i+1)*20)
+                    .input(cableGtSingle, cableElectric[i], 2)
+                    .input(gearSmall, compMain[i], 2)
+                    .input(stickLong, compMain[i], 2)
+                    .input(pistons[i])
+                    .input(motors[i])
+                    .input(circuit, tierCircuitNames[i])
+                    .fluidInputs(lube[i].getFluid(50*(i+1)))
+                    .output(roboArm[i])
+                    .buildAndRegister();
+
+            for (int j =0 ; j < rubbers.length; j++) {
+                COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
+                        .EUt(VA[i])
+                        .duration((i+1)*20)
+                        .input(ring, rubbers[j], 2)
+                        .input(screw, compMain[i], 2)
+                        .input(rotor, compMain[i])
+                        .input(pipeLargeFluid, fluidPipes[i])
+                        .input(motors[i])
+                        .input(cableGtSingle, cableElectric[i])
+                        .fluidInputs(lube[i].getFluid(50*(i+1)))
+                        .output(pump[i])
+                        .buildAndRegister();
+            }
+        }
+
+        // LuV-UHV Loop
+        for (int i = 5; i < 9; i++) {
+            //Assline Recipes - Motor
+            RecipeBuilder builder = ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .EUt(VA[i+1])
+                    .duration((i+1)*20)
+                    .input(stick, magneticRod[i], i > 6 ? 64 : 32)
+                    .input(stick, compMain[i], i > 6 ? 16 : 8)
+                    .input(stickLong, compMain[i], i > 6 ? 4 : 2)
+                    .input(round, bearingRound[i], i > 6 ? 32 : 16)
+                    .input(cableGtDouble, cableElectric[i], i > 6 ? 4 : 2)
+                    .fluidInputs(lube[i].getFluid((i-4)*250))
+                    .output(motors[i]);
+            for (int j = i-4; j > 0; j--) {
+                builder.input(wireFine, motorWires[i], 64);
+            }
+            builder.buildAndRegister();
+        }
+
+        //UEV-OpV Loop
+        for (int i = 9; i < OpV; i++) {
+
+            RecipeBuilder builder = ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .EUt(VA[i+1])
+                    .duration((i+1)*20)
+                    .input(stick, magneticRod[i], 64)
+                    .fluidInputs(lube[i].getFluid((i-8)*250))
+                    .output(motors[i]);
+
+            if (i > 10) {
+                builder.input(stick, magneticRod[i], i == 11 ? 32 : 64);
+                builder.input(stick, magneticRod[i], i == 11 ? 32 : 64);
+            }
+
+            builder.input(stick, compMain[i], i > 10 ? 64 : 32);
+            builder.input(stickLong, compMain[i], i > 10 ? 8 : 4);
+            builder.input(round, bearingRound[i], i > 10 ? 64 : 32);
+            builder.input(cableGtQuadruple, cableElectric[i], 8);
+
+            for (int j = i-8; j > 0; j--) {
+                builder.input(nanoWire, motorWires[i], 64);
+                builder.input(nanoWire, motorWires[i], 64);
+            }
+            builder.buildAndRegister();
+        }
     }
 
+    // Register recipes for machine casings and hulls
     private static void registerHullsCasings() {
 
+        for (int i = LV; i < LuV; i++) {
+
+        }
     }
 
-
-
+    // Remove recipes for all GT components
     private static void removeOldComponents() {
+
+        //TODO: Remove decomp recipes for components
+        //this doesnt work
+        //GTRecipeHandler.removeRecipesByInputs(MACERATOR_RECIPES, motors[0].getStackForm());
+
         // remove motors
         removeRecipeByName("gregtech:electric_motor_lv_steel");
         removeRecipeByName("gregtech:electric_motor_lv_iron");
@@ -121,13 +248,11 @@ public class GTComponents {
         removeRecipeByName("gregtech:sensor_ev");
         removeRecipeByName("gregtech:sensor_iv");
 
-        Material[] tierCircuitNames = new Material[]{MarkerMaterials.Tier.LV, MarkerMaterials.Tier.MV, MarkerMaterials.Tier.HV, MarkerMaterials.Tier.EV, MarkerMaterials.Tier.IV};
         Material[] cables = new Material[]{Tin, Copper, Gold, Aluminium, Tungsten};
         Material[] cablesMotor = new Material[]{Tin, Copper, Silver, Aluminium, Tungsten};
         Material[] materials = new Material[]{Steel, Aluminium, StainlessSteel, Titanium, TungstenSteel};
         Material[] motorRodsMagnetic = new Material[]{SteelMagnetic, SteelMagnetic, SteelMagnetic, NeodymiumMagnetic, NeodymiumMagnetic};
         Material[] motorWires = new Material[]{Copper, Cupronickel, Electrum, Kanthal, Graphene};
-        Material[] rubbers = new Material[]{Rubber, SiliconeRubber, StyreneButadieneRubber};
         Material[] pumpScrew = new Material[]{Tin, Bronze, Steel, StainlessSteel, TungstenSteel};
         Material[] pumpPipe = new Material[]{Bronze, Steel, StainlessSteel, Titanium, TungstenSteel};
         ItemStack[] fgGem = new ItemStack[]{OreDictUnifier.get(gem, EnderPearl), OreDictUnifier.get(gem, EnderEye), QUANTUM_EYE.getStackForm(), OreDictUnifier.get(gem, NetherStar), QUANTUM_STAR.getStackForm()};
@@ -178,7 +303,7 @@ public class GTComponents {
                 OreDictUnifier.get(stick, materials[i], 2),
                 motors[i].getStackForm(2),
                 pistons[i].getStackForm(1),
-                OreDictUnifier.get(circuit, tierCircuitNames[i]));
+                OreDictUnifier.get(circuit, tierCircuitNames[i+1]));
 
             // Pumps
             for (int j = 0; j < 3; j++) {
@@ -198,13 +323,13 @@ public class GTComponents {
                 GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES,
                      fgGem[i],
                      OreDictUnifier.get(plate, materials[i], 2),
-                     OreDictUnifier.get(circuit, tierCircuitNames[i], 2),
+                     OreDictUnifier.get(circuit, tierCircuitNames[i+1], 2),
                      OreDictUnifier.get(wireGtQuadruple, superCons[i], 4));
             } else {
                 GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES,
                      fgGem[i],
                      OreDictUnifier.get(plateDouble, materials[i], 2),
-                     OreDictUnifier.get(circuit, tierCircuitNames[i], 2),
+                     OreDictUnifier.get(circuit, tierCircuitNames[i+1], 2),
                      OreDictUnifier.get(wireGtQuadruple, superCons[i], 4));
             }
 
@@ -212,7 +337,7 @@ public class GTComponents {
             GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES,
                 OreDictUnifier.get(stick, emitterRod[i], 4),
                 OreDictUnifier.get(cableGtSingle, cables[i], 2),
-                OreDictUnifier.get(circuit, tierCircuitNames[i], 2),
+                OreDictUnifier.get(circuit, tierCircuitNames[i+1], 2),
                 IntCircuitIngredient.getIntegratedCircuit(1),
                 emitterGem[i]);
 
@@ -220,15 +345,16 @@ public class GTComponents {
             GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES,
                 OreDictUnifier.get(stick, emitterRod[i]),
                 OreDictUnifier.get(plate, materials[i], 4),
-                OreDictUnifier.get(circuit, tierCircuitNames[i]),
+                OreDictUnifier.get(circuit, tierCircuitNames[i+1]),
                 emitterGem[i]);
 
             // Fluid Regulators
             GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES,
                 IntCircuitIngredient.getIntegratedCircuit(1),
-                OreDictUnifier.get(circuit, tierCircuitNames[i], 2),
+                OreDictUnifier.get(circuit, tierCircuitNames[i+1], 2),
                 pump[i].getStackForm());
         }
         //*/
     }
+
 }

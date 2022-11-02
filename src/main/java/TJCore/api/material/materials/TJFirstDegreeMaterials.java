@@ -4,25 +4,17 @@ import static TJCore.api.TJOreDictionaryLoader.GENERATE_NANOFOIL;
 import static TJCore.api.TJOreDictionaryLoader.GENERATE_NANOWIRE;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 
-import gregicality.science.api.unification.materials.GCYSMaterials;
-import gregtech.api.unification.crafttweaker.CTMaterialBuilder;
 import gregtech.api.unification.material.Material;
-import gregtech.api.unification.material.info.MaterialFlag;
-import gregtech.api.unification.material.info.MaterialFlags;
 import gregtech.api.unification.material.info.MaterialIconSet;
 import gregtech.api.unification.material.properties.*;
-import gregtech.loaders.recipe.handlers.WireCombiningHandler;
-import net.minecraftforge.fluids.Fluid;
 import org.apache.http.impl.conn.Wire;
-import org.codehaus.plexus.util.Os;
 import scala.sys.Prop;
-
-import java.util.ArrayList;
 
 import static TJCore.api.material.TJMaterials.*;
 
 
 import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.material.info.MaterialFlags.*;
 
 public class TJFirstDegreeMaterials {
 
@@ -571,69 +563,230 @@ public class TJFirstDegreeMaterials {
                 .components(Iron, 9, Zinc, 1)
                 .iconSet(MaterialIconSet.SHINY)
                 .arcSmeltInto(Steel)
-                .flags(MaterialFlags.DISABLE_DECOMPOSITION, MaterialFlags.NO_WORKING, MaterialFlags.NO_SMASHING, MaterialFlags.NO_SMELTING)
+                .flags(DISABLE_DECOMPOSITION, NO_WORKING, NO_SMASHING, NO_SMELTING)
+                .build();
+
+        Manasteel = new Material.Builder(25084, "manasteel")
+                .ingot()
+                .color(0x4772ff)
+                .iconSet(MaterialIconSet.SHINY)
+                .build()
+                .setFormula("Fe4Sx", true);
+
+        ManasteelAlloy = new Material.Builder(25085, "manasteel_alloy")
+                .ingot()
+                .color(0x152352)
+                .iconSet(MaterialIconSet.SHINY)
+                .components(Naquadria, 1, Rhodium, 1, Palladium, 3, Manasteel, 4)
+                .build();
+
+        Polyetheretherketone = new Material.Builder(25086, "peek")
+                .ingot()
+                .fluid()
+                .iconSet(MaterialIconSet.DULL)
+                .color(0x2b2b2b)
+                .build()
+                .setFormula("C20H12O3", true);
+
+        ProgrammableMatter = new Material.Builder(25087, "programmable_matter")
+                .ingot()
+                .fluid()
+                .color(0x8196a3)
+                .iconSet(MaterialIconSet.SHINY)
+                .build()
+                .setFormula("robots!", false);
+
+        LutetiumTantalate = new Material.Builder(25088, "lutetium_tantalite")
+                .ingot()
+                .iconSet(MaterialIconSet.SHINY)
+                .components(Lutetium, 1, Tantalum, 1, Oxygen, 4)
+                .color(0xaccde6)
+                .build();
+
+        Iridrhodruthenium = new Material.Builder(25089, "iridrhodruthenium")
+                .ingot()
+                .iconSet(MaterialIconSet.SHINY)
+                .components(Ruthenium, 8, Rhodium, 1, Iridium, 1)
+                .colorAverage()
+                .build();
+
+        HEA_1 = new Material.Builder(25090, "high_entropy_alloy_1")
+                .ingot()
+                .iconSet(MaterialIconSet.METALLIC)
+                .components(Chrome, 5, Niobium, 8, Silicon, 7, Titanium, 3, Zirconium, 5)
+                .colorAverage()
+                .build();
+
+        HEA_2 = new Material.Builder(25091, "high_entropy_alloy_2")
+                .ingot()
+                .fluid()
+                .iconSet(MaterialIconSet.METALLIC)
+                .components(Zirconium, 6, Tungsten, 4, Vanadium, 5, Cobalt, 3, Manganese, 4)
+                .colorAverage()
+                .build();
+
+        HEA_3 = new Material.Builder(25092, "high_entropy_alloy_3")
+                .ingot()
+                .fluid()
+                .iconSet(MaterialIconSet.SHINY)
+                .components(Aluminium, 5, Chrome, 5, Molybdenum, 7, Tantalum, 9, Titanium, 6, Zirconium, 4, Nitrogen, 21)
+                .colorAverage()
+                .build();
+
+        HDCS_1 = new Material.Builder(25093, "high_durability_compound_steel_1")
+                .ingot()
+                .iconSet(MaterialIconSet.SHINY)
+                .color(0x2e216e)
+                .components(TungstenCarbide, 10, Americium, 4, ChromiumGermaniumTellurideMagnetic, 4, Vanadium, 3, Rhenium, 2, Lithium, 2)
+                .build();
+
+        HDCS_2 = new Material.Builder(25094, "high_durability_compound_steel_2")
+                .ingot()
+                .iconSet(MaterialIconSet.SHINY)
+                .color(0x3d0b0e)
+                .components(Adamantium, 8, Fermium, 4, EnrichedNaqAlloy, 4, Germanium, 3, BismuthChalcogenide, 3, Arsenic, 3, Beryllium, 2)
+                .build();
+
+        HDCS_3 = new Material.Builder(25095, "high_durability_compound_steel_3")
+                .ingot()
+                .iconSet(MaterialIconSet.SHINY)
+                .color(0x1f0126)
+                .components(Vibranium, 12, TriniumSteel, 8, Rutherfordium, 6, Promethium, 4, Scandium, 4, Hassium, 1)
+                .build();
+
+        Pikyonium = new Material.Builder(25096, "pikyonium")
+                .ingot()
+                .iconSet(MaterialIconSet.SHINY)
+                .color(0x3770bf)
+                .components(HSSE, 12, Seaborgium, 7, Lead, 5, Molybdenum, 5, Beryllium, 3, Gallium, 3, Iodine, 2, Mercury, 2)
+                .build();
+
+        HafniumCarbide = new Material.Builder(25097, "hafnium_carbide")
+                .dust()
+                .iconSet(MaterialIconSet.METALLIC)
+                .colorAverage()
+                .components(Hafnium, 1, Carbon, 1)
+                .build();
+
+        TantalumCarbide = new Material.Builder(25098, "tantalum_carbide")
+                .dust()
+                .iconSet(MaterialIconSet.METALLIC)
+                .colorAverage()
+                .components(Tantalum, 1, Carbon, 1)
+                .build();
+
+        SeaborgiumCarbide = new Material.Builder(25099, "seaborgium_carbide")
+                .dust()
+                .iconSet(MaterialIconSet.METALLIC)
+                .colorAverage()
+                .components(Seaborgium, 1, Carbon, 1)
+                .build();
+
+        TantalumHafniumSeaborgiumCarbide = new Material.Builder(25100, "tantalum_hafnium_seaborgium_carbide")
+                .ingot()
+                .iconSet(MaterialIconSet.SHINY)
+                .colorAverage()
+                .components(TantalumCarbide, 3, HafniumCarbide, 1, SeaborgiumCarbide, 3)
+                .build();
+
+        TantalumHafniumSeaborgiumCarboNitride = new Material.Builder(25101, "tantalum_hafnium_seaborgium_carbonitide")
+                .ingot()
+                .iconSet(MaterialIconSet.SHINY)
+                .color(0x1c1c1c)
+                .components(TantalumHafniumSeaborgiumCarbide, 1, Nitrogen, 1)
+                .build()
+                .setFormula("4TaHf3Sg10C7N");
+
+        OganessonTetraTennesside = new Material.Builder(25102, "oganessontetratennesside")
+                .ingot()
+                .iconSet(MaterialIconSet.METALLIC)
+                .colorAverage()
+                .components(Oganesson, 1, Tennessine, 4)
                 .build();
     }
 
     public static void registerProperties() {
 
         // Glass + Ceramics
-        SilicaCeramic.addFlags(MaterialFlags.NO_WORKING,MaterialFlags.NO_SMELTING,MaterialFlags.NO_SMASHING, MaterialFlags.GENERATE_RING, MaterialFlags.GENERATE_FOIL);
-        Fiberglass.addFlags(MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_FOIL);
-        BismuthTelluride.addFlags(MaterialFlags.GENERATE_FOIL);
-        BismuthIridiumOxide.addFlags(MaterialFlags.NO_WORKING, MaterialFlags.NO_SMASHING, MaterialFlags.GENERATE_PLATE);
-        SodiumPotassiumNiobate.addFlags(MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_ROUND);
-        LeadZirconateTitanate.addFlags(MaterialFlags.GENERATE_PLATE, MaterialFlags.GENERATE_RING);
+        SilicaCeramic.addFlags(NO_WORKING, NO_SMELTING, NO_SMASHING, GENERATE_RING, GENERATE_FOIL);
+        Fiberglass.addFlags(GENERATE_FINE_WIRE, GENERATE_FOIL);
+        BismuthTelluride.addFlags(GENERATE_FOIL);
+        BismuthIridiumOxide.addFlags(NO_WORKING, NO_SMASHING, GENERATE_PLATE);
+        SodiumPotassiumNiobate.addFlags(GENERATE_FOIL, GENERATE_ROUND);
+        LeadZirconateTitanate.addFlags(GENERATE_PLATE, GENERATE_RING);
 
         // Polymers
-        Polybenzimidazole.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
-        PolyphenyleneSulfide.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
-        Polytetrafluoroethylene.addFlags(MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_LONG_ROD);
-        PolyvinylChloride.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
-        Polyethylene.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
-        ReinforcedEpoxyResin.addFlags(MaterialFlags.GENERATE_FOIL);
-        PedotPSS.addFlags(MaterialFlags.GENERATE_FRAME);
-        PedotTMA.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
-        CarbonNanotubePolymer.addFlags(MaterialFlags.GENERATE_FRAME, MaterialFlags.GENERATE_PLATE, MaterialFlags.NO_WORKING, MaterialFlags.NO_SMASHING, MaterialFlags.NO_SMELTING);
-        PolyvinylButyral.addFlags(MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_RING);
-        Epoxy.addFlags(MaterialFlags.GENERATE_FOIL);
+        Polybenzimidazole.addFlags(GENERATE_FINE_WIRE);
+        PolyphenyleneSulfide.addFlags(GENERATE_FINE_WIRE);
+        Polytetrafluoroethylene.addFlags(GENERATE_FINE_WIRE, GENERATE_LONG_ROD);
+        PolyvinylChloride.addFlags(GENERATE_FINE_WIRE);
+        Polyethylene.addFlags(GENERATE_FINE_WIRE);
+        ReinforcedEpoxyResin.addFlags(GENERATE_FOIL);
+        PedotPSS.addFlags(GENERATE_FRAME);
+        PedotTMA.addFlags(GENERATE_FINE_WIRE);
+        CarbonNanotubePolymer.addFlags(GENERATE_FRAME, GENERATE_PLATE, NO_WORKING, NO_SMASHING, NO_SMELTING);
+        PolyvinylButyral.addFlags(GENERATE_FOIL, GENERATE_RING);
+        Epoxy.addFlags(GENERATE_FOIL);
 
         // Metals
-        GalvanizedSteel.addFlags(MaterialFlags.GENERATE_FRAME, MaterialFlags.GENERATE_ROTOR, MaterialFlags.GENERATE_GEAR, MaterialFlags.GENERATE_SMALL_GEAR, MaterialFlags.GENERATE_BOLT_SCREW, MaterialFlags.GENERATE_PLATE, MaterialFlags.GENERATE_SPRING_SMALL, MaterialFlags.GENERATE_SPRING, MaterialFlags.GENERATE_RING);
-        VanadiumGallium.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
-        TinAlloy.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
-        Dysprosium.addFlags(MaterialFlags.GENERATE_PLATE, MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_FRAME);
-        Vibranium.addFlags(MaterialFlags.GENERATE_FRAME, MaterialFlags.GENERATE_BOLT_SCREW, GENERATE_NANOFOIL, MaterialFlags.GENERATE_ROTOR);
-        RhodiumPlatedPalladium.addFlags(MaterialFlags.GENERATE_FRAME);
-        Duranium.addFlags(MaterialFlags.GENERATE_FRAME, GENERATE_NANOFOIL);
-        NihoniumTriiodide.addFlags(MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_RING);
-        Nihonium.addFlags(MaterialFlags.GENERATE_PLATE, GENERATE_NANOWIRE);
-        SuperheavyH.addFlags(MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_BOLT_SCREW);
-        SuperheavyL.addFlags(MaterialFlags.GENERATE_FRAME, MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_RING, MaterialFlags.GENERATE_BOLT_SCREW);
-        Neutronium.addFlags(MaterialFlags.GENERATE_ROTOR, MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_ROUND);
-        HeavyQuarkDegenerate.addFlags(MaterialFlags.GENERATE_ROTOR, MaterialFlags.GENERATE_FRAME, MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_BOLT_SCREW, MaterialFlags.GENERATE_RING, MaterialFlags.GENERATE_GEAR, MaterialFlags.GENERATE_LONG_ROD, GENERATE_NANOWIRE, MaterialFlags.DISABLE_DECOMPOSITION, MaterialFlags.NO_SMELTING, MaterialFlags.NO_SMASHING, MaterialFlags.NO_WORKING);
-        Taranium.addFlags(MaterialFlags.GENERATE_BOLT_SCREW, MaterialFlags.GENERATE_LONG_ROD, MaterialFlags.GENERATE_SPRING_SMALL, GENERATE_NANOWIRE);
-        TriniumSteel.addFlags(MaterialFlags.GENERATE_FRAME, MaterialFlags.GENERATE_SPRING, MaterialFlags.GENERATE_PLATE, MaterialFlags.GENERATE_BOLT_SCREW);
-        Fermium.addFlags(MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_SPRING_SMALL, GENERATE_NANOWIRE);
-        Dubnium.addFlags(MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_ROUND, MaterialFlags.GENERATE_FINE_WIRE, GENERATE_NANOWIRE);
-        TerfenolD_L.addFlags(MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_RING, MaterialFlags.GENERATE_SPRING, MaterialFlags.GENERATE_BOLT_SCREW, MaterialFlags.GENERATE_ROTOR);
-        TerfenolD_H.addFlags(MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_FRAME, MaterialFlags.GENERATE_GEAR, MaterialFlags.GENERATE_SMALL_GEAR, MaterialFlags.GENERATE_DENSE);
-        EnrichedNaqAlloy.addFlags(MaterialFlags.GENERATE_DENSE, MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_GEAR, MaterialFlags.GENERATE_SMALL_GEAR, MaterialFlags.GENERATE_BOLT_SCREW, MaterialFlags.GENERATE_RING, MaterialFlags.GENERATE_ROUND, MaterialFlags.GENERATE_FRAME);
-        PolystyreneSulfonate.addFlags(MaterialFlags.GENERATE_FOIL);
-        Nichrome.addFlags(MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_RING);
+        Steel.addFlags(GENERATE_ROUND);
+        HSSG.addFlags(GENERATE_ROUND);
+        Pikyonium.addFlags(GENERATE_FINE_WIRE);
+        OganessonTetraTennesside.addFlags(GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_SPRING);
+        GalvanizedSteel.addFlags(GENERATE_ROUND, GENERATE_FRAME, GENERATE_ROTOR, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_BOLT_SCREW, GENERATE_PLATE, GENERATE_SPRING_SMALL, GENERATE_SPRING, GENERATE_RING);
+        VanadiumGallium.addFlags(GENERATE_FINE_WIRE);
+        TinAlloy.addFlags(GENERATE_FINE_WIRE);
+        Dysprosium.addFlags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_FRAME);
+        Vibranium.addFlags(GENERATE_ROUND, GENERATE_FRAME, GENERATE_BOLT_SCREW, GENERATE_NANOFOIL, GENERATE_ROTOR);
+        RhodiumPlatedPalladium.addFlags(GENERATE_FRAME);
+        Duranium.addFlags(GENERATE_FRAME, GENERATE_NANOFOIL);
+        NihoniumTriiodide.addFlags(GENERATE_FINE_WIRE, GENERATE_RING);
+        Nihonium.addFlags(GENERATE_PLATE, GENERATE_NANOWIRE);
+        SuperheavyH.addFlags(GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW);
+        SuperheavyL.addFlags(GENERATE_LONG_ROD, GENERATE_FRAME, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_RING, GENERATE_BOLT_SCREW);
+        Neutronium.addFlags(GENERATE_ROTOR, GENERATE_FINE_WIRE, GENERATE_FOIL, GENERATE_ROUND);
+        HeavyQuarkDegenerate.addFlags(GENERATE_ROUND, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_NANOWIRE, DISABLE_DECOMPOSITION, NO_SMELTING, NO_SMASHING, NO_WORKING);
+        Taranium.addFlags(GENERATE_BOLT_SCREW, GENERATE_LONG_ROD, GENERATE_SPRING_SMALL, GENERATE_NANOWIRE);
+        TriniumSteel.addFlags(GENERATE_ROUND, GENERATE_FRAME, GENERATE_SPRING, GENERATE_PLATE, GENERATE_BOLT_SCREW);
+        Fermium.addFlags(GENERATE_FOIL, GENERATE_SPRING_SMALL, GENERATE_NANOWIRE);
+        Dubnium.addFlags(GENERATE_FOIL, GENERATE_ROUND, GENERATE_FINE_WIRE, GENERATE_NANOWIRE);
+        TerfenolD_L.addFlags(GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_RING, GENERATE_SPRING, GENERATE_BOLT_SCREW, GENERATE_ROTOR);
+        TerfenolD_H.addFlags(GENERATE_FOIL, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_DENSE);
+        EnrichedNaqAlloy.addFlags(GENERATE_LONG_ROD, GENERATE_DENSE, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_ROUND, GENERATE_FRAME);
+        PolystyreneSulfonate.addFlags(GENERATE_FOIL);
+        Nichrome.addFlags(GENERATE_FINE_WIRE, GENERATE_RING);
         PlutoniumPhosphide.addFlags(GENERATE_NANOFOIL);
-        ZBLANGlass.addFlags(MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_BOLT_SCREW);
-        ErbiumDopedZBLANGlass.addFlags(MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_FINE_WIRE);
-        PraseodymiumDopedZBLANGlass.addFlags(MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_FINE_WIRE);
-        Cobalt.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
-        Carbon.addFlags(MaterialFlags.GENERATE_FINE_WIRE);
-        Osmium.addFlags(MaterialFlags.GENERATE_FINE_WIRE, MaterialFlags.GENERATE_SPRING, MaterialFlags.GENERATE_SPRING_SMALL);
-        NeodymiumMagnetic.addFlags(MaterialFlags.GENERATE_FOIL, MaterialFlags.GENERATE_RING);
-        Rutherfordium.addFlags(MaterialFlags.GENERATE_FOIL);
-        Aluminium.addFlags(MaterialFlags.GENERATE_ROTOR);
-        Draconium.addFlags(MaterialFlags.GENERATE_ROTOR);
+        ZBLANGlass.addFlags(GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW);
+        ErbiumDopedZBLANGlass.addFlags(GENERATE_FOIL, GENERATE_FINE_WIRE);
+        PraseodymiumDopedZBLANGlass.addFlags(GENERATE_FOIL, GENERATE_FINE_WIRE);
+        Cobalt.addFlags(GENERATE_FINE_WIRE);
+        Carbon.addFlags(GENERATE_FINE_WIRE);
+        Osmium.addFlags(GENERATE_FINE_WIRE, GENERATE_SPRING, GENERATE_SPRING_SMALL);
+        NeodymiumMagnetic.addFlags(GENERATE_FOIL, GENERATE_RING);
+        Rutherfordium.addFlags(GENERATE_FOIL);
+        Aluminium.addFlags(GENERATE_ROTOR);
+        Draconium.addFlags(GENERATE_ROTOR);
+        LutetiumTantalate.addFlags(GENERATE_PLATE, GENERATE_FRAME, GENERATE_RING, GENERATE_ROD);
+        Iridrhodruthenium.addFlags(GENERATE_PLATE, GENERATE_FRAME, GENERATE_RING, GENERATE_ROD);
+        HEA_1.addFlags(GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_DENSE, GENERATE_ROUND, GENERATE_LONG_ROD);
+        HEA_2.addFlags(GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_DENSE, GENERATE_ROUND, GENERATE_LONG_ROD);
+        HEA_3.addFlags(GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_DENSE, GENERATE_ROUND, GENERATE_LONG_ROD);
+        HDCS_1.addFlags(GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_DENSE, GENERATE_ROUND, GENERATE_SMALL_GEAR, GENERATE_GEAR, GENERATE_ROD, GENERATE_FRAME, GENERATE_LONG_ROD);
+        HDCS_2.addFlags(GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_DENSE, GENERATE_ROUND, GENERATE_SMALL_GEAR, GENERATE_GEAR, GENERATE_ROD, GENERATE_FRAME, GENERATE_LONG_ROD);
+        HDCS_3.addFlags(GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_DENSE, GENERATE_ROUND, GENERATE_SMALL_GEAR, GENERATE_GEAR, GENERATE_ROD, GENERATE_FRAME, GENERATE_LONG_ROD);
+        Seaborgium.addFlags(GENERATE_BOLT_SCREW, GENERATE_PLATE, GENERATE_NANOFOIL, GENERATE_FOIL);
+        Bohrium.addFlags(GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_FOIL, GENERATE_FRAME, GENERATE_DENSE);
 
         //Properties
+        Bohrium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        HeavyQuarkDegenerate.setProperty(PropertyKey.ITEM_PIPE, new ItemPipeProperties());
+        Rutherfordium.setProperty(PropertyKey.ITEM_PIPE, new ItemPipeProperties());
+        Oganesson.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Tennessine.setProperty(PropertyKey.INGOT, new IngotProperty());
+        WireProperties OgTs4 = new WireProperties(536870912, 2, 256);
+        OganessonTetraTennesside.setProperty(PropertyKey.WIRE, OgTs4);
+        Livermorium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Livermorium.setProperty(PropertyKey.INGOT, new IngotProperty());
         PlasmaProperty HQDPlasmaProp = new PlasmaProperty();
         HeavyQuarkDegenerate.setProperty(PropertyKey.PLASMA, HQDPlasmaProp);
         IngotProperty TaraniumIngotProp = new IngotProperty();
@@ -657,7 +810,7 @@ public class TJFirstDegreeMaterials {
         Dysprosium.setProperty(PropertyKey.FLUID, new FluidProperty());
         FluidPipeProperties birmabrightFluidPipeProps = new FluidPipeProperties(1500, 24, false, true, false, false);
         Birmabright.setProperty(PropertyKey.FLUID_PIPE, birmabrightFluidPipeProps);
-        FluidPipeProperties silicaCeramicFluidPipeProps = new FluidPipeProperties(1000, 18, false, false, false, false);
+        FluidPipeProperties silicaCeramicFluidPipeProps = new FluidPipeProperties(350, 18, false, false, false, false);
         SilicaCeramic.setProperty(PropertyKey.FLUID_PIPE, silicaCeramicFluidPipeProps);
         FluidPipeProperties PZTPipeProps = new FluidPipeProperties(3200, 46,false,true,true,false);
         LeadZirconateTitanate.setProperty(PropertyKey.FLUID_PIPE, PZTPipeProps);
@@ -668,12 +821,20 @@ public class TJFirstDegreeMaterials {
         Actinium.setProperty(PropertyKey.DUST, new DustProperty());
         Astatine.setProperty(PropertyKey.DUST, new DustProperty());
         Carbon.setProperty(PropertyKey.INGOT, new IngotProperty());
-        Rutherfordium.setProperty(PropertyKey.DUST, new DustProperty());
-        Rutherfordium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Seaborgium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        FluidPipeProperties TaHfSgCNPipeProps = new FluidPipeProperties(3950, 45,true,true, true, true);
+        TantalumHafniumSeaborgiumCarboNitride.setProperty(PropertyKey.FLUID_PIPE, TaHfSgCNPipeProps);
+        WireProperties PikyoniumWireProps = new WireProperties(2097152, 2,12);
+        Pikyonium.setProperty(PropertyKey.WIRE, PikyoniumWireProps);
 
-
+        FluidPipeProperties HDCS1PipeProps = new FluidPipeProperties(2100, 85,true,true, true, false);
+        FluidPipeProperties HDCS2PipeProps = new FluidPipeProperties(2540, 115,true,true, true, false);
+        FluidPipeProperties HDCS3PipeProps = new FluidPipeProperties(3280, 145,true,true, true, false);
+        HDCS_1.setProperty(PropertyKey.FLUID_PIPE, HDCS1PipeProps);
+        HDCS_2.setProperty(PropertyKey.FLUID_PIPE, HDCS2PipeProps);
+        HDCS_3.setProperty(PropertyKey.FLUID_PIPE, HDCS3PipeProps);
         // becuase of techs foolishness and thinking graphenes are a foile
-        Graphene.addFlags(MaterialFlags.GENERATE_FOIL);
+        Graphene.addFlags(GENERATE_FOIL);
     }
 
 }

@@ -33,5 +33,39 @@ public class TJComponents {
                 {12, new UnificationEntry(rotor, Taranium)},
                 {13, new UnificationEntry(rotor, SuperheavyH)},
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
+
+        CraftingComponent.HULL_PLATE.appendIngredients(Stream.of(new Object[][]{
+                {0, new UnificationEntry(plate, WroughtIron)},
+                {1, new UnificationEntry(plate, GalvanizedSteel)},
+                {2, new UnificationEntry(plate, Aluminium)},
+                {3, new UnificationEntry(plate, StainlessSteel)},
+                {4, new UnificationEntry(plate, Titanium)},
+                {5, new UnificationEntry(plate, TungstenSteel)},
+                {6, new UnificationEntry(plate, LutetiumTantalate)},
+                {7, new UnificationEntry(plate, Iridrhodruthenium)},
+                {8, new UnificationEntry(plate, Tritanium)},
+                {9, new UnificationEntry(plate, HEA_3)},
+                {10, new UnificationEntry(plate, Adamantium)},
+                {11, new UnificationEntry(plate, Vibranium)},
+                {12, new UnificationEntry(plate, ProgrammableMatter)},
+                {13, new UnificationEntry(plate, HeavyQuarkDegenerate)},
+        }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
+
+        CraftingComponent.CABLE.appendIngredients(Stream.of(new Object[][]{
+                {0, new UnificationEntry(cableGtSingle, Lead)},
+                {1, new UnificationEntry(cableGtSingle, Tin)},
+                {2, new UnificationEntry(cableGtSingle, Copper)},
+                {3, new UnificationEntry(cableGtSingle, Gold)},
+                {4, new UnificationEntry(cableGtSingle, Aluminium)},
+                {5, new UnificationEntry(cableGtSingle, Platinum)},
+                {6, new UnificationEntry(cableGtSingle, NiobiumTitanium)},
+                {7, new UnificationEntry(cableGtSingle, VanadiumGallium)},
+                {8, new UnificationEntry(cableGtSingle, YttriumBariumCuprate)},
+                {9, new UnificationEntry(cableGtSingle, Pikyonium)},
+                {10, new UnificationEntry(cableGtSingle, PedotTMA)},
+                {11, new UnificationEntry(cableGtSingle, NihoniumTriiodide)},
+                {12, new UnificationEntry(cableGtSingle, Taranium)},
+                {13, new UnificationEntry(cableGtSingle, OganessonTetraTennesside)},
+        }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
     }
 }
