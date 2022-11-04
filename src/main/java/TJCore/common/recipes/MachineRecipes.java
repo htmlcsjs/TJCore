@@ -53,7 +53,6 @@ public class MachineRecipes {
 
     public static void registerMachines() {
         //removeOldMachines();
-
         registerElectric();
         registerSteam();
         registerMulti();
@@ -73,7 +72,9 @@ public class MachineRecipes {
 
 
     private static void registerElectric() {
-        MetaTileEntityLoader.registerMachineRecipe(LAMINATOR, "MGM", "WHW", "PCP", 'M', MOTOR, 'G', COIL_ELECTRIC, 'W', CABLE, 'H', CraftingComponent.HULL, 'P', PISTON, 'C', CIRCUIT);
+        MetaTileEntityLoader.registerMachineRecipe(LAMINATOR, "WGW", "MHM", "CGC", 'M', MOTOR, 'G', COIL_ELECTRIC, 'W', CABLE, 'H', CraftingComponent.HULL, 'C', CIRCUIT);
+        MetaTileEntityLoader.registerMachineRecipe(COMPONENT_ASSEMBLER, "WCW", "AHA", "WCW", 'A', ROBOT_ARM, 'W', CABLE, 'C', CIRCUIT, 'H', CraftingComponent.HULL);
+
     }
 
     private static void registerSteam() {

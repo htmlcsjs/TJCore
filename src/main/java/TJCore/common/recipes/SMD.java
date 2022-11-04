@@ -82,6 +82,8 @@ public class SMD {
                 .buildAndRegister();
 
         // RESISTORS
+
+
         ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(50)
                 .EUt(VA[MV])
@@ -135,6 +137,13 @@ public class SMD {
                 .buildAndRegister();
 
         // CAPACITORS
+
+        ModHandler.addShapedRecipe("capcitor", CAPACITOR.getStackForm(3),
+                " F ", "WDW", " F ",
+                'F', OreDictUnifier.get(foil, Copper),
+                'D', OreDictUnifier.get(dustTiny, Glass),
+                'W', OreDictUnifier.get(wireFine, Tin));
+
         ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(50)
                 .EUt(VA[MV])

@@ -68,6 +68,66 @@ public class GTComponents {
 
     // Register recipes for standard GT components
     private static void registerComponents() {
+
+        // Specialized Motor Crafting Recipes
+
+        STEAM_COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
+                .EUt(VA[0])
+                .duration(80)
+                .input(wireFine, Copper, 4)
+                .input(cableGtSingle, Tin, 2)
+                .input(stick, Steel, 2)
+                .input(stick, IronMagnetic)
+                .output(ELECTRIC_MOTOR_LV)
+                .buildAndRegister();
+
+        STEAM_COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
+                .EUt(VA[0])
+                .duration(80)
+                .input(stick, Steel, 2)
+                .input(plate, Steel, 2)
+                .input(gear, Steel)
+                .input(ELECTRIC_MOTOR_LV)
+                .input(cableGtSingle, Tin)
+                .output(ELECTRIC_PISTON_LV)
+                .buildAndRegister();
+
+        COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
+                .EUt(VA[0])
+                .duration(80)
+                .input(cableGtSingle, Tin, 2)
+                .input(gearSmall, Steel, 2)
+                .input(stickLong, Steel, 2)
+                .input(ELECTRIC_PISTON_LV)
+                .input(ELECTRIC_MOTOR_LV)
+                .input(circuit, tierCircuitNames[0])
+                .output(ROBOT_ARM_LV)
+                .buildAndRegister();
+
+        for (Material rubber : rubbers) {
+            STEAM_COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
+                    .EUt(VA[0])
+                    .duration(80)
+                    .input(ring, rubber, 2)
+                    .input(screw, compMain[0], 2)
+                    .input(rotor, compMain[0])
+                    .input(pipeLargeFluid, fluidPipes[0])
+                    .input(motors[0])
+                    .input(cableGtSingle, cableElectric[0])
+                    .output(pump[0])
+                    .buildAndRegister();
+
+            STEAM_COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
+                    .EUt(VA[0])
+                    .duration(80)
+                    .input(plate, rubber, 6)
+                    .input(gearSmall, compMain[0], 2)
+                    .input(motors[0], 2)
+                    .input(cableGtSingle, cableElectric[0], 2)
+                    .output(conveyor[0])
+                    .buildAndRegister();
+        }
+
         // LV-IV Loop
         for (int i = 0; i < 5; i++) {
             //Component Assembler Recipes - Motor
@@ -107,18 +167,40 @@ public class GTComponents {
                     .output(roboArm[i])
                     .buildAndRegister();
 
-            for (int j =0 ; j < rubbers.length; j++) {
+            for (Material rubber : rubbers) {
                 COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
                         .EUt(VA[i])
-                        .duration((i+1)*20)
-                        .input(ring, rubbers[j], 2)
+                        .duration((i + 1) * 20)
+                        .input(ring, rubber, 2)
                         .input(screw, compMain[i], 2)
                         .input(rotor, compMain[i])
                         .input(pipeLargeFluid, fluidPipes[i])
                         .input(motors[i])
                         .input(cableGtSingle, cableElectric[i])
-                        .fluidInputs(lube[i].getFluid(50*(i+1)))
+                        .fluidInputs(lube[i].getFluid(50 * (i + 1)))
                         .output(pump[i])
+                        .buildAndRegister();
+
+                COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
+                        .EUt(VA[i])
+                        .duration((i + 1) * 20)
+                        .input(plate, rubber, 6)
+                        .input(gearSmall, compMain[i], 2)
+                        .input(motors[i], 2)
+                        .input(cableGtSingle, cableElectric[i], 2)
+                        .fluidInputs(lube[i].getFluid(50 * (i + 1)))
+                        .output(conveyor[i])
+                        .buildAndRegister();
+
+                COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
+                        .EUt(VA[i])
+                        .duration((i + 1) * 20)
+                        .input(gearSmall, compMain[i], 2)
+                        .input(motors[i], 2)
+                        .input(cableGtSingle, cableElectric[i], 2)
+                        .fluidInputs(rubber.getFluid(576))
+                        .fluidInputs(lube[i].getFluid(50 * (i + 1)))
+                        .output(conveyor[i])
                         .buildAndRegister();
             }
         }
@@ -305,7 +387,7 @@ public class GTComponents {
                 pistons[i].getStackForm(1),
                 OreDictUnifier.get(circuit, tierCircuitNames[i+1]));
 
-            // Pumps
+            // Pumps & Conveyors
             for (int j = 0; j < 3; j++) {
                 if (!(i == 4 && j == 0)) {
                     GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES,
@@ -315,6 +397,12 @@ public class GTComponents {
                          OreDictUnifier.get(rotor, pumpScrew[i]),
                          OreDictUnifier.get(ring, rubbers[j], 2),
                          motors[i].getStackForm());
+
+                    GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES,
+                         OreDictUnifier.get(cableGtSingle, cables[i]),
+                         OreDictUnifier.get(plate, rubbers[j], 6),
+                            IntCircuitIngredient.getIntegratedCircuit(1),
+                         motors[i].getStackForm(2));
                 }
             }
 

@@ -1,6 +1,7 @@
 package TJCore.common.recipes;
 
 import TJCore.common.TJConfig;
+import crafttweaker.api.recipes.FurnaceRecipe;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
@@ -30,6 +31,7 @@ import static gregtech.common.items.MetaItems.*;
 public class MaterialRecipes {
 
     public static void register() {
+        registerCeramics();
         registerGalvanizedSteel();
         registerMetalCasings();
     }
@@ -66,6 +68,30 @@ public class MaterialRecipes {
         //TODO: remove this shit block with groovy, you cant cast
         //((MetaItem) OreDictUnifier.get(block, GalvanizedSteel).getItem()).getItem(OreDictUnifier.get(dust, GalvanizedSteel)).setInvisible();
         ((MetaItem) OreDictUnifier.get(dustTiny, GalvanizedSteel).getItem()).getItem(OreDictUnifier.get(dust, GalvanizedSteel)).setInvisible();
+    }
+    public static void registerCeramics() {
+
+        FURNACE_RECIPES.recipeBuilder()
+                .EUt(VA[0])
+                .duration(20)
+                .input(dust, Silicon)
+                .chancedOutput(ingot, Silicon, 5000, 1000)
+                .buildAndRegister();
+
+        BLAST_RECIPES.recipeBuilder()
+                .input(dust,SiliconDioxide,6)
+                .output(ingot, SilicaCeramic, 6)
+                .EUt(30)
+                .duration(420)
+                .buildAndRegister();
+
+        ALLOY_SMELTER_RECIPES.recipeBuilder()
+                .input(dust,SiliconDioxide,6)
+                .input(dustTiny, Nickel)
+                .output(ingot, SilicaCeramic, 6)
+                .EUt(VA[0])
+                .duration(120)
+                .buildAndRegister();
     }
 
     public static void registerFrames(OrePrefix prefix, Material mat, DustProperty property) {

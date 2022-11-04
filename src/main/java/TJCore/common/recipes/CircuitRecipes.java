@@ -186,13 +186,6 @@ public class CircuitRecipes {
     }
     private static void electronicBoard() {
         ///Silicate Stenciled PCB
-        BLAST_RECIPES.recipeBuilder()
-                .input(dust,SiliconDioxide,6)
-                .input(dustTiny, Nickel)
-                .output(ingot, SilicaCeramic, 6)
-                .EUt(30)
-                .duration(420)
-                .buildAndRegister();
 
         LAMINATOR_RECIPES.recipeBuilder()
                 .input(plate, SilicaCeramic)
