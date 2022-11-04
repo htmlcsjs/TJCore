@@ -28,6 +28,7 @@ public class ExposureChamber extends RecipeMapMultiblockController {
     public ExposureChamber(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, TJRecipeMaps.EXPOSURE_CHAMBER_RECIPES);
     }
+
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start(RelativeDirection.RIGHT, RelativeDirection.BACK, RelativeDirection.UP)

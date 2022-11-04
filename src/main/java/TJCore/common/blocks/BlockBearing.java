@@ -30,18 +30,18 @@ public class BlockBearing extends VariantBlock<BlockBearing.BearingType> {
 
     public enum BearingType implements IStringSerializable, IStateHarvestLevel {
 
-        GALVANIZED_STEEL_BEARING("galvanized_bearing", 50,2),
-        ALUMINUM_BEARING("aluminum_bearing", 100,3),
-        STAINLESS_STEEL_BEARING("stainless_bearing", 150,3),
-        TITANIUM_BEARING("titanium_bearing", 250,4),
-        TUNGSTENSTEEL_BEARING("tungstensteel_bearing", 400,4);
+        GALVANIZED_STEEL_BEARING("galvanized_bearing", 0,2),
+        ALUMINUM_BEARING("aluminum_bearing", 1,3),
+        STAINLESS_STEEL_BEARING("stainless_bearing", 2,3),
+        TITANIUM_BEARING("titanium_bearing", 3,4),
+        TUNGSTENSTEEL_BEARING("tungstensteel_bearing", 4,4);
 
         private final String name;
         private final int harvestLevel;
-        private final int rotationCap;
+        private final int tier;
 
-        BearingType(String name, int rotationCap, int harvestLevel) {
-            this.rotationCap = rotationCap;
+        BearingType(String name, int tier, int harvestLevel) {
+            this.tier = tier;
             this.name = name;
             this.harvestLevel = harvestLevel;
         }
@@ -53,8 +53,8 @@ public class BlockBearing extends VariantBlock<BlockBearing.BearingType> {
         }
 
 
-        public int getRotationCap() {
-            return rotationCap;
+        public int getTier() {
+            return tier;
         }
 
         @Override

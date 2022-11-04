@@ -1,5 +1,6 @@
 package TJCore.common.blocks;
 
+import TJCore.api.block.ITurbineBladeStats;
 import gregtech.api.block.IStateHarvestLevel;
 import gregtech.api.block.VariantBlock;
 import net.minecraft.block.Block;
@@ -29,18 +30,22 @@ public class BlockTurbineBlades extends VariantBlock<BlockTurbineBlades.TurbineB
         return false;
     }
 
-    public enum TurbineBladesType implements IStringSerializable, IStateHarvestLevel {
+    public enum TurbineBladesType implements IStringSerializable, IStateHarvestLevel, ITurbineBladeStats {
 
-        GALVANIZED_STEEL_BLADES("galvanized_blades", 50,2),
-        ALUMINUM_BLADES("aluminum_blades", 100,3),
-        STAINLESS_STEEL_BLADES("stainless_blades", 150,3),
-        TITANIUM_BLADES("titanium_blades", 250,4),
-        TUNGSTENSTEEL_BLADES("tungstensteel_blades", 400,4);
+        GALVANIZED_STEEL_BLADES("galvanized_blades", 50,0, 2),
+        ALUMINUM_BLADES("aluminum_blades", 100,1,3),
+        STAINLESS_STEEL_BLADES("stainless_blades", 150,2,3),
+        TITANIUM_BLADES("titanium_blades", 250,3, 4),
+        TUNGSTENSTEEL_BLADES("tungstensteel_blades", 400,4, 4);
 
         private final String name;
+        private final int tier;
+        private final int rotationCap;
         private final int harvestLevel;
 
-        TurbineBladesType(String name, int rotationCap, int harvestLevel) {
+        TurbineBladesType(String name, int rotationCap, int tier, int harvestLevel) {
+            this.rotationCap = rotationCap;
+            this.tier = tier;
             this.name = name;
             this.harvestLevel = harvestLevel;
         }
@@ -49,6 +54,14 @@ public class BlockTurbineBlades extends VariantBlock<BlockTurbineBlades.TurbineB
         @Override
         public String getName() {
             return this.name;
+        }
+
+        public int getTier() {
+            return tier;
+        }
+
+        public int getRotationCap() {
+            return rotationCap;
         }
 
         @Override
