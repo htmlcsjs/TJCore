@@ -19,7 +19,8 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 import java.util.function.Function;
 
-import static TJCore.common.blocks.TJMetaBlocks.DRACONIC_CASING;
+import static TJCore.common.blocks.TJMetaBlocks.*;
+import static gregtech.common.blocks.MetaBlocks.BOILER_CASING;
 
 @Mod.EventBusSubscriber(modid = TJValues.MODID)
 public class CommonProxy {
@@ -32,11 +33,15 @@ public class CommonProxy {
     public static void RegisterBlocks(RegistryEvent.Register<Block> event) {
         IForgeRegistry<Block> registry = event.getRegistry();
         registry.register(DRACONIC_CASING);
+        registry.register(TURBINE_BLADES);
+        registry.register(BLOCK_BEARING);
     }
     
     @SubscribeEvent
     public static void RegisterItemBlocks(RegistryEvent.Register<Item> event) {
         IForgeRegistry<Item> registry = event.getRegistry();
+        registry.register(createItemBlock(TURBINE_BLADES, VariantItemBlock::new));
+        registry.register(createItemBlock(BLOCK_BEARING, VariantItemBlock::new));
         registry.register(createItemBlock(DRACONIC_CASING, VariantItemBlock::new));
     }
     

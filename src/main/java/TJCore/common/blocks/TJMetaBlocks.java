@@ -1,5 +1,8 @@
 package TJCore.common.blocks;
 
+import gregtech.common.blocks.BlockBoilerCasing;
+import TJCore.common.blocks.BlockTurbineBlades;
+import TJCore.common.blocks.BlockBearing;
 import net.minecraft.block.Block;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.IBlockState;
@@ -13,17 +16,23 @@ import gregtech.common.blocks.MetaBlocks;
 public class TJMetaBlocks {
     
     public static DraconicCasings DRACONIC_CASING;
+    public static BlockBearing BLOCK_BEARING;
+    public static BlockTurbineBlades TURBINE_BLADES;
     
     public static void init() {
         DRACONIC_CASING = new DraconicCasings();
         DRACONIC_CASING.setRegistryName("draconic_casing");
-    
+        TURBINE_BLADES = new BlockTurbineBlades();
+        TURBINE_BLADES.setRegistryName("turbine_blades");
+        BLOCK_BEARING = new BlockBearing();
+        BLOCK_BEARING.setRegistryName("block_bearing");
     }
     
     @SideOnly(Side.CLIENT)
     public static void registerItemModels() {
         registerItemModel(DRACONIC_CASING);
-    
+        registerItemModel(TURBINE_BLADES);
+        registerItemModel(BLOCK_BEARING);
     }
     
     @SideOnly(Side.CLIENT)
