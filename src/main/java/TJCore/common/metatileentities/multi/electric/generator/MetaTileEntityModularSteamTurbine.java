@@ -52,7 +52,7 @@ public class MetaTileEntityModularSteamTurbine extends FuelMultiblockController 
         if (isStructureFormed()) {
             //textList.add(new TextComponentString("Blade Type: "));
             textList.add(new TextComponentString("Base Turbine Generation: " + V[turbineTier + 2]));
-            textList.add(new TextComponentString("Bearing Multiplier: " + (bearingTier + 1) * 0.5));
+            textList.add(new TextComponentString("Bearing Multiplier: " + (0.75 + (bearingTier * 0.25))));
         }
         super.addDisplayText(textList);
     }
