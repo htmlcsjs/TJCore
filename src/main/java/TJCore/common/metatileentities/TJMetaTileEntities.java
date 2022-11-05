@@ -4,6 +4,7 @@ import TJCore.TJValues;
 import TJCore.common.metatileentities.multi.electric.*;
 import TJCore.common.metatileentities.multi.electric.generator.MetaTileEntityModularSteamTurbine;
 import TJCore.common.metatileentities.multi.fusion.MegaFusion;
+import TJCore.common.metatileentities.multi.steam.PrimitiveTreeFarmer;
 import TJCore.common.metatileentities.multi.steam.SteamAssembler;
 import TJCore.common.recipes.recipemaps.TJRecipeMaps;
 import gregtech.api.GTValues;
@@ -37,6 +38,7 @@ public class TJMetaTileEntities {
     public static SurfaceRockDrill SURFACE_ROCK_DRILL;
     public static ExposureChamber EXPOSURE_CHAMBER;
     public static MetaTileEntityModularSteamTurbine MODULAR_TURBINE;
+    public static PrimitiveTreeFarmer PRIMITIVE_TREE_FARMER;
 
     public static Loom LOOM;
 
@@ -54,6 +56,7 @@ public class TJMetaTileEntities {
         STEAM_DRYER_BRONZE = registerMetaTileEntity(12041, new SteamDryer(tjcoreID("steam_dryer_bronze"), false));
         STEAM_DRYER_STEEL = registerMetaTileEntity(12042, new SteamDryer(tjcoreID("steam_dryer_steel"), true));
         MODULAR_TURBINE = registerMetaTileEntity(12043, new MetaTileEntityModularSteamTurbine(tjcoreID("modular_steam_turbine")));
+        PRIMITIVE_TREE_FARMER = registerMetaTileEntity(12044, new PrimitiveTreeFarmer(tjcoreID("primitive_tree_farmer")));
         registerSimpleMetaTileEntity(LAMINATOR, 12070, "laminator", TJRecipeMaps.LAMINATOR_RECIPES, Textures.BENDER_OVERLAY, true);
         registerSimpleMetaTileEntity(PRINTER, 12090, "printer", TJRecipeMaps.PRINTER_RECIPES, Textures.LASER_ENGRAVER_OVERLAY, true);
     }

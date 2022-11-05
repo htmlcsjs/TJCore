@@ -44,11 +44,6 @@ public class MaterialRecipes {
     }
 
     public static void registerFarming() {
-        PRIMITIVE_TREE_FARMER_RECIPES.recipeBuilder()
-                .inputs(new ItemStack(Blocks.SAPLING, 16))
-                .outputs(new ItemStack(Blocks.SAPLING, 32), new ItemStack(Blocks.LOG, 64))
-                .duration(20)
-                .buildAndRegister();
     }
     public static void registerGalvanizedSteel() {
         OrePrefix[] galvanizedSteelPrefix = new OrePrefix[]{ingot, plate, stick, stickLong, bolt, screw, ring, gear, gearSmall, rotor, round};
