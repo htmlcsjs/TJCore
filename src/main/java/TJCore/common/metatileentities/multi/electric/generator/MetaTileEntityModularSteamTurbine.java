@@ -165,7 +165,8 @@ public class MetaTileEntityModularSteamTurbine extends FuelMultiblockController 
 
         @Override
         protected long getMaxVoltage() {
-            return (long) (V[(((MetaTileEntityModularSteamTurbine) this.metaTileEntity).turbineTier) + 2] * ((((MetaTileEntityModularSteamTurbine) this.metaTileEntity).bearingTier + 1) * 0.5));
+            return (long) (V[(((MetaTileEntityModularSteamTurbine) this.metaTileEntity).turbineTier) + 2] *
+                    (0.75 + ((((MetaTileEntityModularSteamTurbine) this.metaTileEntity).bearingTier) * 0.25)));
         }
     }
 }
