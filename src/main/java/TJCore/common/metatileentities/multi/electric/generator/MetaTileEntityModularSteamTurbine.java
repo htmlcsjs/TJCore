@@ -35,21 +35,23 @@ import scala.Int;
 import java.util.Arrays;
 import java.util.List;
 
+import static gregtech.api.GTValues.V;
+
 public class MetaTileEntityModularSteamTurbine extends FuelMultiblockController {
 
     private int turbineTier;
     private int bearingTier;
 
     public MetaTileEntityModularSteamTurbine(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, RecipeMaps.STEAM_TURBINE_FUELS, 6);
-        this.recipeMapWorkable = new ModularTurbineWorkableHandler(this, turbineTier, bearingTier);
+        super(metaTileEntityId, RecipeMaps.STEAM_TURBINE_FUELS, 0);
+        //this.recipeMapWorkable.setMaximumOverclockVoltage(V[turbineTier + 2]);
     }
 
     @Override
     protected void addDisplayText(List<ITextComponent> textList) {
         if (isStructureFormed()) {
             //textList.add(new TextComponentString("Blade Type: "));
-            textList.add(new TextComponentString("Base Turbine Generation: " + GTValues.V[turbineTier + 2]));
+            textList.add(new TextComponentString("Base Turbine Generation: " + V[turbineTier + 2]));
             textList.add(new TextComponentString("Bearing Multiplier: " + (bearingTier + 1) * 0.5));
         }
         super.addDisplayText(textList);
@@ -70,6 +72,7 @@ public class MetaTileEntityModularSteamTurbine extends FuelMultiblockController 
         } else {
             this.bearingTier = 0;
         }
+        this.recipeMapWorkable = new ModularTurbineWorkableHandler(this, turbineTier);
     }
 
     protected BlockPattern createStructurePattern() {
@@ -154,23 +157,15 @@ public class MetaTileEntityModularSteamTurbine extends FuelMultiblockController 
     }
 
     static class ModularTurbineWorkableHandler extends MultiblockFuelRecipeLogic {
-        private final int tierBlade;
-        private final int tierBearing;
-        public ModularTurbineWorkableHandler(RecipeMapMultiblockController metaTileEntity, int tierBlade, int tierBearing) {
+        public int turbine;
+        public ModularTurbineWorkableHandler(RecipeMapMultiblockController metaTileEntity, int turbine) {
             super(metaTileEntity);
-            this.tierBlade = tierBlade;
-            this.tierBearing = tierBearing;
+            this.turbine = turbine;
         }
 
         @Override
-        public long getMaximumOverclockVoltage() {
-            return GTValues.V[tierBlade + 2];
-        }
-
-        @Override
-        protected long boostProduction(long production) {
-            //this multiplies production without increasing consumption
-           return (long) (production * (tierBearing + 1) * 0.5);
+        protected long getMaxVoltage() {
+            return (long) (V[(((MetaTileEntityModularSteamTurbine) this.metaTileEntity).turbineTier) + 2] * ((((MetaTileEntityModularSteamTurbine) this.metaTileEntity).bearingTier + 1) * 0.5));
         }
     }
 }
