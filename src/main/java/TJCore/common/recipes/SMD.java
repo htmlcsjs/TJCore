@@ -27,8 +27,15 @@ import static gregtech.common.items.MetaItems.*;
 
 public class SMD {
     public static void registerSMDRecipes() {
-
+//
         // TRANSISTORS
+
+        ModHandler.addShapedRecipe("transistor", TRANSISTOR.getStackForm(2),
+                " F ", "WDW", " F ",
+                'F', OreDictUnifier.get(foil, Silicon),
+                'D', OreDictUnifier.get(foil, Gold),
+                'W', OreDictUnifier.get(dustTiny, SiliconDioxide));
+
         ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(50)
                 .EUt(VA[MV])
@@ -200,6 +207,13 @@ public class SMD {
                 .buildAndRegister();
 
         // DIODES
+
+        ModHandler.addShapedRecipe("diode", DIODE.getStackForm(4),
+                " F ", "PDP", " F ",
+                'F', OreDictUnifier.get(wireFine, Copper),
+                'D', OreDictUnifier.get(foil, Gallium),
+                'P', OreDictUnifier.get(plate, Glass));
+
         ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(50)
                 .EUt(VA[MV])

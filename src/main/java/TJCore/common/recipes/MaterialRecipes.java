@@ -1,7 +1,7 @@
 package TJCore.common.recipes;
 
 import TJCore.common.TJConfig;
-import crafttweaker.api.recipes.FurnaceRecipe;
+import TJCore.common.blocks.BlockBearing;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
@@ -12,15 +12,20 @@ import gregtech.api.unification.material.Material;
 
 import static TJCore.api.material.TJMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
+import static TJCore.common.recipes.recipemaps.TJRecipeMaps.*;
 import gregtech.api.unification.material.properties.DustProperty;
 import gregtech.api.unification.ore.OrePrefix;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.MetaBlocks;
+import net.minecraft.client.Minecraft;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemSaddle;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.oredict.OreDictionary;
 
 import static gregtech.api.recipes.RecipeMaps.*;
 
@@ -34,6 +39,16 @@ public class MaterialRecipes {
         registerCeramics();
         registerGalvanizedSteel();
         registerMetalCasings();
+        registerModifiedDecomp();
+        registerFarming();
+    }
+
+    public static void registerFarming() {
+        PRIMITIVE_TREE_FARMER_RECIPES.recipeBuilder()
+                .inputs(new ItemStack(Blocks.SAPLING, 16))
+                .outputs(new ItemStack(Blocks.SAPLING, 32), new ItemStack(Blocks.LOG, 64))
+                .duration(20)
+                .buildAndRegister();
     }
     public static void registerGalvanizedSteel() {
         OrePrefix[] galvanizedSteelPrefix = new OrePrefix[]{ingot, plate, stick, stickLong, bolt, screw, ring, gear, gearSmall, rotor, round};
@@ -55,7 +70,7 @@ public class MaterialRecipes {
         removeGearDecomp(GalvanizedSteel);
         removeSmallGearDecomp(GalvanizedSteel);
         removeFrameDecomp(GalvanizedSteel);
-        removePlateDecomp(GalvanizedSteel);
+        removePlateDecomp(GalvanizedSteel, 10, 31, 42);
         removeBlockIngotNuggetChunkDecomp(GalvanizedSteel);
         removeSmeltingDecomp(GalvanizedSteel);
         removeRoundDecomp(GalvanizedSteel);
@@ -92,8 +107,25 @@ public class MaterialRecipes {
                 .EUt(VA[0])
                 .duration(120)
                 .buildAndRegister();
-    }
 
+        removePlateDecomp(SilicaCeramic, 18, 55, 73);
+
+        CUTTER_RECIPES.recipeBuilder()
+                .EUt(VA[LV])
+                .duration(100)
+                .input(block, SilicaCeramic)
+                .output(plate, SilicaCeramic, 9)
+                .buildAndRegister();
+    }
+    public static void registerModifiedDecomp() {
+        ELECTROLYZER_RECIPES.recipeBuilder()
+                .duration(55)
+                .EUt(VA[LV])
+                .input(dust, Stibnite, 5)
+                .chancedOutput(dust, Antimony, 2, 1000, 500)
+                .output(dust, Sulfur, 3)
+                .buildAndRegister();
+    }
     public static void registerFrames(OrePrefix prefix, Material mat, DustProperty property) {
         if(mat.hasFlag(GENERATE_FRAME)) {
             ModHandler.removeRecipeByName(String.format("gregtech:frame_%s", mat));
@@ -163,11 +195,11 @@ public class MaterialRecipes {
         GTRecipeHandler.removeRecipesByInputs(ALLOY_SMELTER_RECIPES, OreDictUnifier.get(ingot, material,2), SHAPE_MOLD_GEAR_SMALL.getStackForm());
         ModHandler.removeRecipes(OreDictUnifier.get(gearSmall, material));
     }
-    public static void removePlateDecomp(Material material) {
+    public static void removePlateDecomp(Material material, int lube, int distilled, int water) {
         GTRecipeHandler.removeRecipesByInputs(MACERATOR_RECIPES, OreDictUnifier.get(plate, material));
-        GTRecipeHandler.removeRecipesByInputs(CUTTER_RECIPES, new ItemStack[]{OreDictUnifier.get(block, material)}, new FluidStack[]{Lubricant.getFluid(10)});
-        GTRecipeHandler.removeRecipesByInputs(CUTTER_RECIPES, new ItemStack[]{OreDictUnifier.get(block, material)}, new FluidStack[]{DistilledWater.getFluid(31)});
-        GTRecipeHandler.removeRecipesByInputs(CUTTER_RECIPES, new ItemStack[]{OreDictUnifier.get(block, material)}, new FluidStack[]{Water.getFluid(42)});
+        GTRecipeHandler.removeRecipesByInputs(CUTTER_RECIPES, new ItemStack[]{OreDictUnifier.get(block, material)}, new FluidStack[]{Lubricant.getFluid(lube)});
+        GTRecipeHandler.removeRecipesByInputs(CUTTER_RECIPES, new ItemStack[]{OreDictUnifier.get(block, material)}, new FluidStack[]{DistilledWater.getFluid(distilled)});
+        GTRecipeHandler.removeRecipesByInputs(CUTTER_RECIPES, new ItemStack[]{OreDictUnifier.get(block, material)}, new FluidStack[]{Water.getFluid(water)});
     }
     public static void removeFrameDecomp(Material material) {
         GTRecipeHandler.removeRecipesByInputs(MACERATOR_RECIPES, OreDictUnifier.get(frameGt, material));

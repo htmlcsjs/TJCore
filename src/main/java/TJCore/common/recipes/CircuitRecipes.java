@@ -121,7 +121,16 @@ public class CircuitRecipes {
         registerSolder();
     }
     private static void registerSolder() {
-
+        ModHandler.addShapelessRecipe("soldering_alloy", OreDictUnifier.get(dust, SolderingAlloy, 9),
+                OreDictUnifier.get(dust, Tin),
+                OreDictUnifier.get(dust, Tin),
+                OreDictUnifier.get(dust, Tin),
+                OreDictUnifier.get(dust, Tin),
+                OreDictUnifier.get(dust, Tin),
+                OreDictUnifier.get(dust, Lead),
+                OreDictUnifier.get(dust, Lead),
+                OreDictUnifier.get(dust, Lead),
+                OreDictUnifier.get(dust, Antimony));
     }
     public static void registerBoards() {
         primitiveBoard();
@@ -185,6 +194,7 @@ public class CircuitRecipes {
 
     }
     private static void electronicBoard() {
+
         ///Silicate Stenciled PCB
 
         LAMINATOR_RECIPES.recipeBuilder()
@@ -197,7 +207,8 @@ public class CircuitRecipes {
 
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(ELECTRONIC_PREBOARD)
-                .input(foil,Copper)
+                .input(foil,Rubber)
+                .notConsumable(STENCILING_CUTHEAD)
                 .output(ELECTRONIC_BOARD)
                 .EUt(30)
                 .duration(20)
@@ -498,6 +509,12 @@ public class CircuitRecipes {
                 .input(wireFine, Tin, 4)
                 .output(ELECTRONIC_PROCESSOR_ULV, 2)
                 .buildAndRegister();
+
+        ModHandler.addShapedRecipe("glass_lens_hand", OreDictUnifier.get(lens, Glass),
+                "   ", "FPH", "   ",
+                'P', OreDictUnifier.get(plate, Glass),
+                'F', FILE,
+                'H', HARD_HAMMER);
 
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(50)

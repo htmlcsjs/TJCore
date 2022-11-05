@@ -7,11 +7,14 @@ import gregtech.api.recipes.ModHandler;
 import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.RecipeMap;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
+import gregtech.api.unification.Elements;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
+import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.UnificationEntry;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 import org.omg.CORBA.PUBLIC_MEMBER;
@@ -21,6 +24,7 @@ import java.util.Map;
 
 import static TJCore.api.TJOreDictionaryLoader.*;
 import static TJCore.api.material.TJMaterials.*;
+import static TJCore.common.metaitem.TJMetaItems.*;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static TJCore.common.recipes.recipemaps.TJRecipeMaps.*;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
@@ -55,6 +59,9 @@ public class GTComponents {
     private static final Material[] lube = new Material[]{Lubricant, Lubricant, Lubricant, Lubricant, Lubricant, TriphenylPhosphine, TriphenylPhosphine, TriphenylPhosphine, TriphenylPhosphine, SuspendedPGQD, SuspendedPGQD, SuspendedPGQD, SuspendedPGQD, Leptons};
     private static final Material[] rubbers = new Material[]{Rubber, SiliconeRubber, StyreneButadieneRubber};
     public static final Material[] fluidPipes = new Material[]{SilicaCeramic, Potin, Polyethylene, Chrome, Polytetrafluoroethylene, Iridium, Polybenzimidazole, NiobiumTitanium, Duranium, HDCS_1, HDCS_2, HDCS_3, TantalumHafniumSeaborgiumCarboNitride};
+    public static final ItemStack[] emitterGem = new ItemStack[]{OreDictUnifier.get(gem, Quartzite),OreDictUnifier.get(gem, NetherQuartz),OreDictUnifier.get(gemFlawless, CertusQuartz),OreDictUnifier.get(gemFlawless, Diamond),OreDictUnifier.get(gemExquisite, Diamond),OreDictUnifier.get(foil, Platinum,64),OreDictUnifier.get(foil, Osmiridium, 64),OreDictUnifier.get(foil, Phosphorene, 64),OreDictUnifier.get(foil, Graphene, 64),OreDictUnifier.get(nanoFoil, Chrome, 64),OreDictUnifier.get(nanoFoil, Palladium, 64),OreDictUnifier.get(nanoFoil, NaquadahEnriched, 64),OreDictUnifier.get(nanoFoil, Trinium, 64)};
+    public static final ItemStack[] sensorGem = new ItemStack[]{OreDictUnifier.get(gem, Olivine),OreDictUnifier.get(gem, Emerald),OreDictUnifier.get(gem, Ruby),OreDictUnifier.get(gem, Sapphire),OreDictUnifier.get(gem, Opal),OreDictUnifier.get(foil, Electrum, 64),OreDictUnifier.get(foil, Ruthenium, 64),OreDictUnifier.get(foil, Naquadah, 64),OreDictUnifier.get(foil, Rutherfordium, 64),OreDictUnifier.get(nanoFoil, Germanium, 64),OreDictUnifier.get(nanoFoil, Americium, 64),OreDictUnifier.get(nanoFoil, Seaborgium, 64),OreDictUnifier.get(nanoFoil, Vibranium, 64)};
+    public static final Material[] emitterMaterial = new Material[]{Brass, Electrum, Silicon, Chrome, Thulium, Palladium, Rhenium, Fermium, NaquadahEnriched, Tritanium, Trinium, Nihonium, Taranium};
     //public static final Material[] a = new Material[]{};
     //public static final Material[] a = new Material[]{};
     //public static final Material[] a = new Material[]{};
@@ -69,12 +76,31 @@ public class GTComponents {
     // Register recipes for standard GT components
     private static void registerComponents() {
 
+        // Steam Components
+
+        ModHandler.addShapedRecipe("steam_motor", STEAM_MOTOR.getStackForm(3),
+                " F ", "WDW", " F ",
+                'F', OreDictUnifier.get(foil, Copper),
+                'D', OreDictUnifier.get(dustTiny, Glass),
+                'W', OreDictUnifier.get(wireFine, Tin));
+
+        ModHandler.addShapedRecipe("steam_piston", STEAM_PISTON.getStackForm(3),
+                " F ", "WDW", " F ",
+                'F', OreDictUnifier.get(foil, Copper),
+                'D', OreDictUnifier.get(dustTiny, Glass),
+                'W', OreDictUnifier.get(wireFine, Tin));
+        ModHandler.addShapedRecipe("steam_pump", STEAM_PUMP.getStackForm(3),
+                " F ", "WDW", " F ",
+                'F', OreDictUnifier.get(foil, Copper),
+                'D', OreDictUnifier.get(dustTiny, Glass),
+                'W', OreDictUnifier.get(wireFine, Tin));
+
         // Specialized Motor Crafting Recipes
 
         STEAM_COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
                 .EUt(VA[0])
                 .duration(80)
-                .input(wireFine, Copper, 4)
+                .input(wireFine, Copper, 16)
                 .input(cableGtSingle, Tin, 2)
                 .input(stick, Steel, 2)
                 .input(stick, IronMagnetic)
@@ -130,7 +156,8 @@ public class GTComponents {
 
         // LV-IV Loop
         for (int i = 0; i < 5; i++) {
-            //Component Assembler Recipes - Motor
+            //Component Assembler Recipes -
+            //Motor
             COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
                     .EUt(VA[i])
                     .duration((i+1)*20)
@@ -142,6 +169,7 @@ public class GTComponents {
                     .output(motors[i])
                     .buildAndRegister();
 
+            //Piston
             COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
                     .EUt(VA[i])
                     .duration((i+1)*20)
@@ -154,6 +182,7 @@ public class GTComponents {
                     .output(pistons[i])
                     .buildAndRegister();
 
+            //Robot Arm
             COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
                     .EUt(VA[i])
                     .duration((i+1)*20)
@@ -167,7 +196,34 @@ public class GTComponents {
                     .output(roboArm[i])
                     .buildAndRegister();
 
+            //Sensor
+            COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
+                    .EUt(VA[i])
+                    .duration((i+1)*20)
+                    .input(stick, emitterMaterial[i], 4)
+                    .input(plate, compMain[i], 4)
+                    .input(bolt, compMain[i], 8)
+                    .input(circuit, tierCircuitNames[i])
+                    .inputs(emitterGem[i])
+                    .fluidInputs(SolderingAlloy.getFluid(144))
+                    .output(emitter[i])
+                    .buildAndRegister();
+
+            //Emitter
+            COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
+                    .EUt(VA[i])
+                    .duration((i+1)*20)
+                    .input(stickLong, compMain[i], 2)
+                    .input(foil, emitterMaterial[i], 8)
+                    .input(screw, compMain[i], 16)
+                    .input(circuit, tierCircuitNames[i])
+                    .inputs(sensorGem[i])
+                    .fluidInputs(SolderingAlloy.getFluid(144))
+                    .output(sensor[i])
+                    .buildAndRegister();
+
             for (Material rubber : rubbers) {
+                //Pump
                 COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
                         .EUt(VA[i])
                         .duration((i + 1) * 20)
@@ -180,7 +236,7 @@ public class GTComponents {
                         .fluidInputs(lube[i].getFluid(50 * (i + 1)))
                         .output(pump[i])
                         .buildAndRegister();
-
+                //Conveyor
                 COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
                         .EUt(VA[i])
                         .duration((i + 1) * 20)
@@ -207,7 +263,7 @@ public class GTComponents {
 
         // LuV-UHV Loop
         for (int i = 5; i < 9; i++) {
-            //Assline Recipes - Motor
+            //Motor
             RecipeBuilder builder = ASSEMBLY_LINE_RECIPES.recipeBuilder()
                     .EUt(VA[i+1])
                     .duration((i+1)*20)
@@ -222,11 +278,19 @@ public class GTComponents {
                 builder.input(wireFine, motorWires[i], 64);
             }
             builder.buildAndRegister();
+
+            //Piston
+
+            //Robot Arm
+            //Pump
+            //Sensor
+            //Emitter
+            //Field Generator
         }
 
         //UEV-OpV Loop
         for (int i = 9; i < OpV; i++) {
-
+            // Motor
             RecipeBuilder builder = ASSEMBLY_LINE_RECIPES.recipeBuilder()
                     .EUt(VA[i+1])
                     .duration((i+1)*20)
@@ -249,6 +313,14 @@ public class GTComponents {
                 builder.input(nanoWire, motorWires[i], 64);
             }
             builder.buildAndRegister();
+
+            //Piston
+
+            //Robot Arm
+            //Pump
+            //Sensor
+            //Emitter
+            //Field Generator
         }
     }
 

@@ -61,14 +61,14 @@ public class Chips {
     private static void electronicChip() {
 
         CUTTER_RECIPES.recipeBuilder()
-                .duration(120)
+                .duration(80)
                 .EUt(VA[LV])
                 .input(plate, Silicon)
                 .output(SIMPLE_SILICON_WAFER, 4)
                 .buildAndRegister();
 
         LASER_ENGRAVER_RECIPES.recipeBuilder()
-                .duration(440)
+                .duration(100)
                 .EUt(VA[LV])
                 .input(SIMPLE_SILICON_WAFER)
                 .notConsumable(craftingLens, Glass)
@@ -76,7 +76,7 @@ public class Chips {
                 .buildAndRegister();
 
         CUTTER_RECIPES.recipeBuilder()
-                .duration(200)
+                .duration(100)
                 .EUt(VA[LV])
                 .input(SIMPLE_CPU_WAFER)
                 .output(SIMPLE_CPU,4)

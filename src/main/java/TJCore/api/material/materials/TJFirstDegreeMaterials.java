@@ -729,6 +729,11 @@ public class TJFirstDegreeMaterials {
         Epoxy.addFlags(GENERATE_FOIL);
 
         // Metals
+        Silicon.addFlags(GENERATE_ROD);
+        Thulium.addFlags(GENERATE_FOIL, GENERATE_ROD);
+        Chrome.addFlags(GENERATE_FOIL);
+        Brass.addFlags(GENERATE_FOIL, GENERATE_LONG_ROD);
+        Terbium.addFlags(GENERATE_ROD, GENERATE_NANOFOIL);
         Steel.addFlags(GENERATE_ROUND);
         HSSG.addFlags(GENERATE_ROUND);
         Pikyonium.addFlags(GENERATE_FINE_WIRE);
@@ -778,6 +783,8 @@ public class TJFirstDegreeMaterials {
         Bohrium.addFlags(GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_FOIL, GENERATE_FRAME, GENERATE_DENSE);
 
         //Properties
+        Thulium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Terbium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Bohrium.setProperty(PropertyKey.INGOT, new IngotProperty());
         HeavyQuarkDegenerate.setProperty(PropertyKey.ITEM_PIPE, new ItemPipeProperties());
         Rutherfordium.setProperty(PropertyKey.ITEM_PIPE, new ItemPipeProperties());
