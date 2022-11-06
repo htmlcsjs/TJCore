@@ -85,6 +85,9 @@ public class TJMaterials {
 
 
     //Chemicals
+    public static Material Methyltrichlorosilane;
+    public static Material Methyltrimethoxysilane;
+    public static Material Polymethylsilesquioxane;
     public static Material Silane;
     public static Material TriphenylPhosphine;
     public static Material PhenylmagnesiumBromide;

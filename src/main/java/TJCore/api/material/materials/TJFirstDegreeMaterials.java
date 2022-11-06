@@ -7,8 +7,6 @@ import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialIconSet;
 import gregtech.api.unification.material.properties.*;
-import org.apache.http.impl.conn.Wire;
-import scala.sys.Prop;
 
 import static TJCore.api.material.TJMaterials.*;
 
@@ -703,7 +701,28 @@ public class TJFirstDegreeMaterials {
                 .components(Oganesson, 1, Tennessine, 4)
                 .build();
 
-        // CONFIG HAS 29000-30000
+        Methyltrichlorosilane = new Material.Builder(25103, "methyltrichlorosilane")
+                .fluid()
+                .colorAverage()
+                .components(Carbon, 1, Hydrogen, 3, Chlorine, 3, Silicon, 1)
+                .build()
+                .setFormula("CH3Cl3Si", true);
+
+        Methyltrimethoxysilane = new Material.Builder(25104, "methyltrimethyoxysilane")
+                .fluid()
+                .color(0x42163c)
+                .components(Silicon, 1, Oxygen, 3, Carbon, 4, Hydrogen, 12)
+                .build()
+                .setFormula("CH3Si(OCH3)3", true);
+
+        Polymethylsilesquioxane = new Material.Builder(25105, "polymethylsilesquioxane")
+                .fluid()
+                .color(0xff7ab4)
+                .components(Silicon, 1, Oxygen, 3, Carbon, 4, Hydrogen, 12)
+                .build()
+                .setFormula("[CH3Si(OCH3)3]N", true);
+
+        // SCRIPTS FOR TJCORE HAS 29000-30000
     }
 
     public static void registerProperties() {
