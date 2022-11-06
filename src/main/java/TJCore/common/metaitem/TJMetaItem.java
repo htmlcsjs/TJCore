@@ -196,7 +196,6 @@ public class    TJMetaItem extends StandardMetaItem {
         GAMMA_EMITTING_DIODE = addItem(314,"gamma_emitting_diode");
         REFLECTING_SHEET = addItem(315, "reflecting_sheet");
 
-
         //Lithography Metaitems (500-599)
         SILICON_BOULE = addItem(500, "silicon_boule");
         ANTIMONY_DOPED_SILICON_BOULE = addItem(501, "antimony_doped_silicon_boule");
@@ -324,15 +323,15 @@ public class    TJMetaItem extends StandardMetaItem {
 
         SUPRA_CPU = addItem(625, "supra_cpu");
 
-        // Chemistry Intermediates (1051-1250)
-        SPUN_POLYACRYLONITRILE = addItem(1051,"spun_polyacrylonitrile");
-        WASHED_POLYACRLONITRILE = addItem(1052,"washed_polyacrylonitrile");
-        BAKED_POLYACRLONITRILE = addItem(1053,"baked_polyacrylonitrile");
-        OXIDIZED_CARBON_THREAD = addItem(1054,"oxidized_carbon_thread");
-        ETCHED_CARBON_THREAD = addItem(1055,"etched_carbon_thread");
-        COATED_CARBON_THREAD = addItem(1056,"coated_carbon_thread");
-        WOVEN_CARBON_FIBER = addItem(1057,"woven_carbon_fiber");
-        THIN_WOVEN_CARBON_FIBER = addItem(1058,"thin_woven_carbon_fiber");
+        // Chemistry Intermediates (1000-1249)
+        SPUN_POLYACRYLONITRILE = addItem(1000,"spun_polyacrylonitrile");
+        WASHED_POLYACRLONITRILE = addItem(1001,"washed_polyacrylonitrile");
+        BAKED_POLYACRLONITRILE = addItem(1002,"baked_polyacrylonitrile");
+        OXIDIZED_CARBON_THREAD = addItem(1003,"oxidized_carbon_thread");
+        ETCHED_CARBON_THREAD = addItem(1004,"etched_carbon_thread");
+        COATED_CARBON_THREAD = addItem(1005,"coated_carbon_thread");
+        WOVEN_CARBON_FIBER = addItem(1006,"woven_carbon_fiber");
+        THIN_WOVEN_CARBON_FIBER = addItem(1007,"thin_woven_carbon_fiber");
 
         // Chemistry End Products (1250-1299)
         CNT_SHORT = addItem(1250, "short_carbon_nanotube_strand");
@@ -341,9 +340,9 @@ public class    TJMetaItem extends StandardMetaItem {
         CARBON_FIBER_FOIL = addItem(1253,"carbon_fiber_foil");
 
         // Microcrafting + Components (1300-1499)
-        STEAM_MOTOR = addItem(1254, "steam_motor");
-        STEAM_PISTON = addItem(1255, "steam_piston");
-        STEAM_PUMP = addItem(1256, "steam_pump");
+        STEAM_MOTOR = addItem(1300, "steam_motor");
+        STEAM_PISTON = addItem(1301, "steam_piston");
+        STEAM_PUMP = addItem(1302, "steam_pump");
 
         // Material Processing Intermediates (1500-)
         ALUMINA_MOLD = addItem(1500, "alumina_mold");

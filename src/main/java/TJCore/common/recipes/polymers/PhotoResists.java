@@ -39,10 +39,10 @@ public class PhotoResists {
                 .duration(45)
                 .EUt(VA[LV])
                 .fluidInputs(Methyltrimethoxysilane.getFluid(1000))
-                .fluidInputs(Water.getFluid(2000))
+                .fluidInputs(Hydrogen.getFluid(1000))
+                .fluidInputs(Water.getFluid(1000))
                 .fluidOutputs(Polymethylsilesquioxane.getFluid(1000))
-                .fluidOutputs(Oxygen.getFluid(1000))
-                .fluidOutputs(Hydrogen.getFluid(1000))
+                .fluidOutputs(Methanol.getFluid(3000))
                 .buildAndRegister();
 
         CHEMICAL_RECIPES.recipeBuilder()

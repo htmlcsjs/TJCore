@@ -563,20 +563,6 @@ public class TJFirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION, NO_WORKING, NO_SMASHING, NO_SMELTING)
                 .build();
 
-        Manasteel = new Material.Builder(25084, "manasteel")
-                .ingot()
-                .color(0x4772ff)
-                .iconSet(MaterialIconSet.SHINY)
-                .build()
-                .setFormula("Fe4Sx", true);
-
-        ManasteelAlloy = new Material.Builder(25085, "manasteel_alloy")
-                .ingot()
-                .color(0x152352)
-                .iconSet(MaterialIconSet.SHINY)
-                .components(Naquadria, 1, Rhodium, 1, Palladium, 3, Manasteel, 4)
-                .build();
-
         Polyetheretherketone = new Material.Builder(25086, "peek")
                 .ingot()
                 .fluid()
@@ -634,7 +620,7 @@ public class TJFirstDegreeMaterials {
                 .ingot()
                 .iconSet(MaterialIconSet.SHINY)
                 .color(0x2e216e)
-                .components(TungstenCarbide, 10, Americium, 4, ChromiumGermaniumTellurideMagnetic, 4, Vanadium, 3, Rhenium, 2, Lithium, 2)
+                .components(Naquadria, 10, Americium, 4, ChromiumGermaniumTellurideMagnetic, 4, Vanadium, 3, Rhenium, 2, Lithium, 2)
                 .build();
 
         HDCS_2 = new Material.Builder(25094, "high_durability_compound_steel_2")
