@@ -345,4 +345,9 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem CARBON_FIBER_PLATE;
     public static MetaItem<?>.MetaValueItem CARBON_FIBER_FOIL;
 
+    // Material Items
+
+    public static MetaItem<?>.MetaValueItem ALUMINA_MOLD;
+    public static MetaItem<?>.MetaValueItem FULL_ALUMINA_MOLD;
+    public static MetaItem<?>.MetaValueItem HOT_ALUMINA_MOLD;
 }

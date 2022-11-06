@@ -702,11 +702,14 @@ public class TJFirstDegreeMaterials {
                 .colorAverage()
                 .components(Oganesson, 1, Tennessine, 4)
                 .build();
+
+        // CONFIG HAS 29000-30000
     }
 
     public static void registerProperties() {
 
         // Glass + Ceramics
+        Alumina.addFlags(DISABLE_DECOMPOSITION);
         SilicaCeramic.addFlags(NO_WORKING, NO_SMELTING, GENERATE_RING, GENERATE_FOIL);
         Fiberglass.addFlags(GENERATE_FINE_WIRE, GENERATE_FOIL);
         BismuthTelluride.addFlags(GENERATE_FOIL);

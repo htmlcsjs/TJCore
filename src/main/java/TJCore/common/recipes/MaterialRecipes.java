@@ -2,6 +2,8 @@ package TJCore.common.recipes;
 
 import TJCore.common.TJConfig;
 import TJCore.common.blocks.BlockBearing;
+import TJCore.common.metaitem.TJMetaItem;
+import TJCore.common.metaitem.TJMetaItems;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
@@ -11,6 +13,7 @@ import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Material;
 
 import static TJCore.api.material.TJMaterials.*;
+import static TJCore.common.metaitem.TJMetaItems.*;
 import static gregtech.api.unification.material.Materials.*;
 import static TJCore.common.recipes.recipemaps.TJRecipeMaps.*;
 import gregtech.api.unification.material.properties.DustProperty;
@@ -26,6 +29,8 @@ import net.minecraft.item.ItemSaddle;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
+import scala.tools.nsc.transform.patmat.Logic;
+import stanhebben.zenscript.type.casting.CastingRuleVirtualMethod;
 
 import static gregtech.api.recipes.RecipeMaps.*;
 
@@ -126,7 +131,24 @@ public class MaterialRecipes {
         ((MetaItem) OreDictUnifier.get(dustTiny, GalvanizedSteel).getItem()).getItem(OreDictUnifier.get(dust, GalvanizedSteel)).setInvisible();
     }
     public static void registerAluminumChanges() {
+        ModHandler.addShapedRecipe("alumina_mold", ALUMINA_MOLD.getStackForm(), " B "," F ", " M ",  'F', OreDictUnifier.get(foil, Carbon), 'M', SHAPE_MOLD_INGOT, 'B', OreDictUnifier.get(wireFine, Carbon));
+        ModHandler.addShapelessRecipe("full_alumina_mold", FULL_ALUMINA_MOLD.getStackForm(),
+                ALUMINA_MOLD.getStackForm(),
+                new UnificationEntry(dust, Alumina),
+                new UnificationEntry(dust, Alumina),
+                new UnificationEntry(dust, Alumina),
+                new UnificationEntry(dust, Alumina),
+                new UnificationEntry(dust, Alumina));
 
+        ModHandler.addSmeltingRecipe(FULL_ALUMINA_MOLD.getStackForm(), HOT_ALUMINA_MOLD.getStackForm(), 1);
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .EUt(VA[ULV])
+                .duration(40)
+                .fluidInputs(Water.getFluid(50))
+                .input(HOT_ALUMINA_MOLD)
+                .output(ALUMINA_MOLD)
+                .output(ingot, Aluminium, 2)
+                .buildAndRegister();
     }
     public static void registerCeramics() {
 

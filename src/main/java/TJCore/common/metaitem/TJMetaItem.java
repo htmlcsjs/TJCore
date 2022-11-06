@@ -344,5 +344,10 @@ public class    TJMetaItem extends StandardMetaItem {
         STEAM_MOTOR = addItem(1254, "steam_motor");
         STEAM_PISTON = addItem(1255, "steam_piston");
         STEAM_PUMP = addItem(1256, "steam_pump");
+
+        // Material Processing Intermediates (1500-)
+        ALUMINA_MOLD = addItem(1500, "alumina_mold");
+        FULL_ALUMINA_MOLD = addItem(1501, "full_alumina_mold");
+        HOT_ALUMINA_MOLD = addItem(1502, "hot_alumina_mold");
     }
 }
