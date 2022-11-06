@@ -1,5 +1,8 @@
 package TJCore.common.recipes;
 import TJCore.common.TJConfig;
+import TJCore.common.blocks.BlockBearing;
+import TJCore.common.blocks.BlockTurbineBlades;
+import TJCore.common.blocks.TJMetaBlocks;
 import gregtech.api.GTValues;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.metatileentity.MetaTileEntity;
@@ -13,6 +16,7 @@ import gregtech.api.unification.material.Material;
 
 import static TJCore.api.TJComponents.*;
 import static TJCore.api.material.TJMaterials.*;
+import static TJCore.common.blocks.BlockTurbineBlades.TurbineBladesType.*;
 import static TJCore.common.metaitem.TJMetaItems.*;
 import static TJCore.common.metatileentities.TJMetaTileEntities.*;
 import static TJCore.common.recipes.GTComponents.tierCircuitNames;
@@ -50,15 +54,12 @@ import static gregtech.loaders.recipe.CraftingComponent.*;
 
 public class MachineRecipes {
 
-
-    static int[] vIndex = new int[]{ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX};
-    static Material[] hullMat = new Material[]{Steel, Aluminium, StainlessSteel, Titanium, TungstenSteel, RhodiumPlatedPalladium, NaquadahAlloy, Darmstadtium, Orichalcum, Adamantium, Vibranium, Draconium, HeavyQuarkDegenerate, Neutronium};
-
     public static void registerMachines() {
         removeOldMachines();
         registerElectric();
         registerSteam();
         registerMulti();
+        registerGenerator();
     }
 
     private static void removeOldMachines() {
@@ -72,7 +73,6 @@ public class MachineRecipes {
             }
         }
     }
-
 
     private static void registerElectric() {
         MetaTileEntityLoader.registerMachineRecipe(PRINTER, "WRW", "PSP", "CHC", 'P', PISTON, 'W', COIL_HEATING, 'R', RING, 'S', SUBSTRATE, 'C', CIRCUIT, 'H', CraftingComponent.HULL);
@@ -133,5 +133,26 @@ public class MachineRecipes {
                 'B', new ItemStack(Blocks.BRICK_BLOCK),
                 'P', OreDictUnifier.get(pipeNormalFluid, Wood),
                 'C', WOODEN_CRATE.getStackForm());
+    }
+
+    private static void registerGenerator() {
+        BlockTurbineBlades.TurbineBladesType[] bladeTypes = new BlockTurbineBlades.TurbineBladesType[] {GALVANIZED_STEEL_BLADES, ALUMINUM_BLADES, STAINLESS_STEEL_BLADES, TITANIUM_BLADES, TUNGSTENSTEEL_BLADES};
+        BlockBearing.BearingType[] bearingTypes = new BlockBearing.BearingType[] {BlockBearing.BearingType.GALVANIZED_STEEL_BEARING, BlockBearing.BearingType.ALUMINUM_BEARING, BlockBearing.BearingType.STAINLESS_STEEL_BEARING, BlockBearing.BearingType.TITANIUM_BEARING, BlockBearing.BearingType.TUNGSTENSTEEL_BEARING};
+        Material[] bladeMaterial = new Material[]{GalvanizedSteel, Aluminium, StainlessSteel, Titanium, TungstenSteel};
+        Material[] secondaryMaterial = new Material[]{Steel, Birmabright, Nichrome, BT6, Tungsten};
+        for (int i = 0; i < 5; i++) {
+            ModHandler.addShapedRecipe(bladeMaterial[i].getUnlocalizedName() + "_turbine_blades", TJMetaBlocks.TURBINE_BLADES.getItemVariant(bladeTypes[i]),
+                    "PSP", "PGP", "RLR",
+                    'P', OreDictUnifier.get(plate, bladeMaterial[i]),
+                    'S', OreDictUnifier.get(screw, secondaryMaterial[i]),
+                    'G', OreDictUnifier.get(spring, secondaryMaterial[i]),
+                    'R', OreDictUnifier.get(ring, bladeMaterial[i]),
+                    'L', OreDictUnifier.get(stickLong, secondaryMaterial[i]));
+            ModHandler.addShapedRecipe(bladeMaterial[i].getUnlocalizedName() + "_turbine_bearing", TJMetaBlocks.BLOCK_BEARING.getItemVariant(bearingTypes[i]),
+                    "PSP", "SRS", "PSP",
+                    'P', OreDictUnifier.get(plate, bladeMaterial[i]),
+                    'S', OreDictUnifier.get(stick, secondaryMaterial[i]),
+                    'R', OreDictUnifier.get(ring, bladeMaterial[i]));
+        }
     }
 }

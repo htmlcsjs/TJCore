@@ -83,22 +83,27 @@ public class GTComponents {
 
         // Steam Components
 
-        ModHandler.addShapedRecipe("steam_motor", STEAM_MOTOR.getStackForm(3),
-                " F ", "WDW", " F ",
-                'F', OreDictUnifier.get(foil, Copper),
-                'D', OreDictUnifier.get(dustTiny, Glass),
-                'W', OreDictUnifier.get(wireFine, Tin));
+        ModHandler.addShapedRecipe("steam_pump", STEAM_PUMP.getStackForm(),
+                "SPS", "GIG", "PMP",
+                'I', OreDictUnifier.get(pipeNormalFluid, Bronze),
+                'P', OreDictUnifier.get(plate, Bronze),
+                'M', STEAM_MOTOR.getStackForm(),
+                'S', OreDictUnifier.get(screw, Iron),
+                'G', OreDictUnifier.get(gearSmall, Iron));
 
-        ModHandler.addShapedRecipe("steam_piston", STEAM_PISTON.getStackForm(3),
-                " F ", "WDW", " F ",
-                'F', OreDictUnifier.get(foil, Copper),
-                'D', OreDictUnifier.get(dustTiny, Glass),
-                'W', OreDictUnifier.get(wireFine, Tin));
-        ModHandler.addShapedRecipe("steam_pump", STEAM_PUMP.getStackForm(3),
-                " F ", "WDW", " F ",
-                'F', OreDictUnifier.get(foil, Copper),
-                'D', OreDictUnifier.get(dustTiny, Glass),
-                'W', OreDictUnifier.get(wireFine, Tin));
+        ModHandler.addShapedRecipe("steam_piston", STEAM_PISTON.getStackForm(),
+                "DDD", "GSG", "PMP",
+                'D', OreDictUnifier.get(plate, Bronze),
+                'G', OreDictUnifier.get(gearSmall, Iron),
+                'S', OreDictUnifier.get(stick, Iron),
+                'P', OreDictUnifier.get(plate, Iron),
+                'M', STEAM_MOTOR.getStackForm());
+        ModHandler.addShapedRecipe("steam_motor", STEAM_MOTOR.getStackForm(),
+                "PSP", "IRI", "PRP",
+                'P', OreDictUnifier.get(plate, Bronze),
+                'S', OreDictUnifier.get(stick, Iron),
+                'I', OreDictUnifier.get(plate, Iron),
+                'R', OreDictUnifier.get(rotor, Bronze));
 
         // Specialized Motor Crafting Recipes
 

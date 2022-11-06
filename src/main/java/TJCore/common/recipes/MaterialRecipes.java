@@ -63,6 +63,23 @@ public class MaterialRecipes {
         registerNickelPlatedTin();
         registerGalvanizedSteel();
         registerAluminumChanges();
+        registerMixing();
+        registerEBF();
+    }
+
+    private static void registerMixing() {
+        MIXER_RECIPES.recipeBuilder()
+                .EUt(VA[LV])
+                .duration(40)
+                .input(dust, Aluminium, 5)
+                .input(dust, Manganese)
+                .input(dust, Magnesium)
+                .output(dust, Birmabright, 7)
+                .buildAndRegister();
+    }
+
+    private static void registerEBF() {
+
     }
 
     public static void registerFarming() {
