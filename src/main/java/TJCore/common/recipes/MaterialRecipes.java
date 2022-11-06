@@ -37,16 +37,31 @@ public class MaterialRecipes {
 
     public static void register() {
         registerCeramics();
-        registerNickelPlatedTin();
-        registerGalvanizedSteel();
+        registerMetals();
+        registerSimpleCompounds();
         registerMetalCasings();
         registerModifiedDecomp();
         registerFarming();
     }
 
-    public static void registerFarming() {
+    public static void registerSimpleCompounds() {
+        MIXER_RECIPES.recipeBuilder()
+                .duration(35)
+                .EUt(VA[LV])
+                .input(dust, Silver)
+                .input(dust, Lead)
+                .fluidInputs(Oxygen.getFluid(1000))
+                .output(dust, SilverLeadOxide, 3)
+                .buildAndRegister();
+    }
+    public static void registerMetals() {
+        registerNickelPlatedTin();
+        registerGalvanizedSteel();
+        registerAluminumChanges();
     }
 
+    public static void registerFarming() {
+    }
     public static void registerNickelPlatedTin() {
         OrePrefix[] nickelPlatedTinPrefix = new OrePrefix[]{ingot, plate, plateDouble, foil};
         int tinyQuantity;
@@ -75,7 +90,6 @@ public class MaterialRecipes {
         //((MetaItem) OreDictUnifier.get(block, NickelPlatedTin).getItem()).getItem(OreDictUnifier.get(block, NickelPlatedTin)).setInvisible();
 
     }
-
     public static void registerGalvanizedSteel() {
         OrePrefix[] galvanizedSteelPrefix = new OrePrefix[]{ingot, plate, stick, stickLong, bolt, screw, ring, gear, gearSmall, rotor, round};
         int tinyQuantity;
@@ -111,6 +125,9 @@ public class MaterialRecipes {
         //((MetaItem) OreDictUnifier.get(block, GalvanizedSteel).getItem()).getItem(OreDictUnifier.get(dust, GalvanizedSteel)).setInvisible();
         ((MetaItem) OreDictUnifier.get(dustTiny, GalvanizedSteel).getItem()).getItem(OreDictUnifier.get(dust, GalvanizedSteel)).setInvisible();
     }
+    public static void registerAluminumChanges() {
+
+    }
     public static void registerCeramics() {
 
         FURNACE_RECIPES.recipeBuilder()
@@ -143,6 +160,37 @@ public class MaterialRecipes {
                 .input(block, SilicaCeramic)
                 .output(plate, SilicaCeramic, 9)
                 .buildAndRegister();
+
+        ModHandler.addShapedRecipe("tiny_fluid_pipe_ceramic", OreDictUnifier.get(pipeTinyFluid, SilicaCeramic, 2),
+                "   "," S ","HPW",
+                'S', SAW,
+                'H', HARD_HAMMER,
+                'W', WRENCH,
+                'P', OreDictUnifier.get(plate, SilicaCeramic));
+
+        ModHandler.addShapedRecipe("small_fluid_pipe_ceramic", OreDictUnifier.get(pipeSmallFluid, SilicaCeramic),
+                "   ","WPH","   ",
+                'W', WRENCH,
+                'H', HARD_HAMMER,
+                'P', OreDictUnifier.get(plate, SilicaCeramic));
+
+        ModHandler.addShapedRecipe("normal_fluid_pipe_ceramic", OreDictUnifier.get(pipeNormalFluid, SilicaCeramic),
+                "   ","PPP","W H",
+                'W', WRENCH,
+                'H', HARD_HAMMER,
+                'P', OreDictUnifier.get(plate, SilicaCeramic));
+
+        ModHandler.addShapedRecipe("large_fluid_pipe_ceramic", OreDictUnifier.get(pipeLargeFluid, SilicaCeramic),
+                "PPP","W H","PPP",
+                'W', WRENCH,
+                'H', HARD_HAMMER,
+                'P', OreDictUnifier.get(plate, SilicaCeramic));
+
+        //ModHandler.addShapedRecipe("huge_fluid_pipe_ceramic", OreDictUnifier.get(pipeHugeFluid, SilicaCeramic),
+        //        "PPP","W H","PPP",
+        //        'W', WRENCH,
+        //        'H', HARD_HAMMER,
+        //        'P', OreDictUnifier.get(plateDouble, SilicaCeramic));
     }
     public static void registerModifiedDecomp() {
         ELECTROLYZER_RECIPES.recipeBuilder()

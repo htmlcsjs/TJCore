@@ -707,7 +707,7 @@ public class TJFirstDegreeMaterials {
     public static void registerProperties() {
 
         // Glass + Ceramics
-        SilicaCeramic.addFlags(NO_WORKING, NO_SMELTING, NO_SMASHING, GENERATE_RING, GENERATE_FOIL);
+        SilicaCeramic.addFlags(NO_WORKING, NO_SMELTING, GENERATE_RING, GENERATE_FOIL);
         Fiberglass.addFlags(GENERATE_FINE_WIRE, GENERATE_FOIL);
         BismuthTelluride.addFlags(GENERATE_FOIL);
         BismuthIridiumOxide.addFlags(NO_WORKING, NO_SMASHING, GENERATE_PLATE);
