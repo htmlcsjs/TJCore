@@ -14,6 +14,8 @@ import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.UnificationEntry;
+import gregtech.common.metatileentities.MetaTileEntities;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
@@ -25,6 +27,8 @@ import java.util.Map;
 import static TJCore.api.TJOreDictionaryLoader.*;
 import static TJCore.api.material.TJMaterials.*;
 import static TJCore.common.metaitem.TJMetaItems.*;
+import static TJCore.common.metatileentities.TJMetaTileEntities.MODULAR_TURBINE;
+import static TJCore.common.metatileentities.TJMetaTileEntities.PRIMITIVE_TREE_FARMER;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static TJCore.common.recipes.recipemaps.TJRecipeMaps.*;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
@@ -34,6 +38,7 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
+import static gregtech.common.metatileentities.MetaTileEntities.WOODEN_CRATE;
 
 //import static gregtech.loaders.recipe.CraftingComponent.*;
 
@@ -203,7 +208,7 @@ public class GTComponents {
                     .input(stick, emitterMaterial[i], 4)
                     .input(plate, compMain[i], 4)
                     .input(bolt, compMain[i], 8)
-                    .input(circuit, tierCircuitNames[i])
+                    .input(circuit, tierCircuitNames[i + 1])
                     .inputs(emitterGem[i])
                     .fluidInputs(SolderingAlloy.getFluid(144))
                     .output(emitter[i])
@@ -216,11 +221,15 @@ public class GTComponents {
                     .input(stickLong, compMain[i], 2)
                     .input(foil, emitterMaterial[i], 8)
                     .input(screw, compMain[i], 16)
-                    .input(circuit, tierCircuitNames[i])
+                    .input(circuit, tierCircuitNames[i + 1])
                     .inputs(sensorGem[i])
                     .fluidInputs(SolderingAlloy.getFluid(144))
                     .output(sensor[i])
                     .buildAndRegister();
+
+
+
+
 
             for (Material rubber : rubbers) {
                 //Pump

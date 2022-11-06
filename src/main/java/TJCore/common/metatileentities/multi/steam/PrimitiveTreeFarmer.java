@@ -57,7 +57,7 @@ public class PrimitiveTreeFarmer extends MultiblockControllerBase {
     @Override
     public void update() {
         super.update();
-        if (!getWorld().isRemote && getOffsetTimer() % 2000 == 0 && isStructureFormed() && itemIn.getStackInSlot(0).isItemEqual(new ItemStack(Blocks.SAPLING)) && logOut.getStackInSlot(0).isEmpty()) {
+        if (!getWorld().isRemote && getOffsetTimer() % 80 == 0 && isStructureFormed() && itemIn.getStackInSlot(0).isItemEqual(new ItemStack(Blocks.SAPLING)) && logOut.getStackInSlot(0).isEmpty()) {
             int saplingsIn = itemIn.getStackInSlot(0).getCount();
             int numSaplingsInOutput = saplingOut.getStackInSlot(0).getCount();
             itemIn.setStackInSlot(0, new ItemStack(Blocks.AIR));

@@ -14,6 +14,7 @@ import gregtech.api.unification.material.Material;
 import static TJCore.api.material.TJMaterials.*;
 import static TJCore.common.metaitem.TJMetaItems.*;
 import static TJCore.common.metatileentities.TJMetaTileEntities.*;
+import static TJCore.common.recipes.GTComponents.tierCircuitNames;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
 
@@ -31,6 +32,8 @@ import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.loaders.recipe.CraftingComponent;
 import gregtech.loaders.recipe.MetaTileEntityLoader;
 import net.minecraft.client.Minecraft;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import scala.tools.nsc.typechecker.Adaptations;
 
@@ -40,8 +43,7 @@ import java.util.stream.Stream;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
-import static gregtech.common.items.MetaItems.RESISTOR;
-import static gregtech.common.items.MetaItems.VACUUM_TUBE;
+import static gregtech.common.items.MetaItems.*;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
 import static gregtech.loaders.recipe.CraftingComponent.*;
 
@@ -52,14 +54,14 @@ public class MachineRecipes {
     static Material[] hullMat = new Material[]{Steel, Aluminium, StainlessSteel, Titanium, TungstenSteel, RhodiumPlatedPalladium, NaquadahAlloy, Darmstadtium, Orichalcum, Adamantium, Vibranium, Draconium, HeavyQuarkDegenerate, Neutronium};
 
     public static void registerMachines() {
-        //removeOldMachines();
+        removeOldMachines();
         registerElectric();
         registerSteam();
         registerMulti();
     }
 
     private static void removeOldMachines() {
-        //removeAllTeirs(MIXER);
+        removeAllTeirs(STEAM_TURBINE);
     }
 
     private static void removeAllTeirs(MetaTileEntity[] mteIn) {
@@ -113,6 +115,22 @@ public class MachineRecipes {
     }
 
     private static void registerMulti() {
+        ModHandler.addShapedRecipe("modular_steam_turbine", MODULAR_TURBINE.getStackForm(),
+                "PGP", "MCM", "RWR",
+                'G', OreDictUnifier.get(gear, Steel),
+                'M', ELECTRIC_MOTOR_LV.getStackForm(),
+                'W', OreDictUnifier.get(wireGtDouble, Copper),
+                'R', new UnificationEntry(circuit, tierCircuitNames[LV]),
+                'P', OreDictUnifier.get(pipeLargeFluid, Steel),
+                'C', MetaTileEntities.HULL[LV].getStackForm());
 
+        ModHandler.addShapedRecipe("primitive_tree_farmer", PRIMITIVE_TREE_FARMER.getStackForm(),
+                "GAG", "DBD", "PCP",
+                'G', OreDictUnifier.get(gearSmall, Bronze),
+                'A', OreDictUnifier.get(toolHeadAxe, Invar),
+                'D', new ItemStack(Blocks.DIRT),
+                'B', new ItemStack(Blocks.BRICK_BLOCK),
+                'P', OreDictUnifier.get(pipeNormalFluid, Wood),
+                'C', WOODEN_CRATE.getStackForm());
     }
 }

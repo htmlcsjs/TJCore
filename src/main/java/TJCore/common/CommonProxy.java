@@ -56,15 +56,13 @@ public class CommonProxy {
     public static void init(RegistryEvent.Register<IRecipe> event) {
         TJOreDictionaryLoader.registerRecipes();
         MaterialProcessing.registerMaterialProcessing();
-        MachineRecipes.registerMachines();
         CircuitRecipes.registerCircuits();
         TJPolymers.registerPolymers();
         GTComponents.init();
-
+        MachineRecipes.registerMachines();
         if (Loader.isModLoaded("draconicevolution")) {
             ArmorInfuserRecipes.register();
         }
-
         SurfaceRockDrillRecipes.register();
         MultiblockHatches.registerIOHatches();
         Ores.RegisterOres();
