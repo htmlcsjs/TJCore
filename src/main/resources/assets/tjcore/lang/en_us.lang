@@ -75,6 +75,8 @@ material.leptons=Lepton Mixture
 material.nihonium_triiodide=Nihonium Triiodide
 material.carbon_nanotube_polymer=Carbon Nanotube Polymer
 material.hafnium_silicate=Hafnium Silicate
+material.
+material.
 
 item.polyacrylonitrile.dustTiny=Tiny Pile of Polyacrylonitrile Pulp
 item.polyacrylonitrile.dustSmall=Small Pile of Polyacrylonitrile Pulp
@@ -82,19 +84,28 @@ item.polyacrylonitrile.dust=Pile of Polyacrylonitrile Pulp
 
 //machines
 tjcore.machine.component_assembler.lv.name=Basic Component Assembler
-tjcore.machine.component_assembler.mv.name=Advanced Component Assembler
-tjcore.machine.component_assembler.hv.name=Advanced Component Assembler I
-tjcore.machine.component_assembler.ev.name=Advanced Component Assembler II
+tjcore.machine.component_assembler.mv.name=Advanced Component Assembler I
+tjcore.machine.component_assembler.hv.name=Advanced Component Assembler II
+tjcore.machine.component_assembler.ev.name=Advanced Component Assembler III
 tjcore.machine.component_assembler.iv.name=Elite Component Assembler
 tjcore.machine.printer.lv.name=Basic 3d Printer
-tjcore.machine.printer.mv.name=Advanced 3D Printer
-tjcore.machine.printer.hv.name=Advanced 3D Printer I
-tjcore.machine.printer.ev.name=Advanced 3D Printer II
+tjcore.machine.printer.mv.name=Advanced 3D Printer I
+tjcore.machine.printer.hv.name=Advanced 3D Printer II
+tjcore.machine.printer.ev.name=Advanced 3D Printer III
 tjcore.machine.printer.iv.name=Elite 3D Printer
 tjcore.machine.laminator.lv.name=Basic Laminator
-tjcore.machine.laminator.mv.name=Advanced Laminator
-tjcore.machine.laminator.hv.name=Advanced Laminator I
-tjcore.machine.laminator.ev.name=Advanced Laminator II
+tjcore.machine.laminator.mv.name=Advanced Laminator I
+tjcore.machine.laminator.hv.name=Advanced Laminator II
+tjcore.machine.laminator.ev.name=Advanced Laminator III
+tjcore.machine.laminator.iv.name=Elite Laminator I
+tjcore.machine.laminator.luv.name=Elite Laminator II
+tjcore.machine.laminator.zpm.name=Elite Laminator III
+tjcore.machine.laminator.uv.name=Elite Laminator IV
+tjcore.machine.laminator.uhv.name=Epic Laminator I
+tjcore.machine.laminator.uev.name=Epic Laminator II
+tjcore.machine.laminator.uiv.name=Epic Laminator III
+tjcore.machine.laminator.uxv.name=Epic Laminator IV
+tjcore.machine.laminator.opv.name=Legendary Laminator
 tjcore.machine.steam_mixer_bronze.name=Steam Mixer
 tjcore.machine.steam_mixer_steel.name=High Pressure Steam Mixer
 tjcore.machine.steam_dryer_bronze.name=Steam Dryer
@@ -105,6 +116,8 @@ tjcore.machine.tree_farmer.name=Advanced Tree Farmer
 tjcore.machine.surface_rock_drill.name=Surface Rock Drill
 tjcore.machine.loom.name=Precision Loom
 tjcore.machine.exposure_chamber.name=Exposure Chamber
+tjcore.machine.modular_steam_turbine.name=Modular Steam Turbine
+tjcore.modular_steam_turbine.description=The Modular Steam Turbine is your first means of generating power. Supports up to LuV generation through upgrades.
 tjcore.machine.armor_infuser.description=The armor infuser is an advanced machine capable of upgrading Draconic Evolution tools and armor.
 
 // Recipe Maps
@@ -146,6 +159,8 @@ metaitem.wetware_preboard.name=Wetware Preparation
 metaitem.quantum_preboard.name=Q-Bit Data Transfer Board
 metaitem.exotic_preboard.name=Spintronic Logistics PCB
 metaitem.cosmic_preboard.name=
+metaitem.supra_preboard.name=
+metaitem.zblan_matrix.name=Non-Linear Optical Matrix
 metaitem.supra_preboard.name=
 metaitem.coated_sapphire_wafer.name=Coated Sapphire Wafer
 metaitem.dirty_coated_sapphire_wafer.name=Dirty Coated Sapphire Wafer
@@ -194,11 +209,17 @@ metaitem.ferrous_inductor_core.name=Ferrous Inductor Core
 metaitem.tungsten_inductor_core.name=Tungsten Inductor Core
 metaitem.langmuir_wave_oscilator.name=Langmuir Wave Oscilator
 metaitem.langmuir_qbit_housing.name=Langmuir Q-Bit Housing
-metaitem.squid_base.name=S.Q.U.I.D Base
+metaitem.squid_base.name=S.Q.U.I.D. Base
 metaitem.transmon_support_system.name=Transmon Support System
 metaitem.graphene_aluminosilicate_aerogel.name=Graphene Aluminosilicate Aerogel
 metaitem.layered_polyer_foil.name=Layered Polymer Foil
 metaitem.sterile_polymer_foil.name=Sterile Polymer Foil
+metaitem.copper_laminated_epoxid.name=Copper Laminated Epoxy Sheet
+metaitem.electrum_laminated_epoxid.name=Electrum Laminated Epoxy Sheet
+metaitem.germanium_laminated_epoxid.name=Germanium Laminated Epoxy Sheet
+metaitem.laminated_optical_base.name=Laminated Optical
+metaitem.optical_base.name=Optical
+metaitem.
 
 //circuit lang
 metaitem.circuit.primitive_ulv.name=Primitive Assembly

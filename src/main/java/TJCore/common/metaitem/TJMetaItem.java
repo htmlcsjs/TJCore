@@ -1,13 +1,9 @@
 package TJCore.common.metaitem;
 
-import TJCore.common.tools.ToolLithographyMask;
 import gregtech.api.items.metaitem.*;
 import static gregtech.api.unification.material.MarkerMaterials.*;
 
 
-import gregtech.api.items.toolitem.ToolMetaItem;
-import gregtech.api.unification.material.Material;
-import static gregtech.api.unification.material.Materials.*;
 import gregtech.api.unification.ore.OrePrefix;
 
 import static TJCore.common.metaitem.TJMetaItems.*;

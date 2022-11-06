@@ -1,7 +1,6 @@
 package TJCore.common.metaitem;
 
 
-import TJCore.common.tools.TJToolMetaItem;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.items.toolitem.ToolMetaItem;
 
@@ -14,9 +13,6 @@ public class TJMetaItems {
     public static void init() {
         TJMetaItem items = new TJMetaItem();
         items.setRegistryName("TJMetaItem");
-
-        TJToolMetaItem tools = new TJToolMetaItem();
-        tools.setRegistryName("TJMetaTool");
     }
 
     //public static MetaItem<?>.MetaValueItem RESISTOR;
@@ -259,9 +255,6 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem SUPRA_ASSEMBLY_OPV;
     public static MetaItem<?>.MetaValueItem SUPRA_COMPUTER_MAX;
     public static MetaItem<?>.MetaValueItem SUPRA_MAINFRAME_ALL;
-
-
-    public static ToolMetaItem<?>.MetaToolValueItem LITHOGRAPHY_MASK;
 
     public static MetaItem<?>.MetaValueItem STENCILING_CUTHEAD;
 
