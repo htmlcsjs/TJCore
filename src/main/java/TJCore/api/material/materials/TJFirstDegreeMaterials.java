@@ -86,8 +86,7 @@ public class TJFirstDegreeMaterials {
 
         NickelPlatedTin = new Material.Builder(25009, "nickelplatedtin")
                 .ingot()
-                .color(0x8fb7c4).iconSet(MaterialIconSet.DULL)
-                .flags(SetMaterialFlags(STANDARDFOIL))
+                .color(0x8fb7c4).iconSet(MaterialIconSet.SHINY)
                 .build();
 
         //TODO: CARBON make the formula for ladder poly-p-phenylene
@@ -729,6 +728,7 @@ public class TJFirstDegreeMaterials {
         Epoxy.addFlags(GENERATE_FOIL);
 
         // Metals
+        NickelPlatedTin.addFlags(GENERATE_FOIL);
         Silicon.addFlags(GENERATE_ROD);
         Thulium.addFlags(GENERATE_FOIL, GENERATE_ROD);
         Chrome.addFlags(GENERATE_FOIL);
