@@ -75,8 +75,8 @@ material.leptons=Lepton Mixture
 material.nihonium_triiodide=Nihonium Triiodide
 material.carbon_nanotube_polymer=Carbon Nanotube Polymer
 material.hafnium_silicate=Hafnium Silicate
-material.
-material.
+material.fiberglass=Fiberglass
+material.cobalt_sixty=Cobalt-60
 
 item.polyacrylonitrile.dustTiny=Tiny Pile of Polyacrylonitrile Pulp
 item.polyacrylonitrile.dustSmall=Small Pile of Polyacrylonitrile Pulp
@@ -158,10 +158,12 @@ metaitem.bioware_preboard.name=Non-Equilibrium Reaction Chamber Base
 metaitem.wetware_preboard.name=Wetware Preparation
 metaitem.quantum_preboard.name=Q-Bit Data Transfer Board
 metaitem.exotic_preboard.name=Spintronic Logistics PCB
-metaitem.cosmic_preboard.name=
-metaitem.supra_preboard.name=
+metaitem.cosmic_preboard.name=Leptonic Energy Transfer PCB
+metaitem.supra_preboard.name=Discrete Minkowski Space Containment
+metaitem.wetphenolicpulp.name=Wet Phenolic Pulp
+metaitem.wetpressedphenolicpulp.name=Wet Phenolic Pulp
+metaitem.fiber_glass_mesh.name=Fiberglass Mesh
 metaitem.zblan_matrix.name=Non-Linear Optical Matrix
-metaitem.supra_preboard.name=
 metaitem.coated_sapphire_wafer.name=Coated Sapphire Wafer
 metaitem.dirty_coated_sapphire_wafer.name=Dirty Coated Sapphire Wafer
 metaitem.cleaned_coated_sapphire_wafer.name=Cleaned Coated Sapphire Wafer

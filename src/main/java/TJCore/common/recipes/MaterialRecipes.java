@@ -208,11 +208,14 @@ public class MaterialRecipes {
                 'H', HARD_HAMMER,
                 'P', OreDictUnifier.get(plate, SilicaCeramic));
 
-        //ModHandler.addShapedRecipe("huge_fluid_pipe_ceramic", OreDictUnifier.get(pipeHugeFluid, SilicaCeramic),
-        //        "PPP","W H","PPP",
-        //        'W', WRENCH,
-        //        'H', HARD_HAMMER,
-        //        'P', OreDictUnifier.get(plateDouble, SilicaCeramic));
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .duration(45)
+                .EUt(VA[MV])
+                .input(wireFine, BorosilicateGlass, 4)
+                .fluidInputs(Polyethylene.getFluid(72))
+                .output(ingot, Fiberglass)
+                .buildAndRegister();
+
     }
     public static void registerModifiedDecomp() {
         ELECTROLYZER_RECIPES.recipeBuilder()

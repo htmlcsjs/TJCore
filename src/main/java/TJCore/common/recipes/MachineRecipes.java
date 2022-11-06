@@ -82,19 +82,19 @@ public class MachineRecipes {
 
     private static void registerSteam() {
         ModHandler.addShapedRecipe("steam_mixer_bronze", STEAM_MIXER_BRONZE.getStackForm(),
-                "GRG", "GHG", "PEP",
+                "GRG", "GMG", "PHP",
                 'G', OreDictUnifier.get("blockGlass"),
                 'R', OreDictUnifier.get(rotor, Bronze),
                 'H', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_HULL),
                 'P', OreDictUnifier.get(pipeNormalFluid, TinAlloy),
-                'E', OreDictUnifier.get(gear, Bronze));
+                'M', STEAM_MOTOR);
         ModHandler.addShapedRecipe("steam_mixer_steel", STEAM_MIXER_STEEL.getStackForm(),
-                "GRG", "GHG", "PEP",
+                "GRG", "GMG", "PHP",
                 'G', OreDictUnifier.get("blockGlass"),
                 'R', OreDictUnifier.get(rotor, Steel),
                 'H', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.STEEL_HULL),
                 'P', OreDictUnifier.get(pipeNormalFluid, TinAlloy),
-                'E', OreDictUnifier.get(gear, Steel));
+                'M', STEAM_MOTOR);
         ModHandler.addShapedRecipe("steam_dryer_bronze", STEAM_DRYER_BRONZE.getStackForm(),
                 "PGP", "PHP", "PLP",
                 'L', OreDictUnifier.get(plateDouble,Copper),
