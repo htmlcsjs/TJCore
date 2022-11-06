@@ -124,14 +124,13 @@ public class Chips {
 
         BLAST_RECIPES.recipeBuilder()
                 .blastFurnaceTemp(4800)
-                .duration(410)
+                .duration(420)
                 .EUt(VA[LV])
                 .input(dust, SilverGalliumSelenide, 16)
                 .output(SILVER_GALLIUM_SELENIDE_BOULE)
                 .buildAndRegister();
 
         //UV Emitter Recipes
-
         ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(45)
                 .EUt(VA[LV])

@@ -11,6 +11,7 @@ import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.material.Material;
 
+import static TJCore.api.TJComponents.*;
 import static TJCore.api.material.TJMaterials.*;
 import static TJCore.common.metaitem.TJMetaItems.*;
 import static TJCore.common.metatileentities.TJMetaTileEntities.*;
@@ -74,26 +75,26 @@ public class MachineRecipes {
 
 
     private static void registerElectric() {
+        MetaTileEntityLoader.registerMachineRecipe(PRINTER, "WRW", "PSP", "CHC", 'P', PISTON, 'W', COIL_HEATING, 'R', RING, 'S', SUBSTRATE, 'C', CIRCUIT, 'H', CraftingComponent.HULL);
         MetaTileEntityLoader.registerMachineRecipe(LAMINATOR, "WGW", "MHM", "CGC", 'M', MOTOR, 'G', COIL_ELECTRIC, 'W', CABLE, 'H', CraftingComponent.HULL, 'C', CIRCUIT);
         MetaTileEntityLoader.registerMachineRecipe(COMPONENT_ASSEMBLER, "WCW", "AHA", "WCW", 'A', ROBOT_ARM, 'W', CABLE, 'C', CIRCUIT, 'H', CraftingComponent.HULL);
-
     }
 
     private static void registerSteam() {
         ModHandler.addShapedRecipe("steam_mixer_bronze", STEAM_MIXER_BRONZE.getStackForm(),
-                "GRG", "GHG", "PEP",
+                "GRG", "GMG", "PHP",
                 'G', OreDictUnifier.get("blockGlass"),
                 'R', OreDictUnifier.get(rotor, Bronze),
                 'H', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_HULL),
                 'P', OreDictUnifier.get(pipeNormalFluid, TinAlloy),
-                'E', OreDictUnifier.get(gear, Bronze));
+                'M', STEAM_MOTOR);
         ModHandler.addShapedRecipe("steam_mixer_steel", STEAM_MIXER_STEEL.getStackForm(),
-                "GRG", "GHG", "PEP",
+                "GRG", "GMG", "PHP",
                 'G', OreDictUnifier.get("blockGlass"),
                 'R', OreDictUnifier.get(rotor, Steel),
                 'H', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.STEEL_HULL),
                 'P', OreDictUnifier.get(pipeNormalFluid, TinAlloy),
-                'E', OreDictUnifier.get(gear, Steel));
+                'M', STEAM_MOTOR);
         ModHandler.addShapedRecipe("steam_dryer_bronze", STEAM_DRYER_BRONZE.getStackForm(),
                 "PGP", "PHP", "PLP",
                 'L', OreDictUnifier.get(plateDouble,Copper),

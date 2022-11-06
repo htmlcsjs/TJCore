@@ -7,8 +7,6 @@ import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialIconSet;
 import gregtech.api.unification.material.properties.*;
-import org.apache.http.impl.conn.Wire;
-import scala.sys.Prop;
 
 import static TJCore.api.material.TJMaterials.*;
 
@@ -565,20 +563,6 @@ public class TJFirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION, NO_WORKING, NO_SMASHING, NO_SMELTING)
                 .build();
 
-        Manasteel = new Material.Builder(25084, "manasteel")
-                .ingot()
-                .color(0x4772ff)
-                .iconSet(MaterialIconSet.SHINY)
-                .build()
-                .setFormula("Fe4Sx", true);
-
-        ManasteelAlloy = new Material.Builder(25085, "manasteel_alloy")
-                .ingot()
-                .color(0x152352)
-                .iconSet(MaterialIconSet.SHINY)
-                .components(Naquadria, 1, Rhodium, 1, Palladium, 3, Manasteel, 4)
-                .build();
-
         Polyetheretherketone = new Material.Builder(25086, "peek")
                 .ingot()
                 .fluid()
@@ -636,7 +620,7 @@ public class TJFirstDegreeMaterials {
                 .ingot()
                 .iconSet(MaterialIconSet.SHINY)
                 .color(0x2e216e)
-                .components(TungstenCarbide, 10, Americium, 4, ChromiumGermaniumTellurideMagnetic, 4, Vanadium, 3, Rhenium, 2, Lithium, 2)
+                .components(Naquadria, 10, Americium, 4, ChromiumGermaniumTellurideMagnetic, 4, Vanadium, 3, Rhenium, 2, Lithium, 2)
                 .build();
 
         HDCS_2 = new Material.Builder(25094, "high_durability_compound_steel_2")
@@ -702,12 +686,36 @@ public class TJFirstDegreeMaterials {
                 .colorAverage()
                 .components(Oganesson, 1, Tennessine, 4)
                 .build();
+
+        Methyltrichlorosilane = new Material.Builder(25103, "methyltrichlorosilane")
+                .fluid()
+                .colorAverage()
+                .components(Carbon, 1, Hydrogen, 3, Chlorine, 3, Silicon, 1)
+                .build()
+                .setFormula("CH3Cl3Si", true);
+
+        Methyltrimethoxysilane = new Material.Builder(25104, "methyltrimethyoxysilane")
+                .fluid()
+                .color(0x42163c)
+                .components(Silicon, 1, Oxygen, 3, Carbon, 4, Hydrogen, 12)
+                .build()
+                .setFormula("CH3Si(OCH3)3", true);
+
+        Polymethylsilesquioxane = new Material.Builder(25105, "polymethylsilesquioxane")
+                .fluid()
+                .color(0xff7ab4)
+                .components(Silicon, 1, Oxygen, 3, Carbon, 4, Hydrogen, 12)
+                .build()
+                .setFormula("[CH3Si(OCH3)3]N", true);
+
+        // SCRIPTS FOR TJCORE HAS 29000-30000
     }
 
     public static void registerProperties() {
 
         // Glass + Ceramics
-        SilicaCeramic.addFlags(NO_WORKING, NO_SMELTING, NO_SMASHING, GENERATE_RING, GENERATE_FOIL);
+        Alumina.addFlags(DISABLE_DECOMPOSITION);
+        SilicaCeramic.addFlags(NO_WORKING, NO_SMELTING, GENERATE_RING, GENERATE_FOIL);
         Fiberglass.addFlags(GENERATE_FINE_WIRE, GENERATE_FOIL);
         BismuthTelluride.addFlags(GENERATE_FOIL);
         BismuthIridiumOxide.addFlags(NO_WORKING, NO_SMASHING, GENERATE_PLATE);

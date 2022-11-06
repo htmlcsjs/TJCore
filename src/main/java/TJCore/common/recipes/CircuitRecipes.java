@@ -190,6 +190,7 @@ public class CircuitRecipes {
 
         ModHandler.addShapelessRecipe("primitive_board", PRIMITIVE_BOARD.getStackForm(1),
                 new UnificationEntry(wireFine, Copper),
+                new UnificationEntry(wireFine, Copper),
                 PRIMITIVE_PREBOARD.getStackForm());
 
     }
@@ -205,14 +206,11 @@ public class CircuitRecipes {
                 .duration(20)
                 .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(ELECTRONIC_PREBOARD)
-                .input(foil,Rubber)
-                .notConsumable(STENCILING_CUTHEAD)
-                .output(ELECTRONIC_BOARD)
-                .EUt(30)
-                .duration(20)
-                .buildAndRegister();
+        ModHandler.addShapelessRecipe("electronic_board", ELECTRONIC_BOARD.getStackForm(1),
+                new UnificationEntry(foil, SilicaCeramic),
+                KNIFE,
+                ELECTRONIC_PREBOARD.getStackForm());
+
     }
     private static void integratedBoard() {
         Material[] laminatorFluids = {Polyethylene,PolyvinylChloride,Polytetrafluoroethylene,Polybenzimidazole};
@@ -241,7 +239,7 @@ public class CircuitRecipes {
                 .input(foil, Polyethylene)
                 .notConsumable(STENCILING_CUTHEAD)
                 .output(INTEGRATED_BOARD)
-                .EUt(120)
+                .EUt(VA[LV])
                 .duration(40)
                 .buildAndRegister();
     }
@@ -507,7 +505,7 @@ public class CircuitRecipes {
                 .input(CAPACITOR,2)
                 .input(RESISTOR, 2)
                 .input(wireFine, Tin, 4)
-                .output(ELECTRONIC_PROCESSOR_ULV, 2)
+                .output(ELECTRONIC_PROCESSOR_ULV, 4)
                 .buildAndRegister();
 
         ModHandler.addShapedRecipe("glass_lens_hand", OreDictUnifier.get(lens, Glass),
@@ -726,7 +724,7 @@ public class CircuitRecipes {
                 .EUt(VA[IV])
                 .cleanroom(CLEANROOM)
                 .input(IMC_ASSEMBLY_IV, 2)
-                .input(plate, RhodiumPlatedPalladium, 2)
+                .input(plate, LutetiumTantalate, 2)
                 .input(SMD_INDUCTOR_1, 2)
                 .input(SMD_CAPACITOR_1, 2)
                 .input(wireFine, NiobiumTitanium, 2)
@@ -738,7 +736,7 @@ public class CircuitRecipes {
                 .EUt(VA[IV])
                 .cleanroom(CLEANROOM)
                 .input(IMC_COMPUTER_LUV, 2)
-                .input(frameGt, RhodiumPlatedPalladium)
+                .input(frameGt, LutetiumTantalate)
                 .input(SMD_TRANSISTOR_1, 2)
                 .input(SMD_DIODE_2, 2)
                 .input(cableGtSingle, NiobiumTitanium, 2)
