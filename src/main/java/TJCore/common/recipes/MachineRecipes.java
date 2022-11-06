@@ -11,6 +11,7 @@ import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.material.Material;
 
+import static TJCore.api.TJComponents.*;
 import static TJCore.api.material.TJMaterials.*;
 import static TJCore.common.metaitem.TJMetaItems.*;
 import static TJCore.common.metatileentities.TJMetaTileEntities.*;
@@ -74,9 +75,9 @@ public class MachineRecipes {
 
 
     private static void registerElectric() {
+        MetaTileEntityLoader.registerMachineRecipe(PRINTER, "WRW", "PSP", "CHC", 'P', PISTON, 'W', COIL_HEATING, 'R', RING, 'S', SUBSTRATE, 'C', CIRCUIT, 'H', CraftingComponent.HULL);
         MetaTileEntityLoader.registerMachineRecipe(LAMINATOR, "WGW", "MHM", "CGC", 'M', MOTOR, 'G', COIL_ELECTRIC, 'W', CABLE, 'H', CraftingComponent.HULL, 'C', CIRCUIT);
         MetaTileEntityLoader.registerMachineRecipe(COMPONENT_ASSEMBLER, "WCW", "AHA", "WCW", 'A', ROBOT_ARM, 'W', CABLE, 'C', CIRCUIT, 'H', CraftingComponent.HULL);
-
     }
 
     private static void registerSteam() {

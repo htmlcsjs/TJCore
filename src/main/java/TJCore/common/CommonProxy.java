@@ -1,6 +1,7 @@
 package TJCore.common;
 
 import TJCore.TJValues;
+import TJCore.api.TJComponents;
 import TJCore.api.TJOreDictionaryLoader;
 import TJCore.common.recipes.*;
 import TJCore.common.recipes.polymers.TJPolymers;
@@ -55,6 +56,7 @@ public class CommonProxy {
     @SubscribeEvent(priority = EventPriority.LOW)
     public static void init(RegistryEvent.Register<IRecipe> event) {
         TJOreDictionaryLoader.registerRecipes();
+        TJComponents.init();
         MaterialProcessing.registerMaterialProcessing();
         CircuitRecipes.registerCircuits();
         TJPolymers.registerPolymers();
