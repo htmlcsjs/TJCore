@@ -21,9 +21,11 @@ import gregtech.client.renderer.texture.Textures;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.blocks.wood.BlockGregPlanks;
 import gregtech.common.metatileentities.MetaTileEntities;
+import net.minecraft.block.Block;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.WorldProvider;
@@ -57,22 +59,35 @@ public class PrimitiveTreeFarmer extends MultiblockControllerBase {
     @Override
     public void update() {
         super.update();
-        if (!getWorld().isRemote && getOffsetTimer() % 80 == 0 && isStructureFormed() && itemIn.getStackInSlot(0).isItemEqual(new ItemStack(Blocks.SAPLING)) && logOut.getStackInSlot(0).isEmpty()) {
-            int saplingsIn = itemIn.getStackInSlot(0).getCount();
-            int numSaplingsInOutput = saplingOut.getStackInSlot(0).getCount();
-            itemIn.setStackInSlot(0, new ItemStack(Blocks.AIR));
-            logOut.setStackInSlot(0, new ItemStack(Blocks.LOG, saplingsIn));
-            if (numSaplingsInOutput + saplingsIn <= 64) {
-                saplingOut.insertItem(0, new ItemStack(Blocks.SAPLING, saplingsIn), false);
-            } else {
-                saplingOut.setStackInSlot(0, new ItemStack(Blocks.SAPLING, 64));
+
+        if (!getWorld().isRemote && getOffsetTimer() % 80 == 0 && isStructureFormed()) {
+            if (itemIn.getStackInSlot(0).isItemEqual(new ItemStack(Blocks.SAPLING)) && logOut.getStackInSlot(0).isEmpty() && (saplingOut.getStackInSlot(0).isEmpty() || saplingOut.getStackInSlot(0).isItemEqual(new ItemStack(Blocks.SAPLING)))) {
+                int saplingsIn = itemIn.getStackInSlot(0).getCount();
+                int numSaplingsInOutput = saplingOut.getStackInSlot(0).getCount();
+                itemIn.setStackInSlot(0, new ItemStack(Blocks.AIR));
+                logOut.setStackInSlot(0, new ItemStack(Blocks.LOG, saplingsIn));
+                if (numSaplingsInOutput + (saplingsIn * 2) <= 64) {
+                    saplingOut.insertItem(0, new ItemStack(Blocks.SAPLING, saplingsIn * 2), false);
+                } else {
+                    saplingOut.setStackInSlot(0, new ItemStack(Blocks.SAPLING, 64));
+                }
+            } else if (itemIn.getStackInSlot(0).isItemEqual(new ItemStack(Items.REEDS)) && (saplingOut.getStackInSlot(0).isEmpty() || saplingOut.getStackInSlot(0).isItemEqual(new ItemStack(Items.REEDS)))) {
+                int reedsIn = itemIn.getStackInSlot(0).getCount();
+                int reedsInOutput = saplingOut.getStackInSlot(0).getCount();
+                itemIn.setStackInSlot(0 , new ItemStack(Blocks.AIR));
+                if (reedsInOutput + (reedsIn * 2) <= 64) {
+                    saplingOut.insertItem(0, new ItemStack(Items.REEDS, reedsIn * 2), false);
+                } else {
+                    saplingOut.setStackInSlot(0, new ItemStack(Items.REEDS, 64));
+                }
             }
         }
     }
 
     @Override
-    protected ModularUI createUI(EntityPlayer entityPlayer) {
-        return null;
+    protected ModularUI createUI(EntityPlayer entityPlayer){
+            return null;
+
     }
 
     @Override
