@@ -77,6 +77,8 @@ material.carbon_nanotube_polymer=Carbon Nanotube Polymer
 material.hafnium_silicate=Hafnium Silicate
 material.fiberglass=Fiberglass
 material.cobalt_sixty=Cobalt-60
+material.seleniummonobromide=Selenium Monobromide
+
 
 item.polyacrylonitrile.dustTiny=Tiny Pile of Polyacrylonitrile Pulp
 item.polyacrylonitrile.dustSmall=Small Pile of Polyacrylonitrile Pulp
