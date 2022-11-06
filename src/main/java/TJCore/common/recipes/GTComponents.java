@@ -86,9 +86,9 @@ public class GTComponents {
         ModHandler.addShapedRecipe("steam_pump", STEAM_PUMP.getStackForm(),
                 "SPS", "GIG", "PMP",
                 'I', OreDictUnifier.get(pipeNormalFluid, Bronze),
-                'P', OreDictUnifier.get(plate, Bronze),
+                'S', OreDictUnifier.get(plate, Bronze),
                 'M', STEAM_MOTOR.getStackForm(),
-                'S', OreDictUnifier.get(screw, Iron),
+                'P', OreDictUnifier.get(screw, Iron),
                 'G', OreDictUnifier.get(gearSmall, Iron));
 
         ModHandler.addShapedRecipe("steam_piston", STEAM_PISTON.getStackForm(),
@@ -99,7 +99,7 @@ public class GTComponents {
                 'P', OreDictUnifier.get(plate, Iron),
                 'M', STEAM_MOTOR.getStackForm());
         ModHandler.addShapedRecipe("steam_motor", STEAM_MOTOR.getStackForm(),
-                "PSP", "IRI", "PRP",
+                "PSP", "IRI", "PSP",
                 'P', OreDictUnifier.get(plate, Bronze),
                 'S', OreDictUnifier.get(stick, Iron),
                 'I', OreDictUnifier.get(plate, Iron),

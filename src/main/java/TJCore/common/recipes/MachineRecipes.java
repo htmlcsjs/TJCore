@@ -1,17 +1,10 @@
 package TJCore.common.recipes;
-import TJCore.common.TJConfig;
 import TJCore.common.blocks.BlockBearing;
 import TJCore.common.blocks.BlockTurbineBlades;
 import TJCore.common.blocks.TJMetaBlocks;
-import gregtech.api.GTValues;
-import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.metatileentity.MetaTileEntity;
-import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
-import gregtech.api.recipes.RecipeMaps;
-import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.OreDictUnifier;
-import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.material.Material;
 
 import static TJCore.api.TJComponents.*;
@@ -20,34 +13,19 @@ import static TJCore.common.blocks.BlockTurbineBlades.TurbineBladesType.*;
 import static TJCore.common.metaitem.TJMetaItems.*;
 import static TJCore.common.metatileentities.TJMetaTileEntities.*;
 import static TJCore.common.recipes.GTComponents.tierCircuitNames;
-import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
 
-import gregtech.api.unification.material.Materials;
-import gregtech.api.unification.material.properties.DustProperty;
-import gregtech.api.unification.material.properties.OreProperty;
-import gregtech.api.unification.material.properties.PropertyKey;
-import gregtech.api.unification.ore.OrePrefix;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import gregtech.api.unification.stack.UnificationEntry;
-import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.BlockSteamCasing;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.loaders.recipe.CraftingComponent;
 import gregtech.loaders.recipe.MetaTileEntityLoader;
-import net.minecraft.client.Minecraft;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.Mod;
-import scala.tools.nsc.typechecker.Adaptations;
-
-import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import static gregtech.api.GTValues.*;
-import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.common.items.MetaItems.*;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
 import static gregtech.loaders.recipe.CraftingComponent.*;
@@ -81,6 +59,16 @@ public class MachineRecipes {
     }
 
     private static void registerSteam() {
+
+        ModHandler.addShapedRecipe("steam_component_assembler", STEAM_COMPONENT_ASSEMBLER.getStackForm(),
+                "TGT", "PHP", "SUS",
+                'G', OreDictUnifier.get(gearSmall, Steel),
+                'T', OreDictUnifier.get(pipeNormalFluid, Bronze),
+                'U', STEAM_PUMP.getStackForm(),
+                'H', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_BRICKS_HULL),
+                'P', STEAM_PISTON.getStackForm(),
+                'S', OreDictUnifier.get(pipeTinyFluid, Steel));
+
         ModHandler.addShapedRecipe("steam_mixer_bronze", STEAM_MIXER_BRONZE.getStackForm(),
                 "GRG", "GMG", "PHP",
                 'G', OreDictUnifier.get("blockGlass"),

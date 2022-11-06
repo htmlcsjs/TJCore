@@ -85,6 +85,7 @@ item.polyacrylonitrile.dustSmall=Small Pile of Polyacrylonitrile Pulp
 item.polyacrylonitrile.dust=Pile of Polyacrylonitrile Pulp
 
 //machines
+tjcore.machine.primitive_tree_farmer.name=Primitive Tree Farm
 tjcore.machine.component_assembler.lv.name=Basic Component Assembler
 tjcore.machine.component_assembler.mv.name=Advanced Component Assembler I
 tjcore.machine.component_assembler.hv.name=Advanced Component Assembler II

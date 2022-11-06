@@ -31,7 +31,7 @@ public class TJMetaTileEntities {
     public static SteamDryer STEAM_DRYER_STEEL;
     public static SteamMixer STEAM_MIXER_BRONZE;
     public static SteamMixer STEAM_MIXER_STEEL;
-    public static SteamAssembler STEAM_ASSEMBLER;
+    public static SteamAssembler STEAM_COMPONENT_ASSEMBLER;
     public static ArmorInfuser ARMOR_INFUSER;
     public static TreeFarmer TREE_FARMER;
     public static MegaFusion MEGA_FUSION;
@@ -44,7 +44,7 @@ public class TJMetaTileEntities {
 
     public static void init() {
         registerSimpleMetaTileEntity(COMPONENT_ASSEMBLER, 12001, "component_assembler", TJRecipeMaps.COMPONENT_ASSEMBLER_RECIPES, Textures.ASSEMBLER_OVERLAY, true);
-        STEAM_ASSEMBLER = registerMetaTileEntity(12030, new SteamAssembler(tjcoreID("steam_assembler")));
+        STEAM_COMPONENT_ASSEMBLER = registerMetaTileEntity(12030, new SteamAssembler(tjcoreID("steam_assembler")));
         ARMOR_INFUSER = registerMetaTileEntity(12033, new ArmorInfuser(tjcoreID("armor_infuser")));
         TREE_FARMER = registerMetaTileEntity(12034, new TreeFarmer(tjcoreID("tree_farmer")));
         MEGA_FUSION = registerMetaTileEntity(12035, new MegaFusion(tjcoreID("mega_fusion")));
