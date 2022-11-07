@@ -12,11 +12,6 @@ import net.minecraft.item.ItemStack;
 
 public class SurfaceRockDrillRecipes {
     public static void register() {
-        TJRecipeMaps.SURFACE_ROCK_DRILL_RECIPES.recipeBuilder()
-                .inputs(TJMetaItems.SMD_DIODE_2.getStackForm(3))
-                .output(TJMetaItems.CRYSTAL_PROCESSOR_LUV)
-                .EUt(32768)
-                .duration(100)
-                .buildAndRegister();
+
     }
 }
