@@ -24,6 +24,7 @@ import gregtech.loaders.recipe.CraftingComponent;
 import gregtech.loaders.recipe.MetaTileEntityLoader;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.Mod;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.common.items.MetaItems.*;
@@ -41,6 +42,7 @@ public class MachineRecipes {
     }
 
     private static void removeOldMachines() {
+        ModHandler.removeRecipes(STEAM_MACERATOR_BRONZE.getStackForm());
         removeAllTeirs(STEAM_TURBINE);
     }
 
@@ -74,7 +76,7 @@ public class MachineRecipes {
                 'G', OreDictUnifier.get("blockGlass"),
                 'R', OreDictUnifier.get(rotor, Bronze),
                 'H', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_HULL),
-                'P', OreDictUnifier.get(pipeNormalFluid, TinAlloy),
+                'P', OreDictUnifier.get(pipeNormalFluid, Bronze),
                 'M', STEAM_MOTOR);
         ModHandler.addShapedRecipe("steam_mixer_steel", STEAM_MIXER_STEEL.getStackForm(),
                 "GRG", "GMG", "PHP",
@@ -100,7 +102,7 @@ public class MachineRecipes {
                 'G', OreDictUnifier.get(gear, WroughtIron),
                 'P', OreDictUnifier.get(pipeSmallFluid, Bronze),
                 'H', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_HULL),
-                'I', OreDictUnifier.get("craftingPiston"));
+                'I', STEAM_PISTON.getStackForm());
     }
 
     private static void registerMulti() {

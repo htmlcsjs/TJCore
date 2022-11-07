@@ -178,14 +178,14 @@ public class MaterialRecipes {
                         .duration(j == 2 ? 600 : 80)
                         .input(j == 2 ? block : ingot, Iron)
                         .input(orePrefixes[j], fuels[i], j == 2 ? 1 : 2)
-                        .output(ingot, Steel)
+                        .output(j == 2 ? block : ingot, Steel)
                         .buildAndRegister();
 
                 PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder()
                         .duration(j == 2 ? 400 : 60)
                         .input(j == 2 ? block : ingot, WroughtIron)
                         .input(orePrefixes[j], fuels[i], j == 2 ? 1 : 2)
-                        .output(ingot, Steel)
+                        .output(j == 2 ? block : ingot, Steel)
                         .buildAndRegister();
             }
         }
