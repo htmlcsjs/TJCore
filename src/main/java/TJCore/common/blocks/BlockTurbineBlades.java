@@ -33,7 +33,7 @@ public class BlockTurbineBlades extends VariantBlock<BlockTurbineBlades.TurbineB
     public enum TurbineBladesType implements IStringSerializable, IStateHarvestLevel, ITurbineBladeStats {
 
         GALVANIZED_STEEL_BLADES("galvanized_blades", 50,0, 2),
-        ALUMINUM_BLADES("aluminum_blades", 100,1,3),
+        ALUMINUM_BLADES("aluminium_blades", 100,1,3),
         STAINLESS_STEEL_BLADES("stainless_blades", 150,2,3),
         TITANIUM_BLADES("titanium_blades", 250,3, 4),
         TUNGSTENSTEEL_BLADES("tungstensteel_blades", 400,4, 4);
