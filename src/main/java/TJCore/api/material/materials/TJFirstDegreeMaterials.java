@@ -724,6 +724,7 @@ public class TJFirstDegreeMaterials {
         LeadZirconateTitanate.addFlags(GENERATE_PLATE, GENERATE_RING);
 
         // Polymers
+        Polyetheretherketone.addFlags(GENERATE_PLATE, GENERATE_FOIL);
         Polybenzimidazole.addFlags(GENERATE_FINE_WIRE);
         PolyphenyleneSulfide.addFlags(GENERATE_FINE_WIRE);
         Polytetrafluoroethylene.addFlags(GENERATE_FINE_WIRE, GENERATE_LONG_ROD);
@@ -737,6 +738,9 @@ public class TJFirstDegreeMaterials {
         Epoxy.addFlags(GENERATE_FOIL);
 
         // Metals
+        ProgrammableMatter.addFlags(GENERATE_PLATE, GENERATE_FRAME);
+        Palladium.addFlags(GENERATE_BOLT_SCREW, GENERATE_FRAME);
+        WroughtIron.addFlags(GENERATE_BOLT_SCREW, GENERATE_FRAME);
         NickelPlatedTin.addFlags(GENERATE_FOIL);
         Silicon.addFlags(GENERATE_ROD);
         Thulium.addFlags(GENERATE_FOIL, GENERATE_ROD);
@@ -753,7 +757,7 @@ public class TJFirstDegreeMaterials {
         Dysprosium.addFlags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_FRAME);
         Vibranium.addFlags(GENERATE_ROUND, GENERATE_FRAME, GENERATE_BOLT_SCREW, GENERATE_NANOFOIL, GENERATE_ROTOR);
         RhodiumPlatedPalladium.addFlags(GENERATE_FRAME);
-        Duranium.addFlags(GENERATE_FRAME, GENERATE_NANOFOIL);
+        Duranium.addFlags(GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_NANOFOIL);
         NihoniumTriiodide.addFlags(GENERATE_FINE_WIRE, GENERATE_RING);
         Nihonium.addFlags(GENERATE_PLATE, GENERATE_NANOWIRE);
         SuperheavyH.addFlags(GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW);

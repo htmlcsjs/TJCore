@@ -13,6 +13,8 @@ import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
+import gregtech.api.unification.stack.ItemMaterialInfo;
+import gregtech.api.unification.stack.MaterialStack;
 import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.metatileentities.MetaTileEntities;
 import net.minecraft.init.Blocks;
@@ -168,6 +170,14 @@ public class GTComponents {
         for (int i = 0; i < 5; i++) {
             //Component Assembler Recipes -
             //Motor
+
+            OreDictUnifier.registerOre(motors[i].getStackForm(), new ItemMaterialInfo(
+                    new MaterialStack(motorWires[i], M*2),
+                    new MaterialStack(magneticRod[i], i > HV ? M : M/2),
+                    new MaterialStack(compMain[i], M),
+                    new MaterialStack(cableElectric[i], i > 2 ? 2 : 1)
+            ));
+
             COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
                     .EUt(VA[i])
                     .duration((i+1)*20)
@@ -179,18 +189,32 @@ public class GTComponents {
                     .output(motors[i])
                     .buildAndRegister();
 
+            OreDictUnifier.registerOre(pistons[i].getStackForm(), new ItemMaterialInfo(
+                    new MaterialStack(motorWires[i], M*2),
+                    new MaterialStack(magneticRod[i], i > HV ? M : M/2),
+                    new MaterialStack(compMain[i], M*4),
+                    new MaterialStack(cableElectric[i], i > 2 ? M*5/2 : M*3/2)
+            ));
+
             //Piston
             COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
                     .EUt(VA[i])
                     .duration((i+1)*20)
                     .input(stick, compMain[i], 2)
                     .input(plate, compMain[i], 2)
-                    .input(gear, compMain[i])
+                    .input(gearSmall, compMain[i])
                     .input(motors[i])
                     .input(cableGtSingle, cableElectric[i])
                     .fluidInputs(lube[i].getFluid(50*(i+1)))
                     .output(pistons[i])
                     .buildAndRegister();
+
+            OreDictUnifier.registerOre(roboArm[i].getStackForm(), new ItemMaterialInfo(
+                    new MaterialStack(motorWires[i], M*2),
+                    new MaterialStack(magneticRod[i], i > HV ? M : M/2),
+                    new MaterialStack(compMain[i], M*8),
+                    new MaterialStack(cableElectric[i], i > 2 ? 4 : 3)
+            ));
 
             //Robot Arm
             COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
@@ -206,6 +230,12 @@ public class GTComponents {
                     .output(roboArm[i])
                     .buildAndRegister();
 
+
+            OreDictUnifier.registerOre(sensor[i].getStackForm(), new ItemMaterialInfo(
+                    new MaterialStack(emitterMaterial[i], M*2),
+                    new MaterialStack(compMain[i], M*5)
+            ));
+
             //Sensor
             COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
                     .EUt(VA[i])
@@ -218,6 +248,11 @@ public class GTComponents {
                     .fluidInputs(SolderingAlloy.getFluid(144))
                     .output(emitter[i])
                     .buildAndRegister();
+
+            OreDictUnifier.registerOre(emitter[i].getStackForm(), new ItemMaterialInfo(
+                    new MaterialStack(emitterMaterial[i], M*2),
+                    new MaterialStack(compMain[i], M*4)
+            ));
 
             //Emitter
             COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
@@ -232,9 +267,19 @@ public class GTComponents {
                     .output(sensor[i])
                     .buildAndRegister();
 
+            OreDictUnifier.registerOre(pump[i].getStackForm(), new ItemMaterialInfo(
+                    new MaterialStack(Ash, M/2),
+                    new MaterialStack(compMain[i], M*5),
+                    new MaterialStack(fluidPipes[i], M*6),
+                    new MaterialStack(motorWires[i], M*2)
+            ));
 
-
-
+            OreDictUnifier.registerOre(conveyor[i].getStackForm(), new ItemMaterialInfo(
+                    new MaterialStack(Ash, M*4),
+                    new MaterialStack(compMain[i], M*4),
+                    new MaterialStack(cableElectric[i], M*3),
+                    new MaterialStack(motorWires[i], M*4)
+            ));
 
             for (Material rubber : rubbers) {
                 //Pump
@@ -276,7 +321,18 @@ public class GTComponents {
         }
 
         // LuV-UHV Loop
+
+
+
         for (int i = 5; i < 9; i++) {
+
+            OreDictUnifier.registerOre(motors[i].getStackForm(), new ItemMaterialInfo(
+                    new MaterialStack(magneticRod[i], i > 6 ? M*32 : M*16),
+                    new MaterialStack(compMain[i], i > 6 ? M*20 : M*6),
+                    new MaterialStack(cableElectric[i], i > 6 ? M*4 : M*2),
+                    new MaterialStack(motorWires[i], (i-4)*16*M)
+            ));
+
             //Motor
             RecipeBuilder builder = ASSEMBLY_LINE_RECIPES.recipeBuilder()
                     .EUt(VA[i+1])
@@ -302,8 +358,18 @@ public class GTComponents {
             //Field Generator
         }
 
+
+
         //UEV-OpV Loop
         for (int i = 9; i < OpV; i++) {
+
+            OreDictUnifier.registerOre(motors[i].getStackForm(), new ItemMaterialInfo(
+                    new MaterialStack(magneticRod[i], i > 10 ? i == 12 ? M * 64 : M*48 : M*32),
+                    new MaterialStack(compMain[i], i > 10 ? M*40 : M*20),
+                    new MaterialStack(cableElectric[i], M*16),
+                    new MaterialStack(motorWires[i], (4*M/9)*(i-8))
+            ));
+
             // Motor
             RecipeBuilder builder = ASSEMBLY_LINE_RECIPES.recipeBuilder()
                     .EUt(VA[i+1])
@@ -313,7 +379,6 @@ public class GTComponents {
                     .output(motors[i]);
 
             if (i > 10) {
-                builder.input(stick, magneticRod[i], i == 11 ? 32 : 64);
                 builder.input(stick, magneticRod[i], i == 11 ? 32 : 64);
             }
 

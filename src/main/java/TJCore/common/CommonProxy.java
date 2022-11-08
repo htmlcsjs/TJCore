@@ -61,7 +61,7 @@ public class CommonProxy {
         CircuitRecipes.registerCircuits();
         TJPolymers.registerPolymers();
         GTComponents.init();
-        MachineRecipes.registerMachines();
+
         if (Loader.isModLoaded("draconicevolution")) {
             ArmorInfuserRecipes.register();
         }
@@ -69,6 +69,6 @@ public class CommonProxy {
         MultiblockHatches.registerIOHatches();
         Ores.RegisterOres();
         MaterialRecipes.register();
-
+        MachineRecipes.registerMachines();
     }
 }

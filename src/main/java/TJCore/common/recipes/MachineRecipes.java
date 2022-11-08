@@ -2,8 +2,11 @@ package TJCore.common.recipes;
 import TJCore.common.blocks.BlockBearing;
 import TJCore.common.blocks.BlockTurbineBlades;
 import TJCore.common.blocks.TJMetaBlocks;
+import gregtech.api.GTValues;
 import gregtech.api.metatileentity.MetaTileEntity;
+import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
+import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Material;
 
@@ -13,28 +16,48 @@ import static TJCore.common.blocks.BlockTurbineBlades.TurbineBladesType.*;
 import static TJCore.common.metaitem.TJMetaItems.*;
 import static TJCore.common.metatileentities.TJMetaTileEntities.*;
 import static TJCore.common.recipes.GTComponents.tierCircuitNames;
+import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
-
+import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
+
+import gregtech.api.unification.stack.ItemMaterialInfo;
+import gregtech.api.unification.stack.MaterialStack;
 import gregtech.api.unification.stack.UnificationEntry;
+import gregtech.common.blocks.BlockMachineCasing;
 import gregtech.common.blocks.BlockSteamCasing;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
+import gregtech.loaders.OreDictionaryLoader;
 import gregtech.loaders.recipe.CraftingComponent;
 import gregtech.loaders.recipe.MetaTileEntityLoader;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.Mod;
+import scala.Char;
+import scala.tools.cmd.gen.AnyValReps;
 
 import static gregtech.api.GTValues.*;
+import static gregtech.common.blocks.MetaBlocks.MACHINE_CASING;
 import static gregtech.common.items.MetaItems.*;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
 import static gregtech.loaders.recipe.CraftingComponent.*;
 
 public class MachineRecipes {
+    static BlockMachineCasing.MachineCasingType[] machineCasingTypes = new BlockMachineCasing.MachineCasingType[] {BlockMachineCasing.MachineCasingType.ULV, BlockMachineCasing.MachineCasingType.LV, BlockMachineCasing.MachineCasingType.MV, BlockMachineCasing.MachineCasingType.HV, BlockMachineCasing.MachineCasingType.EV, BlockMachineCasing.MachineCasingType.IV, BlockMachineCasing.MachineCasingType.LuV, BlockMachineCasing.MachineCasingType.ZPM, BlockMachineCasing.MachineCasingType.UV, BlockMachineCasing.MachineCasingType.UHV, BlockMachineCasing.MachineCasingType.UEV, BlockMachineCasing.MachineCasingType.UIV, BlockMachineCasing.MachineCasingType.UXV, BlockMachineCasing.MachineCasingType.OpV, BlockMachineCasing.MachineCasingType.MAX};
+    static Material[] cableGtSingleOld = new Material[]{RedAlloy, Tin, Copper, Gold, Aluminium, Platinum, NiobiumTitanium, VanadiumGallium, YttriumBariumCuprate, Europium};
+    static Material[] hullPolymerOld = new Material[]{Polyethylene, Polyethylene, Polyethylene, Polyethylene, Polyethylene, Polytetrafluoroethylene, Polytetrafluoroethylene, Polybenzimidazole, Polybenzimidazole, Polybenzimidazole};
+    static Material[] hullPolymerNew = new Material[]{Rubber, Rubber, Rubber, Polyethylene, Polyethylene, Polytetrafluoroethylene, Polytetrafluoroethylene, Polybenzimidazole, Polybenzimidazole, Polyetheretherketone, Polyetheretherketone, Kevlar, Kevlar, Fullerene};
+    static Material[] hullMaterialNew = new Material[]{WroughtIron, GalvanizedSteel, Aluminium, StainlessSteel, Titanium, TungstenSteel, LutetiumTantalate, Iridrhodruthenium, Tritanium, Bohrium, Adamantium, Vibranium, ProgrammableMatter, HeavyQuarkDegenerate};
+    static Material[] hullMaterialOld = new Material[]{WroughtIron, Steel, Aluminium, StainlessSteel, Titanium, TungstenSteel, RhodiumPlatedPalladium, NaquadahAlloy, Darmstadtium, Orichalcum, Adamantium, null, null, null};
+
+    static Material[] secondaryHullMaterial = new Material[]{Brass, Steel, GalvanizedSteel, Chrome, Ultimet, Palladium, Iridium, HSSS, Duranium, Seaborgium, HDCS_1, HDCS_2, HDCS_3, SuperheavyL};
+    static Material[] cableGtSingleNew = new Material[]{Lead, Tin, Copper, Silver, Aluminium, Platinum, NiobiumTitanium, VanadiumGallium, YttriumBariumCuprate, Pikyonium, PedotTMA, NihoniumTriiodide, Taranium, OganessonTetraTennesside};
 
     public static void registerMachines() {
         removeOldMachines();
+        registerHulls();
         registerElectric();
         registerSteam();
         registerMulti();
@@ -44,6 +67,19 @@ public class MachineRecipes {
     private static void removeOldMachines() {
         ModHandler.removeRecipes(STEAM_MACERATOR_BRONZE.getStackForm());
         removeAllTeirs(STEAM_TURBINE);
+        removeAllTeirs(MetaTileEntities.HULL);
+        for (int i = ULV; i < MAX; i++) {
+            if (i < UEV) {
+                GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES,
+                        new ItemStack[] {MACHINE_CASING.getItemVariant(machineCasingTypes[i]), OreDictUnifier.get(cableGtSingle, cableGtSingleOld[i], 2)},
+                        new FluidStack[]{hullPolymerOld[i].getFluid(288)}
+                );
+            }
+        }
+        GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES,
+                new ItemStack[] {MACHINE_CASING.getItemVariant(machineCasingTypes[MV]), OreDictUnifier.get(cableGtSingle, AnnealedCopper, 2)},
+                new FluidStack[]{hullPolymerOld[MV].getFluid(288)}
+        );
     }
 
     private static void removeAllTeirs(MetaTileEntity[] mteIn) {
@@ -54,6 +90,45 @@ public class MachineRecipes {
         }
     }
 
+
+    private static void registerHulls() {
+
+
+        for (int i = 0; i < MAX; i++) {
+            if (i < UIV) {
+                ModHandler.removeRecipes(MACHINE_CASING.getItemVariant(machineCasingTypes[i]));
+                GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, OreDictUnifier.get(plate, hullMaterialOld[i], 8), IntCircuitIngredient.getIntegratedCircuit(8));
+            }
+
+            OreDictUnifier.registerOre(MACHINE_CASING.getItemVariant(machineCasingTypes[i]), new ItemMaterialInfo(
+                    new MaterialStack(i == 1 ? Steel : hullMaterialNew[i], M*4),
+                    new MaterialStack(secondaryHullMaterial[i], M/2)
+            ));
+
+            OreDictUnifier.registerOre(MetaTileEntities.HULL[i].getStackForm(), new ItemMaterialInfo(
+                    new MaterialStack(i == 1 ? Steel : hullMaterialNew[i], M*5),
+                    new MaterialStack(secondaryHullMaterial[i], M/2),
+                    new MaterialStack(hullPolymerNew[i], M*2),
+                    new MaterialStack(cableGtSingleNew[i], M)
+            ));
+
+            ModHandler.addShapedRecipe("machine_casing_" + VN[i].toLowerCase(), MACHINE_CASING.getItemVariant(machineCasingTypes[i]),
+                    "BHB","PFP","BSB",
+                    'B', new UnificationEntry(bolt, secondaryHullMaterial[i]),
+                    'P', new UnificationEntry(plate, hullMaterialNew[i]),
+                    'F', new UnificationEntry(frameGt, hullMaterialNew[i]),
+                    'H', HARD_HAMMER,
+                    'S', SCREWDRIVER
+            );
+            ModHandler.addShapedRecipe(MetaTileEntities.HULL[i].getMetaName(), MetaTileEntities.HULL[i].getStackForm(),
+                    "   ","PMP","CHC",
+                    'P', new UnificationEntry(plate, hullPolymerNew[i]),
+                    'M', new UnificationEntry(plate, hullMaterialNew[i]),
+                    'C', new UnificationEntry(cableGtSingle, cableGtSingleNew[i]),
+                    'H', MACHINE_CASING.getItemVariant(machineCasingTypes[i])
+            );
+        }
+    }
     private static void registerElectric() {
         MetaTileEntityLoader.registerMachineRecipe(PRINTER, "WRW", "PSP", "CHC", 'P', PISTON, 'W', COIL_HEATING, 'R', RING, 'S', SUBSTRATE, 'C', CIRCUIT, 'H', CraftingComponent.HULL);
         MetaTileEntityLoader.registerMachineRecipe(LAMINATOR, "WGW", "MHM", "CGC", 'M', MOTOR, 'G', COIL_ELECTRIC, 'W', CABLE, 'H', CraftingComponent.HULL, 'C', CIRCUIT);
