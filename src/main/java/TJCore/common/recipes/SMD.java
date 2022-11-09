@@ -357,7 +357,7 @@ public class SMD {
                 .duration(85)
                 .EUt(VA[LuV])
                 .input(SAPPHIRE_WAFER)
-                .input(foil, Niobium)
+                .input(plate, GalliumNitride)
                 .fluidInputs(Oxygen.getFluid(1000))
                 .output(SQUID_BASE)
                 .buildAndRegister();

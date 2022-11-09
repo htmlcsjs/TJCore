@@ -16,7 +16,7 @@ public class BlockBearing extends VariantBlock<BlockBearing.BearingType> {
 
     public BlockBearing() {
         super(Material.IRON);
-        setTranslationKey("turbine_blades");
+        setTranslationKey("turbine_bearing");
         setHardness(5.0f);
         setResistance(10.0f);
         setSoundType(SoundType.METAL);
@@ -31,7 +31,7 @@ public class BlockBearing extends VariantBlock<BlockBearing.BearingType> {
     public enum BearingType implements IStringSerializable, IStateHarvestLevel {
 
         GALVANIZED_STEEL_BEARING("galvanized_bearing", 0,2),
-        ALUMINUM_BEARING("aluminum_bearing", 1,3),
+        ALUMINUM_BEARING("aluminium_bearing", 1,3),
         STAINLESS_STEEL_BEARING("stainless_bearing", 2,3),
         TITANIUM_BEARING("titanium_bearing", 3,4),
         TUNGSTENSTEEL_BEARING("tungstensteel_bearing", 4,4);

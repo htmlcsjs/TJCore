@@ -1,0 +1,42 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "minecraft:cube_all",
+    "textures": {
+      "all": "gregtech:blocks/rendering_error"
+    }
+  },
+  "variants": {
+    "variant": {
+      "galvanized_blades": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "TJCore:blocks/turbine/galvanized_blades"
+        }
+      },
+      "aluminium_blades": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "TJCore:blocks/turbine/aluminium_blades"
+        }
+      },
+      "stainless_blades": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "TJCore:blocks/turbine/stainless_blades"
+        }
+      },
+      "titanium_blades": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "TJCore:blocks/turbine/titanium_blades"
+        }
+      },
+      "tungstensteel_blades": {
+        "textures": {
+          "all": "TJCore:blocks/turbine/tungstensteel_blades"
+        }
+      }
+    }
+  }
+}

@@ -5,8 +5,12 @@ import TJCore.common.metaitem.TJMetaItems;
 import gregicality.science.api.recipes.GCYSRecipeMaps;
 import gregicality.science.loaders.recipe.chain.KaptonChain;
 import gregtech.api.items.metaitem.MetaItem;
+import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
+import gregtech.api.unification.stack.UnificationEntry;
+import net.minecraft.client.model.ModelGhast;
+import net.minecraftforge.fml.common.Mod;
 
 import static TJCore.api.TJOreDictionaryLoader.*;
 import static TJCore.api.material.TJMaterials.*;
@@ -14,6 +18,7 @@ import static TJCore.common.metaitem.TJMetaItems.*;
 import static TJCore.common.recipes.recipemaps.TJRecipeMaps.*;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregicality.science.api.recipes.GCYSRecipeMaps.*;
+import static gregicality.science.common.items.GCYSMetaItems.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
@@ -47,6 +52,7 @@ public class Chips {
     static Material[] photopolymers = {HydrogenSilsesquioxane, HydrogenSilsesquioxane, HydrogenSilsesquioxane, SU8_Photoresist, SU8_Photoresist};
 
     public static void registerChips(){
+        vacuumTubes();
         electronicChip();
         lithographyChips();
         crystalChip();
@@ -56,6 +62,21 @@ public class Chips {
         exoticChip();
         cosmicChip();
         supraChip();
+    }
+
+    private static void vacuumTubes() {
+        ModHandler.removeRecipes(VACUUM_TUBE_COMPONENTS.getStackForm());
+        ModHandler.addShapedRecipe("vacuum_tube_components_lead", VACUUM_TUBE_COMPONENTS.getStackForm(),
+                " W ","BFB"," W ",
+                'B', new UnificationEntry(bolt, Steel),
+                'W', new UnificationEntry(wireFine, Copper),
+                'F', new UnificationEntry(foil, Lead));
+
+        ModHandler.addShapedRecipe("vacuum_tube_components_gold", VACUUM_TUBE_COMPONENTS.getStackForm(2),
+                " W ","BFB"," W ",
+                'B', new UnificationEntry(bolt, Steel),
+                'W', new UnificationEntry(wireFine, Copper),
+                'F', new UnificationEntry(foil, Gold));
     }
 
     private static void electronicChip() {

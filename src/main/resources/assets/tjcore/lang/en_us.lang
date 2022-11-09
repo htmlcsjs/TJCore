@@ -2,6 +2,18 @@
 item.material.oreprefix.nanowire=%s Nanowire
 item.material.oreprefix.nanofoil=%s Nanofoil
 
+//tiles
+tile.turbine_bearing.galvanized_bearing.name=Galvanized Steel Turbine Bearing
+tile.turbine_bearing.aluminum_bearing.name=Aluminum Turbine Bearing
+tile.turbine_bearing.stainless_bearing.name=Stainless Steel Turbine Bearing
+tile.turbine_bearing.titanium_bearing.name=Titanium Turbine Bearing
+tile.turbine_bearing.tungstensteel_bearing.name=Tungsteensteel Turbine Bearing
+tile.turbine_blades.galvanized_blades.name=Galvanized Steel Turbine Blades
+tile.turbine_blades.aluminum_blades.name=Aluminum Turbine Blades
+tile.turbine_blades.stainless_blades.name=Stainless Steel Turbine Blades
+tile.turbine_blades.titanium_blades.name=Titanium Turbine Blades
+tile.turbine_blades.tungstensteel_blades.name=Tungsteensteel Turbine Blades
+
 //materials
 material.bt_6=BT6
 material.birmabright=Birmabright
@@ -77,12 +89,15 @@ material.carbon_nanotube_polymer=Carbon Nanotube Polymer
 material.hafnium_silicate=Hafnium Silicate
 material.fiberglass=Fiberglass
 material.cobalt_sixty=Cobalt-60
+material.seleniummonobromide=Selenium Monobromide
+
 
 item.polyacrylonitrile.dustTiny=Tiny Pile of Polyacrylonitrile Pulp
 item.polyacrylonitrile.dustSmall=Small Pile of Polyacrylonitrile Pulp
 item.polyacrylonitrile.dust=Pile of Polyacrylonitrile Pulp
 
 //machines
+tjcore.machine.primitive_tree_farmer.name=Primitive Tree Farm
 tjcore.machine.component_assembler.lv.name=Basic Component Assembler
 tjcore.machine.component_assembler.mv.name=Advanced Component Assembler I
 tjcore.machine.component_assembler.hv.name=Advanced Component Assembler II

@@ -1,0 +1,42 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "minecraft:cube_all",
+    "textures": {
+      "all": "gregtech:blocks/rendering_error"
+    }
+  },
+  "variants": {
+    "variant": {
+      "galvanized_bearing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "TJCore:blocks/turbine/galvanized_bearing"
+        }
+      },
+      "aluminium_bearing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "TJCore:blocks/turbine/aluminium_bearing"
+        }
+      },
+      "stainless_bearing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "TJCore:blocks/turbine/stainless_bearing"
+        }
+      },
+      "titanium_bearing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "TJCore:blocks/turbine/titanium_bearing"
+        }
+      },
+      "tungstensteel_bearing": {
+        "textures": {
+          "all": "TJCore:blocks/turbine/tungstensteel_bearing"
+        }
+      }
+    }
+  }
+}

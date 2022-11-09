@@ -62,7 +62,25 @@ public class MaterialRecipes {
     public static void registerMetals() {
         registerNickelPlatedTin();
         registerGalvanizedSteel();
+        registerSteelChanges();
         registerAluminumChanges();
+        registerMixing();
+        registerEBF();
+    }
+
+    private static void registerMixing() {
+        MIXER_RECIPES.recipeBuilder()
+                .EUt(VA[LV])
+                .duration(40)
+                .input(dust, Aluminium, 5)
+                .input(dust, Manganese)
+                .input(dust, Magnesium)
+                .output(dust, Birmabright, 7)
+                .buildAndRegister();
+    }
+
+    private static void registerEBF() {
+
     }
 
     public static void registerFarming() {
@@ -149,6 +167,28 @@ public class MaterialRecipes {
                 .output(ALUMINA_MOLD)
                 .output(ingot, Aluminium, 2)
                 .buildAndRegister();
+    }
+    private static void registerSteelChanges() {
+        GTRecipeHandler.removeAllRecipes(PRIMITIVE_BLAST_FURNACE_RECIPES);
+        Material[] fuels = new Material[]{Coal, Charcoal, Coke};
+        OrePrefix[] orePrefixes = new OrePrefix[]{dust, gem, block};
+        for (int i = 0; i < fuels.length; i++) {
+            for (int j = 0; j < orePrefixes.length; j++) {
+                PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder()
+                        .duration(j == 2 ? 600 : 80)
+                        .input(j == 2 ? block : ingot, Iron)
+                        .input(orePrefixes[j], fuels[i], j == 2 ? 1 : 2)
+                        .output(j == 2 ? block : ingot, Steel)
+                        .buildAndRegister();
+
+                PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder()
+                        .duration(j == 2 ? 400 : 60)
+                        .input(j == 2 ? block : ingot, WroughtIron)
+                        .input(orePrefixes[j], fuels[i], j == 2 ? 1 : 2)
+                        .output(j == 2 ? block : ingot, Steel)
+                        .buildAndRegister();
+            }
+        }
     }
     public static void registerCeramics() {
 
