@@ -2,7 +2,11 @@ package TJCore.common.recipes;
 
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.metatileentity.MetaTileEntity;
+import gregtech.api.recipes.GTRecipeHandler;
+import gregtech.api.recipes.ModHandler;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
+import gregtech.api.unification.ore.OrePrefix;
+import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.blocks.BlockHermeticCasing;
 
 import gregtech.common.blocks.MetaBlocks;
@@ -11,9 +15,15 @@ import gregtech.common.metatileentities.storage.MetaTileEntityCrate;
 import gregtech.common.metatileentities.storage.MetaTileEntityQuantumChest;
 import gregtech.common.metatileentities.storage.MetaTileEntityQuantumTank;
 import gregtech.loaders.recipe.CraftingComponent;
+import gregtech.loaders.recipe.GTRecipeManager;
+import gregtech.loaders.recipe.MachineRecipeLoader;
+import gregtech.loaders.recipe.MetaTileEntityLoader;
 import net.minecraft.init.Blocks;
 
 import static TJCore.common.recipes.recipemaps.TJRecipeMaps.*;
+import static gregtech.api.GTValues.VA;
+import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.blocks.BlockHermeticCasing.HermeticCasingsType.*;
 import static gregtech.common.items.MetaItems.*;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
@@ -27,15 +37,25 @@ public class MultiblockHatches {
     public static MetaItem.MetaValueItem[] pump = {ELECTRIC_PUMP_LV, ELECTRIC_PUMP_LV, ELECTRIC_PUMP_MV, ELECTRIC_PUMP_HV, ELECTRIC_PUMP_EV, ELECTRIC_PUMP_IV, ELECTRIC_PUMP_LuV, ELECTRIC_PUMP_ZPM, ELECTRIC_PUMP_UV};
     public static BlockHermeticCasing.HermeticCasingsType[] hermeticCasings = {HERMETIC_LV, HERMETIC_LV, HERMETIC_MV, HERMETIC_HV, HERMETIC_EV, HERMETIC_IV, HERMETIC_LUV, HERMETIC_ZPM, HERMETIC_UV};
     public static MetaTileEntityCrate[] crates = {BRONZE_CRATE, STEEL_CRATE, ALUMINIUM_CRATE, STAINLESS_STEEL_CRATE, TITANIUM_CRATE, TUNGSTENSTEEL_CRATE};
-
-
     public static MetaItem.MetaValueItem[] conveyor = {CONVEYOR_MODULE_LV, CONVEYOR_MODULE_LV, CONVEYOR_MODULE_MV, CONVEYOR_MODULE_HV, CONVEYOR_MODULE_EV, CONVEYOR_MODULE_IV, CONVEYOR_MODULE_LuV, CONVEYOR_MODULE_ZPM, CONVEYOR_MODULE_UV};
 
-    public static void registerEnergyHatches() {
-
+    public static void init() {
+        registerEnergyHatches();
+        registerIOHatches();
     }
 
-    public static void registerIOHatches() {
+    private static void registerEnergyHatches() {
+        //TODO: Replace this with more thought out coil recipe. Maybe put coils in component assembler?
+        STEAM_COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
+                .EUt(VA[0])
+                .duration(45)
+                .input(stick, IronMagnetic, 2)
+                .input(wireFine, Steel, 24)
+                .output(VOLTAGE_COIL_LV)
+                .buildAndRegister();
+    }
+
+    private static void registerIOHatches() {
 
         for(int i = 0; i < 8; i++) {
             COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()

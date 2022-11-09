@@ -97,7 +97,8 @@ public class MachineRecipes {
         for (int i = 0; i < MAX; i++) {
             if (i < UIV) {
                 ModHandler.removeRecipes(MACHINE_CASING.getItemVariant(machineCasingTypes[i]));
-                GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, OreDictUnifier.get(plate, hullMaterialOld[i], 8), IntCircuitIngredient.getIntegratedCircuit(8));
+                if (i != UEV) GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, OreDictUnifier.get(plate, hullMaterialOld[i], 8), IntCircuitIngredient.getIntegratedCircuit(8));
+                //System.out.println("\nDebug- Attempting to remove recipe inputs:\n8x " + hullMaterialOld[i].getLocalizedName() + " plate 8\nIntCircuit Config: 8");
             }
 
             OreDictUnifier.registerOre(MACHINE_CASING.getItemVariant(machineCasingTypes[i]), new ItemMaterialInfo(

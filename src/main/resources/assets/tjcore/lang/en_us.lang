@@ -4,12 +4,12 @@ item.material.oreprefix.nanofoil=%s Nanofoil
 
 //tiles
 tile.turbine_bearing.galvanized_bearing.name=Galvanized Steel Turbine Bearing
-tile.turbine_bearing.aluminum_bearing.name=Aluminum Turbine Bearing
+tile.turbine_bearing.aluminium_bearing.name=Aluminum Turbine Bearing
 tile.turbine_bearing.stainless_bearing.name=Stainless Steel Turbine Bearing
 tile.turbine_bearing.titanium_bearing.name=Titanium Turbine Bearing
 tile.turbine_bearing.tungstensteel_bearing.name=Tungsteensteel Turbine Bearing
 tile.turbine_blades.galvanized_blades.name=Galvanized Steel Turbine Blades
-tile.turbine_blades.aluminum_blades.name=Aluminum Turbine Blades
+tile.turbine_blades.aluminium_blades.name=Aluminum Turbine Blades
 tile.turbine_blades.stainless_blades.name=Stainless Steel Turbine Blades
 tile.turbine_blades.titanium_blades.name=Titanium Turbine Blades
 tile.turbine_blades.tungstensteel_blades.name=Tungsteensteel Turbine Blades
@@ -218,9 +218,9 @@ metaitem.carbon_fiber_plate.name=Carbon Fiber Plate
 metaitem.steam_motor.name=Steam Motor
 metaitem.steam_piston.name=Steam Piston
 metaitem.steam_pump.name=Steam Pump
-metaitem.alumina_mold.name=Aluminum Casting Mold [Empty]
-metaitem.full_alumina_mold.name=Aluminum Casting Mold [Full]
-metaitem.hot_alumina_mold.name=Aluminum Casting Mold [Hot]
+metaitem.alumina_mold.name=Aluminium Casting Mold [Empty]
+metaitem.full_alumina_mold.name=Aluminium Casting Mold [Full]
+metaitem.hot_alumina_mold.name=Aluminium Casting Mold [Hot]
 metaitem.stencil_cutting_head.name=PCB Stenciling Cut Head
 metaitem.ferrous_inductor_core.name=Ferrous Inductor Core
 metaitem.tungsten_inductor_core.name=Tungsten Inductor Core

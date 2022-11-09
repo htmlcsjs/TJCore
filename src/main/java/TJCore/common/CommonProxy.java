@@ -66,7 +66,7 @@ public class CommonProxy {
             ArmorInfuserRecipes.register();
         }
         SurfaceRockDrillRecipes.register();
-        MultiblockHatches.registerIOHatches();
+        MultiblockHatches.init();
         Ores.RegisterOres();
         MaterialRecipes.register();
         MachineRecipes.registerMachines();

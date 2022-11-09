@@ -79,24 +79,24 @@ public class MetaTileEntityModularSteamTurbine extends FuelMultiblockController 
         return FactoryBlockPattern.start(RelativeDirection.RIGHT, RelativeDirection.BACK, RelativeDirection.DOWN)
                 .aisle(
                         "  EEE   ",
-                        " CCCCC  ",
-                        "  CCC   ")
+                        " EEEEE  ",
+                        "  EEE   ")
                 .aisle(
                         " EE EE  ",
-                        "OPBBBC  ",
-                        " CC CC  ")
+                        "OPBBBE  ",
+                        " EE EE  ")
                 .aisle(
                         " E   E S",
                         " CBRBC S",
-                        " C   C S")
+                        " E   E S")
                 .aisle(
                         " EE EE S",
                         " CBBBPPP",
-                        " CC CC T")
+                        " EE EE T")
                 .aisle(
                         "  EEE  S",
-                        " CCCCC P",
-                        "  CCC  S")
+                        " EEEEE P",
+                        "  EEE  S")
                 .where(' ', TraceabilityPredicate.ANY)
                 .where('~', TraceabilityPredicate.AIR)
                 .where('E', states(GCYMMetaBlocks.LARGE_MULTIBLOCK_CASING.getState(BlockLargeMultiblockCasing.CasingType.STEAM_CASING))
