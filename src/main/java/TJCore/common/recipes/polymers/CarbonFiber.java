@@ -1,18 +1,22 @@
 package TJCore.common.recipes.polymers;
 
+import TJCore.common.metaitem.TJMetaItems;
+
 import static TJCore.common.metaitem.TJMetaItems.*;
-import static TJCore.common.recipes.recipemaps.TJRecipeMaps.LAMINATOR_RECIPES;
-import static TJCore.common.recipes.recipemaps.TJRecipeMaps.LOOM_RECIPES;
+import static TJCore.common.recipes.recipemaps.TJRecipeMaps.*;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static TJCore.api.material.TJMaterials.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.common.items.MetaItems.*;
 
 public class CarbonFiber {
     public static void register() {
 
+        CARBON_MESH.setInvisible();
+        CARBON_FIBERS.setInvisible();
         MIXER_RECIPES.recipeBuilder()
                 .duration(20)
                 .EUt(VA[EV])
@@ -59,7 +63,7 @@ public class CarbonFiber {
                 .output(dust, Polyacrylonitrile)
                 .buildAndRegister();
 
-        CENTRIFUGE_RECIPES.recipeBuilder()
+        SPINNING_RECIPES.recipeBuilder()
                 .duration(500)
                 .EUt(VA[MV])
                 .input(dust, Polyacrylonitrile)
@@ -138,7 +142,7 @@ public class CarbonFiber {
                 .EUt(VA[EV])
                 .fluidInputs(Epoxy.getFluid(144))
                 .input(WOVEN_CARBON_FIBER, 1)
-                .output(CARBON_FIBER_PLATE)
+                .output(TJMetaItems.CARBON_FIBER_PLATE)
                 .buildAndRegister();
 
         LAMINATOR_RECIPES.recipeBuilder()

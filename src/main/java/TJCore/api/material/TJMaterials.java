@@ -128,6 +128,7 @@ public class TJMaterials {
     public static Material Acrylonitrile;
     public static Material SodiumThiocyanate;
     public static Material SodiumThiocyanatePolymerizationSolution;
+    public static Material Cellulose;
 
     // Metals
 
@@ -147,8 +148,6 @@ public class TJMaterials {
     public static Material P1Solution;
     public static Material TetrakisPDCatalyst;
     public static Material CFCoatingSolution;
-
-
 
     // Magic materials, unknown composition
     public static Material Draconium;

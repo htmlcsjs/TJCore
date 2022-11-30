@@ -56,9 +56,9 @@ public class CommonProxy {
     @SubscribeEvent(priority = EventPriority.LOW)
     public static void init(RegistryEvent.Register<IRecipe> event) {
         TJOreDictionaryLoader.registerRecipes();
+        CircuitRecipes.registerCircuits();
         TJComponents.init();
         MaterialProcessing.registerMaterialProcessing();
-        CircuitRecipes.registerCircuits();
         TJPolymers.registerPolymers();
         GTComponents.init();
 
@@ -66,9 +66,10 @@ public class CommonProxy {
             ArmorInfuserRecipes.register();
         }
         SurfaceRockDrillRecipes.register();
-        MultiblockHatches.init();
+
         Ores.RegisterOres();
         MaterialRecipes.register();
         MachineRecipes.registerMachines();
+        MultiblockHatches.init();
     }
 }

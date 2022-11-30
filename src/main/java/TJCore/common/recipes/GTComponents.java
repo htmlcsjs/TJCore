@@ -130,7 +130,7 @@ public class GTComponents {
                 .output(ELECTRIC_PISTON_LV)
                 .buildAndRegister();
 
-        COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
+        STEAM_COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
                 .EUt(VA[0])
                 .duration(80)
                 .input(cableGtSingle, Tin, 2)

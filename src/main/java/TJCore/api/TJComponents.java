@@ -19,6 +19,8 @@ import gregtech.loaders.recipe.CraftingComponent.*;
 
 public class TJComponents {
     public static Component SUBSTRATE;
+    public static Component BUS_SPRING;
+    public static Component POWER_IC;
     public static Component RING;
 
     public static void init() {
@@ -50,6 +52,26 @@ public class TJComponents {
                 {7, new UnificationEntry(plate, Polytetrafluoroethylene)},
                 {8, new UnificationEntry(plate, Polytetrafluoroethylene)},
                 {9, new UnificationEntry(plate, Polytetrafluoroethylene)},
+                {10, TJMetaItems.CARBON_FIBER_PLATE},
+                {11, TJMetaItems.CARBON_FIBER_PLATE},
+                {12, TJMetaItems.CARBON_FIBER_PLATE},
+                {13, TJMetaItems.CARBON_FIBER_PLATE},
+
+        }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
+
+        //TODO: Replace 9-13 with high tier batteries or similar.
+
+        POWER_IC = new Component(Stream.of(new Object[][]{
+                {0, new UnificationEntry(springSmall, Lead)},
+                {1, new UnificationEntry(springSmall, Tin)},
+                {2, new UnificationEntry(springSmall, Copper)},
+                {3, new UnificationEntry(springSmall, Gold)},
+                {4, MetaItems.ULTRA_LOW_POWER_INTEGRATED_CIRCUIT},
+                {5, MetaItems.LOW_POWER_INTEGRATED_CIRCUIT},
+                {6, MetaItems.POWER_INTEGRATED_CIRCUIT},
+                {7, MetaItems.HIGH_POWER_INTEGRATED_CIRCUIT},
+                {8, MetaItems.ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT},
+                {9, TJMetaItems.CARBON_FIBER_PLATE},
                 {10, TJMetaItems.CARBON_FIBER_PLATE},
                 {11, TJMetaItems.CARBON_FIBER_PLATE},
                 {12, TJMetaItems.CARBON_FIBER_PLATE},
@@ -107,6 +129,19 @@ public class TJComponents {
                 {11, new UnificationEntry(cableGtSingle, NihoniumTriiodide)},
                 {12, new UnificationEntry(cableGtSingle, Taranium)},
                 {13, new UnificationEntry(cableGtSingle, OganessonTetraTennesside)},
+        }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
+
+        BUS_SPRING = new Component(Stream.of(new Object[][]{
+                {0, new UnificationEntry(spring, Lead)},
+                {1, new UnificationEntry(spring, Steel)},
+                {2, new UnificationEntry(spring, Aluminium)},
+                {3, new UnificationEntry(spring, StainlessSteel)},
+                {4, new UnificationEntry(spring, Titanium)},
+                {5, new UnificationEntry(spring, TungstenSteel)},
+                {6, new UnificationEntry(spring, HSSG)},
+                {7, new UnificationEntry(spring, HSSE)},
+                {8, new UnificationEntry(spring, HSSS)},
+                {9, new UnificationEntry(spring, NaquadahAlloy)},
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
     }
 }

@@ -1,14 +1,14 @@
 package TJCore.common.recipes.chains;
 
-//import crafttweaker.api.item.IItemStack;
+//import crafttprweaker.api.item.IItemStack;
 //import gregtech.api.unification.OreDictUnifier;
 
-import static TJCore.api.material.TJMaterials.*;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
 
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
+import static TJCore.api.material.TJMaterials.*;
 
 public class LubricantChains {
 
@@ -51,5 +51,4 @@ public class LubricantChains {
                 .buildAndRegister();
 
     }
-
 }

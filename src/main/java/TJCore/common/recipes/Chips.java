@@ -9,8 +9,7 @@ import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.stack.UnificationEntry;
-import net.minecraft.client.model.ModelGhast;
-import net.minecraftforge.fml.common.Mod;
+
 
 import static TJCore.api.TJOreDictionaryLoader.*;
 import static TJCore.api.material.TJMaterials.*;

@@ -26,8 +26,9 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem STEAM_MOTOR;
     public static MetaItem<?>.MetaValueItem STEAM_PISTON;
     public static MetaItem<?>.MetaValueItem STEAM_PUMP;
-    //CIRCUITFRAMEWORK
+    public static MetaItem<?>.MetaValueItem CLEANROOM_FILTER;
 
+    //CIRCUITFRAMEWORK
     public static MetaItem<?>.MetaValueItem WETPHENOLICPULP;
     public static MetaItem<?>.MetaValueItem WETPRESSEDPHENOLICSUBSTRATE;
 
