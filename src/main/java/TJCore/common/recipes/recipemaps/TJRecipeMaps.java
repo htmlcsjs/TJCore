@@ -6,6 +6,7 @@ import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.resources.TextureArea;
 import gregtech.api.gui.widgets.ProgressWidget;
 import gregtech.api.recipes.RecipeMap;
+import gregtech.api.recipes.builders.FuelRecipeBuilder;
 import gregtech.api.recipes.builders.IntCircuitRecipeBuilder;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.api.sound.GTSounds;
@@ -27,4 +28,6 @@ public class TJRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> MEGA_FUSION_RECIPES = new RecipeMap<>("mega_fusion", 0, 1, 0, 3, 0, 4, 0, 3, new SimpleRecipeBuilder(), false);
     public static final RecipeMap<SimpleRecipeBuilder> SURFACE_ROCK_DRILL_RECIPES = new RecipeMap<>("surface_rock_drill", 0, 12, 1, 1, 0, 0, 0, 0, new SimpleRecipeBuilder(), false);
     public static final RecipeMap<SimpleRecipeBuilder> LAMINATOR_RECIPES = new RecipeMap<>("laminator", 1, 6, 1, 2, 0, 2, 0, 0, new SimpleRecipeBuilder(), false).setSound(GTSounds.ASSEMBLER);
+    public static final RecipeMap<FuelRecipeBuilder> MODULAR_STEAM_TURBINE_RECIPES = new RecipeMap<>("modular_steam_turbine", 0, 0, 0, 0, 1, 1, 1, 1, new FuelRecipeBuilder(), false).setSound(GTSounds.TURBINE).setProgressBar(GuiTextures.PROGRESS_BAR_GAS_COLLECTOR, ProgressWidget.MoveType.CIRCULAR).setSlotOverlay(false, true, true, GuiTextures.CENTRIFUGE_OVERLAY);
+
 }

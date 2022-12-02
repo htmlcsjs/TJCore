@@ -209,7 +209,6 @@ public class PetrochemRecipes {
                 .EUt(VA[HV])
                 .notConsumable(dust, IridiumOnCubicZirconia)
                 .fluidInputs(Glycerol.getFluid(1000))
-                .fluidInputs(Hydrogen.getFluid(1000))
                 .fluidOutputs(OnePropanol.getFluid(1000))
                 .buildAndRegister();
 
