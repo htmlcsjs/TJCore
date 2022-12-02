@@ -715,6 +715,66 @@ public class TJFirstDegreeMaterials {
                 .components(Carbon, 6, Hydrogen, 10, Oxygen, 5)
                 .build();
 
+        IridiumOnCubicZirconia = new Material.Builder(25107, "iridiumoncubiczirconia")
+                .dust()
+                .colorAverage()
+                .components(Iridium, 1, CubicZirconia, 1)
+                .build();
+
+        OnePropanol = new Material.Builder(25108, "onepropanol")
+                .fluid()
+                .color(0xbad17b)
+                .components(Carbon, 3, Hydrogen, 8, Oxygen, 1)
+                .build()
+                .setFormula("CH3CH2CH2OH", true);
+
+        ZSM_5_ZEOLITE = new Material.Builder(25109, "zsm_five_zeolite")
+                .dust()
+                .color(0xb8ffe1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(Na13Al13Si83O192)16H2O", true);
+
+        SodiumHydroxideSilica = new Material.Builder(25110, "sodiumhydroxidesilica")
+                .fluid()
+                .color(0x213996)
+                .iconSet(MaterialIconSet.FLUID)
+                .components(SodiumHydroxide, 1, SiliconDioxide, 1, Water, 1)
+                .build();
+
+        SodiumAluminate = new Material.Builder(25111, "sodiumaluminate")
+                .dust()
+                .colorAverage()
+                .components(Sodium, 1, Aluminium, 1, Oxygen, 2)
+                .build();
+
+        SodiumAluminumSilicaSolution = new Material.Builder(25112, "aluminumsilicasolution")
+                .fluid()
+                .color(0xb0c1ff)
+                .components(Sodium, 1, Aluminium, 1, Silicon, 1, Oxygen, 2, Water, 1)
+                .build();
+
+        AluminoSilicateGlass = new Material.Builder(25113, "aluminosilicateglass")
+                .ingot()
+                .color(0x9a9fb3)
+                .iconSet(MaterialIconSet.SHINY)
+                .components(Aluminium, 1, Silicon, 1, Oxygen, 4)
+                .build();
+
+        DimethylCarbonate = new Material.Builder(25115, "dimethylcarbonate")
+                .fluid()
+                .colorAverage()
+                .components(Carbon, 3, Hydrogen, 6, Oxygen, 3)
+                .build()
+                .setFormula("(CH3O)2CO",true);
+
+        TetramethylammoniumBromide = new Material.Builder(25116, "tetramethylammoniumbromide")
+                .dust()
+                .colorAverage()
+                .components(Carbon, 4, Hydrogen, 12, Nitrogen, 1, Bromine, 1)
+                .build()
+                .setFormula("(CH3)4NBr",true);
+
         // SCRIPTS FOR TJCORE HAS 29000-30000
     }
 

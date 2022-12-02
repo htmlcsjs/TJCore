@@ -61,12 +61,11 @@ public class CommonProxy {
         MaterialProcessing.registerMaterialProcessing();
         TJPolymers.registerPolymers();
         GTComponents.init();
-
+        PetrochemRecipes.init();
         if (Loader.isModLoaded("draconicevolution")) {
             ArmorInfuserRecipes.register();
         }
         SurfaceRockDrillRecipes.register();
-
         Ores.RegisterOres();
         MaterialRecipes.register();
         MachineRecipes.registerMachines();

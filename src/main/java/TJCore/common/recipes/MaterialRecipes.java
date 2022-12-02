@@ -47,24 +47,7 @@ public class MaterialRecipes {
         registerMetalCasings();
         registerModifiedDecomp();
         registerFarming();
-        registerPetroChem();
         registerWireCable();
-    }
-
-    public static void registerPetroChem() {
-        GTRecipeHandler.removeAllRecipes(COKE_OVEN_RECIPES);
-        COKE_OVEN_RECIPES.recipeBuilder()
-                .duration(100)
-                .input(gem, Charcoal)
-                .fluidOutputs(Creosote.getFluid(1000))
-                .output(gem, Coke)
-                .buildAndRegister();
-        COKE_OVEN_RECIPES.recipeBuilder()
-                .duration(100)
-                .input(log, Wood)
-                .fluidOutputs(Creosote.getFluid(1000))
-                .output(gem, Charcoal)
-                .buildAndRegister();
     }
 
     public static void registerSimpleCompounds() {

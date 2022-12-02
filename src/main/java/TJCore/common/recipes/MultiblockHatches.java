@@ -97,6 +97,5 @@ public class MultiblockHatches {
         ModHandler.addShapedRecipe("maintenance_hatch_configurable", CONFIGURABLE_MAINTENANCE_HATCH.getStackForm(), " S ","CHC"," W ", 'H', MAINTENANCE_HATCH.getStackForm(), 'C', new UnificationEntry(circuit, tierCircuitNames[LV]), 'S', SCREWDRIVER, 'W', WRENCH);
         ModHandler.addShapedRecipe("maintenance_hatch_filtration", CLEANING_MAINTENANCE_HATCH.getStackForm(), "FRF","CAC","WMW", 'F', CLEANROOM_FILTER, 'R', new UnificationEntry(rotor, Titanium), 'C', new UnificationEntry(circuit, tierCircuitNames[EV]), 'A', AUTO_MAINTENANCE_HATCH.getStackForm(), 'W', new UnificationEntry(cableGtSingle, Aluminium), 'M', ELECTRIC_MOTOR_EV);
         ModHandler.addShapedRecipe("cleanroom_filter", CLEANROOM_FILTER.getStackForm(), "WWW","WMW","WWW", 'W', new UnificationEntry(dust, Cellulose), 'M', FIBERGLASS_MESH.getStackForm());
-
     }
 }

@@ -116,6 +116,15 @@ public class TJMaterials {
     public static Material ExcitedNeonFluoride;
     public static Material ArgonFluorine;
     public static Material SilverGalliumSelenide;
+    public static Material IridiumOnCubicZirconia;
+    public static Material OnePropanol;
+    public static Material ZSM_5_ZEOLITE;
+    public static Material SodiumHydroxideSilica;
+    public static Material SodiumAluminate;
+    public static Material SodiumAluminumSilicaSolution;
+    public static Material AluminoSilicateGlass;
+    public static Material DimethylCarbonate;
+    public static Material TetramethylammoniumBromide;
 
     // Cermaics + Glass
     public static Material SodiumPotassiumNiobate;

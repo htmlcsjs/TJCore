@@ -121,6 +121,11 @@ tjcore.machine.laminator.uev.name=Epic Laminator II
 tjcore.machine.laminator.uiv.name=Epic Laminator III
 tjcore.machine.laminator.uxv.name=Epic Laminator IV
 tjcore.machine.laminator.opv.name=Legendary Laminator
+tjcore.machine.spinning_machine.lv.name=Basic Spoolinator
+tjcore.machine.spinning_machine.mv.name=Advanced Spoolinator I
+tjcore.machine.spinning_machine.hv.name=Advanced Spoolinator II
+tjcore.machine.spinning_machine.ev.name=Advanced Spoolinator III
+tjcore.machine.spinning_machine.iv.name=Elite Spoolinator
 tjcore.machine.steam_mixer_bronze.name=Steam Mixer
 tjcore.machine.steam_mixer_steel.name=High Pressure Steam Mixer
 tjcore.machine.steam_dryer_bronze.name=Steam Dryer
@@ -137,6 +142,7 @@ tjcore.machine.armor_infuser.description=The armor infuser is an advanced machin
 
 // Recipe Maps
 recipemap.component_assembler.name=Component Assembler
+recipemap.spinning_machine.name=Spooling Recipes
 recipemap.steam_assembler.name=Steam Component Assembler
 recipemap.tree_farmer.name=Tree Farmer
 recipemap.armor_infuser.name=Armor Infusion
