@@ -16,10 +16,8 @@ import static gregtech.api.unification.material.info.MaterialFlags.*;
 
 public class TJFirstDegreeMaterials {
 
-    /* for fluidpipeproperties, throughput is in ticks
-
-
-    */
+    // static material arrays to be used in commonProxy
+    public static Material[] longDistanceWireMaterials = new Material[]{Manganese, Bismuth, Antimony, Gallium, Vanadium};
 
 
     public static void registerMaterials(){
