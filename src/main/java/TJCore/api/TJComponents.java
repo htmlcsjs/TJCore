@@ -1,6 +1,7 @@
 package TJCore.api;
 
 import TJCore.common.metaitem.TJMetaItems;
+import TJCore.common.metatileentities.SteamDryer;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.UnificationEntry;
@@ -19,6 +20,7 @@ import gregtech.loaders.recipe.CraftingComponent.*;
 
 public class TJComponents {
     public static Component SUBSTRATE;
+    public static Component RODSTICK;
     public static Component BUS_SPRING;
     public static Component POWER_IC;
     public static Component RING;
@@ -60,6 +62,23 @@ public class TJComponents {
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         //TODO: Replace 9-13 with high tier batteries or similar.
+
+        RODSTICK = new Component(Stream.of(new Object[][] {
+                {0, new UnificationEntry(stick, Bronze)},
+                {1, new UnificationEntry(stick, GalvanizedSteel)},
+                {2, new UnificationEntry(stick, Aluminium)},
+                {3, new UnificationEntry(stick, StainlessSteel)},
+                {4, new UnificationEntry(stick, Titanium)},
+                {5, new UnificationEntry(stick, VanadiumSteel)},
+                {6, new UnificationEntry(stick, LutetiumTantalate)},
+                {7, new UnificationEntry(stick, Iridrhodruthenium)},
+                {8, new UnificationEntry(stick, Duranium)},
+                {9, new UnificationEntry(stick, Bohrium)},
+                {10, new UnificationEntry(stick, Adamantium)},
+                {11, new UnificationEntry(stick, Vibranium)},
+                {12, new UnificationEntry(stick, HDCS_3)},
+                {13, new UnificationEntry(stick, SuperheavyL)}
+        }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         POWER_IC = new Component(Stream.of(new Object[][]{
                 {0, new UnificationEntry(springSmall, Lead)},

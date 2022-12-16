@@ -36,6 +36,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.Mod;
 import scala.Char;
+import scala.tools.cmd.Meta;
 import scala.tools.cmd.gen.AnyValReps;
 
 import static gregtech.api.GTValues.*;
@@ -66,6 +67,7 @@ public class MachineRecipes {
 
     private static void removeOldMachines() {
         ModHandler.removeRecipes(STEAM_MACERATOR_BRONZE.getStackForm());
+        removeAllTeirs(TRANSFORMER);
         removeAllTeirs(STEAM_TURBINE);
         removeAllTeirs(MetaTileEntities.HULL);
         for (int i = ULV; i < MAX; i++) {
@@ -134,6 +136,8 @@ public class MachineRecipes {
         MetaTileEntityLoader.registerMachineRecipe(PRINTER, "WRW", "PSP", "CHC", 'P', PISTON, 'W', COIL_HEATING, 'R', RING, 'S', SUBSTRATE, 'C', CIRCUIT, 'H', CraftingComponent.HULL);
         MetaTileEntityLoader.registerMachineRecipe(LAMINATOR, "WGW", "MHM", "CGC", 'M', MOTOR, 'G', COIL_ELECTRIC, 'W', CABLE, 'H', CraftingComponent.HULL, 'C', CIRCUIT);
         MetaTileEntityLoader.registerMachineRecipe(COMPONENT_ASSEMBLER, "WCW", "AHA", "WCW", 'A', ROBOT_ARM, 'W', CABLE, 'C', CIRCUIT, 'H', CraftingComponent.HULL);
+        MetaTileEntityLoader.registerMachineRecipe(TRANSFORMER, "   ","FHC","   ", 'F', CABLE_QUAD, 'C', CABLE_TIER_UP, 'H', CraftingComponent.HULL);
+        MetaTileEntityLoader.registerMachineRecipe(SPINNING_MACHINE, "GRG","CMC","WHW", 'G', GLASS, 'R', RODSTICK, 'C', CIRCUIT, 'M', MOTOR, 'W', CABLE, 'H', CraftingComponent.HULL);
     }
 
     private static void registerSteam() {
@@ -192,7 +196,7 @@ public class MachineRecipes {
                 'C', MetaTileEntities.HULL[LV].getStackForm());
 
         ModHandler.addShapedRecipe("primitive_tree_farmer", PRIMITIVE_TREE_FARMER.getStackForm(),
-                "GAG", "DBD", "PCP",
+                "GAG", "DBCD", "PCP",
                 'G', OreDictUnifier.get(gearSmall, Bronze),
                 'A', OreDictUnifier.get(toolHeadAxe, Invar),
                 'D', new ItemStack(Blocks.DIRT),
