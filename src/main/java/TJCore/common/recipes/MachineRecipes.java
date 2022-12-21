@@ -196,7 +196,7 @@ public class MachineRecipes {
                 'C', MetaTileEntities.HULL[LV].getStackForm());
 
         ModHandler.addShapedRecipe("primitive_tree_farmer", PRIMITIVE_TREE_FARMER.getStackForm(),
-                "GAG", "DBCD", "PCP",
+                "GAG", "DBD", "PCP",
                 'G', OreDictUnifier.get(gearSmall, Bronze),
                 'A', OreDictUnifier.get(toolHeadAxe, Invar),
                 'D', new ItemStack(Blocks.DIRT),
