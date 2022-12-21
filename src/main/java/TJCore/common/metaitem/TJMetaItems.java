@@ -2,7 +2,6 @@ package TJCore.common.metaitem;
 
 
 import gregtech.api.items.metaitem.MetaItem;
-import gregtech.api.items.toolitem.ToolMetaItem;
 
 import java.util.*;
 
@@ -227,20 +226,20 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem CRYSTAL_COMPUTER_UV;
     public static MetaItem<?>.MetaValueItem CRYSTAL_MAINFRAME_UHV;
 
-    public static MetaItem<?>.MetaValueItem WETWARE_PROCESSOR_ZPM;
-    public static MetaItem<?>.MetaValueItem WETWARE_ASSEMBLY_UV;
-    public static MetaItem<?>.MetaValueItem WETWARE_COMPUTER_UHV;
-    public static MetaItem<?>.MetaValueItem WETWARE_MAINFRAME_UEV;
+    public static MetaItem<?>.MetaValueItem QUANTUM_PROCESSOR_ZPM;
+    public static MetaItem<?>.MetaValueItem QUANTUM_ASSEMBLY_UV;
+    public static MetaItem<?>.MetaValueItem QUANTUM_COMPUTER_UHV;
+    public static MetaItem<?>.MetaValueItem QUANTUM_MAINFRAME_UEV;
 
-    public static MetaItem<?>.MetaValueItem BIOWARE_PROCESSOR_UV;
-    public static MetaItem<?>.MetaValueItem BIOWARE_ASSEMBLY_UHV;
-    public static MetaItem<?>.MetaValueItem BIOWARE_COMPUTER_UEV;
-    public static MetaItem<?>.MetaValueItem BIOWARE_MAINFRAME_UIV;
+    public static MetaItem<?>.MetaValueItem WETWARE_PROCESSOR_UV;
+    public static MetaItem<?>.MetaValueItem WETWARE_ASSEMBLY_UHV;
+    public static MetaItem<?>.MetaValueItem WETWARE_COMPUTER_UEV;
+    public static MetaItem<?>.MetaValueItem WETWARE_MAINFRAME_UIV;
 
-    public static MetaItem<?>.MetaValueItem QUANTUM_PROCESSOR_UHV;
-    public static MetaItem<?>.MetaValueItem QUANTUM_ASSEMBLY_UEV;
-    public static MetaItem<?>.MetaValueItem QUANTUM_COMPUTER_UIV;
-    public static MetaItem<?>.MetaValueItem QUANTUM_MAINFRAME_UXV;
+    public static MetaItem<?>.MetaValueItem BIOWARE_PROCESSOR_UHV;
+    public static MetaItem<?>.MetaValueItem BIOWARE_ASSEMBLY_UEV;
+    public static MetaItem<?>.MetaValueItem BIOWARE_COMPUTER_UIV;
+    public static MetaItem<?>.MetaValueItem BIOWARE_MAINFRAME_UXV;
 
     public static MetaItem<?>.MetaValueItem EXOTIC_PROCESSOR_UEV;
     public static MetaItem<?>.MetaValueItem EXOTIC_ASSEMBLY_UIV;

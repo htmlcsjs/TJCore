@@ -2,29 +2,15 @@ package TJCore.common.recipes;
 
 import TJCore.common.metaitem.TJMetaItem;
 import TJCore.common.metaitem.TJMetaItems;
-import gregicality.multiblocks.GregicalityMultiblocks;
-import gregicality.multiblocks.api.recipes.GCYMRecipeMaps;
-import gregicality.science.api.unification.materials.GCYSMaterials;
-import gregicality.science.common.items.GCYSMetaItems;
-import gregicality.science.loaders.recipe.GCYSRecipeLoader;
 import gregtech.api.items.metaitem.MetaItem;
-import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
-import gregtech.api.recipes.RecipeMap;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Material;
-import gregtech.api.unification.material.properties.OreProperty;
-import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.UnificationEntry;
-import gregtech.common.items.MetaItem1;
-import gregtech.common.items.MetaItems;
-import gregtech.loaders.recipe.chemistry.PolymerRecipes;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.advancements.critereon.OredictItemPredicate;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
-import org.lwjgl.opencl.CL;
 
 
 import java.util.ArrayList;
@@ -42,7 +28,6 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
-import static gregicality.multiblocks.api.recipes.GCYMRecipeMaps.*;
 
 public class CircuitRecipes {
 
@@ -851,43 +836,43 @@ public class CircuitRecipes {
                 .input(SMD_RESISTOR_3, 2)
                 .input(SMD_CAPACITOR_3, 2)
                 .input(wireFine, Naquadah, 4)
-                .output(WETWARE_PROCESSOR_ZPM, 4)
+                .output(WETWARE_PROCESSOR_UV, 4)
                 .buildAndRegister();
 
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(50)
                 .EUt(VA[UV])
                 .cleanroom(STERILE_CLEANROOM)
-                .input(WETWARE_PROCESSOR_ZPM, 2)
+                .input(WETWARE_PROCESSOR_UV, 2)
                 .input(TJMetaItems.WETWARE_BOARD)
                 .input(SMD_TRANSISTOR_3, 2)
                 .input(SMD_RESISTOR_3, 2)
                 .input(wireFine, Naquadah, 2)
-                .output(WETWARE_ASSEMBLY_UV)
+                .output(WETWARE_ASSEMBLY_UHV)
                 .buildAndRegister();
 
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(50)
                 .EUt(VA[UV])
                 .cleanroom(STERILE_CLEANROOM)
-                .input(WETWARE_ASSEMBLY_UV, 2)
+                .input(WETWARE_ASSEMBLY_UHV, 2)
                 .input(plate, Duranium, 2)
                 .input(SMD_CAPACITOR_3, 2)
                 .input(SMD_INDUCTOR_3, 2)
                 .input(wireFine, YttriumBariumCuprate, 2)
-                .output(WETWARE_COMPUTER_UHV)
+                .output(WETWARE_COMPUTER_UEV)
                 .buildAndRegister();
 
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(50)
                 .EUt(VA[UV])
                 .cleanroom(STERILE_CLEANROOM)
-                .input(WETWARE_COMPUTER_UHV,2)
+                .input(WETWARE_COMPUTER_UEV,2)
                 .input(frameGt, Duranium)
                 .input(SMD_DIODE_2, 2)
                 .input(SMD_TRANSISTOR_3, 2)
                 .input(cableGtSingle, YttriumBariumCuprate,2)
-                .output(WETWARE_MAINFRAME_UEV)
+                .output(WETWARE_MAINFRAME_UIV)
                 .buildAndRegister();
     }
     public static void bioware() {
@@ -900,43 +885,43 @@ public class CircuitRecipes {
                 .input(SMD_RESISTOR_4,2)
                 .input(SMD_CAPACITOR_3, 2)
                 .input(wireFine, YttriumBariumCuprate, 4)
-                .output(BIOWARE_PROCESSOR_UV, 4)
+                .output(BIOWARE_PROCESSOR_UHV, 4)
                 .buildAndRegister();
 
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(50)
                 .EUt(VA[UHV])
                 .cleanroom(STERILE_CLEANROOM)
-                .input(BIOWARE_PROCESSOR_UV, 2)
+                .input(BIOWARE_PROCESSOR_UHV, 2)
                 .input(BIOWARE_BOARD)
                 .input(SMD_TRANSISTOR_3, 2)
                 .input(SMD_RESISTOR_4, 2)
                 .input(wireFine, YttriumBariumCuprate, 2)
-                .output(BIOWARE_ASSEMBLY_UHV)
+                .output(BIOWARE_ASSEMBLY_UEV)
                 .buildAndRegister();
 
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(50)
                 .EUt(VA[UHV])
                 .cleanroom(STERILE_CLEANROOM)
-                .input(BIOWARE_ASSEMBLY_UHV, 2)
+                .input(BIOWARE_ASSEMBLY_UEV, 2)
                 .input(plate, PedotPSS, 2)
                 .input(SMD_CAPACITOR_3, 2)
                 .input(SMD_INDUCTOR_3, 2)
                 .input(wireFine, PedotTMA, 2)
-                .output(BIOWARE_COMPUTER_UEV)
+                .output(BIOWARE_COMPUTER_UIV)
                 .buildAndRegister();
 
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(50)
                 .EUt(VA[UHV])
                 .cleanroom(STERILE_CLEANROOM)
-                .input(BIOWARE_COMPUTER_UEV, 2)
+                .input(BIOWARE_COMPUTER_UIV, 2)
                 .input(frameGt, PedotPSS, 2)
                 .input(SMD_DIODE_3, 2)
                 .input(SMD_TRANSISTOR_3, 2)
                 .input(cableGtSingle, PedotTMA,2)
-                .output(BIOWARE_MAINFRAME_UIV)
+                .output(BIOWARE_MAINFRAME_UXV)
                 .buildAndRegister();
     }
     public static void quantum() {
@@ -948,29 +933,29 @@ public class CircuitRecipes {
                 .input(SMD_RESISTOR_4, 2)
                 .input(SMD_CAPACITOR_4, 2)
                 .input(wireFine, PedotTMA, 4)
-                .output(QUANTUM_PROCESSOR_UHV, 4)
+                .output(QUANTUM_PROCESSOR_ZPM, 4)
                 .buildAndRegister();
 
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(50)
                 .EUt(VA[UEV])
-                .input(QUANTUM_PROCESSOR_UHV, 2)
+                .input(QUANTUM_PROCESSOR_ZPM, 2)
                 .input(QUANTUM_BOARD)
                 .input(SMD_TRANSISTOR_4, 2)
                 .input(SMD_RESISTOR_4, 2)
                 .input(wireFine, PedotTMA, 2)
-                .output(QUANTUM_ASSEMBLY_UEV)
+                .output(QUANTUM_ASSEMBLY_UV)
                 .buildAndRegister();
 
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(50)
                 .EUt(VA[UEV])
-                .input(QUANTUM_ASSEMBLY_UEV, 2)
+                .input(QUANTUM_ASSEMBLY_UV, 2)
                 .input(plate, CarbonNanotubePolymer, 2)
                 .input(SMD_CAPACITOR_4, 2)
                 .input(SMD_INDUCTOR_4, 2)
                 .input(wireFine, CarbonNanotube, 2)
-                .output(QUANTUM_COMPUTER_UIV)
+                .output(QUANTUM_COMPUTER_UHV)
                 .buildAndRegister();
 
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
@@ -978,7 +963,7 @@ public class CircuitRecipes {
                 .EUt(VA[UEV])
                 .fluidInputs(SolderingAlloyV.getFluid(288))
                 .fluidInputs(Helium.getFluid(1000))
-                .input(QUANTUM_COMPUTER_UIV, 2)
+                .input(QUANTUM_COMPUTER_UHV, 2)
                 .input(frameGt, CarbonNanotubePolymer)
                 .input(SMD_DIODE_3, 16)
                 .input(SMD_TRANSISTOR_4, 8)
@@ -988,7 +973,7 @@ public class CircuitRecipes {
                 .input(foil, Phosphorene, 2)
                 .input(bolt, Adamantium, 4)
                 .input(cableGtSingle, CarbonNanotube, 4)
-                .output(QUANTUM_MAINFRAME_UXV)
+                .output(QUANTUM_MAINFRAME_UEV)
                 .buildAndRegister();
     }
     public static void exotic() {

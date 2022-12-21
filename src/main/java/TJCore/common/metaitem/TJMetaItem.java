@@ -127,20 +127,20 @@ public class    TJMetaItem extends StandardMetaItem {
         CRYSTAL_COMPUTER_UV = addItem(129, "circuit.crystal_uv").setUnificationData(OrePrefix.circuit, Tier.UV);
         CRYSTAL_MAINFRAME_UHV = addItem(130, "circuit.crystal_uhv").setUnificationData(OrePrefix.circuit, Tier.UHV);
 
-        WETWARE_PROCESSOR_ZPM = addItem(131, "circuit.wetware_zpm").setUnificationData(OrePrefix.circuit, Tier.UV);
-        WETWARE_ASSEMBLY_UV = addItem(132, "circuit.wetware_uv").setUnificationData(OrePrefix.circuit, Tier.UHV);
-        WETWARE_COMPUTER_UHV = addItem(133, "circuit.wetware_uhv").setUnificationData(OrePrefix.circuit, Tier.UEV);
-        WETWARE_MAINFRAME_UEV = addItem(134, "circuit.wetware_uev").setUnificationData(OrePrefix.circuit, Tier.UIV);
+        QUANTUM_PROCESSOR_ZPM = addItem(131,"circuit.quantum_zpm").setUnificationData(OrePrefix.circuit, Tier.ZPM);
+        QUANTUM_ASSEMBLY_UV = addItem(132,"circuit.quantum_uv").setUnificationData(OrePrefix.circuit, Tier.UV);
+        QUANTUM_COMPUTER_UHV = addItem(133,"circuit.quantum_uhv").setUnificationData(OrePrefix.circuit, Tier.UHV);
+        QUANTUM_MAINFRAME_UEV = addItem(134,"circuit.quantum_uev").setUnificationData(OrePrefix.circuit, Tier.UEV);
 
-        BIOWARE_PROCESSOR_UV = addItem(135, "circuit.bioware_uv").setUnificationData(OrePrefix.circuit, Tier.ZPM);
-        BIOWARE_ASSEMBLY_UHV = addItem(136, "circuit.bioware_uhv").setUnificationData(OrePrefix.circuit, Tier.UV);
-        BIOWARE_COMPUTER_UEV = addItem(137, "circuit.bioware_uev").setUnificationData(OrePrefix.circuit, Tier.UHV);
-        BIOWARE_MAINFRAME_UIV = addItem(138,"circuit.bioware_uiv");
+        WETWARE_PROCESSOR_UV = addItem(135, "circuit.wetware_uv").setUnificationData(OrePrefix.circuit, Tier.UV);
+        WETWARE_ASSEMBLY_UHV = addItem(136, "circuit.wetware_uhv").setUnificationData(OrePrefix.circuit, Tier.UHV);
+        WETWARE_COMPUTER_UEV = addItem(137, "circuit.wetware_uev").setUnificationData(OrePrefix.circuit, Tier.UEV);
+        WETWARE_MAINFRAME_UIV = addItem(138, "circuit.wetware_uiv").setUnificationData(OrePrefix.circuit, Tier.UIV);
 
-        QUANTUM_PROCESSOR_UHV = addItem(139,"circuit.quantum_uhv").setUnificationData(OrePrefix.circuit, Tier.UHV);
-        QUANTUM_ASSEMBLY_UEV = addItem(140,"circuit.quantum_uev").setUnificationData(OrePrefix.circuit, Tier.UEV);
-        QUANTUM_COMPUTER_UIV = addItem(141,"circuit.quantum_uiv").setUnificationData(OrePrefix.circuit, Tier.UIV);
-        QUANTUM_MAINFRAME_UXV = addItem(142,"circuit.quantum_uxv").setUnificationData(OrePrefix.circuit, Tier.UXV);
+        BIOWARE_PROCESSOR_UHV = addItem(139, "circuit.bioware_uhv").setUnificationData(OrePrefix.circuit, Tier.UHV);
+        BIOWARE_ASSEMBLY_UEV = addItem(140, "circuit.bioware_uev").setUnificationData(OrePrefix.circuit, Tier.UEV);
+        BIOWARE_COMPUTER_UIV = addItem(141, "circuit.bioware_uiv").setUnificationData(OrePrefix.circuit, Tier.UIV);
+        BIOWARE_MAINFRAME_UXV = addItem(142,"circuit.bioware_uxv").setUnificationData(OrePrefix.circuit, Tier.UXV);
 
         EXOTIC_PROCESSOR_UEV = addItem(143,"circuit.exotic_uev").setUnificationData(OrePrefix.circuit, Tier.UEV);
         EXOTIC_ASSEMBLY_UIV = addItem(144,"circuit.exotic_uiv").setUnificationData(OrePrefix.circuit, Tier.UIV);
