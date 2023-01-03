@@ -408,22 +408,15 @@ public class Chips {
     }
 
     private static void crystalChip() {
-        //Crystal Chip
-        MIXER_RECIPES.recipeBuilder()
-                .EUt(VA[EV])
-                .duration(50)
-                .input(dust,Diamond)
-                .fluidInputs(DistilledWater.getFluid(1000))
-                .fluidOutputs(DiamondCVDSolution.getFluid(1000))
-                .buildAndRegister();
-
-        //TODO: CARBON - Make this CVD recipe
+        //TODO: CARBON - Integrate with starlight in TJ2
         CVD_RECIPES.recipeBuilder()
                 .EUt(VA[LuV])
                 .duration(100)
                 .input(SAPPHIRE_WAFER)
-                .fluidInputs(DiamondCVDSolution.getFluid(50))
+                .fluidInputs(Methane.getFluid(1000))
+                .notConsumable(Argon.getFluid(1))
                 .output(COATED_SAPPHIRE_WAFER)
+                .fluidOutputs(Hydrogen.getFluid(4000))
                 .buildAndRegister();
 
         CHEMICAL_BATH_RECIPES.recipeBuilder()
@@ -440,7 +433,7 @@ public class Chips {
                 .input(DIRTY_COATED_SAPPHIRE_WAFER)
                 .fluidInputs(Dysprosium.getFluid(144))
                 .output(CLEANED_COATED_SAPPHIRE_WAFER)
-                .output(ingot,Dysprosium)
+                .output(chunk,Dysprosium, 4)
                 .buildAndRegister();
 
         AUTOCLAVE_RECIPES.recipeBuilder()
@@ -508,7 +501,7 @@ public class Chips {
         ASSEMBLER_RECIPES.recipeBuilder()
                 .EUt(VA[ZPM])
                 .duration(30)
-                .input(nanoWire,Palladium,2)
+                .input(wireFine,Palladium)
                 .input(SINTERED_SAPPHIRE_WAFER)
                 .output(WIRED_SAPPHIRE_WAFER)
                 .buildAndRegister();
@@ -519,7 +512,6 @@ public class Chips {
                 .input(WIRED_SAPPHIRE_WAFER)
                 .output(RAW_SAPPHIRE_CHIP,32)
                 .buildAndRegister();
-
 
         CANNER_RECIPES.recipeBuilder()
                 .EUt(VA[LuV])

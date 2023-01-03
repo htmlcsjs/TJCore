@@ -1,17 +1,8 @@
 package TJCore.common.recipes;
 
-import gregicality.multiblocks.GregicalityMultiblocks;
-import gregicality.multiblocks.api.recipes.GCYMRecipeMaps;
 import gregicality.science.api.recipes.GCYSRecipeMaps;
-import gregicality.science.api.unification.materials.GCYSMaterials;
-import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.OreDictUnifier;
-import gregtech.api.unification.material.Material;
-import gregtech.api.unification.stack.UnificationEntry;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidStack;
-import org.lwjgl.opencl.CL;
 
 
 import static TJCore.api.TJOreDictionaryLoader.*;
@@ -63,7 +54,7 @@ public class SMD {
                 .input(plate, BismuthTelluride)
                 .input(foil, PolyvinylButyral, 4)
                 .input(pipeTinyFluid, Chrome, 4)
-                .input(nanoWire, Lead, 16)
+                .input(nanowire, Lead, 16)
                 .fluidInputs(Glycerol.getFluid(250))
                 .output(SMD_TRANSISTOR_3, 32)
                 .buildAndRegister();
@@ -83,7 +74,7 @@ public class SMD {
                 .input(bolt, Taranium)
                 .input(foil, HeavyQuarkDegenerate, 4)
                 .input(wireFine, SuperheavyH, 16)
-                .input(nanoWire, Neutronium, 32)
+                .input(nanowire, Neutronium, 32)
                 .fluidInputs(Gluons.getFluid(250))
                 .output(SMD_TRANSISTOR_5, 32)
                 .buildAndRegister();
@@ -127,7 +118,7 @@ public class SMD {
                 .EUt(VA[UHV])
                 .input(foil, Graphene)
                 .input(bolt, EnrichedNaqAlloy)
-                .input(nanoWire, Trinium, 4)
+                .input(nanowire, Trinium, 4)
                 .fluidInputs(Iron.getPlasma(50))
                 .output(SMD_RESISTOR_4, 32)
                 .buildAndRegister();
@@ -138,7 +129,7 @@ public class SMD {
                 .input(round, Neutronium, 2)
                 .input(springSmall, Taranium, 4)
                 .input(bolt, SuperheavyL, 4)
-                .input(nanoWire, Vibranium, 32)
+                .input(nanowire, Vibranium, 32)
                 .fluidInputs(Gluons.getFluid(250))
                 .output(SMD_RESISTOR_5, 32)
                 .buildAndRegister();
@@ -189,7 +180,7 @@ public class SMD {
                 .input(bolt, TriniumSteel, 4)
                 .input(plate, LeadZirconateTitanate, 2)
                 .input(GRAPHENE_ALUMINOSILICATE_AEROGEL, 2)
-                .input(nanoWire, Samarium, 32)
+                .input(nanowire, Samarium, 32)
                 .fluidInputs(XenonFluorideSupercondiveMix.getFluid(10))
                 .output(SMD_CAPACITOR_4, 32)
                 .buildAndRegister();
@@ -200,8 +191,8 @@ public class SMD {
                 .input(plate, Copper, 2)
                 .input(dust, Cobalt60, 2)
                 .input(bolt, SuperheavyH, 2)
-                .input(nanoWire, HeavyQuarkDegenerate, 16)
-                .input(nanoWire, Taranium, 16)
+                .input(nanowire, HeavyQuarkDegenerate, 16)
+                .input(nanowire, Taranium, 16)
                 .fluidInputs(Leptons.getFluid(50))
                 .output(SMD_CAPACITOR_5, 32)
                 .buildAndRegister();
@@ -250,7 +241,7 @@ public class SMD {
                 .input(dust, GraphenePQD, 2)
                 .input(foil, PedotTMA, 2)
                 .input(ring, NihoniumTriiodide)
-                .input(nanoWire, Adamantium, 32)
+                .input(nanowire, Adamantium, 32)
                 .output(SMD_DIODE_4, 32)
                 .buildAndRegister();
 
@@ -281,7 +272,7 @@ public class SMD {
                 .input(STERILE_POLYMER_FOIL)
                 .input(dust, Meat)
                 .input(ring, HSSE)
-                .input(nanoWire, Gold, 16)
+                .input(nanowire, Gold, 16)
                 .fluidInputs(SterileGrowthMedium.getFluid(50))
                 .output(SMD_INDUCTOR_3, 32)
                 .buildAndRegister();
@@ -292,7 +283,7 @@ public class SMD {
                 .input(bolt, TerfenolD_L, 2)
                 .input(foil, ThalliumCopperChloride, 2)
                 .input(springSmall, Fermium, 2)
-                .input(nanoWire, Adamantium, 32)
+                .input(nanowire, Adamantium, 32)
                 .fluidInputs(PedotPSS.getFluid(144))
                 .output(SMD_INDUCTOR_4, 32)
                 .buildAndRegister();
@@ -304,7 +295,7 @@ public class SMD {
                 .input(foil, SuperheavyH, 4)
                 .input(foil, Fullerene, 4)
                 .input(springSmall, Taranium, 4)
-                .input(nanoWire, Taranium, 32)
+                .input(nanowire, Taranium, 32)
                 .fluidInputs(Leptons.getFluid(50))
                 .output(SMD_INDUCTOR_5, 32)
                 .buildAndRegister();
@@ -349,7 +340,7 @@ public class SMD {
                 .EUt(VA[IV])
                 .input(plate, SynthDiamond)
                 .input(foil, SiliconeRubber)
-                .input(nanoWire, Palladium, 32)
+                .input(nanowire, Palladium, 32)
                 .output(TRANSMON_SUPPORT)
                 .buildAndRegister();
 

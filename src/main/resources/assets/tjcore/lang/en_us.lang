@@ -78,7 +78,7 @@ material.indium_fluoride=Indium Fluoride
 material.bismuth_iridium_oxide=Bismuth Iridium Oxide
 material.heavy_quark_degenerate_matter=Heavy Quark Degenerate
 material.photoluminescent_graphene_quantum_dots=Photoluminsecent Graphene Quantum Dots
-material.synthetic_diamond=Synethic Diamond
+material.synthetic_diamond=Synthetic Diamond
 material.bismuth_telluride=Bismuth Telluride
 material.heavy_quarks=Heavy Quark Mixture
 material.light_quarks=Light Quark Mixture
@@ -198,7 +198,7 @@ metaitem.sintered_sapphire_wafer.name=Sintered Sapphire Wafer
 metaitem.wired_sapphire_wafer.name=Wired Sapphire Wafer
 metaitem.sapphire_wafer.name=Sapphire Wafer
 metaitem.raw_crystal_chip.name=Raw Crystal Chip
-metaitem.sapphire_chip.name=Sealed Crystal Computation Unit
+metaitem.sapphire_chip.name=Sealed Crystal Chip
 metaitem.processed_crystal_wafer.name=Processed Crystal Wafer
 metaitem.crsytal_wafer_prep.name=Crystal Wafer (Prepared)
 metaitem.ruth_coated_crystal_wafer.name=Rutherfordium Wrapped Crystal Wafer
@@ -240,8 +240,8 @@ metaitem.sterile_polymer_foil.name=Sterile Polymer Foil
 metaitem.copper_laminated_epoxid.name=Copper Laminated Epoxy Sheet
 metaitem.electrum_laminated_epoxid.name=Electrum Laminated Epoxy Sheet
 metaitem.germanium_laminated_epoxid.name=Germanium Laminated Epoxy Sheet
-metaitem.laminated_optical_base.name=Laminated Optical
-metaitem.optical_base.name=Optical
+metaitem.laminated_optical_base.name=Laminated Optical Circuit Base
+metaitem.optical_base.name=Optical Circuit Base
 metaitem.
 
 //circuit lang

@@ -1,46 +1,28 @@
 package TJCore.common.recipes;
 
-import gregtech.api.GTValues;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.recipes.RecipeBuilder;
-import gregtech.api.recipes.RecipeMap;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
-import gregtech.api.unification.Elements;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.material.Material;
-import gregtech.api.unification.material.Materials;
-import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.ItemMaterialInfo;
 import gregtech.api.unification.stack.MaterialStack;
-import gregtech.api.unification.stack.UnificationEntry;
-import gregtech.common.metatileentities.MetaTileEntities;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidStack;
-import org.omg.CORBA.PUBLIC_MEMBER;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import static TJCore.api.TJOreDictionaryLoader.*;
 import static TJCore.api.material.TJMaterials.*;
 import static TJCore.common.metaitem.TJMetaItems.*;
-import static TJCore.common.metatileentities.TJMetaTileEntities.MODULAR_TURBINE;
-import static TJCore.common.metatileentities.TJMetaTileEntities.PRIMITIVE_TREE_FARMER;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static TJCore.common.recipes.recipemaps.TJRecipeMaps.*;
-import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.ModHandler.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
-import static gregtech.common.metatileentities.MetaTileEntities.WOODEN_CRATE;
 
 //import static gregtech.loaders.recipe.CraftingComponent.*;
 
@@ -66,8 +48,8 @@ public class GTComponents {
     private static final Material[] lube = new Material[]{Lubricant, Lubricant, Lubricant, Lubricant, Lubricant, TriphenylPhosphine, TriphenylPhosphine, TriphenylPhosphine, TriphenylPhosphine, SuspendedPGQD, SuspendedPGQD, SuspendedPGQD, SuspendedPGQD, Leptons};
     private static final Material[] rubbers = new Material[]{Rubber, SiliconeRubber, StyreneButadieneRubber};
     public static final Material[] fluidPipes = new Material[]{SilicaCeramic, Potin, Polyethylene, Chrome, Polytetrafluoroethylene, Iridium, Polybenzimidazole, NiobiumTitanium, Duranium, HDCS_1, HDCS_2, HDCS_3, TantalumHafniumSeaborgiumCarboNitride};
-    public static final ItemStack[] emitterGem = new ItemStack[]{OreDictUnifier.get(gem, Quartzite),OreDictUnifier.get(gem, NetherQuartz),OreDictUnifier.get(gemFlawless, CertusQuartz),OreDictUnifier.get(gemFlawless, Diamond),OreDictUnifier.get(gemExquisite, Diamond),OreDictUnifier.get(foil, Platinum,64),OreDictUnifier.get(foil, Osmiridium, 64),OreDictUnifier.get(foil, Phosphorene, 64),OreDictUnifier.get(foil, Graphene, 64),OreDictUnifier.get(nanoFoil, Chrome, 64),OreDictUnifier.get(nanoFoil, Palladium, 64),OreDictUnifier.get(nanoFoil, NaquadahEnriched, 64),OreDictUnifier.get(nanoFoil, Trinium, 64)};
-    public static final ItemStack[] sensorGem = new ItemStack[]{OreDictUnifier.get(gem, Olivine),OreDictUnifier.get(gem, Emerald),OreDictUnifier.get(gem, Ruby),OreDictUnifier.get(gem, Sapphire),OreDictUnifier.get(gem, Opal),OreDictUnifier.get(foil, Electrum, 64),OreDictUnifier.get(foil, Ruthenium, 64),OreDictUnifier.get(foil, Naquadah, 64),OreDictUnifier.get(foil, Rutherfordium, 64),OreDictUnifier.get(nanoFoil, Germanium, 64),OreDictUnifier.get(nanoFoil, Americium, 64),OreDictUnifier.get(nanoFoil, Seaborgium, 64),OreDictUnifier.get(nanoFoil, Vibranium, 64)};
+    public static final ItemStack[] emitterGem = new ItemStack[]{OreDictUnifier.get(gem, Quartzite),OreDictUnifier.get(gem, NetherQuartz),OreDictUnifier.get(gemFlawless, CertusQuartz),OreDictUnifier.get(gemFlawless, Diamond),OreDictUnifier.get(gemExquisite, Diamond),OreDictUnifier.get(foil, Platinum,64),OreDictUnifier.get(foil, Osmiridium, 64),OreDictUnifier.get(foil, Phosphorene, 64),OreDictUnifier.get(foil, Graphene, 64),OreDictUnifier.get(nanofoil, Chrome, 64),OreDictUnifier.get(nanofoil, Palladium, 64),OreDictUnifier.get(nanofoil, NaquadahEnriched, 64),OreDictUnifier.get(nanofoil, Trinium, 64)};
+    public static final ItemStack[] sensorGem = new ItemStack[]{OreDictUnifier.get(gem, Olivine),OreDictUnifier.get(gem, Emerald),OreDictUnifier.get(gem, Ruby),OreDictUnifier.get(gem, Sapphire),OreDictUnifier.get(gem, Opal),OreDictUnifier.get(foil, Electrum, 64),OreDictUnifier.get(foil, Ruthenium, 64),OreDictUnifier.get(foil, Naquadah, 64),OreDictUnifier.get(foil, Rutherfordium, 64),OreDictUnifier.get(nanofoil, Germanium, 64),OreDictUnifier.get(nanofoil, Americium, 64),OreDictUnifier.get(nanofoil, Seaborgium, 64),OreDictUnifier.get(nanofoil, Vibranium, 64)};
     public static final Material[] emitterMaterial = new Material[]{Brass, Electrum, Silicon, Chrome, Thulium, Palladium, Rhenium, Fermium, NaquadahEnriched, Tritanium, Trinium, Nihonium, Taranium};
     //public static final Material[] a = new Material[]{};
     //public static final Material[] a = new Material[]{};
@@ -388,8 +370,8 @@ public class GTComponents {
             builder.input(cableGtQuadruple, cableElectric[i], 8);
 
             for (int j = i-8; j > 0; j--) {
-                builder.input(nanoWire, motorWires[i], 64);
-                builder.input(nanoWire, motorWires[i], 64);
+                builder.input(nanowire, motorWires[i], 64);
+                builder.input(nanowire, motorWires[i], 64);
             }
             builder.buildAndRegister();
 
