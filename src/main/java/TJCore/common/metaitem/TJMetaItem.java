@@ -306,18 +306,43 @@ public class    TJMetaItem extends StandardMetaItem {
         RAW_SAPPHIRE_CHIP = addItem(615, "raw_crystal_chip");
         SAPPHIRE_CHIP = addItem(616,"sapphire_chip");
 
+        //Quantum CPU
+        EVACUATED_SYNTHETIC_DIAMOND = addItem(617, "evacuated_synthetic_diamond");
+        ANNEALED_NVC_PREPARATION = addItem(618, "annealed_nvc_prep");
+        STRESSED_NVC_SHEET = addItem(619, "stressed_nvc_sheet");
+        NVC_CHIP = addItem(620, "nvc_chip");
+        RABI_SENSOR = addItem(621,"rabi_sensor");
+        NVC_SENSOR = addItem(622, "nvc_sensor");
+        NVC_STORAGE_MODULE = addItem(623, "nvc_storage_module");
+        LAYERED_DATA_TRANSFER_PCB = addItem(624, "layered_data_pcb");
+        DATA_TRANSFER_MASK = addItem(625, "data_mask");
+        MASKED_DATA_TRANSFER_PCB = addItem(626, "masked_data_pcb");
+        ETCHED_MASKED_DATA_TRANSFER_PCB = addItem(627, "etched_masked_data_pcb");
+        ETCHED_DATA_TRANSFER_PCB = addItem(628, "etched_data_pcb");
+        UNITARY_MAPPING_SHEET = addItem(629, "unitary_mapping_sheet");
+        UNITARY_MEASUREMENT_MODULE = addItem(630, "unitary_measurement_module");
+        ANYON_BIT_REGISTER = addItem(631, "anyon_bit_register");
+        WAVEFORM_LOGISTICS_BRIDGE = addItem(632, "waveform_logistics_bridge");
+        SMALL_GAAS_WAFER = addItem(633, "small_gallium_arsenide_wafer");
+        FRACTIONAL_HALL_WAFER = addItem(634, "fractional_hall_wafer");
+        FRACTIONAL_HALL_CHIP = addItem(635, "fractional_hall_chip");
+        FRACTIONAL_HALL_COMPLEX = addItem(636, "fractional_hall_complex");
+        NON_ABELIAN_ANYON_STRANDPLATE = addItem(637, "anyon_strandplate");
+        MAGNETIC_STRANDPLATE_FORM = addItem(638, "magnetic_strandplate_form");
+        PRECISION_MAG_STIMULATION_SHEET = addItem(639, "magnetic_stimulation_sheet");
+        ANYON_BRAIDING_STRUCTURE = addItem(640, "anyon_braiding_structure");
+        QUANTUM_CPU = addItem(641, "quantum_cpu");
 
-        WETWARE_CPU = addItem(620, "wetware_cpu");
 
-        BIOWARE_CPU = addItem(621, "bioware_cpu");
+        WETWARE_CPU = addItem(995, "wetware_cpu");
 
-        QUANTUM_CPU = addItem(622, "quantum_cpu");
+        BIOWARE_CPU = addItem(996, "bioware_cpu");
 
-        EXOTIC_CPU = addItem(623, "exotic_cpu");
+        EXOTIC_CPU = addItem(997, "exotic_cpu");
 
-        COSMIC_CPU = addItem(624, "cosmic_cpu");
+        COSMIC_CPU = addItem(998, "cosmic_cpu");
 
-        SUPRA_CPU = addItem(625, "supra_cpu");
+        SUPRA_CPU = addItem(999, "supra_cpu");
 
         // Chemistry Intermediates (1000-1249)
         SPUN_POLYACRYLONITRILE = addItem(1000,"spun_polyacrylonitrile");
@@ -340,7 +365,11 @@ public class    TJMetaItem extends StandardMetaItem {
         STEAM_PISTON = addItem(1301, "steam_piston");
         STEAM_PUMP = addItem(1302, "steam_pump");
         CLEANROOM_FILTER = addItem(1303, "cleanroom_filter");
-        SUPERCOOLING_ASSEMBLY = addItem(1304, "supercooling_assembly");
+        MICROTUBE_INVERSE_FORM = addItem(1304, "microtube_inverse_form");
+        COPPER_MICROTUBE_MATRIX = addItem(1305, "copper_microtube_matrix");
+        SUPERCOOLING_RADIATOR = addItem(1305, "supercooling_radiator");
+        SUPERCOOLING_ASSEMBLY = addItem(1307, "supercooling_assembly");
+        SUPERCOOLING_PORT = addItem(1308, "supercooling_port");
 
         // Material Processing Intermediates (1500-)
         ALUMINA_MOLD = addItem(1500, "alumina_mold");

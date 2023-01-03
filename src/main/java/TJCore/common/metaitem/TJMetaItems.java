@@ -258,20 +258,13 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem SUPRA_MAINFRAME_ALL;
 
     public static MetaItem<?>.MetaValueItem STENCILING_CUTHEAD;
-
-
-    //Micro-Nano PCB ITEMS
     public static MetaItem<?>.MetaValueItem COPPER_LAMINATED_EPOXID;
     public static MetaItem<?>.MetaValueItem ELECTRUM_LAMINATED_EPOXID;
     public static MetaItem<?>.MetaValueItem GERMANIUM_LAMINATED_EPOXID;
     public static MetaItem<?>.MetaValueItem FIBERGLASS_MESH;
-
-    //Optical PCB ITEMS
     public static MetaItem<?>.MetaValueItem ZBLANMATRIX;
     public static MetaItem<?>.MetaValueItem OPTICAL_BASE;
     public static MetaItem<?>.MetaValueItem LAMINATED_OPTICAL_BASE;
-
-    //Cystal Chip ITEMS
     public static MetaItem<?>.MetaValueItem SAPPHIRE_WAFER;
     public static MetaItem<?>.MetaValueItem COATED_SAPPHIRE_WAFER;
     public static MetaItem<?>.MetaValueItem DIRTY_COATED_SAPPHIRE_WAFER;
@@ -286,9 +279,6 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem WIRED_SAPPHIRE_WAFER;
     public static MetaItem<?>.MetaValueItem RAW_SAPPHIRE_CHIP;
     public static MetaItem<?>.MetaValueItem SAPPHIRE_CHIP;
-
-    // Crystal PCB Items
-
     public static MetaItem<?>.MetaValueItem PROCESSED_CRYSTAL_WAFER;
     public static MetaItem<?>.MetaValueItem CRYSTAL_SFET_BUNDLE;
     public static MetaItem<?>.MetaValueItem CRYSTAL_SFET_WAFER;
@@ -296,16 +286,9 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem REFLECTING_SHEET;
     public static MetaItem<?>.MetaValueItem LAMINATED_CRYSTAL_PCB_SHEET;
     public static MetaItem<?>.MetaValueItem GAMMA_EMITTING_DIODE;
-
-    // Electronic Chip Items
-
     public static MetaItem<?>.MetaValueItem SIMPLE_SILICON_WAFER;
     public static MetaItem<?>.MetaValueItem SIMPLE_CPU_WAFER;
     public static MetaItem<?>.MetaValueItem SIMPLE_CPU;
-
-    // Wetware PCB Items
-
-    // Misc. SMD ITEMS
     public static MetaItem<?>.MetaValueItem FERROUS_INDUCTOR_CORE;
     public static MetaItem<?>.MetaValueItem TUNGSTEN_INDUCTOR_CORE;
     public static MetaItem<?>.MetaValueItem LANGMUIR_HOUSING;
@@ -338,7 +321,36 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem THIN_WOVEN_CARBON_FIBER;
     public static MetaItem<?>.MetaValueItem CARBON_FIBER_PLATE;
     public static MetaItem<?>.MetaValueItem CARBON_FIBER_FOIL;
+
+    public static MetaItem<?>.MetaValueItem EVACUATED_SYNTHETIC_DIAMOND;
+    public static MetaItem<?>.MetaValueItem ANNEALED_NVC_PREPARATION;
+    public static MetaItem<?>.MetaValueItem STRESSED_NVC_SHEET;
+    public static MetaItem<?>.MetaValueItem NVC_CHIP;
+    public static MetaItem<?>.MetaValueItem RABI_SENSOR;
+    public static MetaItem<?>.MetaValueItem NVC_SENSOR;
+    public static MetaItem<?>.MetaValueItem NVC_STORAGE_MODULE;
+    public static MetaItem<?>.MetaValueItem MICROTUBE_INVERSE_FORM;
+    public static MetaItem<?>.MetaValueItem COPPER_MICROTUBE_MATRIX;
+    public static MetaItem<?>.MetaValueItem SUPERCOOLING_RADIATOR;
     public static MetaItem<?>.MetaValueItem SUPERCOOLING_ASSEMBLY;
+    public static MetaItem<?>.MetaValueItem SUPERCOOLING_PORT;
+    public static MetaItem<?>.MetaValueItem LAYERED_DATA_TRANSFER_PCB;
+    public static MetaItem<?>.MetaValueItem DATA_TRANSFER_MASK;
+    public static MetaItem<?>.MetaValueItem MASKED_DATA_TRANSFER_PCB;
+    public static MetaItem<?>.MetaValueItem ETCHED_MASKED_DATA_TRANSFER_PCB;
+    public static MetaItem<?>.MetaValueItem ETCHED_DATA_TRANSFER_PCB;
+    public static MetaItem<?>.MetaValueItem UNITARY_MAPPING_SHEET;
+    public static MetaItem<?>.MetaValueItem UNITARY_MEASUREMENT_MODULE;
+    public static MetaItem<?>.MetaValueItem ANYON_BIT_REGISTER;
+    public static MetaItem<?>.MetaValueItem WAVEFORM_LOGISTICS_BRIDGE;
+    public static MetaItem<?>.MetaValueItem SMALL_GAAS_WAFER;
+    public static MetaItem<?>.MetaValueItem FRACTIONAL_HALL_WAFER;
+    public static MetaItem<?>.MetaValueItem FRACTIONAL_HALL_CHIP;
+    public static MetaItem<?>.MetaValueItem FRACTIONAL_HALL_COMPLEX;
+    public static MetaItem<?>.MetaValueItem NON_ABELIAN_ANYON_STRANDPLATE;
+    public static MetaItem<?>.MetaValueItem MAGNETIC_STRANDPLATE_FORM;
+    public static MetaItem<?>.MetaValueItem PRECISION_MAG_STIMULATION_SHEET;
+    public static MetaItem<?>.MetaValueItem ANYON_BRAIDING_STRUCTURE;
 
     // Material Items
 
