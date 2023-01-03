@@ -43,18 +43,18 @@ public class    TJMetaItem extends StandardMetaItem {
         SMD_TRANSISTOR_5 = addItem(22, "component.smd_transistor_5").setUnificationData(OrePrefix.component, Component.Transistor);
         SMD_CAPACITOR_5 = addItem(24, "component.smd_capacitor_5").setUnificationData(OrePrefix.component, Component.Capacitor);
         SMD_INDUCTOR_5 = addItem(25, "component.smd_inductor_5").setUnificationData(OrePrefix.component, Component.Inductor);
+        SMD_DIODE_5 = addItem(26, "component.smd_diode_5").setUnificationData(OrePrefix.component, Component.Diode);
+        // Misc. SMD ITEMS (27-49)
 
-        // Misc. SMD ITEMS (26-49)
-
-        FERROUS_INDUCTOR_CORE = addItem(26, "ferrous_inductor_core");
-        TUNGSTEN_INDUCTOR_CORE = addItem(27,"tungsten_inductor_core");
-        LANGMUIR_OSCILATOR = addItem(28, "langmuir_wave_oscilator");
-        LANGMUIR_HOUSING = addItem(29, "langmuir_qbit_housing");
-        SQUID_BASE = addItem(30, "squid_base");
-        TRANSMON_SUPPORT = addItem(31, "transmon_support_system");
-        GRAPHENE_ALUMINOSILICATE_AEROGEL = addItem(32, "graphene_aluminosilicate_aerogel");
-        LAYERED_POLYMER_FOIL = addItem(33, "layered_polyer_foil");
-        STERILE_POLYMER_FOIL = addItem(34, "sterile_polymer_foil");
+        FERROUS_INDUCTOR_CORE = addItem(27, "ferrous_inductor_core");
+        TUNGSTEN_INDUCTOR_CORE = addItem(28,"tungsten_inductor_core");
+        LANGMUIR_OSCILATOR = addItem(29, "langmuir_wave_oscilator");
+        LANGMUIR_HOUSING = addItem(30, "langmuir_qbit_housing");
+        SQUID_BASE = addItem(31, "squid_base");
+        TRANSMON_SUPPORT = addItem(32, "transmon_support_system");
+        GRAPHENE_ALUMINOSILICATE_AEROGEL = addItem(33, "graphene_aluminosilicate_aerogel");
+        LAYERED_POLYMER_FOIL = addItem(34, "layered_polyer_foil");
+        STERILE_POLYMER_FOIL = addItem(35, "sterile_polymer_foil");
 
         //Boards & Preboards (50-99)
         PRIMITIVE_PREBOARD = addItem(50, "primitive_preboard");
@@ -340,6 +340,7 @@ public class    TJMetaItem extends StandardMetaItem {
         STEAM_PISTON = addItem(1301, "steam_piston");
         STEAM_PUMP = addItem(1302, "steam_pump");
         CLEANROOM_FILTER = addItem(1303, "cleanroom_filter");
+        SUPERCOOLING_ASSEMBLY = addItem(1304, "supercooling_assembly");
 
         // Material Processing Intermediates (1500-)
         ALUMINA_MOLD = addItem(1500, "alumina_mold");

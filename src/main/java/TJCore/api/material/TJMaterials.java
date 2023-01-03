@@ -39,6 +39,7 @@ public class TJMaterials {
     //Isotopes
     public static final Element Co60 = Elements.add(27L, 33L, -1L, (String)null, "Cobalt-60", "Co-60", true);
     public static Material Cobalt60;
+    public static Material SuperfluidHelium3;
 
     //Alloys
     public static Material BT6;

@@ -55,6 +55,7 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem SMD_DIODE_2;
     public static MetaItem<?>.MetaValueItem SMD_DIODE_3;
     public static MetaItem<?>.MetaValueItem SMD_DIODE_4;
+    public static MetaItem<?>.MetaValueItem SMD_DIODE_5;
 
     public static MetaItem<?>.MetaValueItem SMD_CAPACITOR_1;
     public static MetaItem<?>.MetaValueItem SMD_CAPACITOR_2;
@@ -337,6 +338,7 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem THIN_WOVEN_CARBON_FIBER;
     public static MetaItem<?>.MetaValueItem CARBON_FIBER_PLATE;
     public static MetaItem<?>.MetaValueItem CARBON_FIBER_FOIL;
+    public static MetaItem<?>.MetaValueItem SUPERCOOLING_ASSEMBLY;
 
     // Material Items
 

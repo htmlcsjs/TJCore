@@ -775,6 +775,13 @@ public class TJFirstDegreeMaterials {
                 .components(Graphite, 1, Phenol, 1)
                 .build();
 
+        SuperfluidHelium3 = new Material.Builder(25118, "superfluidhelium")
+                .fluid()
+                .colorAverage()
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Helium3, 1)
+                .build();
+
         // SCRIPTS FOR TJCORE HAS 29000-30000
     }
 
@@ -842,6 +849,7 @@ public class TJFirstDegreeMaterials {
         Pikyonium.addFlags(GENERATE_FINE_WIRE);
         PlutoniumPhosphide.addFlags(GENERATE_NANOFOIL);
         PolystyreneSulfonate.addFlags(GENERATE_FOIL);
+        Praseodymium.addFlags(GENERATE_NANOWIRE);
         PraseodymiumDopedZBLANGlass.addFlags(GENERATE_FOIL, GENERATE_FINE_WIRE);
         ProgrammableMatter.addFlags(GENERATE_PLATE, GENERATE_FRAME, GENERATE_LONG_ROD);
         RhodiumPlatedPalladium.addFlags(GENERATE_FRAME);
@@ -864,64 +872,65 @@ public class TJFirstDegreeMaterials {
         ZBLANGlass.addFlags(GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW);
 
         //Properties
-        Thulium.setProperty(PropertyKey.INGOT, new IngotProperty());
-        Terbium.setProperty(PropertyKey.INGOT, new IngotProperty());
-        Bohrium.setProperty(PropertyKey.INGOT, new IngotProperty());
-        HeavyQuarkDegenerate.setProperty(PropertyKey.ITEM_PIPE, new ItemPipeProperties());
-        Rutherfordium.setProperty(PropertyKey.ITEM_PIPE, new ItemPipeProperties());
-        Oganesson.setProperty(PropertyKey.INGOT, new IngotProperty());
-        Tennessine.setProperty(PropertyKey.INGOT, new IngotProperty());
-        WireProperties OgTs4 = new WireProperties(536870912, 2, 256);
-        OganessonTetraTennesside.setProperty(PropertyKey.WIRE, OgTs4);
-        Livermorium.setProperty(PropertyKey.FLUID, new FluidProperty());
-        Livermorium.setProperty(PropertyKey.INGOT, new IngotProperty());
-        PlasmaProperty HQDPlasmaProp = new PlasmaProperty();
-        HeavyQuarkDegenerate.setProperty(PropertyKey.PLASMA, HQDPlasmaProp);
-        IngotProperty TaraniumIngotProp = new IngotProperty();
-        WireProperties TaraniumWireProp = new WireProperties(134217728, 2, 64);
-        Taranium.setProperty(PropertyKey.INGOT, TaraniumIngotProp);
-        Taranium.setProperty(PropertyKey.WIRE, TaraniumWireProp);
-        WireProperties NihoniumTriiodideProp = new WireProperties(33554432, 2, 64);
-        NihoniumTriiodide.setProperty(PropertyKey.WIRE, NihoniumTriiodideProp);
-        WireProperties SuperheavyHProp = new WireProperties(536870912, 4, 128);
-        SuperheavyH.setProperty(PropertyKey.WIRE, SuperheavyHProp);
-        WireProperties NeutroniumProp = new WireProperties(2147483647, 4,0);
-        Neutronium.setProperty(PropertyKey.WIRE, NeutroniumProp);
-        FluidPipeProperties bt6FluidPipeProps = new FluidPipeProperties(1500, 36, false, true, false, false);
-        BT6.setProperty(PropertyKey.FLUID_PIPE, bt6FluidPipeProps);
-        WireProperties BlueSteelWireProps = new WireProperties(512, 2, 6);
-        BlueSteel.setProperty(PropertyKey.WIRE, BlueSteelWireProps);
-        FluidPipeProperties bluesteelFluidPipeProps = new FluidPipeProperties(1500, 30, false, true, false, false);
-        BlueSteel.setProperty(PropertyKey.FLUID_PIPE, bluesteelFluidPipeProps);
-        WireProperties EnrichedNaqAlloyProps = new WireProperties(2097152, 2, 48);
-        EnrichedNaqAlloy.setProperty(PropertyKey.WIRE, EnrichedNaqAlloyProps);
-        Dysprosium.setProperty(PropertyKey.FLUID, new FluidProperty());
-        FluidPipeProperties birmabrightFluidPipeProps = new FluidPipeProperties(1500, 24, false, true, false, false);
-        Birmabright.setProperty(PropertyKey.FLUID_PIPE, birmabrightFluidPipeProps);
-        FluidPipeProperties silicaCeramicFluidPipeProps = new FluidPipeProperties(350, 18, false, false, false, false);
-        SilicaCeramic.setProperty(PropertyKey.FLUID_PIPE, silicaCeramicFluidPipeProps);
-        FluidPipeProperties PZTPipeProps = new FluidPipeProperties(3200, 46,false,true,true,false);
-        LeadZirconateTitanate.setProperty(PropertyKey.FLUID_PIPE, PZTPipeProps);
-        Fermium.setProperty(PropertyKey.INGOT, new IngotProperty());
-        Dubnium.setProperty(PropertyKey.INGOT, new IngotProperty());
-        Einsteinium.setProperty(PropertyKey.DUST, new DustProperty());
-        Technetium.setProperty(PropertyKey.DUST, new DustProperty());
-        Actinium.setProperty(PropertyKey.DUST, new DustProperty());
-        Astatine.setProperty(PropertyKey.DUST, new DustProperty());
-        Carbon.setProperty(PropertyKey.INGOT, new IngotProperty());
-        Seaborgium.setProperty(PropertyKey.INGOT, new IngotProperty());
-        FluidPipeProperties TaHfSgCNPipeProps = new FluidPipeProperties(3950, 45,true,true, true, true);
-        TantalumHafniumSeaborgiumCarboNitride.setProperty(PropertyKey.FLUID_PIPE, TaHfSgCNPipeProps);
-        WireProperties PikyoniumWireProps = new WireProperties(2097152, 2,12);
-        Pikyonium.setProperty(PropertyKey.WIRE, PikyoniumWireProps);
 
+        FluidPipeProperties PZTPipeProps = new FluidPipeProperties(3200, 46,false,true,true,false);
+        FluidPipeProperties TaHfSgCNPipeProps = new FluidPipeProperties(3950, 45,true,true, true, true);
+        FluidPipeProperties birmabrightFluidPipeProps = new FluidPipeProperties(1500, 24, false, true, false, false);
+        FluidPipeProperties bluesteelFluidPipeProps = new FluidPipeProperties(1500, 30, false, true, false, false);
+        FluidPipeProperties bt6FluidPipeProps = new FluidPipeProperties(1500, 36, false, true, false, false);
+        FluidPipeProperties silicaCeramicFluidPipeProps = new FluidPipeProperties(350, 18, false, false, false, false);
+        IngotProperty TaraniumIngotProp = new IngotProperty();
+        PlasmaProperty HQDPlasmaProp = new PlasmaProperty();
+        WireProperties BlueSteelWireProps = new WireProperties(512, 2, 6);
+        WireProperties EnrichedNaqAlloyProps = new WireProperties(2097152, 2, 48);
+        WireProperties NeutroniumProp = new WireProperties(2147483647, 4,0);
+        WireProperties NihoniumTriiodideProp = new WireProperties(33554432, 2, 64);
+        WireProperties OgTs4 = new WireProperties(536870912, 2, 256);
+        WireProperties PikyoniumWireProps = new WireProperties(2097152, 2,12);
+        WireProperties SuperheavyHProp = new WireProperties(536870912, 4, 128);
+        WireProperties TaraniumWireProp = new WireProperties(134217728, 2, 64);
         FluidPipeProperties HDCS1PipeProps = new FluidPipeProperties(2100, 85,true,true, true, false);
         FluidPipeProperties HDCS2PipeProps = new FluidPipeProperties(2540, 115,true,true, true, false);
         FluidPipeProperties HDCS3PipeProps = new FluidPipeProperties(3280, 145,true,true, true, false);
+
+        Actinium.setProperty(PropertyKey.DUST, new DustProperty());
+        Astatine.setProperty(PropertyKey.DUST, new DustProperty());
+        BT6.setProperty(PropertyKey.FLUID_PIPE, bt6FluidPipeProps);
+        Birmabright.setProperty(PropertyKey.FLUID_PIPE, birmabrightFluidPipeProps);
+        BlueSteel.setProperty(PropertyKey.FLUID_PIPE, bluesteelFluidPipeProps);
+        BlueSteel.setProperty(PropertyKey.WIRE, BlueSteelWireProps);
+        Bohrium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Carbon.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Dubnium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Dysprosium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Einsteinium.setProperty(PropertyKey.DUST, new DustProperty());
+        EnrichedNaqAlloy.setProperty(PropertyKey.WIRE, EnrichedNaqAlloyProps);
+        Fermium.setProperty(PropertyKey.INGOT, new IngotProperty());
         HDCS_1.setProperty(PropertyKey.FLUID_PIPE, HDCS1PipeProps);
         HDCS_2.setProperty(PropertyKey.FLUID_PIPE, HDCS2PipeProps);
         HDCS_3.setProperty(PropertyKey.FLUID_PIPE, HDCS3PipeProps);
-        // becuase of techs foolishness and thinking graphenes are a foile
-        Graphene.addFlags(GENERATE_FOIL);
+        HeavyQuarkDegenerate.setProperty(PropertyKey.ITEM_PIPE, new ItemPipeProperties());
+        HeavyQuarkDegenerate.setProperty(PropertyKey.PLASMA, HQDPlasmaProp);
+        LeadZirconateTitanate.setProperty(PropertyKey.FLUID_PIPE, PZTPipeProps);
+        Livermorium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Livermorium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Neutronium.setProperty(PropertyKey.WIRE, NeutroniumProp);
+        NihoniumTriiodide.setProperty(PropertyKey.WIRE, NihoniumTriiodideProp);
+        Oganesson.setProperty(PropertyKey.INGOT, new IngotProperty());
+        OganessonTetraTennesside.setProperty(PropertyKey.WIRE, OgTs4);
+        Pikyonium.setProperty(PropertyKey.WIRE, PikyoniumWireProps);
+        Praseodymium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Praseodymium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Rutherfordium.setProperty(PropertyKey.ITEM_PIPE, new ItemPipeProperties());
+        Seaborgium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        SilicaCeramic.setProperty(PropertyKey.FLUID_PIPE, silicaCeramicFluidPipeProps);
+        SuperheavyH.setProperty(PropertyKey.WIRE, SuperheavyHProp);
+        TantalumHafniumSeaborgiumCarboNitride.setProperty(PropertyKey.FLUID_PIPE, TaHfSgCNPipeProps);
+        Taranium.setProperty(PropertyKey.INGOT, TaraniumIngotProp);
+        Taranium.setProperty(PropertyKey.WIRE, TaraniumWireProp);
+        Technetium.setProperty(PropertyKey.DUST, new DustProperty());
+        Tennessine.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Terbium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Thulium.setProperty(PropertyKey.INGOT, new IngotProperty());
     }
 }
