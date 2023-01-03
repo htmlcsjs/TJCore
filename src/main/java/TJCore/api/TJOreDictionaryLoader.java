@@ -1,34 +1,44 @@
 package TJCore.api;
 
 import TJCore.TJValues;
-import TJCore.api.material.TJMaterials;
 import TJCore.api.material.materials.info.TJMaterialIconTypes;
 import com.brandon3055.draconicevolution.DEFeatures;
 import gregtech.api.GTValues;
 import gregtech.api.items.materialitem.MetaPrefixItem;
+import gregtech.api.recipes.RecipeMaps;
+import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Material;
-import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.material.info.MaterialFlag;
-import gregtech.api.unification.material.properties.FluidProperty;
+import gregtech.api.unification.material.properties.DustProperty;
 import gregtech.api.unification.material.properties.IngotProperty;
 import gregtech.api.unification.material.properties.PropertyKey;
 import gregtech.api.unification.ore.OrePrefix;
+import gregtech.common.items.MetaItems;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Optional;
 import net.minecraftforge.oredict.OreDictionary;
-import org.jline.builtins.Nano;
+
+import java.util.Arrays;
 
 import static TJCore.common.recipes.recipemaps.TJRecipeMaps.NANOSCALE_GROWTH_RECIPES;
-import static gregtech.api.GTValues.VA;
-import static gregtech.api.GTValues.ZPM;
-import static gregtech.api.unification.material.Materials.*;
+import static TJCore.api.material.TJMaterials.doNotGenerate;
+import static gregtech.api.GTValues.*;
+import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.ore.OrePrefix.Flags.ENABLE_UNIFICATION;
+import static gregtech.api.unification.ore.OrePrefix.*;
 
 public class TJOreDictionaryLoader {
 
-    public static final OrePrefix nanoWire = new OrePrefix("nanowire", (long)GTValues.M / 144, null, TJMaterialIconTypes.nanoWireIcon, ENABLE_UNIFICATION, null);
-    public static final OrePrefix nanoFoil = new OrePrefix("nanofoil", (long)GTValues.M / 144, null, TJMaterialIconTypes.nanoFoilIcon, ENABLE_UNIFICATION, null);
+    public static final MaterialFlag GENERATE_NANOWIRE = new MaterialFlag.Builder("generate_nanowire")
+            .requireProps(PropertyKey.FLUID)
+            .build();
+
+    public static final MaterialFlag GENERATE_NANOFOIL = new MaterialFlag.Builder("generate_nanofoil")
+            .requireProps(PropertyKey.FLUID)
+            .build();
+    public static final OrePrefix nanowire = new OrePrefix("nanowire", GTValues.M / 144, null, TJMaterialIconTypes.nanoWireIcon, ENABLE_UNIFICATION, material -> ((material.isElement() && material.isSolid() && material.hasFluid() && (!Arrays.toString(doNotGenerate).contains(material.toString()))) || material.hasFlag(GENERATE_NANOWIRE)));
+    public static final OrePrefix nanofoil = new OrePrefix("nanofoil", GTValues.M / 144, null, TJMaterialIconTypes.nanoFoilIcon, ENABLE_UNIFICATION, material -> ((material.isElement() && material.isSolid() && material.hasFluid() && (!Arrays.toString(doNotGenerate).contains(material.toString()))) || material.hasFlag(GENERATE_NANOFOIL)));
 
     public static void init() {
         registerOrePrefixes();
@@ -44,41 +54,38 @@ public class TJOreDictionaryLoader {
         }
     }
 
-    public static final MaterialFlag GENERATE_NANOWIRE = new MaterialFlag.Builder("generate_nanowire")
-            .requireProps(PropertyKey.FLUID)
-            .build();
-
-    public static final MaterialFlag GENERATE_NANOFOIL = new MaterialFlag.Builder("generate_nanofoil")
-            .requireProps(PropertyKey.FLUID)
-            .build();
-
     public static void registerOrePrefixes() {
-        nanoWire.setGenerationCondition(material -> ((material.isElement() && material.isSolid() && material.hasFluid())) || material.hasFlag(  GENERATE_NANOWIRE));
-        createMaterialItem(nanoWire);
-        nanoFoil.setGenerationCondition(material -> ((material.isElement() && material.isSolid() && material.hasFluid())) || material.hasFlag(  GENERATE_NANOFOIL));
-        createMaterialItem(nanoFoil);
+        createMaterialItem(nanowire);
+        createMaterialItem(nanofoil);
 
     }
 
     public static void registerRecipes() {
-        nanoWire.addProcessingHandler(PropertyKey.FLUID, TJOreDictionaryLoader::createNanoGrowthRecipe);
-        nanoFoil.addProcessingHandler(PropertyKey.FLUID, TJOreDictionaryLoader::createNanoGrowthRecipe);
+        nanowire.addProcessingHandler(PropertyKey.INGOT, TJOreDictionaryLoader::processNanoWire);
+        nanofoil.addProcessingHandler(PropertyKey.INGOT, TJOreDictionaryLoader::processNanoFoil);
     }
-
-    public static void createNanoGrowthRecipe(OrePrefix prefix, Material mat, FluidProperty prop) {
-        int cirNum = (prefix == nanoFoil ? 0 : 1);
-        if (mat.hasProperty(PropertyKey.FLUID)) {
+    public static void processNanoFoil(OrePrefix nanoFoilPrefix, Material material, IngotProperty property) {
+        if (material.hasProperty(PropertyKey.FLUID)) {
             NANOSCALE_GROWTH_RECIPES.recipeBuilder()
-                    .circuitMeta(cirNum)
+                    .circuitMeta(1)
                     .duration(40)
                     .EUt(VA[ZPM])
-                    .fluidInputs(mat.getFluid(1))
-                    .output(prefix, mat)
+                    .fluidInputs(material.getFluid(1))
+                    .output(nanoFoilPrefix, material)
                     .buildAndRegister();
-        } else {
-            TJLog.logger.debug("Material: " + mat.getLocalizedName() + " does not have a fluid!");
         }
+    }
 
+    public static void processNanoWire(OrePrefix nanoFoilPrefix, Material material, IngotProperty property) {
+        if (material.hasProperty(PropertyKey.FLUID)) {
+            NANOSCALE_GROWTH_RECIPES.recipeBuilder()
+                    .circuitMeta(0)
+                    .duration(40)
+                    .EUt(VA[ZPM])
+                    .fluidInputs(material.getFluid(1))
+                    .output(nanoFoilPrefix, material)
+                    .buildAndRegister();
+        }
     }
 
     public static void createMaterialItem(OrePrefix orePrefix) {

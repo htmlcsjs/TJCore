@@ -4,12 +4,15 @@ import gregtech.api.unification.Elements;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialFlag;
 
+import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 
 import java.util.*;
 
 
 public class TJMaterials {
+    public static Material[] doNotGenerate = new Material[]{Carbon};
+    public static Material[] longDistanceWireMaterials = new Material[]{Manganese, Bismuth, Antimony, Gallium, Vanadium};
 
     public static List<MaterialFlag> STANDARDPLATE = new ArrayList<MaterialFlag>(Arrays.asList(GENERATE_PLATE, GENERATE_DENSE, EXCLUDE_BLOCK_CRAFTING_BY_HAND_RECIPES));
     public static List<MaterialFlag> STANDARDWIREFINE = new ArrayList<MaterialFlag>(Arrays.asList(GENERATE_FINE_WIRE));
@@ -152,7 +155,7 @@ public class TJMaterials {
     // Mixtures
     public static Material SuspendedPGQD;
     public static Material ArgonSilane;
-    public static Material DiamondCVDSolution;
+    public static Material DiamondSonicationSolution;
     public static Material XenonFluorideSupercondiveMix;
     public static Material P1Solution;
     public static Material TetrakisPDCatalyst;

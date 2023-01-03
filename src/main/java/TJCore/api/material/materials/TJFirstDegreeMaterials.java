@@ -17,7 +17,7 @@ import static gregtech.api.unification.material.info.MaterialFlags.*;
 public class TJFirstDegreeMaterials {
 
     // static material arrays to be used in commonProxy
-    public static Material[] longDistanceWireMaterials = new Material[]{Manganese, Bismuth, Antimony, Gallium, Vanadium};
+
 
 
     public static void registerMaterials(){
@@ -118,11 +118,6 @@ public class TJFirstDegreeMaterials {
         SeleniumMonobromide = new Material.Builder(25016, "seleniummonobromide")
                 .fluid()
                 .color(0x472a1a)
-                .build();
-
-        DiamondCVDSolution = new Material.Builder(25017, "diamondcvdsolution")
-                .fluid()
-                .color(0x65b1fc)
                 .build();
 
         Starlight = new Material.Builder(25019, "starlight")
@@ -773,6 +768,13 @@ public class TJFirstDegreeMaterials {
                 .build()
                 .setFormula("(CH3)4NBr",true);
 
+        DiamondSonicationSolution = new Material.Builder(25117, "diamondsonicationsolution")
+                .fluid()
+                .colorAverage()
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Graphite, 1, Phenol, 1)
+                .build();
+
         // SCRIPTS FOR TJCORE HAS 29000-30000
     }
 
@@ -780,84 +782,86 @@ public class TJFirstDegreeMaterials {
 
         // Glass + Ceramics
         Alumina.addFlags(DISABLE_DECOMPOSITION);
-        SilicaCeramic.addFlags(NO_WORKING, NO_SMELTING, GENERATE_RING, GENERATE_FOIL);
-        Fiberglass.addFlags(GENERATE_FINE_WIRE, GENERATE_FOIL);
-        BismuthTelluride.addFlags(GENERATE_FOIL);
         BismuthIridiumOxide.addFlags(NO_WORKING, NO_SMASHING, GENERATE_PLATE);
-        SodiumPotassiumNiobate.addFlags(GENERATE_FOIL, GENERATE_ROUND);
+        BismuthTelluride.addFlags(GENERATE_FOIL);
+        Fiberglass.addFlags(GENERATE_FINE_WIRE, GENERATE_FOIL);
         LeadZirconateTitanate.addFlags(GENERATE_PLATE, GENERATE_RING);
+        SilicaCeramic.addFlags(NO_WORKING, NO_SMELTING, GENERATE_RING, GENERATE_FOIL);
+        SodiumPotassiumNiobate.addFlags(GENERATE_FOIL, GENERATE_ROUND);
 
         // Polymers
-        Polyetheretherketone.addFlags(GENERATE_PLATE, GENERATE_FOIL);
-        Polybenzimidazole.addFlags(GENERATE_FINE_WIRE);
-        PolyphenyleneSulfide.addFlags(GENERATE_FINE_WIRE);
-        Polytetrafluoroethylene.addFlags(GENERATE_FINE_WIRE, GENERATE_LONG_ROD);
-        PolyvinylChloride.addFlags(GENERATE_FINE_WIRE);
-        Polyethylene.addFlags(GENERATE_FINE_WIRE);
-        ReinforcedEpoxyResin.addFlags(GENERATE_FOIL);
+        CarbonNanotubePolymer.addFlags(GENERATE_FRAME, GENERATE_PLATE, NO_WORKING, NO_SMASHING, NO_SMELTING);
+        Epoxy.addFlags(GENERATE_FOIL);
         PedotPSS.addFlags(GENERATE_FRAME);
         PedotTMA.addFlags(GENERATE_FINE_WIRE);
-        CarbonNanotubePolymer.addFlags(GENERATE_FRAME, GENERATE_PLATE, NO_WORKING, NO_SMASHING, NO_SMELTING);
+        Polybenzimidazole.addFlags(GENERATE_FINE_WIRE);
+        Polyetheretherketone.addFlags(GENERATE_PLATE, GENERATE_FOIL);
+        Polyethylene.addFlags(GENERATE_FINE_WIRE);
+        PolyphenyleneSulfide.addFlags(GENERATE_FINE_WIRE);
+        Polytetrafluoroethylene.addFlags(GENERATE_FINE_WIRE, GENERATE_LONG_ROD);
         PolyvinylButyral.addFlags(GENERATE_FOIL, GENERATE_RING);
-        Epoxy.addFlags(GENERATE_FOIL);
+        PolyvinylChloride.addFlags(GENERATE_FINE_WIRE);
+        ReinforcedEpoxyResin.addFlags(GENERATE_FOIL);
 
         // Metals
-        ProgrammableMatter.addFlags(GENERATE_PLATE, GENERATE_FRAME, GENERATE_LONG_ROD);
-        Palladium.addFlags(GENERATE_BOLT_SCREW, GENERATE_FRAME);
-        WroughtIron.addFlags(GENERATE_BOLT_SCREW, GENERATE_FRAME);
-        NickelPlatedTin.addFlags(GENERATE_FOIL);
-        Silicon.addFlags(GENERATE_ROD);
-        Thulium.addFlags(GENERATE_FOIL, GENERATE_ROD);
-        Chrome.addFlags(GENERATE_FOIL);
-        Brass.addFlags(GENERATE_FOIL, GENERATE_LONG_ROD);
-        Terbium.addFlags(GENERATE_ROD, GENERATE_NANOFOIL);
-        Steel.addFlags(GENERATE_ROUND);
-        HSSG.addFlags(GENERATE_ROUND);
-        Pikyonium.addFlags(GENERATE_FINE_WIRE);
-        OganessonTetraTennesside.addFlags(GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_SPRING);
-        GalvanizedSteel.addFlags(GENERATE_ROUND, GENERATE_FRAME, GENERATE_ROTOR, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_BOLT_SCREW, GENERATE_PLATE, GENERATE_SPRING_SMALL, GENERATE_SPRING, GENERATE_RING);
-        VanadiumGallium.addFlags(GENERATE_FINE_WIRE);
-        TinAlloy.addFlags(GENERATE_FINE_WIRE);
-        Dysprosium.addFlags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_FRAME);
-        Vibranium.addFlags(GENERATE_ROUND, GENERATE_FRAME, GENERATE_BOLT_SCREW, GENERATE_NANOFOIL, GENERATE_ROTOR, GENERATE_LONG_ROD);
-        RhodiumPlatedPalladium.addFlags(GENERATE_FRAME);
-        Duranium.addFlags(GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_NANOFOIL);
-        NihoniumTriiodide.addFlags(GENERATE_FINE_WIRE, GENERATE_RING);
-        Nihonium.addFlags(GENERATE_PLATE, GENERATE_NANOWIRE);
-        SuperheavyH.addFlags(GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW);
-        SuperheavyL.addFlags(GENERATE_LONG_ROD, GENERATE_FRAME, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_RING, GENERATE_BOLT_SCREW);
-        Neutronium.addFlags(GENERATE_ROTOR, GENERATE_FINE_WIRE, GENERATE_FOIL, GENERATE_ROUND);
-        HeavyQuarkDegenerate.addFlags(GENERATE_ROUND, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_NANOWIRE, DISABLE_DECOMPOSITION, NO_SMELTING, NO_SMASHING, NO_WORKING);
-        Taranium.addFlags(GENERATE_BOLT_SCREW, GENERATE_LONG_ROD, GENERATE_SPRING_SMALL, GENERATE_NANOWIRE, GENERATE_FINE_WIRE);
-        TriniumSteel.addFlags(GENERATE_ROUND, GENERATE_FRAME, GENERATE_SPRING, GENERATE_PLATE, GENERATE_BOLT_SCREW);
-        Fermium.addFlags(GENERATE_FOIL, GENERATE_SPRING_SMALL, GENERATE_NANOWIRE);
-        Dubnium.addFlags(GENERATE_FOIL, GENERATE_ROUND, GENERATE_FINE_WIRE, GENERATE_NANOWIRE, GENERATE_LONG_ROD);
-        TerfenolD_L.addFlags(GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_RING, GENERATE_SPRING, GENERATE_BOLT_SCREW, GENERATE_ROTOR);
-        TerfenolD_H.addFlags(GENERATE_FOIL, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_DENSE);
-        EnrichedNaqAlloy.addFlags(GENERATE_LONG_ROD, GENERATE_DENSE, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_ROUND, GENERATE_FRAME);
-        PolystyreneSulfonate.addFlags(GENERATE_FOIL);
-        Nichrome.addFlags(GENERATE_BOLT_SCREW, GENERATE_FINE_WIRE, GENERATE_RING);
-        PlutoniumPhosphide.addFlags(GENERATE_NANOFOIL);
-        ZBLANGlass.addFlags(GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW);
-        ErbiumDopedZBLANGlass.addFlags(GENERATE_FOIL, GENERATE_FINE_WIRE);
-        PraseodymiumDopedZBLANGlass.addFlags(GENERATE_FOIL, GENERATE_FINE_WIRE);
-        Cobalt.addFlags(GENERATE_FINE_WIRE);
-        Carbon.addFlags(GENERATE_FINE_WIRE);
-        Osmium.addFlags(GENERATE_FINE_WIRE, GENERATE_SPRING, GENERATE_SPRING_SMALL);
-        NeodymiumMagnetic.addFlags(GENERATE_FOIL, GENERATE_RING);
-        Rutherfordium.addFlags(GENERATE_FOIL);
         Aluminium.addFlags(GENERATE_ROTOR);
+        Bohrium.addFlags(GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_FOIL, GENERATE_FRAME, GENERATE_DENSE, GENERATE_LONG_ROD);
+        Brass.addFlags(GENERATE_FOIL, GENERATE_LONG_ROD);
+        Carbon.addFlags(GENERATE_FINE_WIRE);
+        Chrome.addFlags(GENERATE_FOIL);
+        ChromiumGermaniumTellurideMagnetic.addFlags(GENERATE_FOIL);
+        Cobalt.addFlags(GENERATE_FINE_WIRE);
         Draconium.addFlags(GENERATE_ROTOR);
-        LutetiumTantalate.addFlags(GENERATE_PLATE, GENERATE_FRAME, GENERATE_RING, GENERATE_ROD, GENERATE_LONG_ROD);
-        Iridrhodruthenium.addFlags(GENERATE_PLATE, GENERATE_FRAME, GENERATE_RING, GENERATE_ROD, GENERATE_LONG_ROD);
-        HEA_1.addFlags(GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_DENSE, GENERATE_ROUND, GENERATE_LONG_ROD);
-        HEA_2.addFlags(GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_DENSE, GENERATE_ROUND, GENERATE_LONG_ROD);
-        HEA_3.addFlags(GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_DENSE, GENERATE_ROUND, GENERATE_LONG_ROD);
+        Dubnium.addFlags(GENERATE_FOIL, GENERATE_ROUND, GENERATE_FINE_WIRE, GENERATE_NANOWIRE, GENERATE_LONG_ROD);
+        Duranium.addFlags(GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_NANOFOIL);
+        Dysprosium.addFlags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_FRAME);
+        EnrichedNaqAlloy.addFlags(GENERATE_LONG_ROD, GENERATE_DENSE, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_ROUND, GENERATE_FRAME);
+        ErbiumDopedZBLANGlass.addFlags(GENERATE_FOIL, GENERATE_FINE_WIRE);
+        Fermium.addFlags(GENERATE_FOIL, GENERATE_SPRING_SMALL, GENERATE_NANOWIRE);
+        GalvanizedSteel.addFlags(GENERATE_ROUND, GENERATE_FRAME, GENERATE_ROTOR, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_BOLT_SCREW, GENERATE_PLATE, GENERATE_SPRING_SMALL, GENERATE_SPRING, GENERATE_RING);
+        Graphene.addFlags(GENERATE_NANOFOIL);
         HDCS_1.addFlags(GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_DENSE, GENERATE_ROUND, GENERATE_SMALL_GEAR, GENERATE_GEAR, GENERATE_ROD, GENERATE_FRAME, GENERATE_LONG_ROD);
         HDCS_2.addFlags(GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_DENSE, GENERATE_ROUND, GENERATE_SMALL_GEAR, GENERATE_GEAR, GENERATE_ROD, GENERATE_FRAME, GENERATE_LONG_ROD);
         HDCS_3.addFlags(GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_DENSE, GENERATE_ROUND, GENERATE_SMALL_GEAR, GENERATE_GEAR, GENERATE_ROD, GENERATE_FRAME, GENERATE_LONG_ROD);
+        HEA_1.addFlags(GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_DENSE, GENERATE_ROUND, GENERATE_LONG_ROD);
+        HEA_2.addFlags(GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_DENSE, GENERATE_ROUND, GENERATE_LONG_ROD);
+        HEA_3.addFlags(GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_DENSE, GENERATE_ROUND, GENERATE_LONG_ROD);
+        HSSG.addFlags(GENERATE_ROUND);
+        HeavyQuarkDegenerate.addFlags(GENERATE_ROUND, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_NANOWIRE, DISABLE_DECOMPOSITION, NO_SMELTING, NO_SMASHING, NO_WORKING);
+        Iridrhodruthenium.addFlags(GENERATE_PLATE, GENERATE_FRAME, GENERATE_RING, GENERATE_ROD, GENERATE_LONG_ROD);
+        LutetiumTantalate.addFlags(GENERATE_PLATE, GENERATE_FRAME, GENERATE_RING, GENERATE_ROD, GENERATE_LONG_ROD);
+        NeodymiumMagnetic.addFlags(GENERATE_FOIL, GENERATE_RING);
+        Neutronium.addFlags(GENERATE_ROTOR, GENERATE_FINE_WIRE, GENERATE_FOIL, GENERATE_ROUND);
+        Nichrome.addFlags(GENERATE_BOLT_SCREW, GENERATE_FINE_WIRE, GENERATE_RING);
+        NickelPlatedTin.addFlags(GENERATE_FOIL);
+        Nihonium.addFlags(GENERATE_PLATE, GENERATE_NANOWIRE);
+        NihoniumTriiodide.addFlags(GENERATE_FINE_WIRE, GENERATE_RING);
+        OganessonTetraTennesside.addFlags(GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_SPRING);
+        Osmium.addFlags(GENERATE_FINE_WIRE, GENERATE_SPRING, GENERATE_SPRING_SMALL);
+        Palladium.addFlags(GENERATE_BOLT_SCREW, GENERATE_FRAME);
+        Pikyonium.addFlags(GENERATE_FINE_WIRE);
+        PlutoniumPhosphide.addFlags(GENERATE_NANOFOIL);
+        PolystyreneSulfonate.addFlags(GENERATE_FOIL);
+        PraseodymiumDopedZBLANGlass.addFlags(GENERATE_FOIL, GENERATE_FINE_WIRE);
+        ProgrammableMatter.addFlags(GENERATE_PLATE, GENERATE_FRAME, GENERATE_LONG_ROD);
+        RhodiumPlatedPalladium.addFlags(GENERATE_FRAME);
+        Rutherfordium.addFlags(GENERATE_FOIL);
         Seaborgium.addFlags(GENERATE_BOLT_SCREW, GENERATE_PLATE, GENERATE_NANOFOIL, GENERATE_FOIL);
-        Bohrium.addFlags(GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_FOIL, GENERATE_FRAME, GENERATE_DENSE, GENERATE_LONG_ROD);
+        Silicon.addFlags(GENERATE_ROD);
+        Steel.addFlags(GENERATE_ROUND);
+        SuperheavyH.addFlags(GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW);
+        SuperheavyL.addFlags(GENERATE_LONG_ROD, GENERATE_FRAME, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_RING, GENERATE_BOLT_SCREW);
+        Taranium.addFlags(GENERATE_BOLT_SCREW, GENERATE_LONG_ROD, GENERATE_SPRING_SMALL, GENERATE_NANOWIRE, GENERATE_FINE_WIRE);
+        Terbium.addFlags(GENERATE_ROD, GENERATE_NANOFOIL);
+        TerfenolD_H.addFlags(GENERATE_FOIL, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_DENSE);
+        TerfenolD_L.addFlags(GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_RING, GENERATE_SPRING, GENERATE_BOLT_SCREW, GENERATE_ROTOR);
+        Thulium.addFlags(GENERATE_FOIL, GENERATE_ROD);
+        TinAlloy.addFlags(GENERATE_FINE_WIRE);
+        TriniumSteel.addFlags(GENERATE_ROUND, GENERATE_FRAME, GENERATE_SPRING, GENERATE_PLATE, GENERATE_BOLT_SCREW);
+        VanadiumGallium.addFlags(GENERATE_FINE_WIRE);
+        Vibranium.addFlags(GENERATE_ROUND, GENERATE_FRAME, GENERATE_BOLT_SCREW, GENERATE_NANOFOIL, GENERATE_ROTOR, GENERATE_LONG_ROD);
+        WroughtIron.addFlags(GENERATE_BOLT_SCREW, GENERATE_FRAME);
+        ZBLANGlass.addFlags(GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW);
 
         //Properties
         Thulium.setProperty(PropertyKey.INGOT, new IngotProperty());

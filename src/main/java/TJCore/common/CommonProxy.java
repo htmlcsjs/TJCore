@@ -26,7 +26,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 import java.util.function.Function;
 
-import static TJCore.api.material.materials.TJFirstDegreeMaterials.longDistanceWireMaterials;
+import static TJCore.api.material.TJMaterials.longDistanceWireMaterials;
 import static TJCore.common.blocks.TJMetaBlocks.*;
 import static gregtech.api.GTValues.V;
 
@@ -71,14 +71,14 @@ public class CommonProxy {
     @SubscribeEvent
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
         TJMetaBlocks.registerOreDict();
+        TJOreDictionaryLoader.registerRecipes();
     }
     
     @SubscribeEvent(priority = EventPriority.LOW)
     public static void init(RegistryEvent.Register<IRecipe> event) {
-        TJOreDictionaryLoader.registerRecipes();
+
         CircuitRecipes.registerCircuits();
         TJComponents.init();
-        MaterialProcessing.registerMaterialProcessing();
         TJPolymers.registerPolymers();
         GTComponents.init();
         PetrochemRecipes.init();
