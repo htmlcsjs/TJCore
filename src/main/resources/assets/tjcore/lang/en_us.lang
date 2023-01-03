@@ -408,7 +408,7 @@ metaitem.component.smd_diode_1.tooltip=Current Restriction
 metaitem.component.smd_diode_2.name=Good SMD Diode
 metaitem.component.smd_diode_2.tooltip=One Way Mirror (Very Small)
 metaitem.component.smd_diode_3.name=Advanced SMD Diode
-metaitem.component.smd_diode_3.tooltip=One-Way Trained Neurons
+metaitem.component.smd_diode_3.tooltip=Unidirectionally Trained Neurons
 metaitem.component.smd_diode_4.name=Extreme SMD Diode
 metaitem.component.smd_diode_4.tooltip=Subatomic Particle Filter
 
