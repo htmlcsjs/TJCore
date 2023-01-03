@@ -1,4 +1,4 @@
-package TJCore.common.recipes;
+package TJCore.common.recipes.circuits;
 
 import TJCore.common.metaitem.TJMetaItem;
 import TJCore.common.metaitem.TJMetaItems;

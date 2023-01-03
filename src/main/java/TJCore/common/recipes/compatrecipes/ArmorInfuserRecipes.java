@@ -1,4 +1,4 @@
-package TJCore.common.recipes;
+package TJCore.common.recipes.compatrecipes;
 
 import TJCore.common.recipes.recipemaps.TJRecipeMaps;
 import com.brandon3055.draconicevolution.DEFeatures;

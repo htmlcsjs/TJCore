@@ -1,4 +1,4 @@
-package TJCore.common.recipes;
+package TJCore.common.recipes.circuits;
 
 import TJCore.common.metaitem.TJMetaItem;
 import TJCore.common.metaitem.TJMetaItems;
@@ -21,7 +21,6 @@ import static TJCore.api.material.TJMaterials.*;
 import static TJCore.common.recipes.recipemaps.TJRecipeMaps.*;
 import static gregicality.science.api.recipes.GCYSRecipeMaps.*;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
-import static gregicality.science.common.items.GCYSMetaItems.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.metatileentity.multiblock.CleanroomType.*;
 import static gregtech.api.recipes.RecipeMaps.*;

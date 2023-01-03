@@ -7,11 +7,11 @@ import TJCore.common.blocks.TJMetaBlocks;
 import TJCore.common.pipelike.BlockCableLongDistance;
 import TJCore.common.pipelike.ItemBlockLongDistanceCable;
 import TJCore.common.recipes.*;
+import TJCore.common.recipes.chains.PetrochemRecipes;
+import TJCore.common.recipes.circuits.CircuitRecipes;
+import TJCore.common.recipes.compatrecipes.ArmorInfuserRecipes;
 import TJCore.common.recipes.polymers.TJPolymers;
-import gregtech.api.GregTechAPI;
 import gregtech.api.block.VariantItemBlock;
-import gregtech.api.unification.material.Material;
-import gregtech.api.unification.material.properties.PropertyKey;
 import gregtech.api.unification.material.properties.WireProperties;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -86,7 +86,6 @@ public class CommonProxy {
         if (Loader.isModLoaded("draconicevolution")) {
             ArmorInfuserRecipes.register();
         }
-        SurfaceRockDrillRecipes.register();
         Ores.RegisterOres();
         MaterialRecipes.register();
         MachineRecipes.registerMachines();

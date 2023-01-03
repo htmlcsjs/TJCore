@@ -1,4 +1,4 @@
-package TJCore.common.recipes;
+package TJCore.common.recipes.chains;
 
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;

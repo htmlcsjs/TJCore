@@ -1,4 +1,4 @@
-package TJCore.common.recipes;
+package TJCore.common.recipes.circuits;
 
 import gregicality.science.api.recipes.GCYSRecipeMaps;
 import gregtech.api.recipes.ModHandler;
