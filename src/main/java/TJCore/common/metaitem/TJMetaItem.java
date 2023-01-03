@@ -367,7 +367,7 @@ public class    TJMetaItem extends StandardMetaItem {
         CLEANROOM_FILTER = addItem(1303, "cleanroom_filter");
         MICROTUBE_INVERSE_FORM = addItem(1304, "microtube_inverse_form");
         COPPER_MICROTUBE_MATRIX = addItem(1305, "copper_microtube_matrix");
-        SUPERCOOLING_RADIATOR = addItem(1305, "supercooling_radiator");
+        SUPERCOOLING_RADIATOR = addItem(1306, "supercooling_radiator");
         SUPERCOOLING_ASSEMBLY = addItem(1307, "supercooling_assembly");
         SUPERCOOLING_PORT = addItem(1308, "supercooling_port");
 
