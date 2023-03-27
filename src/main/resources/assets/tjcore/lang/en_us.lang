@@ -1,8 +1,8 @@
-//oredicts
+# oredicts
 item.material.oreprefix.nanowire=%s Nanowire
 item.material.oreprefix.nanofoil=%s Nanofoil
 
-//tiles
+# tiles
 tile.turbine_bearing.galvanized_bearing.name=Galvanized Steel Turbine Bearing
 tile.turbine_bearing.aluminium_bearing.name=Aluminum Turbine Bearing
 tile.turbine_bearing.stainless_bearing.name=Stainless Steel Turbine Bearing
@@ -14,7 +14,7 @@ tile.turbine_blades.stainless_blades.name=Stainless Steel Turbine Blades
 tile.turbine_blades.titanium_blades.name=Titanium Turbine Blades
 tile.turbine_blades.tungstensteel_blades.name=Tungsteensteel Turbine Blades
 
-//materials
+# materials
 material.bt_6=BT6
 material.birmabright=Birmabright
 material.triphenylphosphine=Triphenyl Phosphine
@@ -96,7 +96,7 @@ item.polyacrylonitrile.dustTiny=Tiny Pile of Polyacrylonitrile Pulp
 item.polyacrylonitrile.dustSmall=Small Pile of Polyacrylonitrile Pulp
 item.polyacrylonitrile.dust=Pile of Polyacrylonitrile Pulp
 
-//machines
+# machines
 tjcore.machine.primitive_tree_farmer.name=Primitive Tree Farm
 tjcore.machine.component_assembler.lv.name=Basic Component Assembler
 tjcore.machine.component_assembler.mv.name=Advanced Component Assembler I
@@ -140,7 +140,10 @@ tjcore.machine.modular_steam_turbine.name=Modular Steam Turbine
 tjcore.modular_steam_turbine.description=The Modular Steam Turbine is your first means of generating power. Supports up to LuV generation through upgrades.
 tjcore.machine.armor_infuser.description=The armor infuser is an advanced machine capable of upgrading Draconic Evolution tools and armor.
 
-// Recipe Maps
+tjcore.machine.creative_rotation=Creative Rotation Source
+tjcore.machine.gearbox=Rotation Gearbox
+
+# Recipe Maps
 recipemap.component_assembler.name=Component Assembler
 recipemap.spinning_machine.name=Spooling Recipes
 recipemap.steam_assembler.name=Steam Component Assembler
@@ -152,7 +155,7 @@ tile.draconic_casing.draconic_casing_normal.name=Draconic Casing
 
 gregtech.machine.component_assembler.tooltip=Steady there
 
-// Metaitems
+# Metaitems
 metaitem.primitive_board.name=Primitive Point to Point PCB
 metaitem.electronic_board.name=Silicate Stenciled PCB
 metaitem.integrated_board.name=Machine Stenciled PCB
@@ -244,7 +247,7 @@ metaitem.laminated_optical_base.name=Laminated Optical Circuit Base
 metaitem.optical_base.name=Optical Circuit Base
 metaitem.
 
-//circuit lang
+# circuit lang
 metaitem.circuit.primitive_ulv.name=Primitive Assembly
 metaitem.circuit.primitive_ulv.tooltip=First ULV Circuit
 metaitem.circuit.primitive_lv.name=Primitive Computer
@@ -369,7 +372,7 @@ metaitem.circuit.supra_max.tooltip=Second and Final MAX Circuit
 metaitem.circuit.supra_all.name=Supra-Causal Mainframe
 metaitem.circuit.supra_all.tooltip=Meme Circuit Lol
 
-//smd lang
+# smd lang
 metaitem.component.smd_capacitor_1.name=Basic SMD Capacitor
 metaitem.component.smd_capacitor_1.tooltip=Basic Energy Storage
 metaitem.component.smd_capacitor_2.name=Good SMD Capacitor
@@ -429,7 +432,7 @@ metaitem.simple_cpu.name=Simple CPU
 metaitem.simple_cpu.tooltip=Good Enough
 metaitem.simple_silicon_wafer.name=Simple Silicon Wafer
 
-//Lithogrpahy
+# Lithogrpahy
 metaitem.silicon_boule.name=Silicon Boule
 metaitem.antimony_doped_silicon_boule.name=Antimony Doped Silicon Boule
 metaitem.boron_doped_silicon_boule.name=Boron Doped Silicon Boule

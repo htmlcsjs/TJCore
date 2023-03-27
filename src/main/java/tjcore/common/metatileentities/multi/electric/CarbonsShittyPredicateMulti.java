@@ -14,6 +14,7 @@ import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeMap;
 import gregtech.api.util.BlockInfo;
 import gregtech.client.renderer.ICubeRenderer;
+import gregtech.client.renderer.texture.Textures;
 import gregtech.common.blocks.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -129,7 +130,7 @@ public class CarbonsShittyPredicateMulti extends RecipeMapMultiblockController {
 
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart iMultiblockPart) {
-        return null;
+        return Textures.BRONZE_PLATED_BRICKS;
     }
 
     @Override
