@@ -1,5 +1,7 @@
 package tjcore.api.material.materials;
 
+import tjcore.api.material.materials.properties.RotationPipeProperties;
+import tjcore.api.material.materials.properties.TJPropertyKey;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialIconSet;
 import gregtech.api.unification.material.properties.*;
@@ -928,5 +930,7 @@ public class TJFirstDegreeMaterials {
         Tennessine.setProperty(PropertyKey.INGOT, new IngotProperty());
         Terbium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Thulium.setProperty(PropertyKey.INGOT, new IngotProperty());
+
+        Steel.setProperty(TJPropertyKey.ROTATION_PIPE, new RotationPipeProperties(60.0f));
     }
 }

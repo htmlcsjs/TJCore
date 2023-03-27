@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
@@ -18,6 +19,9 @@ import tjcore.api.TJOreDictionaryLoader;
 import tjcore.common.blocks.TJMetaBlocks;
 import tjcore.common.pipelike.BlockCableLongDistance;
 import tjcore.common.pipelike.ItemBlockLongDistanceCable;
+import tjcore.common.pipelike.rotation.ItemBlockRotationAxle;
+import tjcore.common.pipelike.rotation.TileEntityRotationAxle;
+import tjcore.common.pipelike.rotation.TileEntityRotationAxleTESR;
 import tjcore.common.recipes.*;
 import tjcore.common.recipes.chains.PetrochemRecipes;
 import tjcore.common.recipes.circuits.CircuitRecipes;
@@ -44,11 +48,13 @@ public class CommonProxy {
         registry.register(DRACONIC_CASING);
         registry.register(TURBINE_BLADES);
         registry.register(BLOCK_BEARING);
+        registry.register(ROTATION_AXLE);
         for (int i = 0; i < longDistanceWireMaterials.length; i++) {
             for (BlockCableLongDistance cable : LONG_DIST_CABLES) {
                 cable.addCableMaterial(longDistanceWireMaterials[i], new WireProperties(Math.toIntExact(V[i + 1]), 4, 0));
             }
         }
+        ClientRegistry.bindTileEntitySpecialRenderer(TileEntityRotationAxle.class, new TileEntityRotationAxleTESR());
     }
     
     @SubscribeEvent
@@ -58,6 +64,7 @@ public class CommonProxy {
         registry.register(createItemBlock(TURBINE_BLADES, VariantItemBlock::new));
         registry.register(createItemBlock(BLOCK_BEARING, VariantItemBlock::new));
         registry.register(createItemBlock(DRACONIC_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(ROTATION_AXLE, ItemBlockRotationAxle::new));
     }
 
     
