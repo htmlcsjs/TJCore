@@ -59,7 +59,7 @@ public class MachineRecipes {
     }
 
     private static void removeOldMachines() {
-        ModHandler.removeRecipes(STEAM_MACERATOR_BRONZE.getStackForm());
+        ModHandler.removeRecipeByOutput(STEAM_MACERATOR_BRONZE.getStackForm());
         removeAllTeirs(TRANSFORMER);
         removeAllTeirs(STEAM_TURBINE);
         removeAllTeirs(MetaTileEntities.HULL);
@@ -80,7 +80,7 @@ public class MachineRecipes {
     private static void removeAllTeirs(MetaTileEntity[] mteIn) {
         for (MetaTileEntity mte: mteIn) {
             if (mte != null) {
-                ModHandler.removeRecipes(mte.getStackForm());
+                ModHandler.removeRecipeByOutput(mte.getStackForm());
             }
         }
     }
@@ -91,7 +91,7 @@ public class MachineRecipes {
 
         for (int i = 0; i < MAX; i++) {
             if (i < UIV) {
-                ModHandler.removeRecipes(MACHINE_CASING.getItemVariant(machineCasingTypes[i]));
+                ModHandler.removeRecipeByOutput(MACHINE_CASING.getItemVariant(machineCasingTypes[i]));
                 //TODO CEu 2.5.0
 //                if (i != UEV) GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, OreDictUnifier.get(plate, hullMaterialOld[i], 8), IntCircuitIngredient.getIntegratedCircuit(8));
                 //System.out.println("\nDebug- Attempting to remove recipe inputs:\n8x " + hullMaterialOld[i].getLocalizedName() + " plate 8\nIntCircuit Config: 8");
