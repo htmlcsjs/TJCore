@@ -10,6 +10,7 @@ import gregtech.api.unification.material.Material;
 import gregtech.api.unification.stack.ItemMaterialInfo;
 import gregtech.api.unification.stack.MaterialStack;
 import net.minecraft.item.ItemStack;
+import scala.tools.nsc.transform.patmat.Logic;
 
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.GTValues.*;
@@ -78,12 +79,12 @@ public class GTComponents {
                 'G', OreDictUnifier.get(gearSmall, Iron));
 
         ModHandler.addShapedRecipe("steam_piston", STEAM_PISTON.getStackForm(),
-                "DDD", "GSG", "PMP",
-                'D', OreDictUnifier.get(plate, Bronze),
+                "DDD", "GPG", "SRS",
+                'D', OreDictUnifier.get(plate, Iron),
                 'G', OreDictUnifier.get(gearSmall, Iron),
                 'S', OreDictUnifier.get(stick, Iron),
-                'P', OreDictUnifier.get(plate, Iron),
-                'M', STEAM_MOTOR.getStackForm());
+                'P', OreDictUnifier.get(plate, Bronze),
+                'R', OreDictUnifier.get(ring, Bronze));
         ModHandler.addShapedRecipe("steam_motor", STEAM_MOTOR.getStackForm(),
                 "PSP", "IRI", "PSP",
                 'P', OreDictUnifier.get(plate, Bronze),
@@ -96,7 +97,7 @@ public class GTComponents {
         STEAM_COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
                 .EUt(VA[0])
                 .duration(80)
-                .input(wireFine, Copper, 16)
+                .input(wireFine, Copper, 8)
                 .input(cableGtSingle, Tin, 2)
                 .input(stick, Steel, 2)
                 .input(stick, IronMagnetic)

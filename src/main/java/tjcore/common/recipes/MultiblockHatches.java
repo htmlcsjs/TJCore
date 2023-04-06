@@ -12,6 +12,7 @@ import gregtech.common.blocks.BlockMachineCasing;
 import gregtech.common.metatileentities.storage.MetaTileEntityCrate;
 import gregtech.loaders.recipe.CraftingComponent;
 import gregtech.loaders.recipe.MetaTileEntityLoader;
+import scala.tools.nsc.transform.patmat.Logic;
 
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregicality.science.common.items.GCYSMetaItems.*;
@@ -68,6 +69,16 @@ public class MultiblockHatches {
                     IntCircuitIngredient.getIntegratedCircuit(1)
             );
         }
+
+        ModHandler.addShapedRecipe("hand_ulv_coil", voltageCoil[0].getStackForm(),
+                "WWW", "WSW", "WWW",
+                'W', OreDictUnifier.get(wireGtSingle, Lead),
+                'S', OreDictUnifier.get(stick, IronMagnetic));
+
+        ModHandler.addShapedRecipe("hand_lv_coil", voltageCoil[0].getStackForm(),
+                "WWW", "WSW", "WWW",
+                'W', OreDictUnifier.get(wireGtSingle, Tin),
+                'S', OreDictUnifier.get(stick, IronMagnetic));
 
         for (int i = ULV; i < MAX; i++) {
             SPINNING_RECIPES.recipeBuilder()

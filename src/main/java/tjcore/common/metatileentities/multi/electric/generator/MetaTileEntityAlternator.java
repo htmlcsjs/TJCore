@@ -1,5 +1,8 @@
 package tjcore.common.metatileentities.multi.electric.generator;
 
+import codechicken.lib.render.CCRenderState;
+import codechicken.lib.render.pipeline.IVertexOperation;
+import codechicken.lib.vec.Matrix4;
 import gregtech.api.capability.IEnergyContainer;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
@@ -99,7 +102,7 @@ public class MetaTileEntityAlternator extends MultiblockWithDisplayBase implemen
 
     @Override
     protected void updateFormedValid() {
-        outputCap = (float) V[coilTier + 2];
+        outputCap = 2 * (float) V[coilTier + 2];
     }
 
     @NotNull
@@ -190,6 +193,12 @@ public class MetaTileEntityAlternator extends MultiblockWithDisplayBase implemen
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return Textures.HATCH_OVERLAY;
+    }
+
+    @Override
+    public void renderMetaTileEntity(CCRenderState renderState, Matrix4 translation, IVertexOperation[] pipeline) {
+        super.renderMetaTileEntity(renderState, translation, pipeline);
+        this.getFrontOverlay().renderOrientedState(renderState, translation, pipeline, getFrontFacing(), true, true);
     }
 
     @Override
