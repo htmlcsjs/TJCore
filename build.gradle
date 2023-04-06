@@ -1,113 +1,327 @@
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+import org.gradle.api.tasks.testing.logging.TestLogEvent
+
 buildscript {
     repositories {
         mavenCentral()
-        maven {
-            name = 'forge'
-            setUrl 'https://maven.minecraftforge.net/'
+        mavenLocal()
+        if (project.use_mixins.toBoolean()) {
+            maven {
+                name 'MixinGradle Maven'
+                url 'https://repo.spongepowered.org/repository/maven-public'
+            }
         }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3.4'
-        classpath 'org.eclipse.jgit:org.eclipse.jgit:5.8.0.202006091008-r'
-        classpath 'org.apache.commons:commons-lang3:3.12.0'
+        if (project.use_mixins.toBoolean()) {
+            classpath "org.spongepowered:mixingradle:${mixingradle_version}"
+        }
     }
 }
 
-apply plugin: 'net.minecraftforge.gradle.forge'
-apply plugin: 'idea'
+plugins {
+    id 'net.minecraftforge.gradle' version "${forge_gradle_version}"
+    id 'wtf.gofancy.fancygradle' version "${fancy_gradle_version}"
+}
 
-version = project.mod_version
+version = project.version
 group = project.maven_group
-archivesBaseName = project.archives_base_name
+archivesBaseName = "${project.archives_base_name}-${project.minecraft_version}"
 
-sourceCompatibility = targetCompatibility = '1.8'
+java.toolchain.languageVersion = JavaLanguageVersion.of(8)
 
-compileJava {
-    sourceCompatibility = targetCompatibility = '1.8'
+if (project.use_intellij_idea.toBoolean()) {
+    apply {
+        plugin 'java'
+        plugin 'idea'
+    }
+
+    idea {
+        module {
+            downloadJavadoc = true
+            downloadSources = true
+        }
+    }
+}
+
+if (project.use_eclipse.toBoolean()) {
+    apply {
+        plugin 'java'
+        plugin 'eclipse'
+    }
+
+    eclipse {
+        module {
+            downloadJavadoc = true
+            downloadSources = true
+        }
+    }
 }
 
 minecraft {
-    version = '1.12.2-14.23.5.2847'
-    runDir = 'run'
-    mappings = 'stable_39'
+    mappings channel: "${mcp_mappings_channel}", version: "${mcp_mappings_version}"
+
+    if (project.has_access_transformer.toBoolean()) {
+        accessTransformer = file('src/main/resources/META-INF/TJCore_at.cfg')
+    }
+
+    runs {
+        client {
+            //noinspection GroovyAssignabilityCheck
+            workingDirectory project.file('run')
+            if (project.use_coremod.toBoolean()) {
+                jvmArg '-Dfml.coreMods.load=' + coremod_plugin_class_name
+            }
+            if (project.use_mixins.toBoolean()) {
+                jvmArg '-Dmixin.hotSwap=true'
+                jvmArg '-Dmixin.checks.interfaces=true'
+                jvmArg '-Dmixin.debug=true'
+            }
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            environment 'MC_VERSION', minecraft_version.toString()
+        }
+
+        server {
+            //noinspection GroovyAssignabilityCheck
+            workingDirectory project.file('run')
+            if (project.use_coremod.toBoolean()) {
+                jvmArg '-Dfml.coreMods.load=' + coremod_plugin_class_name
+            }
+            if (project.use_mixins.toBoolean()) {
+                jvmArg '-Dmixin.hotSwap=true'
+                jvmArg '-Dmixin.checks.interfaces=true'
+            }
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            environment 'MC_VERSION', minecraft_version.toString()
+        }
+    }
 }
 
 repositories {
     maven {
-        name = 'JEI'
-        url = 'https://dvs1.progwml6.com/files/maven/'
+        name 'Cleanroom Maven'
+        url 'https://maven.cleanroommc.com'
+    }
+    maven { // JEI
+        name 'Progwml6 Maven'
+        url 'https://dvs1.progwml6.com/files/maven/'
+    }
+    maven { // CraftTweaker and JEI Backup
+        name 'BlameJared Maven'
+        url 'https://maven.blamejared.com'
+    }
+    if (project.use_mixins.toBoolean()) {
+        maven {
+            name 'Sponge Maven'
+            url 'https://repo.spongepowered.org/maven'
+        }
     }
     maven {
-        name = 'tterrag maven'
-        url = 'http://maven.tterrag.com/'
-    }
-    maven {
-        name = 'CraftTweaker'
-        url = 'https://maven.blamejared.com/'
-    }
-    maven {
-        name = 'CodeChickenLib'
-        url = 'http://chickenbones.net/maven/'
-    }
-    maven {
-        name = 'CTM'
-        url = 'https://maven.tterrag.com/'
-    }
-    maven {
-        name = 'CurseMaven'
-        url = "https://cursemaven.com"
+        name 'Curse Maven'
+        url 'https://www.cursemaven.com'
+        content {
+            includeGroup 'curse.maven'
+        }
     }
 }
 
 dependencies {
-    // deobfCompile means you can use the mod's code and launch it in game
-    // compileOnly means you can use the mod's code, but do not launch with it in game
-    // runtime means you cannot use the mod's code, and only launch the mod in game
+    implementation 'org.jetbrains:annotations:23.0.0'
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-    // CEu hard dependency
-    deobfCompile 'curse.maven:codechicken-lib-1-8-242818:2779848'
+    // Hard Dependencies
+    // the CCL deobf jar uses very old MCP mappings, making it error at runtime in runClient/runServer
+    // therefore we manually deobf the regular jar
+    implementation fg.deobf("curse.maven:codechicken-lib-1-8-${ccl_pid}:${ccl_fid}")
+    implementation (files("libs/gregtech-1.12.2-${project.gregtech_version}-deobf.jar"))
+    implementation fg.deobf("curse.maven:gregicality-multiblocks-${gcym_pid}:${gcym_fid}")
 
-    // CEu dev environment dependencies
-    deobfCompile 'curse.maven:mixin-booter-419286:4090558'
-    deobfCompile 'curse.maven:groovyscript-687577:4286298'
-    deobfCompile 'CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.680'
-    deobfCompile "team.chisel.ctm:CTM:MC1.12.2-1.0.2.31"
-
-    // CEu and GCY
-    deobfCompile 'curse.maven:gregtech-ce-unofficial-557242:4325257'
-    deobfCompile 'curse.maven:gregicality-multiblocks-564858:4325275'
-
-    // Useful mods
-    compile 'mezz.jei:jei_1.12.2:4.16.1.302'
-    runtime 'mcjty.theoneprobe:TheOneProbe-1.12:1.12-1.4.28-17'
+    // Soft Dependencies
+    implementation "mezz.jei:jei_1.12.2:${project.jei_version}"
+    implementation "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-${project.crt_version}"
+    implementation fg.deobf("curse.maven:top-${top_pid}:${top_fid}")
+    implementation fg.deobf("curse.maven:ctm-${ctm_pid}:${ctm_fid}")
+    implementation fg.deobf("curse.maven:groovyscript-${grs_pid}:${grs_fid}")
+    implementation fg.deobf("curse.maven:ae2-extended-life-${ae2_pid}:${ae2_fid}")
 
     // Draconic Evolution and dependencies
-    deobfCompile 'curse.maven:draconic_evolution-223565:3431261'
-    deobfCompile 'curse.maven:brandons_core-231382:3408276'
-    deobfCompile 'curse.maven:redstone_flux-270789:2920436'
+    implementation fg.deobf("curse.maven:draconic_evolution-${drac_pid}:${drac_fid}")
+    implementation fg.deobf("curse.maven:brandons_core-${bran_pid}:${bran_fid}")
+    implementation fg.deobf("curse.maven:redstone_flux-${rf_pid}:${rf_fid}")
+
+    annotationProcessor "org.jetbrains:annotations:${annotations_version}"
+
+
+    // Tests
+    //testImplementation("org.junit.jupiter:junit-jupiter:${junit_version}")
+    //testImplementation("org.hamcrest:hamcrest:${hamcrest_version}")
+
+    if (project.use_mixins.toBoolean()) {
+        compileOnly "zone.rong:mixinbooter:${mixinbooter_version}"
+        runtimeOnly "zone.rong:mixinbooter:${mixinbooter_version}"
+
+        annotationProcessor "org.spongepowered:mixin:${mixin_annotations_version}:processor"
+    } else {
+        // GroovyScript dependency
+        // remove this if project.use_mixins is true
+        runtimeOnly "zone.rong:mixinbooter:${mixinbooter_version}"
+
+    }
 }
 
+fancyGradle {
+    patches {
+        resources
+        coremods
+        asm
+        codeChickenLib
+    }
+}
+
+processJarTask jar
+
+if (project.build_deobfJar.toBoolean()) {
+    // Create deobf dev jars
+    tasks.register('deobfJar', Jar) {
+        archiveClassifier.set 'deobf'
+        from sourceSets.main.output
+    }
+    processJarTask deobfJar
+}
+
+if (project.build_apiJar.toBoolean()) {
+    // Create API library jar
+    tasks.register('apiJar', Jar) {
+        archiveClassifier.set 'api'
+        from(sourceSets.main.java) {
+            include 'TJCore/api/**'
+        }
+
+        from(sourceSets.main.output) {
+            include 'TJCore/api/**'
+        }
+    }
+}
+
+if (project.build_sourceJar.toBoolean()) {
+    // Create source jar
+    tasks.register('sourcesJar', Jar) {
+        archiveClassifier.set 'sources'
+        from sourceSets.main.allJava
+    }
+}
+
+// Loading resources, works even on IDE client runs
+sourceSets {
+    main {
+        if (project.use_mixins.toBoolean()) {
+            ext.refMap = 'mixins.' + archives_base_name + '.refmap.json'
+        }
+
+        java {
+            srcDirs = ['src/main/java', 'src/api/java']
+        }
+
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+
+    test {
+        java {
+            srcDirs = ['src/test/java']
+        }
+        resources {
+            srcDirs = ['src/test/resources']
+        }
+    }
+
+    // at compile time, put resources in same directories as classes
+    main.output.setResourcesDir(main.java.classesDirectory)
+}
+
+artifacts {
+    if (project.build_deobfJar.toBoolean()) {
+        archives deobfJar
+    }
+    if (project.build_apiJar.toBoolean()) {
+        archives apiJar
+    }
+    if (project.build_sourceJar.toBoolean()) {
+        archives sourcesJar
+    }
+}
+
+// It is important to NOT re-obfuscate jars for the deobfuscated environment.
+// Therefore, we do not finalize the 'jar' task with the 'reobfJar' task.
+// The Forge FG5 example buildscript states otherwise, however it creates broken builds in deobfuscated environments.
+
 processResources {
+    // required to allow file expansion later
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+
     // this will ensure that this task is redone when the versions change.
-    inputs.property 'version', project.version
-    inputs.property 'mcversion', project.minecraft.version
+    inputs.property 'version', version
+    inputs.property 'mcversion', minecraft_version
+
     // replace stuff in mcmod.info, nothing else
     from(sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
+
         // replace version and mcversion
-        expand 'version': project.version, 'mcversion': project.minecraft.version
+        expand(['version': version, 'mcversion': minecraft_version])
     }
-    // copy everything else except the mcmod.info
+
+    // copy everything else except mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
-    rename '(.+_at.cfg)', 'META-INF/$1' // Access Transformers
 }
 
-idea {
-    module {
-        inheritOutputDirs = true
-        setDownloadSources(true)
-        setDownloadJavadoc(true)
+test {
+    testLogging {
+        events TestLogEvent.STARTED, TestLogEvent.PASSED, TestLogEvent.FAILED
+        exceptionFormat TestExceptionFormat.FULL
+        showExceptions true
+        showStackTraces true
+        showCauses true
+        showStandardStreams true
+    }
+
+    useJUnitPlatform()
+}
+
+/**
+ * Applies required processing to jar tasks
+ * @param task the task to process
+ */
+private void processJarTask(task) {
+    task.configure {
+        manifest {
+            // noinspection GroovyAssignabilityCheck
+            def attribute_map = [:]
+            if (project.use_coremod.toBoolean()) {
+                attribute_map['FMLCorePlugin'] = project.coremod_plugin_class_name
+                if (project.include_mod.toBoolean()) {
+                    attribute_map['FMLCorePluginContainsFMLMod'] = true
+                    attribute_map['ForceLoadAsMod'] = project.gradle.startParameter.taskNames[0] == 'build'
+                }
+            }
+            if (project.use_mixins.toBoolean()) {
+                attribute_map['TweakClass'] = 'org.spongepowered.asm.launch.MixinTweaker'
+            }
+            if (project.has_access_transformer.toBoolean()) {
+                attribute_map['FMLAT'] = 'TJCore_at.cfg'
+            }
+            attributes(attribute_map)
+        }
+
+        // exclude all files in src/api from being shipped in the jar
+        // this prevents crashes in obfuscated environments
+        file('src/api/').eachDirRecurse { dir ->
+            exclude dir.name
+        }
     }
 }

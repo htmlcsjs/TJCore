@@ -58,7 +58,7 @@ public class Chips {
     }
 
     private static void vacuumTubes() {
-        ModHandler.removeRecipes(VACUUM_TUBE_COMPONENTS.getStackForm());
+        ModHandler.removeRecipeByOutput(VACUUM_TUBE_COMPONENTS.getStackForm());
         ModHandler.addShapedRecipe("vacuum_tube_components_lead", VACUUM_TUBE_COMPONENTS.getStackForm(),
                 " W ","BFB"," W ",
                 'B', new UnificationEntry(bolt, Steel),

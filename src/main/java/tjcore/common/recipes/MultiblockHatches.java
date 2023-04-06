@@ -55,9 +55,9 @@ public class MultiblockHatches {
 
     private static void registerEnergyHatches() {
 
-        ModHandler.removeRecipes(ENERGY_OUTPUT_HATCH[0].getStackForm());
-        ModHandler.removeRecipes(ENERGY_OUTPUT_HATCH[1].getStackForm());
-        ModHandler.removeRecipes(ENERGY_OUTPUT_HATCH[2].getStackForm());
+        ModHandler.removeRecipeByOutput(ENERGY_OUTPUT_HATCH[0].getStackForm());
+        ModHandler.removeRecipeByOutput(ENERGY_OUTPUT_HATCH[1].getStackForm());
+        ModHandler.removeRecipeByOutput(ENERGY_OUTPUT_HATCH[2].getStackForm());
         MetaTileEntityLoader.registerMachineRecipe(ENERGY_OUTPUT_HATCH, "SCS","WHW","PCP", 'S', POWER_IC, 'C', VOLTAGE_COIL, 'W', CABLE, 'P', PLATE, 'H', CraftingComponent.HULL);
 
         //ULV - UV
@@ -85,10 +85,10 @@ public class MultiblockHatches {
     }
 
     public static void registerMaintance() {
-        ModHandler.removeRecipes(MAINTENANCE_HATCH.getStackForm());
-        ModHandler.removeRecipes(AUTO_MAINTENANCE_HATCH.getStackForm());
-        ModHandler.removeRecipes(CONFIGURABLE_MAINTENANCE_HATCH.getStackForm());
-        ModHandler.removeRecipes(CLEANING_MAINTENANCE_HATCH.getStackForm());
+        ModHandler.removeRecipeByOutput(MAINTENANCE_HATCH.getStackForm());
+        ModHandler.removeRecipeByOutput(AUTO_MAINTENANCE_HATCH.getStackForm());
+        ModHandler.removeRecipeByOutput(CONFIGURABLE_MAINTENANCE_HATCH.getStackForm());
+        ModHandler.removeRecipeByOutput(CLEANING_MAINTENANCE_HATCH.getStackForm());
         ModHandler.addShapedRecipe("maintenance_hatch", MAINTENANCE_HATCH.getStackForm()," d ","SCS"," w ", 'S', OreDictUnifier.get(screw, GalvanizedSteel), 'C', MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.LV) );
         ModHandler.addShapedRecipe("maintenance_hatch_auto", AUTO_MAINTENANCE_HATCH.getStackForm(), " A ","CHC"," W ", 'A', ROBOT_ARM_MV, 'C', new UnificationEntry(circuit, tierCircuitNames[MV]), 'W', CABLE.getIngredient(MV), 'H', MAINTENANCE_HATCH.getStackForm());
         ModHandler.addShapedRecipe("maintenance_hatch_configurable", CONFIGURABLE_MAINTENANCE_HATCH.getStackForm(), " d ","CHC"," w ", 'H', MAINTENANCE_HATCH.getStackForm(), 'C', new UnificationEntry(circuit, tierCircuitNames[LV]));

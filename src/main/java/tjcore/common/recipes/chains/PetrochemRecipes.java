@@ -224,8 +224,8 @@ public class PetrochemRecipes {
 
     public static void machineRecipes() {
         //Removing previous machine recipes
-        ModHandler.removeRecipes(DISTILLATION_TOWER.getStackForm());
-        ModHandler.removeRecipes(CRACKER.getStackForm());
+        ModHandler.removeRecipeByOutput(DISTILLATION_TOWER.getStackForm());
+        ModHandler.removeRecipeByOutput(CRACKER.getStackForm());
         ModHandler.addShapedRecipe("distilation_tower_crafting", DISTILLATION_TOWER.getStackForm(),
                 "PPP","WSW","CHC",
                 'H', MetaTileEntities.HULL[MV].getStackForm(),

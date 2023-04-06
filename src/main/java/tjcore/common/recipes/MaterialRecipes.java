@@ -343,7 +343,7 @@ public class MaterialRecipes {
         GTRecipeHandler.removeRecipesByInputs(ARC_FURNACE_RECIPES, new ItemStack[]{OreDictUnifier.get(foil, material)}, new FluidStack[]{Oxygen.getFluid(gasAmount)});
         GTRecipeHandler.removeRecipesByInputs(MACERATOR_RECIPES, OreDictUnifier.get(foil, material));
         GTRecipeHandler.removeRecipesByInputs(BENDER_RECIPES, OreDictUnifier.get(plate, material), IntCircuitIngredient.getIntegratedCircuit(1));
-        ModHandler.removeRecipes(OreDictUnifier.get(foil, material, 2));
+        ModHandler.removeRecipeByOutput(OreDictUnifier.get(foil, material, 2));
     }
 
     private static void removeDoublePlateDecomp(Material material, int gasAmount) {
@@ -354,8 +354,8 @@ public class MaterialRecipes {
         GTRecipeHandler.removeRecipesByInputs(EXTRUDER_RECIPES, OreDictUnifier.get(dust, material), SHAPE_EXTRUDER_ROD_LONG.getStackForm());
         GTRecipeHandler.removeRecipesByInputs(MACERATOR_RECIPES, OreDictUnifier.get(stickLong, material));
         GTRecipeHandler.removeRecipesByInputs(FORGE_HAMMER_RECIPES, OreDictUnifier.get(stick, material, 2));
-        ModHandler.removeRecipes(OreDictUnifier.get(stickLong, material));
-        ModHandler.removeRecipes(OreDictUnifier.get(stick, material, 2));
+        ModHandler.removeRecipeByOutput(OreDictUnifier.get(stickLong, material));
+        ModHandler.removeRecipeByOutput(OreDictUnifier.get(stick, material, 2));
         GTRecipeHandler.removeRecipesByInputs(EXTRUDER_RECIPES, OreDictUnifier.get(ingot, material), SHAPE_EXTRUDER_ROD_LONG.getStackForm());
         GTRecipeHandler.removeRecipesByInputs(CUTTER_RECIPES, new ItemStack[]{OreDictUnifier.get(stickLong, material)}, new FluidStack[]{Lubricant.getFluid(1)});
         GTRecipeHandler.removeRecipesByInputs(CUTTER_RECIPES, new ItemStack[]{OreDictUnifier.get(stickLong, material)}, new FluidStack[]{DistilledWater.getFluid(3)});
@@ -367,7 +367,7 @@ public class MaterialRecipes {
         GTRecipeHandler.removeRecipesByInputs(MACERATOR_RECIPES, OreDictUnifier.get(gear, material));
         GTRecipeHandler.removeRecipesByInputs(EXTRUDER_RECIPES, OreDictUnifier.get(ingot, material, 4), SHAPE_EXTRUDER_GEAR.getStackForm());
         GTRecipeHandler.removeRecipesByInputs(ALLOY_SMELTER_RECIPES, OreDictUnifier.get(ingot, material, 8), SHAPE_MOLD_GEAR.getStackForm());
-        ModHandler.removeRecipes(OreDictUnifier.get(gear, material));
+        ModHandler.removeRecipeByOutput(OreDictUnifier.get(gear, material));
     }
 
     private static void removeSmallGearDecomp(Material material) {
@@ -375,7 +375,7 @@ public class MaterialRecipes {
         GTRecipeHandler.removeRecipesByInputs(EXTRUDER_RECIPES, OreDictUnifier.get(ingot, material), SHAPE_EXTRUDER_GEAR_SMALL.getStackForm());
         GTRecipeHandler.removeRecipesByInputs(EXTRUDER_RECIPES, OreDictUnifier.get(dust, material), SHAPE_EXTRUDER_GEAR_SMALL.getStackForm());
         GTRecipeHandler.removeRecipesByInputs(ALLOY_SMELTER_RECIPES, OreDictUnifier.get(ingot, material, 2), SHAPE_MOLD_GEAR_SMALL.getStackForm());
-        ModHandler.removeRecipes(OreDictUnifier.get(gearSmall, material));
+        ModHandler.removeRecipeByOutput(OreDictUnifier.get(gearSmall, material));
     }
 
     private static void removePlateDecomp(Material material, int lube, int distilled, int water) {
@@ -401,13 +401,13 @@ public class MaterialRecipes {
 //        GTRecipeHandler.removeRecipesByInputs(ALLOY_SMELTER_RECIPES, OreDictUnifier.get(ingot, material), SHAPE_MOLD_CHUNK.getStackForm()); //TODO Chunks
         GTRecipeHandler.removeRecipesByInputs(ALLOY_SMELTER_RECIPES, OreDictUnifier.get(ingot, material), SHAPE_MOLD_NUGGET.getStackForm());
 //        ModHandler.removeRecipes(OreDictUnifier.get(chunk, material, 4)); //TODO Chunks
-        ModHandler.removeRecipes(OreDictUnifier.get(nugget, material, 9));
-        ModHandler.removeRecipes(OreDictUnifier.get(block, material));
+        ModHandler.removeRecipeByOutput(OreDictUnifier.get(nugget, material, 9));
+        ModHandler.removeRecipeByOutput(OreDictUnifier.get(block, material));
         GTRecipeHandler.removeRecipesByInputs(COMPRESSOR_RECIPES, OreDictUnifier.get(ingot, material, 9));
         GTRecipeHandler.removeRecipesByInputs(COMPRESSOR_RECIPES, OreDictUnifier.get(nugget, material, 9));
 //        GTRecipeHandler.removeRecipesByInputs(COMPRESSOR_RECIPES, OreDictUnifier.get(chunk, material, 4)); //TODO Chunks
-        ModHandler.removeRecipes(OreDictUnifier.get(ingot, material, 9));
-        ModHandler.removeRecipes(OreDictUnifier.get(ingot, material));
+        ModHandler.removeRecipeByOutput(OreDictUnifier.get(ingot, material, 9));
+        ModHandler.removeRecipeByOutput(OreDictUnifier.get(ingot, material));
     }
 
     private static void removeExtruderBlockIngot(Material material) {
@@ -433,7 +433,7 @@ public class MaterialRecipes {
 
     private static void removeRotorDecomp(Material material) {
         GTRecipeHandler.removeRecipesByInputs(MACERATOR_RECIPES, OreDictUnifier.get(rotor, material));
-        ModHandler.removeRecipes(OreDictUnifier.get(rotor, material));
+        ModHandler.removeRecipeByOutput(OreDictUnifier.get(rotor, material));
         GTRecipeHandler.removeRecipesByInputs(EXTRUDER_RECIPES, OreDictUnifier.get(ingot, material, 4), SHAPE_EXTRUDER_ROTOR.getStackForm());
         GTRecipeHandler.removeRecipesByInputs(EXTRUDER_RECIPES, OreDictUnifier.get(dust, material, 4), SHAPE_EXTRUDER_ROTOR.getStackForm());
     }
@@ -441,8 +441,8 @@ public class MaterialRecipes {
     private static void removeBoltScrewDecomp(Material material) {
         GTRecipeHandler.removeRecipesByInputs(MACERATOR_RECIPES, OreDictUnifier.get(bolt, material));
         GTRecipeHandler.removeRecipesByInputs(MACERATOR_RECIPES, OreDictUnifier.get(screw, material));
-        ModHandler.removeRecipes(OreDictUnifier.get(bolt, material, 2));
-        ModHandler.removeRecipes(OreDictUnifier.get(screw, material));
+        ModHandler.removeRecipeByOutput(OreDictUnifier.get(bolt, material, 2));
+        ModHandler.removeRecipeByOutput(OreDictUnifier.get(screw, material));
         GTRecipeHandler.removeRecipesByInputs(LATHE_RECIPES, OreDictUnifier.get(bolt, material));
         GTRecipeHandler.removeRecipesByInputs(CUTTER_RECIPES, new ItemStack[]{OreDictUnifier.get(stick, material)}, new FluidStack[]{Lubricant.getFluid(1)});
         GTRecipeHandler.removeRecipesByInputs(CUTTER_RECIPES, new ItemStack[]{OreDictUnifier.get(stick, material)}, new FluidStack[]{DistilledWater.getFluid(3)});
@@ -457,7 +457,7 @@ public class MaterialRecipes {
     private static void removeRodDecomp(Material material) {
         GTRecipeHandler.removeRecipesByInputs(MACERATOR_RECIPES, OreDictUnifier.get(stick, material));
         GTRecipeHandler.removeRecipesByInputs(LATHE_RECIPES, OreDictUnifier.get(ingot, material));
-        ModHandler.removeRecipes(OreDictUnifier.get(stick, material));
+        ModHandler.removeRecipeByOutput(OreDictUnifier.get(stick, material));
 
     }
 
