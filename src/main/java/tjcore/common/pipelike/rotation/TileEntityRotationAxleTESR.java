@@ -6,7 +6,8 @@ import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.animation.FastTESR;
-import org.jetbrains.annotations.NotNull;
+
+import javax.annotation.Nonnull;
 
 import static net.minecraft.block.BlockRotatedPillar.AXIS;
 import static org.lwjgl.opengl.GL11.*;
@@ -17,7 +18,7 @@ public class TileEntityRotationAxleTESR extends FastTESR<TileEntityRotationAxle>
     private static final ResourceLocation texture = new ResourceLocation(TJValues.MODID, "textures/entity/axle.png");
 
     @Override
-    public void renderTileEntityFast(@NotNull TileEntityRotationAxle te, double x, double y, double z, float partialTicks, int destroyStage, float partial, BufferBuilder buffer) {
+    public void renderTileEntityFast(@Nonnull TileEntityRotationAxle te, double x, double y, double z, float partialTicks, int destroyStage, float partial, BufferBuilder buffer) {
 
         TileEntityRotationAxle axleRef = (TileEntityRotationAxle) te.getWorld().getTileEntity(te.getPos());
         IBlockState state = te.getWorld().getBlockState(te.getPos());

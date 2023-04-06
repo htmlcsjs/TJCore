@@ -1,5 +1,10 @@
 package tjcore.common.pipelike.rotation;
 
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.world.World;
+import org.lwjgl.Sys;
 import tjcore.api.axle.IRotationConsumer;
 import tjcore.api.axle.IRotationProvider;
 import tjcore.api.axle.ISpinnable;
@@ -37,6 +42,9 @@ import java.util.Map;
 
 import static gregtech.api.unification.ore.OrePrefix.gear;
 import static gregtech.api.unification.ore.OrePrefix.gearSmall;
+import static gregtech.client.renderer.texture.Textures.AIR_VENT_OVERLAY;
+import static gregtech.client.renderer.texture.Textures.BLOWER_OVERLAY;
+import static tjcore.common.TJTextures.*;
 
 public class TileEntityGearbox extends MetaTileEntity implements IRotationProvider, IRotationConsumer {
 
@@ -52,7 +60,6 @@ public class TileEntityGearbox extends MetaTileEntity implements IRotationProvid
 
     public TileEntityGearbox(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId);
-
         for(EnumFacing face : EnumFacing.VALUES) {
             isOutput.put(face, false);
         }
@@ -63,7 +70,6 @@ public class TileEntityGearbox extends MetaTileEntity implements IRotationProvid
     public void consume() {
         float[] torques = new float[inputFaces.size()];
         float[] rpsArray = new float[inputFaces.size()];
-
         float max = 0;
         for(int i = 0; i< inputFaces.size(); i++) {
             torques[i] = inputFaces.get(i).pullTorque();
@@ -71,11 +77,9 @@ public class TileEntityGearbox extends MetaTileEntity implements IRotationProvid
             if(max < rpsArray[i])
                 max = rpsArray[i];
         }
-
         for(int i = 0; i< inputFaces.size(); i++) {
             torque += (torques[i] * (rpsArray[i] / max));
         }
-
         rps = max;
     }
 
@@ -88,10 +92,8 @@ public class TileEntityGearbox extends MetaTileEntity implements IRotationProvid
 
     @Override
     public void joinNet() {
-
         inputFaces.clear();
         outputFaces.clear();
-
         for(EnumFacing face : EnumFacing.VALUES) {
             TileEntity te = getWorld().getTileEntity(getPos().offset(face));
             if(te instanceof TileEntityRotationAxle) {
@@ -115,12 +117,21 @@ public class TileEntityGearbox extends MetaTileEntity implements IRotationProvid
         if(playerIn.getHeldItem(hand).isItemEqual(OreDictUnifier.get(gear, Materials.Steel)) && !isOutput.get(facing)) {
             isOutput.put(facing, true);
             playerIn.getHeldItem(hand).shrink(1);
-        }
-        else if(playerIn.getHeldItem(hand).isItemEqual(OreDictUnifier.get(gearSmall, Materials.Steel)) && isOutput.get(facing)) {
-            isOutput.put(facing, false);
-            playerIn.getHeldItem(hand).shrink(1);
+            scheduleRenderUpdate();
+            markDirty();
         }
         return super.onRightClick(playerIn, hand, facing, hitResult);
+    }
+
+    @Override
+    public boolean onCrowbarClick(EntityPlayer playerIn, EnumHand hand, EnumFacing facing, CuboidRayTraceResult hitResult) {
+        if (isOutput.get(facing)) {
+            isOutput.put(facing, false);
+            playerIn.addItemStackToInventory(OreDictUnifier.get(gear, Materials.Steel));
+            scheduleRenderUpdate();
+            markDirty();
+            return true;
+        } else return false;
     }
 
     @Override
@@ -138,10 +149,12 @@ public class TileEntityGearbox extends MetaTileEntity implements IRotationProvid
 
     @Override
     public void renderMetaTileEntity(CCRenderState renderState, Matrix4 translation, IVertexOperation[] pipeline) {
-        IVertexOperation[] renderPipeline = ArrayUtils.add(pipeline, new ColourMultiplier(GTUtility.convertRGBtoOpaqueRGBA_CL(getPaintingColorForRendering())));
-        Textures.WOOD_WALL.render(renderState, translation, renderPipeline, Cuboid6.full);
-        for (EnumFacing face : EnumFacing.VALUES) {
-            TJTextures.ROTATION_OVERLAY.renderSided(face, renderState, translation, pipeline);
+        super.renderMetaTileEntity(renderState, translation, pipeline);
+        for (EnumFacing f : EnumFacing.VALUES) {
+            GEARBOX.renderSided(f, renderState, translation, pipeline);
+            if (isOutput.get(f)) {
+                ROTATION_OUT.renderOrientedState(renderState, translation, pipeline, f, true, true);
+            }
         }
     }
 
@@ -160,5 +173,21 @@ public class TileEntityGearbox extends MetaTileEntity implements IRotationProvid
     @Override
     protected ModularUI createUI(EntityPlayer entityPlayer) {
         return null;
+    }
+
+    @Override
+    public void readFromNBT(NBTTagCompound data) {
+        for (EnumFacing f : EnumFacing.VALUES) {
+            isOutput.put(f, data.getBoolean(f.toString()));
+        }
+        super.readFromNBT(data);
+    }
+
+    @Override
+    public NBTTagCompound writeToNBT(NBTTagCompound data) {
+        for (EnumFacing f : EnumFacing.VALUES) {
+            data.setBoolean(f.toString(), isOutput.get(f));
+        }
+        return super.writeToNBT(data);
     }
 }

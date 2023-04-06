@@ -1,5 +1,6 @@
 package tjcore.common.metatileentities.axle;
 
+import gregtech.api.metatileentity.multiblock.IMultiblockPart;
 import tjcore.TJValues;
 import tjcore.api.axle.IRotationConsumer;
 import tjcore.api.axle.IRotationProvider;
@@ -41,9 +42,8 @@ public class MetaTileEntityCreativeRotation extends MetaTileEntity implements IR
 
     @Override
     public void renderMetaTileEntity(CCRenderState renderState, Matrix4 translation, IVertexOperation[] pipeline) {
-        IVertexOperation[] renderPipeline = ArrayUtils.add(pipeline, new ColourMultiplier(GTUtility.convertRGBtoOpaqueRGBA_CL(getPaintingColorForRendering())));
-        Textures.VOLTAGE_CASINGS[14].render(renderState, translation, renderPipeline, Cuboid6.full);
         for (EnumFacing face : EnumFacing.VALUES) {
+            Textures.VOLTAGE_CASINGS[14].renderSided(face, renderState, translation, (IVertexOperation[])ArrayUtils.add(pipeline, new ColourMultiplier(GTUtility.convertRGBtoOpaqueRGBA_CL(this.getPaintingColorForRendering()))));
             TJTextures.ROTATION_OVERLAY.renderSided(face, renderState, translation, pipeline);
         }
     }

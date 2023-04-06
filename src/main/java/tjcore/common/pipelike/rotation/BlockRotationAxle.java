@@ -20,8 +20,9 @@ import net.minecraftforge.common.property.IUnlistedProperty;
 import net.minecraftforge.common.property.PropertyFloat;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 public class BlockRotationAxle extends BlockRotatedPillar implements ITileEntityProvider {
     private static final AxisAlignedBB AABB_X = new AxisAlignedBB(0.0D, 0.375D, 0.375D, 1.0D, 0.625D, 0.625D);
@@ -55,7 +56,7 @@ public class BlockRotationAxle extends BlockRotatedPillar implements ITileEntity
     }
 
     @Override
-    public @NotNull AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+    public @Nonnull AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
         switch(state.getValue(AXIS)) {
             case X:
                 return AABB_X;
