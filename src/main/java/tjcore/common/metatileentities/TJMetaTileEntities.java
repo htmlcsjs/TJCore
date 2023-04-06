@@ -11,6 +11,7 @@ import net.minecraft.util.ResourceLocation;
 import tjcore.TJValues;
 import tjcore.common.metatileentities.axle.MetaTileEntityCreativeRotation;
 import tjcore.common.metatileentities.multi.electric.*;
+import tjcore.common.metatileentities.multi.electric.generator.MetaTileEntityAlternator;
 import tjcore.common.metatileentities.multi.electric.generator.MetaTileEntityModularSteamTurbine;
 import tjcore.common.metatileentities.multi.fusion.MegaFusion;
 import tjcore.common.metatileentities.multi.steam.PrimitiveTreeFarmer;
@@ -46,6 +47,7 @@ public class TJMetaTileEntities {
 
     public static MetaTileEntityCreativeRotation CREATIVE_ROTATION;
     public static MetaTileEntityGearbox GEARBOX;
+    public static MetaTileEntityAlternator ALTERNATOR;
 
     public static Loom LOOM;
 
@@ -65,6 +67,7 @@ public class TJMetaTileEntities {
         MODULAR_TURBINE = registerMetaTileEntity(12043, new MetaTileEntityModularSteamTurbine(tjcoreID("modular_steam_turbine")));
         PRIMITIVE_TREE_FARMER = registerMetaTileEntity(12044, new PrimitiveTreeFarmer(tjcoreID("primitive_tree_farmer")));
         LARGE_ALLOY_SMELTER = registerMetaTileEntity(12050, new LargeAlloySmelter(tjcoreID("large_alloy_smelter")));
+        ALTERNATOR = registerMetaTileEntity(12051, new MetaTileEntityAlternator(tjcoreID("alternator")));
         registerSimpleMetaTileEntity(LAMINATOR, 12070, "laminator", TJRecipeMaps.LAMINATOR_RECIPES, Textures.BENDER_OVERLAY, true);
         registerSimpleMetaTileEntity(PRINTER, 12090, "printer", TJRecipeMaps.PRINTER_RECIPES, Textures.LASER_ENGRAVER_OVERLAY, true);
         registerSimpleMetaTileEntity(SPINNING_MACHINE, 12100, "spinning_machine", TJRecipeMaps.SPINNING_RECIPES, Textures.CENTRIFUGE_OVERLAY, true, GTUtility.hvCappedTankSizeFunction);

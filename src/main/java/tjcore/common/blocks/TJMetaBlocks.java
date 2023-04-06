@@ -36,6 +36,8 @@ public class TJMetaBlocks {
 
     public static BlockRotationAxle ROTATION_AXLE;
 
+    public static BlockGeneratorCoil BLOCK_GENERATOR_COIL;
+
     public static final BlockCableLongDistance[] LONG_DIST_CABLES = new BlockCableLongDistance[10];
     
     public static void init() {
@@ -45,6 +47,8 @@ public class TJMetaBlocks {
         TURBINE_BLADES.setRegistryName("turbine_blades");
         BLOCK_BEARING = new BlockBearing();
         BLOCK_BEARING.setRegistryName("block_bearing");
+        BLOCK_GENERATOR_COIL = new BlockGeneratorCoil();
+        BLOCK_GENERATOR_COIL.setRegistryName("generator_coil");
         for (Insulation ins : Insulation.values()) {
             LONG_DIST_CABLES[ins.ordinal()] = new BlockCableLongDistance(ins);
             LONG_DIST_CABLES[ins.ordinal()].setRegistryName(ins.getName());
@@ -68,6 +72,7 @@ public class TJMetaBlocks {
         registerItemModel(TURBINE_BLADES);
         registerItemModel(BLOCK_BEARING);
         registerItemModel(ROTATION_AXLE);
+        registerItemModel(BLOCK_GENERATOR_COIL);
     }
 
     @SideOnly(Side.CLIENT)

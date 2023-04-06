@@ -45,6 +45,7 @@ public class CommonProxy {
     @SubscribeEvent
     public static void RegisterBlocks(RegistryEvent.Register<Block> event) {
         IForgeRegistry<Block> registry = event.getRegistry();
+        registry.register(BLOCK_GENERATOR_COIL);
         registry.register(DRACONIC_CASING);
         registry.register(TURBINE_BLADES);
         registry.register(BLOCK_BEARING);
@@ -61,6 +62,7 @@ public class CommonProxy {
     public static void RegisterItemBlocks(RegistryEvent.Register<Item> event) {
         IForgeRegistry<Item> registry = event.getRegistry();
         for (BlockCableLongDistance cable : LONG_DIST_CABLES) registry.register(createItemBlock(cable, ItemBlockLongDistanceCable::new));
+        registry.register(createItemBlock(BLOCK_GENERATOR_COIL, VariantItemBlock::new));
         registry.register(createItemBlock(TURBINE_BLADES, VariantItemBlock::new));
         registry.register(createItemBlock(BLOCK_BEARING, VariantItemBlock::new));
         registry.register(createItemBlock(DRACONIC_CASING, VariantItemBlock::new));

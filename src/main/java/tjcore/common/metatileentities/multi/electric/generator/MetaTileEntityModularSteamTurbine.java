@@ -33,6 +33,7 @@ import tjcore.common.pipelike.rotation.AxleWhole;
 import tjcore.common.pipelike.rotation.BlockRotationAxle;
 import tjcore.common.pipelike.rotation.TileEntityRotationAxle;
 
+import javax.annotation.Nonnull;
 import java.util.Arrays;
 import java.util.List;
 
@@ -181,6 +182,12 @@ public class MetaTileEntityModularSteamTurbine extends MultiblockWithDisplayBase
 
     public float getRotation() {
         return rps;
+    }
+
+    @Nonnull
+    @Override
+    protected ICubeRenderer getFrontOverlay() {
+        return Textures.AIR_VENT_OVERLAY;
     }
 
     public void setAxleWhole(AxleWhole axleNew) {

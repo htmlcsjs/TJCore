@@ -29,7 +29,6 @@ public class AxleWhole implements ISpinnable {
         updateAll();
     }
 
-    //TODO: we get there when we get there
     public void updateAll() {
         for (TileEntityRotationAxle axle: components) {
             axle.update(revolutionsPerSecond * (float) Math.PI * 2 / 20, angle);
@@ -90,6 +89,9 @@ public class AxleWhole implements ISpinnable {
     public void addProvider(IRotationProvider provider) {
         providers.add(provider);
     }
+    public void addConsumer(IRotationConsumer consumer) {
+        consumers.add(consumer);
+    }
 
     public float getRPS() {
         return revolutionsPerSecond;
@@ -109,9 +111,11 @@ public class AxleWhole implements ISpinnable {
         components.clear();
 
         for (IRotationProvider provider : providers) {
-            //Problem is this is getting called on the wrong provider. Providers looks to be full at the time of the error though.
-            //This also ISNT hit when you break the axle connected after it is incorperated into another net. What the fuck
             provider.setAxleWhole(null);
+        }
+
+        for (IRotationConsumer consumer : consumers) {
+            consumer.setAxleWhole(null);
         }
     }
 }
