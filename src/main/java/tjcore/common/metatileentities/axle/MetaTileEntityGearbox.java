@@ -1,39 +1,25 @@
-package tjcore.common.pipelike.rotation;
+package tjcore.common.metatileentities.axle;
 
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.PacketBuffer;
-import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.world.World;
-import org.lwjgl.Sys;
 import tjcore.api.axle.IRotationConsumer;
 import tjcore.api.axle.IRotationProvider;
 import tjcore.api.axle.ISpinnable;
-import tjcore.common.TJTextures;
 import codechicken.lib.raytracer.CuboidRayTraceResult;
 import codechicken.lib.render.CCRenderState;
-import codechicken.lib.render.pipeline.ColourMultiplier;
 import codechicken.lib.render.pipeline.IVertexOperation;
-import codechicken.lib.vec.Cuboid6;
 import codechicken.lib.vec.Matrix4;
 import gregtech.api.gui.ModularUI;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.unification.OreDictUnifier;
-import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
-import gregtech.api.unification.ore.OrePrefix;
-import gregtech.api.util.GTUtility;
-import gregtech.client.renderer.texture.Textures;
-import gregtech.client.renderer.texture.cube.SimpleSidedCubeRenderer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.BlockPos;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import org.apache.commons.lang3.ArrayUtils;
+import tjcore.common.pipelike.rotation.AxleWhole;
+import tjcore.common.pipelike.rotation.TileEntityRotationAxle;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -41,12 +27,9 @@ import java.util.List;
 import java.util.Map;
 
 import static gregtech.api.unification.ore.OrePrefix.gear;
-import static gregtech.api.unification.ore.OrePrefix.gearSmall;
-import static gregtech.client.renderer.texture.Textures.AIR_VENT_OVERLAY;
-import static gregtech.client.renderer.texture.Textures.BLOWER_OVERLAY;
 import static tjcore.common.TJTextures.*;
 
-public class TileEntityGearbox extends MetaTileEntity implements IRotationProvider, IRotationConsumer {
+public class MetaTileEntityGearbox extends MetaTileEntity implements IRotationProvider, IRotationConsumer {
 
     private List<ISpinnable> inputFaces = new ArrayList<>();
     private List<ISpinnable> outputFaces= new ArrayList<>();
@@ -58,7 +41,7 @@ public class TileEntityGearbox extends MetaTileEntity implements IRotationProvid
     private float rps;
     private float torque;
 
-    public TileEntityGearbox(ResourceLocation metaTileEntityId) {
+    public MetaTileEntityGearbox(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId);
         for(EnumFacing face : EnumFacing.VALUES) {
             isOutput.put(face, false);
@@ -68,6 +51,7 @@ public class TileEntityGearbox extends MetaTileEntity implements IRotationProvid
 
     @Override
     public void consume() {
+        torque = 0;
         float[] torques = new float[inputFaces.size()];
         float[] rpsArray = new float[inputFaces.size()];
         float max = 0;
@@ -77,7 +61,7 @@ public class TileEntityGearbox extends MetaTileEntity implements IRotationProvid
             if(max < rpsArray[i])
                 max = rpsArray[i];
         }
-        for(int i = 0; i< inputFaces.size(); i++) {
+        for (int i = 0; i < inputFaces.size(); i++) {
             torque += (torques[i] * (rpsArray[i] / max));
         }
         rps = max;
@@ -144,7 +128,7 @@ public class TileEntityGearbox extends MetaTileEntity implements IRotationProvid
 
     @Override
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity iGregTechTileEntity) {
-        return new TileEntityGearbox(this.metaTileEntityId);
+        return new MetaTileEntityGearbox(this.metaTileEntityId);
     }
 
     @Override
@@ -161,11 +145,9 @@ public class TileEntityGearbox extends MetaTileEntity implements IRotationProvid
     @Override
     public void update() {
         super.update();
-
         if (!getWorld().isRemote && getOffsetTimer() % 20 == 0) {
             joinNet();
         }
-
         consume();
         pushRotation(rps, torque / outputFaces.size());
     }
