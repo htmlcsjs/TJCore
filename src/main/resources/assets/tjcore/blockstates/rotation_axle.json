@@ -2,6 +2,9 @@
   "variants": {
     "axis=y": { "model": "tjcore:axle_pipe" },
     "axis=z": { "model": "tjcore:axle_pipe", "x":  90},
-    "axis=x": { "model": "tjcore:axle_pipe", "x": 90, "y": 90 }
+    "axis=x": { "model": "tjcore:axle_pipe", "x": 90, "y": 90 },
+    "inventory" : {
+      "model": "tjcore:tiny"
+    }
   }
 }

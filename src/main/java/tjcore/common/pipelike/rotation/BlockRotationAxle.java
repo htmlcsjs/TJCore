@@ -35,7 +35,7 @@ public class BlockRotationAxle extends BlockRotatedPillar implements ITileEntity
         super(Material.GRASS, MapColor.YELLOW);
         this.setDefaultState(this.blockState.getBaseState().withProperty(AXIS, EnumFacing.Axis.Z));
         this.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
-
+        this.setTranslationKey("rotation_axle");
     }
 
     @Override
@@ -99,6 +99,12 @@ public class BlockRotationAxle extends BlockRotatedPillar implements ITileEntity
     public boolean hasTileEntity(IBlockState state) {
         state.withProperty(AXIS, state.getValue(AXIS));
         return true;
+    }
+
+    @Override
+    public EnumBlockRenderType getRenderType(IBlockState state)
+    {
+        return EnumBlockRenderType.MODEL;
     }
 
     @Nullable

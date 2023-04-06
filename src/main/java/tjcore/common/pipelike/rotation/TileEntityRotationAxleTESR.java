@@ -22,10 +22,10 @@ public class TileEntityRotationAxleTESR extends FastTESR<TileEntityRotationAxle>
 
         TileEntityRotationAxle axleRef = (TileEntityRotationAxle) te.getWorld().getTileEntity(te.getPos());
         IBlockState state = te.getWorld().getBlockState(te.getPos());
-        GlStateManager.enableDepth();
+        //GlStateManager.enableDepth();
 
-        GlStateManager.depthFunc(515);
-        GlStateManager.depthMask(true);
+        //GlStateManager.depthFunc(515);
+        //GlStateManager.depthMask(true);
         this.bindTexture(texture);
         if (destroyStage >= 0)
         {

@@ -10,8 +10,10 @@ import gregtech.common.pipelike.cable.Insulation;
 import net.minecraft.block.Block;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.renderer.ItemMeshDefinition;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.IStateMapper;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -69,10 +71,11 @@ public class TJMetaBlocks {
         for (BlockCableLongDistance cable : LONG_DIST_CABLES)
             ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(cable), stack -> CableRenderer.INSTANCE.getModelLocation());
         registerItemModel(DRACONIC_CASING);
+        registerItemModel(BLOCK_GENERATOR_COIL);
         registerItemModel(TURBINE_BLADES);
         registerItemModel(BLOCK_BEARING);
-        registerItemModel(ROTATION_AXLE);
-        registerItemModel(BLOCK_GENERATOR_COIL);
+        ModelResourceLocation axlemodel = new ModelResourceLocation("tjcore:rotation_axle", "inventory");
+        ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(ROTATION_AXLE), stack -> axlemodel);
     }
 
     @SideOnly(Side.CLIENT)
