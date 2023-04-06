@@ -50,6 +50,13 @@ public class MaterialRecipes {
                 .fluidInputs(Oxygen.getFluid(1000))
                 .output(dust, SilverLeadOxide, 3)
                 .buildAndRegister();
+
+        COMPRESSOR_RECIPES.recipeBuilder()
+                .duration(280)
+                .EUt(8)
+                .input(STICKY_RESIN, 2)
+                .chancedOutput(plate, Rubber, 1, 700, 0)
+                .buildAndRegister();
     }
 
     public static void registerMetals() {

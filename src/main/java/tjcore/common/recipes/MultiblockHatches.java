@@ -75,7 +75,7 @@ public class MultiblockHatches {
                 'W', OreDictUnifier.get(wireGtSingle, Lead),
                 'S', OreDictUnifier.get(stick, IronMagnetic));
 
-        ModHandler.addShapedRecipe("hand_lv_coil", voltageCoil[0].getStackForm(),
+        ModHandler.addShapedRecipe("hand_lv_coil", voltageCoil[1].getStackForm(),
                 "WWW", "WSW", "WWW",
                 'W', OreDictUnifier.get(wireGtSingle, Tin),
                 'S', OreDictUnifier.get(stick, IronMagnetic));

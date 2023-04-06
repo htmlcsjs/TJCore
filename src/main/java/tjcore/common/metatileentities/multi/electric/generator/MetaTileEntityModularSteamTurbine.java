@@ -1,5 +1,8 @@
 package tjcore.common.metatileentities.multi.electric.generator;
 
+import codechicken.lib.render.CCRenderState;
+import codechicken.lib.render.pipeline.IVertexOperation;
+import codechicken.lib.vec.Matrix4;
 import gregicality.multiblocks.common.block.GCYMMetaBlocks;
 import gregicality.multiblocks.common.block.blocks.BlockLargeMultiblockCasing;
 import gregtech.api.metatileentity.MetaTileEntity;
@@ -169,6 +172,18 @@ public class MetaTileEntityModularSteamTurbine extends MultiblockWithDisplayBase
     }
 
     @Override
+    public void renderMetaTileEntity(CCRenderState renderState, Matrix4 translation, IVertexOperation[] pipeline) {
+        super.renderMetaTileEntity(renderState, translation, pipeline);
+        this.getFrontOverlay().renderOrientedState(renderState, translation, pipeline, getFrontFacing(), true, true);
+    }
+
+    @Nonnull
+    @Override
+    protected ICubeRenderer getFrontOverlay() {
+        return Textures.AIR_VENT_OVERLAY;
+    }
+
+    @Override
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
         return new MetaTileEntityModularSteamTurbine(metaTileEntityId);
     }
@@ -182,12 +197,6 @@ public class MetaTileEntityModularSteamTurbine extends MultiblockWithDisplayBase
 
     public float getRotation() {
         return rps;
-    }
-
-    @Nonnull
-    @Override
-    protected ICubeRenderer getFrontOverlay() {
-        return Textures.AIR_VENT_OVERLAY;
     }
 
     public void setAxleWhole(AxleWhole axleNew) {

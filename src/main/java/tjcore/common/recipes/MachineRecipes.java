@@ -11,6 +11,7 @@ import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.blocks.BlockMachineCasing;
 import gregtech.common.blocks.BlockSteamCasing;
 import gregtech.common.blocks.MetaBlocks;
+import gregtech.common.items.ToolItems;
 import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.loaders.recipe.CraftingComponent;
 import gregtech.loaders.recipe.MetaTileEntityLoader;
@@ -18,21 +19,27 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 import tjcore.common.blocks.BlockBearing;
+import tjcore.common.blocks.BlockGeneratorCoil;
 import tjcore.common.blocks.BlockTurbineBlades;
 import tjcore.common.blocks.TJMetaBlocks;
+import tjcore.common.pipelike.rotation.TileEntityRotationAxle;
 
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.EXTRUDER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.common.blocks.MetaBlocks.FRAMES;
 import static gregtech.common.blocks.MetaBlocks.MACHINE_CASING;
 import static gregtech.common.items.MetaItems.ELECTRIC_MOTOR_LV;
+import static gregtech.common.items.MetaItems.SHAPE_EXTRUDER_ROD;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
 import static gregtech.loaders.recipe.CraftingComponent.*;
 import static tjcore.api.TJComponents.*;
 import static tjcore.api.material.TJMaterials.*;
 import static tjcore.common.blocks.BlockTurbineBlades.TurbineBladesType.*;
+import static tjcore.common.blocks.TJMetaBlocks.ROTATION_AXLE;
 import static tjcore.common.metaitem.TJMetaItems.*;
 import static tjcore.common.metatileentities.TJMetaTileEntities.*;
 import static tjcore.common.recipes.GTComponents.tierCircuitNames;
@@ -179,11 +186,11 @@ public class MachineRecipes {
 
     private static void registerMulti() {
         ModHandler.addShapedRecipe("modular_steam_turbine", MODULAR_TURBINE.getStackForm(),
-                "PGP", "MCM", "RWR",
+                "PGP", "SCS", "TRT",
                 'G', OreDictUnifier.get(gear, Steel),
-                'M', ELECTRIC_MOTOR_LV.getStackForm(),
-                'W', OreDictUnifier.get(wireGtDouble, Copper),
-                'R', new UnificationEntry(circuit, tierCircuitNames[LV]),
+                'S', OreDictUnifier.get(screw, GalvanizedSteel),
+                'R', OreDictUnifier.get(spring, Steel),
+                'T', OreDictUnifier.get(plate, Rubber),
                 'P', OreDictUnifier.get(pipeLargeFluid, Steel),
                 'C', MetaTileEntities.HULL[LV].getStackForm());
 
@@ -195,6 +202,13 @@ public class MachineRecipes {
                 'B', new ItemStack(Blocks.BRICK_BLOCK),
                 'P', OreDictUnifier.get(pipeNormalFluid, Wood),
                 'C', WOODEN_CRATE.getStackForm());
+
+        ModHandler.addShapedRecipe("alternator", ALTERNATOR.getStackForm(),
+                "AWA", "CHC", "AWA",
+                'A', new UnificationEntry(circuit, tierCircuitNames[LV]),
+                'W', OreDictUnifier.get(wireGtDouble, Tin),
+                'H', MetaTileEntities.HULL[LV].getStackForm(),
+                'C', TJMetaBlocks.BLOCK_GENERATOR_COIL.getItemVariant(BlockGeneratorCoil.CoilType.COPPER));
     }
 
     private static void registerGenerator() {
@@ -216,5 +230,40 @@ public class MachineRecipes {
                     'S', OreDictUnifier.get(stick, secondaryMaterial[i]),
                     'R', OreDictUnifier.get(ring, bladeMaterial[i]));
         }
+
+        ModHandler.addShapedRecipe("generator_coil_copper", TJMetaBlocks.BLOCK_GENERATOR_COIL.getItemVariant(BlockGeneratorCoil.CoilType.COPPER),
+                "WSW", "WFW", "WSW",
+                'W', OreDictUnifier.get(wireFine, Copper),
+                'S', OreDictUnifier.get(bolt, GalvanizedSteel),
+                'F', FRAMES.get(GalvanizedSteel));
+
+        ModHandler.addShapedRecipe("gearbox", GEARBOX.getStackForm(),
+                "WGW", "GFG", "WGW",
+                'W', OreDictUnifier.get(plate, Wood),
+                'G', OreDictUnifier.get(gearSmall, Steel),
+                'F', FRAMES.get(Steel));
+
+        ModHandler.addShapedRecipe("axle_bronze", new ItemStack(ROTATION_AXLE),
+                " f ", " R ", " s ",
+                'R', OreDictUnifier.get(stickLong, Bronze)
+        );
+
+        ModHandler.addShapedRecipe("axle_iron", new ItemStack(ROTATION_AXLE, 2),
+                " f ", " R ", " s ",
+                'R', OreDictUnifier.get(stickLong, Iron)
+                );
+
+        ModHandler.addShapedRecipe("axle_steel", new ItemStack(ROTATION_AXLE, 4),
+                " f ", " R ", " s ",
+                'R', OreDictUnifier.get(stickLong, Steel)
+        );
+
+        EXTRUDER_RECIPES.recipeBuilder()
+                .duration(105)
+                .EUt(VA[MV])
+                .notConsumable(SHAPE_EXTRUDER_ROD)
+                .input(stickLong, Steel)
+                .output(ROTATION_AXLE, 8)
+                .buildAndRegister();
     }
 }
