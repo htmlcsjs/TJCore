@@ -364,7 +364,7 @@ public class Chips {
                     .duration(VA[LV])
                     .buildAndRegister();
 
-            if (i < 2) {
+            if (i < 3) {
                 CHEMICAL_BATH_RECIPES.recipeBuilder()
                         .input(prebaked[i])
                         .fluidInputs(SU8_Photoresist.getFluid(25 * (i + 1)))

@@ -134,14 +134,13 @@ public class MachineRecipes {
     private static void registerElectric() {
         MetaTileEntityLoader.registerMachineRecipe(PRINTER, "WRW", "PSP", "CHC", 'P', PISTON, 'W', COIL_HEATING, 'R', RING, 'S', SUBSTRATE, 'C', CIRCUIT, 'H', CraftingComponent.HULL);
         MetaTileEntityLoader.registerMachineRecipe(LAMINATOR, "WGW", "MHM", "CGC", 'M', MOTOR, 'G', COIL_ELECTRIC, 'W', CABLE, 'H', CraftingComponent.HULL, 'C', CIRCUIT);
-        MetaTileEntityLoader.registerMachineRecipe(COMPONENT_ASSEMBLER, "WCW", "AHA", "WCW", 'A', ROBOT_ARM, 'W', CABLE, 'C', CIRCUIT, 'H', CraftingComponent.HULL);
         MetaTileEntityLoader.registerMachineRecipe(TRANSFORMER, "   ","FHC","   ", 'F', CABLE_QUAD, 'C', CABLE_TIER_UP, 'H', CraftingComponent.HULL);
         MetaTileEntityLoader.registerMachineRecipe(SPINNING_MACHINE, "GRG","CMC","WHW", 'G', GLASS, 'R', RODSTICK, 'C', CIRCUIT, 'M', MOTOR, 'W', CABLE, 'H', CraftingComponent.HULL);
     }
 
     private static void registerSteam() {
 
-        ModHandler.addShapedRecipe("steam_component_assembler", STEAM_COMPONENT_ASSEMBLER.getStackForm(),
+        ModHandler.addShapedRecipe("steam_component_assembler", STEAM_ASSEMBLER.getStackForm(),
                 "TGT", "PHP", "SUS",
                 'G', OreDictUnifier.get(gearSmall, Steel),
                 'T', OreDictUnifier.get(pipeNormalFluid, Bronze),

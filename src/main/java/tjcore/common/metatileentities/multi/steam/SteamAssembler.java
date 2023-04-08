@@ -23,7 +23,7 @@ import javax.annotation.Nonnull;
 public class SteamAssembler extends RecipeMapSteamMultiblockController {
 
     public SteamAssembler(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, TJRecipeMaps.STEAM_COMPONENT_ASSEMBLER_RECIPES,CONVERSION_RATE);
+        super(metaTileEntityId, TJRecipeMaps.STEAM_ASSEMBLER_RECIPES,CONVERSION_RATE);
         this.recipeMapWorkable = new SteamMultiWorkable(this, CONVERSION_RATE);
     }
 

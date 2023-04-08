@@ -34,7 +34,7 @@ import static gregtech.api.unification.material.Materials.TungstenSteel;
 public class MegaFusion extends RecipeMapMultiblockController {
 
     public MegaFusion(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, TJRecipeMaps.COMPONENT_ASSEMBLER_RECIPES);
+        super(metaTileEntityId, TJRecipeMaps.MEGA_FUSION_RECIPES);
     }
 
     @Override

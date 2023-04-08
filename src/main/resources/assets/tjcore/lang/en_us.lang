@@ -107,11 +107,6 @@ item.polyacrylonitrile.dust=Pile of Polyacrylonitrile Pulp
 
 # machines
 tjcore.machine.primitive_tree_farmer.name=Primitive Tree Farm
-tjcore.machine.component_assembler.lv.name=Basic Component Assembler
-tjcore.machine.component_assembler.mv.name=Advanced Component Assembler I
-tjcore.machine.component_assembler.hv.name=Advanced Component Assembler II
-tjcore.machine.component_assembler.ev.name=Advanced Component Assembler III
-tjcore.machine.component_assembler.iv.name=Elite Component Assembler
 tjcore.machine.printer.lv.name=Basic 3d Printer
 tjcore.machine.printer.mv.name=Advanced 3D Printer I
 tjcore.machine.printer.hv.name=Advanced 3D Printer II
@@ -140,7 +135,7 @@ tjcore.machine.steam_mixer_steel.name=High Pressure Steam Mixer
 tjcore.machine.steam_dryer_bronze.name=Steam Dryer
 tjcore.machine.steam_dryer_steel.name=High Pressure Steam Dryer
 tjcore.machine.armor_infuser.name=Armor Infuser
-tjcore.machine.steam_assembler.name=Steam Component Assembler
+tjcore.machine.steam_assembler.name=Industrial Steam Assembler
 tjcore.machine.tree_farmer.name=Advanced Tree Farmer
 tjcore.machine.surface_rock_drill.name=Surface Rock Drill
 tjcore.machine.loom.name=Precision Loom

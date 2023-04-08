@@ -94,7 +94,6 @@ public class CommonProxy {
         TJPolymers.registerPolymers();
         GTComponents.init();
         PetrochemRecipes.init();
-        TJFuelRecipes.init();
         LogisiticsRecipes.init();
         if (Loader.isModLoaded("draconicevolution")) {
             ArmorInfuserRecipes.register();

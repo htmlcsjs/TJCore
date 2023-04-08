@@ -39,9 +39,11 @@ public class MaterialRecipes {
         registerModifiedDecomp();
         registerFarming();
         registerWireCable();
+        registerCobalt();
     }
 
     public static void registerSimpleCompounds() {
+
         MIXER_RECIPES.recipeBuilder()
                 .duration(35)
                 .EUt(VA[LV])
@@ -113,7 +115,7 @@ public class MaterialRecipes {
                 .EUt(VA[ZPM])
                 .duration(145)
                 .fluidInputs(Methane.getFluid(100), Hydrogen.getFluid(10000))
-                .notConsumable(gemExquisite, Diamond)
+                .notConsumable(gemExquisite, SynthDiamond)
                 .output(gem, SynthDiamond)
                 .buildAndRegister();
     }
@@ -319,6 +321,10 @@ public class MaterialRecipes {
                     .duration(64)
                     .buildAndRegister();
         }
+    }
+
+    public static void registerCobalt() {
+
     }
 
     public static void registerMetalCasings() {
