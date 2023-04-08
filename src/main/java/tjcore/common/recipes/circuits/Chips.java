@@ -2,8 +2,10 @@ package tjcore.common.recipes.circuits;
 
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.recipes.ModHandler;
+import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.stack.UnificationEntry;
+import net.minecraftforge.fml.common.Mod;
 import tjcore.common.metaitem.TJMetaItems;
 
 import static gregicality.science.api.recipes.GCYSRecipeMaps.CVD_RECIPES;
@@ -70,6 +72,20 @@ public class Chips {
                 'B', new UnificationEntry(bolt, Steel),
                 'W', new UnificationEntry(wireFine, Copper),
                 'F', new UnificationEntry(foil, Gold));
+
+        COMPRESSOR_RECIPES.recipeBuilder()
+                .duration(130)
+                .EUt(8)
+                .input(GLASS_TUBE)
+                .output(EVACUATED_TUBE)
+                .buildAndRegister();
+
+        ModHandler.addShapelessRecipe("vacuum_tube", VACUUM_TUBE.getStackForm(),
+                EVACUATED_TUBE.getStackForm(),
+                VACUUM_TUBE_COMPONENTS.getStackForm(),
+                OreDictUnifier.get(ring, Kovar)
+                );
+
     }
 
     private static void electronicChip() {

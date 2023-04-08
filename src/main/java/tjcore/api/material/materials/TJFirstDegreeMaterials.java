@@ -184,66 +184,66 @@ public class TJFirstDegreeMaterials {
                 .build()
                 .setFormula("Co-60", false);
 
-        FritSolderMix = new Material.Builder(25035,"glass_frit_solder_mixture")
-                .dust()
-                .colorAverage()
-                .components(Glass, 36, Yttrium, 1, Copper, 3)
-                .build()
-                .setFormula("(SiO2)36Cu3Y1", true);
-
-        SolderVPrep = new Material.Builder(25036, "solder_v_prep")
-                .dust()
-                .colorAverage()
-                .components(Tin, 2, Gold, 1, Bismuth, 1)
-                .build()
-                .setFormula("Sn2AuBi",true);
-
-        SolderVPrepClean = new Material.Builder(25037, "solder_v_prep_clean")
-                .dust()
-                .colorAverage()
-                .components(SolderVPrep, 1)
-                .build()
-                .setFormula("Sn2AuBi", true);
-
-        SolderVStruct = new Material.Builder(25038, "solder_v_prestructure")
-                .dust()
-                .colorAverage()
-                .components(SolderVPrepClean, 9, Lanthanum, 1, Cerium, 1)
-                .build()
-                .setFormula("(Sn2AuBi)9LaCe",true);
-
-        IndiumRadium = new Material.Builder(25039, "indium_radium")
-                .dust()
-                .colorAverage()
-                .components(Indium, 6, Radium, 2)
-                .build()
-                .setFormula("In6Ra4", true);
-
-        IndiumRadiumRadon = new Material.Builder(25040, "indium_radium_radon")
-                .dust()
-                .colorAverage()
-                .components(Indium, 6, Radium, 2, Radon, 2)
-                .build()
-                .setFormula("In6Ra2Rn2",true);
-
-        PilledFoilMix = new Material.Builder(25041, "pilled_foil_mix")
-                .dust()
-                .colorAverage()
-                .components(Ruthenium, 2, Gold, 2, Copper, 2, Lutetium, 2)
-                .build()
-                .setFormula("Ru2Au2Cu2Lu2", true);
-
-        IrradiatingMix = new Material.Builder(25042, "irradiating_mixture")
-                .dust()
-                .colorAverage()
-                .components(IndiumRadiumRadon, 2, PilledFoilMix, 2, Cobalt60, 3)
-                .build();
-
-        SolderVIPrep = new Material.Builder(25043, "solder_vi_prep")
-                .dust()
-                .colorAverage()
-                .components(IrradiatingMix, 8, Tritanium, 1, Moscovium, 1)
-                .build();
+        //FritSolderMix = new Material.Builder(25035,"glass_frit_solder_mixture")
+        //        .dust()
+        //        .colorAverage()
+        //        .components(Glass, 36, Yttrium, 1, Copper, 3)
+        //        .build()
+        //        .setFormula("(SiO2)36Cu3Y1", true);
+//
+        //SolderVPrep = new Material.Builder(25036, "solder_v_prep")
+        //        .dust()
+        //        .colorAverage()
+        //        .components(Tin, 2, Gold, 1, Bismuth, 1)
+        //        .build()
+        //        .setFormula("Sn2AuBi",true);
+//
+        //SolderVPrepClean = new Material.Builder(25037, "solder_v_prep_clean")
+        //        .dust()
+        //        .colorAverage()
+        //        .components(SolderVPrep, 1)
+        //        .build()
+        //        .setFormula("Sn2AuBi", true);
+//
+        //SolderVStruct = new Material.Builder(25038, "solder_v_prestructure")
+        //        .dust()
+        //        .colorAverage()
+        //        .components(SolderVPrepClean, 9, Lanthanum, 1, Cerium, 1)
+        //        .build()
+        //        .setFormula("(Sn2AuBi)9LaCe",true);
+//
+        //IndiumRadium = new Material.Builder(25039, "indium_radium")
+        //        .dust()
+        //        .colorAverage()
+        //        .components(Indium, 6, Radium, 2)
+        //        .build()
+        //        .setFormula("In6Ra4", true);
+//
+        //IndiumRadiumRadon = new Material.Builder(25040, "indium_radium_radon")
+        //        .dust()
+        //        .colorAverage()
+        //        .components(Indium, 6, Radium, 2, Radon, 2)
+        //        .build()
+        //        .setFormula("In6Ra2Rn2",true);
+//
+        //PilledFoilMix = new Material.Builder(25041, "pilled_foil_mix")
+        //        .dust()
+        //        .colorAverage()
+        //        .components(Ruthenium, 2, Gold, 2, Copper, 2, Lutetium, 2)
+        //        .build()
+        //        .setFormula("Ru2Au2Cu2Lu2", true);
+//
+        //IrradiatingMix = new Material.Builder(25042, "irradiating_mixture")
+        //        .dust()
+        //        .colorAverage()
+        //        .components(IndiumRadiumRadon, 2, PilledFoilMix, 2, Cobalt60, 3)
+        //        .build();
+//
+        //SolderVIPrep = new Material.Builder(25043, "solder_vi_prep")
+        //        .dust()
+        //        .colorAverage()
+        //        .components(IrradiatingMix, 8, Tritanium, 1, Moscovium, 1)
+        //        .build();
 
 
         Silane = new Material.Builder(25045, "silane")
@@ -260,49 +260,49 @@ public class TJFirstDegreeMaterials {
                 .color(0x24BB18)
                 .build();
 
-        SolderingAlloyI = new Material.Builder(25029, "soldering_alloy_i")
-                .fluid()
-                .ingot()
-                .colorAverage()
-                .components(Lead, 6, Tin, 4)
-                .build()
-                .setFormula("Pb4Sn4", true);
-        SolderingAlloyII = new Material.Builder(25030, "soldering_alloy_ii")
-                .fluid()
-                .ingot()
-                .colorAverage()
-                .components(Tin,6,Silver,3,Antimony,1)
-                .build()
-                .setFormula("Sn6Ag3Sb", true);
-        SolderingAlloyIII = new Material.Builder(25031, "soldering_alloy_iii")
-                .fluid()
-                .ingot()
-                .colorAverage()
-                .components(FritSolderMix, 9, Zinc, 1)
-                .build()
-                .setFormula("((SiO2)36Cu3Y1)9Zn", true);
-        SolderingAlloyIV = new Material.Builder(25032, "soldering_alloy_iv")
-                .fluid()
-                .ingot()
-                .colorAverage()
-                .components(IndiumGalliumPhosphide, 6, Bismuth, 2, Tellurium, 1, Platinum, 1)
-                .build()
-                .setFormula("", true);
-        SolderingAlloyV = new Material.Builder(25033, "soldering_alloy_v")
-                .fluid()
-                .ingot()
-                .colorAverage()
-                .iconSet(MaterialIconSet.BRIGHT)
-                .components(SolderVStruct, 11, SiliconCarbide, 3, NiobiumTitanium, 2)
-                .build()
-                .setFormula("((Sn2AuBi)9LaCe)11(SiC)3(Nb3Ti)2", true);
-        SolderingAlloyVI = new Material.Builder(25034, "soldering_alloy_vi")
-                .fluid()
-                .ingot()
-                .colorAverage()
-                .iconSet(MaterialIconSet.SHINY)
-                .components(SolderVIPrep, 1, ArgonSilane, 4)
-                .build();
+        //SolderingAlloyI = new Material.Builder(25029, "soldering_alloy_i")
+        //        .fluid()
+        //        .ingot()
+        //        .colorAverage()
+        //        .components(Lead, 6, Tin, 4)
+        //        .build()
+        //        .setFormula("Pb4Sn4", true);
+        //SolderingAlloyII = new Material.Builder(25030, "soldering_alloy_ii")
+        //        .fluid()
+        //        .ingot()
+        //        .colorAverage()
+        //        .components(Tin,6,Silver,3,Antimony,1)
+        //        .build()
+        //        .setFormula("Sn6Ag3Sb", true);
+        //SolderingAlloyIII = new Material.Builder(25031, "soldering_alloy_iii")
+        //        .fluid()
+        //        .ingot()
+        //        .colorAverage()
+        //        .components(FritSolderMix, 9, Zinc, 1)
+        //        .build()
+        //        .setFormula("((SiO2)36Cu3Y1)9Zn", true);
+        //SolderingAlloyIV = new Material.Builder(25032, "soldering_alloy_iv")
+        //        .fluid()
+        //        .ingot()
+        //        .colorAverage()
+        //        .components(IndiumGalliumPhosphide, 6, Bismuth, 2, Tellurium, 1, Platinum, 1)
+        //        .build()
+        //        .setFormula("", true);
+        //SolderingAlloyV = new Material.Builder(25033, "soldering_alloy_v")
+        //        .fluid()
+        //        .ingot()
+        //        .colorAverage()
+        //        .iconSet(MaterialIconSet.BRIGHT)
+        //        .components(SolderVStruct, 11, SiliconCarbide, 3, NiobiumTitanium, 2)
+        //        .build()
+        //        .setFormula("((Sn2AuBi)9LaCe)11(SiC)3(Nb3Ti)2", true);
+        //SolderingAlloyVI = new Material.Builder(25034, "soldering_alloy_vi")
+        //        .fluid()
+        //        .ingot()
+        //        .colorAverage()
+        //        .iconSet(MaterialIconSet.SHINY)
+        //        .components(SolderVIPrep, 1, ArgonSilane, 4)
+        //        .build();
 
         CarbonNanotubePolymer = new Material.Builder(25046, "carbon_nanotube_polymer")
                 .dust()

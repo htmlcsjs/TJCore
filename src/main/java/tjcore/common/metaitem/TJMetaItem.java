@@ -190,6 +190,7 @@ public class TJMetaItem extends StandardMetaItem {
         LAMINATED_CRYSTAL_PCB_SHEET = addItem(313,"laminated_crystal_pcb_sheet");
         GAMMA_EMITTING_DIODE = addItem(314,"gamma_emitting_diode");
         REFLECTING_SHEET = addItem(315, "reflecting_sheet");
+        EVACUATED_TUBE = addItem(316, "evacuated_glass_tube");
 
         //Lithography Metaitems (500-599)
         SILICON_BOULE = addItem(500, "silicon_boule");

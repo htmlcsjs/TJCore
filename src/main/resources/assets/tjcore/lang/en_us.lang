@@ -186,6 +186,8 @@ metaitem.cosmic_preboard.name=Leptonic Energy Transfer PCB
 metaitem.supra_preboard.name=Discrete Minkowski Space Containment
 metaitem.wetphenolicpulp.name=Wet Phenolic Pulp
 metaitem.wetpressedphenolicpulp.name=Wet Phenolic Pulp
+metaitem.wetpressedphenolicsubstrate.name=Wet Pressed Phenolic Substrate
+metaitem.evacuated_glass_tube.name=Evacuated Glass Tube
 metaitem.fiber_glass_mesh.name=Fiberglass Mesh
 metaitem.zblan_matrix.name=Non-Linear Optical Matrix
 metaitem.coated_sapphire_wafer.name=Coated Sapphire Wafer
@@ -245,7 +247,6 @@ metaitem.electrum_laminated_epoxid.name=Electrum Laminated Epoxy Sheet
 metaitem.germanium_laminated_epoxid.name=Germanium Laminated Epoxy Sheet
 metaitem.laminated_optical_base.name=Laminated Optical Circuit Base
 metaitem.optical_base.name=Optical Circuit Base
-metaitem.
 
 # circuit lang
 metaitem.circuit.primitive_ulv.name=Primitive Assembly

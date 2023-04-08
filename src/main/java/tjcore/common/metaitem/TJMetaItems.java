@@ -352,6 +352,8 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem PRECISION_MAG_STIMULATION_SHEET;
     public static MetaItem<?>.MetaValueItem ANYON_BRAIDING_STRUCTURE;
 
+    public static MetaItem<?>.MetaValueItem EVACUATED_TUBE;
+
     // Material Items
 
     public static MetaItem<?>.MetaValueItem ALUMINA_MOLD;

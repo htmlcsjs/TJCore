@@ -1,11 +1,15 @@
 package tjcore.common.recipes.circuits;
 
+import gregicality.science.common.items.GCYSMetaItems;
+import gregicality.science.loaders.recipe.circuits.SpintronicCircuits;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
+import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.stack.UnificationEntry;
+import gregtech.common.items.MetaItems;
 import gregtech.common.items.ToolItems;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
@@ -31,32 +35,99 @@ import static tjcore.common.recipes.recipemaps.TJRecipeMaps.LAMINATOR_RECIPES;
 
 public class CircuitRecipes {
 
-    public static void removePreexistingCircuits() {
+    public static void registerCircuits() {
+        removePreexistingCircuits();
+        removeOldWafers();
+        SMD.registerSMDRecipes();
+        Chips.registerChips();
+        registerBoards();
+        registerRecipes();
+        registerSolder();
+    }
 
+    private static void removePreexistingCircuits() {
         oreDictHandling();
         GTRecipeHandler.removeAllRecipes(CIRCUIT_ASSEMBLER_RECIPES);
         GTRecipeHandler.removeAllRecipes(ASSEMBLY_LINE_RECIPES);
-
         GTRecipeHandler.removeRecipesByInputs(AUTOCLAVE_RECIPES, new ItemStack[]{OreDictUnifier.get(dust, Carbon, 4)}, new FluidStack[]{Polyethylene.getFluid(36)});
         GTRecipeHandler.removeRecipesByInputs(AUTOCLAVE_RECIPES, new ItemStack[]{OreDictUnifier.get(dust, Carbon, 4)}, new FluidStack[]{Polytetrafluoroethylene.getFluid(18)});
         GTRecipeHandler.removeRecipesByInputs(AUTOCLAVE_RECIPES, new ItemStack[]{OreDictUnifier.get(dust, Carbon, 4)}, new FluidStack[]{Epoxy.getFluid(9)});
         GTRecipeHandler.removeRecipesByInputs(AUTOCLAVE_RECIPES, new ItemStack[]{OreDictUnifier.get(dust, Carbon, 8)}, new FluidStack[]{Polybenzimidazole.getFluid(9)});
-
-        //TODO this cannot be removed from GCYS
-//        GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{
-//                        FLUID_CELL_LARGE_STAINLESS_STEEL.getStackForm(),
-//                        OreDictUnifier.get(plate, Naquadah, 4),
-//                        OreDictUnifier.get(plate, Ruridit, 2),
-//                        OreDictUnifier.get(bolt, Trinium, 12),
-//                        OreDictUnifier.get(stick, SamariumMagnetic),
-//                        OreDictUnifier.get(rotor, Iridium),
-//                        ELECTRIC_MOTOR_LuV.getStackForm()},
-//                new FluidStack[]{SolderingAlloy.getFluid(144)});
         GTRecipeHandler.removeRecipesByInputs(CHEMICAL_BATH_RECIPES, new ItemStack[]{CARBON_FIBERS.getStackForm(1)}, new FluidStack[]{Epoxy.getFluid(144)});
         GTRecipeHandler.removeRecipesByInputs(CHEMICAL_BATH_RECIPES, new ItemStack[]{OreDictUnifier.get(wireFine, BorosilicateGlass)}, new FluidStack[]{Epoxy.getFluid(144)});
+        ModHandler.removeRecipeByOutput(ELECTRONIC_CIRCUIT_LV.getStackForm());
+        ModHandler.removeRecipeByOutput(ELECTRONIC_CIRCUIT_MV.getStackForm());
+        ModHandler.removeRecipeByOutput(VACUUM_TUBE.getStackForm());
+        GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{GLASS_TUBE.getStackForm(), OreDictUnifier.get(bolt, Steel), OreDictUnifier.get(wireGtSingle, AnnealedCopper, 2)}, new FluidStack[]{RedAlloy.getFluid(18)});
+        GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{GLASS_TUBE.getStackForm(), OreDictUnifier.get(bolt, Steel), OreDictUnifier.get(wireGtSingle, Copper, 2)}, new FluidStack[]{RedAlloy.getFluid(18)});
+        GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{GLASS_TUBE.getStackForm(), OreDictUnifier.get(bolt, Steel), OreDictUnifier.get(wireGtSingle, Copper, 2), IntCircuitIngredient.getIntegratedCircuit(1)});
+        SMD_CAPACITOR.setInvisible();
+        SMD_DIODE.setInvisible();
+        SMD_INDUCTOR.setInvisible();
+        SMD_TRANSISTOR.setInvisible();
+        SMD_RESISTOR.setInvisible();
+        ADVANCED_SMD_CAPACITOR.setInvisible();
+        ADVANCED_SMD_RESISTOR.setInvisible();
+        ADVANCED_SMD_TRANSISTOR.setInvisible();
+        ADVANCED_SMD_DIODE.setInvisible();
+        ADVANCED_SMD_INDUCTOR.setInvisible();
+        BASIC_CIRCUIT_BOARD.setInvisible();
+        COATED_BOARD.setInvisible();
+        PHENOLIC_BOARD.setInvisible();
+        PLASTIC_BOARD.setInvisible();
+        EPOXY_BOARD.setInvisible();
+        FIBER_BOARD.setInvisible();
+        MULTILAYER_FIBER_BOARD.setInvisible();
+        MetaItems.WETWARE_BOARD.setInvisible();
+        ADVANCED_CIRCUIT_BOARD.setInvisible();
+        PLASTIC_CIRCUIT_BOARD.setInvisible();
+        GOOD_CIRCUIT_BOARD.setInvisible();
+        ELITE_CIRCUIT_BOARD.setInvisible();
+        EXTREME_CIRCUIT_BOARD.setInvisible();
+        WETWARE_CIRCUIT_BOARD.setInvisible();
     }
 
-    public static void oreDictHandling() {
+    private static void removeOldWafers() {
+        MetaItems.SILICON_BOULE.setInvisible();
+        MetaItems.SILICON_WAFER.setInvisible();
+        GLOWSTONE_BOULE.setInvisible();
+        GLOWSTONE_WAFER.setInvisible();
+        NAQUADAH_BOULE.setInvisible();
+        NAQUADAH_WAFER.setInvisible();
+        NEUTRONIUM_BOULE.setInvisible();
+        NEUTRONIUM_WAFER.setInvisible();
+        STEM_CELLS.setInvisible();
+        NEURO_PROCESSOR.setInvisible();
+        CRYSTAL_SYSTEM_ON_CHIP.setInvisible();
+        CRYSTAL_CENTRAL_PROCESSING_UNIT.setInvisible();
+        ENGRAVED_CRYSTAL_CHIP.setInvisible();
+        RAW_CRYSTAL_CHIP_PART.setInvisible();
+        RAW_CRYSTAL_CHIP.setInvisible();
+        CENTRAL_PROCESSING_UNIT_WAFER.setInvisible();
+        CENTRAL_PROCESSING_UNIT.setInvisible();
+        RANDOM_ACCESS_MEMORY_WAFER.setInvisible();
+        RANDOM_ACCESS_MEMORY.setInvisible();
+        INTEGRATED_LOGIC_CIRCUIT_WAFER.setInvisible();
+        INTEGRATED_LOGIC_CIRCUIT.setInvisible();
+        NANO_CENTRAL_PROCESSING_UNIT_WAFER.setInvisible();
+        NANO_CENTRAL_PROCESSING_UNIT.setInvisible();
+        QUBIT_CENTRAL_PROCESSING_UNIT_WAFER.setInvisible();
+        QUBIT_CENTRAL_PROCESSING_UNIT.setInvisible();
+        SYSTEM_ON_CHIP_WAFER.setInvisible();
+        SYSTEM_ON_CHIP.setInvisible();
+        SIMPLE_SYSTEM_ON_CHIP_WAFER.setInvisible();
+        SIMPLE_SYSTEM_ON_CHIP.setInvisible();
+        ADVANCED_SYSTEM_ON_CHIP_WAFER.setInvisible();
+        ADVANCED_SYSTEM_ON_CHIP.setInvisible();
+        HIGHLY_ADVANCED_SOC_WAFER.setInvisible();
+        HIGHLY_ADVANCED_SOC.setInvisible();
+        NAND_MEMORY_CHIP_WAFER.setInvisible();
+        NAND_MEMORY_CHIP.setInvisible();
+        NOR_MEMORY_CHIP_WAFER.setInvisible();
+        NOR_MEMORY_CHIP.setInvisible();
+    }
+
+    private static void oreDictHandling() {
         List<String> toRemove = new ArrayList<>();
         toRemove.add("circuitUlv");
         toRemove.add("circuitLv");
@@ -73,7 +144,6 @@ public class CircuitRecipes {
         toRemove.add("circuitUxv");
         toRemove.add("circuitOpv");
         toRemove.add("circuitMax");
-
         for (String oredict : toRemove) {
             List<ItemStack> list = OreDictionary.getOres(oredict, false);
             for (int i = 0; i < list.size(); i++) {
@@ -88,25 +158,6 @@ public class CircuitRecipes {
         }
 
         VACUUM_TUBE.setInvisible(true);
-        SMD_CAPACITOR.setInvisible();
-        SMD_DIODE.setInvisible();
-        SMD_INDUCTOR.setInvisible();
-        SMD_TRANSISTOR.setInvisible();
-        SMD_RESISTOR.setInvisible();
-        ADVANCED_SMD_CAPACITOR.setInvisible();
-        ADVANCED_SMD_RESISTOR.setInvisible();
-        ADVANCED_SMD_TRANSISTOR.setInvisible();
-        ADVANCED_SMD_DIODE.setInvisible();
-        ADVANCED_SMD_INDUCTOR.setInvisible();
-    }
-
-    public static void registerCircuits() {
-        removePreexistingCircuits();
-        SMD.registerSMDRecipes();
-        Chips.registerChips();
-        registerBoards();
-        registerRecipes();
-        registerSolder();
     }
 
     private static void registerSolder() {
@@ -122,7 +173,7 @@ public class CircuitRecipes {
                 OreDictUnifier.get(dust, Antimony));
     }
 
-    public static void registerBoards() {
+    private static void registerBoards() {
         primitiveBoard();
         electronicBoard();
         integratedBoard();
@@ -139,7 +190,7 @@ public class CircuitRecipes {
         supraBoard();
     }
 
-    public static void registerRecipes() {
+    private static void registerRecipes() {
         primitive();
         electronic();
         integrated();

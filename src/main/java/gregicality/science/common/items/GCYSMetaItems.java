@@ -69,35 +69,10 @@ public class GCYSMetaItems {
     // Crystal Circuit Components
     public static MetaItem<?>.MetaValueItem EU_DOPED_CUBIC_ZIRCONIA_BOULE;
     public static MetaItem<?>.MetaValueItem EU_DOPED_CUBIC_ZIRCONIA_WAFER;
-    public static MetaItem<?>.MetaValueItem CRYSTAL_INTERFACE_WAFER;
-    public static MetaItem<?>.MetaValueItem CRYSTAL_INTERFACE_CHIP;
-    public static MetaItem<?>.MetaValueItem ENGRAVED_RUBY_CRYSTAL_CHIP;
-    public static MetaItem<?>.MetaValueItem ENGRAVED_SAPPHIRE_CRYSTAL_CHIP;
-    public static MetaItem<?>.MetaValueItem ENGRAVED_DIAMOND_CRYSTAL_CHIP;
-    public static MetaItem<?>.MetaValueItem CRYSTAL_MODULATOR_RUBY;
-    public static MetaItem<?>.MetaValueItem CRYSTAL_MODULATOR_DIAMOND;
-    public static MetaItem<?>.MetaValueItem CRYSTAL_MODULATOR_SAPPHIRE;
-    public static MetaItem<?>.MetaValueItem CRYSTAL_SYSTEM_ON_CHIP_SOCKET;
 
     // Gooware Circuit Components
     public static MetaItem<?>.MetaValueItem BZ_REACTION_CHAMBER;
     public static MetaItem<?>.MetaValueItem NONLINEAR_CHEMICAL_OSCILLATOR;
-
-    // Optical Circuit Components
-    public static MetaItem<?>.MetaValueItem PHASE_CHANGE_MEMORY;
-    public static MetaItem<?>.MetaValueItem OPTICAL_FIBER;
-    public static MetaItem<?>.MetaValueItem DIELECTRIC_MIRROR;
-    public static MetaItem<?>.MetaValueItem EMPTY_LASER_ASSEMBLY;
-    public static MetaItem<?>.MetaValueItem HELIUM_NEON_LASER;
-    public static MetaItem<?>.MetaValueItem ND_YAG_LASER;
-    public static MetaItem<?>.MetaValueItem OPTICAL_LASER_CONTROL_UNIT;
-
-    // Spintronic Circuit Components
-    public static MetaItem<?>.MetaValueItem SPIN_TRANSFER_TORQUE_MEMORY;
-    public static MetaItem<?>.MetaValueItem TOPOLOGICAL_INSULATOR_TUBE;
-    public static MetaItem<?>.MetaValueItem BOSE_EINSTEIN_CONDENSATE_CONTAINMENT_UNIT;
-    public static MetaItem<?>.MetaValueItem BOSE_EINSTEIN_CONDENSATE;
-    public static MetaItem<?>.MetaValueItem ESR_COMPUTATION_UNIT;
 
     // Voltage Coils
     public static MetaItem<?>.MetaValueItem VOLTAGE_COIL_UHV;
@@ -115,26 +90,6 @@ public class GCYSMetaItems {
     public static MetaItem<?>.MetaValueItem PICO_POWER_IC;
     public static MetaItem<?>.MetaValueItem FEMTO_POWER_IC;
 
-    // Circuit Boards
-    public static MetaItem<?>.MetaValueItem GOOWARE_BOARD;
-    public static MetaItem<?>.MetaValueItem OPTICAL_BOARD;
-    public static MetaItem<?>.MetaValueItem SPINTRONIC_BOARD;
-    public static MetaItem<?>.MetaValueItem GOOWARE_CIRCUIT_BOARD;
-    public static MetaItem<?>.MetaValueItem OPTICAL_CIRCUIT_BOARD;
-    public static MetaItem<?>.MetaValueItem SPINTRONIC_CIRCUIT_BOARD;
-
-    // SMDs
-    public static MetaItem<?>.MetaValueItem OPTICAL_CAPACITOR;
-    public static MetaItem<?>.MetaValueItem OPTICAL_DIODE;
-    public static MetaItem<?>.MetaValueItem OPTICAL_RESISTOR;
-    public static MetaItem<?>.MetaValueItem OPTICAL_TRANSISTOR;
-    public static MetaItem<?>.MetaValueItem OPTICAL_INDUCTOR;
-    public static MetaItem<?>.MetaValueItem SPINTRONIC_CAPACITOR;
-    public static MetaItem<?>.MetaValueItem SPINTRONIC_DIODE;
-    public static MetaItem<?>.MetaValueItem SPINTRONIC_RESISTOR;
-    public static MetaItem<?>.MetaValueItem SPINTRONIC_TRANSISTOR;
-    public static MetaItem<?>.MetaValueItem SPINTRONIC_INDUCTOR;
-
     // Crafting Components
     public static MetaItem<?>.MetaValueItem COMPONENT_GRINDER_BORON_NITRIDE;
 
@@ -142,6 +97,7 @@ public class GCYSMetaItems {
     public static MetaItem<?>.MetaValueItem MAGNETRON;
 
     // Process Intermediary Items
+
     // Nanotubes
     public static MetaItem<?>.MetaValueItem CARBON_ALLOTROPE_MIXTURE;
     public static MetaItem<?>.MetaValueItem GRAPHENE_ALIGNED_CNT;
@@ -217,15 +173,6 @@ public class GCYSMetaItems {
         // Crystal Circuit Components: ID 130-159
         EU_DOPED_CUBIC_ZIRCONIA_BOULE = metaItem1.addItem(130, "boule.cubic_zirconia.europium");
         EU_DOPED_CUBIC_ZIRCONIA_WAFER = metaItem1.addItem(131, "wafer.cubic_zirconia.europium");
-        CRYSTAL_INTERFACE_WAFER = metaItem1.addItem(132, "wafer.crystal.interface");
-        CRYSTAL_INTERFACE_CHIP = metaItem1.addItem(133, "plate.crystal.interface");
-        ENGRAVED_RUBY_CRYSTAL_CHIP = metaItem1.addItem(134, "engraved.crystal_chip.ruby");
-        ENGRAVED_SAPPHIRE_CRYSTAL_CHIP = metaItem1.addItem(135, "engraved.crystal_chip.sapphire");
-        ENGRAVED_DIAMOND_CRYSTAL_CHIP = metaItem1.addItem(136, "engraved.crystal_chip.diamond");
-        CRYSTAL_MODULATOR_RUBY = metaItem1.addItem(137, "crystal.modulator.ruby");
-        CRYSTAL_MODULATOR_SAPPHIRE = metaItem1.addItem(138, "crystal.modulator.sapphire");
-        CRYSTAL_MODULATOR_DIAMOND = metaItem1.addItem(139, "crystal.modulator.diamond");
-        CRYSTAL_SYSTEM_ON_CHIP_SOCKET = metaItem1.addItem(140, "crystal.system_on_chip.socket");
 
         // Wetware Circuit Components: ID 160-179
 
@@ -233,22 +180,6 @@ public class GCYSMetaItems {
         // Gooware Circuit Components: ID 180-199
         BZ_REACTION_CHAMBER = metaItem1.addItem(180, "reaction_chamber.bz");
         NONLINEAR_CHEMICAL_OSCILLATOR = metaItem1.addItem(181, "nonlinear_chemical_oscillator");
-
-        // Optical Circuit Components: ID 200-219
-        PHASE_CHANGE_MEMORY = metaItem1.addItem(200, "plate.phase_change_memory");
-        OPTICAL_FIBER = metaItem1.addItem(201, "optical_fiber");
-        DIELECTRIC_MIRROR = metaItem1.addItem(202, "dielectric_mirror");
-        EMPTY_LASER_ASSEMBLY = metaItem1.addItem(203, "laser.assembly.empty");
-        HELIUM_NEON_LASER = metaItem1.addItem(204, "laser.helium_neon");
-        ND_YAG_LASER = metaItem1.addItem(205, "laser.nd_yag");
-        OPTICAL_LASER_CONTROL_UNIT = metaItem1.addItem(206, "optical_laser_control_unit");
-
-        // Spintronic Circuit Components: ID 220-239
-        SPIN_TRANSFER_TORQUE_MEMORY = metaItem1.addItem(220, "plate.spin_transfer_torque_memory");
-        TOPOLOGICAL_INSULATOR_TUBE = metaItem1.addItem(221, "tube.topological_insulator");
-        BOSE_EINSTEIN_CONDENSATE_CONTAINMENT_UNIT = metaItem1.addItem(222, "containment_unit.bose_einstein_condensate");
-        BOSE_EINSTEIN_CONDENSATE = metaItem1.addItem(223, "bose_einstein_condensate");
-        ESR_COMPUTATION_UNIT = metaItem1.addItem(224, "esr_computation_unit");
 
         // Cosmic Circuit Components: ID 240-259
 
@@ -274,27 +205,6 @@ public class GCYSMetaItems {
         NANO_POWER_IC = metaItem1.addItem(368, "plate.nano_power_integrated_circuit");
         PICO_POWER_IC = metaItem1.addItem(369, "plate.pico_power_integrated_circuit");
         FEMTO_POWER_IC = metaItem1.addItem(370, "plate.femto_power_integrated_circuit");
-
-        // Circuit Boards: ID 380-419
-        GOOWARE_BOARD = metaItem1.addItem(380, "board.gooware");
-        OPTICAL_BOARD = metaItem1.addItem(381, "board.optical");
-        SPINTRONIC_BOARD = metaItem1.addItem(382, "board.spintronic");
-        GOOWARE_CIRCUIT_BOARD = metaItem1.addItem(400, "circuit_board.gooware");
-        OPTICAL_CIRCUIT_BOARD = metaItem1.addItem(401, "circuit_board.optical");
-        SPINTRONIC_CIRCUIT_BOARD = metaItem1.addItem(402, "circuit_board.spintronic");
-
-        // SMDs: ID 420-479
-        OPTICAL_CAPACITOR = metaItem1.addItem(420, "component.optical_smd.capacitor");
-        OPTICAL_DIODE = metaItem1.addItem(421, "component.optical_smd.diode");
-        OPTICAL_RESISTOR = metaItem1.addItem(422, "component.optical_smd.resistor");
-        OPTICAL_TRANSISTOR = metaItem1.addItem(423, "component.optical_smd.transistor");
-        OPTICAL_INDUCTOR = metaItem1.addItem(424, "component.optical_smd.inductor");
-
-        SPINTRONIC_CAPACITOR = metaItem1.addItem(425, "component.spintronic_smd.capacitor");
-        SPINTRONIC_DIODE = metaItem1.addItem(426, "component.spintronic_smd.diode");
-        SPINTRONIC_RESISTOR = metaItem1.addItem(427, "component.spintronic_smd.resistor");
-        SPINTRONIC_TRANSISTOR = metaItem1.addItem(428, "component.spintronic_smd.transistor");
-        SPINTRONIC_INDUCTOR = metaItem1.addItem(429, "component.spintronic_smd.inductor");
 
         // Simple Machine Crafting Components: ID 480-499
         COMPONENT_GRINDER_BORON_NITRIDE = metaItem1.addItem(480, "component.grinder.boron_nitride")

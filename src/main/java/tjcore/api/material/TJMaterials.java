@@ -67,22 +67,6 @@ public final class TJMaterials {
     public static Material TantalumHafniumSeaborgiumCarboNitride;
     public static Material OganessonTetraTennesside;
 
-    //Soldering Alloys
-    public static Material SolderingAlloyI;
-    public static Material SolderingAlloyII;
-    public static Material SolderingAlloyIII;
-    public static Material SolderingAlloyIV;
-    public static Material SolderingAlloyV;
-    public static Material SolderingAlloyVI;
-    public static Material FritSolderMix;
-    public static Material SolderVPrep;
-    public static Material SolderVPrepClean;
-    public static Material SolderVStruct;
-    public static Material IndiumRadium;
-    public static Material IndiumRadiumRadon;
-    public static Material PilledFoilMix;
-    public static Material IrradiatingMix;
-    public static Material SolderVIPrep;
 
     //Chemicals
     public static Material Methyltrichlorosilane;

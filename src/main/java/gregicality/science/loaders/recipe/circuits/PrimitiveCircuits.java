@@ -73,14 +73,6 @@ public class PrimitiveCircuits {
                     .output(VACUUM_TUBE_COMPONENTS, copper == Copper ? 4 : 6)
                     .duration(120).EUt(VA[ULV]).buildAndRegister();
         }
-
-        PRESSURE_CHAMBER_RECIPES.recipeBuilder()
-                .input(GLASS_TUBE)
-                .input(VACUUM_TUBE_COMPONENTS)
-                .input(OrePrefix.ring, Kovar)
-                .output(VACUUM_TUBE)
-                .pressure(13E-5)
-                .duration(100).EUt(16).buildAndRegister();
     }
 
     private static void removeGTCERecipes() {

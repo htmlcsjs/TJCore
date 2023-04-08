@@ -11,7 +11,7 @@ public class GCYSRecipeLoader {
     public static void init() {
         initChains();
         initOreProcessing();
-        initCircuits();
+        //initCircuits();
         MiscRecipes.init();
         RecipeConflicts.init();
         GCYSComponentRecipes.init();
@@ -67,8 +67,6 @@ public class GCYSRecipeLoader {
 
     private static void initCircuits() {
         PrimitiveCircuits.init();
-        CrystalCircuits.init();
-        WetwareCircuits.init();
         GoowareCircuits.init();
         OpticalCircuits.init();
         SpintronicCircuits.init();
