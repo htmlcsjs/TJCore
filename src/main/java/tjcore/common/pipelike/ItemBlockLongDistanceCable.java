@@ -32,7 +32,7 @@ public class ItemBlockLongDistanceCable  extends ItemBlockMaterialPipe<Insulatio
         tooltip.add(I18n.format("gregtech.cable.voltage", wireProperties.getVoltage(), GTValues.VNF[tier]));
         tooltip.add(I18n.format("gregtech.cable.amperage", wireProperties.getAmperage()));
         tooltip.add(I18n.format("gregtech.cable.loss_per_block", wireProperties.getLossPerBlock()));
-        tooltip.add("GAMING");
+        tooltip.add("Long Distance Cable: Will Only Interact with Transformers");
 
         if (flagIn.isAdvanced()) {
             tooltip.add("MetaItem Id: " + ((BlockMaterialPipe<?, ?, ?>)blockPipe).getPrefix().name + ((BlockMaterialPipe<?, ?, ?>)blockPipe).getItemMaterial(stack).toCamelCaseString());

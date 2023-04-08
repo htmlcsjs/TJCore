@@ -1,5 +1,6 @@
 package tjcore.api.material;
 
+import gregtech.api.GTValues;
 import gregtech.api.unification.Element;
 import gregtech.api.unification.Elements;
 import gregtech.api.unification.material.Material;
@@ -10,6 +11,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 
@@ -20,8 +22,6 @@ public final class TJMaterials {
     public static final Element Co60 = Elements.add(27L, 33L, -1L, null, "Cobalt-60", "Co-60", true);
 
     public static Material[] doNotGenerate = new Material[]{Carbon};
-    public static Material[] longDistanceWireMaterials = new Material[]{Manganese, Bismuth, Antimony, Gallium, Vanadium};
-
     public static List<MaterialFlag> STANDARDPLATE = new ArrayList<>(Arrays.asList(GENERATE_PLATE, GENERATE_DENSE, EXCLUDE_BLOCK_CRAFTING_BY_HAND_RECIPES));
     public static List<MaterialFlag> STANDARDWIREFINE = new ArrayList<>(Collections.singletonList(GENERATE_FINE_WIRE));
     public static List<MaterialFlag> STANDARDFOIL = new ArrayList<>(Collections.singletonList(GENERATE_FOIL));
@@ -152,6 +152,14 @@ public final class TJMaterials {
     public static Material Starlight;
     public static Material Salis;
 
+    //Long dist cable materials
+
+    public static Material LVLongDistance = new Material.Builder(25029, "lv_long_distance").color(VC[LV]).build();
+    public static Material MVLongDistance = new Material.Builder(25030, "mv_long_distance").color(VC[MV]).build();
+    public static Material HVLongDistance = new Material.Builder(25031, "hv_long_distance").color(VC[HV]).build();
+    public static Material EVLongDistance = new Material.Builder(25032, "ev_long_distance").color(VC[EV]).build();
+    public static Material IVLongDistance = new Material.Builder(25033, "iv_long_distance").color(VC[IV]).build();
+
     //endgame unknown
     public static Material ProgrammableMatter;
     public static Material Gluons;
@@ -159,6 +167,7 @@ public final class TJMaterials {
     public static Material LightQuarks;
     public static Material Leptons;
     public static Material HeavyQuarkDegenerate;
+    public static Material[] longDistanceWireMaterials = new Material[]{LVLongDistance, MVLongDistance, HVLongDistance, EVLongDistance, IVLongDistance};
 
     private TJMaterials() {/**/}
 

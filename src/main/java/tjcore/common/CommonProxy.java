@@ -52,7 +52,7 @@ public class CommonProxy {
         registry.register(ROTATION_AXLE);
         for (int i = 0; i < longDistanceWireMaterials.length; i++) {
             for (BlockCableLongDistance cable : LONG_DIST_CABLES) {
-                cable.addCableMaterial(longDistanceWireMaterials[i], new WireProperties(Math.toIntExact(V[i + 1]), 4, 0));
+                cable.addCableMaterial(longDistanceWireMaterials[i], new WireProperties(Math.toIntExact(V[i + 1]), 16, 0));
             }
         }
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityRotationAxle.class, new TileEntityRotationAxleTESR());
@@ -95,6 +95,7 @@ public class CommonProxy {
         GTComponents.init();
         PetrochemRecipes.init();
         TJFuelRecipes.init();
+        LogisiticsRecipes.init();
         if (Loader.isModLoaded("draconicevolution")) {
             ArmorInfuserRecipes.register();
         }

@@ -20,6 +20,7 @@ public class TJComponents {
     public static Component BUS_SPRING;
     public static Component POWER_IC;
     public static Component RING;
+    public static Component CONDUCTOR;
 
     public static void init() {
         CraftingComponent.ROTOR.appendIngredients(Stream.of(new Object[][]{
@@ -54,6 +55,21 @@ public class TJComponents {
                 {11, TJMetaItems.CARBON_FIBER_PLATE},
                 {12, TJMetaItems.CARBON_FIBER_PLATE},
                 {13, TJMetaItems.CARBON_FIBER_PLATE},
+
+        }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
+
+        //TODO: Materials for UHV+
+
+        CONDUCTOR = new Component(Stream.of(new Object[][]{
+                {0, new UnificationEntry(wireGtSingle, Lead)},
+                {1, new UnificationEntry(wireGtSingle, Tin)},
+                {2, new UnificationEntry(wireGtSingle, Copper)},
+                {3, new UnificationEntry(wireGtSingle, Gold)},
+                {4, new UnificationEntry(wireGtSingle, Aluminium)},
+                {5, new UnificationEntry(wireGtSingle, Platinum)},
+                {6, new UnificationEntry(wireGtSingle, NiobiumNitride)},
+                {7, new UnificationEntry(wireGtSingle, VanadiumGallium)},
+                {8, new UnificationEntry(wireGtSingle, YttriumBariumCuprate)},
 
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 

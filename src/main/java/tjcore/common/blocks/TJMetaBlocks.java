@@ -40,7 +40,7 @@ public class TJMetaBlocks {
 
     public static BlockGeneratorCoil BLOCK_GENERATOR_COIL;
 
-    public static final BlockCableLongDistance[] LONG_DIST_CABLES = new BlockCableLongDistance[10];
+    public static final BlockCableLongDistance[] LONG_DIST_CABLES = new BlockCableLongDistance[1];
     
     public static void init() {
         DRACONIC_CASING = new DraconicCasings();
@@ -51,10 +51,8 @@ public class TJMetaBlocks {
         BLOCK_BEARING.setRegistryName("block_bearing");
         BLOCK_GENERATOR_COIL = new BlockGeneratorCoil();
         BLOCK_GENERATOR_COIL.setRegistryName("generator_coil");
-        for (Insulation ins : Insulation.values()) {
-            LONG_DIST_CABLES[ins.ordinal()] = new BlockCableLongDistance(ins);
-            LONG_DIST_CABLES[ins.ordinal()].setRegistryName(ins.getName());
-        }
+        LONG_DIST_CABLES[0] = new BlockCableLongDistance(Insulation.CABLE_QUADRUPLE);
+        LONG_DIST_CABLES[0].setRegistryName(Insulation.CABLE_QUADRUPLE.getName());
         ROTATION_AXLE = new BlockRotationAxle();
         ROTATION_AXLE.setRegistryName("rotation_axle");
     }

@@ -91,6 +91,14 @@ material.fiberglass=Fiberglass
 material.cobalt_sixty=Cobalt-60
 material.seleniummonobromide=Selenium Monobromide
 
+# LDC Materials
+
+material.lv_long_distance=Long Distance (LV)
+material.mv_long_distance=Long Distance (MV)
+material.hv_long_distance=Long Distance (HV)
+material.ev_long_distance=Long Distance (EV)
+material.iv_long_distance=Long Distance (IV)
+
 
 item.polyacrylonitrile.dustTiny=Tiny Pile of Polyacrylonitrile Pulp
 item.polyacrylonitrile.dustSmall=Small Pile of Polyacrylonitrile Pulp
