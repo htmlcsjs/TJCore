@@ -13,6 +13,7 @@ tile.turbine_blades.aluminium_blades.name=Aluminum Turbine Blades
 tile.turbine_blades.stainless_blades.name=Stainless Steel Turbine Blades
 tile.turbine_blades.titanium_blades.name=Titanium Turbine Blades
 tile.turbine_blades.tungstensteel_blades.name=Tungsteensteel Turbine Blades
+tile.rotation_axle.name=Axle
 
 # materials
 material.bt_6=BT6
@@ -149,7 +150,7 @@ tjcore.modular_steam_turbine.description=The Modular Steam Turbine is your first
 tjcore.machine.armor_infuser.description=The armor infuser is an advanced machine capable of upgrading Draconic Evolution tools and armor.
 
 tjcore.machine.creative_rotation=Creative Rotation Source
-tjcore.machine.gearbox=Rotation Gearbox
+tjcore.machine.gearbox.name=Rotation Gearbox
 
 # Recipe Maps
 recipemap.component_assembler.name=Component Assembler
