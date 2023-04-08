@@ -1,6 +1,7 @@
 package tjcore.common.metatileentities.axle;
 
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.PacketBuffer;
 import tjcore.api.axle.IRotationConsumer;
 import tjcore.api.axle.IRotationProvider;
 import tjcore.api.axle.ISpinnable;
@@ -171,5 +172,21 @@ public class MetaTileEntityGearbox extends MetaTileEntity implements IRotationPr
             data.setBoolean(f.toString(), isOutput.get(f));
         }
         return super.writeToNBT(data);
+    }
+
+    @Override
+    public void writeInitialSyncData(PacketBuffer buf) {
+        for (EnumFacing f : EnumFacing.VALUES) {
+            buf.writeBoolean(isOutput.get(f));
+        }
+        super.writeInitialSyncData(buf);
+    }
+
+    @Override
+    public void receiveInitialSyncData(PacketBuffer buf) {
+        for (EnumFacing f : EnumFacing.VALUES) {
+            isOutput.put(f, buf.readBoolean());
+        }
+        super.receiveInitialSyncData(buf);
     }
 }
