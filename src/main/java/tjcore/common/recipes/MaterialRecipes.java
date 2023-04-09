@@ -19,6 +19,7 @@ import tjcore.common.TJConfig;
 import static gregicality.science.api.recipes.GCYSRecipeMaps.CVD_RECIPES;
 import static gregicality.science.api.recipes.GCYSRecipeMaps.SONICATION_RECIPES;
 import static gregicality.science.api.unification.materials.GCYSMaterials.Alumina;
+import static gregicality.science.api.unification.materials.GCYSMaterials.Hydrazine;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
@@ -27,6 +28,7 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static tjcore.api.material.TJMaterials.*;
 import static tjcore.common.metaitem.TJMetaItems.*;
+import static tjcore.common.recipes.recipemaps.TJRecipeMaps.*;
 
 public class MaterialRecipes {
 
@@ -324,7 +326,56 @@ public class MaterialRecipes {
     }
 
     public static void registerCobalt() {
+        CHEMICAL_RECIPES.recipeBuilder()
+                .EUt(VA[MV])
+                .duration(130)
+                .input(dust, Cobalt)
+                .fluidInputs(HydrochloricAcid.getFluid(2000))
+                .fluidInputs(Oxygen.getFluid(1000))
+                .fluidOutputs(CobaltChloride.getFluid(1000))
+                .fluidOutputs(Water.getFluid(1000))
+                .buildAndRegister();
 
+        CHEMICAL_RECIPES.recipeBuilder()
+                .EUt(VA[MV])
+                .duration(230)
+                .input(dust, Iodine, 4)
+                .fluidInputs(Hydrazine.getFluid(1000))
+                .fluidOutputs(ImpureHydroiodicAcid.getFluid(2000))
+                .buildAndRegister();
+
+        DISTILLATION_RECIPES.recipeBuilder()
+                .EUt(VA[MV])
+                .duration(155)
+                .fluidInputs(ImpureHydroiodicAcid.getFluid(1000))
+                .fluidOutputs(HydroiodicAcid.getFluid(2000))
+                .fluidOutputs(Nitrogen.getFluid(1000))
+                .buildAndRegister();
+
+        CHEMICAL_RECIPES.recipeBuilder()
+                .EUt(VA[MV])
+                .duration(90)
+                .fluidInputs(CobaltChloride.getFluid(1000))
+                .fluidInputs(HydroiodicAcid.getFluid(1000))
+                .fluidOutputs(CobaltIodide.getFluid(1000))
+                .fluidOutputs(HydrochloricAcid.getFluid(1000))
+                .buildAndRegister();
+
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .EUt(VA[EV])
+                .duration(330)
+                .fluidInputs(CobaltIodide.getFluid(1000))
+                .fluidOutputs(Cobalt59Iodide.getFluid(950))
+                .fluidOutputs(Cobalt60Iodide.getFluid(50))
+                .buildAndRegister();
+
+        EXPOSURE_CHAMBER_RECIPES.recipeBuilder()
+                .EUt(VA[IV])
+                .duration(180)
+                .input(dust, Cobalt59)
+                .output(dust, Cobalt)
+                .notConsumable(EMITTER_IV)
+                .buildAndRegister();
     }
 
     public static void registerMetalCasings() {

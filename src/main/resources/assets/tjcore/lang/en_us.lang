@@ -91,6 +91,28 @@ material.hafnium_silicate=Hafnium Silicate
 material.fiberglass=Fiberglass
 material.cobalt_sixty=Cobalt-60
 material.seleniummonobromide=Selenium Monobromide
+material.cobaltchloride=Cobalt (II) Chloride
+material.cobaltiodide=Cobalt (II) Iodide
+material.cobalt_59=Cobalt-59
+material.cobalt_59_iodide=Cobalt-59 (II) Iodide
+material.cobalt_60_iodide=Cobalt-60 (II) Iodide
+material.hydroiodicacid=Hydroiodic Acid
+material.impurehydroiodicacid=Impure Hydroiodic Acid Mixture
+material.butynediol=1,4-Butynediol
+material.ka_oil=Ketone-Alcohol Oil
+material.adipic_acid=Adipic Acid
+material.nitrous_acid=Nitrous Acid
+material.barium_oxide=Barium Oxide
+material.barium_hydroxide=Barium Hydroxide
+material.cyclopentanone=Cyclopentanone
+material.benzenesulfonic_acid=Benzenesulfonic Acid
+material.triphenylsulfonium_hexafluoroantimonate=Triphenylsulfonium Hexafluoroantimonate
+material.hypofluorous_acid=Hypofluorous Acid
+material.hexafluoroantimonate_salt_1=(Sulfanediyldi-4,1-phenylene)bis(diphenylsulfonium) Hexafluoroantimonate
+material.hexafluoroantimonate_salt_2=Diphenyl[4-(phenylsulfanyl)phenyl]sulfonium Hexafluoroantimonate
+material.mixed_hexafluoroantimonate_salts=Mixed Hexafluoroantimonate Salts
+material.dilute_fluoroantimonic_acid=Diluted Fluoroantimonic Acid
+
 
 # LDC Materials
 

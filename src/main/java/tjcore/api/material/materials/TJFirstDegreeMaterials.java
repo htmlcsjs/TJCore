@@ -678,6 +678,142 @@ public class TJFirstDegreeMaterials {
                 .components(Helium3, 1)
                 .build();
 
+        CobaltChloride = new Material.Builder(25119, "cobaltchloride")
+                .fluid()
+                .colorAverage()
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Cobalt, 1, Chlorine, 2)
+                .build();
+
+        CobaltIodide = new Material.Builder(25120, "cobaltiodide")
+                .fluid()
+                .colorAverage()
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Cobalt, 1, Iodine, 2)
+                .build();
+
+        Cobalt59 = new Material.Builder(25121, "cobalt_59")
+                .dust()
+                .color(0x3D3DFA)
+                .build()
+                .setFormula("Co-59", false);
+
+        Cobalt59Iodide = new Material.Builder(25122, "cobalt_59_iodide")
+                .fluid()
+                .colorAverage()
+                .components(Cobalt59, 1, Iodine, 2)
+                .build();
+
+        Cobalt60Iodide = new Material.Builder(25123, "cobalt_60_iodide")
+                .fluid()
+                .colorAverage()
+                .components(Cobalt60, 1, Iodine, 2)
+                .build();
+
+        HydroiodicAcid = new Material.Builder(25124, "hydroiodicacid")
+                .fluid()
+                .colorAverage()
+                .components(Hydrogen, 1, Iodine, 1)
+                .build();
+
+        ImpureHydroiodicAcid = new Material.Builder(25125, "impurehydroiodicacid")
+                .fluid()
+                .colorAverage()
+                .flags(DISABLE_DECOMPOSITION)
+                .components(HydroiodicAcid, 1, Water, 1)
+                .build()
+                .setFormula("N2(HI)2H2O",true);
+
+        Butynediol = new Material.Builder(25126, "butynediol")
+                .fluid()
+                .colorAverage()
+                .components(Carbon, 4, Hydrogen, 6, Oxygen, 2)
+                .build();
+
+        KAOil = new Material.Builder(25127, "ka_oil")
+                .fluid()
+                .color(0xFA7B53)
+                .components(Carbon, 12, Hydrogen, 22, Oxygen, 2)
+                .build()
+                .setFormula("2(C6H11OH)2((CH2)5CO)", true);
+
+        AdipicAcid = new Material.Builder(25128, "adipic_acid")
+                .dust()
+                .colorAverage()
+                .components(Carbon, 6, Hydrogen, 10, Oxygen, 4)
+                .build()
+                .setFormula("C6H8O2(OH)2", true);
+
+        NitrousAcid = new Material.Builder(25138, "nitrous_acid")
+                .fluid()
+                .colorAverage()
+                .components(Hydrogen, 1, Nitrogen, 1, Oxygen, 2)
+                .build();
+
+        BariumOxide = new Material.Builder(25129, "barium_oxide")
+                .dust()
+                .colorAverage()
+                .components(Barium, 1, Oxygen, 1)
+                .build();
+
+        BariumHydroxide = new Material.Builder(25130, "barium_hydroxide")
+                .dust()
+                .colorAverage()
+                .components(Barium, 1, Hydrogen, 1, Oxygen, 1)
+                .build();
+
+        Cyclopentanone = new Material.Builder(25131, "cyclopentanone")
+                .fluid()
+                .colorAverage()
+                .components(Carbon, 5, Hydrogen, 8, Oxygen, 1)
+                .build()
+                .setFormula("(CH2)4CO",true);
+
+        BenzenesulfonicAcid = new Material.Builder(25132, "benzenesulfonic_acid")
+                .dust()
+                .colorAverage()
+                .components(Carbon, 6, Hydrogen, 6, Oxygen, 3, Sulfur, 1)
+                .build();
+
+        TriphenylsulfoniumHexafluoroantimonate = new Material.Builder(25133, "triphenylsulfonium_hexafluoroantimonate")
+                .fluid()
+                .color(0x8968FA)
+                .components(Carbon, 18, Hydrogen, 15, Sulfur, 1, Antimony, 1, Fluorine, 6)
+                .build();
+
+        HypofluorousAcid = new Material.Builder(25134, "hypofluorous_acid")
+                .fluid()
+                .colorAverage()
+                .components(Hydrogen, 1, Fluorine, 1, Oxygen, 1)
+                .build();
+
+        HexafluoroantimonateSalt1 = new Material.Builder(25135, "hexafluoroantimonate_salt_1")
+                .fluid()
+                .color(0x26095F)
+                .components(Carbon, 36, Hydrogen, 28, Sulfur, 3, Antimony, 2, Fluorine, 12)
+                .build()
+                .setFormula("C36H28S3(SbF6)2", true);
+
+        HexafluoroantimonateSalt2 = new Material.Builder(25136, "hexafluoroantimonate_salt_2")
+                .fluid()
+                .color(0x5A2F9F)
+                .components(Carbon, 24, Hydrogen, 19, Sulfur, 2, Antimony, 1, Fluorine, 6)
+                .build();
+
+        MixedHexafluoroantimonateSalts = new Material.Builder(25137, "mixed_hexafluoroantimonate_salts")
+                .fluid()
+                .flags(DECOMPOSITION_BY_CENTRIFUGING)
+                .colorAverage()
+                .components(HexafluoroantimonateSalt1, 1, HexafluoroantimonateSalt2, 1)
+                .build();
+
+        DiluteFluoroantimonicAcid = new Material.Builder(25139, "dilute_fluoroantimonic_acid")
+                .fluid()
+                .flags(DISABLE_DECOMPOSITION)
+                .colorAverage()
+                .components(Hydrogen, 1, Antimony, 1, Fluorine, 6)
+                .build();
+
         // SCRIPTS FOR TJCORE HAS 29000-30000
     }
 

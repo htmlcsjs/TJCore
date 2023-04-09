@@ -296,7 +296,7 @@ public class CircuitRecipes {
 
         ASSEMBLER_RECIPES.recipeBuilder()
                 .EUt(120)
-                .duration(20)
+                .duration(50)
                 .input(COPPER_LAMINATED_EPOXID)
                 .input(foil, Polyethylene)
                 .output(MICRO_PREBOARD)
@@ -325,7 +325,7 @@ public class CircuitRecipes {
 
         ASSEMBLER_RECIPES.recipeBuilder()
                 .EUt(500)
-                .duration(35)
+                .duration(55)
                 .input(ELECTRUM_LAMINATED_EPOXID)
                 .input(foil, Polyethylene)
                 .output(NANO_PREBOARD)
@@ -333,7 +333,7 @@ public class CircuitRecipes {
 
         CHEMICAL_BATH_RECIPES.recipeBuilder()
                 .EUt(VA[LV])
-                .duration(20)
+                .duration(80)
                 .input(NANO_PREBOARD)
                 .fluidInputs(NitricAcid.getFluid(50))
                 .output(NANO_BOARD)
@@ -343,15 +343,15 @@ public class CircuitRecipes {
     private static void imcBoard() {
         //Multi-Layer Etched PCB
         ASSEMBLER_RECIPES.recipeBuilder()
-                .EUt(500)
-                .duration(20)
+                .EUt(VA[MV])
+                .duration(150)
                 .input(wireFine, Fiberglass)
                 .output(FIBERGLASS_MESH, 2)
                 .buildAndRegister();
 
         CHEMICAL_BATH_RECIPES.recipeBuilder()
                 .EUt(VA[EV])
-                .duration(40)
+                .duration(50)
                 .input(FIBERGLASS_MESH)
                 .fluidInputs(Epoxy.getFluid(72))
                 .output(plate, ReinforcedEpoxyResin)
@@ -359,7 +359,7 @@ public class CircuitRecipes {
 
         LAMINATOR_RECIPES.recipeBuilder()
                 .EUt(VA[IV])
-                .duration(20)
+                .duration(60)
                 .input(plate, ReinforcedEpoxyResin, 4)
                 .input(foil, Germanium)
                 .input(foil, Fiberglass)
@@ -369,7 +369,7 @@ public class CircuitRecipes {
 
         ASSEMBLER_RECIPES.recipeBuilder()
                 .EUt(VA[EV])
-                .duration(15)
+                .duration(55)
                 .input(GERMANIUM_LAMINATED_EPOXID)
                 .input(foil, Polyethylene)
                 .output(IMC_PREBOARD)
@@ -377,7 +377,7 @@ public class CircuitRecipes {
 
         CHEMICAL_BATH_RECIPES.recipeBuilder()
                 .EUt(VA[LV])
-                .duration(20)
+                .duration(80)
                 .input(IMC_PREBOARD)
                 .fluidInputs(NitricAcid.getFluid(50))
                 .output(IMC_BOARD)

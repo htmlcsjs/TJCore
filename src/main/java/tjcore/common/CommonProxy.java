@@ -24,6 +24,7 @@ import tjcore.common.pipelike.rotation.TileEntityRotationAxle;
 import tjcore.common.pipelike.rotation.TileEntityRotationAxleTESR;
 import tjcore.common.recipes.*;
 import tjcore.common.recipes.chains.PetrochemRecipes;
+import tjcore.common.recipes.chains.PhotoresistChains;
 import tjcore.common.recipes.circuits.CircuitRecipes;
 import tjcore.common.recipes.compatrecipes.ArmorInfuserRecipes;
 import tjcore.common.recipes.polymers.TJPolymers;
@@ -94,6 +95,7 @@ public class CommonProxy {
         TJPolymers.registerPolymers();
         GTComponents.init();
         PetrochemRecipes.init();
+        PhotoresistChains.init();
         LogisiticsRecipes.init();
         if (Loader.isModLoaded("draconicevolution")) {
             ArmorInfuserRecipes.register();

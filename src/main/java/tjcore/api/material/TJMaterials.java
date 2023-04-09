@@ -1,6 +1,5 @@
 package tjcore.api.material;
 
-import gregtech.api.GTValues;
 import gregtech.api.unification.Element;
 import gregtech.api.unification.Elements;
 import gregtech.api.unification.material.Material;
@@ -109,6 +108,27 @@ public final class TJMaterials {
     public static Material AluminoSilicateGlass;
     public static Material DimethylCarbonate;
     public static Material TetramethylammoniumBromide;
+    public static Material CobaltChloride;
+    public static Material CobaltIodide;
+    public static Material Cobalt60Iodide;
+    public static Material Cobalt59Iodide;
+    public static Material Cobalt59;
+    public static Material HydroiodicAcid;
+    public static Material ImpureHydroiodicAcid;
+    public static Material Butynediol;
+    public static Material KAOil;
+    public static Material AdipicAcid;
+    public static Material NitrousAcid;
+    public static Material BariumOxide;
+    public static Material BariumHydroxide;
+    public static Material Cyclopentanone;
+    public static Material BenzenesulfonicAcid;
+    public static Material TriphenylsulfoniumHexafluoroantimonate;
+    public static Material HypofluorousAcid;
+    public static Material HexafluoroantimonateSalt1;
+    public static Material HexafluoroantimonateSalt2;
+    public static Material MixedHexafluoroantimonateSalts;
+    public static Material DiluteFluoroantimonicAcid;
 
     // Cermaics + Glass
     public static Material SodiumPotassiumNiobate;
