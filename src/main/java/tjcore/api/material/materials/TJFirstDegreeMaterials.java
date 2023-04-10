@@ -109,6 +109,7 @@ public class TJFirstDegreeMaterials {
 
         LuminescentSiliconNanocrystals = new Material.Builder(25015,"luminescentsiliconnanocrystals")
                 .dust()
+                .iconSet(MaterialIconSet.SHINY)
                 .color(0x363636)
                 .build();
 

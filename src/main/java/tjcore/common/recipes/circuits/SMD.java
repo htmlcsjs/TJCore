@@ -5,6 +5,7 @@ import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.OreDictUnifier;
 import tjcore.common.metaitem.TJMetaItems;
 
+import static gregicality.multiblocks.api.unification.GCYMMaterials.MolybdenumDisilicide;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
@@ -36,21 +37,20 @@ public class SMD {
         ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(70)
                 .EUt(VA[MV])
-                .input(foil, PolyvinylChloride, 2)
-                .input(dust, Carbon)
-                .input(dust, SiliconDioxide)
-                .input(wireFine, AnnealedCopper, 2)
-                .fluidInputs(PolyvinylChloride.getFluid(72))
+                .input(ring, PolyvinylButyral)
+                .input(foil, Epoxy, 4)
+                .input(wireFine, Nichrome, 2)
+                .fluidInputs(PolyphenyleneSulfide.getFluid(72))
                 .output(SMD_RESISTOR_2, 32)
                 .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(70)
                 .EUt(VA[LuV])
-                .input(foil, PolyphenyleneSulfide)
+                .input(foil, Polybenzimidazole)
                 .input(dustTiny, Cobalt60)
                 .input(ring, Lead)
-                .input(wireFine, Platinum, 4)
+                .input(wireFine, Osmium, 4)
                 .fluidInputs(Ladder_Poly_P_Phenylene.getFluid(72))
                 .output(SMD_RESISTOR_3, 32)
                 .buildAndRegister();
@@ -97,11 +97,11 @@ public class SMD {
         ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(70)
                 .EUt(VA[HV])
-                .input(plate, Polyethylene, 2)
-                .input(foil, ErbiumDopedZBLANGlass)
-                .input(foil, Silicon)
-                .input(wireFine, Silver)
-                .fluidInputs(PolyvinylChloride.getFluid(72))
+                .input(plate, IndiumGalliumPhosphide)
+                .input(foil, ErbiumDopedZBLANGlass, 2)
+                .input(foil, PraseodymiumDopedZBLANGlass, 2)
+                .input(wireFine, Palladium, 4)
+                .fluidInputs(SeleniumMonobromide.getFluid(72))
                 .output(SMD_TRANSISTOR_2, 16)
                 .buildAndRegister();
 
@@ -279,8 +279,8 @@ public class SMD {
                 .duration(70)
                 .EUt(VA[IV])
                 .input(ring, BerylliumOxide, 2)
-                .input(wireFine, Electrum, 8)
-                .input(foil, Silicon)
+                .input(wireFine, HSSG, 8)
+                .input(plate, MolybdenumDisilicide)
                 .fluidInputs(Glass.getFluid(144))
                 .output(SMD_INDUCTOR_2, 24)
                 .buildAndRegister();

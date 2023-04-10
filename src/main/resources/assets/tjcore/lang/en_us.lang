@@ -19,6 +19,7 @@ tile.generator_coil.electrum.name=Electrum Generator Coil
 tile.generator_coil.aluminium.name=Aluminium Generator Coil
 tile.generator_coil.platinum.name=Platinum Generator Coil
 tile.rotation_axle.name=Axle
+tile.draconic_casing.draconic_casing_normal.name=Draconic Casing
 
 # materials
 material.bt_6=BT6
@@ -191,21 +192,20 @@ tjcore.machine.modular_steam_turbine.name=Modular Steam Turbine
 tjcore.machine.modular_steam_turbine.description=The Modular Steam Turbine is your first means of generating significant rotational energy.
 tjcore.machine.armor_infuser.description=The armor infuser is an advanced machine capable of upgrading Draconic Evolution tools and armor.
 tjcore.machine.alternator.name=Alternator
+tjcore.machine.roaster.name=Industrial Roaster
 
 tjcore.machine.creative_rotation.name=Creative Rotation Source
 tjcore.machine.gearbox.name=Rotation Gearbox
 
-# Recipe Maps
-recipemap.component_assembler.name=Component Assembler
+# recipemaps
 recipemap.spinning_machine.name=Spooling Recipes
 recipemap.steam_assembler.name=Steam Component Assembler
-recipemap.tree_farmer.name=Tree Farmer
-recipemap.armor_infuser.name=Armor Infusion
-recipemap.laminator.name=Laminator
+recipemap.tree_farmer.name=Tree Farmer Recipes
+recipemap.armor_infuser.name=Armor Infusion Recipes
+recipemap.laminator.name=Laminator Recipes
+recipemap.printer.name=3D Printing Recipes
 
-tile.draconic_casing.draconic_casing_normal.name=Draconic Casing
 
-gregtech.machine.component_assembler.tooltip=Steady there
 
 # Metaitems
 metaitem.primitive_board.name=Primitive Point to Point PCB

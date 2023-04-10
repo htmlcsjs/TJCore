@@ -47,6 +47,7 @@ public class TJMetaTileEntities {
     public static MetaTileEntityCreativeRotation CREATIVE_ROTATION;
     public static MetaTileEntityGearbox GEARBOX;
     public static MetaTileEntityAlternator ALTERNATOR;
+    public static Roaster ROASTER;
 
     public static Loom LOOM;
 
@@ -71,6 +72,7 @@ public class TJMetaTileEntities {
         registerSimpleMetaTileEntity(SPINNING_MACHINE, 12100, "spinning_machine", TJRecipeMaps.SPINNING_RECIPES, Textures.CENTRIFUGE_OVERLAY, true, GTUtility.hvCappedTankSizeFunction);
         CREATIVE_ROTATION = registerMetaTileEntity(12110, new MetaTileEntityCreativeRotation());
         GEARBOX = registerMetaTileEntity(12111, new MetaTileEntityGearbox(tjcoreID("gearbox")));
+        ROASTER = registerMetaTileEntity(12112, new Roaster(tjcoreID("roaster")));
     }
 
     private static void registerSimpleMetaTileEntity(SimpleMachineMetaTileEntity[] machines, int startID, String name, RecipeMap<?> map, ICubeRenderer texture, boolean frontfacing, Function<Integer, Integer> tankScalingFunction) {
