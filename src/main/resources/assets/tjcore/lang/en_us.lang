@@ -13,6 +13,11 @@ tile.turbine_blades.aluminium_blades.name=Aluminum Turbine Blades
 tile.turbine_blades.stainless_blades.name=Stainless Steel Turbine Blades
 tile.turbine_blades.titanium_blades.name=Titanium Turbine Blades
 tile.turbine_blades.tungstensteel_blades.name=Tungsteensteel Turbine Blades
+tile.generator_coil.tin.name=Tin Alternator Coil
+tile.generator_coil.copper.name=Copper Alternator Coil
+tile.generator_coil.electrum.name=Electrum Generator Coil
+tile.generator_coil.aluminium.name=Aluminium Generator Coil
+tile.generator_coil.platinum.name=Platinum Generator Coil
 tile.rotation_axle.name=Axle
 
 # materials
@@ -112,6 +117,26 @@ material.hexafluoroantimonate_salt_1=(Sulfanediyldi-4,1-phenylene)bis(diphenylsu
 material.hexafluoroantimonate_salt_2=Diphenyl[4-(phenylsulfanyl)phenyl]sulfonium Hexafluoroantimonate
 material.mixed_hexafluoroantimonate_salts=Mixed Hexafluoroantimonate Salts
 material.dilute_fluoroantimonic_acid=Diluted Fluoroantimonic Acid
+material.alumina=Alumina
+material.silverleadoxide=Silver Lead Oxide
+material.superfluidhelium=Superfluid Helium-3
+material.luminescentsiliconnanocrystals=Luminescent Silicon Nanocrystals
+material.silver_gallium_selenide=Silver Gallium Selenide
+material.sodium_thiocyanate=Sodium Thiocyanate
+material.iridiumoncubiczirconia=Iridium On Cubic Zirconia
+material.zsm_five_zeolite=ZSM-5 Zeolite
+material.sodiumaluminate=Sodium Aluminate
+material.aluminosilicateglass=Alumino-Silicate Glass
+material.tetramethylammoniumbromide=Tetramethylammoniumbromide
+material.molybdenumsulfide=Molybdenum Sulfide
+material.argon_silane=Argon-Silane
+material.silane=Silane
+material.xenon_tetrafluoride=Xenon Tetrafluoride
+material.onepropanol=1-Propanol
+material.sodiumhydroxidesilica=Sodium Hydroxide Silica
+material.aluminumsilicasolution=Aluminium Silica Solution
+material.dimethylcarbonate=Dimethylcarbonate
+material.diamondsonicationsolution=Diamond Sonication Solution
 
 
 # LDC Materials
@@ -163,10 +188,11 @@ tjcore.machine.surface_rock_drill.name=Surface Rock Drill
 tjcore.machine.loom.name=Precision Loom
 tjcore.machine.exposure_chamber.name=Exposure Chamber
 tjcore.machine.modular_steam_turbine.name=Modular Steam Turbine
-tjcore.modular_steam_turbine.description=The Modular Steam Turbine is your first means of generating power. Supports up to LuV generation through upgrades.
+tjcore.machine.modular_steam_turbine.description=The Modular Steam Turbine is your first means of generating significant rotational energy.
 tjcore.machine.armor_infuser.description=The armor infuser is an advanced machine capable of upgrading Draconic Evolution tools and armor.
+tjcore.machine.alternator.name=Alternator
 
-tjcore.machine.creative_rotation=Creative Rotation Source
+tjcore.machine.creative_rotation.name=Creative Rotation Source
 tjcore.machine.gearbox.name=Rotation Gearbox
 
 # Recipe Maps
@@ -223,7 +249,7 @@ metaitem.sapphire_substrate_prep.name=Sapphire Substrate Preparation
 metaitem.etched_sapphire_wafer.name=Etched Sapphire Wafer
 metaitem.superheated_sapphire_wafer.name=Superheated Sapphire Wafer
 metaitem.viable_sapphire_wafer.name=Viable Sapphire Wafer
-metaitem.non_viable_sapphire_wafer.name=Non-Viable Sapphire Wafer
+metaitem.nonviable_sapphire_wafer.name=Non-Viable Sapphire Wafer
 metaitem.recycled_sapphire_wafer.name=Recycled Sapphire Wafer
 metaitem.sintered_sapphire_wafer.name=Sintered Sapphire Wafer
 metaitem.wired_sapphire_wafer.name=Wired Sapphire Wafer
@@ -273,6 +299,11 @@ metaitem.electrum_laminated_epoxid.name=Electrum Laminated Epoxy Sheet
 metaitem.germanium_laminated_epoxid.name=Germanium Laminated Epoxy Sheet
 metaitem.laminated_optical_base.name=Laminated Optical Circuit Base
 metaitem.optical_base.name=Optical Circuit Base
+metaitem.microtube_inverse_form.name=Microtube Inverse Layer Form (M.I.L.F)
+metaitem.copper_microtube_matrix.name=Copper Microtube Matrix
+metaitem.supercooling_radiator.name=Supercooling Radiator
+metaitem.supercooling_assembly.name=Supercooling Assembly
+metaitem.supercooling_port.name=Supercooling Port
 
 # circuit lang
 metaitem.circuit.primitive_ulv.name=Primitive Assembly
@@ -409,7 +440,7 @@ metaitem.component.smd_capacitor_3.tooltip=Advanced Q-Bit Holding Cell
 metaitem.component.smd_capacitor_4.name=Extreme SMD Capacitor
 metaitem.component.smd_capacitor_4.tooltip=Bacteria Truck Stop
 metaitem.component.smd_capacitor_5.name=Ultimate SMD Capacitor
-metaitem.component.smd_capacitor_5.tooltip=Storing Energy in Space
+metaitem.component.smd_capacitor_5.tooltip=Singularity Battery
 
 metaitem.component.smd_transistor_1.name=Basic SMD Transistor
 metaitem.component.smd_transistor_1.tooltip=A Smaller Logic Gate
@@ -440,7 +471,9 @@ metaitem.component.smd_diode_2.tooltip=One Way Mirror (Very Small)
 metaitem.component.smd_diode_3.name=Advanced SMD Diode
 metaitem.component.smd_diode_3.tooltip=Unidirectionally Trained Neurons
 metaitem.component.smd_diode_4.name=Extreme SMD Diode
-metaitem.component.smd_diode_4.tooltip=Subatomic Particle Filter
+metaitem.component.smd_diode_4.tooltip=Unidirectional Electron Spin
+metaitem.component.smd_diode_5.name=Ultimate SMD Diode
+metaitem.component.smd_diode_5.tooltip=Baryon Filtration
 
 
 metaitem.component.smd_inductor_1.name=Basic SMD Inductor

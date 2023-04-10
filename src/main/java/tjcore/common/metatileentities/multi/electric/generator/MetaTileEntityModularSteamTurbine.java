@@ -42,7 +42,6 @@ import java.util.List;
 
 import static gregtech.api.GTValues.V;
 import static gregtech.api.unification.material.Materials.Steam;
-import static tjcore.common.recipes.recipemaps.TJRecipeMaps.MODULAR_STEAM_TURBINE_RECIPES;
 
 public class MetaTileEntityModularSteamTurbine extends MultiblockWithDisplayBase implements IRotationProvider {
 

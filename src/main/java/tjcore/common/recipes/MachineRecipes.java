@@ -117,7 +117,7 @@ public class MachineRecipes {
             ));
 
             ModHandler.addShapedRecipe("machine_casing_" + VN[i].toLowerCase(), MACHINE_CASING.getItemVariant(machineCasingTypes[i]),
-                    "BhB","PFP","BdB",
+                    "BhB","PFP","BwB",
                     'B', new UnificationEntry(bolt, secondaryHullMaterial[i]),
                     'P', new UnificationEntry(plate, hullMaterialNew[i]),
                     'F', new UnificationEntry(frameGt, hullMaterialNew[i])

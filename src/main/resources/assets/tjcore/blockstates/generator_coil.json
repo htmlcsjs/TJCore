@@ -8,10 +8,34 @@
   },
   "variants": {
     "variant": {
+      "tin": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "TJCore:blocks/coil/generator_coil_tin"
+        }
+      },
       "copper": {
         "model": "minecraft:cube_all",
         "textures": {
           "all": "TJCore:blocks/coil/generator_coil_copper"
+        }
+      },
+      "electrum": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "TJCore:blocks/coil/generator_coil_electrum"
+        }
+      },
+      "aluminium": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "TJCore:blocks/coil/generator_coil_aluminium"
+        }
+      },
+      "platinum": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "TJCore:blocks/coil/generator_coil_platinum"
         }
       }
     }

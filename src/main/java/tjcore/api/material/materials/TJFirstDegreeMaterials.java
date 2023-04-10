@@ -680,7 +680,7 @@ public class TJFirstDegreeMaterials {
 
         CobaltChloride = new Material.Builder(25119, "cobaltchloride")
                 .fluid()
-                .colorAverage()
+                .color(0x48559F)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Cobalt, 1, Chlorine, 2)
                 .build();
@@ -700,7 +700,7 @@ public class TJFirstDegreeMaterials {
 
         Cobalt59Iodide = new Material.Builder(25122, "cobalt_59_iodide")
                 .fluid()
-                .colorAverage()
+                .color(0x0B0058)
                 .components(Cobalt59, 1, Iodine, 2)
                 .build();
 
@@ -892,6 +892,8 @@ public class TJFirstDegreeMaterials {
         SuperheavyH.addFlags(GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW);
         SuperheavyL.addFlags(GENERATE_LONG_ROD, GENERATE_FRAME, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_RING, GENERATE_BOLT_SCREW);
         SynthDiamond.addFlags(GENERATE_PLATE);
+        TantalumHafniumSeaborgiumCarbide.addFlags(GENERATE_PLATE, GENERATE_DENSE, GENERATE_RING, GENERATE_ROTOR);
+        TantalumHafniumSeaborgiumCarboNitride.addFlags(GENERATE_PLATE, GENERATE_FRAME);
         Taranium.addFlags(GENERATE_BOLT_SCREW, GENERATE_LONG_ROD, GENERATE_SPRING_SMALL, GENERATE_NANOWIRE, GENERATE_FINE_WIRE);
         Terbium.addFlags(GENERATE_ROD, GENERATE_NANOFOIL);
         TerfenolD_H.addFlags(GENERATE_FOIL, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_DENSE);
@@ -927,6 +929,7 @@ public class TJFirstDegreeMaterials {
         FluidPipeProperties HDCS3PipeProps = new FluidPipeProperties(3280, 145,true,true, true, false);
 
         Actinium.setProperty(PropertyKey.DUST, new DustProperty());
+        Alumina.setProperty(PropertyKey.ORE, new OreProperty());
         Astatine.setProperty(PropertyKey.DUST, new DustProperty());
         BT6.setProperty(PropertyKey.FLUID_PIPE, bt6FluidPipeProps);
         Birmabright.setProperty(PropertyKey.FLUID_PIPE, birmabrightFluidPipeProps);
@@ -939,11 +942,13 @@ public class TJFirstDegreeMaterials {
         Einsteinium.setProperty(PropertyKey.DUST, new DustProperty());
         EnrichedNaqAlloy.setProperty(PropertyKey.WIRE, EnrichedNaqAlloyProps);
         Fermium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Hafnium.setProperty(PropertyKey.DUST, new DustProperty());
         HDCS_1.setProperty(PropertyKey.FLUID_PIPE, HDCS1PipeProps);
         HDCS_2.setProperty(PropertyKey.FLUID_PIPE, HDCS2PipeProps);
         HDCS_3.setProperty(PropertyKey.FLUID_PIPE, HDCS3PipeProps);
         HeavyQuarkDegenerate.setProperty(PropertyKey.ITEM_PIPE, new ItemPipeProperties());
         HeavyQuarkDegenerate.setProperty(PropertyKey.PLASMA, HQDPlasmaProp);
+        Iodine.setProperty(PropertyKey.DUST, new DustProperty());
         LeadZirconateTitanate.setProperty(PropertyKey.FLUID_PIPE, PZTPipeProps);
         Livermorium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Livermorium.setProperty(PropertyKey.INGOT, new IngotProperty());

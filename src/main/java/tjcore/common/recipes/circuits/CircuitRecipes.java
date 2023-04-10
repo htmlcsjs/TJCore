@@ -461,6 +461,8 @@ public class CircuitRecipes {
                 .EUt(VA[EV])
                 .input(foil, Germanium, 2)
                 .input(foil, PraseodymiumDopedZBLANGlass)
+                .input(plate, ReinforcedEpoxyResin)
+                .fluidInputs(Ladder_Poly_P_Phenylene.getFluid(72))
                 .output(REFRACTING_SHEET)
                 .buildAndRegister();
 

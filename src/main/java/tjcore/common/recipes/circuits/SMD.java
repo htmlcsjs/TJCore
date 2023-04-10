@@ -30,7 +30,7 @@ public class SMD {
                 .input(dust, SilverLeadOxide)
                 .input(wireFine, Copper, 2)
                 .fluidInputs(Polyethylene.getFluid(72))
-                .output(SMD_RESISTOR_1)
+                .output(SMD_RESISTOR_1, 32)
                 .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder()
@@ -41,7 +41,7 @@ public class SMD {
                 .input(dust, SiliconDioxide)
                 .input(wireFine, AnnealedCopper, 2)
                 .fluidInputs(PolyvinylChloride.getFluid(72))
-                .output(SMD_RESISTOR_2)
+                .output(SMD_RESISTOR_2, 32)
                 .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder()
@@ -52,7 +52,7 @@ public class SMD {
                 .input(ring, Lead)
                 .input(wireFine, Platinum, 4)
                 .fluidInputs(Ladder_Poly_P_Phenylene.getFluid(72))
-                .output(SMD_RESISTOR_3)
+                .output(SMD_RESISTOR_3, 32)
                 .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder()
@@ -63,7 +63,7 @@ public class SMD {
                 .input(round, SodiumPotassiumNiobate, 9)
                 .input(wireFine, YttriumBariumCuprate, 2)
                 .fluidInputs(Polyetheretherketone.getFluid(72))
-                .output(SMD_RESISTOR_4)
+                .output(SMD_RESISTOR_4,16)
                 .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder()
@@ -74,7 +74,7 @@ public class SMD {
                 .input(dustTiny, GraphenePQD)
                 .input(screw, Trinium)
                 .fluidInputs(SuperfluidHelium3.getFluid(125))
-                .output(SMD_RESISTOR_5)
+                .output(SMD_RESISTOR_5, 16)
                 .buildAndRegister();
 
         // TRANSISTORS
@@ -91,18 +91,18 @@ public class SMD {
                 .input(foil, Silicon)
                 .input(wireFine, Copper, 2)
                 .fluidInputs(Polyethylene.getFluid(72))
-                .output(SMD_TRANSISTOR_1)
+                .output(SMD_TRANSISTOR_1, 32)
                 .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(70)
                 .EUt(VA[HV])
                 .input(plate, Polyethylene, 2)
-                .input(foil, Gallium)
+                .input(foil, ErbiumDopedZBLANGlass)
                 .input(foil, Silicon)
                 .input(wireFine, Silver)
                 .fluidInputs(PolyvinylChloride.getFluid(72))
-                .output(SMD_TRANSISTOR_2)
+                .output(SMD_TRANSISTOR_2, 16)
                 .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder()
@@ -112,7 +112,7 @@ public class SMD {
                 .input(dust, Thorium)
                 .input(wireFine, ZBLANGlass, 2)
                 .fluidInputs(SeleniumMonobromide.getFluid(125))
-                .output(SMD_TRANSISTOR_3)
+                .output(SMD_TRANSISTOR_3, 16)
                 .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder()
@@ -123,7 +123,7 @@ public class SMD {
                 .input(dustTiny, Naquadah)
                 .input(pipeTinyFluid, Gold, 2)
                 .fluidInputs(RichAmmoniaMixture.getFluid(125))
-                .output(SMD_TRANSISTOR_4)
+                .output(SMD_TRANSISTOR_4, 16)
                 .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder()
@@ -134,7 +134,7 @@ public class SMD {
                 .input(nanowire, Nihonium)
                 .input(springSmall, Taranium)
                 .fluidInputs(Leptons.getFluid(125))
-                .output(SMD_TRANSISTOR_5)
+                .output(SMD_TRANSISTOR_5, 16)
                 .buildAndRegister();
 
         // CAPACITORS
@@ -152,7 +152,7 @@ public class SMD {
                 .input(foil, NickelPlatedTin, 2)
                 .input(wireFine, Tin, 2)
                 .fluidInputs(Polyethylene.getFluid(72))
-                .output(SMD_CAPACITOR_1)
+                .output(SMD_CAPACITOR_1, 32)
                 .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder()
@@ -163,7 +163,7 @@ public class SMD {
                 .input(wireFine, Platinum, 4)
                 .input(foil, SteelMagnetic)
                 .fluidInputs(PolyvinylChloride.getFluid(72))
-                .output(SMD_CAPACITOR_2)
+                .output(SMD_CAPACITOR_2, 32)
                 .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder()
@@ -174,7 +174,7 @@ public class SMD {
                 .input(gemExquisite, BismuthFerrite)
                 .input(wireFine, Naquadah, 2)
                 .fluidInputs()
-                .output(SMD_CAPACITOR_3)
+                .output(SMD_CAPACITOR_3, 32)
                 .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder()
@@ -185,7 +185,7 @@ public class SMD {
                 .input(dust, Meat, 8)
                 .input(nanowire, Titanium, 32)
                 .fluidInputs(DistilledWater.getFluid(125))
-                .output(SMD_CAPACITOR_4)
+                .output(SMD_CAPACITOR_4, 24)
                 .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder()
@@ -196,7 +196,7 @@ public class SMD {
                 .input(foil, TerfenolD_H)
                 .input(nanowire, Vibranium, 32)
                 .fluidInputs(Gluons.getFluid(125))
-                .output(SMD_CAPACITOR_5)
+                .output(SMD_CAPACITOR_5, 16)
                 .buildAndRegister();
 
         // DIODES
@@ -215,7 +215,7 @@ public class SMD {
                 .input(dustSmall, Phosphorus)
                 .input(wireFine, Copper)
                 .fluidInputs(Polyethylene.getFluid(72))
-                .output(SMD_DIODE_1)
+                .output(SMD_DIODE_1, 16)
                 .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder()
@@ -227,7 +227,7 @@ public class SMD {
                 .input(dustTiny, Indium)
                 .input(dustTiny, Germanium)
                 .fluidInputs(Ladder_Poly_P_Phenylene.getFluid(72))
-                .output(SMD_DIODE_2)
+                .output(SMD_DIODE_2, 16)
                 .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder()
@@ -239,7 +239,7 @@ public class SMD {
                 .input(nanowire, Gold, 2)
                 .input(STERILE_POLYMER_FOIL)
                 .fluidInputs(SterileGrowthMedium.getFluid(125))
-                .output(SMD_DIODE_3)
+                .output(SMD_DIODE_3, 16)
                 .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder()
@@ -250,7 +250,7 @@ public class SMD {
                 .input(foil, ChromiumGermaniumTellurideMagnetic, 2)
                 .input(nanowire, Praseodymium, 16)
                 .fluidInputs(Kevlar.getFluid(72))
-                .output(SMD_DIODE_4)
+                .output(SMD_DIODE_4, 16)
                 .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder()
@@ -261,7 +261,7 @@ public class SMD {
                 .input(nanofoil, Neutronium, 2)
                 .input(round, Vibranium)
                 .fluidInputs(Leptons.getFluid(125))
-                .output(SMD_DIODE_5)
+                .output(SMD_DIODE_5, 16)
                 .buildAndRegister();
 
         // INDUCTORS
@@ -272,48 +272,48 @@ public class SMD {
                 .input(FERROUS_INDUCTOR_CORE)
                 .input(wireFine, Copper, 4)
                 .fluidInputs(Polyethylene.getFluid(72))
-                .output(SMD_INDUCTOR_1)
-                .buildAndRegister();
-
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .duration(70)
-                .EUt(VA[HV])
-                .input(ring, BerylliumOxide, 2)
-                .input(wireFine, Electrum, 8)
-                .input(foil, Silicon)
-                .fluidInputs(Glass.getFluid(144))
-                .output(SMD_INDUCTOR_2)
+                .output(SMD_INDUCTOR_1, 32)
                 .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(70)
                 .EUt(VA[IV])
-                .input(TUNGSTEN_INDUCTOR_CORE)
-                .input(wireFine, Platinum, 8)
-                .input(foil, Ruthenium)
-                .fluidInputs()
-                .output(SMD_INDUCTOR_3)
+                .input(ring, BerylliumOxide, 2)
+                .input(wireFine, Electrum, 8)
+                .input(foil, Silicon)
+                .fluidInputs(Glass.getFluid(144))
+                .output(SMD_INDUCTOR_2, 24)
                 .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(70)
                 .EUt(VA[ZPM])
+                .input(TUNGSTEN_INDUCTOR_CORE)
+                .input(wireFine, Platinum, 8)
+                .input(foil, Ruthenium)
+                .fluidInputs()
+                .output(SMD_INDUCTOR_3, 24)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .duration(70)
+                .EUt(VA[UHV])
                 .input(TJMetaItems.CARBON_FIBER_PLATE, 2)
                 .input(nanowire, Vanadium, 16)
                 .input(wireFine, Palladium, 2)
                 .input(LANGMUIR_HOUSING)
                 .fluidInputs(Polybenzimidazole.getFluid(72))
-                .output(SMD_INDUCTOR_4)
+                .output(SMD_INDUCTOR_4, 16)
                 .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(70)
-                .EUt(VA[UIV])
+                .EUt(VA[UXV])
                 .input(plate, ProgrammableMatter, 2)
                 .input(nanofoil, Vibranium)
-                .input(SUPERCOOLING_ASSEMBLY)
+                .input(SUPERCOOLING_PORT)
                 .fluidInputs(SuperfluidHelium3.getFluid(125))
-                .output(SMD_INDUCTOR_5)
+                .output(SMD_INDUCTOR_5, 16)
                 .buildAndRegister();
 
 
@@ -387,7 +387,7 @@ public class SMD {
                 .output(LANGMUIR_HOUSING)
                 .buildAndRegister();
 
-        //Xenon Fluoride Superconductive Mix
+        //XenonHexaFluoride
 
         CHEMICAL_RECIPES.recipeBuilder()
                 .duration(45)
@@ -418,18 +418,5 @@ public class SMD {
                 .output(dust, BoronTrioxide, 5)
                 .buildAndRegister();
 
-        MIXER_RECIPES.recipeBuilder()
-                .duration(45)
-                .EUt(VA[IV])
-                .fluidInputs(XenonHexaFluoride.getFluid(1000))
-                .input(dustTiny, Lutetium)
-                .input(dustTiny, Praseodymium)
-                .input(dustTiny, Holmium)
-                .input(dustTiny, Lanthanum)
-                .input(dustTiny, Thallium)
-                .input(dust, Kevlar)
-                .fluidOutputs(XenonFluorideSupercondiveMix.getFluid(1000))
-                .output(dustTiny, Kevlar, 9)
-                .buildAndRegister();
     }
 }

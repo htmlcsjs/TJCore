@@ -21,7 +21,12 @@ public class BlockGeneratorCoil extends VariantBlock<BlockGeneratorCoil.CoilType
     }
     public enum CoilType implements IStringSerializable, IStateHarvestLevel {
 
-        COPPER("copper", 0,2);
+        TIN("tin", 0, 2),
+        COPPER("copper", 1,2),
+        ELECTRUM("electrum", 2, 2),
+        ALUMINIUM("aluminium", 3, 2),
+        PLATINUM("platinum", 4, 2);
+
 
         private final String name;
         private final int harvestLevel;

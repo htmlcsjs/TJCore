@@ -18,8 +18,7 @@ import tjcore.common.TJConfig;
 
 import static gregicality.science.api.recipes.GCYSRecipeMaps.CVD_RECIPES;
 import static gregicality.science.api.recipes.GCYSRecipeMaps.SONICATION_RECIPES;
-import static gregicality.science.api.unification.materials.GCYSMaterials.Alumina;
-import static gregicality.science.api.unification.materials.GCYSMaterials.Hydrazine;
+import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
@@ -60,6 +59,18 @@ public class MaterialRecipes {
                 .EUt(8)
                 .input(STICKY_RESIN, 2)
                 .chancedOutput(plate, Rubber, 1, 700, 0)
+                .buildAndRegister();
+
+        CVD_RECIPES.recipeBuilder()
+                .EUt(VA[LuV])
+                .duration(340)
+                .notConsumable(plate, Gold)
+                .fluidInputs(SiliconTetrachloride.getFluid(1000))
+                .fluidInputs(Oxygen.getFluid(4000))
+                .fluidInputs(Hydrogen.getFluid(4000))
+                .fluidOutputs(HydroiodicAcid.getFluid(4000))
+                .input(dust, Hafnium)
+                .output(dust, HafniumSilicate)
                 .buildAndRegister();
     }
 
@@ -340,6 +351,7 @@ public class MaterialRecipes {
                 .EUt(VA[MV])
                 .duration(230)
                 .input(dust, Iodine, 4)
+                .fluidInputs(Oxygen.getFluid(1000))
                 .fluidInputs(Hydrazine.getFluid(1000))
                 .fluidOutputs(ImpureHydroiodicAcid.getFluid(2000))
                 .buildAndRegister();

@@ -100,8 +100,8 @@ public class MultiblockHatches {
         ModHandler.removeRecipeByOutput(AUTO_MAINTENANCE_HATCH.getStackForm());
         ModHandler.removeRecipeByOutput(CONFIGURABLE_MAINTENANCE_HATCH.getStackForm());
         ModHandler.removeRecipeByOutput(CLEANING_MAINTENANCE_HATCH.getStackForm());
-        ModHandler.addShapedRecipe("maintenance_hatch", MAINTENANCE_HATCH.getStackForm()," d ","SCS"," w ", 'S', OreDictUnifier.get(screw, GalvanizedSteel), 'C', MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.LV) );
-        ModHandler.addShapedRecipe("maintenance_hatch_auto", AUTO_MAINTENANCE_HATCH.getStackForm(), " A ","CHC"," W ", 'A', ROBOT_ARM_MV, 'C', new UnificationEntry(circuit, tierCircuitNames[MV]), 'W', CABLE.getIngredient(MV), 'H', MAINTENANCE_HATCH.getStackForm());
+        ModHandler.addShapedRecipe("maintenance_hatch", MAINTENANCE_HATCH.getStackForm(),"PdP","SCS","PwP", 'S', OreDictUnifier.get(screw, Steel), 'C', MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.LV), 'P', OreDictUnifier.get(plate, Rubber));
+        ModHandler.addShapedRecipe("maintenance_hatch_auto", AUTO_MAINTENANCE_HATCH.getStackForm(), "SAS","CHC","SWS", 'A', ROBOT_ARM_MV, 'C', new UnificationEntry(circuit, tierCircuitNames[MV]), 'W', CABLE.getIngredient(MV), 'H', MAINTENANCE_HATCH.getStackForm(), 'S', OreDictUnifier.get(screw, GalvanizedSteel));
         ModHandler.addShapedRecipe("maintenance_hatch_configurable", CONFIGURABLE_MAINTENANCE_HATCH.getStackForm(), " d ","CHC"," w ", 'H', MAINTENANCE_HATCH.getStackForm(), 'C', new UnificationEntry(circuit, tierCircuitNames[LV]));
         ModHandler.addShapedRecipe("maintenance_hatch_filtration", CLEANING_MAINTENANCE_HATCH.getStackForm(), "FRF","CAC","WMW", 'F', CLEANROOM_FILTER, 'R', new UnificationEntry(rotor, Titanium), 'C', new UnificationEntry(circuit, tierCircuitNames[EV]), 'A', AUTO_MAINTENANCE_HATCH.getStackForm(), 'W', new UnificationEntry(cableGtSingle, Aluminium), 'M', ELECTRIC_MOTOR_EV);
         ModHandler.addShapedRecipe("cleanroom_filter", CLEANROOM_FILTER.getStackForm(), "WWW","WMW","WWW", 'W', new UnificationEntry(dust, Cellulose), 'M', FIBERGLASS_MESH.getStackForm());
