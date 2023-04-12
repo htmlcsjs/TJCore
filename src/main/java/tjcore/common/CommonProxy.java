@@ -23,6 +23,8 @@ import tjcore.common.pipelike.rotation.ItemBlockRotationAxle;
 import tjcore.common.pipelike.rotation.TileEntityRotationAxle;
 import tjcore.common.pipelike.rotation.TileEntityRotationAxleTESR;
 import tjcore.common.recipes.*;
+import tjcore.common.recipes.chains.CircuitryMaterialChains;
+import tjcore.common.recipes.chains.MaterialOreChains;
 import tjcore.common.recipes.chains.PetrochemRecipes;
 import tjcore.common.recipes.chains.PhotoresistChains;
 import tjcore.common.recipes.circuits.CircuitRecipes;
@@ -89,7 +91,7 @@ public class CommonProxy {
     
     @SubscribeEvent(priority = EventPriority.LOW)
     public static void init(RegistryEvent.Register<IRecipe> event) {
-
+        MaterialOreChains.init();
         CircuitRecipes.registerCircuits();
         TJComponents.init();
         TJPolymers.registerPolymers();
@@ -104,5 +106,6 @@ public class CommonProxy {
         MaterialRecipes.register();
         MachineRecipes.registerMachines();
         MultiblockHatches.init();
+        CircuitryMaterialChains.init();
     }
 }

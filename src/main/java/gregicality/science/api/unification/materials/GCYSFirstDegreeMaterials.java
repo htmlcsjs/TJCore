@@ -573,7 +573,6 @@ public class GCYSFirstDegreeMaterials {
         SiliconTetrachloride = new Material.Builder(3576, "silicon_tetrachloride")
                 .fluid()
                 .color(0x5B5B7A)
-                .flags(DISABLE_DECOMPOSITION)
                 .components(Silicon, 1, Chlorine, 4)
                 .build();
 

@@ -23,6 +23,8 @@ public class TJTextures {
     // Casings
     public static SimpleOverlayRenderer DRACONIC_CASING;
 
+    public static final OrientedOverlayRenderer DRYER_OVERLAY = new OrientedOverlayRenderer("machines/dryer");
+
     public static void preInit() {
         Brick = new SimpleCubeRenderer("minecraft:blocks/brick");
         TreeFarmerController = Textures.FROST_PROOF_CASING;
@@ -30,7 +32,6 @@ public class TJTextures {
         ROTATION_OVERLAY = new SimpleOverlayRenderer("overlay/machine/overlay_rotation");
         GEARBOX = new SimpleCubeRenderer("tjcore:blocks/gearbox");
         ROTATION_OUT = new SimpleOverlayRenderer("overlay/machine/rotation_out");
-
         // Casings
         DRACONIC_CASING = new SimpleOverlayRenderer("casings/draconic_casing/draconic_casing_normal");
     }

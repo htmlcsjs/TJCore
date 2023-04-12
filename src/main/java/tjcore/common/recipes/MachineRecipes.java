@@ -136,6 +136,7 @@ public class MachineRecipes {
         MetaTileEntityLoader.registerMachineRecipe(LAMINATOR, "WGW", "MHM", "CGC", 'M', MOTOR, 'G', COIL_ELECTRIC, 'W', CABLE, 'H', CraftingComponent.HULL, 'C', CIRCUIT);
         MetaTileEntityLoader.registerMachineRecipe(TRANSFORMER, "   ","FHC","   ", 'F', CABLE_QUAD, 'C', CABLE_TIER_UP, 'H', CraftingComponent.HULL);
         MetaTileEntityLoader.registerMachineRecipe(SPINNING_MACHINE, "GRG","CMC","WHW", 'G', GLASS, 'R', RODSTICK, 'C', CIRCUIT, 'M', MOTOR, 'W', CABLE, 'H', CraftingComponent.HULL);
+        MetaTileEntityLoader.registerMachineRecipe(DRYER, "WSW", "CHC", "WSW", 'W', CABLE, 'S', SPRING, 'C', CIRCUIT, 'H', CraftingComponent.HULL);
     }
 
     private static void registerSteam() {

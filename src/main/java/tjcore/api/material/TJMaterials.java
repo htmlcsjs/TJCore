@@ -142,12 +142,27 @@ public final class TJMaterials {
     public static Material SodiumThiocyanate;
     public static Material SodiumThiocyanatePolymerizationSolution;
     public static Material Cellulose;
+    public static Material ZirconiumTetrafluoride;
+    public static Material BariumDifluoride;
+    public static Material LanthanumTrifluoride;
+    public static Material AluminiumTrifluoride;
+    public static Material SodiumFluoride;
+    //
+    public static Material BauxiteSlurry;
+    public static Material IlmeniteSlurry;
+    public static Material RedMud;
+    public static Material HeavyRedMudResidue;
+    public static Material RefractoryMetalResidue;
+    public static Material PotassiumFluorideRefractoryMixture;
+    public static Material PotassiumHexafluorozirconate;
+    public static Material PotassiumHexafluorohafnate;
+    public static Material HafniumTetrachloride;
+    public static Material ZirconiumTetrachloride;
+    public static Material Trichlorosilane;
 
     // Polymers
     public static Material Polyacrylonitrile;
     public static Material Polyetheretherketone;
-
-    // Metals
     public static Material CarbonNanotubePolymer;
     public static Material Ladder_Poly_P_Phenylene;
 
@@ -159,6 +174,9 @@ public final class TJMaterials {
     public static Material P1Solution;
     public static Material TetrakisPDCatalyst;
     public static Material CFCoatingSolution;
+    public static Material IndiumSolution;
+    public static Material IndiumSulfide;
+    public static Material IndiumResidue;
 
     // Magic materials, unknown composition
     public static Material Draconium;

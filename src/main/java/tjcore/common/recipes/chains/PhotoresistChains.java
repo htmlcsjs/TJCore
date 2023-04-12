@@ -141,13 +141,14 @@ public class PhotoresistChains {
 
         //SU-8
 
-        CHEMICAL_RECIPES.recipeBuilder()
+        LARGE_CHEMICAL_RECIPES.recipeBuilder()
                 .EUt(VA[IV])
                 .duration(340)
-                .fluidInputs(Epoxy.getFluid(1000))
+                .fluidInputs(Epoxy.getFluid(1500))
                 .fluidInputs(MixedHexafluoroantimonateSalts.getFluid(500))
                 .fluidInputs(GammaButyrolactone.getFluid(500))
-                .fluidOutputs(SU8_Photoresist.getFluid(2000))
+                .fluidInputs(Cyclopentanone.getFluid(500))
+                .fluidOutputs(SU8_Photoresist.getFluid(3000))
                 .buildAndRegister();
 
     }

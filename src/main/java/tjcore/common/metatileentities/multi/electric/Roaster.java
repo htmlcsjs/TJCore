@@ -28,9 +28,11 @@ import tjcore.common.recipes.recipemaps.TJRecipeMaps;
 
 import javax.annotation.Nonnull;
 
+import static tjcore.common.recipes.recipemaps.TJRecipeMaps.ROASTING_RECIPES;
+
 public class Roaster extends RecipeMapMultiblockController {
     public Roaster(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, GCYSRecipeMaps.ROASTER_RECIPES);
+        super(metaTileEntityId, ROASTING_RECIPES);
     }
 
     @Override
@@ -62,7 +64,7 @@ public class Roaster extends RecipeMapMultiblockController {
                 .where('O', states(GCYMMetaBlocks.UNIQUE_CASING.getState(BlockUniqueCasing.UniqueCasingType.MOLYBDENUM_DISILICIDE_COIL)))
                 .where('C', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.INVAR_HEATPROOF)))
                 .where('H', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.INVAR_HEATPROOF))
-                        .or(autoAbilities().setMinGlobalLimited(1, 1)))
+                        .or(autoAbilities()))
                 .where('F', states(MetaBlocks.FRAMES.get(Materials.Invar).getBlock(Materials.Invar)))
                 .where('M', abilities(MultiblockAbility.MUFFLER_HATCH))
                 .build();

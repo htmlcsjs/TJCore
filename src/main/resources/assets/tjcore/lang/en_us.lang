@@ -15,9 +15,9 @@ tile.turbine_blades.titanium_blades.name=Titanium Turbine Blades
 tile.turbine_blades.tungstensteel_blades.name=Tungsteensteel Turbine Blades
 tile.generator_coil.tin.name=Tin Alternator Coil
 tile.generator_coil.copper.name=Copper Alternator Coil
-tile.generator_coil.electrum.name=Electrum Generator Coil
-tile.generator_coil.aluminium.name=Aluminium Generator Coil
-tile.generator_coil.platinum.name=Platinum Generator Coil
+tile.generator_coil.electrum.name=Electrum Alternator Coil
+tile.generator_coil.aluminium.name=Aluminium Alternator Coil
+tile.generator_coil.platinum.name=Platinum Alternator Coil
 tile.rotation_axle.name=Axle
 tile.draconic_casing.draconic_casing_normal.name=Draconic Casing
 
@@ -138,7 +138,25 @@ material.sodiumhydroxidesilica=Sodium Hydroxide Silica
 material.aluminumsilicasolution=Aluminium Silica Solution
 material.dimethylcarbonate=Dimethylcarbonate
 material.diamondsonicationsolution=Diamond Sonication Solution
-
+material.indium_solution=Indium Solution
+material.indium_sulfide=Indium Sulfide
+material.indium_refining_residue=Indium Residue Sludge
+material.zirconium_fluoride=Zirconium Tetrafluoride
+material.barium_fluoride=Barium Difluoride
+material.lanthanum_fluoride=Lanthanum Trifluoride
+material.aluminium_fluoride=Aluminium TriFluoride
+material.sodium_fluoride=Sodium Fluoride
+material.bauxite_slurry=Bauxite Slurry
+material.ilmenite_slurry=Ilmenite Slurry
+material.red_mud=Red Mud
+material.red_mud_residue=Heavy Red Mud Residue
+material.refractory_metal_residue=Refractory Metal Residue Sludge
+material.potassium_hexafluorohafnate=Potassium Hexafluorohafnate
+material.potassium_hexafluorozironate=Potassium Hexafluorozirconate
+material.hafnium_tetrachloride=Hafnium Tetrachloride
+material.zirconium_tetrachloride=Zirconium Tetrachloride
+material.potassium_fluoride_refractory_mixture=Refractory Potassium Fluoride Mixture
+material.trichlorosilane=Trichlorosilane
 
 # LDC Materials
 
@@ -193,6 +211,16 @@ tjcore.machine.modular_steam_turbine.description=The Modular Steam Turbine is yo
 tjcore.machine.armor_infuser.description=The armor infuser is an advanced machine capable of upgrading Draconic Evolution tools and armor.
 tjcore.machine.alternator.name=Alternator
 tjcore.machine.roaster.name=Industrial Roaster
+tjcore.machine.dryer.lv.name=LV Drying Machine
+tjcore.machine.dryer.lv.tooltop=Toaster Oven
+tjcore.machine.dryer.mv.name=MV Drying Machine
+tjcore.machine.dryer.mv.tooltop=Toaster Oven
+tjcore.machine.dryer.hv.name=HV Drying Machine
+tjcore.machine.dryer.hv.tooltop=Toaster Oven
+tjcore.machine.dryer.ev.name=EV Drying Machine
+tjcore.machine.dryer.ev.tooltop=Toaster Oven
+tjcore.machine.dryer.iv.name=IV Drying Machine
+tjcore.machine.dryer.iv.tooltop=HVAC System (AC is Broken)
 
 tjcore.machine.creative_rotation.name=Creative Rotation Source
 tjcore.machine.gearbox.name=Rotation Gearbox
@@ -204,6 +232,7 @@ recipemap.tree_farmer.name=Tree Farmer Recipes
 recipemap.armor_infuser.name=Armor Infusion Recipes
 recipemap.laminator.name=Laminator Recipes
 recipemap.printer.name=3D Printing Recipes
+recipemap.roasting_recipes.name=Industrial Roasting Recipes
 
 
 

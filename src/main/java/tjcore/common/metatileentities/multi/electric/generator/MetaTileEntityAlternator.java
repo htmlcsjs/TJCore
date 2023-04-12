@@ -43,8 +43,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static gregtech.api.GTValues.V;
-import static gregtech.api.unification.material.Materials.Steel;
-import static gregtech.api.unification.material.Materials.SteelMagnetic;
+import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.block;
 
 public class MetaTileEntityAlternator extends MultiblockWithDisplayBase implements IRotationConsumer {
@@ -94,10 +93,7 @@ public class MetaTileEntityAlternator extends MultiblockWithDisplayBase implemen
                 }
             }
             return false;
-        }, () -> ArrayUtils.addAll(
-                Arrays.stream(BlockBearing.BearingType.values())
-                        .map(type -> new BlockInfo(TJMetaBlocks.BLOCK_BEARING.getState(type), null))
-                        .toArray(BlockInfo[]::new)));
+        }, () -> new BlockInfo[]{new BlockInfo(TJMetaBlocks.BLOCK_BEARING.getState(BlockBearing.BearingType.GALVANIZED_STEEL_BEARING))});
     }
 
     @Override
@@ -112,13 +108,13 @@ public class MetaTileEntityAlternator extends MultiblockWithDisplayBase implemen
                 .aisle( "F#F",
                         "###",
                         "F#F")
-                .aisle( "SSS",
+                .aisle( "OOO",
                         "CCC",
                         "SSS")
-                .aisle( "SSS",
+                .aisle( "OOO",
                         "CMC",
                         "SBS")
-                .aisle( "SSS",
+                .aisle( "OOO",
                         "CCC",
                         "SSS")
                 .aisle( "#O#",
@@ -130,8 +126,9 @@ public class MetaTileEntityAlternator extends MultiblockWithDisplayBase implemen
                 .where('S', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.STEEL_SOLID)))
                 .where('C', coils())
                 .where('B', bearings())
-                .where('O', abilities(MultiblockAbility.OUTPUT_ENERGY))
-                .where('M', states(MetaBlocks.COMPRESSED.get(SteelMagnetic).getBlock(SteelMagnetic)))
+                .where('O', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.STEEL_SOLID))
+                        .or(abilities(MultiblockAbility.OUTPUT_ENERGY)))
+                .where('M', states(MetaBlocks.COMPRESSED.get(IronMagnetic).getBlock(IronMagnetic)))
                 .build();
     }
 
@@ -149,11 +146,11 @@ public class MetaTileEntityAlternator extends MultiblockWithDisplayBase implemen
     protected void addDisplayText(List<ITextComponent> textList) {
         if (isStructureFormed()) {
             textList.add(new TextComponentString("Coil Tier: " + (coilTier + 1)));
+            textList.add(new TextComponentString("Maximum EU Output: " + outputCap));
             if (axleWhole != null) {
                 textList.add(new TextComponentString("Rotations Per Second: " + rps ));
                 textList.add(new TextComponentString("Torque: " + torque ));
-                textList.add(new TextComponentString("Maximum EU Output: " + outputCap));
-                textList.add(new TextComponentString("Real EU Output: " + euOut));
+                textList.add(new TextComponentString("Real EU Output: " + Math.min(euOut, outputCap)));
             } else {
                 textList.add(new TextComponentString("Axle Disconnected!"));
             }

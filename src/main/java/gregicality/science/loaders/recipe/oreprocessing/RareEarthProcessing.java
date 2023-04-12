@@ -7,6 +7,7 @@ import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
+import net.minecraftforge.fluids.FluidStack;
 
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.GTValues.*;
@@ -31,16 +32,28 @@ public class RareEarthProcessing {
 
     public static void init() {
         // Remove Rare Earth Centrifuging
-        if (GCYSConfigHolder.chainOverrides.disableRareEarthProcessing) {
-            GTRecipeHandler.removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, OreDictUnifier.get(OrePrefix.dust, Materials.RareEarth));
-        }
+        GTRecipeHandler.removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, OreDictUnifier.get(OrePrefix.dust, Materials.RareEarth));
 
         // Separating Agent Production: Di-(2-ethylhexyl)phosphoric Acid
+
+        GTRecipeHandler.removeRecipesByInputs(CHEMICAL_RECIPES,
+                Butyraldehyde.getFluid(1000),
+                Hydrogen.getFluid(2000)
+                );
+
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(Butyraldehyde.getFluid(1000))
+                .fluidInputs(Hydrogen.getFluid(2000))
+                .circuitMeta(0)
+                .fluidOutputs(Butane.getFluid(1000))
+                .fluidOutputs(Oxygen.getFluid(1000))
+                .duration(80).EUt(VA[MV]).buildAndRegister();
 
         // 2C4H8O + 4H -> C8H18O + H2O
         CHEMICAL_RECIPES.recipeBuilder()
                 .fluidInputs(Butyraldehyde.getFluid(2000))
                 .fluidInputs(Hydrogen.getFluid(4000))
+                .circuitMeta(1)
                 .fluidOutputs(Ethylhexanol.getFluid(1000))
                 .fluidOutputs(Water.getFluid(1000))
                 .duration(80).EUt(VA[MV]).buildAndRegister();
@@ -59,8 +72,8 @@ public class RareEarthProcessing {
                 .input(dust, RareEarth)
                 .input(dust, SodiumHydroxide, 3)
                 .notConsumable(new IntCircuitIngredient(2))
-                .fluidInputs(DiethylhexylPhosphoricAcid.getFluid(100))
-                .fluidInputs(Water.getFluid(900))
+                .notConsumable(DiethylhexylPhosphoricAcid.getFluid(1))
+                .fluidInputs(Water.getFluid(1000))
                 .fluidOutputs(RareEarthHydroxidesSolution.getFluid(1000))
                 .duration(120).EUt(VA[HV]).buildAndRegister();
 

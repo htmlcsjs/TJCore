@@ -22,5 +22,5 @@ public class TJRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> MEGA_FUSION_RECIPES = new RecipeMap<>("mega_fusion", 0, 1, 0, 3, 0, 4, 0, 3, new SimpleRecipeBuilder(), false);
     public static final RecipeMap<SimpleRecipeBuilder> SURFACE_ROCK_DRILL_RECIPES = new RecipeMap<>("surface_rock_drill", 0, 12, 1, 1, 0, 0, 0, 0, new SimpleRecipeBuilder(), false);
     public static final RecipeMap<SimpleRecipeBuilder> LAMINATOR_RECIPES = new RecipeMap<>("laminator", 1, 6, 1, 2, 0, 2, 0, 0, new SimpleRecipeBuilder(), false).setSound(GTSoundEvents.ASSEMBLER);
-
+    public static final RecipeMap<SimpleRecipeBuilder> ROASTING_RECIPES = new RecipeMap<>("roasting_recipes", 0, 3, 0,3,0,3,0,3, new SimpleRecipeBuilder(), false).setSlotOverlay(false, false, GuiTextures.FURNACE_OVERLAY_1).setSound(GTSoundEvents.FURNACE);
 }

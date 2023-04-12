@@ -21,8 +21,7 @@ public class SeleniumTelluriumChain {
     private static void mud() {
         // CuSO4 + H2O -> H2SO4 + Cu + O
         ELECTROLYZER_RECIPES.recipeBuilder()
-                .fluidInputs(SulfuricCopperSolution.getFluid(1000)) //TODO BlueVitriol
-//                .fluidInputs(Water.getFluid(1000)) //TODO Ore Work
+                .fluidInputs(SulfuricCopperSolution.getFluid(1000))
                 .notConsumable(new IntCircuitIngredient(3))
                 .output(dust, Copper)
                 .chancedOutput(dust, ChalcogenAnodeMud, 500, 0)

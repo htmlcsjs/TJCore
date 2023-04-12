@@ -804,6 +804,7 @@ public class CircuitRecipes {
                 .cleanroom(CLEANROOM)
                 .input(OPTICAL_CHIP)
                 .input(TJMetaItems.OPTICAL_BOARD)
+                .input(UVEMITTER_E)
                 .input(SMD_CAPACITOR_2, 2)
                 .input(SMD_RESISTOR_2, 2)
                 .input(wireFine, NiobiumTitanium, 4)

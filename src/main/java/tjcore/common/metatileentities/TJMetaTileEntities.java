@@ -1,5 +1,6 @@
 package tjcore.common.metatileentities;
 
+import gregicality.science.client.render.GCYSTextures;
 import gregtech.api.GTValues;
 import gregtech.api.metatileentity.SimpleMachineMetaTileEntity;
 import gregtech.api.recipes.RecipeMap;
@@ -9,6 +10,7 @@ import gregtech.client.renderer.texture.Textures;
 import gregtech.common.metatileentities.MetaTileEntities;
 import net.minecraft.util.ResourceLocation;
 import tjcore.TJValues;
+import tjcore.common.TJTextures;
 import tjcore.common.metatileentities.axle.MetaTileEntityCreativeRotation;
 import tjcore.common.metatileentities.multi.electric.*;
 import tjcore.common.metatileentities.multi.electric.generator.MetaTileEntityAlternator;
@@ -21,6 +23,7 @@ import tjcore.common.recipes.recipemaps.TJRecipeMaps;
 
 import java.util.function.Function;
 
+import static gregicality.science.api.recipes.GCYSRecipeMaps.DRYER_RECIPES;
 import static gregtech.common.metatileentities.MetaTileEntities.registerMetaTileEntity;
 
 public class TJMetaTileEntities {
@@ -30,6 +33,7 @@ public class TJMetaTileEntities {
     public static SimpleMachineMetaTileEntity[] PRINTER = new SimpleMachineMetaTileEntity[6];
     public static SimpleMachineMetaTileEntity[] LAMINATOR = new SimpleMachineMetaTileEntity[GTValues.MAX];
     public static SimpleMachineMetaTileEntity[] SPINNING_MACHINE = new SimpleMachineMetaTileEntity[GTValues.LuV];
+    public static SimpleMachineMetaTileEntity[] DRYER = new SimpleMachineMetaTileEntity[GTValues.LuV];
     public static SteamDryer STEAM_DRYER_BRONZE;
     public static SteamDryer STEAM_DRYER_STEEL;
     public static SteamMixer STEAM_MIXER_BRONZE;
@@ -67,12 +71,13 @@ public class TJMetaTileEntities {
         PRIMITIVE_TREE_FARMER = registerMetaTileEntity(12044, new PrimitiveTreeFarmer(tjcoreID("primitive_tree_farmer")));
         LARGE_ALLOY_SMELTER = registerMetaTileEntity(12050, new LargeAlloySmelter(tjcoreID("large_alloy_smelter")));
         ALTERNATOR = registerMetaTileEntity(12051, new MetaTileEntityAlternator(tjcoreID("alternator")));
+        CREATIVE_ROTATION = registerMetaTileEntity(12052, new MetaTileEntityCreativeRotation());
+        GEARBOX = registerMetaTileEntity(12053, new MetaTileEntityGearbox(tjcoreID("gearbox")));
+        ROASTER = registerMetaTileEntity(12054, new Roaster(tjcoreID("roaster")));
         registerSimpleMetaTileEntity(LAMINATOR, 12070, "laminator", TJRecipeMaps.LAMINATOR_RECIPES, Textures.BENDER_OVERLAY, true);
         registerSimpleMetaTileEntity(PRINTER, 12090, "printer", TJRecipeMaps.PRINTER_RECIPES, Textures.LASER_ENGRAVER_OVERLAY, true);
         registerSimpleMetaTileEntity(SPINNING_MACHINE, 12100, "spinning_machine", TJRecipeMaps.SPINNING_RECIPES, Textures.CENTRIFUGE_OVERLAY, true, GTUtility.hvCappedTankSizeFunction);
-        CREATIVE_ROTATION = registerMetaTileEntity(12110, new MetaTileEntityCreativeRotation());
-        GEARBOX = registerMetaTileEntity(12111, new MetaTileEntityGearbox(tjcoreID("gearbox")));
-        ROASTER = registerMetaTileEntity(12112, new Roaster(tjcoreID("roaster")));
+        registerSimpleMetaTileEntity(DRYER, 12110, "dryer", DRYER_RECIPES, TJTextures.DRYER_OVERLAY, true);
     }
 
     private static void registerSimpleMetaTileEntity(SimpleMachineMetaTileEntity[] machines, int startID, String name, RecipeMap<?> map, ICubeRenderer texture, boolean frontfacing, Function<Integer, Integer> tankScalingFunction) {
@@ -82,6 +87,7 @@ public class TJMetaTileEntities {
     private static void registerSimpleMetaTileEntity(SimpleMachineMetaTileEntity[] machines, int startID, String name, RecipeMap<?> map, ICubeRenderer texture, boolean frontfacing) {
         registerSimpleMetaTileEntity(machines, startID, name, map, texture, frontfacing, GTUtility.defaultTankSizeFunction);
     }
+
     private static ResourceLocation tjcoreID(String name) {
         return new ResourceLocation(TJValues.MODID, name);
     }

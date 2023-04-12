@@ -16,6 +16,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 import tjcore.common.TJConfig;
 
+import static gregicality.multiblocks.api.recipes.GCYMRecipeMaps.ALLOY_BLAST_RECIPES;
 import static gregicality.science.api.recipes.GCYSRecipeMaps.CVD_RECIPES;
 import static gregicality.science.api.recipes.GCYSRecipeMaps.SONICATION_RECIPES;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
@@ -34,6 +35,7 @@ public class MaterialRecipes {
     public static void register() {
         registerCeramics();
         registerMetals();
+        registerGlass();
         registerSimpleCompounds();
         registerSyntheticDiamond();
         registerMetalCasings();
@@ -43,7 +45,7 @@ public class MaterialRecipes {
         registerCobalt();
     }
 
-    public static void registerSimpleCompounds() {
+    private static void registerSimpleCompounds() {
 
         MIXER_RECIPES.recipeBuilder()
                 .duration(35)
@@ -72,9 +74,104 @@ public class MaterialRecipes {
                 .input(dust, Hafnium)
                 .output(dust, HafniumSilicate)
                 .buildAndRegister();
+
+        MIXER_RECIPES.recipeBuilder()
+                .duration(250)
+                .EUt(VA[IV])
+                .input(dust, Silver)
+                .input(dust, Gallium)
+                .input(dust, Selenium, 2)
+                .output(dust, SilverGalliumSelenide, 4)
+                .buildAndRegister();
     }
 
-    public static void registerMetals() {
+    public static void registerGlass() {
+
+        BLAST_RECIPES.recipeBuilder()
+                .duration(430)
+                .EUt(VA[MV])
+                .input(dust, Alumina, 2)
+                .input(dust, SiliconDioxide, 2)
+                .fluidInputs(Oxygen.getFluid(1000))
+                .output(ingot, AluminoSilicateGlass, 2)
+                .blastFurnaceTemp(1800)
+                .buildAndRegister();
+
+        CHEMICAL_RECIPES.recipeBuilder()
+                .duration(80)
+                .EUt(VA[MV])
+                .fluidInputs(ZirconiumTetrachloride.getFluid(1000))
+                .fluidInputs(HydrofluoricAcid.getFluid(1000))
+                .fluidOutputs(HydrochloricAcid.getFluid(1000))
+                .output(dust, ZirconiumTetrafluoride, 5)
+                .buildAndRegister();
+
+        CHEMICAL_RECIPES.recipeBuilder()
+                .duration(80)
+                .EUt(VA[MV])
+                .input(dust, BariumOxide)
+                .fluidInputs(HydrofluoricAcid.getFluid(2000))
+                .output(dust, BariumDifluoride, 3)
+                .fluidOutputs(Water.getFluid(1000))
+                .buildAndRegister();
+
+        CHEMICAL_RECIPES.recipeBuilder()
+                .duration(80)
+                .EUt(VA[MV])
+                .input(dust, LanthanumOxide, 5)
+                .output(dust, LanthanumTrifluoride, 8)
+                .fluidInputs(HydrofluoricAcid.getFluid(6000))
+                .fluidOutputs(Water.getFluid(3000))
+                .buildAndRegister();
+
+        CHEMICAL_RECIPES.recipeBuilder()
+                .duration(80)
+                .EUt(VA[MV])
+                .input(dust, Alumina, 5)
+                .output(dust, AluminiumTrifluoride, 8)
+                .fluidInputs(HydrofluoricAcid.getFluid(6000))
+                .fluidOutputs(Water.getFluid(3000))
+                .buildAndRegister();
+
+        CHEMICAL_RECIPES.recipeBuilder()
+                .duration(80)
+                .EUt(VA[MV])
+                .input(dust, SodiumHydroxide, 3)
+                .fluidInputs(HydrofluoricAcid.getFluid(1000))
+                .output(dust, SodiumFluoride, 2)
+                .fluidOutputs(Water.getFluid(1000))
+                .buildAndRegister();
+
+        ALLOY_BLAST_RECIPES.recipeBuilder()
+                .duration(420)
+                .EUt(VA[MV])
+                .input(dust, ZirconiumTetrafluoride, 5)
+                .input(dust, BariumDifluoride, 2)
+                .input(dust, LanthanumTrifluoride)
+                .input(dust, AluminiumTrifluoride)
+                .input(dust, SodiumFluoride, 2)
+                .fluidOutputs(ZBLANGlass.getFluid(1582))
+                .blastFurnaceTemp(2150)
+                .buildAndRegister();
+
+        ALLOY_SMELTER_RECIPES.recipeBuilder()
+                .duration(140)
+                .EUt(VA[MV])
+                .input(ingot, ZBLANGlass)
+                .input(dust, Praseodymium)
+                .output(ingot, PraseodymiumDopedZBLANGlass)
+                .buildAndRegister();
+
+        ALLOY_SMELTER_RECIPES.recipeBuilder()
+                .duration(140)
+                .EUt(VA[MV])
+                .input(ingot, ZBLANGlass)
+                .input(dust, Erbium)
+                .output(ingot, ErbiumDopedZBLANGlass)
+                .buildAndRegister();
+    }
+
+    private static void registerMetals() {
         registerNickelPlatedTin();
         registerGalvanizedSteel();
         registerSteelChanges();

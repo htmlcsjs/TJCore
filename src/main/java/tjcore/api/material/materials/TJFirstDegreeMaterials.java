@@ -1,5 +1,6 @@
 package tjcore.api.material.materials;
 
+import scala.sys.Prop;
 import tjcore.api.material.materials.properties.RotationPipeProperties;
 import tjcore.api.material.materials.properties.TJPropertyKey;
 import gregtech.api.unification.material.Material;
@@ -198,6 +199,7 @@ public class TJFirstDegreeMaterials {
         ArgonSilane = new Material.Builder(25044, "argon_silane")
                 .fluid()
                 .plasma()
+                .flags(DISABLE_DECOMPOSITION)
                 .components(Argon, 1, Silane, 1)
                 .color(0x24BB18)
                 .build();
@@ -646,6 +648,7 @@ public class TJFirstDegreeMaterials {
 
         AluminoSilicateGlass = new Material.Builder(25113, "aluminosilicateglass")
                 .ingot()
+                .flags(GENERATE_PLATE)
                 .color(0x9a9fb3)
                 .iconSet(MaterialIconSet.SHINY)
                 .components(Aluminium, 1, Silicon, 1, Oxygen, 4)
@@ -815,6 +818,118 @@ public class TJFirstDegreeMaterials {
                 .components(Hydrogen, 1, Antimony, 1, Fluorine, 6)
                 .build();
 
+        IndiumSolution = new Material.Builder(25140, "indium_solution")
+                .fluid()
+                .color(0x58474C)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(H2SO4)?", true);
+
+        IndiumSulfide = new Material.Builder(25141, "indium_sulfide")
+                .dust()
+                .iconSet(MaterialIconSet.SHINY)
+                .colorAverage()
+                .components(Indium, 2, Sulfur, 3)
+                .build();
+
+        IndiumResidue = new Material.Builder(25142, "indium_refining_residue")
+                .fluid()
+                .iconSet(MaterialIconSet.LIGNITE)
+                .color(0x060921)
+                .build();
+
+        ZirconiumTetrafluoride = new Material.Builder(25143, "zirconium_fluoride")
+                .dust()
+                .colorAverage()
+                .components(Zirconium, 1, Fluorine, 4)
+                .build();
+
+        BariumDifluoride = new Material.Builder(25144, "barium_fluoride")
+                .dust()
+                .colorAverage()
+                .components(Barium, 1, Fluorine, 2)
+                .build();
+
+        LanthanumTrifluoride = new Material.Builder(25145, "lanthanum_fluoride")
+                .dust()
+                .colorAverage()
+                .components(Lanthanum, 1, Fluorine, 3)
+                .build();
+
+        AluminiumTrifluoride = new Material.Builder(25146, "aluminium_fluoride")
+                .dust()
+                .colorAverage()
+                .components(Aluminium, 1, Fluorine, 3)
+                .build();
+
+        SodiumFluoride = new Material.Builder(25147, "sodium_fluoride")
+                .dust()
+                .colorAverage()
+                .components(Sodium, 1, Fluorine, 1)
+                .build();
+
+        BauxiteSlurry = new Material.Builder(25148, "bauxite_slurry")
+                .fluid()
+                .color(0x51040A)
+                .build();
+
+        IlmeniteSlurry = new Material.Builder(25149, "ilmenite_slurry")
+                .fluid()
+                .color(0x0A0212)
+                .build();
+
+        RedMud = new Material.Builder(25150, "red_mud")
+                .fluid()
+                .colorAverage()
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Rutile, 1, HydrochloricAcid, 2)
+                .build();
+
+        HeavyRedMudResidue = new Material.Builder(25151, "red_mud_residue")
+                .fluid()
+                .color(0x091012)
+                .build();
+
+        RefractoryMetalResidue = new Material.Builder(25152, "refractory_metal_residue")
+                .fluid()
+                .color(0x164347)
+                .build();
+
+        PotassiumHexafluorohafnate = new Material.Builder(25153, "potassium_hexafluorohafnate")
+                .gem()
+                .colorAverage()
+                .components(Potassium, 2, Hafnium, 1, Fluorine, 6)
+                .build();
+
+        PotassiumHexafluorozirconate = new Material.Builder(25154, "potassium_hexafluorozironate")
+                .gem()
+                .colorAverage()
+                .components(Potassium, 2, Zirconium, 1, Fluorine, 6)
+                .build();
+
+        HafniumTetrachloride = new Material.Builder(25155, "hafnium_tetrachloride")
+                .fluid()
+                .colorAverage()
+                .components(Hafnium, 1, Chlorine, 4)
+                .build();
+
+        ZirconiumTetrachloride = new Material.Builder(25156, "zirconium_tetrachloride")
+                .fluid()
+                .colorAverage()
+                .components(Zirconium, 1, Chlorine, 4)
+                .build();
+
+        PotassiumFluorideRefractoryMixture = new Material.Builder(25157, "potassium_fluoride_refractory_mixture")
+                .fluid()
+                .color(0x667E71)
+                .build();
+
+        Trichlorosilane = new Material.Builder(25158, "trichlorosilane")
+                .fluid()
+                .colorAverage()
+                .components(Hydrogen, 1, Silicon, 1, Chlorine, 3)
+                .build();
+
         // SCRIPTS FOR TJCORE HAS 29000-30000
     }
 
@@ -906,7 +1021,6 @@ public class TJFirstDegreeMaterials {
         Vibranium.addFlags(GENERATE_ROUND, GENERATE_FRAME, GENERATE_BOLT_SCREW, GENERATE_NANOFOIL, GENERATE_ROTOR, GENERATE_LONG_ROD);
         WroughtIron.addFlags(GENERATE_BOLT_SCREW, GENERATE_FRAME);
         ZBLANGlass.addFlags(GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW);
-
         //Properties
 
         FluidPipeProperties PZTPipeProps = new FluidPipeProperties(3200, 46,false,true,true,false);
@@ -943,10 +1057,11 @@ public class TJFirstDegreeMaterials {
         Einsteinium.setProperty(PropertyKey.DUST, new DustProperty());
         EnrichedNaqAlloy.setProperty(PropertyKey.WIRE, EnrichedNaqAlloyProps);
         Fermium.setProperty(PropertyKey.INGOT, new IngotProperty());
-        Hafnium.setProperty(PropertyKey.DUST, new DustProperty());
         HDCS_1.setProperty(PropertyKey.FLUID_PIPE, HDCS1PipeProps);
         HDCS_2.setProperty(PropertyKey.FLUID_PIPE, HDCS2PipeProps);
         HDCS_3.setProperty(PropertyKey.FLUID_PIPE, HDCS3PipeProps);
+        Hafnium.setProperty(PropertyKey.DUST, new DustProperty());
+        Hafnium.setProperty(PropertyKey.BLAST, new BlastProperty(2900));
         HeavyQuarkDegenerate.setProperty(PropertyKey.ITEM_PIPE, new ItemPipeProperties());
         HeavyQuarkDegenerate.setProperty(PropertyKey.PLASMA, HQDPlasmaProp);
         Iodine.setProperty(PropertyKey.DUST, new DustProperty());
@@ -958,11 +1073,12 @@ public class TJFirstDegreeMaterials {
         Oganesson.setProperty(PropertyKey.INGOT, new IngotProperty());
         OganessonTetraTennesside.setProperty(PropertyKey.WIRE, OgTs4);
         Pikyonium.setProperty(PropertyKey.WIRE, PikyoniumWireProps);
-        Praseodymium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Praseodymium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Praseodymium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Rutherfordium.setProperty(PropertyKey.ITEM_PIPE, new ItemPipeProperties());
         Seaborgium.setProperty(PropertyKey.INGOT, new IngotProperty());
         SilicaCeramic.setProperty(PropertyKey.FLUID_PIPE, silicaCeramicFluidPipeProps);
+        Steel.setProperty(TJPropertyKey.ROTATION_PIPE, new RotationPipeProperties(60.0f));
         SuperheavyH.setProperty(PropertyKey.WIRE, SuperheavyHProp);
         TantalumHafniumSeaborgiumCarboNitride.setProperty(PropertyKey.FLUID_PIPE, TaHfSgCNPipeProps);
         Taranium.setProperty(PropertyKey.INGOT, TaraniumIngotProp);
@@ -971,7 +1087,7 @@ public class TJFirstDegreeMaterials {
         Tennessine.setProperty(PropertyKey.INGOT, new IngotProperty());
         Terbium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Thulium.setProperty(PropertyKey.INGOT, new IngotProperty());
-
-        Steel.setProperty(TJPropertyKey.ROTATION_PIPE, new RotationPipeProperties(60.0f));
+        Zirconium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Zirconium.setProperty(PropertyKey.BLAST, new BlastProperty(2900));
     }
 }
