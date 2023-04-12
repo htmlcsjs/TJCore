@@ -69,6 +69,7 @@ public class MachineRecipes {
         ModHandler.removeRecipeByOutput(STEAM_MACERATOR_BRONZE.getStackForm());
         removeAllTeirs(TRANSFORMER);
         removeAllTeirs(STEAM_TURBINE);
+        removeAllTeirs(COMBUSTION_GENERATOR);
         removeAllTeirs(MetaTileEntities.HULL);
         for (int i = ULV; i < MAX; i++) {
             if (i < UEV) {

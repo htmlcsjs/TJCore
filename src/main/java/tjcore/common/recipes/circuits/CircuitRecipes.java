@@ -36,8 +36,8 @@ import static tjcore.common.recipes.recipemaps.TJRecipeMaps.LAMINATOR_RECIPES;
 public class CircuitRecipes {
 
     public static void registerCircuits() {
-        removePreexistingCircuits();
-        removeOldWafers();
+        //removePreexistingCircuits();
+        //removeOldWafers();
         SMD.registerSMDRecipes();
         Chips.registerChips();
         registerBoards();

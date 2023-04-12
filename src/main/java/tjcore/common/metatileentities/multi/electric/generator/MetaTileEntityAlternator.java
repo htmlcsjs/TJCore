@@ -4,6 +4,7 @@ import codechicken.lib.render.CCRenderState;
 import codechicken.lib.render.pipeline.IVertexOperation;
 import codechicken.lib.vec.Matrix4;
 import gregtech.api.capability.IEnergyContainer;
+import gregtech.api.capability.impl.EnergyContainerList;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
@@ -43,6 +44,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static gregtech.api.GTValues.V;
+import static gregtech.api.metatileentity.multiblock.MultiblockAbility.OUTPUT_ENERGY;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.block;
 
@@ -53,7 +55,7 @@ public class MetaTileEntityAlternator extends MultiblockWithDisplayBase implemen
 
     private AxleWhole axleWhole;
 
-    private IEnergyContainer energyOut;
+    private EnergyContainerList energyOut;
 
     float outputCap;
 
@@ -127,7 +129,7 @@ public class MetaTileEntityAlternator extends MultiblockWithDisplayBase implemen
                 .where('C', coils())
                 .where('B', bearings())
                 .where('O', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.STEEL_SOLID))
-                        .or(abilities(MultiblockAbility.OUTPUT_ENERGY)))
+                        .or(abilities(OUTPUT_ENERGY).setMinGlobalLimited(1)))
                 .where('M', states(MetaBlocks.COMPRESSED.get(IronMagnetic).getBlock(IronMagnetic)))
                 .build();
     }
@@ -139,7 +141,7 @@ public class MetaTileEntityAlternator extends MultiblockWithDisplayBase implemen
         if (type instanceof BlockGeneratorCoil.CoilType) {
             this.coilTier = ((BlockGeneratorCoil.CoilType) type).getTier();
         }
-        this.energyOut = getAbilities(MultiblockAbility.OUTPUT_ENERGY).get(0);
+        energyOut = new EnergyContainerList(getAbilities(OUTPUT_ENERGY));
     }
 
     @Override

@@ -1078,7 +1078,6 @@ public class TJFirstDegreeMaterials {
         Rutherfordium.setProperty(PropertyKey.ITEM_PIPE, new ItemPipeProperties());
         Seaborgium.setProperty(PropertyKey.INGOT, new IngotProperty());
         SilicaCeramic.setProperty(PropertyKey.FLUID_PIPE, silicaCeramicFluidPipeProps);
-        Steel.setProperty(TJPropertyKey.ROTATION_PIPE, new RotationPipeProperties(60.0f));
         SuperheavyH.setProperty(PropertyKey.WIRE, SuperheavyHProp);
         TantalumHafniumSeaborgiumCarboNitride.setProperty(PropertyKey.FLUID_PIPE, TaHfSgCNPipeProps);
         Taranium.setProperty(PropertyKey.INGOT, TaraniumIngotProp);
