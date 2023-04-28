@@ -16,6 +16,7 @@ import tjcore.common.metatileentities.multi.electric.*;
 import tjcore.common.metatileentities.multi.electric.generator.MetaTileEntityAlternator;
 import tjcore.common.metatileentities.multi.electric.generator.MetaTileEntityModularSteamTurbine;
 import tjcore.common.metatileentities.multi.fusion.MegaFusion;
+import tjcore.common.metatileentities.multi.steam.PrimitiveRoaster;
 import tjcore.common.metatileentities.multi.steam.PrimitiveTreeFarmer;
 import tjcore.common.metatileentities.multi.steam.SteamAssembler;
 import tjcore.common.metatileentities.axle.MetaTileEntityGearbox;
@@ -52,6 +53,7 @@ public class TJMetaTileEntities {
     public static MetaTileEntityGearbox GEARBOX;
     public static MetaTileEntityAlternator ALTERNATOR;
     public static Roaster ROASTER;
+    public static PrimitiveRoaster PRIMITIVE_ROASTER;
 
     public static Loom LOOM;
 
@@ -74,10 +76,11 @@ public class TJMetaTileEntities {
         CREATIVE_ROTATION = registerMetaTileEntity(12052, new MetaTileEntityCreativeRotation());
         GEARBOX = registerMetaTileEntity(12053, new MetaTileEntityGearbox(tjcoreID("gearbox")));
         ROASTER = registerMetaTileEntity(12054, new Roaster(tjcoreID("roaster")));
+        PRIMITIVE_ROASTER = registerMetaTileEntity(12055, new PrimitiveRoaster(tjcoreID("primitive_roaster")));
         registerSimpleMetaTileEntity(LAMINATOR, 12070, "laminator", TJRecipeMaps.LAMINATOR_RECIPES, Textures.BENDER_OVERLAY, true);
         registerSimpleMetaTileEntity(PRINTER, 12090, "printer", TJRecipeMaps.PRINTER_RECIPES, Textures.LASER_ENGRAVER_OVERLAY, true);
         registerSimpleMetaTileEntity(SPINNING_MACHINE, 12100, "spinning_machine", TJRecipeMaps.SPINNING_RECIPES, Textures.CENTRIFUGE_OVERLAY, true, GTUtility.hvCappedTankSizeFunction);
-        registerSimpleMetaTileEntity(DRYER, 12110, "dryer", DRYER_RECIPES, TJTextures.DRYER_OVERLAY, true);
+        registerSimpleMetaTileEntity(DRYER, 12110, "dryer", DRYER_RECIPES, TJTextures.ROASTER_OVERLAY, true);
     }
 
     private static void registerSimpleMetaTileEntity(SimpleMachineMetaTileEntity[] machines, int startID, String name, RecipeMap<?> map, ICubeRenderer texture, boolean frontfacing, Function<Integer, Integer> tankScalingFunction) {

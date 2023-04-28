@@ -23,10 +23,7 @@ import tjcore.common.pipelike.rotation.ItemBlockRotationAxle;
 import tjcore.common.pipelike.rotation.TileEntityRotationAxle;
 import tjcore.common.pipelike.rotation.TileEntityRotationAxleTESR;
 import tjcore.common.recipes.*;
-import tjcore.common.recipes.chains.CircuitryMaterialChains;
-import tjcore.common.recipes.chains.MaterialOreChains;
-import tjcore.common.recipes.chains.PetrochemRecipes;
-import tjcore.common.recipes.chains.PhotoresistChains;
+import tjcore.common.recipes.chains.*;
 import tjcore.common.recipes.circuits.CircuitRecipes;
 import tjcore.common.recipes.compatrecipes.ArmorInfuserRecipes;
 import tjcore.common.recipes.polymers.TJPolymers;
@@ -91,21 +88,6 @@ public class CommonProxy {
     
     @SubscribeEvent(priority = EventPriority.LOW)
     public static void init(RegistryEvent.Register<IRecipe> event) {
-        MaterialOreChains.init();
-        CircuitRecipes.registerCircuits();
-        TJComponents.init();
-        TJPolymers.registerPolymers();
-        GTComponents.init();
-        PetrochemRecipes.init();
-        PhotoresistChains.init();
-        LogisiticsRecipes.init();
-        if (Loader.isModLoaded("draconicevolution")) {
-            ArmorInfuserRecipes.register();
-        }
-        Ores.RegisterOres();
-        MaterialRecipes.register();
-        MachineRecipes.registerMachines();
-        MultiblockHatches.init();
-        CircuitryMaterialChains.init();
+        TJCoreRecipeHandler.init();
     }
 }

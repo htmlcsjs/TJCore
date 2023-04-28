@@ -26,6 +26,8 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem STEAM_PISTON;
     public static MetaItem<?>.MetaValueItem STEAM_PUMP;
     public static MetaItem<?>.MetaValueItem CLEANROOM_FILTER;
+    public static MetaItem<?>.MetaValueItem EVACUATED_TUBE;
+    public static MetaItem<?>.MetaValueItem VACUUM_TUBE;
 
     //CIRCUITFRAMEWORK
     public static MetaItem<?>.MetaValueItem WETPHENOLICPULP;
@@ -352,7 +354,7 @@ public class TJMetaItems {
     public static MetaItem<?>.MetaValueItem PRECISION_MAG_STIMULATION_SHEET;
     public static MetaItem<?>.MetaValueItem ANYON_BRAIDING_STRUCTURE;
 
-    public static MetaItem<?>.MetaValueItem EVACUATED_TUBE;
+
 
     // Material Items
 

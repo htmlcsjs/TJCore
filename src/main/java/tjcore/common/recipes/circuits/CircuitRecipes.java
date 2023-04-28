@@ -36,8 +36,8 @@ import static tjcore.common.recipes.recipemaps.TJRecipeMaps.LAMINATOR_RECIPES;
 public class CircuitRecipes {
 
     public static void registerCircuits() {
-        //removePreexistingCircuits();
-        //removeOldWafers();
+        removePreexistingCircuits();
+        removeOldWafers();
         SMD.registerSMDRecipes();
         Chips.registerChips();
         registerBoards();
@@ -57,7 +57,7 @@ public class CircuitRecipes {
         GTRecipeHandler.removeRecipesByInputs(CHEMICAL_BATH_RECIPES, new ItemStack[]{OreDictUnifier.get(wireFine, BorosilicateGlass)}, new FluidStack[]{Epoxy.getFluid(144)});
         ModHandler.removeRecipeByOutput(ELECTRONIC_CIRCUIT_LV.getStackForm());
         ModHandler.removeRecipeByOutput(ELECTRONIC_CIRCUIT_MV.getStackForm());
-        ModHandler.removeRecipeByOutput(VACUUM_TUBE.getStackForm());
+        ModHandler.removeRecipeByOutput(MetaItems.VACUUM_TUBE.getStackForm());
         GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{GLASS_TUBE.getStackForm(), OreDictUnifier.get(bolt, Steel), OreDictUnifier.get(wireGtSingle, AnnealedCopper, 2)}, new FluidStack[]{RedAlloy.getFluid(18)});
         GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{GLASS_TUBE.getStackForm(), OreDictUnifier.get(bolt, Steel), OreDictUnifier.get(wireGtSingle, Copper, 2)}, new FluidStack[]{RedAlloy.getFluid(18)});
         GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{GLASS_TUBE.getStackForm(), OreDictUnifier.get(bolt, Steel), OreDictUnifier.get(wireGtSingle, Copper, 2), IntCircuitIngredient.getIntegratedCircuit(1)});
@@ -156,8 +156,6 @@ public class CircuitRecipes {
                 }
             }
         }
-
-        VACUUM_TUBE.setInvisible(true);
     }
 
     private static void registerSolder() {
@@ -526,7 +524,7 @@ public class CircuitRecipes {
         ModHandler.addShapedRecipe("primitive_assembly_ulv", PRIMITIVE_ASSEMBLY_ULV.getStackForm(),
                 "RVR", "WBW", " V ",
                 'R', RESISTOR.getStackForm(),
-                'V', VACUUM_TUBE.getStackForm(),
+                'V', TJMetaItems.VACUUM_TUBE.getStackForm(),
                 'B', PRIMITIVE_BOARD.getStackForm(),
                 'W', OreDictUnifier.get(wireGtSingle, Tin));
 

@@ -16,6 +16,7 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
+import static gregtech.common.items.ToolItems.PLUNGER;
 import static tjcore.api.material.TJMaterials.*;
 import static tjcore.common.metaitem.TJMetaItems.*;
 import static tjcore.common.recipes.recipemaps.TJRecipeMaps.LAMINATOR_RECIPES;
@@ -73,14 +74,19 @@ public class Chips {
                 'W', new UnificationEntry(wireFine, Copper),
                 'F', new UnificationEntry(foil, Gold));
 
-        COMPRESSOR_RECIPES.recipeBuilder()
-                .duration(130)
-                .EUt(8)
-                .input(GLASS_TUBE)
-                .output(EVACUATED_TUBE)
-                .buildAndRegister();
+        //COMPRESSOR_RECIPES.recipeBuilder()
+        //        .duration(130)
+        //        .EUt(8)
+        //        .input(GLASS_TUBE)
+        //        .output(EVACUATED_TUBE)
+        //        .buildAndRegister();
 
-        ModHandler.addShapelessRecipe("vacuum_tube", VACUUM_TUBE.getStackForm(),
+        ModHandler.addShapelessRecipe("evacuated_tube", EVACUATED_TUBE.getStackForm(),
+                GLASS_TUBE.getStackForm(),
+                PLUNGER
+        );
+
+        ModHandler.addShapelessRecipe("vacuum_tube", TJMetaItems.VACUUM_TUBE.getStackForm(),
                 EVACUATED_TUBE.getStackForm(),
                 VACUUM_TUBE_COMPONENTS.getStackForm(),
                 OreDictUnifier.get(ring, Kovar)

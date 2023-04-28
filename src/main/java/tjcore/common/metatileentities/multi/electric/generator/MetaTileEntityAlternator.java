@@ -147,12 +147,18 @@ public class MetaTileEntityAlternator extends MultiblockWithDisplayBase implemen
     @Override
     protected void addDisplayText(List<ITextComponent> textList) {
         if (isStructureFormed()) {
+            int temp = (int)(rps*100.0);
+            double shortRPS = ((double)temp)/100.0;
+            temp = (int)(Math.min(euOut, outputCap)*100.0);
+            double shortOut = ((double)temp)/100.0;
+            temp = (int)(torque*100.0);
+            double shortTorque = ((double)temp)/100.0;
             textList.add(new TextComponentString("Coil Tier: " + (coilTier + 1)));
             textList.add(new TextComponentString("Maximum EU Output: " + outputCap));
             if (axleWhole != null) {
-                textList.add(new TextComponentString("Rotations Per Second: " + rps ));
-                textList.add(new TextComponentString("Torque: " + torque ));
-                textList.add(new TextComponentString("Real EU Output: " + Math.min(euOut, outputCap)));
+                textList.add(new TextComponentString("Rotations / Second: " + shortRPS ));
+                textList.add(new TextComponentString("Torque: " + shortTorque ));
+                textList.add(new TextComponentString("Real EU Output: " + shortOut));
             } else {
                 textList.add(new TextComponentString("Axle Disconnected!"));
             }

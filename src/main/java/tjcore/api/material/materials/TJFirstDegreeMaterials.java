@@ -186,7 +186,7 @@ public class TJFirstDegreeMaterials {
                 .build()
                 .setFormula("Co-60", false);
 
-        //25029 - 25033 RESERVED
+        //25029 - 25044 RESERVED
 
 
         Silane = new Material.Builder(25045, "silane")
@@ -929,6 +929,247 @@ public class TJFirstDegreeMaterials {
                 .colorAverage()
                 .components(Hydrogen, 1, Silicon, 1, Chlorine, 3)
                 .build();
+
+        PotassiumHydride = new Material.Builder(25181, "potassium_hydride")
+                .dust()
+                .components(Potassium, 1, Hydrogen, 1)
+                .colorAverage()
+                .build();
+
+        Aminopropionitrile = new Material.Builder(25159, "aminopropionitrile")
+                .fluid()
+                .components(Carbon, 3, Hydrogen, 6, Nitrogen, 2)
+                .colorAverage()
+                .build();
+
+        Aminopropylamine = new Material.Builder(25160, "aminopropylamine")
+                .fluid()
+                .components(Carbon, 3, Hydrogen, 10, Nitrogen, 2)
+                .colorAverage()
+                .build();
+
+        KAPA = new Material.Builder(25161, "kapa")
+                .fluid()
+                .components(Potassium, 2, Carbon, 3, Hydrogen, 10, Nitrogen, 2)
+                .colorAverage()
+                .build();
+
+        BetaPinene  = new Material.Builder(25162, "betapinene")
+                .dust()
+                .components(Carbon, 10, Hydrogen, 16)
+                .colorAverage()
+                .build();
+
+        AlphaPinene = new Material.Builder(25163, "alphapinene")
+                .dust()
+                .components(Carbon, 10, Hydrogen, 16)
+                .colorAverage()
+                .build();
+
+        Camphene = new Material.Builder(25164, "camphene")
+                .dust()
+                .components(Carbon, 10, Hydrogen, 16)
+                .colorAverage()
+                .build();
+
+        IsobornylAcetate = new Material.Builder(25165, "isobornyl_acetate")
+                .dust()
+                .components(Carbon, 12, Hydrogen, 20, Oxygen, 2)
+                .colorAverage()
+                .build();
+
+        Isoborneol = new Material.Builder(25166, "isoborneol")
+                .dust()
+                .components(Carbon, 10, Hydrogen, 18, Oxygen, 1)
+                .colorAverage()
+                .build();
+
+        SodiumAcetate = new Material.Builder(25167, "sodium_acetate")
+                .fluid()
+                .components(Carbon, 2, Hydrogen, 3, Sodium, 1, Oxygen, 2)
+                .colorAverage()
+                .build()
+                .setFormula("CH3COONa", true);
+
+        DehydrogenationCatalyst = new Material.Builder(25168, "dehydrogenation_catalyst")
+                .dust()
+                .components()
+                .color(0x2C1711)
+                .build();
+
+        SodiumPerchlorate = new Material.Builder(25169, "sodium_perchlorate")
+                .dust()
+                .iconSet(MaterialIconSet.BRIGHT)
+                .components(Sodium, 1, Chlorine, 1, Oxygen, 4)
+                .colorAverage()
+                .build();
+
+        PerchloricAcid = new Material.Builder(25170, "perchloric_acid")
+                .fluid()
+                .components(Hydrogen, 1, Chlorine, 1, Oxygen, 4)
+                .colorAverage()
+                .build();
+
+        Phenylhydrazine = new Material.Builder(25171, "phenylhydrazine")
+                .fluid()
+                .components(Carbon, 6, Hydrogen, 8, Nitrogen, 2)
+                .colorAverage()
+                .build();
+
+        BenzoylChloride = new Material.Builder(25172, "benzoyl_chloride")
+                .fluid()
+                .components(Carbon, 7, Hydrogen, 5, Chlorine, 1, Oxygen, 1)
+                .colorAverage()
+                .build();
+
+        TriphenylMethoxytriazoylPerchlorate = new Material.Builder(25173, "triphenyl_methoxytriazoyl_perchlorate")
+                .dust()
+                .components(Carbon, 20, Hydrogen, 20, Oxygen, 6, Chlorine, 1, Nitrogen, 3)
+                .flags()
+                .colorAverage()
+                .build();
+
+        SodiumMethoxide = new Material.Builder(25174, "sodium_methoxide")
+                .dust()
+                .components(Carbon, 1, Hydrogen, 3, Sodium, 1, Oxygen, 1)
+                .colorAverage()
+                .build();
+
+        TriphenylMethoxytriazole = new Material.Builder(25175, "triphenyl_methoxytriazole")
+                .dust()
+                .iconSet(MaterialIconSet.SHINY)
+                .components(Carbon, 21, Hydrogen, 23, Oxygen, 3, Nitrogen, 3)
+                .colorAverage()
+                .build();
+
+        Acetaldehyde = new Material.Builder(25176, "acetaldehyde")
+                .fluid()
+                .components(Carbon, 2, Hydrogen, 4, Oxygen, 1)
+                .colorAverage()
+                .build();
+
+        Acetoin  = new Material.Builder(25178, "acetoin")
+                .fluid()
+                .components(Carbon, 4, Hydrogen, 8, Oxygen, 2)
+                .colorAverage()
+                .build();
+
+        MetaNitrochlorobenzine = new Material.Builder(25179, "meta_nitrochlorobenzine")
+                .fluid()
+                .components(Carbon, 6, Hydrogen, 4, Chlorine, 1, Nitrogen, 1, Oxygen, 2)
+                .colorAverage()
+                .build();
+
+        Nitroanisole = new Material.Builder(25180, "nitroanisole")
+                .fluid()
+                .components(Carbon, 7, Hydrogen, 7, Nitrogen, 1, Oxygen, 3)
+                .colorAverage()
+                .build();
+
+        Anisidine = new Material.Builder(25182, "anisidine")
+                .fluid()
+                .components(Carbon, 7, Hydrogen, 9, Nitrogen, 1, Oxygen, 1)
+                .colorAverage()
+                .build();
+
+        MethylBromoacetate = new Material.Builder(25183, "methyl_bromoacetate")
+                .dust()
+                .colorAverage()
+                .components(Carbon, 3, Hydrogen, 5, Bromine, 1, Oxygen, 2)
+                .build();
+
+        CarbethoxymethyleneTriphenylphosphorane = new Material.Builder(25184, "carbomethoxy_methylenetriphenylphosphorane")
+                .dust()
+                .colorAverage()
+                .components(Carbon, 22, Hydrogen, 21, Oxygen, 2, Phosphorus, 1)
+                .build();
+
+        PropargylAlcohol = new Material.Builder(25185, "propargyl_alcohol")
+                .fluid()
+                .colorAverage()
+                .components(Carbon, 3, Hydrogen, 4, Oxygen, 1)
+                .build();
+
+        PropargylBromide = new Material.Builder(25186, "propargyl_bromide")
+                .fluid()
+                .colorAverage()
+                .components(Carbon, 3, Hydrogen, 3, Bromine, 1)
+                .build();
+
+        MethylmagnesiumIodide = new Material.Builder(25187, "methylmagnesium_iodide")
+                .dust()
+                .colorAverage()
+                .components(Carbon, 1, Hydrogen, 3, Iodine, 1, Magnesium, 1)
+                .build()
+                .setFormula("CH3COCl", true);
+
+        AcetylChloride = new Material.Builder(25188, "acetyl_chloride")
+                .fluid()
+                .colorAverage()
+                .components(Carbon, 2, Hydrogen, 3, Oxygen, 1, Chlorine, 1)
+                .build();
+
+        Acetophenone = new Material.Builder(25189, "acetophenone")
+                .fluid()
+                .colorAverage()
+                .components(Carbon, 8, Hydrogen, 8, Oxygen, 1)
+                .build()
+                .setFormula("C6H5COCH3", true);
+
+        Phenylethylamine = new Material.Builder(25190, "phenylethylamine")
+                .fluid()
+                .colorAverage()
+                .components(Carbon, 8, Hydrogen, 11, Nitrogen, 1)
+                .build();
+
+        PhenylethylIsocyanate = new Material.Builder(25191, "phenylethyl_isocyanate")
+                .fluid()
+                .colorAverage()
+                .components(Carbon, 9, Hydrogen, 9, Nitrogen, 1, Oxygen, 1)
+                .build();
+
+        TriethyloxoniumTetrafluoroborate = new Material.Builder(25192, "triethyloxonium_tetrafluoroborate")
+                .dust()
+                .colorAverage()
+                .components(Carbon, 6, Hydrogen, 15, Oxygen, 1, Boron, 1, Fluorine, 4)
+                .build()
+                .setFormula("(C2H5)3O(BF4)", true);
+
+        TrischloroethoxypopanylBorate = new Material.Builder(25193, "trischloroethoxypopanyl_borate")
+                .dust()
+                .colorAverage()
+                .components()
+                .build();
+
+        SulfuricFlueGas = new Material.Builder(25194, "sulfuric_flue_gas")
+                .fluid()
+                .color(0x6B6623)
+                .build();
+
+        SulfuricIronSlag = new Material.Builder(25195, "sulfuric_iron_slag")
+                .ingot()
+                .iconSet(MaterialIconSet.ROUGH)
+                .color(0x616B33)
+                .build();
+
+        SulfuricCopperSlag = new Material.Builder(25196, "sulfuric_copper_slag")
+                .ingot()
+                .iconSet(MaterialIconSet.ROUGH)
+                .color(0x975128)
+                .build();
+
+        SulfuricNickelSlag = new Material.Builder(25197, "sulfuric_nickel_slag")
+                .ingot()
+                .iconSet(MaterialIconSet.ROUGH)
+                .color(0x769197)
+                .build();
+
+        SulfuricZincSlag = new Material.Builder(25198, "sulfuric_zinc_slag")
+                .ingot()
+                .iconSet(MaterialIconSet.ROUGH)
+                .color(0xB5AECA)
+                .build();
+
 
         // SCRIPTS FOR TJCORE HAS 29000-30000
     }

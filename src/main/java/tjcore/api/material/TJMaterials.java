@@ -177,6 +177,50 @@ public final class TJMaterials {
     public static Material IndiumSolution;
     public static Material IndiumSulfide;
     public static Material IndiumResidue;
+    public static Material SulfuricFlueGas;
+    public static Material SulfuricIronSlag;
+    public static Material SulfuricZincSlag;
+    public static Material SulfuricNickelSlag;
+    public static Material SulfuricCopperSlag;
+
+    //BIOCHEM MATERIALS BEWARE
+
+    public static Material PotassiumHydride;
+    public static Material Aminopropionitrile;
+    public static Material Aminopropylamine;
+    public static Material KAPA;
+    public static Material BetaPinene;
+    public static Material AlphaPinene;
+    public static Material Camphene;
+    public static Material IsobornylAcetate;
+    public static Material Isoborneol;
+    public static Material SodiumAcetate;
+    public static Material DehydrogenationCatalyst;
+    public static Material SodiumPerchlorate;
+    public static Material PerchloricAcid;
+    public static Material Phenylhydrazine;
+    public static Material BenzoylChloride;
+    public static Material TriphenylMethoxytriazoylPerchlorate;
+    public static Material SodiumMethoxide;
+    public static Material TriphenylMethoxytriazole;
+    public static Material Acetaldehyde;
+    public static Material Acetoin;
+    public static Material MetaNitrochlorobenzine;
+    public static Material Nitroanisole;
+    public static Material Anisidine;
+    public static Material MethylBromoacetate;
+    public static Material CarbethoxymethyleneTriphenylphosphorane;
+    public static Material PropargylAlcohol;
+    public static Material PropargylBromide;
+    public static Material MethylmagnesiumIodide;
+    public static Material AcetylChloride;
+    public static Material Acetophenone;
+    public static Material Phenylethylamine;
+    public static Material PhenylethylIsocyanate;
+    public static Material TriethyloxoniumTetrafluoroborate;
+    public static Material TrischloroethoxypopanylBorate;
+
+
 
     // Magic materials, unknown composition
     public static Material Draconium;
@@ -205,7 +249,7 @@ public final class TJMaterials {
     public static Material LightQuarks;
     public static Material Leptons;
     public static Material HeavyQuarkDegenerate;
-    public static Material[] longDistanceWireMaterials = new Material[]{LVLongDistance, MVLongDistance, HVLongDistance, EVLongDistance, IVLongDistance};
+    public static Material[] longDistanceWireMaterials = new Material[]{ MVLongDistance, HVLongDistance, EVLongDistance, IVLongDistance};
 
     private TJMaterials() {/**/}
 

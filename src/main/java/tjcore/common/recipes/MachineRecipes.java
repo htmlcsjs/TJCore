@@ -39,10 +39,12 @@ import static gregtech.loaders.recipe.CraftingComponent.*;
 import static tjcore.api.TJComponents.*;
 import static tjcore.api.material.TJMaterials.*;
 import static tjcore.common.blocks.BlockTurbineBlades.TurbineBladesType.*;
+import static tjcore.common.blocks.TJMetaBlocks.BLOCK_GENERATOR_COIL;
 import static tjcore.common.blocks.TJMetaBlocks.ROTATION_AXLE;
 import static tjcore.common.metaitem.TJMetaItems.*;
 import static tjcore.common.metatileentities.TJMetaTileEntities.*;
 import static tjcore.common.recipes.GTComponents.tierCircuitNames;
+import static tjcore.common.recipes.recipemaps.TJRecipeMaps.*;
 
 public class MachineRecipes {
 
@@ -70,6 +72,7 @@ public class MachineRecipes {
         removeAllTeirs(TRANSFORMER);
         removeAllTeirs(STEAM_TURBINE);
         removeAllTeirs(COMBUSTION_GENERATOR);
+        removeAllTeirs(GAS_TURBINE);
         removeAllTeirs(MetaTileEntities.HULL);
         for (int i = ULV; i < MAX; i++) {
             if (i < UEV) {
@@ -209,7 +212,7 @@ public class MachineRecipes {
                 'A', new UnificationEntry(circuit, tierCircuitNames[LV]),
                 'W', OreDictUnifier.get(wireGtDouble, Tin),
                 'H', MetaTileEntities.HULL[LV].getStackForm(),
-                'C', TJMetaBlocks.BLOCK_GENERATOR_COIL.getItemVariant(BlockGeneratorCoil.CoilType.COPPER));
+                'C', TJMetaBlocks.BLOCK_GENERATOR_COIL.getItemVariant(BlockGeneratorCoil.CoilType.TIN));
     }
 
     private static void registerGenerator() {
@@ -232,11 +235,53 @@ public class MachineRecipes {
                     'R', OreDictUnifier.get(ring, bladeMaterial[i]));
         }
 
-        ModHandler.addShapedRecipe("generator_coil_copper", TJMetaBlocks.BLOCK_GENERATOR_COIL.getItemVariant(BlockGeneratorCoil.CoilType.COPPER),
+        ModHandler.addShapedRecipe("generator_coil_tin", TJMetaBlocks.BLOCK_GENERATOR_COIL.getItemVariant(BlockGeneratorCoil.CoilType.TIN),
                 "WSW", "WFW", "WSW",
-                'W', OreDictUnifier.get(wireFine, Copper),
+                'W', OreDictUnifier.get(wireGtDouble, Tin),
                 'S', OreDictUnifier.get(bolt, GalvanizedSteel),
                 'F', FRAMES.get(GalvanizedSteel));
+
+        SPINNING_RECIPES.recipeBuilder()
+                .duration(120)
+                .EUt(VA[LV])
+                .input(frameGt, GalvanizedSteel)
+                .input(wireFine, Tin, 24)
+                .outputs(BLOCK_GENERATOR_COIL.getItemVariant(BlockGeneratorCoil.CoilType.TIN))
+                .buildAndRegister();
+
+        SPINNING_RECIPES.recipeBuilder()
+                .duration(120)
+                .EUt(VA[MV])
+                .input(frameGt, Aluminium)
+                .input(wireFine, Copper, 24)
+                .outputs(BLOCK_GENERATOR_COIL.getItemVariant(BlockGeneratorCoil.CoilType.COPPER))
+                .buildAndRegister();
+
+        SPINNING_RECIPES.recipeBuilder()
+                .duration(120)
+                .EUt(VA[HV])
+                .input(frameGt, StainlessSteel)
+                .input(wireFine, Electrum, 24)
+                .outputs(BLOCK_GENERATOR_COIL.getItemVariant(BlockGeneratorCoil.CoilType.ELECTRUM))
+                .buildAndRegister();
+
+        SPINNING_RECIPES.recipeBuilder()
+                .duration(120)
+                .EUt(VA[EV])
+                .input(frameGt, Titanium)
+                .input(wireFine, Aluminium, 24)
+                .outputs(BLOCK_GENERATOR_COIL.getItemVariant(BlockGeneratorCoil.CoilType.ALUMINIUM))
+                .buildAndRegister();
+
+        SPINNING_RECIPES.recipeBuilder()
+                .duration(120)
+                .EUt(VA[IV])
+                .input(frameGt, TungstenSteel)
+                .input(wireFine, Platinum, 24)
+                .outputs(BLOCK_GENERATOR_COIL.getItemVariant(BlockGeneratorCoil.CoilType.PLATINUM))
+                .buildAndRegister();
+
+
 
         ModHandler.addShapedRecipe("gearbox", GEARBOX.getStackForm(),
                 "WGW", "GFG", "WGW",

@@ -16,6 +16,7 @@ import gregtech.api.pattern.FactoryBlockPattern;
 import gregtech.api.pattern.TraceabilityPredicate;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
+import gregtech.api.util.Predicates;
 import gregtech.api.util.RelativeDirection;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
@@ -24,10 +25,12 @@ import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.BlockMultiblockCasing;
 import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.util.ResourceLocation;
+import tjcore.common.TJTextures;
 import tjcore.common.recipes.recipemaps.TJRecipeMaps;
 
 import javax.annotation.Nonnull;
 
+import static gregtech.api.pattern.TraceabilityPredicate.HEATING_COILS;
 import static tjcore.common.recipes.recipemaps.TJRecipeMaps.ROASTING_RECIPES;
 
 public class Roaster extends RecipeMapMultiblockController {
@@ -61,7 +64,7 @@ public class Roaster extends RecipeMapMultiblockController {
                 .where('S', selfPredicate())
                 .where('#', TraceabilityPredicate.ANY)
                 .where(' ',TraceabilityPredicate.AIR)
-                .where('O', states(GCYMMetaBlocks.UNIQUE_CASING.getState(BlockUniqueCasing.UniqueCasingType.MOLYBDENUM_DISILICIDE_COIL)))
+                .where('O', HEATING_COILS.get())
                 .where('C', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.INVAR_HEATPROOF)))
                 .where('H', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.INVAR_HEATPROOF))
                         .or(autoAbilities()))
@@ -89,6 +92,6 @@ public class Roaster extends RecipeMapMultiblockController {
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return Textures.MULTIBLOCK_WORKABLE_OVERLAY;
+        return TJTextures.ROASTER_OVERLAY;
     }
 }

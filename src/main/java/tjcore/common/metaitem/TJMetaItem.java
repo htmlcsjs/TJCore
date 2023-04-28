@@ -190,9 +190,9 @@ public class TJMetaItem extends StandardMetaItem {
         LAMINATED_CRYSTAL_PCB_SHEET = addItem(313,"laminated_crystal_pcb_sheet");
         GAMMA_EMITTING_DIODE = addItem(314,"gamma_emitting_diode");
         REFLECTING_SHEET = addItem(315, "reflecting_sheet");
-        EVACUATED_TUBE = addItem(316, "evacuated_glass_tube");
 
-        //Lithography Metaitems (500-599)
+
+        //Lithography Metaitems (500-597)
         SILICON_BOULE = addItem(500, "silicon_boule");
         ANTIMONY_DOPED_SILICON_BOULE = addItem(501, "antimony_doped_silicon_boule");
         BORON_DOPED_SILICON_BOULE = addItem(502, "boron_doped_silicon_boule");
@@ -283,7 +283,11 @@ public class TJMetaItem extends StandardMetaItem {
         LASER_TUBE = addItem(573, "laser_tube");
         STENCILING_CUTHEAD = addItem(574, "stencil_cutting_head");
 
-        // Chip Metaitems Excluding Lithography (600-999)
+        // Chip Metaitems Excluding Lithography (598-999)
+
+        //Primitive Chip
+        EVACUATED_TUBE = addItem(598, "evacuated_glass_tube");
+        VACUUM_TUBE = addItem(599, "vacuum_tube");
 
         // Electronic Chip
         SIMPLE_SILICON_WAFER = addItem(600, "simple_silicon_wafer");

@@ -2,6 +2,7 @@ package tjcore.common.recipes.chains;
 
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.unification.OreDictUnifier;
+import gregtech.api.unification.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
@@ -12,6 +13,7 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static tjcore.api.material.TJMaterials.*;
+import static tjcore.common.recipes.recipemaps.TJRecipeMaps.PRIMITIVE_ROASTING_RECIPES;
 import static tjcore.common.recipes.recipemaps.TJRecipeMaps.ROASTING_RECIPES;
 
 public class MaterialOreChains {
@@ -20,6 +22,7 @@ public class MaterialOreChains {
         FixRoaster();
         Indium();
         ZirconiumHafnium();
+        PrimitiveRoasting();
     }
 
     private static void FixRoaster() {
@@ -30,6 +33,7 @@ public class MaterialOreChains {
                 .input(dust, Sodium)
                 .fluidInputs(Oxygen.getFluid(1000))
                 .output(dust, SodiumPeroxide, 2)
+                .blastFurnaceTemp(2100)
                 .buildAndRegister();
 
         ROASTING_RECIPES.recipeBuilder()
@@ -40,6 +44,7 @@ public class MaterialOreChains {
                 .fluidOutputs(SulfurDioxide.getFluid(2000))
                 .fluidOutputs(MolybdenumFlue.getFluid(1000))
                 .output(dust, MolybdenumTrioxide, 4)
+                .blastFurnaceTemp(3200)
                 .buildAndRegister();
 
         ROASTING_RECIPES.recipeBuilder()
@@ -49,6 +54,7 @@ public class MaterialOreChains {
                 .input(gem, Coke)
                 .output(dust, CalciumCarbide, 3)
                 .fluidOutputs(CarbonMonoxide.getFluid(1000))
+                .blastFurnaceTemp(1500)
                 .buildAndRegister();
 
         ROASTING_RECIPES.recipeBuilder()
@@ -57,6 +63,7 @@ public class MaterialOreChains {
                 .input(dust, WhitePhosphorus)
                 .fluidInputs(Argon.getFluid(50))
                 .output(gem, RedPhosphorus)
+                .blastFurnaceTemp(5600)
                 .buildAndRegister();
 
         ROASTING_RECIPES.recipeBuilder()
@@ -67,6 +74,7 @@ public class MaterialOreChains {
                 .output(dust, RoastedSphalerite, 3)
                 .output(dust, ZincOxide, 2)
                 .fluidOutputs(SulfurDioxide.getFluid(1000))
+                .blastFurnaceTemp(3600)
                 .buildAndRegister();
 
         ROASTING_RECIPES.recipeBuilder()
@@ -78,6 +86,7 @@ public class MaterialOreChains {
                 .output(dust, IridiumMetalResidue, 5)
                 .output(dust, OsmiumTetroxide, 5)
                 .output(dust, Salt, 4)
+                .blastFurnaceTemp(5400)
                 .buildAndRegister();
 
         ROASTING_RECIPES.recipeBuilder()
@@ -87,6 +96,7 @@ public class MaterialOreChains {
                 .input(dust, Carbon, 3)
                 .output(dust, CalciumCarbide, 3)
                 .fluidOutputs(CarbonMonoxide.getFluid(1000))
+                .blastFurnaceTemp(1500)
                 .buildAndRegister();
 
         ROASTING_RECIPES.recipeBuilder()
@@ -99,8 +109,8 @@ public class MaterialOreChains {
                 .output(dust, SeleniumDioxide, 3)
                 .output(ingot, Silver, 2)
                 .fluidOutputs(CarbonDioxide.getFluid(1000))
+                .blastFurnaceTemp(4500)
                 .buildAndRegister();
-
     }
 
     private static void Indium() {
@@ -260,6 +270,104 @@ public class MaterialOreChains {
                 .output(ingotHot, Hafnium)
                 .output(dust, MagnesiumChloride, 6)
                 .buildAndRegister();
+
+    }
+
+    private static void PrimitiveRoasting() {
+
+        Material[] fuel = new Material[]{Coke, Coal, Charcoal};
+        for (int i = 0; i < fuel.length; i++) {
+            PRIMITIVE_ROASTING_RECIPES.recipeBuilder()
+                    .duration(345)
+                    .input(crushed, Sphalerite, 1)
+                    .input(gem, fuel[i], i == 2 ? 4 : i + 1)
+                    .output(ingot, Zinc)
+                    .chancedOutput(ingot, SulfuricZincSlag,5000, 0)
+                    .fluidOutputs(SulfuricFlueGas.getFluid(100))
+                    .buildAndRegister();
+
+            PRIMITIVE_ROASTING_RECIPES.recipeBuilder()
+                    .duration(315)
+                    .input(gem, fuel[i], i == 2 ? 4 : i + 1)
+                    .input(crushed, Chalcopyrite, 1)
+                    .output(ingot, Copper)
+                    .chancedOutput(ingot, SulfuricCopperSlag,  2500, 0)
+                    .chancedOutput(ingot, SulfuricIronSlag, 7500, 0)
+                    .fluidOutputs(SulfuricFlueGas.getFluid(100))
+                    .buildAndRegister();
+
+            PRIMITIVE_ROASTING_RECIPES.recipeBuilder()
+                    .duration(380)
+                    .input(crushed, Pyrite, 1)
+                    .input(gem, fuel[i], i == 2 ? 4 : i + 1)
+                    .output(ingot, Iron)
+                    .chancedOutput(ingot, SulfuricIronSlag,5000, 0)
+                    .fluidOutputs(SulfuricFlueGas.getFluid(100))
+                    .buildAndRegister();
+
+            PRIMITIVE_ROASTING_RECIPES.recipeBuilder()
+                    .duration(335)
+                    .input(gem, fuel[i], i == 2 ? 4 : i + 1)
+                    .input(crushed, Bornite, 1)
+                    .output(ingot, Copper)
+                    .chancedOutput(ingot, SulfuricCopperSlag, 2500, 0)
+                    .chancedOutput(ingot, SulfuricIronSlag,7500, 0)
+                    .fluidOutputs(SulfuricFlueGas.getFluid(100))
+                    .buildAndRegister();
+
+            PRIMITIVE_ROASTING_RECIPES.recipeBuilder()
+                    .duration(310)
+                    .input(gem, fuel[i], i == 2 ? 4 : i + 1)
+                    .input(crushed, Chalcocite)
+                    .output(ingot, Copper)
+                    .chancedOutput(ingot, SulfuricCopperSlag,5000, 0)
+                    .fluidOutputs(SulfuricFlueGas.getFluid(100))
+                    .buildAndRegister();
+
+            PRIMITIVE_ROASTING_RECIPES.recipeBuilder()
+                    .duration(345)
+                    .input(gem, fuel[i], i == 2 ? 4 : i + 1)
+                    .input(crushed, Pentlandite)
+                    .output(ingot, Nickel)
+                    .chancedOutput(ingot, SulfuricNickelSlag, 5000, 0)
+                    .fluidOutputs(SulfuricFlueGas.getFluid(100))
+                    .buildAndRegister();
+
+            GTRecipeHandler.removeRecipesByInputs(MACERATOR_RECIPES, OreDictUnifier.get(ingot, SulfuricCopperSlag));
+            GTRecipeHandler.removeRecipesByInputs(MACERATOR_RECIPES, OreDictUnifier.get(ingot, SulfuricZincSlag));
+            GTRecipeHandler.removeRecipesByInputs(MACERATOR_RECIPES, OreDictUnifier.get(ingot, SulfuricIronSlag));
+            GTRecipeHandler.removeRecipesByInputs(MACERATOR_RECIPES, OreDictUnifier.get(ingot, SulfuricNickelSlag));
+
+            MACERATOR_RECIPES.recipeBuilder()
+                    .duration(85)
+                    .EUt(8)
+                    .input(ingot, SulfuricCopperSlag)
+                    .output(dust, Sulfur)
+                    .chancedOutput(dust, Copper, 5000,0)
+                    .buildAndRegister();
+
+            MACERATOR_RECIPES.recipeBuilder()
+                    .duration(85)
+                    .EUt(8)
+                    .input(ingot, SulfuricZincSlag)
+                    .output(dust, Sulfur)
+                    .chancedOutput(dust, Zinc, 5000,0)
+                    .buildAndRegister();
+            MACERATOR_RECIPES.recipeBuilder()
+                    .duration(85)
+                    .EUt(8)
+                    .input(ingot, SulfuricIronSlag)
+                    .output(dust, Sulfur)
+                    .chancedOutput(dust, Iron, 5000,0)
+                    .buildAndRegister();
+            MACERATOR_RECIPES.recipeBuilder()
+                    .duration(85)
+                    .EUt(8)
+                    .input(ingot, SulfuricNickelSlag)
+                    .output(dust, Sulfur)
+                    .chancedOutput(dust, Nickel, 5000,0)
+                    .buildAndRegister();
+            }
 
     }
 }

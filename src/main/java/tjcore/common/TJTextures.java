@@ -7,6 +7,7 @@ import gregtech.client.renderer.texture.cube.SimpleOverlayRenderer;
 import gregtech.client.renderer.texture.cube.SimpleSidedCubeRenderer;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.relauncher.Side;
+import scala.tools.nsc.transform.patmat.Logic;
 import tjcore.TJValues;
 
 @Mod.EventBusSubscriber(modid = TJValues.MODID, value = Side.CLIENT)
@@ -24,10 +25,12 @@ public class TJTextures {
     public static SimpleOverlayRenderer DRACONIC_CASING;
 
     public static final OrientedOverlayRenderer DRYER_OVERLAY = new OrientedOverlayRenderer("machines/dryer");
+    public static final OrientedOverlayRenderer ROASTER_OVERLAY = new OrientedOverlayRenderer("machines/roaster");
 
     public static void preInit() {
         Brick = new SimpleCubeRenderer("minecraft:blocks/brick");
         TreeFarmerController = Textures.FROST_PROOF_CASING;
+
         STEAM_ASSEMBLER_OVERLAY = new OrientedOverlayRenderer("machines/steam_assembler", OrientedOverlayRenderer.OverlayFace.FRONT);
         ROTATION_OVERLAY = new SimpleOverlayRenderer("overlay/machine/overlay_rotation");
         GEARBOX = new SimpleCubeRenderer("tjcore:blocks/gearbox");

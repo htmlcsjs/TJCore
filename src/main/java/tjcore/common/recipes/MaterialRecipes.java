@@ -83,6 +83,25 @@ public class MaterialRecipes {
                 .input(dust, Selenium, 2)
                 .output(dust, SilverGalliumSelenide, 4)
                 .buildAndRegister();
+
+        ModHandler.addShapelessRecipe("dust_kovar", OreDictUnifier.get(OrePrefix.dust, Kovar, 6),
+                OreDictUnifier.get(OrePrefix.dust, Iron),
+                OreDictUnifier.get(OrePrefix.dust, Iron),
+                OreDictUnifier.get(OrePrefix.dust, Iron),
+                OreDictUnifier.get(OrePrefix.dust, Iron),
+                OreDictUnifier.get(OrePrefix.dust, Nickel),
+                OreDictUnifier.get(OrePrefix.dust, Nickel),
+                OreDictUnifier.get(OrePrefix.dust, Cobalt)
+        );
+
+        MIXER_RECIPES.recipeBuilder()
+                .input(OrePrefix.dust, Iron, 4)
+                .input(OrePrefix.dust, Nickel, 2)
+                .input(OrePrefix.dust, Cobalt)
+                .notConsumable(new IntCircuitIngredient(4))
+                .output(OrePrefix.dust, Kovar, 7)
+                .duration(160).EUt(VA[ULV]).buildAndRegister();
+
     }
 
     public static void registerGlass() {
