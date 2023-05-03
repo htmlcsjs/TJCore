@@ -34,12 +34,6 @@ public class PhosphorusChain {
                 .output(gem, WhitePhosphorus)
                 .duration(800).EUt(VA[HV]).buildAndRegister();
 
-        ROASTER_RECIPES.recipeBuilder()
-                .input(dust, WhitePhosphorus)
-                .fluidInputs(Argon.getFluid(50))
-                .output(gem, RedPhosphorus)
-                .temperature(573)
-                .duration(200).EUt(VA[MV]).buildAndRegister();
 
         CHEMICAL_BATH_RECIPES.recipeBuilder()
                 .input(dust, WhitePhosphorus)

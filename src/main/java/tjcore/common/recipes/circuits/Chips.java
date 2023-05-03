@@ -363,7 +363,7 @@ public class Chips {
 
             CHEMICAL_BATH_RECIPES.recipeBuilder()
                     .input(prebaked[i])
-                    .fluidInputs(photopolymers[i].getFluid(25 * (i + 1)))
+                    .fluidInputs(photopolymers[i].getFluid(200 * (i + 1)))
                     .output(dust, polymer[i])
                     .output(treated[i])
                     .EUt(tierPower)
@@ -373,7 +373,7 @@ public class Chips {
             if (i < 3) {
                 CHEMICAL_BATH_RECIPES.recipeBuilder()
                         .input(prebaked[i])
-                        .fluidInputs(SU8_Photoresist.getFluid(25 * (i + 1)))
+                        .fluidInputs(SU8_Photoresist.getFluid(100 * (i + 1)))
                         .output(dust, polymer[i])
                         .output(treated[i])
                         .EUt(tierPower)
@@ -415,8 +415,7 @@ public class Chips {
 
             CUTTER_RECIPES.recipeBuilder()
                     .input(etched[i])
-                    .output(chip[i], 64)
-                    .output(chip[i], 64)
+                    .output(chip[i], 8)
                     .EUt(VA[LV])
                     .duration(20)
                     .buildAndRegister();

@@ -9,6 +9,7 @@ import gregtech.api.unification.stack.ItemMaterialInfo;
 import gregtech.api.unification.stack.MaterialStack;
 import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.blocks.BlockMachineCasing;
+import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.BlockSteamCasing;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.items.ToolItems;
@@ -30,12 +31,15 @@ import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.EXTRUDER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.common.blocks.BlockMetalCasing.MetalCasingType.INVAR_HEATPROOF;
+import static gregtech.common.blocks.BlockMetalCasing.MetalCasingType.PRIMITIVE_BRICKS;
 import static gregtech.common.blocks.MetaBlocks.FRAMES;
 import static gregtech.common.blocks.MetaBlocks.MACHINE_CASING;
 import static gregtech.common.items.MetaItems.ELECTRIC_MOTOR_LV;
 import static gregtech.common.items.MetaItems.SHAPE_EXTRUDER_ROD;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
 import static gregtech.loaders.recipe.CraftingComponent.*;
+import static net.minecraft.init.Blocks.IRON_BARS;
 import static tjcore.api.TJComponents.*;
 import static tjcore.api.material.TJMaterials.*;
 import static tjcore.common.blocks.BlockTurbineBlades.TurbineBladesType.*;
@@ -109,13 +113,11 @@ public class MachineRecipes {
             }
 
             OreDictUnifier.registerOre(MACHINE_CASING.getItemVariant(machineCasingTypes[i]), new ItemMaterialInfo(
-                    new MaterialStack(i == 1 ? Steel : hullMaterialNew[i], M*4),
-                    new MaterialStack(secondaryHullMaterial[i], M/2)
+                    new MaterialStack(i == 1 ? Steel : hullMaterialNew[i], M*4)
             ));
 
             OreDictUnifier.registerOre(MetaTileEntities.HULL[i].getStackForm(), new ItemMaterialInfo(
                     new MaterialStack(i == 1 ? Steel : hullMaterialNew[i], M*5),
-                    new MaterialStack(secondaryHullMaterial[i], M/2),
                     new MaterialStack(hullPolymerNew[i], M*2),
                     new MaterialStack(cableGtSingleNew[i], M)
             ));
@@ -133,6 +135,26 @@ public class MachineRecipes {
                     'C', new UnificationEntry(cableGtSingle, cableGtSingleNew[i]),
                     'H', MACHINE_CASING.getItemVariant(machineCasingTypes[i])
             );
+
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .duration(80)
+                    .EUt(VA[i + 1])
+                    .input(plate, hullMaterialNew[i], 2)
+                    .input(frameGt, hullMaterialNew[i])
+                    .circuitMeta(4)
+                    .outputs(MACHINE_CASING.getItemVariant(machineCasingTypes[i]))
+                    .buildAndRegister();
+
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .duration(80)
+                    .EUt(VA[i + 1])
+                    .inputs(MACHINE_CASING.getItemVariant(machineCasingTypes[i]))
+                    .input(plate, hullMaterialNew[i])
+                    .input(cableGtSingle, cableGtSingleNew[i], 2)
+                    .fluidInputs(hullPolymerNew[i].getFluid(288))
+                    .circuitMeta(4)
+                    .outputs(MetaTileEntities.HULL[i].getStackForm())
+                    .buildAndRegister();
         }
     }
     private static void registerElectric() {
@@ -213,6 +235,33 @@ public class MachineRecipes {
                 'W', OreDictUnifier.get(wireGtDouble, Tin),
                 'H', MetaTileEntities.HULL[LV].getStackForm(),
                 'C', TJMetaBlocks.BLOCK_GENERATOR_COIL.getItemVariant(BlockGeneratorCoil.CoilType.TIN));
+
+        ModHandler.addShapedRecipe("primitive_roaster", PRIMITIVE_ROASTER.getStackForm(),
+            "BhB", "BIB", "BPB",
+                'I', new ItemStack(IRON_BARS),
+                'B', MetaBlocks.METAL_CASING.getItemVariant(PRIMITIVE_BRICKS),
+                'P', OreDictUnifier.get(plate, Iron));
+
+        ModHandler.addShapedRecipe("roaster", ROASTER.getStackForm(),
+        "HHH", "HFH", "WCW",
+                'H', MetaBlocks.METAL_CASING.getItemVariant(INVAR_HEATPROOF),
+                'F', new ItemStack(Blocks.FURNACE),
+                'W', OreDictUnifier.get(cableGtSingle, Copper),
+                'C', new UnificationEntry(circuit, tierCircuitNames[HV])
+        );
+        ModHandler.addShapelessRecipe("magnetic_iron_block", OreDictUnifier.get(block, IronMagnetic),
+                OreDictUnifier.get(ingot, Iron),
+                OreDictUnifier.get(dust, Redstone),
+                OreDictUnifier.get(dust, Redstone),
+                OreDictUnifier.get(dust, Redstone),
+                OreDictUnifier.get(dust, Redstone),
+                OreDictUnifier.get(dust, Redstone),
+                OreDictUnifier.get(dust, Redstone),
+                OreDictUnifier.get(dust, Redstone),
+                OreDictUnifier.get(dust, Redstone));
+
+
+
     }
 
     private static void registerGenerator() {

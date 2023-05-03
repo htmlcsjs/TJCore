@@ -1298,6 +1298,7 @@ public class TJFirstDegreeMaterials {
         Einsteinium.setProperty(PropertyKey.DUST, new DustProperty());
         EnrichedNaqAlloy.setProperty(PropertyKey.WIRE, EnrichedNaqAlloyProps);
         Fermium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Fullerene.setProperty(PropertyKey.FLUID, new FluidProperty());
         HDCS_1.setProperty(PropertyKey.FLUID_PIPE, HDCS1PipeProps);
         HDCS_2.setProperty(PropertyKey.FLUID_PIPE, HDCS2PipeProps);
         HDCS_3.setProperty(PropertyKey.FLUID_PIPE, HDCS3PipeProps);

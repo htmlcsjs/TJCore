@@ -16,6 +16,9 @@ import tjcore.common.metatileentities.multi.electric.*;
 import tjcore.common.metatileentities.multi.electric.generator.MetaTileEntityAlternator;
 import tjcore.common.metatileentities.multi.electric.generator.MetaTileEntityModularSteamTurbine;
 import tjcore.common.metatileentities.multi.fusion.MegaFusion;
+import tjcore.common.metatileentities.multi.pipeline.MetaTileEntityEnergyPipeline;
+import tjcore.common.metatileentities.multi.pipeline.MetaTileEntityFluidPipeline;
+import tjcore.common.metatileentities.multi.pipeline.MetaTileEntityItemPipeline;
 import tjcore.common.metatileentities.multi.steam.PrimitiveRoaster;
 import tjcore.common.metatileentities.multi.steam.PrimitiveTreeFarmer;
 import tjcore.common.metatileentities.multi.steam.SteamAssembler;
@@ -54,6 +57,9 @@ public class TJMetaTileEntities {
     public static MetaTileEntityAlternator ALTERNATOR;
     public static Roaster ROASTER;
     public static PrimitiveRoaster PRIMITIVE_ROASTER;
+    public static MetaTileEntityFluidPipeline FLUID_PIPELINE;
+    public static MetaTileEntityItemPipeline ITEM_PIPELINE;
+    public static MetaTileEntityEnergyPipeline ENERGY_PIPELINE;
 
     public static Loom LOOM;
 
@@ -77,6 +83,9 @@ public class TJMetaTileEntities {
         GEARBOX = registerMetaTileEntity(12053, new MetaTileEntityGearbox(tjcoreID("gearbox")));
         ROASTER = registerMetaTileEntity(12054, new Roaster(tjcoreID("roaster")));
         PRIMITIVE_ROASTER = registerMetaTileEntity(12055, new PrimitiveRoaster(tjcoreID("primitive_roaster")));
+        FLUID_PIPELINE = registerMetaTileEntity(12056, new MetaTileEntityFluidPipeline(tjcoreID("fluid_pipeline")));
+        ITEM_PIPELINE = registerMetaTileEntity(12057, new MetaTileEntityItemPipeline(tjcoreID("item_pipeline")));
+        ENERGY_PIPELINE = registerMetaTileEntity(12058, new MetaTileEntityEnergyPipeline(tjcoreID("energy_pipeline")));
         registerSimpleMetaTileEntity(LAMINATOR, 12070, "laminator", TJRecipeMaps.LAMINATOR_RECIPES, Textures.BENDER_OVERLAY, true);
         registerSimpleMetaTileEntity(PRINTER, 12090, "printer", TJRecipeMaps.PRINTER_RECIPES, Textures.LASER_ENGRAVER_OVERLAY, true);
         registerSimpleMetaTileEntity(SPINNING_MACHINE, 12100, "spinning_machine", TJRecipeMaps.SPINNING_RECIPES, Textures.CENTRIFUGE_OVERLAY, true, GTUtility.hvCappedTankSizeFunction);

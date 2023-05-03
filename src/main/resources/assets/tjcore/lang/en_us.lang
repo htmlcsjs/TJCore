@@ -157,6 +157,46 @@ material.hafnium_tetrachloride=Hafnium Tetrachloride
 material.zirconium_tetrachloride=Zirconium Tetrachloride
 material.potassium_fluoride_refractory_mixture=Refractory Potassium Fluoride Mixture
 material.trichlorosilane=Trichlorosilane
+material.potassium_hydride=Potassium Hydride
+material.aminopropionitrile=Aminopropionitrile
+material.aminopropylamine=Aminopropylamine
+material.kapa=Potassium Aminopropylamide (KAPA)
+material.betapinene=Beta Pinene
+material.alphapinene=Alpha Pinene
+material.camphene=Camphene
+material.isobornyl_acetate=Isobornyl Acetate
+material.isoborneol=Isoborneol
+material.sodium_acetate=Sodium Acetate
+material.dehydrogenation_catalyst=Dehydrogenation Catalyst
+material.sodium_perchlorate=Sodium Perchlorate
+material.perchloric_acid=Perchloric Acid
+material.phenylhydrazine=Phenylhydrazine
+material.benzoyl_chloride=Benzoyl Chloride
+material.triphenyl_methoxytriazoyl_perchlorate=Triphenyl Methoxytriazyol Perchlorate
+material.sodium_methoxide=Sodium Methoxide
+material.triphenyl_methoxytriazole=Triphenyl Methoxytriazole
+material.acetaldehyde=Acetyldehyde
+material.acetoin=Acetoin
+material.meta_nitrochlorobenzine=Meta Nitrochlorobenzine
+material.nitroanisole=Nitroanisole
+material.anisidine=Anisidine
+material.methyl_bromoacetate=Methyl Bromoacetate
+material.carbomethoxy_methylenetriphenylphosphorane=Carbomethoxy Methylenetriphenyl Phosphorane
+material.propargyl_alcohol=Propargyl Alcohol
+material.propargyl_bromide=Propargyl Bromide
+material.methylmagnesium_iodide=Methylmagnesium Iodide
+material.acetyl_chloride=Acetyl Chloride
+material.acetophenone=Acetophenone
+material.phenylethylamine=Phenylethylamine
+material.phenylethyl_isocyanate=Phenylethyl Isocyanate
+material.triethyloxonium_tetrafluoroborate=Triethyloxonium Tetrafluoroborate
+material.trischloroethoxypopanyl_borate=Trischloroethoxypropanyl Borate
+material.sulfuric_flue_gas=Sulfuric Flue Gas
+material.sulfuric_iron_slag=Sulfuric Iron Slag
+material.sulfuric_copper_slag=Sulfuric Copper Slag
+material.sulfuric_nickel_slag=Sulfuric Nickel Slag
+material.sulfuric_zinc_slag=Sulfuric Zinc Slag
+
 
 # LDC Materials
 
@@ -212,15 +252,24 @@ tjcore.machine.armor_infuser.description=The armor infuser is an advanced machin
 tjcore.machine.alternator.name=Alternator
 tjcore.machine.roaster.name=Industrial Roaster
 tjcore.machine.dryer.lv.name=LV Drying Machine
-tjcore.machine.dryer.lv.tooltop=Toaster Oven
+tjcore.machine.dryer.lv.tooltip=Toaster Oven
 tjcore.machine.dryer.mv.name=MV Drying Machine
-tjcore.machine.dryer.mv.tooltop=Toaster Oven
+tjcore.machine.dryer.mv.tooltip=Toaster Oven
 tjcore.machine.dryer.hv.name=HV Drying Machine
-tjcore.machine.dryer.hv.tooltop=Toaster Oven
+tjcore.machine.dryer.hv.tooltip=Toaster Oven
 tjcore.machine.dryer.ev.name=EV Drying Machine
-tjcore.machine.dryer.ev.tooltop=Toaster Oven
+tjcore.machine.dryer.ev.tooltip=Toaster Oven
 tjcore.machine.dryer.iv.name=IV Drying Machine
-tjcore.machine.dryer.iv.tooltop=HVAC System (AC is Broken)
+tjcore.machine.dryer.iv.tooltip=Hotbox Cube
+tjcore.machine.fluid_pipeline.name=Fluid Pipeline
+tjcore.machine.fluid_pipeline.tooltip=Pipelike Requirement: Steel Fluid Pipe
+tjcore.machine.fluid_pipeline.description=Pipelines are a "wireless" p2p distribution system. Two pipelines set to the same frequency will send their contents from the input to the output, provided the pipeline connection has been completed. \n\nTo complete the connection, insert Steel Fluid Pipes into the pipelike slot of either controller. Careful! If you break the controller, you'll lose the pipes. Be sure to change to another frequency first to get your pipes back.
+tjcore.machine.item_pipeline.name=Item Pipeline
+tjcore.machine.item_pipeline.tooltip=Pipelike Requirement: PVC Item Pipe
+tjcore.machine.item_pipeline.description=Pipelines are a "wireless" p2p distribution system. Two pipelines set to the same frequency will send their contents from the input to the output, provided the pipeline connection has been completed. \n\nTo complete the connection, insert PVC Item Pipes into the pipelike slot of either controller. Careful! If you break the controller, you'll lose the pipes. Be sure to change to another frequency first to get your pipes back.
+tjcore.machine.energy_pipeline.name=Energy Pipeline
+tjcore.machine.energy_pipeline.tooltip=Pipelike Requirement: 4x Aluminium Cable
+tjcore.machine.energy_pipeline.description=Pipelines are a "wireless" p2p distribution system. Two pipelines set to the same frequency will send their contents from the input to the output, provided the pipeline connection has been completed. \n\nTo complete the connection, insert 4x Aluminium Cable into the pipelike slot of either controller. Careful! If you break the controller, you'll lose the pipes. Be sure to change to another frequency first to get your pipes back.
 
 tjcore.machine.creative_rotation.name=Creative Rotation Source
 tjcore.machine.gearbox.name=Rotation Gearbox
@@ -232,7 +281,9 @@ recipemap.tree_farmer.name=Tree Farmer Recipes
 recipemap.armor_infuser.name=Armor Infusion Recipes
 recipemap.laminator.name=Laminator Recipes
 recipemap.printer.name=3D Printing Recipes
-recipemap.roasting_recipes.name=Industrial Roasting Recipes
+recipemap.roaster.name=Industrial Roasting Recipes
+recipemap.primitive_roaster.name=Primitive Roasting Recipes
+
 
 
 

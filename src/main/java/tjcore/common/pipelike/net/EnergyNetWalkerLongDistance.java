@@ -4,6 +4,7 @@ import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.pipenet.PipeNetWalker;
 import gregtech.api.pipenet.tile.IPipeTile;
+import gregtech.common.metatileentities.electric.MetaTileEntityDiode;
 import gregtech.common.metatileentities.electric.MetaTileEntityTransformer;
 import gregtech.common.pipelike.cable.net.RoutePath;
 import gregtech.common.pipelike.cable.tile.TileEntityCable;
@@ -54,7 +55,7 @@ public class EnergyNetWalkerLongDistance extends PipeNetWalker {
         if (neighbourTile != null) {
             if (neighbourTile instanceof IGregTechTileEntity) {
                 MetaTileEntity metaTileEntity = ((IGregTechTileEntity) neighbourTile).getMetaTileEntity();
-                if (metaTileEntity instanceof MetaTileEntityTransformer) {
+                if (metaTileEntity instanceof MetaTileEntityTransformer || metaTileEntity instanceof MetaTileEntityDiode) {
                     routes.add(new RoutePath(new BlockPos(pipePos), faceToNeighbour, pipes, getWalkedBlocks(), loss));
                 }
             }

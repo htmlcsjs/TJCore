@@ -16,6 +16,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 import tjcore.TJValues;
 import tjcore.api.TJComponents;
 import tjcore.api.TJOreDictionaryLoader;
+import tjcore.api.pipeline.PipelineManager;
 import tjcore.common.blocks.TJMetaBlocks;
 import tjcore.common.pipelike.BlockCableLongDistance;
 import tjcore.common.pipelike.ItemBlockLongDistanceCable;
@@ -36,6 +37,8 @@ import static tjcore.common.blocks.TJMetaBlocks.*;
 
 @Mod.EventBusSubscriber(modid = TJValues.MODID)
 public class CommonProxy {
+
+    public static PipelineManager PipelineManager;
 
     public void preInit() {
         TJOreDictionaryLoader.init();
@@ -88,6 +91,7 @@ public class CommonProxy {
     
     @SubscribeEvent(priority = EventPriority.LOW)
     public static void init(RegistryEvent.Register<IRecipe> event) {
+        PipelineManager = new PipelineManager();
         TJCoreRecipeHandler.init();
     }
 }

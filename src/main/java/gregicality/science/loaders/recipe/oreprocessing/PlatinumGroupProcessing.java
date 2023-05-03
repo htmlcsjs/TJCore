@@ -14,6 +14,7 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
+import static tjcore.common.recipes.recipemaps.TJRecipeMaps.ROASTING_RECIPES;
 
 /**
  * The Platinum Process
@@ -214,14 +215,6 @@ public class PlatinumGroupProcessing {
                 .fluidOutputs(Methane.getFluid(1000))
                 .duration(100).EUt(VA[EV]).buildAndRegister();
 
-        // 2Na + 2O -> Na2O2
-        ROASTER_RECIPES.recipeBuilder()
-                .input(dust, Sodium)
-                .fluidInputs(Oxygen.getFluid(1000))
-                .output(dust, SodiumPeroxide, 2)
-                .temperature(403)
-                .duration(40).EUt(VA[LV]).buildAndRegister();
-
         // RuCl3 + 2Na2O2 + Cl -> RuO4 + 4NaCl
         CHEMICAL_RECIPES.recipeBuilder()
                 .input(dust, RutheniumChloride, 4)
@@ -265,14 +258,14 @@ public class PlatinumGroupProcessing {
                 .duration(100).EUt(60).buildAndRegister();
 
         // Ir2Os + 2NaClO3 + O -> Ir2O3 + OsO4 + 2NaCl
-        ROASTER_RECIPES.recipeBuilder()
+        ROASTING_RECIPES.recipeBuilder()
                 .input(dust, RarestMetalMixture, 12)
                 .input(dust, SodiumChlorate, 10)
                 .fluidInputs(Oxygen.getFluid(1000))
                 .output(dust, IridiumMetalResidue, 5)
                 .output(dust, OsmiumTetroxide, 5)
                 .output(dust, Salt, 4)
-                .temperature(1304)
+                .blastFurnaceTemp(1304)
                 .duration(200).EUt(VA[IV]).buildAndRegister();
 
         // Ir2O3 + 6HCl -> 2IrCl3 + 3H2O

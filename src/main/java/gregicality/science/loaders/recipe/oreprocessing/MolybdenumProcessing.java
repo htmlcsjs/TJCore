@@ -2,7 +2,6 @@ package gregicality.science.loaders.recipe.oreprocessing;
 
 import gregicality.science.common.GCYSConfigHolder;
 
-import static gregicality.science.api.recipes.GCYSRecipeMaps.ROASTER_RECIPES;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
@@ -40,16 +39,6 @@ public class MolybdenumProcessing {
 
     private static void molybdenum() {
         // MoS2 + 9O -> MoO3 + 2SO2 + ReO2
-        ROASTER_RECIPES.recipeBuilder()
-                .input(dust, Molybdenite, 3)
-                .fluidInputs(Oxygen.getFluid(8000))
-                .output(dust, MolybdenumTrioxide, 4)
-                .fluidOutputs(SulfurDioxide.getFluid(2000))
-                .fluidOutputs(MolybdenumFlue.getFluid(1000))
-                .temperature(1400)
-                .duration(200)
-                .EUt(VA[MV])
-                .buildAndRegister();
 
         // MoO3 + 6H -> Mo + 3H2O
         CHEMICAL_RECIPES.recipeBuilder()

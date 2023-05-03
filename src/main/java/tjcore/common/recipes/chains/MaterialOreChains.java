@@ -26,7 +26,6 @@ public class MaterialOreChains {
     }
 
     private static void FixRoaster() {
-        GTRecipeHandler.removeAllRecipes(ROASTER_RECIPES);
         ROASTING_RECIPES.recipeBuilder()
                 .duration(40)
                 .EUt(VA[LV])
@@ -286,6 +285,16 @@ public class MaterialOreChains {
                     .fluidOutputs(SulfuricFlueGas.getFluid(100))
                     .buildAndRegister();
 
+            ROASTING_RECIPES.recipeBuilder()
+                    .duration(345)
+                    .EUt(VA[MV])
+                    .input(crushed, Sphalerite, 1)
+                    .output(ingot, Zinc)
+                    .chancedOutput(ingot, SulfuricZincSlag,9000, 0)
+                    .fluidOutputs(SulfuricFlueGas.getFluid(100))
+                    .buildAndRegister();
+
+
             PRIMITIVE_ROASTING_RECIPES.recipeBuilder()
                     .duration(315)
                     .input(gem, fuel[i], i == 2 ? 4 : i + 1)
@@ -296,12 +305,31 @@ public class MaterialOreChains {
                     .fluidOutputs(SulfuricFlueGas.getFluid(100))
                     .buildAndRegister();
 
+            ROASTING_RECIPES.recipeBuilder()
+                    .duration(315)
+                    .EUt(VA[MV])
+                    .input(crushed, Chalcopyrite, 1)
+                    .output(ingot, Copper)
+                    .chancedOutput(ingot, SulfuricCopperSlag,  5000, 0)
+                    .chancedOutput(ingot, SulfuricIronSlag, 9000, 0)
+                    .fluidOutputs(SulfuricFlueGas.getFluid(100))
+                    .buildAndRegister();
+
             PRIMITIVE_ROASTING_RECIPES.recipeBuilder()
                     .duration(380)
                     .input(crushed, Pyrite, 1)
                     .input(gem, fuel[i], i == 2 ? 4 : i + 1)
                     .output(ingot, Iron)
                     .chancedOutput(ingot, SulfuricIronSlag,5000, 0)
+                    .fluidOutputs(SulfuricFlueGas.getFluid(100))
+                    .buildAndRegister();
+
+            ROASTING_RECIPES.recipeBuilder()
+                    .duration(380)
+                    .EUt(VA[MV])
+                    .input(crushed, Pyrite, 1)
+                    .output(ingot, Iron)
+                    .chancedOutput(ingot, SulfuricIronSlag,9000, 0)
                     .fluidOutputs(SulfuricFlueGas.getFluid(100))
                     .buildAndRegister();
 
@@ -315,6 +343,16 @@ public class MaterialOreChains {
                     .fluidOutputs(SulfuricFlueGas.getFluid(100))
                     .buildAndRegister();
 
+            ROASTING_RECIPES.recipeBuilder()
+                    .duration(335)
+                    .EUt(VA[MV])
+                    .input(crushed, Bornite, 1)
+                    .output(ingot, Copper)
+                    .chancedOutput(ingot, SulfuricCopperSlag, 5000, 0)
+                    .chancedOutput(ingot, SulfuricIronSlag,9000, 0)
+                    .fluidOutputs(SulfuricFlueGas.getFluid(100))
+                    .buildAndRegister();
+
             PRIMITIVE_ROASTING_RECIPES.recipeBuilder()
                     .duration(310)
                     .input(gem, fuel[i], i == 2 ? 4 : i + 1)
@@ -324,12 +362,30 @@ public class MaterialOreChains {
                     .fluidOutputs(SulfuricFlueGas.getFluid(100))
                     .buildAndRegister();
 
+            ROASTING_RECIPES.recipeBuilder()
+                    .duration(310)
+                    .EUt(VA[MV])
+                    .input(crushed, Chalcocite)
+                    .output(ingot, Copper)
+                    .chancedOutput(ingot, SulfuricCopperSlag,9000, 0)
+                    .fluidOutputs(SulfuricFlueGas.getFluid(100))
+                    .buildAndRegister();
+
             PRIMITIVE_ROASTING_RECIPES.recipeBuilder()
                     .duration(345)
                     .input(gem, fuel[i], i == 2 ? 4 : i + 1)
                     .input(crushed, Pentlandite)
                     .output(ingot, Nickel)
                     .chancedOutput(ingot, SulfuricNickelSlag, 5000, 0)
+                    .fluidOutputs(SulfuricFlueGas.getFluid(100))
+                    .buildAndRegister();
+
+            ROASTING_RECIPES.recipeBuilder()
+                    .duration(345)
+                    .EUt(VA[MV])
+                    .input(crushed, Pentlandite)
+                    .output(ingot, Nickel)
+                    .chancedOutput(ingot, SulfuricNickelSlag, 9000, 0)
                     .fluidOutputs(SulfuricFlueGas.getFluid(100))
                     .buildAndRegister();
 

@@ -3,6 +3,7 @@ package tjcore.common.recipes.circuits;
 import gregicality.science.api.recipes.GCYSRecipeMaps;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.OreDictUnifier;
+import gregtech.api.unification.stack.UnificationEntry;
 import tjcore.common.metaitem.TJMetaItems;
 
 import static gregicality.multiblocks.api.unification.GCYMMaterials.MolybdenumDisilicide;
@@ -265,6 +266,11 @@ public class SMD {
                 .buildAndRegister();
 
         // INDUCTORS
+
+        ModHandler.addShapelessRecipe("inductor_handcraft", INDUCTOR.getStackForm(1),
+                new UnificationEntry(wireFine, Copper),
+                new UnificationEntry(wireFine, Copper),
+                new UnificationEntry(ring, Steel));
 
         ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(70)

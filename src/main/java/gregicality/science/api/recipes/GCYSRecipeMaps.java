@@ -32,10 +32,6 @@ public class GCYSRecipeMaps {
             .setProgressBar(GuiTextures.PROGRESS_BAR_CRYSTALLIZATION, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.FURNACE);
 
-    public static final RecipeMap<NoCoilTemperatureRecipeBuilder> ROASTER_RECIPES = new RecipeMap<>("roaster_recipes", 0, 3, 0, 3, 0, 3, 0, 3, new NoCoilTemperatureRecipeBuilder(), false)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressWidget.MoveType.HORIZONTAL)
-            .setSound(GTSoundEvents.FURNACE);
-
     public static final RecipeMap<PressureRecipeBuilder> PRESSURE_CHAMBER_RECIPES = new RecipeMap<>("pressure_chamber_recipes", 1, 4, 1, 1, 0, 0, 0, 0, new PressureRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_COMPRESS, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.COMPRESSOR);

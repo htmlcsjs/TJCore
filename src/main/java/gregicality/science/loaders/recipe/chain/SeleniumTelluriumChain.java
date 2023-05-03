@@ -2,7 +2,6 @@ package gregicality.science.loaders.recipe.chain;
 
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 
-import static gregicality.science.api.recipes.GCYSRecipeMaps.ROASTER_RECIPES;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
@@ -44,18 +43,6 @@ public class SeleniumTelluriumChain {
 
     private static void tellurium() {
         // Ag2TeSe + 4O + Na2CO3 -> Na2TeO3 + SeO2 + 2Ag + CO2
-        ROASTER_RECIPES.recipeBuilder()
-                .input(dust, ChalcogenAnodeMud)
-                .input(dust, SodaAsh, 6)
-                .fluidInputs(Oxygen.getFluid(4000))
-                .output(dust, SodiumTellurite, 6)
-                .output(dust, SeleniumDioxide, 3)
-                .output(ingot, Silver, 2)
-                .fluidOutputs(CarbonDioxide.getFluid(1000))
-                .duration(600)
-                .temperature(1900)
-                .EUt(VA[HV])
-                .buildAndRegister();
 
         // Na2TeO3 + H2O -> TeO2 + 2NaOH
         ELECTROLYZER_RECIPES.recipeBuilder()

@@ -57,10 +57,10 @@ public class MaterialRecipes {
                 .buildAndRegister();
 
         COMPRESSOR_RECIPES.recipeBuilder()
-                .duration(280)
+                .duration(180)
                 .EUt(8)
                 .input(STICKY_RESIN, 2)
-                .chancedOutput(plate, Rubber, 1, 700, 0)
+                .chancedOutput(plate, Rubber, 1, 7000, 0)
                 .buildAndRegister();
 
         CVD_RECIPES.recipeBuilder()
@@ -286,10 +286,18 @@ public class MaterialRecipes {
         for (OrePrefix prefix : galvanizedSteelPrefix) {
             tinyQuantity = (int) ((prefix.getMaterialAmount(Steel)) / M) + 1;
             ALLOY_SMELTER_RECIPES.recipeBuilder()
-                    .duration(tinyQuantity * 15)
+                    .duration(tinyQuantity * 16)
                     .EUt(8)
                     .input(prefix, Steel, 1)
                     .input(dustTiny, Zinc, tinyQuantity)
+                    .output(prefix, GalvanizedSteel)
+                    .buildAndRegister();
+
+            CHEMICAL_BATH_RECIPES.recipeBuilder()
+                    .duration(tinyQuantity * 8)
+                    .EUt(VA[LV])
+                    .input(prefix, Steel)
+                    .fluidInputs(Zinc.getFluid(16))
                     .output(prefix, GalvanizedSteel)
                     .buildAndRegister();
         }

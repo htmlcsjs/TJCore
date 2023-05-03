@@ -1,6 +1,5 @@
 package gregicality.science.loaders.recipe.oreprocessing;
 
-import static gregicality.science.api.recipes.GCYSRecipeMaps.ROASTER_RECIPES;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
@@ -22,15 +21,6 @@ public class GermaniumProcessing {
 
     public static void init() {
         // ZnS + 5O -> GeO2 + ZnO + SO2
-        ROASTER_RECIPES.recipeBuilder()
-                .input(dust, Sphalerite, 2)
-                .fluidInputs(Oxygen.getFluid(5000))
-                .output(dust, RoastedSphalerite, 3)
-                .output(dust, ZincOxide, 2)
-                .fluidOutputs(SulfurDioxide.getFluid(1000))
-                .temperature(1773)
-                .duration(200).EUt(VA[HV]).buildAndRegister();
-
         // GeO2 + 2Zn -> Zn2(GeO2)
         MIXER_RECIPES.recipeBuilder()
                 .input(dust, RoastedSphalerite, 3)
