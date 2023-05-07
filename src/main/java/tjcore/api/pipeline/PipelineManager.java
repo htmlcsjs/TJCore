@@ -1,7 +1,6 @@
 package tjcore.api.pipeline;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import javafx.util.Pair;
 import net.minecraft.world.World;
 import tjcore.common.metatileentities.multi.pipeline.MetaTileEntityFluidPipeline;
 

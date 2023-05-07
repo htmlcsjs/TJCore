@@ -22,11 +22,6 @@ public class GregicalityScience {
     public static CommonProxy proxy = new CommonProxy();
 
     @Mod.EventHandler
-    public void onModConstruction(FMLConstructionEvent event) {
-        GTValues.HT = true;
-    }
-
-    @Mod.EventHandler
     public void onPreInit(@Nonnull FMLPreInitializationEvent event) {
         GCYSLog.init(event.getModLog());
 

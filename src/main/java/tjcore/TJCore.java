@@ -28,11 +28,6 @@ public class TJCore {
     public static CommonProxy proxy;
 
     @Mod.EventHandler
-    public void onModConstruction(FMLConstructionEvent event) {
-        GTValues.HT = true;
-    }
-
-    @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         TJMetaItems.init();
         TJMetaTileEntities.init();

@@ -1,6 +1,7 @@
 package tjcore.common;
 
 import gregtech.api.block.VariantItemBlock;
+import gregtech.api.event.HighTierEvent;
 import gregtech.api.unification.material.properties.WireProperties;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -93,5 +94,10 @@ public class CommonProxy {
     public static void init(RegistryEvent.Register<IRecipe> event) {
         PipelineManager = new PipelineManager();
         TJCoreRecipeHandler.init();
+    }
+
+    @SubscribeEvent
+    public static void gtHighTier(HighTierEvent highTierEvent) {
+        highTierEvent.enableHighTier();
     }
 }
